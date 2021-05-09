@@ -68,7 +68,7 @@
 .fti {
 width:45px;
   height:45px;
-  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/picture_main_color/close2.png);
+  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/close2.png);
   background-size:25px;
   background-position:center;
   background-repeat:no-repeat;
@@ -98,7 +98,7 @@ display:none;
 .filed-camera {
 width:45px;
   height:45px;
-  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/picture_main_color/camera.png);
+  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/camera.png);
   background-size:25px;
   background-position:center;
   background-repeat:no-repeat;
@@ -114,7 +114,7 @@ width:45px;
 .filed-img {
 width:45px;
   height:45px;
-  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/picture_main_color/img.png);
+  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/img.png);
   background-size:25px;
   background-position:center;
   background-repeat:no-repeat;
@@ -134,7 +134,7 @@ width:45px;
 .fi {
 width:45px;
   height:45px;
-  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/picture_main_color/close2.png);
+  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/close2.png);
   background-size:25px;
   background-position:center;
   background-repeat:no-repeat;
@@ -151,7 +151,7 @@ width:45px;
 .fi2 {
 width:45px;
   height:45px;
-  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/picture_main_color/copy2.png);
+  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/copy2.png);
   background-size:25px;
   background-position:center;
   background-repeat:no-repeat;
@@ -168,7 +168,7 @@ width:45px;
 .fi3 {
 width:45px;
   height:45px;
-  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/picture_main_color/share3.png);
+  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/share3.png);
   background-size:25px;
   background-position:center;
   background-repeat:no-repeat;
@@ -185,7 +185,7 @@ width:45px;
 .ft2 {
 width:45px;
   height:45px;
-  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/picture_main_color/text2.png);
+  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/text2.png);
   background-size:25px;
   background-position:center;
   background-repeat:no-repeat;
@@ -202,7 +202,7 @@ width:45px;
   .rand2 {
 width:45px;
   height:45px;
-  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/picture_main_color/random3.png);
+  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/random3.png);
   background-size:25px;
   background-position:center;
   background-repeat:no-repeat;
@@ -395,7 +395,7 @@ var load = 0 ;
       $('#rgb').css({'color':'#fff'});
     }
     $('.color').fadeIn(222);
-    location.href = 'https://erichsia7.github.io/picture_main_color/?s=1&c=' + btoa(rgbToHex(Math.ceil(rgb_r/ccwa), Math.ceil(rgb_g/ccwa), Math.ceil(rgb_b/ccwa))) ;
+    location.href = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(Math.ceil(rgb_r/ccwa), Math.ceil(rgb_g/ccwa), Math.ceil(rgb_b/ccwa))) ;
   },200);
     };
 
@@ -410,7 +410,7 @@ $('.fi').click(function() {
 $('.color').fadeOut(222);
 if(sharecolor === "1") {
   setTimeout(function(){
-    location.href = 'https://erichsia7.github.io/picture_main_color/' ;
+    location.href = 'https://erichsia7.github.io/colors/' ;
   }, 222);
   
 }
@@ -423,7 +423,7 @@ document.execCommand("Copy");
 });
 
 $('.fi3').click(function() {
-  var shur = 'https://erichsia7.github.io/picture_main_color/?s=1&c=' + btoa($('#rgb').val()) ;
+  var shur = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa($('#rgb').val()) ;
 if (navigator.share) { 
    navigator.share({
       title: document.title,
@@ -461,7 +461,7 @@ if((hexToRgb($('#textu').val()).r+hexToRgb($('#textu').val()).g+hexToRgb($('#tex
     $('.color').fadeIn(222);
     $('.color').css({'background':$('#textu').val()})
       $('#rgb').val($('#textu').val());
-      location.href = 'https://erichsia7.github.io/picture_main_color/?s=1&c=' + btoa($('#textu').val()) ;
+      location.href = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa($('#textu').val()) ;
     }
 });
   
@@ -471,7 +471,7 @@ var rand_g = Math.floor(Math.random() * 255);
 var rand_b = Math.floor(Math.random() * 255);
 
 
-    location.href = 'https://erichsia7.github.io/picture_main_color/?s=1&c=' + btoa(rgbToHex(rand_r,rand_g,rand_b)) ;
+    location.href = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(rand_r,rand_g,rand_b)) ;
     if((rand_r+rand_g+rand_b)/3 > 128) {
       $('#rgb').css({'color':'#000'});
     }
