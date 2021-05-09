@@ -325,11 +325,58 @@ var url = new URL(getUrlString);
 var sharecolor = url.searchParams.get('s') ;
 var shcolor = atob(url.searchParams.get('c')) ;
   
+  
 var ccw = 256;
 var ccwa = (ccw*ccw) ;
 document.getElementById('cc').width = ccw ;
 document.getElementById('cc').height = ccw ;
 
+  
+  
+  function genid(mode) {
+if(mode === "random"){
+var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
+            var genid = "";
+            for (var i = 0; i < 16; i++) {
+                var genrandomNumber = Math.floor(Math.random() * genidchars.length);
+                genid += genidchars.substring(genrandomNumber, genrandomNumber + 1);
+            }
+  return genid ;
+}
+          
+ if(mode === "time"){
+   var gtoday=new Date();
+   var genid2 = (gtoday.getMonth()+1) + '_' + gtoday.getDate() + '_' + gtoday.getHours() + '_' + gtoday.getMinutes() + '_' + gtoday.getSeconds() + '-' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8));
+   
+   return genid2
+ }
+  
+  if(mode === "number"){
+   
+   var genid3 = '' ;
+for (var i = 0; i < 16; i++) {
+  genid3 += '' + (0+Math.floor(Math.random() * 9))
+}
+   return genid3
+ }
+  
+  if(mode === "uuid"){
+var genidchars4 = "abcdef012345678";
+    var geniduu = [8,4,4,4,12];
+            var genid4 = "";
+            var genid5 = "";
+    for (var ia = 0; ia < geniduu.length; ia++) {
+      var genid4 = "";
+            for (var i = 0; i < geniduu[ia]; i++) {
+                var genrandomNumber4 = Math.floor(Math.random() * genidchars4.length);
+                genid4 += genidchars4.substring(genrandomNumber4, genrandomNumber4 + 1);
+            }
+genid5 += '-' + genid4 ;
+    }
+    return genid5.substring(1,genid5.length)
+  }
+
+}
 function componentToHex(c) {
   var hex = c.toString(16);
   return hex.length == 1 ? "0" + hex : hex;
@@ -404,7 +451,7 @@ var load = 0 ;
       $('#rgb').css({'color':'#fff'});
     }
     $('.color').fadeIn(222);
-    location.href = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(Math.ceil(rgb_r/ccwa), Math.ceil(rgb_g/ccwa), Math.ceil(rgb_b/ccwa))) ;
+    location.href = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(Math.ceil(rgb_r/ccwa), Math.ceil(rgb_g/ccwa), Math.ceil(rgb_b/ccwa))) + '&r=' + genid('random');
   },200);
     };
 
@@ -419,7 +466,7 @@ $('.fi').click(function() {
 $('.color').fadeOut(222);
 if(sharecolor === "1") {
   setTimeout(function(){
-    location.href = 'https://erichsia7.github.io/colors/' ;
+    location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random') ;
   }, 222);
   
 }
@@ -432,7 +479,7 @@ document.execCommand("Copy");
 });
 
 $('.fi3').click(function() {
-  var shur = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa($('#rgb').val()) ;
+  var shur = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa($('#rgb').val()) + '&r=' + genid('random') ;
 if (navigator.share) { 
    navigator.share({
       title: document.title,
@@ -470,7 +517,7 @@ if((hexToRgb($('#textu').val()).r+hexToRgb($('#textu').val()).g+hexToRgb($('#tex
     $('.color').fadeIn(222);
     $('.color').css({'background':$('#textu').val()})
       $('#rgb').val($('#textu').val());
-      location.href = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa($('#textu').val()) ;
+      location.href = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa($('#textu').val()) + '&r=' + genid('random');
     }
 });
   
@@ -480,7 +527,7 @@ var rand_g = Math.floor(Math.random() * 255);
 var rand_b = Math.floor(Math.random() * 255);
 
 
-    location.href = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(rand_r,rand_g,rand_b)) ;
+    location.href = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(rand_r,rand_g,rand_b)) + '&r=' + genid('random') ;
     if((rand_r+rand_g+rand_b)/3 > 128) {
       $('#rgb').css({'color':'#000'});
     }
