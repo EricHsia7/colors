@@ -506,7 +506,7 @@ $('.ft2').click(function() {
 
 $('#textu').on('keypress',function(e) {
     if(e.which == 13) {
-      $('.colorte').fadeOut(222);
+      //$('.colorte').fadeOut(222);
       $('#textu').blur();
 if((hexToRgb($('#textu').val()).r+hexToRgb($('#textu').val()).g+hexToRgb($('#textu').val()).b)/3 > 128) {
       $('#rgb').css({'color':'#000'});
