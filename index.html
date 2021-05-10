@@ -450,7 +450,7 @@ var load = 0 ;
     else {
       $('#rgb').css({'color':'#fff'});
     }
-    $('.color').fadeIn(222);
+    //$('.color').fadeIn(222);
     location.href = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(Math.ceil(rgb_r/ccwa), Math.ceil(rgb_g/ccwa), Math.ceil(rgb_b/ccwa))) + '&r=' + genid('random');
   },200);
     };
@@ -514,7 +514,7 @@ if((hexToRgb($('#textu').val()).r+hexToRgb($('#textu').val()).g+hexToRgb($('#tex
     else {
       $('#rgb').css({'color':'#fff'});
     }
-    $('.color').fadeIn(222);
+    //$('.color').fadeIn(222);
     $('.color').css({'background':$('#textu').val()})
       $('#rgb').val($('#textu').val());
       location.href = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa($('#textu').val()) + '&r=' + genid('random');
@@ -534,7 +534,7 @@ var rand_b = Math.floor(Math.random() * 255);
     else {
       $('#rgb').css({'color':'#fff'});
     }
-    $('.color').fadeIn(222);
+    //$('.color').fadeIn(222);
     $('.color').css({'background':rgbToHex(rand_r,rand_g,rand_b)})
       $('#rgb').val(rgbToHex(rand_r,rand_g,rand_b));   
     
