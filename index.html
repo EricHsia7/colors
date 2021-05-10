@@ -317,8 +317,18 @@ width:70%;
 
 <div class="copied">已複製</div>
 
+<style>
+.barbg {position:fixed;top:0px;left:0px;width:100%;height:3px;background:#e3e3e3;z-index:9000;}
+.barbox {position:fixed;top:0px;left:0px;width:0%;height:3px; overflow:hidden; border-radius:0px 8px 8px 0px; z-index:9001;}
 
+.bar {background: rgb(255,26,97);
+background: linear-gradient(90deg, rgba(255,26,97,1) 0%, rgba(137,0,255,1) 44%, rgba(0,180,255,1) 72%, rgba(0,255,169,1) 100%);width:100vw;height:3px;position:absolute;top:0px;left:0px;}
 
+</style>
+<div class="barbg"><div class="barbox"><div class="bar"></div></div></div>
+<script>
+var r=0;ref=setInterval(function(){r<98?($(".barbox").animate({width:r+"%"},33*Math.random()+400,"easeInOutQuad"),r+=5*Math.random()+25):clearInterval(ref)},500),$(window).ready(function(){$(".barbox,.barbg").animate({width:"110%"},888).delay(10).fadeOut(888)});
+</script>
 <script>
   var getUrlString = location.href;
 var url = new URL(getUrlString);
