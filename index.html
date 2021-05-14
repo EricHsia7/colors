@@ -625,7 +625,7 @@ if((hexToRgb(shcolor).r+hexToRgb(shcolor).g+hexToRgb(shcolor))/3 > 128) {
     var grd = 'linear-gradient(' + gcdeg + 'deg ,' +  gc1 + ' 0%,' +  gc2 + ' 100%)' ;
     $('.color').fadeIn(222);
     $('.color').css({'background':grd});
-    $('#rgb').val(grd);
+    $('#rgb').val(grd).attr('shga',gc1).attr('shgb',gc2).attr('shdeg',gcdeg);
   }
   
   
