@@ -508,7 +508,12 @@ document.execCommand("Copy");
 });
 
 $('.fi3').click(function() {
+  if(sharecolor === "1") {
   var shur = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa($('#rgb').val()) + '&r=' + genid('random') ;
+  }
+  if(sharecolor === "2") {
+  var shur = 'https://erichsia7.github.io/colors/?s=2&ga=' + btoa($('#rgb').attr('shga')) + 'gb=' + btoa($('#rgb').attr('shgb')) + '&gdeg=' + btoa($('#rgb').attr('shdeg')) + '&r=' + genid('random') ;
+  }
 if (navigator.share) { 
    navigator.share({
       title: document.title,
@@ -590,7 +595,7 @@ var grd_deg = Math.floor(Math.random() * 360);
     }
     //$('.color').fadeIn(222);
     $('.color').css({'background':'linear-gradient(' + grd_deg + 'deg ,' +  rgbToHex(grd_r1,grd_g1,grd_b1) + ' 0%,' +  rgbToHex(grd_r2,grd_g2,grd_b2) + ' 100%)'})
-      $('#rgb').val('linear-gradient(' + grd_deg + 'deg ,' +  rgbToHex(grd_r1,grd_g1,grd_b1) + ' 0%,' +  rgbToHex(grd_r2,grd_g2,grd_b2) + ' 100%)');   
+      $('#rgb').val('linear-gradient(' + grd_deg + 'deg ,' +  rgbToHex(grd_r1,grd_g1,grd_b1) + ' 0%,' +  rgbToHex(grd_r2,grd_g2,grd_b2) + ' 100%)').attr('shga',rgbToHex(grd_r1,grd_g1,grd_b1)).attr('shgb',rgbToHex(grd_r2,grd_g2,grd_b2)).attr('shdeg',grd_deg);   
     
 
 });
