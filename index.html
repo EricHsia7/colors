@@ -571,7 +571,29 @@ var rand_b = Math.floor(Math.random() * 255);
 });
   
   
-  
+  $('.grd').click(function() {
+var grd_r1 = Math.floor(Math.random() * 255);
+var grd_g1 = Math.floor(Math.random() * 255);  
+var grd_b1 = Math.floor(Math.random() * 255);
+var grd_r2 = Math.floor(Math.random() * 255);
+var grd_g2 = Math.floor(Math.random() * 255);  
+var grd_b2 = Math.floor(Math.random() * 255);
+
+var grd_deg = Math.floor(Math.random() * 360);
+
+    location.href = 'https://erichsia7.github.io/colors/?s=2&ga=' + btoa(rgbToHex(grd_r1,grd_g1,grd_b1)) + '&gb=' + btoa(rgbToHex(grd_r2,grd_g2,grd_b2)) + '&gcdeg=' + grd_deg + '&r=' + genid('random') ;
+    if((grd_r1+grd_g1+grd_b1+grd_r2+grd_g2+grd_b2)/6 > 128) {
+      $('#rgb').css({'color':'#000'});
+    }
+    else {
+      $('#rgb').css({'color':'#fff'});
+    }
+    //$('.color').fadeIn(222);
+    $('.color').css({'background':'linear-gradient(' + grd_deg + 'deg ,' +  rgbToHex(grd_r1,grd_g1,grd_b1) + ' 0%,' +  rgbToHex(grd_r2,grd_g2,grd_b2) + ' 100%)'})
+      $('#rgb').val('linear-gradient(' + grd_deg + 'deg ,' +  rgbToHex(grd_r1,grd_g1,grd_b1) + ' 0%,' +  rgbToHex(grd_r2,grd_g2,grd_b2) + ' 100%)');   
+    
+
+});
   
   
 
