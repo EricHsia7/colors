@@ -351,7 +351,9 @@ width:70%;
 var url = new URL(getUrlString);
 var sharecolor = url.searchParams.get('s') ;
 var shcolor = atob(url.searchParams.get('c')) ;
-  
+  var gc1 = atob(url.searchParams.get('ga')) ;
+  var gc2 = atob(url.searchParams.get('gb')) ;
+  var gcdeg = url.searchParams.get('gdeg') ;
   
 var ccw = 256;
 var ccwa = (ccw*ccw) ;
@@ -585,6 +587,22 @@ if((hexToRgb(shcolor).r+hexToRgb(shcolor).g+hexToRgb(shcolor))/3 > 128) {
     $('.color').css({'background':shcolor})
       $('#rgb').val(shcolor);
 }
+  
+  if(sharecolor === "2") {
+    if((hexToRgb(gc1).r+hexToRgb(gc1).g+hexToRgb(gc1).b+hexToRgb(gc2).r+hexToRgb(gc2).g+hexToRgb(gc2).b)/6 > 128) {
+      $('#rgb').css({'color':'#000'});
+    }
+    else {
+      $('#rgb').css({'color':'#fff'});
+    }
+    var grd = 'linear-gradient(' + gcdeg + ',' +  gc1 + '0%,' +  gc2 + '100%)' ;
+    $('.color').fadeIn(222);
+    $('.color').css({'background':grd});
+    $('#rgb').val(gcdeg + 'deg,' + gc1 + ',' + gc2);
+  }
+  
+  
+  
 var rgbinput =document.getElementById('rgb');
 rgbinput.addEventListener('copy', (event) => {
     $('.copied').fadeIn(111).css({'display':'flex'}).delay(500).fadeOut(111)
