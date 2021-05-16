@@ -545,10 +545,6 @@ $('.ft2').click(function() {
 
 $('#textu').on('keypress',function(e) {
     if(e.which == 13) {
-      if(indexOf('linear-gradient(') != -1){
-        //$('#textu').blur();
-      }
-      else {
       //$('.colorte').fadeOut(222);
       $('#textu').blur();
 if((hexToRgb($('#textu').val()).r+hexToRgb($('#textu').val()).g+hexToRgb($('#textu').val()).b)/3 > 128) {
@@ -561,10 +557,6 @@ if((hexToRgb($('#textu').val()).r+hexToRgb($('#textu').val()).g+hexToRgb($('#tex
     $('.color').css({'background':$('#textu').val()})
       $('#rgb').val($('#textu').val());
       location.href = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa($('#textu').val()) + '&r=' + genid('random');
-    }
-  
-  
-  
     }
 });
   
