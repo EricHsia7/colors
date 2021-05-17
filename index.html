@@ -629,11 +629,12 @@ var grd_deg = Math.floor(Math.random() * 360);
   $('.vis').click(function() {
     if (ni > 1) {
     $('.vis').css({'background':'rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/visibility.png)','opacity':'0.3','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
+     $('#menuj').fadeOut(333);
     ni -= 2 ;
     }
     else {
-      $('.vis').css({'background':'rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/invisible.png)','opacity':'0.3','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
-    
+      $('.vis').css({'background':'rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/invisible.png)','opacity':'1','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
+    $('#menuj').fadeIn(333);
       ni += 2 ;
     }
     });
