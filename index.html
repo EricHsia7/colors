@@ -623,9 +623,10 @@ var grd_deg = Math.floor(Math.random() * 360);
     $('.color').css({'background':'linear-gradient(' + grd_deg + 'deg ,' +  rgbToHex(grd_r1,grd_g1,grd_b1) + ' 0%,' +  rgbToHex(grd_r2,grd_g2,grd_b2) + ' 100%)'})
       $('#rgb').val('linear-gradient(' + grd_deg + 'deg ,' +  rgbToHex(grd_r1,grd_g1,grd_b1) + ' 0%,' +  rgbToHex(grd_r2,grd_g2,grd_b2) + ' 100%)').attr('shga',rgbToHex(grd_r1,grd_g1,grd_b1)).attr('shgb',rgbToHex(grd_r2,grd_g2,grd_b2)).attr('shdeg',grd_deg);   
     
-
 });
-  
+  $('.vis').click(function() {
+    $('.vis').css({'background':'rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/invisible.png)','opacity':'0.3','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
+  });
   
 
   
