@@ -351,6 +351,7 @@ width:70%;
   background:#fff;
   border-radius:15px;
   overflow:hidden;
+  display:none;
 }
 #qrbox #qrclbtn {
   position:absolute;
@@ -392,7 +393,8 @@ width:70%;
   left:0px;
   width:100%;
   height:100%;
-  background:rgba(0, 0, 0, 0.6)
+  background:rgba(0, 0, 0, 0.6);
+  display:none;
 }
 
 </style>
@@ -648,9 +650,16 @@ $('.ft2').click(function() {
 })
   
   $('.qrt').click(function() {
+$('#qrbox,#qrbg').fadeIn(333);
+    if(sharecolor === "1") {
+  var shurw = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa($('#rgb').val()) + '&r=' + genid('random') ;
+  }
+  if(sharecolor === "2") {
+  var shurw = 'https://erichsia7.github.io/colors/?s=2&ga=' + btoa($('#rgb').attr('shga')) + '&gb=' + btoa($('#rgb').attr('shgb')) + '&gdeg=' + $('#rgb').attr('shdeg') + '&r=' + genid('random') ;
+  }
     document.querySelector('#qr').innerHTML = '';
 var qrcode = new QRCode(document.querySelector('#qr') , {
-    text: "https://erichsia7.github.io/colors/?s=2&ga=I2M1MzJlZQ==&gb=IzEzZmI2Ng==&gdeg=119&r=uhlwj78gohq8q1rf",
+    text: shurw,
     width: 512,
     height: 512,
     colorDark : "#000",
@@ -658,8 +667,9 @@ var qrcode = new QRCode(document.querySelector('#qr') , {
     correctLevel : QRCode.CorrectLevel.H
 });
   });
-  
-  
+    $('#qrclbtn').click(function() {
+  $('#qrbox,#qrbg').fadeOut(333);
+    });
  
 
 $('#textu').on('keypress',function(e) {
