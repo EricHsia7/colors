@@ -345,13 +345,15 @@ width:70%;
   position:fixed;
   top:50%;
   left:50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%) scale(0.8);
+  opacity:0;
   width:250px;
   height:305px;
   background:#fff;
   border-radius:15px;
   overflow:hidden;
   display:none;
+  transition:0.5s;
 }
 #qrbox #qrclbtn {
   position:absolute;
@@ -650,7 +652,12 @@ $('.ft2').click(function() {
 })
   
   $('.qrt').click(function() {
-$('#qrbox,#qrbg').fadeIn(333);
+$('#qrbg').fadeIn(333);
+ $('#qrbox').css({'display':'block'});
+    setTimeout(function(){ 
+    $('#qrbox').css({'transform':'translate(-50%,-50%) scale(1)','opacity':'1'});
+    }, 1);
+  
     if(sharecolor === "1") {
   var shurw = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa($('#rgb').val()) + '&r=' + genid('random') ;
   }
@@ -668,7 +675,12 @@ var qrcode = new QRCode(document.querySelector('#qr') , {
 });
   });
     $('#qrclbtn').click(function() {
-  $('#qrbox,#qrbg').fadeOut(333);
+  $('#qrbg').fadeOut(333);
+       
+      $('#qrbox').css({'transform':'translate(-50%,-50%) scale(1)','opacity':'1'});
+    setTimeout(function(){ 
+    $('#qrbox').css({'display':'block'});
+    }, 510);
     });
  
 
