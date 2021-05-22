@@ -677,9 +677,9 @@ var qrcode = new QRCode(document.querySelector('#qr') , {
     $('#qrclbtn').click(function() {
   $('#qrbg').fadeOut(333);
        
-      $('#qrbox').css({'transform':'translate(-50%,-50%) scale(1)','opacity':'1'});
+      $('#qrbox').css({'transform':'translate(-50%,-50%) scale(0.8)','opacity':'0'});
     setTimeout(function(){ 
-    $('#qrbox').css({'display':'block'});
+    $('#qrbox').css({'display':'none'});
     }, 510);
     });
  
