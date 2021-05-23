@@ -645,11 +645,11 @@ if (navigator.share) {
 })
 $('.fti').click(function() {
   $('.colorte').fadeOut(222);
-})
+});
 $('.ft2').click(function() {
   $('.colorte').fadeIn(222);
-  $('#textu').val('')
-})
+  $('#textu').val('');
+});
   
   $('.qrt').click(function() {
 $('#qrbg').fadeIn(333);
@@ -709,7 +709,7 @@ if((hexToRgb($('#textu').val()).r+hexToRgb($('#textu').val()).g+hexToRgb($('#tex
       $('#rgb').css({'color':'#fff'});
     }
     //$('.color').fadeIn(222);
-    $('.color').css({'background':$('#textu').val()})
+    $('.color').css({'background':$('#textu').val()});
       $('#rgb').val($('#textu').val());
       location.href = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa($('#textu').val()) + '&r=' + genid('random');
       
@@ -732,7 +732,7 @@ var rand_b = Math.floor(Math.random() * 255);
       $('#rgb').css({'color':'#fff'});
     }
     //$('.color').fadeIn(222);
-    $('.color').css({'background':rgbToHex(rand_r,rand_g,rand_b)})
+    $('.color').css({'background':rgbToHex(rand_r,rand_g,rand_b)});
       $('#rgb').val(rgbToHex(rand_r,rand_g,rand_b));   
     
 
@@ -757,9 +757,8 @@ var grd_deg = Math.floor(Math.random() * 360);
       $('#rgb').css({'color':'#fff'});
     }
     //$('.color').fadeIn(222);
-    $('.color').css({'background':'linear-gradient(' + grd_deg + 'deg ,' +  rgbToHex(grd_r1,grd_g1,grd_b1) + ' 0%,' +  rgbToHex(grd_r2,grd_g2,grd_b2) + ' 100%)'})
-      $('#rgb').val('linear-gradient(' + grd_deg + 'deg ,' +  rgbToHex(grd_r1,grd_g1,grd_b1) + ' 0%,' +  rgbToHex(grd_r2,grd_g2,grd_b2) + ' 100%)').attr('shga',rgbToHex(grd_r1,grd_g1,grd_b1)).attr('shgb',rgbToHex(grd_r2,grd_g2,grd_b2)).attr('shdeg',grd_deg);   
-    
+    $('.color').css({'background':'linear-gradient(' + grd_deg + 'deg ,' +  rgbToHex(grd_r1,grd_g1,grd_b1) + ' 0%,' +  rgbToHex(grd_r2,grd_g2,grd_b2) + ' 100%)'});
+      $('#rgb').val('linear-gradient(' + grd_deg + 'deg ,' +  rgbToHex(grd_r1,grd_g1,grd_b1) + ' 0%,' +  rgbToHex(grd_r2,grd_g2,grd_b2) + ' 100%)').attr('shga',rgbToHex(grd_r1,grd_g1,grd_b1)).attr('shgb',rgbToHex(grd_r2,grd_g2,grd_b2)).attr('shdeg',grd_deg);
 });
   var ni = 2 ;
   $('.vis').click(function() {
@@ -774,9 +773,6 @@ var grd_deg = Math.floor(Math.random() * 360);
       ni += 2 ;
     }
     });
-  
-
-  
 if(sharecolor === "1") {
 if((hexToRgb(shcolor).r+hexToRgb(shcolor).g+hexToRgb(shcolor).b)/3 > 128) {
       $('#rgb').css({'color':'#000'});
@@ -788,7 +784,6 @@ if((hexToRgb(shcolor).r+hexToRgb(shcolor).g+hexToRgb(shcolor).b)/3 > 128) {
     $('.color').css({'background':shcolor})
       $('#rgb').val(shcolor);
 }
-  
   if(sharecolor === "2") {
     if((hexToRgb(gc1).r+hexToRgb(gc1).g+hexToRgb(gc1).b+hexToRgb(gc2).r+hexToRgb(gc2).g+hexToRgb(gc2).b)/6 > 128) {
       $('#rgb').css({'color':'#000'});
@@ -801,9 +796,6 @@ if((hexToRgb(shcolor).r+hexToRgb(shcolor).g+hexToRgb(shcolor).b)/3 > 128) {
     $('.color').css({'background':grd});
     $('#rgb').val(grd).attr('shga',gc1).attr('shgb',gc2).attr('shdeg',gcdeg);
   }
-  
-  
-  
 var rgbinput =document.getElementById('rgb');
 rgbinput.addEventListener('copy', (event) => {
     $('.copied').fadeIn(111).css({'display':'flex'}).delay(500).fadeOut(111)
