@@ -686,8 +686,21 @@ var qrcode = new QRCode(document.querySelector('#qr') , {
 
 $('#textu').on('keypress',function(e) {
   
-    if(e.which == 13) {
-      //$('.colorte').fadeOut(222);
+    if(e.which == 13) {    
+      if($('#textu').val().indexOf('linear-gradient') != -1) {
+  var linearc = $('#textu').val() ;
+var linearcd = linearc.split("(")[1].split(")")[0].split(",") ;
+
+var lineardeg = parseInt(linearcd[0]) ;
+
+var linearga = linearcd[1].split(" ")[0] ;
+
+var lineargb = linearcd[2].split(" ")[0] ;
+        
+location.href = 'https://erichsia7.github.io/colors/?s=2&ga=' + btoa(linearga) + '&gb=' + btoa(lineargb) + '&gdeg=' + lineardeg + '&r=' + genid('random') ;
+         }
+      else {
+              //$('.colorte').fadeOut(222);
       $('#textu').blur();
 if((hexToRgb($('#textu').val()).r+hexToRgb($('#textu').val()).g+hexToRgb($('#textu').val()).b)/3 > 128) {
       $('#rgb').css({'color':'#000'});
@@ -699,6 +712,9 @@ if((hexToRgb($('#textu').val()).r+hexToRgb($('#textu').val()).g+hexToRgb($('#tex
     $('.color').css({'background':$('#textu').val()})
       $('#rgb').val($('#textu').val());
       location.href = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa($('#textu').val()) + '&r=' + genid('random');
+      
+      }
+            
     }
 });
   
