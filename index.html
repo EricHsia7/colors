@@ -409,7 +409,7 @@ top:0px;
 left:0px;
 width:0px;
 height:2px;
-transition:width 0.1s ,background 0s;
+transition:width 0.3s ,background 0s;
 }
 </style>
 <canvas id="cc" width="128" height="128" style="background:#fff;"></canvas>
@@ -475,7 +475,7 @@ transition:width 0.1s ,background 0s;
 <script>
 lade = 0 ;
 function ladbaradd() {
-lade += 0.6+Math.floor(Math.random() * 2) ;
+lade += 2.6+Math.floor(Math.random() * 2) ;
 $('.ladbar').css({'width':lade + '%'});
 if(lade > 80) {
 clearInterval(ladbar);
