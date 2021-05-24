@@ -137,6 +137,7 @@ var sharecolor = url.searchParams.get('s') ;
 var gc1 = atob(url.searchParams.get('ga')) ;
   var gc2 = atob(url.searchParams.get('gb')) ;
   var gcdeg = url.searchParams.get('gdeg') ;
+    var ttext = url.searchParams.get('text') ;
     function genid(mode) {
 if(mode === "random"){
 var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
@@ -248,7 +249,7 @@ var grd_b2 = Math.floor(Math.random() * 255);
 
 var grd_deg = Math.floor(Math.random() * 360);
 
-    location.href = 'https://erichsia7.github.io/colors/card/edit/?bgd=1&ga=' + btoa(rgbToHex(grd_r1,grd_g1,grd_b1)) + '&gb=' + btoa(rgbToHex(grd_r2,grd_g2,grd_b2)) + '&gdeg=' + grd_deg + '&r=' + genid('random') ;
+    location.href = 'https://erichsia7.github.io/colors/card/edit/?bgd=1&ga=' + btoa(rgbToHex(grd_r1,grd_g1,grd_b1)) + '&gb=' + btoa(rgbToHex(grd_r2,grd_g2,grd_b2)) + '&gdeg=' + grd_deg + '&r=' + genid('random') + '&text=' ;
     
     }
   </script>
