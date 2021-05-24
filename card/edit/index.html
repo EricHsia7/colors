@@ -32,7 +32,6 @@ position:fixed;
   transform:translate(-50%,-50%);
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.08);
   display:block;
-  transition:background 0.5s;
 }
 .color_textcard textarea {
 border:none;
@@ -124,8 +123,6 @@ width:45px;
   float:left;
   margin-left:10px;
 }
-  
-  
     .ladbar {
 background:#000;
 position:fixed;
@@ -262,13 +259,10 @@ $( window ).resize(function() {
 resizecard();
 });
 resizecard();
-
-
 function ReplaceAll(strOrg,strFind,strReplace)
 {
     return strOrg.replace(new RegExp(strFind,"g"),strReplace);
 }
-
 setInterval(function() {
   $('.color_textcard span').html(ReplaceAll($('.color_textcard textarea').val(),"\n","<br><z>&nbsp</z>"));
     $('.color_textcard textarea').height($('.color_textcard span').height());
@@ -291,15 +285,14 @@ $('.color_textcard textarea').val(decodeURIComponent(atob(url.searchParams.get('
   
     }
     else {
+      $('.ladbar').css({'display':'none'});
     var grd_r1 = Math.floor(Math.random() * 255);
 var grd_g1 = Math.floor(Math.random() * 255);  
 var grd_b1 = Math.floor(Math.random() * 255);
 var grd_r2 = Math.floor(Math.random() * 255);
 var grd_g2 = Math.floor(Math.random() * 255);  
 var grd_b2 = Math.floor(Math.random() * 255);
-
 var grd_deg = Math.floor(Math.random() * 360);
-
     location.href = 'https://erichsia7.github.io/colors/card/edit/?bgd=1&ga=' + btoa(rgbToHex(grd_r1,grd_g1,grd_b1)) + '&gb=' + btoa(rgbToHex(grd_r2,grd_g2,grd_b2)) + '&gdeg=' + grd_deg + '&t=&r=' + genid('random') ;
     
     }
