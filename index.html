@@ -780,8 +780,6 @@ if((hexToRgb($('#textu').val()).r+hexToRgb($('#textu').val()).g+hexToRgb($('#tex
 var rand_r = Math.floor(Math.random() * 255);
 var rand_g = Math.floor(Math.random() * 255);  
 var rand_b = Math.floor(Math.random() * 255);
-
-
     location.href = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(rand_r,rand_g,rand_b)) + '&r=' + genid('random') ;
     if((rand_r+rand_g+rand_b)/3 > 128) {
       $('#rgb').css({'color':'#000'});
@@ -792,10 +790,10 @@ var rand_b = Math.floor(Math.random() * 255);
     //$('.color').fadeIn(222);
     $('.color').css({'background':rgbToHex(rand_r,rand_g,rand_b)});
       $('#rgb').val(rgbToHex(rand_r,rand_g,rand_b));   
-    
-
 });
-  
+  $('.crtd').click(function() {
+    location.href = 'https://erichsia7.github.io/colors/card/edit/' ;
+  });
   
   $('.grd').click(function() {
 var grd_r1 = Math.floor(Math.random() * 255);
