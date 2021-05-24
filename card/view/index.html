@@ -116,13 +116,29 @@ width:45px;
   bottom:30px;
   transform:translateX(-50%);
     height:45px;
-    width:120px;
+    width:170px;
   }
   .eel {
   float:left;
   margin-left:10px;
 }
-  
+  .share3 {
+width:45px;
+  height:45px;
+  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/share3.png);
+  background-size:25px;
+  background-position:center;
+  background-repeat:no-repeat;
+  border-radius:99em;
+  font-weight:medium;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size:1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#333;
+    
+}
   
     .ladbar {
 background:#000;
@@ -142,6 +158,7 @@ transition:width 0.3s ,background 0s;
 </div>
   
     <div id="menug">
+      <div class="share3 eel"></div>
     <div class="edi eel"></div>
     <div class="cli eel"></div>
   </div>
@@ -304,7 +321,20 @@ var grd_deg = Math.floor(Math.random() * 360);
     $('.cli').click(function() {
       location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random') ;
     });
-    
+    $('.share3').click(function() {
+var shur = 'https://erichsia7.github.io/colors/card/edit/?bgd=1&ga=' + btoa($('.color_textcard textarea').attr('shga')) + '&gb=' + btoa($('.color_textcard textarea').attr('shgb')) + '&gdeg=' + $('.color_textcard textarea').attr('shdeg') + '&t=' + btoa(encodeURIComponent($('.color_textcard textarea').val())) + '&r=' + genid('random') ;
+      if (navigator.share) { 
+   navigator.share({
+      title: document.title,
+      url: shur
+    }).then(() => {
+      
+    })
+    .catch(console.error);
+    } else {
+        shareDialog.classList.add('is-open');
+    }
+    });
     
   </script>
 
