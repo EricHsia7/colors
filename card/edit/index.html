@@ -137,7 +137,7 @@ var sharecolor = url.searchParams.get('s') ;
 var gc1 = atob(url.searchParams.get('ga')) ;
   var gc2 = atob(url.searchParams.get('gb')) ;
   var gcdeg = url.searchParams.get('gdeg') ;
-    var ttext = url.searchParams.get('text') ;
+
     function genid(mode) {
 if(mode === "random"){
 var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
@@ -225,7 +225,7 @@ setInterval(function() {
     $('.color_textcard textarea').height($('.color_textcard span').height());
   },1);
     if(bgd === "1") {
-      $('.color_textcard textarea').val(ttext);
+
       
     if((hexToRgb(gc1).r+hexToRgb(gc1).g+hexToRgb(gc1).b+hexToRgb(gc2).r+hexToRgb(gc2).g+hexToRgb(gc2).b)/6 > 128) {
       $('.color_textcard textarea').css({'color':'#000'});
@@ -251,9 +251,13 @@ var grd_b2 = Math.floor(Math.random() * 255);
 
 var grd_deg = Math.floor(Math.random() * 360);
 
-    location.href = 'https://erichsia7.github.io/colors/card/edit/?bgd=1&ga=' + btoa(rgbToHex(grd_r1,grd_g1,grd_b1)) + '&gb=' + btoa(rgbToHex(grd_r2,grd_g2,grd_b2)) + '&gdeg=' + grd_deg + '&r=' + genid('random') + '&text=' ;
+    location.href = 'https://erichsia7.github.io/colors/card/edit/?bgd=1&ga=' + btoa(rgbToHex(grd_r1,grd_g1,grd_b1)) + '&gb=' + btoa(rgbToHex(grd_r2,grd_g2,grd_b2)) + '&gdeg=' + grd_deg + '&r=' + genid('random') ;
     
     }
+    $('.oki').click(function() {
+      location.href = 'https://erichsia7.github.io/colors/card/edit/?bgd=1&ga=' + btoa($('.color_textcard textarea').attr('shga')) + '&gb=' + btoa($('.color_textcard textarea').attr('shgb')) + '&gdeg=' + $('.color_textcard textarea').attr('shdeg') + '&t=' + btoa(encodeURIComponent($('.color_textcard textarea').val())) + '&r=' + genid('random') ;
+
+    });
   </script>
 </body>
 </html>
