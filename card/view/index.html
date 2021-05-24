@@ -322,7 +322,7 @@ var grd_deg = Math.floor(Math.random() * 360);
       location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random') ;
     });
     $('.share3').click(function() {
-var shur = 'https://erichsia7.github.io/colors/card/edit/?bgd=1&ga=' + btoa($('.color_textcard textarea').attr('shga')) + '&gb=' + btoa($('.color_textcard textarea').attr('shgb')) + '&gdeg=' + $('.color_textcard textarea').attr('shdeg') + '&t=' + btoa(encodeURIComponent($('.color_textcard textarea').val())) + '&r=' + genid('random') ;
+var shur = 'https://erichsia7.github.io/colors/card/view/?bgd=1&ga=' + btoa($('.color_textcard textarea').attr('shga')) + '&gb=' + btoa($('.color_textcard textarea').attr('shgb')) + '&gdeg=' + $('.color_textcard textarea').attr('shdeg') + '&t=' + btoa(encodeURIComponent($('.color_textcard textarea').val())) + '&r=' + genid('random') ;
       if (navigator.share) { 
    navigator.share({
       title: document.title,
