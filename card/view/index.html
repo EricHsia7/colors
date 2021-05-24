@@ -71,10 +71,10 @@ border:none;
   line-height:2.3rem;
   word-break: break-all;
 }
-.oki {
+.edi {
 width:45px;
   height:45px;
-  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/tick.png);
+  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/edit.png);
   background-size:25px;
   background-position:center;
   background-repeat:no-repeat;
@@ -135,7 +135,10 @@ transition:width 0.3s ,background 0s;
   <textarea placeholder="輸入文字" readonly="readonly"></textarea>
 </div>
   
-  
+    <div id="menug">
+    <div class="edi eel"></div>
+    <div class="cli eel"></div>
+  </div>
   
   
   <div class="ladbar"></div>
@@ -291,8 +294,8 @@ var grd_deg = Math.floor(Math.random() * 360);
     location.href = 'https://erichsia7.github.io/colors/card/edit/?bgd=1&ga=' + btoa(rgbToHex(grd_r1,grd_g1,grd_b1)) + '&gb=' + btoa(rgbToHex(grd_r2,grd_g2,grd_b2)) + '&gdeg=' + grd_deg + '&r=' + genid('random') ;
     
     }
-    $('.oki').click(function() {
-      location.href = 'https://erichsia7.github.io/colors/card/view/?bgd=1&ga=' + btoa($('.color_textcard textarea').attr('shga')) + '&gb=' + btoa($('.color_textcard textarea').attr('shgb')) + '&gdeg=' + $('.color_textcard textarea').attr('shdeg') + '&t=' + btoa(encodeURIComponent($('.color_textcard textarea').val())) + '&r=' + genid('random') ;
+    $('.edi').click(function() {
+      location.href = 'https://erichsia7.github.io/colors/card/edit/?bgd=1&ga=' + btoa($('.color_textcard textarea').attr('shga')) + '&gb=' + btoa($('.color_textcard textarea').attr('shgb')) + '&gdeg=' + $('.color_textcard textarea').attr('shdeg') + '&t=' + btoa(encodeURIComponent($('.color_textcard textarea').val())) + '&r=' + genid('random') ;
     });
     
     
