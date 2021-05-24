@@ -71,7 +71,30 @@ border:none;
   line-height:2.3rem;
   word-break: break-all;
 }
-
+.oki {
+width:45px;
+  height:45px;
+  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/close2.png);
+  background-size:25px;
+  background-position:center;
+  background-repeat:no-repeat;
+  border-radius:99em;
+  font-weight:medium;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size:1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#333;
+  } 
+  #menug {
+  position:fixed;
+  left:50%;
+  bottom:30px;
+  transform:translateX(-50%);
+    height:45px;
+    width:65px;
+  }
 </style>
 </head>
 <body>
@@ -79,6 +102,11 @@ border:none;
   <span>s</span>
   <textarea placeholder="輸入文字"></textarea>
 </div>
+  
+  <div id="menug">
+    <div class="oki"></div>
+  </div>
+  
   <script>
   var getUrlString = location.href;
 var url = new URL(getUrlString);
