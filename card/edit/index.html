@@ -133,38 +133,6 @@ width:45px;
   var getUrlString = location.href;
 var url = new URL(getUrlString);
 var sharecolor = url.searchParams.get('s') ;
-var shcolor = atob(url.searchParams.get('c')) ;
-  var gc1 = atob(url.searchParams.get('ga')) ;
-  var gc2 = atob(url.searchParams.get('gb')) ;
-  var gcdeg = url.searchParams.get('gdeg') ;
-function componentToHex(c) {
-  var hex = c.toString(16);
-  return hex.length == 1 ? "0" + hex : hex;
-}
-
-function rgbToHex(r, g, b) {
-  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-}
-function hexToRgb(hex) {
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result ? {
-    r: parseInt(result[1], 16),
-    g: parseInt(result[2], 16),
-    b: parseInt(result[3], 16)
-  } : null;
-}
-
-if(sharecolor === "3") {    if((hexToRgb(gc1).r+hexToRgb(gc1).g+hexToRgb(gc1).b+hexToRgb(gc2).r+hexToRgb(gc2).g+hexToRgb(gc2).b)/6 > 128) {
-      $('.color_textcard textarea').css({'color':'#000'});
-    }
-    else {
-      $('.color_textcard textarea').css({'color':'#fff'});
-    }
-    var grd = 'linear-gradient(' + gcdeg + 'deg ,' +  gc1 + ' 0%,' +  gc2 + ' 100%)' ;
-    $('.color_textcard').fadeIn(222);
-    $('.color_textcard').css({'background':grd});
-    $('#rgb').val(grd).attr('shga',gc1).attr('shgb',gc2).attr('shdeg',gcdeg);
-  }
 
 function resizecard() {
  $('.color_textcard').height($('.color_textcard').width()*1.3);
@@ -180,9 +148,7 @@ resizecard();
 });
 resizecard();
 
-
-
-$('.color_textcard textarea').val(decodeURIComponent(atob(url.searchParams.get('t'))))
+$('.color_textcard textarea').val('');
 
 function ReplaceAll(strOrg,strFind,strReplace)
 {
