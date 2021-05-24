@@ -137,7 +137,6 @@ var sharecolor = url.searchParams.get('s') ;
 function resizecard() {
  $('.color_textcard').height($('.color_textcard').width()*1.3);
   if($('.color_textcard').width() > $('.color_textcard').height()/1.3) {
- //$('.color_textcard').width($('.color_textcard').height()/1.3)
   }
   else {
  $('.color_textcard').height($('.color_textcard').width()*1.3)
@@ -156,10 +155,9 @@ function ReplaceAll(strOrg,strFind,strReplace)
 }
 
 setInterval(function() {
-  $('.color_textcard span').html(ReplaceAll($('.color_textcard textarea').val(),"\n","<br><z>&nbsp</z>"))
-    $('.color_textcard textarea').height($('.color_textcard span').height())
-  },1)
+  $('.color_textcard span').html(ReplaceAll($('.color_textcard textarea').val(),"\n","<br><z>&nbsp</z>"));
+    $('.color_textcard textarea').height($('.color_textcard span').height());
+  },1);
   </script>
-
 </body>
 </html>
