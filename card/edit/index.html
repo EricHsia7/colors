@@ -225,6 +225,8 @@ setInterval(function() {
     $('.color_textcard textarea').height($('.color_textcard span').height());
   },1);
     if(bgd === "1") {
+      $('.color_textcard textarea').val(ttext);
+      
     if((hexToRgb(gc1).r+hexToRgb(gc1).g+hexToRgb(gc1).b+hexToRgb(gc2).r+hexToRgb(gc2).g+hexToRgb(gc2).b)/6 > 128) {
       $('.color_textcard textarea').css({'color':'#000'});
       $('.ladbar').css({'background':'#000'});
