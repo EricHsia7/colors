@@ -126,7 +126,7 @@ top:0px;
 left:0px;
 width:0px;
 height:2px;
-transition:width 0.3s ,background 0s;
+transition: width 0.3s ,background 0s;
 }
 </style>
 </head>
@@ -272,11 +272,11 @@ setInterval(function() {
       
     if((hexToRgb(gc1).r+hexToRgb(gc1).g+hexToRgb(gc1).b+hexToRgb(gc2).r+hexToRgb(gc2).g+hexToRgb(gc2).b)/6 > 128) {
       $('.color_textcard textarea').css({'color':'#000'});
-      $('.ladbar').css({'background':'#000'});
+      
     }
     else {
       $('.color_textcard textarea').css({'color':'#fff'});
-      $('.ladbar').css({'background':'#fff'});
+      
     }
     var grd = 'linear-gradient(' + gcdeg + 'deg ,' +  gc1 + ' 0%,' +  gc2 + ' 100%)' ;
     
