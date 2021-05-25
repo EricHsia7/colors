@@ -142,6 +142,83 @@ width:45px;
     
 }
   
+    .qrt {
+width:45px;
+  height:45px;
+  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/qrcode.png);
+  background-size:25px;
+  background-position:center;
+  background-repeat:no-repeat;
+  border-radius:99em;
+  font-weight:medium;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size:1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#333;
+}
+  #qrbox {
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%) scale(0.8);
+  opacity:0;
+  width:250px;
+  height:305px;
+  background:#fff;
+  border-radius:15px;
+  overflow:hidden;
+  display:none;
+  transition:0.5s;
+}
+#qrbox #qrclbtn {
+  position:absolute;
+  bottom:10px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#fff;
+  height:45px;
+  width:calc(100% - 20px);
+  border-radius:15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#000;
+  font-size:20px;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight:700;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.08);
+}
+#qr {
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:250px;
+  height:250px;
+  background:#fff;
+  overflow:hidden;
+}
+#qr img {
+  width:230px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+#qrbg {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  background:rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(15px);
+backdrop-filter: blur(15px);
+  display:none;
+}
+  
+  
     .ladbar {
 background:#000;
 position:fixed;
@@ -160,7 +237,8 @@ transition:width 0.3s ,background 0s;
 </div>
   
     <div id="menug">
-      <div class="share3 eel"></div>
+    <div class="share3 eel"></div>
+    <div class="qrt eel"></div>
     <div class="edi eel"></div>
     <div class="cli eel"></div>
   </div>
@@ -337,7 +415,23 @@ var shur = 'https://erichsia7.github.io/colors/card/view/?bgd=1&ga=' + btoa($('.
         shareDialog.classList.add('is-open');
     }
     });
-    
+    $('.qrt').click(function() {
+$('#qrbg').fadeIn(333);
+ $('#qrbox').css({'display':'block'});
+    setTimeout(function(){ 
+    $('#qrbox').css({'transform':'translate(-50%,-50%) scale(1)','opacity':'1'});
+    }, 1);
+  var shurw = 'https://erichsia7.github.io/colors/card/view/?bgd=1&ga=' + btoa($('.color_textcard textarea').attr('shga')) + '&gb=' + btoa($('.color_textcard textarea').attr('shgb')) + '&gdeg=' + $('.color_textcard textarea').attr('shdeg') + '&t=' + btoa(encodeURIComponent($('.color_textcard textarea').val())) + '&r=' + genid('random') ;
+    document.querySelector('#qr').innerHTML = '';
+var qrcode = new QRCode(document.querySelector('#qr') , {
+    text: shurw,
+    width: 512,
+    height: 512,
+    colorDark : "#000",
+    colorLight : "#fff",
+    correctLevel : QRCode.CorrectLevel.H
+});
+  });
   </script>
 
 </body>
