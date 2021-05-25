@@ -441,6 +441,14 @@ var qrcode = new QRCode(document.querySelector('#qr') , {
     correctLevel : QRCode.CorrectLevel.H
 });
   });
+    $('#qrclbtn').click(function() {
+  $('#qrbg').fadeOut(333);
+       
+      $('#qrbox').css({'transform':'translate(-50%,-50%) scale(0.8)','opacity':'0'});
+    setTimeout(function(){ 
+    $('#qrbox').css({'display':'none'});
+    }, 510);
+    });
   </script>
 
 </body>
