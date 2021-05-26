@@ -784,7 +784,7 @@ width:70%;
   opacity:0;
   width:250px;
   height:305px;
-  background:#fff;
+  background:#1a1a1a;
   border-radius:15px;
   overflow:hidden;
   display:none;
@@ -795,14 +795,14 @@ width:70%;
   bottom:10px;
   left:50%;
   transform:translateX(-50%);
-  background:#fff;
+  background:#1a1a1a;
   height:45px;
   width:calc(100% - 20px);
   border-radius:15px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color:#000;
+  color:#fff;
   font-size:20px;
   font-family: 'Noto Sans TC', sans-serif;
   font-weight:700;
@@ -814,7 +814,7 @@ width:70%;
   left:0px;
   width:250px;
   height:250px;
-  background:#fff;
+  background:#1a1a1a;
   overflow:hidden;
 }
 #qr img {
@@ -1144,8 +1144,8 @@ var qrcode = new QRCode(document.querySelector('#qr') , {
     text: shurw,
     width: 512,
     height: 512,
-    colorDark : "#000",
-    colorLight : "#fff",
+    colorDark : "#fff",
+    colorLight : "#1a1a1a",
     correctLevel : QRCode.CorrectLevel.H
 });
   });
