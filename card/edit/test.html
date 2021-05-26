@@ -32,7 +32,9 @@ position:fixed;
   border-radius:20px;
   transform:translate(-50%,-50%);
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.08);
-  display:block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .color_textcard textarea {
 border:none;
@@ -263,10 +265,7 @@ function ReplaceAll(strOrg,strFind,strReplace)
 {
     return strOrg.replace(new RegExp(strFind,"g"),strReplace);
 }
-setInterval(function() {
-  $('.color_textcard span').html(ReplaceAll($('.color_textcard textarea').val(),"\n","<br><z>&nbsp</z>"));
-    $('.color_textcard textarea').height($('.color_textcard span').height());
-  },1);
+
     if(bgd === "1") {
 $('.color_textcard').html(decodeURIComponent(atob(url.searchParams.get('t'))))
       
