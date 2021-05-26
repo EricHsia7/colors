@@ -23,7 +23,6 @@
 <link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="shortcut icon" />
 <link rel="manifest" href="manifest.json?q">
 <style>
-
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400,500,700&display=swap');
   * {outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);}
   body {
@@ -58,7 +57,6 @@
   width:120px;
    text-align:center;
 }
-
 .colorte {
   position:fixed;
   top:0px;
@@ -90,14 +88,10 @@
 }
 .fti {
   background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/close2.png);
-  
 }
 .grd {
   background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/gradient.png);
 }
-
-
-
 #cc {
   position:fixed;
   top:0px;
@@ -113,58 +107,34 @@ display:none;
 .filed-img {
   background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/img.png);
 }
-
-
-
 .fi {
   background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/close2.png);
-  
-    
 }
 .fi2 {
   background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/copy2.png);
-  
-    
 }
 .fi3 {
-
   background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/share3.png);
-  
-    
 }
 .ft2 {
-
   background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/text2.png);
-  
-    
 }
-  
-  .qrt {
-
+.qrt {
   background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/qrcode.png);
-  
 }
-    .crtd {
-
+.crtd {
   background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/writing.png);
-  
 }
-  
-  .rand2 {
-
+.rand2 {
   background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/random3.png);
-  
 }
   .vis {
-
   background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/invisible.png);
-  
   position:fixed;
   bottom:30px;
   right:15px;
-    transition:0.3s;
+  transition:0.3s;
 }
-
   .btn {
   background-size:25px;
   background-position:center;
@@ -180,10 +150,6 @@ display:none;
   width:45px;
   height:45px;
   }
-
-
-
-
 .copied {
 position:fixed;
   left:0px;
@@ -218,9 +184,7 @@ position:fixed;
 #menuj {
   width:230px;
   height:45px;
-  }
-  
-  
+  }  
 .lle {
   float:left;
   margin-left:10px;
@@ -233,8 +197,6 @@ width:70%;
     max-width:120px;
    margin-bottom:10px;
 }
-  
-
 #qrbox {
   position:fixed;
   top:50%;
@@ -303,14 +265,10 @@ width:0px;
 height:2px;
 transition:width 0.3s ,background 0s;
 }
-  
   @media (prefers-color-scheme: dark) {
     body {
     background:#1a1a1a;
   }
-
-
-
 .colorte { 
   background:#1a1a1a;  
   color:#fff;
@@ -320,15 +278,12 @@ transition:width 0.3s ,background 0s;
   background:#1F1F1F;
   color:#fff;
 }
-
-
 input#files,input#files2 {
 display:none;
 }
   .vis {
     filter: invert(100%);
 }
-
 .lle {
   float:left;
   margin-left:10px;
@@ -347,9 +302,7 @@ display:none;
   color:#fff;
 }
 #qr {
-  
-  background:#1a1a1a;
-  
+  background:#1a1a1a; 
 }
 #qr img {
   filter: invert(89.79%);
@@ -361,8 +314,7 @@ background:#fff;
 </style>
 <canvas id="cc" width="128" height="128" style="background:#fff;"></canvas>
 <span id="filerj">
-  <center><img src="colors3_svg.svg" id="icon"></center>
-  
+  <center><img src="colors3_svg.svg" id="icon"></center> 
 <div id="filej">
 <label for="files2">
 <div class="filed-img lle btn">
@@ -379,23 +331,16 @@ background:#fff;
   <div class="grd lle ooe btn"></div>
   <div class="crtd lle ooe btn"></div>
 </div>
-  
 </span>
-
-
 <div class="color"> 
-  <input type="text" id="rgb" value="#fff" readonly="readonly">
-  
-  
+  <input type="text" id="rgb" value="#fff" readonly="readonly">  
   <div id="menuj">
   <div class="fi2 lle btn"></div>
   <div class="fi3 lle btn"></div>
   <div class="qrt lle btn"></div>
   <div class="fi lle btn"></div>
-  </div>
-  
+  </div> 
   <div class="vis btn"></div>
-  
 </div>
 <div class="colorte"> 
   <input type="text" id="textu" value="">
@@ -403,21 +348,12 @@ background:#fff;
     <div class="fti lle btn"></div>
   </span>
 </div>
-
-
-
-
 <div class="copied">已複製</div>
-
-
 <div id="qrbg"></div>
 <div id="qrbox">
 <div id="qr"></div>
-  <div id="qrclbtn">
-    關閉
-  </div>
+  <div id="qrclbtn">關閉</div>
 </div>
-
 
 <div class="ladbar"></div>
 <script>
