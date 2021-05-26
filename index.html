@@ -793,7 +793,7 @@ var rand_b = Math.floor(Math.random() * 255);
       $('#rgb').val(rgbToHex(rand_r,rand_g,rand_b));   
 });
   $('.crtd').click(function() {
-    location.href = 'https://erichsia7.github.io/colors/card/edit/' ;
+    location.href = 'https://erichsia7.github.io/colors/card/edit/?r=' + genid('random');
   });
   
   $('.grd').click(function() {
