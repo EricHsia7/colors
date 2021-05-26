@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Colors Card Edit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+  <link href="https://erichsia7.github.io/colors/c2_512.png" sizes="512x512" rel="apple-touch-icon-precomposed" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="defualt" />
+<link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="icon" />
+<link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="bookmark" />
+<link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="shortcut icon" />
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400,500,700&display=swap');
+  * {outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);}
+  .color_textcard {
+position:fixed;
+  top:50%;
+  left:50%;
+  width:85%;
+  height:90%;
+  max-width:400px;
+  max-height:80%;
+  background:#e3e3e3;
+  overflow:scroll;
+  color:#000;
+  font-weight:400;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size:1.6rem;
+  border-radius:20px;
+  transform:translate(-50%,-50%);
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.08);
+  display:block;
+}
+.color_textcard textarea {
+border:none;
+  background:rgba(0, 0, 0, 0);
+  width:calc(100% - 30px);
+  height:2.3rem;
+  min-height:2.3rem;
+  max-height:calc(100% - 30px);
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  padding:0px;
+  margin:0px;
+  color:#fff;
+  font-weight:400;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size:2rem;
+  text-align: center;
+  line-height:2.3rem;
+  outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);
+  overflow:hidden;
+  resize:none;
+}
+
+.color_textcard textarea::placeholder {
+  color: #fff;
+  opacity: 0.8;
+}
+.color_textcard span {
+  border:none;
+  background:rgba(0, 0, 0, 0);
+  width:calc(100% - 30px);
+  max-height:calc(100% - 30px);
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  padding:0px;
+  margin:0px;
+  color:rgba(0, 0, 0, 0);
+  font-weight:400;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size:2rem;
+  text-align: center;
+  line-height:2.3rem;
+  word-break: break-all;
+}
+.oki {
+width:45px;
+  height:45px;
+  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/tick.png);
+  background-size:25px;
+  background-position:center;
+  background-repeat:no-repeat;
+  border-radius:99em;
+  font-weight:medium;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size:1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#333;
+  } 
+  
+  .cli {
+width:45px;
+  height:45px;
+  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/close2.png);
+  background-size:25px;
+  background-position:center;
+  background-repeat:no-repeat;
+  border-radius:99em;
+  font-weight:medium;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size:1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#333;
+  } 
+  #menug {
+  position:fixed;
+  left:50%;
+  bottom:30px;
+  transform:translateX(-50%);
+    height:45px;
+    width:120px;
+  }
+  .eel {
+  float:left;
+  margin-left:10px;
+}
+    .ladbar {
+background:#000;
+position:fixed;
+top:0px;
+left:0px;
+width:0px;
+height:2px;
+transition: width 0.3s ,background 0s;
+}
+</style>
+</head>
+<body>
+<div class="color_textcard" contenteditable="true"></div>
+  
+  <div id="menug">
+    <div class="oki eel"></div>
+    <div class="cli eel"></div>
+  </div>
+  
+  
+  
+  
+  <div class="ladbar"></div>
+<script>
+lade = 0 ;
+function ladbaradd() {
+lade += 5+Math.floor(Math.random() * 2) ;
+$('.ladbar').css({'width':lade + '%'});
+if(lade > 80) {
+clearInterval(ladbar);
+}
+}
+ladbaradd();
+var ladbar = setInterval(ladbaradd,300);
+
+$(document).ready(function() {
+setTimeout(function() {
+clearInterval(ladbar);
+$('.ladbar').css({'width':'105%','transition':'0.7s'});
+},1000);
+
+setTimeout(function() {
+$('.ladbar').css({'opacity':'0'});
+},1500);
+
+setTimeout(function() {
+$('.ladbar').css({'display':'none'});
+},2300);
+});
+</script>
+  <script>
+  var getUrlString = location.href;
+var url = new URL(getUrlString);
+var sharecolor = url.searchParams.get('s') ;
+ var bgd = url.searchParams.get('bgd') ;
+var gc1 = atob(url.searchParams.get('ga')) ;
+  var gc2 = atob(url.searchParams.get('gb')) ;
+  var gcdeg = url.searchParams.get('gdeg') ;
+
+    function genid(mode) {
+if(mode === "random"){
+var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
+            var genid = "";
+            for (var i = 0; i < 16; i++) {
+                var genrandomNumber = Math.floor(Math.random() * genidchars.length);
+                genid += genidchars.substring(genrandomNumber, genrandomNumber + 1);
+            }
+  return genid ;
+}
+          
+ if(mode === "time"){
+   var gtoday=new Date();
+   var genid2 = (gtoday.getMonth()+1) + '_' + gtoday.getDate() + '_' + gtoday.getHours() + '_' + gtoday.getMinutes() + '_' + gtoday.getSeconds() + '-' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8));
+   
+   return genid2
+ }
+  
+  if(mode === "number"){
+   
+   var genid3 = '' ;
+for (var i = 0; i < 16; i++) {
+  genid3 += '' + (0+Math.floor(Math.random() * 9))
+}
+   return genid3
+ }
+  
+  if(mode === "uuid"){
+var genidchars4 = "abcdef012345678";
+    var geniduu = [8,4,4,4,12];
+            var genid4 = "";
+            var genid5 = "";
+    for (var ia = 0; ia < geniduu.length; ia++) {
+      var genid4 = "";
+            for (var i = 0; i < geniduu[ia]; i++) {
+                var genrandomNumber4 = Math.floor(Math.random() * genidchars4.length);
+                genid4 += genidchars4.substring(genrandomNumber4, genrandomNumber4 + 1);
+            }
+genid5 += '-' + genid4 ;
+    }
+    return genid5.substring(1,genid5.length)
+  }
+
+}
+    function componentToHex(c) {
+  var hex = c.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b) {
+  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+function hexToRgb(hex) {
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : null;
+}
+    
+    
+function resizecard() {
+ $('.color_textcard').height($('.color_textcard').width()*1.3);
+  if($('.color_textcard').width() > $('.color_textcard').height()/1.3) {
+  }
+  else {
+ $('.color_textcard').height($('.color_textcard').width()*1.3)
+  }
+}
+$( window ).resize(function() {
+resizecard();
+});
+resizecard();
+function ReplaceAll(strOrg,strFind,strReplace)
+{
+    return strOrg.replace(new RegExp(strFind,"g"),strReplace);
+}
+setInterval(function() {
+  $('.color_textcard span').html(ReplaceAll($('.color_textcard textarea').val(),"\n","<br><z>&nbsp</z>"));
+    $('.color_textcard textarea').height($('.color_textcard span').height());
+  },1);
+    if(bgd === "1") {
+$('.color_textcard').html(decodeURIComponent(atob(url.searchParams.get('t'))))
+      
+    if((hexToRgb(gc1).r+hexToRgb(gc1).g+hexToRgb(gc1).b+hexToRgb(gc2).r+hexToRgb(gc2).g+hexToRgb(gc2).b)/6 > 128) {
+      $('.color_textcard textarea').css({'color':'#000'});
+      
+    }
+    else {
+      $('.color_textcard textarea').css({'color':'#fff'});
+      
+    }
+    var grd = 'linear-gradient(' + gcdeg + 'deg ,' +  gc1 + ' 0%,' +  gc2 + ' 100%)' ;
+    
+    $('.color_textcard').css({'background':grd});
+    $('.color_textcard textarea').attr('shga',gc1).attr('shgb',gc2).attr('shdeg',gcdeg);
+  
+    }
+    else {
+      $('.ladbar').css({'display':'none'});
+    var grd_r1 = Math.floor(Math.random() * 255);
+var grd_g1 = Math.floor(Math.random() * 255);  
+var grd_b1 = Math.floor(Math.random() * 255);
+var grd_r2 = Math.floor(Math.random() * 255);
+var grd_g2 = Math.floor(Math.random() * 255);  
+var grd_b2 = Math.floor(Math.random() * 255);
+var grd_deg = Math.floor(Math.random() * 360);
+    location.href = 'https://erichsia7.github.io/colors/card/edit/?bgd=1&ga=' + btoa(rgbToHex(grd_r1,grd_g1,grd_b1)) + '&gb=' + btoa(rgbToHex(grd_r2,grd_g2,grd_b2)) + '&gdeg=' + grd_deg + '&t=&r=' + genid('random') ;
+    
+    }
+    $('.oki').click(function() {
+      location.href = 'https://erichsia7.github.io/colors/card/view/?bgd=1&ga=' + btoa($('.color_textcard textarea').attr('shga')) + '&gb=' + btoa($('.color_textcard textarea').attr('shgb')) + '&gdeg=' + $('.color_textcard textarea').attr('shdeg') + '&t=' + btoa(encodeURIComponent($('.color_textcard').text())) + '&r=' + genid('random') ;
+
+    });
+        $('.cli').click(function() {
+      location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random') ;
+    });
+  </script>
+</body>
+</html>
