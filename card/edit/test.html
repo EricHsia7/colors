@@ -265,7 +265,11 @@ function ReplaceAll(strOrg,strFind,strReplace)
 {
     return strOrg.replace(new RegExp(strFind,"g"),strReplace);
 }
-
+setInterval(function() {
+   $('.color_textcard span').html(ReplaceAll($('.color_textcard textarea').html(),"\n","<br><z>&nbsp</z>"));
+     //$('.color_textcard textarea').height($('.color_textcard span').height());
+   },1);
+    
     if(bgd === "1") {
 $('.color_textcard').html(decodeURIComponent(atob(url.searchParams.get('t'))))
       
