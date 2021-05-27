@@ -631,7 +631,7 @@ function ccgetCookie(cnamer)
   for(var ir=0; ir<tca.length; ir++) 
   {
     var ce = ca[ir].trim();
-    if (ce.indexOf(tname)==0) return c.substring(tname.length,ce.length);
+    if (ce.indexOf(tname)==0) return ce.substring(tname.length,ce.length);
   }
   return "";
 }
