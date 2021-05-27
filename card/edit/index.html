@@ -86,37 +86,10 @@ border:none;
   word-break: break-all;
 }
 .oki {
-width:45px;
-  height:45px;
   background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/tick.png);
-  background-size:25px;
-  background-position:center;
-  background-repeat:no-repeat;
-  border-radius:99em;
-  font-weight:medium;
-  font-family: 'Noto Sans TC', sans-serif;
-  font-size:1.3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color:#333;
   } 
-  
   .cli {
-width:45px;
-  height:45px;
   background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/close2.png);
-  background-size:25px;
-  background-position:center;
-  background-repeat:no-repeat;
-  border-radius:99em;
-  font-weight:medium;
-  font-family: 'Noto Sans TC', sans-serif;
-  font-size:1.3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color:#333;
   } 
   #menug {
   position:fixed;
@@ -139,6 +112,21 @@ width:0px;
 height:2px;
 transition: width 0.3s ,background 0s;
 }
+  .btn {
+background-size:25px;
+  background-position:center;
+  background-repeat:no-repeat;
+  border-radius:99em;
+  font-weight:medium;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size:1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#333;
+  width:45px;
+  height:45px;
+  }
     @media (prefers-color-scheme: dark) {
       .ladbar {
 background:#fff;
@@ -168,8 +156,8 @@ transition: width 0.3s ,background 0s;
 </div>
   
   <div id="menug">
-    <div class="oki eel"></div>
-    <div class="cli eel"></div>
+    <div class="oki eel btn"></div>
+    <div class="cli eel btn"></div>
   </div>
   
   
