@@ -188,6 +188,12 @@ $( window ).resize(function() {
 function start() {
 var favcolorss = getCookie('colorfav1').substring(1,getCookie('colorfav1').length).split('&') ;
   for (var ffpp = 0; ffpp < favcolorss.length; ffpp++) {
+   if(favcolorss[ffpp].indexOf('li') != -1) {
+    
+   }
+   else {
+      
+      
  if((hexToRgb(favcolorss[ffpp]).r+hexToRgb(favcolorss[ffpp]).g+hexToRgb(favcolorss[ffpp]).b)/3 > 128) {
 var tgzcolor = '#000' ;
 }
@@ -195,6 +201,8 @@ var tgzcolor = '#000' ;
       var tgzcolor = '#fff' ;
     }
     $('#cardbox').prepend('<div class="card" style="background:' + favcolorss[ffpp] + ';color:' + tgzcolor + '"><div class="content"><h4>' + favcolorss[ffpp] + '</h4><div class="description"><a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favcolorss[ffpp]) + '&r=' + genid('random') + '">查看顏色</a</div></div></div>');
+   }
+   
   }
   $('#cardbox').masonry({
                 itemSelector: '.card',
