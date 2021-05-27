@@ -632,6 +632,7 @@ document.cookie = 'colorfav=' +  getCookie('colorfav') + '&' + colorvalrr + '; m
   $('.favt').click(function() {
     if(sharecolor === "1") {
     document.cookie = 'colorfav1=' +  getCookie('colorfav1') + '&' + $('#rgb').val() + '; max-age='+60*60*24*7 + '; path=/' ;
+    $('.favt').css({'background':'rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/favorited.png)','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
     }
   });
   
@@ -738,6 +739,11 @@ if((hexToRgb(shcolor).r+hexToRgb(shcolor).g+hexToRgb(shcolor).b)/3 > 128) {
     $('.color').fadeIn(222);
     $('.color').css({'background':shcolor})
       $('#rgb').val(shcolor);
+  
+  
+  if(getCookie('colorfav1').indexOf('&' + shcolor) != -1) {
+      $('.favt').css({'background':'rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/favorited.png)','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
+    }
 }
   if(sharecolor === "2") {
     if((hexToRgb(gc1).r+hexToRgb(gc1).g+hexToRgb(gc1).b+hexToRgb(gc2).r+hexToRgb(gc2).g+hexToRgb(gc2).b)/6 > 128) {
