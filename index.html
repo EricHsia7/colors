@@ -624,23 +624,10 @@ var qrcode = new QRCode(document.querySelector('#qr') , {
     }, 510);
     });
  
-function ccgetCookie(cnamer)
-{
-  var tname = cnamer + "=";
-  var tca = document.cookie.split(';');
-  for(var ir=0; ir<tca.length; ir++) 
-  {
-    var ce = ca[ir].trim();
-    if (ce.indexOf(tname)==0) return ce.substring(tname.length,ce.length);
-  }
-  return "";
-}
 
-  
-  
-function addcolorcookie(cmode,colorval) {
+function addcolorcookie(cmode,colorvalrr) {
   if(cmode === 'c') {
-document.cookie = 'colorfav=' +  getCookie('colorfav') + '&' + colorval + '; max-age='+60*60*24*7 + '; path=erichsia7.github.io';
+document.cookie = 'colorfav=' +  getCookie('colorfav') + '&' + colorvalrr + '; max-age='+60*60*24*7 + '; path=erichsia7.github.io';
 }
 else {
 
