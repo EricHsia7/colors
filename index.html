@@ -400,6 +400,7 @@ var shcolor = atob(url.searchParams.get('c')) ;
   var gc1 = atob(url.searchParams.get('ga')) ;
   var gc2 = atob(url.searchParams.get('gb')) ;
   var gcdeg = url.searchParams.get('gdeg') ;
+  var open = url.searchParams.get('open') ;
   
 var ccw = 256;
 var ccwa = (ccw*ccw) ;
@@ -556,7 +557,12 @@ $('.fi').click(function() {
 $('.color').fadeOut(222);
 if(sharecolor === "1" || sharecolor === "2") {
   setTimeout(function(){
+    if(open === "fav") {
+      location.href = 'https://erichsia7.github.io/colors/favorite/?r=' + genid('random') ;
+    }
+    else {
     location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random') ;
+    }
   }, 222);
   
 }
