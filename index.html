@@ -554,16 +554,18 @@ var load = 0 ;
 }
 
 $('.fi').click(function() {
-$('.color').fadeOut(222);
+
 if(sharecolor === "1" || sharecolor === "2") {
-  setTimeout(function(){
     if(open === "fav") {
       location.href = 'https://erichsia7.github.io/colors/favorite/?r=' + genid('random') ;
     }
     else {
+      $('.color').fadeOut(222);
+      setTimeout(function(){
     location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random') ;
+        }, 222);
     }
-  }, 222);
+  
   
 }
 });
