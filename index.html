@@ -641,7 +641,7 @@ function addcolorcookie(cmode,colorval) {
 document.cookie = 'colorfav=' +  getCookie('colorfav') + '&' + colorval + '; max-age='+60*60*24*7;
 }
 else {
-document.cookie = cookiename + '=' + cookievalue + '; max-age='+60*60*24*7;
+document.cookie = cookiename + '=' + cookievalue + '; max-age='+60*60*24*7 + ' ;path=/';
 }
 }
   $('.favt').click(function() {
