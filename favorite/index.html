@@ -193,7 +193,7 @@ $( window ).resize(function() {
 
 
 function start() {
-var favcolorss = getCookie('colorfav').substring(1,getCookie('colorfav').length).split('&') ;
+var favcolorss = getCookie('colorfav1').substring(1,getCookie('colorfav1').length).split('&') ;
   for (var ffpp = 0; ffpp < favcolorss.length; ffpp++) {
  if((hexToRgb(favcolorss[ffpp]).r+hexToRgb(favcolorss[ffpp]).g+hexToRgb(favcolorss[ffpp]).b)/3 > 128) {
 var tgzcolor = '#000' ;
