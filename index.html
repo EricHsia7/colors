@@ -637,8 +637,16 @@ document.cookie = 'colorfav=' +  getCookie('colorfav') + '&' + colorvalrr + '; m
       else {
     document.cookie = 'colorfav1=' +  getCookie('colorfav1') + '&' + $('#rgb').val() + '; max-age='+60*60*24*7 + '; path=/' ;
     $('.favt').css({'background':'rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/favorited.png)','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
+    } 
     }
-      
+    if(sharecolor === "2") {
+      if(getCookie('colorfav1').indexOf('&' + $('#rgb').attr('shdeg') + ']' + $('#rgb').attr('shga') + ']' + $('#rgb').attr('shgb')) != -1) {
+    }
+      else {
+    document.cookie = 'colorfav1=' + 'li]' + getCookie('colorfav1') + '&' + $('#rgb').attr('shdeg') + ']' + $('#rgb').attr('shga') + ']' + $('#rgb').attr('shgb') + '; max-age='+60*60*24*7 + '; path=/' ;
+
+    $('.favt').css({'background':'rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/favorited.png)','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
+    } 
     }
   });
   
