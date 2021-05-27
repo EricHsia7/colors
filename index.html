@@ -636,9 +636,11 @@ function ccgetCookie(cnamer)
   return "";
 }
 
+  
+  
 function addcolorcookie(cmode,colorval) {
   if(cmode === 'c') {
-document.cookie = 'colorfav=' +  ccgetCookie('colorfav') + '&' + colorval + '; max-age='+60*60*24*7 + ' ;path=/';
+document.cookie = 'colorfav=' +  getCookie('colorfav') + '&' + colorval + '; max-age='+60*60*24*7 + ' ;path=/';
 }
 else {
 
