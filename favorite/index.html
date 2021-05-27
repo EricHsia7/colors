@@ -91,7 +91,6 @@ text-decoration:none;
 }
 </style>
 <div id="cardbox"></div>
-<a href="javascript:addcolorcookie('c','#b561d7')">add</a>
       <script id="rendered-js">
 function genid(mode) {
 if(mode === "random"){
@@ -166,17 +165,6 @@ function getCookie(cname)
   }
   return "";
 }
-
-function addcolorcookie(cmode,colorval) {
-  if(cmode === 'c') {
-document.cookie = 'colorfav=' +  getCookie('colorfav') + '&' + colorval + '; max-age='+60*60*24*7;
-}
-else {
-document.cookie = cookiename + '=' + cookievalue + '; max-age='+60*60*24*7;
-}
-}
-
-
 
 function resize() {
   if($(window).width() > 400) {
