@@ -97,6 +97,37 @@ text-decoration:none;
  #cardbox {
 padding-bottom:100px
 }
+ 
+ .cl2 {
+  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/ico_min/close2.png);
+}
+   .btn {
+  background-size:25px;
+  background-position:center;
+  background-repeat:no-repeat;
+  border-radius:99em;
+  font-weight:medium;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size:1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#333;
+  width:45px;
+  height:45px:
+ }
+ #fmenu {
+position:fixed;
+  left:50%;
+  bottom:30px;
+  transform:translateX(-50%);
+  width:65px;
+  height:45px;
+}
+.lle {
+  float:left;
+  margin-left:10px;
+}
   @media (prefers-color-scheme: dark) {
     body {
     background:#1a1a1a;
@@ -104,6 +135,10 @@ padding-bottom:100px
  }
 </style>
 <div id="cardbox"></div>
+
+<div class="fmenu">
+ <div class="cl2"></div>
+</div>
       <script id="rendered-js">
 function genid(mode) {
 if(mode === "random"){
@@ -227,5 +262,8 @@ var tgzcolor = '#000' ;
   resize();
 }
 start();
-console.log(getCookie('colorfav'))
+       
+$('.cl2').click(function() {
+    location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random') ;
+});
     </script>
