@@ -624,24 +624,24 @@ var qrcode = new QRCode(document.querySelector('#qr') , {
     }, 510);
     });
  
-function getCookie(cname)
+function ccgetCookie(cnamer)
 {
-  var name = cname + "=";
-  var ca = document.cookie.split(';');
-  for(var i=0; i<ca.length; i++) 
+  var tname = cnamer + "=";
+  var tca = document.cookie.split(';');
+  for(var ir=0; ir<tca.length; ir++) 
   {
-    var c = ca[i].trim();
-    if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+    var ce = ca[ir].trim();
+    if (ce.indexOf(tname)==0) return c.substring(tname.length,ce.length);
   }
   return "";
 }
 
 function addcolorcookie(cmode,colorval) {
   if(cmode === 'c') {
-document.cookie = 'colorfav=' +  getCookie('colorfav') + '&' + colorval + '; max-age='+60*60*24*7;
+document.cookie = 'colorfav=' +  ccgetCookie('colorfav') + '&' + colorval + '; max-age='+60*60*24*7 + ' ;path=/';
 }
 else {
-document.cookie = cookiename + '=' + cookievalue + '; max-age='+60*60*24*7 + ' ;path=/';
+
 }
 }
   $('.favt').click(function() {
