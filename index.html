@@ -739,7 +739,7 @@ rgbinput.addEventListener('copy', (event) => {
     $('.copied').fadeIn(111).css({'display':'flex'}).delay(500).fadeOut(111)
 });
   $(document).ready(function() {
-    setTimeout(function() {
+    
       if(getCookie('hdloaded') === 'true') {
         var ldiilist = 'fti,grd,filed-camera,filed-img,fi,fi2,fi3,ft2,qrt,crtd,rand2,vis' ;
     var ldiilists = ldiilist.split(',') ;
@@ -751,6 +751,7 @@ for (var ldii=0; ldii<ldiilists.length; ldii++){
       $('#mainstyle').append("@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400,500,700&display=swap');");
       }
       else {
+        setTimeout(function() {
     var ldiilist = 'fti,grd,filed-camera,filed-img,fi,fi2,fi3,ft2,qrt,crtd,rand2,vis' ;
     var ldiilists = ldiilist.split(',') ;
     var ldiihdlist = 'close2,gradient,camera,img,close2,copy2,share3,text2,qrcode,writing,random3,invisible' ;
@@ -760,7 +761,8 @@ for (var ldii=0; ldii<ldiilists.length; ldii++){
             }
       $('#mainstyle').append("@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400,500,700&display=swap');");
       setcookie('hdloaded','true');
+              },3000);
       }
-    },3000);
+
   });
 </script>
