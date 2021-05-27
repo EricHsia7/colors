@@ -626,12 +626,12 @@ var qrcode = new QRCode(document.querySelector('#qr') , {
  
 
 function addcolorcookie(colorvalrr) {
-document.cookie = 'colorfav=' +  getCookie('colorfav') + '&' + colorvalrr + '; max-age='+60*60*24*7 + '; domain=erichsia7.github.io';
+document.cookie = 'colorfav=' +  getCookie('colorfav') + '&' + colorvalrr + '; max-age='+60*60*24*7 + '; path=/' ;
 
 }
   $('.favt').click(function() {
     if(sharecolor === "1") {
-    addcolorcookie($('#rgb').val());
+    document.cookie = 'colorfav1=' +  getCookie('colorfav1') + '&' + $('#rgb').val() + '; max-age='+60*60*24*7 + '; path=/' ;
     }
   });
   
