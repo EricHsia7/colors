@@ -625,17 +625,13 @@ var qrcode = new QRCode(document.querySelector('#qr') , {
     });
  
 
-function addcolorcookie(cmode,colorvalrr) {
-  if(cmode === 'c') {
+function addcolorcookie(colorvalrr) {
 document.cookie = 'colorfav=' +  getCookie('colorfav') + '&' + colorvalrr + '; max-age='+60*60*24*7 + '; path=erichsia7.github.io';
-}
-else {
 
-}
 }
   $('.favt').click(function() {
     if(sharecolor === "1") {
-    addcolorcookie('c',$('#rgb').val());
+    addcolorcookie($('#rgb').val());
     }
   });
   
