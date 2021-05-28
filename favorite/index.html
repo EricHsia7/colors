@@ -286,6 +286,13 @@ function resize() {
    if($(window).width() > 750) {
 $('.card').width(($(window).width()/3)-30);
 }
+ $('#cardbox').masonry({
+                itemSelector: '.card',
+                columnWidth: 10, //gap
+                animate: false,
+                horizontalOrder: true,
+                originTop: true
+            });
 }
        
 $( window ).resize(function() {
@@ -325,13 +332,7 @@ var tgzcolor = '#000' ;
 
    }
   }
-  $('#cardbox').masonry({
-                itemSelector: '.card',
-                columnWidth: 10, //gap
-                animate: false,
-                horizontalOrder: true,
-                originTop: true
-            });
+  
  resize();
 }
 start();
