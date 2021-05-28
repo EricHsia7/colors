@@ -318,7 +318,6 @@ $('.card').width(($(window).width()/3)-30);
 }
        
 $( window ).resize(function() {
-  resize();
  $('#cardboxlo').width($(window).width()).height($(window).height());
  if($(window).width() > 400 && $(window).width() <= 750) {
       $('.card[dp="lo"]').width(($(window).width()/2)-30);
@@ -388,6 +387,9 @@ var tgzcolor = '#000' ;
    }
   }
  resize();
+ $( window ).resize(function() {
+  resize();
+ });
 }
        loading();
        setTimeout(start,3000);
