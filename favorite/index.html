@@ -27,10 +27,12 @@ body {
   background-color: #fff;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, .12);
   position:relative;
   margin:10px;
   min-width:180px;
+ border:1px #e3e3e3 solid;
+ -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .card .image {
   width:100%;
@@ -281,13 +283,13 @@ document.cookie = cookiename + '=' + cookievalue + '; max-age='+60*60*24*7 + '; 
        
 function resize() {
   if($(window).width() > 400 && $(window).width() <= 750) {
-      $('.card').width(($(window).width()/2)-25);
+      $('.card').width(($(window).width()/2)-20);
   }
   if($(window).width() <= 400) {
-      $('.card').width('calc(100% - 25px)');
+      $('.card').width('calc(100% - 20px)');
   }
    if($(window).width() > 750) {
-$('.card').width(($(window).width()/3)-25);
+$('.card').width(($(window).width()/3)-20);
 }
  $('#cardbox').masonry({
                 itemSelector: '.card',
