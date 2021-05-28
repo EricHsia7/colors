@@ -330,6 +330,7 @@ $('.card[dp="lo"]').width(($(window).width()/3)-30);
 }
 function start() {
  $('#cardbox,#cardboxlo').html('');
+ $('#cardboxlo').css({'display':'none'});
 var favcolorss = getCookie('colorfav1').substring(1,getCookie('colorfav1').length).split('&') ;
   for (var ffpp = 0; ffpp < favcolorss.length; ffpp++) {
    if(favcolorss[ffpp].indexOf('li') != -1) {
