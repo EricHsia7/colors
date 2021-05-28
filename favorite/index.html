@@ -319,7 +319,16 @@ $('.card').width(($(window).width()/3)-30);
        
 $( window ).resize(function() {
   resize();
- $('#cardboxlo').width($(window).width()).height($(window).height())
+ $('#cardboxlo').width($(window).width()).height($(window).height());
+ if($(window).width() > 400 && $(window).width() <= 750) {
+      $('.card[dp="lo"]').width(($(window).width()/2)-30);
+  }
+  if($(window).width() <= 400) {
+      $('.card[dp="lo"]').width('calc(100% - 30px)');
+  }
+   if($(window).width() > 750) {
+$('.card[dp="lo"]').width(($(window).width()/3)-30);
+}
 });
 
 
