@@ -280,7 +280,7 @@ function resize() {
   if($(window).width() > 400 && $(window).width() < 750) {
       $('.card').width(($(window).width()/2)-30);
   }
-  else {
+  if($(window).width() < 400) {
       $('.card').width('calc(100% - 20px)');
   }
    if($(window).width() > 750) {
