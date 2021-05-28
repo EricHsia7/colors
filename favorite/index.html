@@ -182,7 +182,7 @@ background:#fff;
 }
  }
 </style>
-<div id="cardboxlo"></div>
+<div id="cardboxlo" style="position:fixed;left:0px;top:0px;"></div>
 <div id="cardbox"></div>
 
 <div id="fmenu">
@@ -343,7 +343,6 @@ $('.card[dp="lo"]').width(($(window).width()/3)-30);
                 horizontalOrder: true,
                 originTop: true
             });
- $('#cardboxlo').css({'position':'fixed'});
 }
 function start() {
  $('#cardbox,#cardboxlo').html('');
