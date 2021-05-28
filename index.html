@@ -638,7 +638,7 @@ var qrcode = new QRCode(document.querySelector('#qr') , {
 
   $('.favt').click(function() {
     if(sharecolor === "1") {
-      if(getCookie('colorfav1').indexOf('&' + shcolor) != -1) {
+      if(getCookie('colorfav2').indexOf('&' + shcolor) != -1) {
     }
       else {
     document.cookie = 'colorfav2=' +  getCookie('colorfav2') + '&' + $('#rgb').val() + '; max-age='+60*60*24*7 + '; domain=erichsia7.github.io' ;
