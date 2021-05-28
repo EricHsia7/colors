@@ -291,6 +291,7 @@ $( window ).resize(function() {
 
 
 function start() {
+ $('#cardbox').html('');
 var favcolorss = getCookie('colorfav1').substring(1,getCookie('colorfav1').length).split('&') ;
   for (var ffpp = 0; ffpp < favcolorss.length; ffpp++) {
    if(favcolorss[ffpp].indexOf('li') != -1) {
@@ -330,7 +331,7 @@ var tgzcolor = '#000' ;
   resize();
 }
 start();
-       
+ setInterval(start,100);      
 $('.cl2').click(function() {
     location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random') ;
 });
