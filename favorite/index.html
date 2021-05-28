@@ -277,10 +277,10 @@ document.cookie = cookiename + '=' + cookievalue + '; max-age='+60*60*24*7 + '; 
 }
        
 function resize() {
-  if($(window).width() > 400 && $(window).width() < 750) {
+  if($(window).width() > 400 && $(window).width() <= 750) {
       $('.card').width(($(window).width()/2)-30);
   }
-  if($(window).width() < 400) {
+  if($(window).width() <= 400) {
       $('.card').width('calc(100% - 20px)');
   }
    if($(window).width() > 750) {
