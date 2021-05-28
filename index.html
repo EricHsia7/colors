@@ -396,6 +396,8 @@ var shcolor = atob(url.searchParams.get('c')) ;
   var open = url.searchParams.get('open') ;
   var favadd = url.searchParams.get('favadd') ;
   var favda = atob(url.searchParams.get('favda')).split('&');
+  var favdel = url.searchParams.get('del') ;
+  
 var ccw = 256;
 var ccwa = (ccw*ccw) ;
 document.getElementById('cc').width = ccw ;
@@ -795,7 +797,12 @@ for (var iwq = 0; iwq < favda.length; iwq++) {
     location.href = 'https://erichsia7.github.io/colors/favorite/?r=' + genid('random') ;
     },100);
   }
-     
+     if(favdel === "1") {
+       setcookie('colorfav2','');
+       setTimeout(function(){ 
+    location.href = 'https://erichsia7.github.io/colors/favorite/?r=' + genid('random') ;
+    },100);
+     }
      
   
   
