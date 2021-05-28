@@ -791,6 +791,9 @@ for (var iwq = 0; iwq < favda.length; iwq++) {
     document.cookie = 'colorfav2=' +  getCookie('colorfav2') + '&' + favda[iwq] + '; max-age='+60*60*24*7 + '; domain=erichsia7.github.io' ;
     }
     }
+    setTimeout(function(){ 
+    location.href = 'https://erichsia7.github.io/colors/favorite/?r=' + genid('random') ;
+    },100);
   }
      
      
