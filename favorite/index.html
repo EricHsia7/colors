@@ -166,6 +166,7 @@ background:#fff;
 }
  }
 </style>
+<div id="cardboxlo"></div>
 <div id="cardbox"></div>
 
 <div id="fmenu">
@@ -306,9 +307,9 @@ $( window ).resize(function() {
 
 
 function loading() {
- $('#cardbox').html('');
+ $('#cardboxlo').html('');
  for (var ljg = 0; ljg < 32; ljg++) {
- $('#cardbox').prepend('<div class="card loading" dp="lo" style="background:' + '#fff' + ';color:' + '#000' + '" type="col"><div class="content"><h4>' + '&nbsp' + '</h4><div class="description">&nbsp</div></div></div>');
+ $('#cardboxlo').prepend('<div class="card loading" dp="lo" style="background:' + '#fff' + ';color:' + '#000' + '" type="col"><div class="content"><h4>' + '&nbsp' + '</h4><div class="description">&nbsp</div></div></div>');
 }
  if($(window).width() > 400 && $(window).width() <= 750) {
       $('.card[dp="lo"]').width(($(window).width()/2)-30);
@@ -319,7 +320,7 @@ function loading() {
    if($(window).width() > 750) {
 $('.card[dp="lo"]').width(($(window).width()/3)-30);
 }
- $('#cardbox').masonry({
+ $('#cardboxlo').masonry({
                 itemSelector: '.card[dp="lo"]',
                 columnWidth: 10, //gap
                 animate: false,
@@ -328,7 +329,7 @@ $('.card[dp="lo"]').width(($(window).width()/3)-30);
             });
 }
 function start() {
- $('#cardbox').html('');
+ $('#cardbox,#cardboxlo').html('');
 var favcolorss = getCookie('colorfav1').substring(1,getCookie('colorfav1').length).split('&') ;
   for (var ffpp = 0; ffpp < favcolorss.length; ffpp++) {
    if(favcolorss[ffpp].indexOf('li') != -1) {
