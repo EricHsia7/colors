@@ -308,9 +308,24 @@ $( window ).resize(function() {
 function loading() {
  $('#cardbox').html('');
  for (var ljg = 0; ljg < 32; ljg++) {
- $('#cardbox').prepend('<div class="card loading" style="background:' + '#fff' + ';color:' + '#000' + '" type="col"><div class="content"><h4>' + '&nbsp' + '</h4><div class="description">&nbsp</div></div></div>');
+ $('#cardbox').prepend('<div class="card loading" dp="lo" style="background:' + '#fff' + ';color:' + '#000' + '" type="col"><div class="content"><h4>' + '&nbsp' + '</h4><div class="description">&nbsp</div></div></div>');
 }
- resize();
+ if($(window).width() > 400 && $(window).width() <= 750) {
+      $('.card[dp="lo"]').width(($(window).width()/2)-30);
+  }
+  if($(window).width() <= 400) {
+      $('.card[dp="lo"]').width('calc(100% - 30px)');
+  }
+   if($(window).width() > 750) {
+$('.card[dp="lo"]').width(($(window).width()/3)-30);
+}
+ $('#cardbox').masonry({
+                itemSelector: '.card[dp="lo"]',
+                columnWidth: 10, //gap
+                animate: false,
+                horizontalOrder: true,
+                originTop: true
+            });
 }
 function start() {
  $('#cardbox').html('');
@@ -343,7 +358,6 @@ var tgzcolor = '#000' ;
 
    }
   }
-  
  resize();
 }
        loading();
