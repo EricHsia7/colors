@@ -305,7 +305,13 @@ $( window ).resize(function() {
 });
 
 
-
+function loading() {
+ $('#cardbox').html('');
+ for (var ljg = 0; ljg < 32; ljg++) {
+ $('#cardbox').prepend('<div class="card" style="background:' + '#fff' + ';color:' + '#000' + '" type="col"><div class="content"><h4>' + '&npsp' + '</h4><div class="description">&nbsp</div></div></div>');
+}
+ resize();
+}
 function start() {
  $('#cardbox').html('');
 var favcolorss = getCookie('colorfav1').substring(1,getCookie('colorfav1').length).split('&') ;
@@ -323,7 +329,7 @@ var favcolorss = getCookie('colorfav1').substring(1,getCookie('colorfav1').lengt
     else {
       var gdzcolor = '#fff' ;
     }
-    $('#cardbox').prepend('<div class="card" style="background:' + bgree + ';color:' + gdzcolor + '" type="grd"><div class="content"><h4>' + gdege + ',' +  gacce + ',' +  gbcce + '</h4><div class="description"><a href="' + 'https://erichsia7.github.io/colors/?s=2&ga=' + btoa(gacce) + '&gb=' + btoa(gbcce) + '&gdeg=' + gdege + '&open=fav&r=' + genid('random') + '">查看漸層</a</div></div></div>');
+    $('#cardbox').prepend('<div class="card" style="background:' + bgree + ';color:' + gdzcolor + '" type="grd"><div class="content"><h4>' + gdege + ',' +  gacce + ',' +  gbcce + '</h4><div class="description"><a href="' + 'https://erichsia7.github.io/colors/?s=2&ga=' + btoa(gacce) + '&gb=' + btoa(gbcce) + '&gdeg=' + gdege + '&open=fav&r=' + genid('random') + '">查看漸層</a></div></div></div>');
    }
    else {
     
@@ -333,15 +339,15 @@ var tgzcolor = '#000' ;
     else {
       var tgzcolor = '#fff' ;
     }
-    $('#cardbox').prepend('<div class="card loading" style="background:' + favcolorss[ffpp] + ';color:' + tgzcolor + '" type="col"><div class="content"><h4>' + favcolorss[ffpp] + '</h4><div class="description"><a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favcolorss[ffpp]) + '&open=fav&r=' + genid('random') + '">查看顏色</a</div></div></div>');
+    $('#cardbox').prepend('<div class="card" style="background:' + favcolorss[ffpp] + ';color:' + tgzcolor + '" type="col"><div class="content"><h4>' + favcolorss[ffpp] + '</h4><div class="description"><a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favcolorss[ffpp]) + '&open=fav&r=' + genid('random') + '">查看顏色</a></div></div></div>');
 
    }
   }
   
  resize();
 }
-start();
-       
+
+       setTimeout(start,3000);
  //setInterval(start,3000);  
 $('.cl2').click(function() {
     location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random') ;
