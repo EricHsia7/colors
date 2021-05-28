@@ -324,7 +324,6 @@ var tgzcolor = '#000' ;
     $('#cardbox').prepend('<div class="card" style="background:' + favcolorss[ffpp] + ';color:' + tgzcolor + '" type="col"><div class="content"><h4>' + favcolorss[ffpp] + '</h4><div class="description"><a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favcolorss[ffpp]) + '&open=fav&r=' + genid('random') + '">查看顏色</a</div></div></div>');
 
    }
-   
   }
   $('#cardbox').masonry({
                 itemSelector: '.card',
@@ -333,10 +332,10 @@ var tgzcolor = '#000' ;
                 horizontalOrder: true,
                 originTop: true
             });
-  
- setTimeout(resize, 200);
+ resize();
 }
 start();
+       
  //setInterval(start,3000);  
 $('.cl2').click(function() {
     location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random') ;
