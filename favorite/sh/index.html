@@ -1,0 +1,28 @@
+<script>
+  var getUrlString = location.href;
+var url = new URL(getUrlString);
+var favdata = atob(url.searchParams.get('fd')).split('&') ;
+  
+  function setcookie(cookiename,cookievalue) {
+document.cookie = cookiename + '=' + cookievalue + '; max-age='+60*10;
+}
+function getCookie(cname)
+{
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0; i<ca.length; i++) 
+  {
+    var c = ca[i].trim();
+    if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+  }
+  return "";
+}
+  
+  for (var iwq = 0; iwq < favdata.length; iwq++) {
+      if(getCookie('colorfav1').indexOf('&' + favdata[iwq]) != -1) {
+    }
+      else {
+    document.cookie = 'colorfav1=' +  getCookie('colorfav1') + '&' + favdata[iwq] + '; max-age='+60*60*24*7 + '; path=/' ;
+    }
+    }
+</script>
