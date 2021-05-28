@@ -755,7 +755,7 @@ $('.color').fadeIn(222);
       $('#rgb').val(shcolor);
   
   
-  if(getCookie('colorfav1').indexOf('&' + shcolor) != -1) {
+  if(getCookie('colorfav2').indexOf('&' + shcolor) != -1) {
       $('.favt').css({'background':'rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/favorited.png)','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
     }
 }
@@ -779,7 +779,7 @@ $('.color').fadeIn(222);
     $('.color').css({'background':grd});
     $('#rgb').val(grd).attr('shga',gc1).attr('shgb',gc2).attr('shdeg',gcdeg);
     
-    if(getCookie('colorfav1').indexOf('li]' + gcdeg + ']' + gc1 + ']' + gc2) != -1) {
+    if(getCookie('colorfav2').indexOf('li]' + gcdeg + ']' + gc1 + ']' + gc2) != -1) {
       $('.favt').css({'background':'rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/favorited.png)','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
     }
   }
