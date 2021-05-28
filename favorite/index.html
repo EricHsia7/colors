@@ -287,6 +287,7 @@ function resize() {
 $('.card').width(($(window).width()/3)-30);
 }
 }
+       
 $( window ).resize(function() {
   resize();
 });
@@ -332,7 +333,8 @@ var tgzcolor = '#000' ;
                 horizontalOrder: true,
                 originTop: true
             });
-  resize();
+  
+ setTimeout(resize, 200);
 }
 start();
  //setInterval(start,3000);  
