@@ -287,12 +287,18 @@ function start() {
 var favcolorss = getCookie('colorfav1').substring(1,getCookie('colorfav1').length).split('&') ;
   for (var ffpp = 0; ffpp < favcolorss.length; ffpp++) {
    if(favcolorss[ffpp].indexOf('li') != -1) {
+    
     var grdddli = favcolorss[ffpp].split(']') ;
     var gdege = grdddli[1] ;
     var gacce = grdddli[2] ;
     var gbcce = grdddli[3] ;
     var bgree = 'linear-gradient(' + gdege + 'deg ,' +  gacce + ' 0%,' +  gbcce + ' 100%)' ;
-    var gdzcolor = '#fff' ;
+    if((hexToRgb(gacce).r+hexToRgb(gacce).g+hexToRgb(gacce).b+hexToRgb(gbcce).r+hexToRgb(gbcce).g+hexToRgb(gbcce).b)/6 > 128) {
+      var gdzcolor = '#000' ;
+    }
+    else {
+      var gdzcolor = '#fff' ;
+    }
     $('#cardbox').prepend('<div class="card" style="background:' + bgree + ';color:' + gdzcolor + '"><div class="content"><h4>' + gdege + ',' +  gacce + ',' +  gbcce + '</h4><div class="description"><a href="' + 'https://erichsia7.github.io/colors/?s=2&ga=' + btoa(gacce) + '&gb=' + btoa(gbcce) + '&gdeg=' + gdege + '&open=fav&r=' + genid('random') + '">查看漸層</a</div></div></div>');
    }
    else {
