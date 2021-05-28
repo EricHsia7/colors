@@ -278,13 +278,13 @@ document.cookie = cookiename + '=' + cookievalue + '; max-age='+60*60*24*7 + '; 
        
 function resize() {
   if($(window).width() > 400 && $(window).width() <= 750) {
-      $('.card').width(($(window).width()/2)-30);
+      $('.card').width(($(window).width()/2)-20);
   }
   if($(window).width() <= 400) {
       $('.card').width('calc(100% - 20px)');
   }
    if($(window).width() > 750) {
-$('.card').width(($(window).width()/3)-30);
+$('.card').width(($(window).width()/3)-20);
 }
  $('#cardbox').masonry({
                 itemSelector: '.card',
