@@ -23,7 +23,7 @@ body {
 }
 
 .card {
-  width: calc(50vw - 22px);
+  width: calc(50vw - 25px);
   background-color: #fff;
   border-radius: 15px;
   overflow: hidden;
@@ -283,13 +283,13 @@ document.cookie = cookiename + '=' + cookievalue + '; max-age='+60*60*24*7 + '; 
        
 function resize() {
   if($(window).width() > 400 && $(window).width() <= 750) {
-      $('.card').width(($(window).width()/2)-22);
+      $('.card').width(($(window).width()/2)-25);
   }
   if($(window).width() <= 400) {
-      $('.card').width('calc(100% - 22px)');
+      $('.card').width('calc(100% - 25px)');
   }
    if($(window).width() > 750) {
-$('.card').width(($(window).width()/3)-22);
+$('.card').width(($(window).width()/3)-25);
 }
  $('#cardbox').masonry({
                 itemSelector: '.card',
