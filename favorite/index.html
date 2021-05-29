@@ -239,7 +239,24 @@ backdrop-filter: blur(15px);
   margin-bottom:5px;
 }
  
- 
+ .empty {
+  width:100%;
+  max-width:300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position:relative;
+  left:50%;
+  transform:translateX(-50%);
+}
+.empty img {
+  width:100%;
+  max-width:300px;
+}
+.empty span {
+  color:#1082af;
+}
  
  
  
@@ -286,6 +303,12 @@ background:#fff;
  }
 </style>
 <div id="cardboxlo" ></div>
+<div id="eelo">
+<div class="empty">
+<img src="https://erichsia7.github.io/colors/favorite/empty_svg_2.svg">
+  <span>沒有任何喜好項目。</span>
+</div>
+</div>
 <div id="cardbox"></div>
 
 <div id="fmenu">
@@ -478,6 +501,9 @@ $('.card[dp="lo"]').width(($(window).width()/3)-30);
 function start() {
  $('#cardbox,#cardboxlo').html('');
  $('#cardboxlo').css({'display':'none'});
+ if(getCookie('colorfav2') != "") {
+  $('#eelo').css({'display':'none'});
+ }
 var favcolorss = getCookie('colorfav2').substring(1,getCookie('colorfav2').length).split('&') ;
   for (var ffpp = 0; ffpp < favcolorss.length; ffpp++) {
    if(favcolorss[ffpp].indexOf('li') != -1) {
