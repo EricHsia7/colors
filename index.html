@@ -811,7 +811,7 @@ for (var iwq = 0; iwq < favda.length; iwq++) {
   
 var rgbinput =document.getElementById('rgb');
 rgbinput.addEventListener('copy', (event) => {
-    $('.copied').fadeIn(111).css({'display':'flex'}).delay(500).fadeOut(111)
+        $('body').prompt({'message':'已複製','time':1200,'animate':'slide'});
 });
   $(document).ready(function() {
     
