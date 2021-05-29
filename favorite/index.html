@@ -15,6 +15,7 @@
 :root {
   --loading-grey: #ededed;
  --loading-ba:#fff;
+ --loading-ffg: 255 ;
 }
   * {outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);}
 body {
@@ -78,9 +79,9 @@ text-decoration:none;
   background-color: var(--loading-grey);
   background: linear-gradient(
     100deg,
-    rgba(255, 255, 255, 0) 40%,
-    rgba(255, 255, 255, .5) 50%,
-    rgba(255, 255, 255, 0) 60%
+    rgba(var(--loading-ffg), var(--loading-ffg), var(--loading-ffg), 0) 40%,
+    rgba(var(--loading-ffg), var(--loading-ffg), var(--loading-ffg), .5) 50%,
+    rgba(var(--loading-ffg), var(--loading-ffg), var(--loading-ffg), 0) 60%
   ) var(--loading-grey);
   background-size: 200% 100%;
   background-position-x: 180%;
@@ -162,7 +163,7 @@ transition:width 0.3s ,background 0s;
   }
    :root {
   --loading-grey: #1f1f1f;
-     --loading-ba:#1a1a1a;
+  --loading-ffg: 31 ;
 }
    .lle {
   float:left;
