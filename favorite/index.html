@@ -504,7 +504,7 @@ $('.card[dp="lo"]').width(($(window).width()/3)-30);
 function start() {
  $('#cardbox,#cardboxlo').html('');
  $('#cardboxlo').css({'display':'none'});
- if(getCookie('colorfav2') = "") {
+ if(getCookie('colorfav2') === "") {
   $('#eelo').css({'display':'block'});
  }
 var favcolorss = getCookie('colorfav2').substring(1,getCookie('colorfav2').length).split('&') ;
