@@ -304,7 +304,7 @@ background:#fff;
  }
 </style>
 <div id="cardboxlo" ></div>
-<div id="eelo" style="position:absolute;0px;left:0px;width:100%;height:100%;">
+<div id="eelo" style="position:fixed;0px;left:0px;width:100%;height:100%;display:none;">
 <div class="empty">
 <img src="https://erichsia7.github.io/colors/favorite/empty_svg_2.svg">
   <span>沒有任何喜好項目。</span>
@@ -497,13 +497,13 @@ $('.card[dp="lo"]').width(($(window).width()/3)-30);
                 horizontalOrder: true,
                 originTop: true
             });
- $('#cardboxlo').css({'position':'relative','top':'0','left':'0','width':$(window).width(),'height':$(window).height(),'overflow':'hidden'});
+ $('#cardboxlo').css({'position':'fixed','top':'0','left':'0','width':$(window).width(),'height':$(window).height(),'overflow':'hidden'});
 }
 function start() {
  $('#cardbox,#cardboxlo').html('');
  $('#cardboxlo').css({'display':'none'});
- if(getCookie('colorfav2') != "") {
-  $('#eelo').css({'display':'none'});
+ if(getCookie('colorfav2') = "") {
+  $('#eelo').css({'display':'block'});
  }
 var favcolorss = getCookie('colorfav2').substring(1,getCookie('colorfav2').length).split('&') ;
   for (var ffpp = 0; ffpp < favcolorss.length; ffpp++) {
