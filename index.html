@@ -796,6 +796,7 @@ $('.color').fadeIn(222);
     }
   }
   if(favadd === "1") {
+    $('#deleting').css({'display':'flex'}).html('匯入喜好項目中');
 for (var iwq = 0; iwq < favda.length; iwq++) {
       if(getCookie('colorfav2').indexOf('&' + favda[iwq]) != -1) {
     }
@@ -803,7 +804,7 @@ for (var iwq = 0; iwq < favda.length; iwq++) {
     document.cookie = 'colorfav2=' +  getCookie('colorfav2') + '&' + favda[iwq] + '; max-age='+60*60*24*7 + '; domain=erichsia7.github.io' ;
     }
     }
-    setTimeout(function(){ 
+    setTimeout(function(){
     location.href = 'https://erichsia7.github.io/colors/favorite/?r=' + genid('random') ;
     },10);
   }
