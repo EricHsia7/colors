@@ -546,6 +546,9 @@ var tgzcolor = '#000' ;
  $( window ).resize(function() {
   resize();
  });
+ $('.coloropenbtnj').click(function() {
+        location.href = $(this).attr('link') + '&scroll=' + $(document).scrollTop() + '&r=' + genid('random') ;
+       });
 }
        loading();
        if(open === "col") {
@@ -597,9 +600,7 @@ $('#delbox').css({'transform':'translate(-50%,-50%) scale(0.8)','opacity':'0'});
     $('#delbox').css({'display':'none'});
     }, 510);
     });
-       $('.coloropenbtnj').click(function() {
-        location.href = $(this).attr('link') + '&scroll=' + $(document).scrollTop() + '&r=' + genid('random') ;
-       });
+       
        
     </script>
 </body>
