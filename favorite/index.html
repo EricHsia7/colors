@@ -129,6 +129,9 @@ padding-bottom:100px
   .shfav {
   background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/share3.png);
 }
+ .qrt {
+  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/ico_min/qrcode.png);
+}
    .btn {
   background-size:25px;
   background-position:center;
@@ -266,8 +269,80 @@ backdrop-filter: blur(15px);
 }
  
  
- 
+ #qrbox {
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%) scale(0.8);
+  opacity:0;
+  width:250px;
+  height:305px;
+  background:#fff;
+  border-radius:15px;
+  overflow:hidden;
+  display:none;
+  transition:0.5s;
+}
+#qrbox #qrclbtn {
+  position:absolute;
+  bottom:10px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#fff;
+  height:45px;
+  width:calc(100% - 20px);
+  border-radius:15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#000;
+  font-size:20px;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight:700;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.08);
+}
+#qr {
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:250px;
+  height:250px;
+  background:#fff;
+  overflow:hidden;
+}
+#qr img {
+  width:230px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+#qrbg {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  background:rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(15px);
+backdrop-filter: blur(15px);
+  display:none;
+}  
   @media (prefers-color-scheme: dark) {
+   #qrbox {
+  background:#1a1a1a;
+  display:none;
+}
+#qrbox #qrclbtn {
+  background:#1a1a1a;
+  color:#fff;
+}
+#qr {
+  background:#1a1a1a; 
+}
+#qr img {
+  filter: invert(89.79%);
+}
     #delbox {
      background:#1a1a1a;
    }
@@ -319,13 +394,17 @@ background:#fff;
 <div id="cardbox"></div>
 
 <div id="fmenu">
-  <div class="shfav lle btn"></div>
- 
- 
+ <div class="shfav lle btn"></div>
+ <div class="qrt lle btn"></div>
  <div class="de3 lle btn"></div>
  <div class="cl2 lle btn"></div>
 </div>
 
+<div id="qrbg"></div>
+<div id="qrbox">
+<div id="qr"></div>
+  <div id="qrclbtn">關閉</div>
+</div>
 
   <div id="delbg"></div>
 <div id="delbox">
@@ -605,6 +684,31 @@ $('#delbox').css({'transform':'translate(-50%,-50%) scale(0.8)','opacity':'0'});
     }, 510);
     });
        
+       $('.qrt').click(function() {
+$('#qrbg').fadeIn(333);
+ $('#qrbox').css({'display':'block'});
+    setTimeout(function(){ 
+    $('#qrbox').css({'transform':'translate(-50%,-50%) scale(1)','opacity':'1'});
+    }, 1);
+  
+    
+    document.querySelector('#qr').innerHTML = '';
+var qrcode = new QRCode(document.querySelector('#qr') , {
+    text: 'https://erichsia7.github.io/colors/?favadd=1&favda=' + btoa(getCookie('colorfav2').substring(1,getCookie('colorfav2').length)) + '&r=' + genid('random'),
+    width: 512,
+    height: 512,
+    colorDark : "#000",
+    colorLight : "#fff",
+    correctLevel : QRCode.CorrectLevel.Q
+});
+  });
+    $('#qrclbtn').click(function() {
+  $('#qrbg').fadeOut(333);
        
+      $('#qrbox').css({'transform':'translate(-50%,-50%) scale(0.8)','opacity':'0'});
+    setTimeout(function(){ 
+    $('#qrbox').css({'display':'none'});
+    }, 510);
+    });
     </script>
 </body>
