@@ -356,6 +356,8 @@ background:#fff;
   <div id="qrclbtn">關閉</div>
 </div>
 
+<div id="deleting" style="position:fixed;left:0px;top:0px;width:100%;height:100%;display:none;justify-content: center;align-items: center;font-size:1.3rem;font-weight:500;">刪除中</div>
+
 <div class="ladbar"></div>
 <script>
 lade = 0 ;
@@ -801,6 +803,7 @@ for (var iwq = 0; iwq < favda.length; iwq++) {
   }
      if(favdel === "1") {
        setcookie('colorfav2','');
+       $('#deleting').css({'display':'flex'});
        setTimeout(function(){ 
     location.href = 'https://erichsia7.github.io/colors/favorite/?r=' + genid('random') ;
     },10);
