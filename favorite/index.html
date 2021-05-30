@@ -550,7 +550,7 @@ $('.shfav').click(function() {
  if (navigator.share) { 
    navigator.share({
       title: document.title,
-      url: 'https://erichsia7.github.io/colors/?favadd=1&favda=' + btoa(getCookie('colorfav2').substring(1,getCookie('colorfav2').length))
+      url: 'https://erichsia7.github.io/colors/?favadd=1&favda=' + btoa(getCookie('colorfav2').substring(1,getCookie('colorfav2').length)) + '&r=' + genid('random')
     }).then(() => {
       
     })
