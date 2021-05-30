@@ -550,12 +550,13 @@ var tgzcolor = '#000' ;
  $('.coloropenbtnj').click(function() {
         location.href = $(this).attr('link') + '&scroll=' + $(document).scrollTop() + '&r=' + genid('random') ;
        });
+ if(open === "col") {
+  $(document).scrollTop(favscroll);
+ }
 }
        loading();
        if(open === "col") {
        start();
-        setTimeout(function(){ $(document).scrollTop(favscroll);
-    }, 1); 
         history.pushState(null, null,'https://erichsia7.github.io/colors/favorite/?r=' + genid('random'));
        }
        else {
