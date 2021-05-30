@@ -405,7 +405,7 @@ var shcolor = atob(url.searchParams.get('c')) ;
   var favadd = url.searchParams.get('favadd') ;
   var favda = atob(url.searchParams.get('favda')).split('&');
   var favdel = url.searchParams.get('del') ;
-  
+  var favscroll = url.searchParams.get('scroll') ;
 var ccw = 256;
 var ccwa = (ccw*ccw) ;
 document.getElementById('cc').width = ccw ;
@@ -561,7 +561,7 @@ $('.fi').click(function() {
 
 if(sharecolor === "1" || sharecolor === "2") {
     if(open === "fav") {
-      location.href = 'https://erichsia7.github.io/colors/favorite/?open=col&r=' + genid('random') ;
+      location.href = 'https://erichsia7.github.io/colors/favorite/?open=col&scroll=' + favscroll + '&r=' + genid('random') ;
     }
     else {
       $('.color').fadeOut(222);
