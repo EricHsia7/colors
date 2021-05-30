@@ -528,7 +528,7 @@ var favcolorss = getCookie('colorfav2').substring(1,getCookie('colorfav2').lengt
     else {
       var gdzcolor = '#fff' ;
     }
-    $('#cardbox').prepend('<div class="card" style="background:' + bgree + ';color:' + gdzcolor + '" type="grd"><div class="content"><h4>' + gdege + ',' +  gacce + ',' +  gbcce + '</h4><div class="description"><a href="' + 'https://erichsia7.github.io/colors/?s=2&ga=' + btoa(gacce) + '&gb=' + btoa(gbcce) + '&gdeg=' + gdege + '&open=fav&r=' + genid('random') + '">查看漸層</a></div></div></div>');
+    $('#cardbox').prepend('<div class="card" style="background:' + bgree + ';color:' + gdzcolor + '" type="grd"><div class="content"><h4>' + gdege + ',' +  gacce + ',' +  gbcce + '</h4><div class="description"><a link="' + 'https://erichsia7.github.io/colors/?s=2&ga=' + btoa(gacce) + '&gb=' + btoa(gbcce) + '&gdeg=' + gdege + '&open=fav" class="coloropenbtnj">查看漸層</a></div></div></div>');
    }
    else {
     
@@ -538,7 +538,7 @@ var tgzcolor = '#000' ;
     else {
       var tgzcolor = '#fff' ;
     }
-    $('#cardbox').prepend('<div class="card" style="background:' + favcolorss[ffpp] + ';color:' + tgzcolor + '" type="col"><div class="content"><h4>' + favcolorss[ffpp] + '</h4><div class="description"><a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favcolorss[ffpp]) + '&open=fav&r=' + genid('random') + '">查看顏色</a></div></div></div>');
+    $('#cardbox').prepend('<div class="card" style="background:' + favcolorss[ffpp] + ';color:' + tgzcolor + '" type="col"><div class="content"><h4>' + favcolorss[ffpp] + '</h4><div class="description"><a link="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favcolorss[ffpp]) + '&open=fav" class="coloropenbtnj">查看顏色</a></div></div></div>');
 
    }
   }
@@ -587,7 +587,7 @@ $('.shfav').click(function() {
 });   
 
 $('#delyes').click(function() {
-   location.href = 'http://erichsia7.github.io/colors/?del=1&r=' + genid('random') ;
+   location.href = 'https://erichsia7.github.io/colors/?del=1&r=' + genid('random') ;
 });
 
 $('#delno').click(function() {
@@ -597,7 +597,9 @@ $('#delbox').css({'transform':'translate(-50%,-50%) scale(0.8)','opacity':'0'});
     $('#delbox').css({'display':'none'});
     }, 510);
     });
-       
+       $('.coloropenbtnj').click(function() {
+        location.href = $(this).attr('link') + '&scroll=' + $(body,html).scrollTop() + '&r=' + genid('random') ;
+       });
        
     </script>
 </body>
