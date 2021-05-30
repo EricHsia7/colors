@@ -795,17 +795,22 @@ $('.color').fadeIn(222);
       $('.favt').css({'background':'rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/favorited.png)','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
     }
   }
+  var added = 0 ;
+  var addte = favda.length ;
+  var addno = 0 ;
   if(favadd === "1") {
     $('#deleting').css({'display':'flex'}).html('匯入喜好項目中');
 for (var iwq = 0; iwq < favda.length; iwq++) {
       if(getCookie('colorfav2').indexOf('&' + favda[iwq]) != -1) {
+        addno += 1;
     }
       else {
     document.cookie = 'colorfav2=' +  getCookie('colorfav2') + '&' + favda[iwq] + '; max-age='+60*60*24*7 + '; domain=erichsia7.github.io' ;
+        added += 1;
     }
     }
     setTimeout(function(){
-    location.href = 'https://erichsia7.github.io/colors/favorite/?r=' + genid('random') ;
+    location.href = 'https://erichsia7.github.io/colors/favorite/?fado=1&fadod=' + added + ',' + addno + ',' + addte + '&r=' + genid('random') ;
     },10);
   }
      if(favdel === "1") {
