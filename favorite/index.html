@@ -359,6 +359,8 @@ $('.ladbar').css({'display':'none'});
        var getUrlString = location.href;
 var url = new URL(getUrlString);
 var open = url.searchParams.get('open') ;
+var fado = url.searchParams.get('fado') ;
+var fadod = url.searchParams.get('fadod').split(',') ;
 function genid(mode) {
 if(mode === "random"){
 var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
@@ -539,6 +541,10 @@ var tgzcolor = '#000' ;
        }
        else {
         setTimeout(start,888);
+       }
+       if(fado === "1") { 
+        $('body').prompt({'message':'已匯入' + fadod[0] + '個 重複' + fadod[1] + '個 共' + fadod[2] + '個','time':time,'animate':'slide'});
+        history.pushState(null, null,'https://erichsia7.github.io/colors/favorite/?r=' + genid('random'));
        }
  //setInterval(start,3000);  
 $('.cl2').click(function() {
