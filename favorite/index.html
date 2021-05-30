@@ -373,6 +373,7 @@ var url = new URL(getUrlString);
 var open = url.searchParams.get('open') ;
 var fado = url.searchParams.get('fado') ;
 var fadod = url.searchParams.get('fadod') ;
+var favscroll = url.searchParams.get('scroll') ;
        
 function genid(mode) {
 if(mode === "random"){
@@ -553,6 +554,8 @@ var tgzcolor = '#000' ;
        loading();
        if(open === "col") {
        start();
+        setTimeout(function(){ $(document).scrollTop(favscroll);
+    }, 1); 
         history.pushState(null, null,'https://erichsia7.github.io/colors/favorite/?r=' + genid('random'));
        }
        else {
