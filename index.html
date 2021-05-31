@@ -715,8 +715,8 @@ var rand_r = Math.floor(Math.random() * 255);
 var rand_g = Math.floor(Math.random() * 255);  
 var rand_b = Math.floor(Math.random() * 255);
     
-    gtag('event', 'click', {
-    'event_category': 'generator_color',
+    gtag('event', 'generator', {
+    'event_category': 'color',
     'event_label': rgbToHex(rand_r,rand_g,rand_b),
     'transport_type': 'beacon',
     'event_callback': function(){
