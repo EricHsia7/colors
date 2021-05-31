@@ -668,16 +668,17 @@ $('.shfav').click(function() {
        var isChrome = window.navigator.userAgent.indexOf("Chrome") !== -1;
  
   if (isChrome) {
-    $('.de3').css({'opacity':'0.3'});
+    //$('.de3').css({'opacity':'0.3'});
   } else {
-    $('.de3').click(function() {     
+       
+  }
+           $('.de3').click(function() {     
             $('#delbg').fadeIn(333);
  $('#delbox').css({'display':'block'});
     setTimeout(function(){ $('#delbox').css({'transform':'translate(-50%,-50%) scale(1)','opacity':'1'});
     }, 1); 
-});   
-  }
-           
+});
+       
 
 $('#delyes').click(function() {
    location.href = 'https://erichsia7.github.io/colors/?del=1&r=' + genid('random') ;
