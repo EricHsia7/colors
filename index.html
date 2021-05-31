@@ -818,7 +818,7 @@ for (var iwq = 0; iwq < favda.length; iwq++) {
     },10);
   }
      if(favdel === "1") {
-       setcookie('colorfav2','');
+       document.cookie = 'colorfav2=' + '' + '; max-age='+60*60*24*7 + '; domain=erichsia7.github.io' ;
        $('#deleting').css({'display':'flex'});
        setTimeout(function(){ 
     location.href = 'https://erichsia7.github.io/colors/favorite/?r=' + genid('random') ;
