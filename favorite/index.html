@@ -156,6 +156,8 @@ padding-bottom:100px
 }
  .set {
   background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/edit.png);
+  opacity:0.3;
+  transition:0.3s;
  }
    .btn {
   background-size:25px;
@@ -675,6 +677,11 @@ $(this).attr('selectedy','1');
 }
 }
 });
+ $('.set').css({'opacity':'1'});
+ $('.set').click(function() {
+        cardselect = "1" ;
+$('.card').attr('se',cardselect);
+       });
 }
        loading();
        if(open === "col") {
@@ -790,9 +797,6 @@ $('#selectall').attr('ser','0');
 $('.card[selectedy="1"]').click()
 }
 });
-       $('.set').click(function() {
-        cardselect = "1" ;
-$('.card').attr('se',cardselect);
-       });
+       
     </script>
 </body>
