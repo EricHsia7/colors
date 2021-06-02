@@ -708,6 +708,26 @@ $(this).attr('selectedy','0');
 $(this).attr('selectedy','1');
 }
 }
+  if(cardselect === "1") {
+  if($(this).attr('selectedy') === "1") {
+$(this).attr('selectedy','0');
+}
+  else {
+$(this).attr('selectedy','1');
+}
+  $('#selectnumber').html('已選取' + $('.card[selectedy="1"]').length + '個');
+}
+  if($('.card').length = $('.card[selectedy="1"]').length) {
+$('#selectall').html('取消全選');
+    $('#selectall').attr('ser','1');
+}
+  else {
+$('#selectall').html('全選');
+    $('#selectall').attr('ser','0');
+}
+  
+  
+  
 });
  $('.set').css({'opacity':'1'});
  $('.set').click(function() {
@@ -800,25 +820,7 @@ var qrcode = new QRCode(document.querySelector('#qr') , {
     $('#qrbox').css({'display':'none'});
     }, 510);
     });
-       $('.card').click(function() {
-if(cardselect === "1") {
-  if($(this).attr('selectedy') === "1") {
-$(this).attr('selectedy','0');
-}
-  else {
-$(this).attr('selectedy','1');
-}
-  $('#selectnumber').html('已選取' + $('.card[selectedy="1"]').length + '個');
-}
-  if($('.card').length = $('.card[selectedy="1"]').length) {
-$('#selectall').html('取消全選');
-    $('#selectall').attr('ser','1');
-}
-  else {
-$('#selectall').html('全選');
-    $('#selectall').attr('ser','0');
-}
-});
+       
        
        $('#selectall').click(function() {
   if($('#selectall').attr('ser') === "0") {
