@@ -671,6 +671,16 @@ var seicocor = '255' ;
  if(open === "col") {
   $(document).scrollTop(favscroll);
  }
+ $('.card').click(function() {
+if(cardselect === "1") {
+  if($(this).attr('selectedy') === "1") {
+$(this).attr('selectedy','0');
+}
+  else {
+$(this).attr('selectedy','1');
+}
+}
+});
 }
        loading();
        if(open === "col") {
