@@ -605,21 +605,25 @@ var favcolorss = getCookie('colorfav2').substring(1,getCookie('colorfav2').lengt
     var bgree = 'linear-gradient(' + gdege + 'deg ,' +  gacce + ' 0%,' +  gbcce + ' 100%)' ;
     if((hexToRgb(gacce).r+hexToRgb(gacce).g+hexToRgb(gacce).b+hexToRgb(gbcce).r+hexToRgb(gbcce).g+hexToRgb(gbcce).b)/6 > 128) {
       var gdzcolor = '#000' ;
+      var seicocor = '0' ;
     }
     else {
       var gdzcolor = '#fff' ;
+      var seicocor = '255' ;
     }
-    $('#cardbox').prepend('<div class="card" style="background:' + bgree + ';color:' + gdzcolor + '" type="grd"><div class="content"><h4>' + gdege + ',' +  gacce + ',' +  gbcce + '</h4><div class="description"><a link="' + 'https://erichsia7.github.io/colors/?s=2&ga=' + btoa(gacce) + '&gb=' + btoa(gbcce) + '&gdeg=' + gdege + '&open=fav" class="coloropenbtnj">查看漸層</a></div></div></div>');
+    $('#cardbox').prepend('<div class="card" style="background:' + bgree + ';color:' + gdzcolor + ';--seico-color:' + seicocor + '" type="grd"><div class="content"><h4>' + gdege + ',' +  gacce + ',' +  gbcce + '</h4><div class="description"><a link="' + 'https://erichsia7.github.io/colors/?s=2&ga=' + btoa(gacce) + '&gb=' + btoa(gbcce) + '&gdeg=' + gdege + '&open=fav" class="coloropenbtnj">查看漸層</a></div></div></div>');
    }
    else {
     
  if((hexToRgb(favcolorss[ffpp]).r+hexToRgb(favcolorss[ffpp]).g+hexToRgb(favcolorss[ffpp]).b)/3 > 128) {
 var tgzcolor = '#000' ;
+var seicocor = '0' ;
 }
     else {
       var tgzcolor = '#fff' ;
+var seicocor = '255' ;
     }
-    $('#cardbox').prepend('<div class="card" style="background:' + favcolorss[ffpp] + ';color:' + tgzcolor + '" type="col"><div class="content"><h4>' + favcolorss[ffpp] + '</h4><div class="description"><a link="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favcolorss[ffpp]) + '&open=fav" class="coloropenbtnj">查看顏色</a></div></div></div>');
+    $('#cardbox').prepend('<div class="card" style="background:' + favcolorss[ffpp] + ';color:' + tgzcolor + ';--seico-color:' + seicocor + '" type="col"><div class="content"><h4>' + favcolorss[ffpp] + '</h4><div class="description"><a link="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favcolorss[ffpp]) + '&open=fav" class="coloropenbtnj">查看顏色</a></div></div></div>');
 
    }
   }
