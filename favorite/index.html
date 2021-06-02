@@ -622,6 +622,7 @@ $('.card[dp="lo"]').width(($(window).width()/3)-30);
             });
  $('#cardboxlo').css({'position':'fixed','top':'0','left':'0','width':$(window).width(),'height':$(window).height(),'overflow':'hidden'});
 }
+       cardselect = "0" ;
 function start() {
  $('#cardbox,#cardboxlo').html('');
  $('#cardboxlo').css({'display':'none'});
@@ -666,8 +667,10 @@ var seicocor = '255' ;
   resize();
  });
  $('.coloropenbtnj').click(function() {
+  if(cardselect === "0") {
         location.href = $(this).attr('link') + '&scroll=' + $(document).scrollTop() + '&r=' + genid('random') ;
-       });
+  }
+});
  if(open === "col") {
   $(document).scrollTop(favscroll);
  }
