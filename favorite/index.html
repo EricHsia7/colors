@@ -452,7 +452,7 @@ background:#fff;
  <div class="shfav lle btn"></div>
  <div class="qrt lle btn"></div>
  <div class="de3 lle btn"></div>
- <div class="set lle btn"></div>
+ <div class="set lle btn" sdf="1"></div>
  <div class="cl2 lle btn"></div>
 </div>
 
@@ -720,10 +720,20 @@ $('#selectall').html('全選');
 });
  $('.set').css({'opacity':'1'});
  $('.set').click(function() {
+  if($('.set').attr('sdf') === "1") {
         cardselect = "1" ;
 $('.card').attr('se',cardselect);
   $('.selecttop').fadeIn(333);
   $('#cardbox').css({'transform':'translateY(55px)'});
+   $('.set').attr('sdf','0');
+  }
+else {
+cardselect = "0" ;
+$('.card').attr('se',cardselect);
+  $('.selecttop').fadeOut(333);
+  $('#cardbox').css({'transform':''});
+ $('.set').attr('sdf','1');
+}
        });
 }
        loading();
