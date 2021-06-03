@@ -368,7 +368,7 @@ backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
 backdrop-filter: blur(15px);
   color:#fff;
-  display:none;
+  opacity:0;
 }
 .selecttop span#selectnumber {
 position:absolute;
@@ -725,14 +725,14 @@ $('#selectall').html('全選');
   if($('.set').attr('sdf') === "1") {
         cardselect = "1" ;
 $('.card').attr('se',cardselect);
-  $('.selecttop').fadeIn(333).css({'top':'0px'});
+  $('.selecttop').css({'top':'0px','opacity':1'});
   $('#cardbox').css({'transform':'translateY(55px)'});
    $('.set').attr('sdf','0');
   }
 else {
 cardselect = "0" ;
 $('.card').attr('se',cardselect);
-  $('.selecttop').css({'top':'-55px'}).fadeOut(333);
+  $('.selecttop').css({'top':'-55px','opacity':'0'});
   $('#cardbox').css({'transform':'translateY(0px)'});
  $('.set').attr('sdf','1');
 }
