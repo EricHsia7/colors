@@ -360,7 +360,7 @@ backdrop-filter: blur(15px);
  
  .selecttop {
   position:fixed;
-  top:0px;
+  top:-55px;
   left:0px;
   width:100%;
   height:50px;
@@ -725,15 +725,15 @@ $('#selectall').html('全選');
   if($('.set').attr('sdf') === "1") {
         cardselect = "1" ;
 $('.card').attr('se',cardselect);
-  $('.selecttop').fadeIn(333);
+  $('.selecttop').fadeIn(333).css({'top':'0px'});
   $('#cardbox').css({'transform':'translateY(55px)'});
    $('.set').attr('sdf','0');
   }
 else {
 cardselect = "0" ;
 $('.card').attr('se',cardselect);
-  $('.selecttop').fadeOut(333);
-  $('#cardbox').css({'transform':''});
+  $('.selecttop').css({'top':'-55px'}).fadeOut(333);
+  $('#cardbox').css({'transform':'translateY(0px)'});
  $('.set').attr('sdf','1');
 }
        });
