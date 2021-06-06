@@ -4,10 +4,12 @@
 <span id="span"></span>
 <script>
 var hurl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRNu-PVVIFgcGvc3BTPUe7Ql9I4ARruKYyNpn0chttJq8e7zrfouWGE8IxnhhjIVxvnhVHT_vpOf4qZ/pub?gid=1122443747&single=true&output=csv' ;
+  $(document).ready(function() {
 var sdfy = $.ajax({url:hurl,async:false});
   var sot = '';
   for (var i = 1; i < sdfy.responseText.split(/\n/).length; i++) {
  sot += '&' +  gggg.responseText.split(/\n/)[i].split(",")[2] ;
             }
   $('#span').html(sot);
+  });
 </script>
