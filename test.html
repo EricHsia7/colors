@@ -149,12 +149,12 @@ function hexToRgb(hex) {
   } : null;
 }
   
-var hurl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRNu-PVVIFgcGvc3BTPUe7Ql9I4ARruKYyNpn0chttJq8e7zrfouWGE8IxnhhjIVxvnhVHT_vpOf4qZ/pub?gid=1122443747&single=true&output=csv&' + genid('random');
+var hurl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRNu-PVVIFgcGvc3BTPUe7Ql9I4ARruKYyNpn0chttJq8e7zrfouWGE8IxnhhjIVxvnhVHT_vpOf4qZ/pub?gid=1122443747&single=true&output=csv&' + genid('random') ;
   $(document).ready(function() {
 var sdfy = $.ajax({url:hurl,async:false});
   var sot = '';
-  for (var tye = 1; tye < sdfy.responseText.split(/\n/).length; tye++) {
- sot += '&' + sdfy.responseText.split(/\n/)[tye].split(",")[1] ;
+  for (var tye = 1; tye < sdfy.responseText.split('\n').length; tye++) {
+ sot += '&' + sdfy.responseText.split('\n')[tye].split(",")[1] ;
             }
        
   var favcolorss = sot.substring(1,sot.length).split('&') ;
