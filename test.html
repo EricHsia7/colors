@@ -153,11 +153,11 @@ var hurl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRNu-PVVIFgcGvc3BTPU
   $(document).ready(function() {
 var sdfy = $.ajax({url:hurl,async:false});
   var sot = '';
-  for (var i = 1; i < sdfy.responseText.split(/\n/).length; i++) {
- sot += '&' + sdfy.responseText.split(/\n/)[i].split(",")[1] ;
+  for (var tye = 1; tye < sdfy.responseText.split(/\n/).length; tye++) {
+ sot += '&' + sdfy.responseText.split(/\n/)[tye].split(",")[1] ;
             }
        
-  var favcolorss = sot.substring(1,getCookie('colorfav2').length).split('&') ;
+  var favcolorss = sot.substring(1,sot.length).split('&') ;
   for (var ffpp = 0; ffpp < favcolorss.length; ffpp++) {
    if(favcolorss[ffpp].indexOf('li') != -1) {
     
