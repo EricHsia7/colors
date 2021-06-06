@@ -8,7 +8,7 @@ var hurl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRNu-PVVIFgcGvc3BTPU
 var sdfy = $.ajax({url:hurl,async:false});
   var sot = '';
   for (var i = 1; i < sdfy.responseText.split(/\n/).length; i++) {
- sot += '&' +  gggg.responseText.split(/\n/)[i].split(",")[2] ;
+ sot += '&' + sdfy.responseText.split(/\n/)[i].split(",")[2] ;
             }
   $('#span').html(sot);
   });
