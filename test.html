@@ -10,6 +10,6 @@ var sdfy = $.ajax({url:hurl,async:false});
   for (var i = 1; i < sdfy.responseText.split(/\n/).length; i++) {
  sot += '&' + sdfy.responseText.split(/\n/)[i].split(",")[1] ;
             }
-  $('#span').html(sot);
+  $('#span').text(sot);
   });
 </script>
