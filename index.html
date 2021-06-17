@@ -531,7 +531,12 @@ var rgb_r = 0 ;
 var rgb_g = 0 ;   
 var rgb_b = 0 ; 
 var load = 0 ;
-  setTimeout(function() {
+      gtag('event', 'photo', {
+    'event_category': 'color',
+    'event_label': rgbToHex(rand_r,rand_g,rand_b),
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    setTimeout(function() {
    for (var xi=0; xi<ccw; xi++){
      for (var yi=0; yi<ccw; yi++){
   rgb_r += ctx.getImageData(xi, yi, 1, 1).data[0] ;
@@ -554,6 +559,8 @@ var load = 0 ;
     //$('.color').fadeIn(222);
     location.href = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(Math.ceil(rgb_r/ccwa), Math.ceil(rgb_g/ccwa), Math.ceil(rgb_b/ccwa))) + '&r=' + genid('random');
   },200);
+    }
+  }); 
     };
 
     
