@@ -422,7 +422,7 @@ background:#fff;
 
 
 <div class="cmore">
-  <div class="mbtn gh1" ripple-onclick="window.open('https://github.com/EricHsia7/colors')">Github</div>
+  <div class="mbtn gh1" ripple-onclick="gotogithubpage()">Github</div>
   <div class="mbtn gh2" ripple-onclick="location.reload()">重新整理</div>
   <div class="mbtn gh3"></div>
   
@@ -463,6 +463,10 @@ $('.ladbar').css({'display':'none'});
 },2300);
 });
 ripple('.mbtn','#fff','0.3',1200,'true');
+  function gotogithubpage() {
+   window.open('https://github.com/EricHsia7/colors') 
+  }
+  
 </script>
 <script src="https://erichsia7.github.io/prompt.js/prompt.min.js"></script>
 <script>
@@ -754,6 +758,9 @@ var qrcode = new QRCode(document.querySelector('#qr') , {
  $('.meoi').click(function() {
     $('.cmore').fadeOut(333);
   }); 
+  
+  
+  
   
   
 $('#textu').on('keypress',function(e) {
