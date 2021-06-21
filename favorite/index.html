@@ -701,7 +701,10 @@ var seicocor = '255' ;
  });
  $('.coloropenbtnj').click(function() {
   if(cardselect === "0") {
-location.href = $(this).attr('link') + '&scroll=' + $(document).scrollTop() + '&r=' + genid('random') ;
+   $('#' + $(this).attr('crdid')).css({'width':'100%','height':'100%','position':'fixed','top':'0px','left':'0px','transition':'0.75s'});
+   setTimeout(function() {
+   location.href = $(this).attr('link') + '&scroll=' + $(document).scrollTop() + '&r=' + genid('random') ;
+   },800);
   }
 });
  if(open === "col") {
