@@ -697,14 +697,9 @@ var seicocor = '255' ;
  $( window ).resize(function() {
   resize();
  });
- $('.coloropenbtnj').click(function(eftr) {
+ $('.coloropenbtnj').click(function() {
   if(cardselect === "0") {
-
-   
-   setTimeout(function () {
-                    location.href = $(this).attr('link') + '&scroll=' + $(document).scrollTop() + '&r=' + genid('random') ;
-                }, 1);
-        
+location.href = $(this).attr('link') + '&scroll=' + $(document).scrollTop() + '&r=' + genid('random') ;
   }
 });
  if(open === "col") {
