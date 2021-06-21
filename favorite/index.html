@@ -701,11 +701,11 @@ var seicocor = '255' ;
  });
  $('.coloropenbtnj').click(function() {
   if(cardselect === "0") {
-   var crdbtnlinkjj = $(this).attr('link') + '' ;
-   $('#' + $(this).attr('crdid')).css({'width':'100%','height':'100%','position':'fixed','top':'0px','left':'0px','transition':'0.75s'});
-   settimeout(function() {
-   location.href = crdbtnlinkjj + '&scroll=' + $(document).scrollTop() + '&r=' + genid('random') ;
-   },800);
+   //var crdbtnlinkjj = $(this).attr('link') + '' ;
+   location.href = $(this).attr('link') + '&scroll=' + $(document).scrollTop() + '&r=' + genid('random') ;
+   
+  //$('#' + $(this).attr('crdid')).css({'width':'100%','height':'100%','position':'fixed','top':'0px','left':'0px','transition':'0.75s'});
+   
   }
 });
  if(open === "col") {
