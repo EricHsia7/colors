@@ -760,7 +760,7 @@ var fghidf = genid('uuid') ;
    var fgx = (parseInt($('#' + $(this).attr('crdid')).css('left'))-$(window).scrollLeft()) ;
    $('body').append('<sp id="sp-' + fghidf + '"><div class="clopan" style="position:fixed;top:' + fgy + 'px;left:' + fgx + 'px;width:' + $('#' + $(this).attr('crdid')).width() + 'px;height:' + $('#' + $(this).attr('crdid')).height() + 'px;background:' + $('#' + $(this).attr('crdid')).css('background') +';" id="' + fghidf + '"><input type="text" id="rgb" value="' + $('#' + $(this).attr('crdid')).attr('rg') + '" style="color:' + $('#' + $(this).attr('crdid')).css('color') + '"><div id="menuj"><div class="fi2 lle btn"></div><div class="fi3 lle btn"></div><div class="qrt lle btn"></div><div class="favt lle btn"></div><div class="fi lle btn"></div></div></div></sp>');
    setTimeout(function() {
-$('#' + fghidf).css({'border-radius':'0px','width':'100%','height':'100%','position':'fixed','top':'0px','left':'0px','transition':'0.3s','margin':'0px','transform':'none'});
+$('#' + fghidf).css({'border-radius':'0px','width':'100%','height':'100%','position':'fixed','top':'0px','left':'0px','transition':'0.3s','margin':'0px','transform':'none','transition-timing-function':'ease-in-out'});
    },1);
    //var crdbtnlinkjj = $(this).attr('link') + '' ;
    var hsijllink = String($(this).attr('link')) ;
@@ -782,7 +782,7 @@ $('#' + fghidf).css({'border-radius':'0px','width':'100%','height':'100%','posit
   $(document).scrollTop(favscroll);
   $('body').append('<sp id="sp-' + oanif + '"><div class="clopan" style="position:fixed;top:' + 0 + 'px;left:' + 0 + 'px;width:' + '100%' + ';height:' + '100%' + ';background:' + atob(oancf) +';border-radius:0px;transform:none;margin:0px;" id="' + oanif + '"><input type="text" id="rgb" value="' + rgf + '" style="color:' + rgcf +'"><div id="menuj"><div class="fi2 lle btn"></div><div class="fi3 lle btn"></div><div class="qrt lle btn"></div><div class="favt lle btn"></div><div class="fi lle btn"></div></div></div></sp>');
  setTimeout(function(){
-  $('#' + oanif).css({'width':fgwf + 'px','height':fghf + 'px','top':fgyf + 'px','left':fgxf + 'px','margin':'10px','border-radius':'15px','transition':'all 0.3s,opacity 0.4s','transform':'translateX(5px)','opacity':'1'});
+  $('#' + oanif).css({'width':fgwf + 'px','height':fghf + 'px','top':fgyf + 'px','left':fgxf + 'px','margin':'10px','border-radius':'15px','transition':'all 0.3s,opacity 0.4s','transform':'translateX(5px)','opacity':'1','transition-timing-function':'ease-in-out'});
  },1);
   setTimeout(function(){
      $('#' + oanif).css({'opacity':'0'});
