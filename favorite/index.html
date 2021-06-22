@@ -715,8 +715,10 @@ var fghidf = genid('uuid') ;
 $('#' + fghidf).css({'border-radius':'0px','width':'100%','height':'100%','position':'fixed','top':'0px','left':'0px','transition':'0.75s','margin':'0px','transform':'none'});
    },1);
    //var crdbtnlinkjj = $(this).attr('link') + '' ;
-   //location.href = $(this).attr('link') + '&scroll=' + $(document).scrollTop() + '&r=' + genid('random') ;
-   
+   var hsijllink = String($(this).attr('link')) ;
+   setTimeout(function() {
+   location.href = hsijllink + '&scroll=' + $(document).scrollTop() + '&r=' + genid('random') ;
+   },1);
   //$('#' + $(this).attr('crdid')).css({'width':'100%','height':'100%','position':'fixed','top':'0px','left':'0px','transition':'0.75s'});
    
   }
