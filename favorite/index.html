@@ -730,7 +730,7 @@ var favcolorss = getCookie('colorfav2').substring(1,getCookie('colorfav2').lengt
       var seicocor = '255' ;
     }
     var crdiduu = genid('random') ;
-    $('#cardbox').prepend('<div class="card" style="background:' + bgree + ';color:' + gdzcolor + ';--seico-color:' + seicocor + '" type="grd" coki="' + favcolorss[ffpp] + '" id="' + crdiduu + '"><div class="content"><h4>' + gdege + ',' +  gacce + ',' +  gbcce + '</h4><div class="description"><a link="' + 'https://erichsia7.github.io/colors/?s=2&ga=' + btoa(gacce) + '&gb=' + btoa(gbcce) + '&gdeg=' + gdege + '&open=fav" class="coloropenbtnj" crdid="' + crdiduu + '">查看漸層</a></div></div></div>');
+    $('#cardbox').prepend('<div class="card" style="background:' + bgree + ';color:' + gdzcolor + ';--seico-color:' + seicocor + '" type="grd" coki="' + favcolorss[ffpp] + '" id="' + crdiduu + '" rg="' + bgree + '"><div class="content"><h4>' + gdege + ',' +  gacce + ',' +  gbcce + '</h4><div class="description"><a link="' + 'https://erichsia7.github.io/colors/?s=2&ga=' + btoa(gacce) + '&gb=' + btoa(gbcce) + '&gdeg=' + gdege + '&open=fav" class="coloropenbtnj" crdid="' + crdiduu + '">查看漸層</a></div></div></div>');
    }
    else {
     
@@ -743,7 +743,7 @@ var seicocor = '0' ;
 var seicocor = '255' ;
     }
     var crdiduu = genid('random') ;
-    $('#cardbox').prepend('<div class="card" style="background:' + favcolorss[ffpp] + ';color:' + tgzcolor + ';--seico-color:' + seicocor + '" type="col" id="' + crdiduu + '"><div class="content"><h4>' + favcolorss[ffpp] + '</h4><div class="description"><a link="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favcolorss[ffpp]) + '&open=fav" class="coloropenbtnj" crdid="' + crdiduu + '">查看顏色</a></div></div></div>');
+    $('#cardbox').prepend('<div class="card" style="background:' + favcolorss[ffpp] + ';color:' + tgzcolor + ';--seico-color:' + seicocor + '" type="col" id="' + crdiduu + '" rg="' + favcolorss[ffpp] +'"><div class="content"><h4>' + favcolorss[ffpp] + '</h4><div class="description"><a link="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favcolorss[ffpp]) + '&open=fav" class="coloropenbtnj" crdid="' + crdiduu + '">查看顏色</a></div></div></div>');
 
    }
   }
@@ -757,7 +757,7 @@ var seicocor = '255' ;
 var fghidf = genid('uuid') ;
    var fgy = (parseInt($('#' + $(this).attr('crdid')).css('top'))-$(window).scrollTop()) ;
    var fgx = (parseInt($('#' + $(this).attr('crdid')).css('left'))-$(window).scrollLeft()) ;
-   $('body').append('<sp id="sp-' + fghidf + '"><div class="clopan" style="position:fixed;top:' + fgy + 'px;left:' + fgx + 'px;width:' + $('#' + $(this).attr('crdid')).width() + 'px;height:' + $('#' + $(this).attr('crdid')).height() + 'px;background:' + $('#' + $(this).attr('crdid')).css('background') +';" id="' + fghidf + '"><input type="text" id="rgb" value="' + $('#' + $(this).attr('crdid') + ' h4').text() + '" style="color:' + $('#' + $(this).attr('crdid')).css('color') + '"><div id="menuj"><div class="fi2 lle btn"></div><div class="fi3 lle btn"></div><div class="qrt lle btn"></div><div class="favt lle btn"></div><div class="fi lle btn"></div></div></div></sp>');
+   $('body').append('<sp id="sp-' + fghidf + '"><div class="clopan" style="position:fixed;top:' + fgy + 'px;left:' + fgx + 'px;width:' + $('#' + $(this).attr('crdid')).width() + 'px;height:' + $('#' + $(this).attr('crdid')).height() + 'px;background:' + $('#' + $(this).attr('crdid')).css('background') +';" id="' + fghidf + '"><input type="text" id="rgb" value="' + $('#' + $(this).attr('crdid')).attr('rg') + '" style="color:' + $('#' + $(this).attr('crdid')).css('color') + '"><div id="menuj"><div class="fi2 lle btn"></div><div class="fi3 lle btn"></div><div class="qrt lle btn"></div><div class="favt lle btn"></div><div class="fi lle btn"></div></div></div></sp>');
    setTimeout(function() {
 $('#' + fghidf).css({'border-radius':'0px','width':'100%','height':'100%','position':'fixed','top':'0px','left':'0px','transition':'0.3s','margin':'0px','transform':'none'});
    },1);
