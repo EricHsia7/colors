@@ -703,7 +703,7 @@ var seicocor = '255' ;
   if(cardselect === "0") {
    var fgx = $('#' + $(this).attr('crdid')).offset().top - $(window).scrollTop() ;
    var fgy = $('#' + $(this).attr('crdid')).offset().left - $(window).scrollLeft() ;
-   $('body').append('<div style="position:fixed;top:' + fgy + ';left:' + fgx + ';width:' + $('#' + $(this).attr('crdid')).width() + ';height:' + $('#' + $(this).attr('crdid')).height() + ';background:#f5f5f5"></div>
+   $('body').append('<div style="position:fixed;top:' + fgy + 'px;left:' + fgx + 'px;width:' + $('#' + $(this).attr('crdid')).width() + 'px;height:' + $('#' + $(this).attr('crdid')).height() + 'px;background:#f5f5f5"></div>');
    
    //var crdbtnlinkjj = $(this).attr('link') + '' ;
    //location.href = $(this).attr('link') + '&scroll=' + $(document).scrollTop() + '&r=' + genid('random') ;
