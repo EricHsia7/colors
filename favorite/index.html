@@ -757,7 +757,7 @@ var seicocor = '255' ;
 var fghidf = genid('uuid') ;
    var fgy = (parseInt($('#' + $(this).attr('crdid')).css('top'))-$(window).scrollTop()) ;
    var fgx = (parseInt($('#' + $(this).attr('crdid')).css('left'))-$(window).scrollLeft()) ;
-   $('body').append('<sp id="sp-' + fghidf + '"><div class="clopan" style="position:fixed;top:' + fgy + 'px;left:' + fgx + 'px;width:' + $('#' + $(this).attr('crdid')).width() + 'px;height:' + $('#' + $(this).attr('crdid')).height() + 'px;background:' + $('#' + $(this).attr('crdid')).css('background') +'" id="' + fghidf + '"><input type="text" id="rgb"><div id="menuj"><div class="fi2 lle btn"></div><div class="fi3 lle btn"></div><div class="qrt lle btn"></div><div class="favt lle btn"></div><div class="fi lle btn"></div></div></div></sp>');
+   $('body').append('<sp id="sp-' + fghidf + '"><div class="clopan" style="position:fixed;top:' + fgy + 'px;left:' + fgx + 'px;width:' + $('#' + $(this).attr('crdid')).width() + 'px;height:' + $('#' + $(this).attr('crdid')).height() + 'px;background:' + $('#' + $(this).attr('crdid')).css('background') +'" id="' + fghidf + '"><input type="text" id="rgb" value="' + $('#' + $(this).attr('crdid') + ' h4').text() + "><div id="menuj"><div class="fi2 lle btn"></div><div class="fi3 lle btn"></div><div class="qrt lle btn"></div><div class="favt lle btn"></div><div class="fi lle btn"></div></div></div></sp>');
    setTimeout(function() {
 $('#' + fghidf).css({'border-radius':'0px','width':'100%','height':'100%','position':'fixed','top':'0px','left':'0px','transition':'0.3s','margin':'0px','transform':'none'});
    },1);
