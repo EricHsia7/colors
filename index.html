@@ -647,7 +647,7 @@ $('.fi').click(function() {
 
 if(sharecolor === "1" || sharecolor === "2") {
     if(open === "fav") {
-      location.href = 'https://erichsia7.github.io/colors/favorite/?open=col&scroll=' + favscroll + '&r=' + genid('random') ;
+      location.href = 'https://erichsia7.github.io/colors/favorite/?open=col&scroll=' + favscroll + '&oani=' + url.searchParams.get('oani') + '&oanh=' + url.searchParams.get('oanh') + '&r=' + genid('random') ;
     }
     else {
       $('body').css({'background':'','transition':'0.222s'});
