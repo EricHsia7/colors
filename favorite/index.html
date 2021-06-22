@@ -756,7 +756,7 @@ $('#' + fghidf).css({'border-radius':'0px','width':'100%','height':'100%','posit
    //var crdbtnlinkjj = $(this).attr('link') + '' ;
    var hsijllink = String($(this).attr('link')) ;
    setTimeout(function() {
-   location.href = hsijllink + '&scroll=' + $(document).scrollTop() + '&r=' + genid('random') ;
+   location.href = hsijllink + '&scroll=' + $(document).scrollTop() + '&oani=' + fghidf + '&oanh=' + btoa($('#sp-' + fghidf).html()) + '&r=' + genid('random') ;
    },310);
   //$('#' + $(this).attr('crdid')).css({'width':'100%','height':'100%','position':'fixed','top':'0px','left':'0px','transition':'0.75s'});
    
