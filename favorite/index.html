@@ -563,8 +563,8 @@ var open = url.searchParams.get('open') ;
 var fado = url.searchParams.get('fado') ;
 var fadod = url.searchParams.get('fadod') ;
 var favscroll = url.searchParams.get('scroll') ;
-var oanij = url.searchParams.get('oani') ;
-var oanhj = url.searchParams.get('oanh') ;
+var oanij = String(url.searchParams.get('oani')) ;
+var oanhj = String(url.searchParams.get('oanh')) ;
        
 function genid(mode) {
 if(mode === "random"){
@@ -766,7 +766,7 @@ $('#' + fghidf).css({'border-radius':'0px','width':'100%','height':'100%','posit
 });
  if(open === "col") {
   $(document).scrollTop(favscroll);
-  $('body').append('<sp id="sp-' + oanij + '">' + atob(oanhj) +'</sp>');
+  $('body').append('<sp id="sp-' + oanij + '">' + atob(oanhj) + '</sp>');
  }
  $('.card').click(function() {
   if(cardselect === "1") {
