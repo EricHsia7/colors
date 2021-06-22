@@ -707,10 +707,13 @@ var seicocor = '255' ;
  });
  $('.coloropenbtnj').click(function() {
   if(cardselect === "0") {
+var fghidf = genid('uuid') ;
    var fgy = (parseInt($('#' + $(this).attr('crdid')).css('top'))-$(window).scrollTop()) ;
    var fgx = (parseInt($('#' + $(this).attr('crdid')).css('left'))-$(window).scrollLeft()) ;
-   $('body').append('<div class="clopan" style="position:fixed;top:' + fgy + 'px;left:' + fgx + 'px;width:' + $('#' + $(this).attr('crdid')).width() + 'px;height:' + $('#' + $(this).attr('crdid')).height() + 'px;background:' + $('#' + $(this).attr('crdid')).css('background') +'"></div>');
-   
+   $('body').append('<div class="clopan" style="position:fixed;top:' + fgy + 'px;left:' + fgx + 'px;width:' + $('#' + $(this).attr('crdid')).width() + 'px;height:' + $('#' + $(this).attr('crdid')).height() + 'px;background:' + $('#' + $(this).attr('crdid')).css('background') +'" id="' + fghidf + '"></div>');
+   setTimeout(function() {
+$('#' + fghidf).css({'width':'100%','height':'100%','position':'fixed','top':'0px','left':'0px','transition':'0.75s'});
+   },1);
    //var crdbtnlinkjj = $(this).attr('link') + '' ;
    //location.href = $(this).attr('link') + '&scroll=' + $(document).scrollTop() + '&r=' + genid('random') ;
    
