@@ -876,7 +876,7 @@ $('.color').fadeIn(222);
     
     $('.color,body').css({'background':shcolor})
       $('#rgb').val(shcolor);
-  
+  $('#ogimgu').attr('content','https://singlecolorimage.com/get/' + shcolor.split('#')[1] + '/1200x627');
   
   
   if(getCookie('colorfav2').indexOf('&' + shcolor) != -1) {
