@@ -318,6 +318,64 @@ transition:width 0.3s ,background 0s;
 }
   
   
+  .mobile-gesture-prompt-bg {
+  background:rgba(0, 0, 0,0.5);
+  width:100%;
+  height:100%;
+  position:fixed;
+  top:0px;
+  left:0px;
+  display:none;
+}
+.mgp-arrow {
+  height:calc(50% - 50px);
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%) scale(0.5);
+}
+.mpgt {
+  top:0px;
+}
+.mpgb {
+  bottom:0px;
+  transform:translateX(-50%) scale(0.5) rotate(180deg)
+}
+.text {
+  position:absolute;
+  left:50%;
+  transform:translate(-50%,-50%);
+  top:50%;
+  color:#fff;
+  font-size:1.8rem;
+}
+.nw-top .mpgb,.nw-top .mpgbb{
+  opacity:0;
+  transition:0.8s;
+}
+.nw-top .mpgt,.nw-top .mpgtt{
+  opacity:1;
+  transition:0.8s;
+}
+
+.nw-bot .mpgt,.nw-bot .mpgtt{
+  opacity:0;
+  transition:0.8s;
+}
+.nw-bot .mpgb,.nw-bot .mpgbb{
+  opacity:1;
+  transition:0.8s;
+}
+.por {
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:30px;
+  color:#fff;
+  opacity:0.6;
+}
+  
+  
+  
   
   @media (prefers-color-scheme: dark) {
       #deleting {
@@ -406,6 +464,18 @@ background:#fff;
   </div> 
   
 </div>
+
+<div class="mobile-gesture-prompt-bg nw-top" id="mobile-gesture-prompt-bg">
+  <img src="https://erichsia7.github.io/colors/draw-arrow.png" class="mgp-arrow mpgt">
+  <div class="text mpgtt">上滑<br>快速新增<br>喜好項目</div>
+  
+  <img src="https://erichsia7.github.io/colors/draw-arrow.png" class="mgp-arrow mpgb">
+  <div class="text mpgbb">下滑<br>快速關閉<br>顏色漸層</div>
+  
+  <div class="por">點擊任意位置繼續</div>
+</div>
+
+
 <div class="colorte"> 
   <input type="text" id="textu" value="">
   <span id="tej">
@@ -969,7 +1039,26 @@ for (var ldii=0; ldii<ldiilists.length; ldii++){
 
   });
   
+  if(sharecolor === "2" || sharecolor === "1") {
+  if(getCookie('mgpp') === 'true') {
+}
+else {
+  $('#mobile-gesture-prompt-bg').delay(800).fadeIn(300);
+}
+  }
   
+  
+var mgpcl = 0 ;
+$('#mobile-gesture-prompt-bg').click(function() {
+  mgpcl += 1 ;
+  if(mgpcl === 1) {
+  $('#mobile-gesture-prompt-bg').attr('class','mobile-gesture-prompt-bg nw-bot');
+}
+if(mgpcl === 2) {
+  $('#mobile-gesture-prompt-bg').fadeOut(300);
+  document.cookie = 'mgpp' + '=' + 'true' + '; max-age='+60*60*24*7;
+}
+});
   
   
   
