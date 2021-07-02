@@ -1040,11 +1040,13 @@ for (var ldii=0; ldii<ldiilists.length; ldii++){
   });
   
   if(sharecolor === "2" || sharecolor === "1") {
+    if($(window).width() < 600) {
   if(getCookie('mgpp') === 'true') {
 }
 else {
   $('#mobile-gesture-prompt-bg').delay(800).fadeIn(300);
 }
+    }
   }
   
   
