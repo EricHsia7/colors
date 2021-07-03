@@ -1128,5 +1128,26 @@ if(mgpcl === 2) {
             default:
         }
     }, false);
+  
+  document.onkeydown=function(e){
+var keyNum=window.event ? e.keyCode :e.which;
+    if(sharecolor === "2" || sharecolor === "1") {
+if(keyNum==70){  
+    $('.favt').click();
+}
+  if(keyNum==67){  
+    $('.fi2').click();
+}
+  if(keyNum==88){  
+    $('.fi').click();
+}
+  if(keyNum==81){  
+    $('.qrt').click();
+}
+  if(keyNum==83){  
+    $('.fi3').click();
+}
+    }
+}
 </script>
 
