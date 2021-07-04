@@ -627,9 +627,10 @@ var shcolor = atob(url.searchParams.get('c')) ;
   var favda = atob(url.searchParams.get('favda')).split('&');
   var favdel = url.searchParams.get('del') ;
   var favscroll = url.searchParams.get('scroll') ;
-  
+  if(open === "fav") {
   if(sharecolor === "2" || sharecolor === "1") {
     $('#filerj').css({'opacity':'0'});
+  }
   }
 var ccw = 256;
 var ccwa = (ccw*ccw) ;
