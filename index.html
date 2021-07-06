@@ -1017,16 +1017,24 @@ if((hexToRgb(shcolor).r+hexToRgb(shcolor).g+hexToRgb(shcolor).b)/3 > 128) {
 $('.color').css({'display':'block'});
   }
 else {
+  
+  
+  if($.support.touch === true) {
   $('.color').css({'top':$(window).height()});
   setTimeout(function() {
 $('.color').css({'top':0,'transition':'0.3s'});
   },1);
 $('.color').css({'display':'block'});
+  }
+else {
+$('.color').fadeIn(222);
+}
+  
+  
 }
     
     $('.color').css({'background':shcolor})
       $('#rgb').val(shcolor);
-  //$('#ogimgu').attr('content','https://singlecolorimage.com/get/' + shcolor.split('#')[1] + '/1200x627');
   
   
   if(getCookie('colorfav2').indexOf('&' + shcolor) != -1) {
@@ -1049,11 +1057,19 @@ if(open === "fav") {
   $('.color').css({'display':'block'});
   }
 else {
-$('.color').css({'top':$(window).height()});
+  
+  
+if($.support.touch === true) {
+  $('.color').css({'top':$(window).height()});
   setTimeout(function() {
 $('.color').css({'top':0,'transition':'0.3s'});
   },1);
 $('.color').css({'display':'block'});
+  }
+else {
+$('.color').fadeIn(222);
+}
+
 }
     $('.color').css({'background':grd});
     $('#rgb').val(grd).attr('shga',gc1).attr('shgb',gc2).attr('shdeg',gcdeg);
