@@ -1262,10 +1262,10 @@ document.addEventListener('touchend', function(e) {
   }
   isDown = false
   if(parseInt($(".color").css('top')) < ($(window).height()*0.12)) {
-    $(".color").css({'top':0,'border-radius':'0px','transition':'0.3s','opacity':'1'})
+    $(".color").css({'top':'0px','border-radius':'0px','transition':'0.3s','opacity':'1'})
   }
   else {
-    $('.color').css({'top':$(window).height(),'border-radius':'15px 15px 0px 0px','opacity':'0','transition':'0.3s'});
+    $('.color').css({'top':$(window).height() + 'px','border-radius':'15px 15px 0px 0px','opacity':'0','transition':'0.3s'});
             setTimeout(function() {
     $('.fi').click();
             },50);
@@ -1281,9 +1281,9 @@ function move(e) {
   if (isDown) {
     const dx = e.pageX - mouseX
     const dy = e.pageY - mouseY
-    var gtip = (mouseY*1);
+    var gtip = (dy*1);
    if(gtip > -1) {
-     $('.color').css({'top':gtip,'border-radius':'15px 15px 0px 0px','transition':'0s'});
+     $('.color').css({'top':gtip + 'px','border-radius':'15px 15px 0px 0px','transition':'0s'});
      $('.color').css({'opacity':1-(parseInt($(".color").css('top'))/$(window).height()),'transition':'0.1s'});
    }
     else {
