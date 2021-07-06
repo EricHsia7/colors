@@ -785,7 +785,10 @@ var load = 0 ;
   // Read in the image file as a data URL.
   reader.readAsBinaryString(f);
 }
-
+  //touch
+      $.extend($.support, { touch: "ontouchend" in document });
+  
+  
 $('.fi').click(function() {
 
 if(sharecolor === "1" || sharecolor === "2") {
@@ -1014,7 +1017,7 @@ if((hexToRgb(shcolor).r+hexToRgb(shcolor).g+hexToRgb(shcolor).b)/3 > 128) {
 $('.color').css({'display':'block'});
   }
 else {
-$.extend($.support, { touch: "ontouchend" in document });
+
     if($.support.touch === true) {
   $('.color').css({'top':$(window).height()});
   setTimeout(function() {
@@ -1052,7 +1055,6 @@ if(open === "fav") {
   $('.color').css({'display':'block'});
   }
 else {
-$.extend($.support, { touch: "ontouchend" in document });
     if($.support.touch === true) {
   $('.color').css({'top':$(window).height()});
   setTimeout(function() {
@@ -1126,7 +1128,7 @@ for (var ldii=0; ldii<ldiilists.length; ldii++){
   });
 
   if(sharecolor === "2" || sharecolor === "1") {
-      $.extend($.support, { touch: "ontouchend" in document });
+
     if($.support.touch === true) {
   if(getCookie('mgpp') === 'true') {
 }
