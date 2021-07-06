@@ -1025,6 +1025,10 @@ else {
 $('.color').css({'top':0,'transition':'0.3s','opacity':'1','border-radius':'0px'});
   },1);
 $('.color').css({'display':'block'});
+    setTimeout(function() {
+        $('body').css({'background':shcolor});
+    },300);
+
   }
 else {
 $('.color').fadeIn(222);
@@ -1033,7 +1037,7 @@ $('.color').fadeIn(222);
   
 }
     
-    $('.color,body').css({'background':shcolor})
+    $('.color').css({'background':shcolor})
       $('#rgb').val(shcolor);
   
   
