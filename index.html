@@ -1261,12 +1261,11 @@ document.addEventListener('touchend', function(e) {
     offsetY += e.pageY - mouseY
   }
   isDown = false
-  
   if(parseInt($(".color").css('top')) < ($(window).height()*0.2)) {
     $(".color").css({'top':0,'border-radius':'0px','transition':'0.3s'})
   }
   else {
-    $('.color').css({'top':$(window).height(),'border-radius':'12px 12px 0px 0px','transition':'0.3s'});
+    $('.color').css({'top':$(window).height(),'border-radius':'15px 15px 0px 0px','transition':'0.3s'});
             setTimeout(function() {
     $('.fi').click();
             },50);
@@ -1283,7 +1282,7 @@ function move(e) {
     const dx = e.pageX - mouseX
     const dy = e.pageY - mouseY
     var gtip = (dy*1.5);
-   if(gtip > 0) {
+   if(gtip > -1) {
      $('.color').css({'top':gtip,'border-radius':'15px 15px 0px 0px','transition':'0.05s'});
    }
     else {
