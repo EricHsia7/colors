@@ -1211,6 +1211,60 @@ $('#hotkey-prompt-bg').click(function() {
         }
     }, false);
   
+  let mouseX = 0
+let mouseY = 0
+let offsetX = 0
+let offsetY = 0
+let isDown = false
+var div = document.querySelector(".color");
+
+div.addEventListener('touchstart', function(e) {
+  isDown = true
+  mouseX = e.pageX
+  mouseY = e.pageY
+  document.addEventListener('touchmove', move)
+});
+
+document.addEventListener('touchend', function(e) {
+  if (isDown) {
+    offsetX += e.pageX - mouseX
+    offsetY += e.pageY - mouseY
+  }
+  isDown = false
+  
+  if(parseInt($(".color").css('top')) < ($(window).height()*0.2)) {
+    $(".color").css({'top':0,'border-radius':'0px','transition':'0.3s'})
+  }
+  else {
+    $('.color').css({'top':$(window).height(),'border-radius':'12px 12px 0px 0px','transition':'0.3s'});
+            setTimeout(function() {
+    $('.fi').click();
+            },320);
+  }
+  document.removeEventListener('mousemove',move)
+});
+
+
+function move(e) {
+  if (isDown) {
+    const dx = e.pageX - mouseX
+    const dy = e.pageY - mouseY
+    var gtip = (dy*1.5);
+   if(gtip > 0) {
+     $('.color').css({'top':gtip,'border-radius':'15px 15px 0px 0px','transition':'0.05s'});
+   }
+    else {
+      $('.color').css({'top':0,'border-radius':'0px','transition':'0.3s'});
+    }
+    
+  }
+}
+  
+  
+  
+  
+  
+  
   document.onkeydown=function(e){
 var keyNum=window.event ? e.keyCode :e.which;
     if(sharecolor === "2" || sharecolor === "1") {
