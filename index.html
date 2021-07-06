@@ -1017,17 +1017,11 @@ if((hexToRgb(shcolor).r+hexToRgb(shcolor).g+hexToRgb(shcolor).b)/3 > 128) {
 $('.color').css({'display':'block'});
   }
 else {
-
-    if($.support.touch === true) {
   $('.color').css({'top':$(window).height()});
   setTimeout(function() {
 $('.color').css({'top':0,'transition':'0.3s'});
   },1);
 $('.color').css({'display':'block'});
-    }
-  else {
-$('.color').fadeIn(222);
-  }
 }
     
     $('.color').css({'background':shcolor})
@@ -1055,16 +1049,18 @@ if(open === "fav") {
   $('.color').css({'display':'block'});
   }
 else {
-    if($.support.touch === true) {
-  $('.color').css({'top':$(window).height()});
+$('.color').css({'top':$(window).height()});
   setTimeout(function() {
 $('.color').css({'top':0,'transition':'0.3s'});
   },1);
 $('.color').css({'display':'block'});
+}
+    $('.color').css({'background':grd});
+    $('#rgb').val(grd).attr('shga',gc1).attr('shgb',gc2).attr('shdeg',gcdeg);
+    
+    if(getCookie('colorfav2').indexOf('li]' + gcdeg + ']' + gc1 + ']' + gc2) != -1) {
+      $('.favt').css({'background':'rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/favorited.png)','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
     }
-  else {
-$('.color').fadeIn(222);
-  }
   }
   var added = 0 ;
   var addte = favda.length ;
