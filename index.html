@@ -1014,6 +1014,10 @@ if((hexToRgb(shcolor).r+hexToRgb(shcolor).g+hexToRgb(shcolor).b)/3 > 128) {
 $('.color').fadeIn(1);
   }
 else {
+  $('.color').css({'top':$(window).height()});
+  setTimeout(function() {
+$('.color').css({'top':0,'transition':'0.3s'});
+  },1);
 $('.color').fadeIn(222);
 }
     
