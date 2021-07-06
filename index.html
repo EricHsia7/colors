@@ -1261,7 +1261,7 @@ document.addEventListener('touchend', function(e) {
     offsetY += e.pageY - mouseY
   }
   isDown = false
-  if(parseInt($(".color").css('top')) < ($(window).height()*0.2)) {
+  if(parseInt($(".color").css('top')) < ($(window).height()*0.12)) {
     $(".color").css({'top':0,'border-radius':'0px','transition':'0.3s'})
   }
   else {
