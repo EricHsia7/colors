@@ -1011,14 +1011,14 @@ if((hexToRgb(shcolor).r+hexToRgb(shcolor).g+hexToRgb(shcolor).b)/3 > 128) {
       $('.ladbar').css({'background':'#fff'});
     }
   if(open === "fav") {
-$('.color').fadeIn(1);
+$('.color').css({'display':'block'});
   }
 else {
   $('.color').css({'top':$(window).height()});
   setTimeout(function() {
 $('.color').css({'top':0,'transition':'0.3s'});
   },1);
-$('.color').fadeIn(222);
+$('.color').css({'display':'block'});
 }
     
     $('.color').css({'background':shcolor})
@@ -1046,7 +1046,11 @@ if(open === "fav") {
   $('.color').css({'display':'block'});
   }
 else {
-$('.color').fadeIn(222);
+$('.color').css({'top':$(window).height()});
+  setTimeout(function() {
+$('.color').css({'top':0,'transition':'0.3s'});
+  },1);
+$('.color').css({'display':'block'});
 }
     $('.color').css({'background':grd});
     $('#rgb').val(grd).attr('shga',gc1).attr('shgb',gc2).attr('shdeg',gcdeg);
