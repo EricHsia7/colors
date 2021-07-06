@@ -1247,6 +1247,10 @@ document.addEventListener('touchend', function(e) {
 
 
 function move(e) {
+  if(open === 'fav') {
+    
+  }
+  else {
   if (isDown) {
     const dx = e.pageX - mouseX
     const dy = e.pageY - mouseY
@@ -1259,6 +1263,7 @@ function move(e) {
       $('.color').css({'top':0,'border-radius':'0px','transition':'0.3s'});
     }
     
+  }
   }
 }
   
