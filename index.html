@@ -1262,7 +1262,7 @@ document.addEventListener('touchend', function(e) {
   }
   isDown = false
   if(parseInt($(".color").css('top')) < ($(window).height()*0.12)) {
-    $(".color").css({'top':0,'border-radius':'0px','transition':'0.3s'})
+    $(".color").css({'top':0,'border-radius':'0px','transition':'0.3s','opacity':'1'})
   }
   else {
     $('.color').css({'top':$(window).height(),'border-radius':'15px 15px 0px 0px','opacity':'0','transition':'0.3s'});
