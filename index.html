@@ -1014,11 +1014,17 @@ if((hexToRgb(shcolor).r+hexToRgb(shcolor).g+hexToRgb(shcolor).b)/3 > 128) {
 $('.color').css({'display':'block'});
   }
 else {
+$.extend($.support, { touch: "ontouchend" in document });
+    if($.support.touch === true) {
   $('.color').css({'top':$(window).height()});
   setTimeout(function() {
 $('.color').css({'top':0,'transition':'0.3s'});
   },1);
 $('.color').css({'display':'block'});
+    }
+  else {
+$('.color').fadeIn(222);
+  }
 }
     
     $('.color').css({'background':shcolor})
@@ -1046,18 +1052,17 @@ if(open === "fav") {
   $('.color').css({'display':'block'});
   }
 else {
-$('.color').css({'top':$(window).height()});
+$.extend($.support, { touch: "ontouchend" in document });
+    if($.support.touch === true) {
+  $('.color').css({'top':$(window).height()});
   setTimeout(function() {
 $('.color').css({'top':0,'transition':'0.3s'});
   },1);
 $('.color').css({'display':'block'});
-}
-    $('.color').css({'background':grd});
-    $('#rgb').val(grd).attr('shga',gc1).attr('shgb',gc2).attr('shdeg',gcdeg);
-    
-    if(getCookie('colorfav2').indexOf('li]' + gcdeg + ']' + gc1 + ']' + gc2) != -1) {
-      $('.favt').css({'background':'rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/favorited.png)','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
     }
+  else {
+$('.color').fadeIn(222);
+  }
   }
   var added = 0 ;
   var addte = favda.length ;
@@ -1258,7 +1263,6 @@ document.addEventListener('touchend', function(e) {
 
 function move(e) {
   if(open === 'fav') {
-    
   }
   else {
   if (isDown) {
@@ -1270,10 +1274,9 @@ function move(e) {
    }
     else {
       //$('.color').css({'top':0,'border-radius':'0px','transition':'0.3s'});
-    }
-    
+   }
   }
-  }
+ }
 }
   
   
