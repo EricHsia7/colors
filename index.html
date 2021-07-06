@@ -1284,7 +1284,7 @@ function move(e) {
     var gtip = (dy*1);
    if(gtip > -1) {
      $('.color').css({'top':gtip,'border-radius':'15px 15px 0px 0px','transition':'0.05s'});
-     $('.color').css({'opacity':1-(dy/$(window).height()),'transition':'0.1s'});
+     $('.color').css({'opacity':1-(parseInt($(".color").css('top'))/$(window).height()),'transition':'0.1s'});
    }
     else {
       //$('.color').css({'top':0,'border-radius':'0px','transition':'0.3s'});
