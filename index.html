@@ -1290,7 +1290,7 @@ function move(e) {
   if (isDown) {
     const dx = e.pageX - mouseX
     const dy = e.pageY - mouseY
-    var gtip = (dy*1);
+    var gtip = (mouseY*1);
    if(gtip > -1) {
      $('.color').css({'transform':'translateY(' + gtip + 'px)','border-radius':'15px 15px 0px 0px','transition':'0s'}).attr('topi',gtip);
      $('.color').css({'opacity':1-(parseInt($(".color").attr('topi'))/$(window).height()),'transition':'0.1s'});
