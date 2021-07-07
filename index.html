@@ -793,6 +793,7 @@ $('.fi').click(function() {
 if(sharecolor === "1" || sharecolor === "2") {
     if(open === "fav") {
       $('body').css({'background':''});
+      $(".color").css({'transform':'translateY(0px)','border-radius':'0px','transition':'0.3s','opacity':'1'});
       location.href = 'https://erichsia7.github.io/colors/favorite/?open=col&scroll=' + favscroll + '&oani=' + url.searchParams.get('oani') + '&oanc=' + url.searchParams.get('oanc') + '&fgx=' + url.searchParams.get('fgx') + '&fgy=' + url.searchParams.get('fgy') + '&fgw=' + url.searchParams.get('fgw') + '&fgh=' + url.searchParams.get('fgh') + '&rg=' + url.searchParams.get('rg') + '&rgc=' + url.searchParams.get('rgc') + '&r=' + genid('random') ;
     }
     else {
@@ -1062,9 +1063,9 @@ else {
   
   
 if($.support.touch === true) {
-  $('.color').css({'top':$(window).height()});
+  $('.color').css({'transform':'translateY(' + $(window).height() + 'px)'});
   setTimeout(function() {
-$('.color').css({'top':0,'transition':'0.3s'});
+$('.color').css({'transform':'translateY(0px)','transition':'0.3s'});
   },1);
 $('.color').css({'display':'block'});
   }
