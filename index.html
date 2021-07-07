@@ -1259,6 +1259,9 @@ div.addEventListener('touchstart', function(e) {
 });
 
 document.addEventListener('touchend', function(e) {
+  if(open === 'fav') {
+  }
+  else {
   if (isDown) {
     offsetX += e.pageX - mouseX
     offsetY += e.pageY - mouseY
@@ -1275,6 +1278,7 @@ document.addEventListener('touchend', function(e) {
             },50);
   }
   document.removeEventListener('touchmove',move)
+  }
 });
 
 
