@@ -1265,12 +1265,12 @@ document.addEventListener('touchend', function(e) {
     offsetY += e.pageY - mouseY
   }
   isDown = false
-  if(parseInt($(".color").css('top')) < ($(window).height()*0.12)) {
-    $(".color").css({'top':'0px','border-radius':'0px','transition':'0.3s','opacity':'1'});
+  if(parseInt($(".color").attr('topi')) < ($(window).height()*0.12)) {
+    $(".color").css({'transform':'translateY(0px)','border-radius':'0px','transition':'0.3s','opacity':'1'});
     $('body').css({'background':$('#rgb').val()});
   }
   else {
-    $('.color').css({'top':$(window).height() + 'px','border-radius':'15px 15px 0px 0px','opacity':'0','transition':'0.3s'});
+    $('.color').css({'transform':'translateY(' + $(window).height() + 'px)','border-radius':'15px 15px 0px 0px','opacity':'0','transition':'0.3s'});
             setTimeout(function() {
     $('.fi').click();
             },50);
@@ -1288,7 +1288,7 @@ function move(e) {
     const dy = e.pageY - mouseY
     var gtip = (dy*1);
    if(gtip > -1) {
-     $('.color').css({'top':gtip + 'px','border-radius':'15px 15px 0px 0px','transition':'0s'});
+     $('.color').css({'transform':'translateY(' + gtip + 'px)','border-radius':'15px 15px 0px 0px','transition':'0s'}).attr('topi',gtip);
      $('.color').css({'opacity':1-(parseInt($(".color").css('top'))/$(window).height()),'transition':'0.1s'});
      $('body').css({'background':''});
    }
