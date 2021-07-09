@@ -179,7 +179,7 @@ liff.init({
       if (res) {
         setTimeout(function() {
 liff.closeWindow();
-        },150);
+        },1);
         // succeeded in sending a message through TargetPicker
         console.log(`[${res.status}] Message sent!`);
         
@@ -191,14 +191,14 @@ liff.closeWindow();
           console.log('TargetPicker was opened at least. Whether succeeded to send message is unclear');
           setTimeout(function() {
 liff.closeWindow();
-        },150);
+        },1);
         } else {
           // LINE 10.11.0 -
           // sending message canceled
           console.log('TargetPicker was closed!');
           setTimeout(function() {
 liff.closeWindow();
-        },150);
+        },1);
         }
       }
     }).catch(function (error) {
@@ -206,7 +206,7 @@ liff.closeWindow();
       console.log('something wrong happen');
     setTimeout(function() {
 liff.closeWindow();
-        },150);
+        },1);
     })
 }
 })
