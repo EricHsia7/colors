@@ -145,6 +145,11 @@ background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/ico_min/
     .mor {
 background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/ico_min/more.png);
 }
+      .linechat {
+background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/line.png);
+}
+  
+  
   
   .btn {
   background-size:25px;
@@ -503,6 +508,7 @@ background:#fff;
   <div class="fi3 lle btn"></div>
   <div class="qrt lle btn"></div>
     <div class="favt lle btn"></div>
+    <div class="linechat lle btn" style="display:none;"></div>
   <div class="fi lle btn"></div>
   </div> 
   
@@ -1043,6 +1049,8 @@ $('.color').fadeIn(222);
   if(getCookie('colorfav2').indexOf('&' + shcolor) != -1) {
       $('.favt').css({'background':'rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/favorited.png)','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
     }
+  $('.linechat').fadeIn(1);
+  $('#menuj').css({'width':'340px'});
 }
   if(sharecolor === "2") {
     
