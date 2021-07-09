@@ -37,6 +37,12 @@ liff.init({
 .catch((err) => {
   console.log('error', err);
 });
+  //login
+  if (!liff.isLoggedIn()) {
+  liff.login({ redirectUri: "https://erichsia7.github.io/colors/liff/" });
+}
+  
+  
   
   //share
   if (liff.isApiAvailable('shareTargetPicker')) {
