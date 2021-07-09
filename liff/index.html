@@ -28,28 +28,26 @@ liff.init({
   })
   .then(() => {
     // Start to use liff's api
-  //getname
-  liff.getProfile()
-.then(profile => {
-  const name = profile.displayName ;
-    $('#text').html(name);
-})
-.catch((err) => {
-  console.log('error', err);
-});
   //login
   if (!liff.isLoggedIn()) {
   liff.login({ redirectUri: "https://erichsia7.github.io/colors/liff/" });
 }
-  
-  
-  
+  //getname
+  var nnhh ;
+  liff.getProfile()
+.then(profile => {
+  const name = profile.displayName ;
+    nnhh = name ;
+})
+.catch((err) => {
+  console.log('error', err);
+});
   //share
   if (liff.isApiAvailable('shareTargetPicker')) {
   liff.shareTargetPicker([
 {
   "type": "flex",
-  "altText": "Colors",
+  "altText": nnhh + "向您傳送了Colors",
   "contents": {
     "type": "bubble",
     "hero": {
@@ -94,11 +92,12 @@ liff.init({
     ])
     .then(function (res) {
       if (res) {
-        // succeeded in sending a message through TargetPicker
-        console.log(`[${res.status}] Message sent!`);
         setTimeout(function() {
 liff.closeWindow();
         },150);
+        // succeeded in sending a message through TargetPicker
+        console.log(`[${res.status}] Message sent!`);
+        
       } else {
         const [majorVer, minorVer] = (liff.getLineVersion() || "").split('.');
         if (parseInt(majorVer) == 10 && parseInt(minorVer) < 11) {
