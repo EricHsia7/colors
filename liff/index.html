@@ -46,7 +46,7 @@ liff.init({
   
   //share
   if (liff.isApiAvailable('shareTargetPicker')) {
-  liff.shareTargetPicker([
+  liff.shareTargetPicker(
     {
   "type": "bubble",
   "hero": {
@@ -96,7 +96,7 @@ liff.init({
     "flex": 0
   }
 }
-  ])
+  )
     .then(function (res) {
       if (res) {
         // succeeded in sending a message through TargetPicker
