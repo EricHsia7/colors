@@ -47,55 +47,69 @@ liff.init({
   //share
   if (liff.isApiAvailable('shareTargetPicker')) {
   liff.shareTargetPicker([
-    {
-  "type": "bubble",
-  "hero": {
-    "type": "image",
-    "url": "https://singlecolorimage.com/get/689689/100x100",
-    "size": "full",
-    "aspectRatio": "20:13",
-    "aspectMode": "cover",
-    "action": {
-      "type": "uri",
-      "label": "action",
-      "uri": "https://google.com"
-    }
-  },
-  "body": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "text",
-        "text": "#689689",
-        "weight": "bold",
-        "size": "xl"
-      }
-    ]
-  },
-  "footer": {
-    "type": "box",
-    "layout": "vertical",
-    "spacing": "sm",
-    "contents": [
-      {
-        "type": "button",
-        "style": "secondary",
-        "height": "sm",
+{
+  "type": "flex",
+  "altText": "this is a flex message",
+  "contents": {
+    "type": "bubble",
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+       {
+    "type": "bubble",
+    "hero": {
+        "type": "image",
+        "url": "https://singlecolorimage.com/get/689689/100x100",
+        "size": "full",
+        "aspectRatio": "20:13",
+        "aspectMode": "cover",
         "action": {
-          "type": "uri",
-          "label": "Open",
-          "uri": "https://linecorp.com"
+            "type": "uri",
+            "label": "action",
+            "uri": "https://google.com"
         }
-      },
-      {
-        "type": "spacer",
-        "size": "sm"
-      }
-    ],
-    "flex": 0
+    },
+    "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+            {
+                "type": "text",
+                "text": "#689689",
+                "weight": "bold",
+                "size": "xl"
+            }
+        ]
+    },
+    "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+            {
+                "type": "button",
+                "style": "secondary",
+                "height": "sm",
+                "action": {
+                    "type": "uri",
+                    "label": "Open",
+                    "uri": "https://linecorp.com"
+                }
+            },
+            {
+                "type": "spacer",
+                "size": "sm"
+            }
+        ],
+        "flex": 0
+    }
+}
+      ]
+    }
   }
 }
+       
     ])
     .then(function (res) {
       if (res) {
