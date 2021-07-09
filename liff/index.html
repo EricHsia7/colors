@@ -56,7 +56,7 @@ liff.init({
         "type": "image",
         "url": "https://singlecolorimage.com/get/689689/100x100",
         "size": "full",
-        "aspectRatio": "20:13",
+        "aspectRatio": "23:13",
         "aspectMode": "cover",
         "action": {
             "type": "uri",
@@ -80,7 +80,7 @@ liff.init({
                 "height": "sm",
                 "action": {
                     "type": "uri",
-                    "label": "Open",
+                    "label": "查看",
                     "uri": "https://linecorp.com"
                 }
             }
@@ -96,25 +96,33 @@ liff.init({
       if (res) {
         // succeeded in sending a message through TargetPicker
         console.log(`[${res.status}] Message sent!`);
-        liff.closeWindow();
+        setTimeout(function() {
+liff.closeWindow();
+        },150);
       } else {
         const [majorVer, minorVer] = (liff.getLineVersion() || "").split('.');
         if (parseInt(majorVer) == 10 && parseInt(minorVer) < 11) {
           // LINE 10.3.0 - 10.10.0
           // Old LINE will access here regardless of user's action
           console.log('TargetPicker was opened at least. Whether succeeded to send message is unclear');
-          liff.closeWindow();
+          setTimeout(function() {
+liff.closeWindow();
+        },150);
         } else {
           // LINE 10.11.0 -
           // sending message canceled
           console.log('TargetPicker was closed!');
-          liff.closeWindow()
+          setTimeout(function() {
+liff.closeWindow();
+        },150);
         }
       }
     }).catch(function (error) {
       // something went wrong before sending a message
       console.log('something wrong happen');
-    liff.closeWindow()
+    setTimeout(function() {
+liff.closeWindow();
+        },150);
     })
 }
   
