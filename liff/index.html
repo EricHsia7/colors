@@ -37,17 +37,13 @@ liff.init({
   liff.getProfile()
 .then(profile => {
   const name = profile.displayName ;
-    nnhh = String(name) ;
-})
-.catch((err) => {
-  console.log('error', err);
-});
+    
   //share
   if (liff.isApiAvailable('shareTargetPicker')) {
   liff.shareTargetPicker([
 {
   "type": "flex",
-  "altText": nnhh + "向您傳送了Colors",
+  "altText": name + "向您傳送了Colors",
   "contents": {
     "type": "bubble",
     "hero": {
@@ -124,14 +120,14 @@ liff.closeWindow();
         },150);
     })
 }
+})
+.catch((err) => {
+  console.log('error', err);
+});
   
-  
+        
 
 
-
-  
-  
-  
   
   })
   .catch((err) => {
