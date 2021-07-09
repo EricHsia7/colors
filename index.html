@@ -1192,13 +1192,11 @@ if(mgpcl === 2) {
 }
 });
   
-  
-
 $('#hotkey-prompt-bg').click(function() {
   $('#hotkey-prompt-bg').fadeOut(300);
   document.cookie = 'mgpp-p' + '=' + 'true' + '; max-age='+60*60*24*7;
 });
-  
+
   
   
   
@@ -1322,11 +1320,6 @@ function move(e) {
  }
 }
   
-  
-  
-  
-  
-  
   document.onkeydown=function(e){
 var keyNum=window.event ? e.keyCode :e.which;
     if(sharecolor === "2" || sharecolor === "1") {
@@ -1347,5 +1340,9 @@ if(keyNum==70){
 }
     }
 }
+  
+  $('.linechat').click(function() {
+    location.href = 'http://line.me/R/app/1656197609-DznLgN7A?c=' + btoa(shcolor) ;
+  });
 </script>
 
