@@ -1,3 +1,15 @@
 <meta charset="UTF-8">
 <title>Colors</title>
-<script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+<script>
+liff
+  .init({
+    liffId: "1656197609-DznLgN7A" // Use own liffId
+  })
+  .then(() => {
+    // Start to use liff's api
+  })
+  .catch((err) => {
+    // Error happens during initialization
+    console.log(err.code, err.message);
+  });
+</script>
