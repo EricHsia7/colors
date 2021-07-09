@@ -23,6 +23,74 @@
 <span id="text"></span>
 <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 <script>
+  var getUrlString = location.href;
+var url = new URL(getUrlString);
+var co = atob(url.searchParams.get('c')) ;
+  
+  
+  function genid(mode) {
+if(mode === "random"){
+var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
+            var genid = "";
+            for (var i = 0; i < 16; i++) {
+                var genrandomNumber = Math.floor(Math.random() * genidchars.length);
+                genid += genidchars.substring(genrandomNumber, genrandomNumber + 1);
+            }
+  return genid ;
+}
+          
+ if(mode === "time"){
+   var gtoday=new Date();
+   var genid2 = (gtoday.getMonth()+1) + '_' + gtoday.getDate() + '_' + gtoday.getHours() + '_' + gtoday.getMinutes() + '_' + gtoday.getSeconds() + '-' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8));
+   
+   return genid2
+ }
+  
+  if(mode === "number"){
+   
+   var genid3 = '' ;
+for (var i = 0; i < 16; i++) {
+  genid3 += '' + (0+Math.floor(Math.random() * 9))
+}
+   return genid3
+ }
+  
+  if(mode === "uuid"){
+var genidchars4 = "abcdef012345678";
+    var geniduu = [8,4,4,4,12];
+            var genid4 = "";
+            var genid5 = "";
+    for (var ia = 0; ia < geniduu.length; ia++) {
+      var genid4 = "";
+            for (var i = 0; i < geniduu[ia]; i++) {
+                var genrandomNumber4 = Math.floor(Math.random() * genidchars4.length);
+                genid4 += genidchars4.substring(genrandomNumber4, genrandomNumber4 + 1);
+            }
+genid5 += '-' + genid4 ;
+    }
+    return genid5.substring(1,genid5.length)
+  }
+
+}
+function componentToHex(c) {
+  var hex = c.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b) {
+  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+function hexToRgb(hex) {
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : null;
+}
+  
+  
+  
 liff.init({
     liffId: "1656197609-DznLgN7A" // Use own liffId
   })
@@ -48,7 +116,7 @@ liff.init({
     "type": "bubble",
     "hero": {
         "type": "image",
-        "url": "https://singlecolorimage.com/get/689689/100x100",
+        "url": "https://singlecolorimage.com/get/" + co.split('#')[1] + "/100x100",
         "size": "full",
         "aspectRatio": "23:13",
         "aspectMode": "cover"
@@ -59,7 +127,7 @@ liff.init({
       "contents": [
     {
                 "type": "text",
-                "text": "#689689",
+                "text": co,
                 "weight": "bold",
                 "size": "xl"
      },
@@ -75,7 +143,7 @@ liff.init({
                 "action": {
                     "type": "uri",
                     "label": "查看",
-                    "uri": "https://erichsia7.github.io/colors/"
+                    "uri": "https://erichsia7.github.io/colors/?s=1&c=" + co + '&r=' + genid('random')
                 }
             }
         
