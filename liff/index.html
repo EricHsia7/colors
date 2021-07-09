@@ -1,12 +1,44 @@
 <meta charset="UTF-8">
 <title>Colors</title>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-342D6M2MKX"></script>
 <script>
-liff
-  .init({
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-342D6M2MKX');
+</script>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<link href="https://erichsia7.github.io/colors/c2_512.png" sizes="512x512" rel="apple-touch-icon-precomposed" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="defualt" />
+<link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="icon" />
+<link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="bookmark" />
+<link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="shortcut icon" />
+<span id="text"></span>
+<script>
+liff.init({
     liffId: "1656197609-DznLgN7A" // Use own liffId
   })
   .then(() => {
     // Start to use liff's api
+  
+  liff.getProfile()
+.then(profile => {
+  const name = profile.displayName ;
+    $('#text').html(name);
+})
+.catch((err) => {
+  console.log('error', err);
+});
+  
+  
+  
   })
   .catch((err) => {
     // Error happens during initialization
