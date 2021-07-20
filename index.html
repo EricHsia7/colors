@@ -1286,7 +1286,7 @@ document.addEventListener('touchend', function(e) {
       $('body').css({'background':''});
     setTimeout(function() {
     $('.fi').click();
-            },0.3+(1-(dy/$(window).height()))*0.2*1000);
+            },(0.3+(1-(dy/$(window).height()))*0.2)*1000);
     }
     else {
       $('body').css({'background':$('#rgb').attr('arc')});
