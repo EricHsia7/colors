@@ -1301,19 +1301,18 @@ document.addEventListener('touchend', function(e) {
 
 function move(e) {
   if(open === 'fav') {
-    $(".color").css({'transform':'translateY(0px)','border-radius':'0px','transition':'0.3s','opacity':'1'});
-    
     if (isDown) {
     const dx = e.pageX - mouseX
     const dy = e.pageY - mouseY
     var gtipu = (1-(dy/$(window).height()));
-   if(gtipu > -1) {
+   if(gtipu > 0.6) {
      $('.color').css({'transform':'scale(' + gtipu + ')','border-radius':'15px','transition':'0s'}).attr('topi',gtipu);
      //$('.color').css({'opacity':1-(parseInt($(".color").attr('topi'))/$(window).height()),'transition':'0.1s'});
      $('body').css({'background':''});
    }
     else {
        //$('.color').css({'border-radius':'0px','transition':'0.3s'});
+      $('.color').css({'transform':'scale(' + 1 + ')','border-radius':'0px','transition':'0.3s'}).attr('topi',gtipu);
     }
   }
     
