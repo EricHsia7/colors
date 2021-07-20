@@ -1281,7 +1281,7 @@ document.addEventListener('touchend', function(e) {
     const dy = e.pageY - mouseY
     var gtipu = (1-(dy/$(window).height()));
           $('.color').css({'transform':'scale(' + 1 + ')','border-radius':'0px','transition':'0.3s'}).attr('scale','1');
-    if(gtipu < 0.85) {
+    if(gtipu < 0.9) {
     setTimeout(function() {
     $('.fi').click();
             },50);
