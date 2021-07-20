@@ -1281,10 +1281,15 @@ document.addEventListener('touchend', function(e) {
     const dy = e.pageY - mouseY
     var gtipu = (1-(dy/$(window).height()));
           $('.color').css({'transform':'scale(' + 1 + ')','border-radius':'0px','transition':'0.3s'}).attr('scale','1');
+          
     if(gtipu < 0.9) {
+      $('body').css({'background':''});
     setTimeout(function() {
     $('.fi').click();
             },50);
+    }
+    else {
+      $('body').css({'background':$('#rgb').attr('arc')});
     }
     
   }
