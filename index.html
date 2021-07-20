@@ -1283,12 +1283,8 @@ document.addEventListener('touchend', function(e) {
       var gtipu = (1-(dy/$(window).height()));
   }
   isDown = false
-    if(gtipu > 0.6) {
           $('.color').css({'transform':'scale(' + 1 + ')','border-radius':'0px','transition':'0.3s'}).attr('scale','1');
-    }
-    else {
-      
-    }
+
     if(gtipu < 0.85) {
     setTimeout(function() {
     $('.fi').click();
