@@ -1277,7 +1277,7 @@ div.addEventListener('touchstart', function(e) {
 
 document.addEventListener('touchend', function(e) {
   if(open === 'fav') {
-          $('.color').css({'transform':'scale(' + 1 + ')','border-radius':'0px','transition':'0.3s'});
+          $('.color').css({'transform':'scale(' + 1 + ')','border-radius':'0px','transition':'0.3s'}).attr('scale','1');
   }
   else {
   if (isDown) {
@@ -1311,7 +1311,7 @@ function move(e) {
      $('body').css({'background':''});
    }
     else {
- //$('.color').css({'transform':'scale(' + 1 + ')','border-radius':'0px','transition':'0.3s'}).attr('scale',gtipu);
+ $('.color').css({'transform':'scale(' + 1 + ')','border-radius':'0px','transition':'0.3s'}).attr('scale',gtipu);
     }
   }
     
