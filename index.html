@@ -800,7 +800,7 @@ if(sharecolor === "1" || sharecolor === "2") {
     if(open === "fav") {
       $('body').css({'background':''});
       $(".color").css({'transform':'translateY(0px)','border-radius':'0px','transition':'0s','opacity':'1','height':'100%','top':'0px'});
-      location.href = 'https://erichsia7.github.io/colors/favorite/?open=col&scroll=' + favscroll + '&oani=' + url.searchParams.get('oani') + '&oanc=' + url.searchParams.get('oanc') + '&fgx=' + url.searchParams.get('fgx') + '&fgy=' + url.searchParams.get('fgy') + '&fgw=' + url.searchParams.get('fgw') + '&fgh=' + url.searchParams.get('fgh') + '&rg=' + url.searchParams.get('rg') + '&rgc=' + url.searchParams.get('rgc') + '&r=' + genid('random') ;
+      location.href = 'https://erichsia7.github.io/colors/favorite/?open=col&scroll=' + favscroll + '&oani=' + url.searchParams.get('oani') + '&oanc=' + url.searchParams.get('oanc') + '&fgx=' + url.searchParams.get('fgx') + '&fgy=' + url.searchParams.get('fgy') + '&fgw=' + url.searchParams.get('fgw') + '&fgh=' + url.searchParams.get('fgh') + '&rg=' + url.searchParams.get('rg') + '&rgc=' + url.searchParams.get('rgc') + '&scale=' + $('.color').attr('scale') + '&r=' + genid('random') ;
     }
     else {
       $('body').css({'background':'','transition':'0.222s'});
@@ -1277,7 +1277,7 @@ div.addEventListener('touchstart', function(e) {
 
 document.addEventListener('touchend', function(e) {
   if(open === 'fav') {
-          $('.color').css({'transform':'scale(' + 1 + ')','border-radius':'0px','transition':'0.3s'});
+          $('.color').css({'transform':'scale(' + 1 + ')','border-radius':'0px','transition':'0.3s'}).attr('scale',1);
   }
   else {
   if (isDown) {
@@ -1307,13 +1307,11 @@ function move(e) {
     const dy = e.pageY - mouseY
     var gtipu = (1-(dy/$(window).height()));
    if(gtipu > 0.6) {
-     $('.color').css({'transform':'scale(' + gtipu + ')','border-radius':'15px','transition':'0s'}).attr('topi',gtipu);
-     //$('.color').css({'opacity':1-(parseInt($(".color").attr('topi'))/$(window).height()),'transition':'0.1s'});
+     $('.color').css({'transform':'scale(' + gtipu + ')','border-radius':'15px','transition':'0s'}).attr('scale',gtipu);
      $('body').css({'background':''});
    }
     else {
-       //$('.color').css({'border-radius':'0px','transition':'0.3s'});
-      $('.color').css({'transform':'scale(' + 1 + ')','border-radius':'0px','transition':'0.3s'}).attr('topi',gtipu);
+ $('.color').css({'transform':'scale(' + 1 + ')','border-radius':'0px','transition':'0.3s'}).attr('scale',gtipu);
     }
   }
     
