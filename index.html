@@ -1278,6 +1278,9 @@ div.addEventListener('touchstart', function(e) {
 document.addEventListener('touchend', function(e) {
   if(open === 'fav') {
           $('.color').css({'transform':'scale(' + 1 + ')','border-radius':'0px','transition':'0.3s'}).attr('scale','1');
+    setTimeout(function() {
+    $('.fi').click();
+            },50);
   }
   else {
   if (isDown) {
@@ -1312,12 +1315,10 @@ function move(e) {
    }
     else {
  $('.color').css({'transform':'scale(' + 1 + ')','border-radius':'0px','transition':'0.3s'}).attr('scale',gtipu);
+      
     }
   }
-    
-    
-    
-    
+
   }
   else {
   if (isDown) {
