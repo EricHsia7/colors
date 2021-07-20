@@ -1280,13 +1280,13 @@ document.addEventListener('touchend', function(e) {
     const dx = e.pageX - mouseX
     const dy = e.pageY - mouseY
     var gtipu = (1-(dy/$(window).height()));
-          $('.color').css({'transform':'scale(' + 1 + ')','border-radius':'0px','transition':0.3+(1-(dy/$(window).height()))*0.2 + 's'}).attr('scale','1');
+          $('.color').css({'transform':'scale(' + 1 + ')','border-radius':'0px','transition':0.3+(1-(dy/$(window).height()))*0.07 + 's'}).attr('scale','1');
           
     if(gtipu < 0.9) {
       $('body').css({'background':''});
     setTimeout(function() {
     $('.fi').click();
-            },(0.3+(1-(dy/$(window).height()))*0.2)*1000);
+            },(0.3+(1-(dy/$(window).height()))*0.07)*1000);
     }
     else {
       $('body').css({'background':$('#rgb').attr('arc')});
