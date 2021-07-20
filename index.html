@@ -1306,7 +1306,7 @@ function move(e) {
     if (isDown) {
     const dx = e.pageX - mouseX
     const dy = e.pageY - mouseY
-    var gtipu = ($(window).height()/dy);
+    var gtipu = (1-(dy/$(window).height()));
    if(gtipu > -1) {
      $('.color').css({'transform':'scale(' + gtipu + ')','border-radius':'15px','transition':'0s'}).attr('topi',gtipu);
      //$('.color').css({'opacity':1-(parseInt($(".color").attr('topi'))/$(window).height()),'transition':'0.1s'});
