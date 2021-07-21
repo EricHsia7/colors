@@ -687,22 +687,7 @@ genid5 += '-' + genid4 ;
 }
   
   
-  function avearr(startxt,endxt,aver) {
-  startxt = parseInt(startxt) ;
-  endxt = parseInt(endxt);
-  aver = parseInt(aver);
   
-  var maxX = Math.max(startxt,endxt) ;
-  var minX = Math.min(startxt,endxt) ;
-  var Xdis = maxX-minX ;
-  var aven = Xdis/(aver-1) ;
-  var avenarr = '' ;
-  for (var er = 0; er < (aver-1) ; er++) {
-    avenarr += ',' + ((aven*(er+1))).toFixed(3)
-  }
-  var avenarry = ('0' + avenarr).split(',')
-  return avenarry ;
-}
   
   
 function componentToHex(c) {
@@ -1341,10 +1326,6 @@ document.addEventListener('touchend', function(e) {
 
 function move(e) {
   if(open === 'fav') {
-    var fgxarr = avearr(0,url.searchParams.get('fgx'),100) ;
-    var fgyarr = avearr(0,url.searchParams.get('fgy'),100) ;
-    var fgwarr = avearr(0,url.searchParams.get('fgw'),100) ;
-    var fgharr = avearr(0,url.searchParams.get('fgh'),100) ;
     if (isDown) {
     const dx = e.pageX - mouseX
     const dy = e.pageY - mouseY
