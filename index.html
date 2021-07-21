@@ -685,6 +685,26 @@ genid5 += '-' + genid4 ;
   }
 
 }
+  
+  
+  function avearr(startxt,endxt,aver) {
+  startxt = parseInt(startxt) ;
+  endxt = parseInt(endxt);
+  aver = parseInt(aver);
+  
+  var maxX = Math.max(startxt,endxt) ;
+  var minX = Math.min(startxt,endxt) ;
+  var Xdis = maxX-minX ;
+  var aven = Xdis/(aver-1) ;
+  var avenarr = '' ;
+  for (var er = 0; er < (aver-1) ; er++) {
+    avenarr += ',' + ((aven*(er+1))).toFixed(3)
+  }
+  var avenarry = ('0' + avenarr).split(',')
+  return avenarry ;
+}
+  
+  
 function componentToHex(c) {
   var hex = c.toString(16);
   return hex.length == 1 ? "0" + hex : hex;
