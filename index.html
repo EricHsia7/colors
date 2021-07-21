@@ -1284,6 +1284,7 @@ document.addEventListener('touchend', function(e) {
           
     if(gtipu < 0.9) {
       $('body').css({'background':''});
+      $('.color').attr('scale',gtipu);
     setTimeout(function() {
     $('.fi').click();
             },(0.3+(1-(dy/$(window).height()))*0.07)*1000);
