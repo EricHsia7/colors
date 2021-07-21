@@ -1320,7 +1320,7 @@ function move(e) {
     const dx = e.pageX - mouseX
     const dy = e.pageY - mouseY
     var gtipu = (1-(dy/$(window).height()));
-   if(gtipu > 0.6 && gtipu < 1.1) {
+   if(gtipu > 0.6 && gtipu < 1.00001) {
      $('.color').css({'transform':'scale(' + gtipu + ')','border-radius':'15px','transition':'0s'}).attr('scale',gtipu);
      $('body').css({'background':''});
    }
