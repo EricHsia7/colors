@@ -884,6 +884,7 @@ $('.card').attr('se',cardselect);
        if(open === "col") {
        start();
         history.pushState(null, null,'https://erichsia7.github.io/colors/favorite/?r=' + genid('random'));
+        $('title').html('Colors');
        }
        else {
         setTimeout(start,888);
@@ -891,6 +892,7 @@ $('.card').attr('se',cardselect);
        if(fado === "1") {
         $('body').prompt({'message':'已匯入' + fadod.split(',')[0] + '個，重複' + fadod.split(',')[1] + '個，共' + fadod.split(',')[2] + '個','time':5000,'animate':'slide'});
         history.pushState(null, null,'https://erichsia7.github.io/colors/favorite/?r=' + genid('random'));
+        $('title').html('Colors');
        }
  //setInterval(start,3000);  
 $('.cl2').click(function() {
