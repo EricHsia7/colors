@@ -776,6 +776,11 @@ var favcolorss = getCookie('colorfav2').substring(1,getCookie('colorfav2').lengt
        var tgrtag = 'other' ;
        }
     //tagend
+    //colornamesearch  
+htmlobj = $.ajax({ url: "https://colornames.org/search/json/?hex=" + favcolorss[ffpp].split('#')[1] , async: false });
+       var colornamesea JSON.parse(htmlobj.responseText).name ;
+    //colornamesearchend
+    
  if((hexToRgb(favcolorss[ffpp]).r+hexToRgb(favcolorss[ffpp]).g+hexToRgb(favcolorss[ffpp]).b)/3 > 128) {
 var tgzcolor = '#000' ;
 var seicocor = '0' ;
@@ -785,7 +790,7 @@ var seicocor = '0' ;
 var seicocor = '255' ;
     }
     var crdiduu = genid('random') ;
-    $('#cardbox').prepend('<div class="card" style="background:' + favcolorss[ffpp] + ';color:' + tgzcolor + ';--seico-color:' + seicocor + '" type="col" id="' + crdiduu + '" rg="' + favcolorss[ffpp] +'" tag="' + tgrtag + '"><div class="content"><h4>' + favcolorss[ffpp] + '</h4><div class="description"><a link="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favcolorss[ffpp]) + '&open=fav" class="coloropenbtnj" crdid="' + crdiduu + '">查看顏色</a></div></div></div>');
+    $('#cardbox').prepend('<div class="card" style="background:' + favcolorss[ffpp] + ';color:' + tgzcolor + ';--seico-color:' + seicocor + '" type="col" id="' + crdiduu + '" rg="' + favcolorss[ffpp] +'" tag="' + tgrtag + '" color-name="' + colornamesea + '"><div class="content"><h4>' + favcolorss[ffpp] + '</h4><div class="description"><a link="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favcolorss[ffpp]) + '&open=fav" class="coloropenbtnj" crdid="' + crdiduu + '">查看顏色</a></div></div></div>');
 
    }
   }
