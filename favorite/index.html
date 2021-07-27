@@ -778,7 +778,7 @@ var favcolorss = getCookie('colorfav2').substring(1,getCookie('colorfav2').lengt
     //tagend
     //colornamesearch  
 htmlobj = $.ajax({ url: "https://colornames.org/search/json/?hex=" + favcolorss[ffpp].split('#')[1] , async: false });
-       var colornamesea JSON.parse(htmlobj.responseText).name ;
+       var colornamesea = JSON.parse(htmlobj.responseText).name ;
     //colornamesearchend
     
  if((hexToRgb(favcolorss[ffpp]).r+hexToRgb(favcolorss[ffpp]).g+hexToRgb(favcolorss[ffpp]).b)/3 > 128) {
