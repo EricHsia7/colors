@@ -839,6 +839,19 @@ $('#' + fghidf).css({'border-radius':'0px','width':'100%','height':'100%','posit
    
   }
 });
+  $('.cardki2').click(function() {
+  if(cardselect === "0") {
+        var textArea = document.createElement("textarea");
+        textArea.value = $('#' + $(this).attr('crdid')).attr('rg') ;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand("Copy");
+        textArea.remove();
+  }
+  });
+ 
+ 
+ 
  if(open === "col") {
   $(document).scrollTop(favscroll);
   $('.clopanblur').css({'display':'block'});
