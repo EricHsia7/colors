@@ -26,6 +26,10 @@
     "src": "https://erichsia7.github.io/colors/ic/icon_192x192.png",
     "sizes": "192x192",
     "type": "image/png"
+  }, {
+    "src": "https://erichsia7.github.io/colors/c2_512.png",
+    "sizes": "512x512",
+    "type": "image/png"
   }
   ],
   "start_url": "./?pwa=1",
