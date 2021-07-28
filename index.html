@@ -20,7 +20,7 @@
 <link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="icon" />
 <link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="bookmark" />
 <link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="shortcut icon" />
-<link rel="manifest" href="manifest.json?qes">
+<link rel="manifest" href="manifest.json?qpo">
 <style id="mainstyle">
 
   * {outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);}
@@ -634,6 +634,7 @@ var shcolor = atob(url.searchParams.get('c')) ;
   var favda = atob(url.searchParams.get('favda')).split('&');
   var favdel = url.searchParams.get('del') ;
   var favscroll = url.searchParams.get('scroll') ;
+  var shortcuts = url.searchParams.get('shortcuts') ;
 var ccw = 256;
 var ccwa = (ccw*ccw) ;
 document.getElementById('cc').width = ccw ;
@@ -1017,6 +1018,12 @@ gtag('event', 'generator', {
 });
     
 });
+  
+  
+  if(shortcuts === "1") {
+    $('.rand2').click()
+  }
+  
   
 if(sharecolor === "1") {
 if((hexToRgb(shcolor).r+hexToRgb(shcolor).g+hexToRgb(shcolor).b)/3 > 128) {
