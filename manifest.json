@@ -35,7 +35,7 @@
       "name": "Random Color",
       "short_name": "Random Color",
       "description": "Generate random colors",
-      "url": "/?gh=1"
+      "url": "/?shortcuts=1"
     }
   ]
 }
