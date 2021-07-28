@@ -35,7 +35,8 @@
       "name": "Random Color",
       "short_name": "Random Color",
       "description": "Generate random colors",
-      "url": "/?shortcuts=1"
+      "url": "https://erichsia7.github.io/colors/?shortcuts=1",
+      "icons":[{"src":"https://erichsia7.github.io/colors/ic/icon_192x192.png","sizes": "192x192"}]
     }
   ]
 }
