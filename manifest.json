@@ -29,5 +29,13 @@
   }
   ],
   "start_url": "./?pwa=1",
-  "display": "standalone"
+  "display": "standalone",
+  "shortcuts": [
+    {
+      "name": "Random Color",
+      "short_name": "Random Color",
+      "description": "Generate random colors",
+      "url": "/?gh=1"
+    }
+  ]
 }
