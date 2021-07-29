@@ -832,7 +832,8 @@ var rgb_b = 0 ;
 var rgb_rm = [] ;
 var rgb_gm = [] ;
 var rgb_bm = [] ;
-
+var jsprognu = 0 ;
+      
 var load = 0 ;
       gtag('event', 'photo', {
     'event_category': 'color',
@@ -848,8 +849,9 @@ var load = 0 ;
   rgb_rm.push(ctx.getImageData(xi, yi, 1, 1).data[0]) ;
   rgb_gm.push(ctx.getImageData(xi, yi, 1, 1).data[1]) ;
   rgb_bm.push(ctx.getImageData(xi, yi, 1, 1).data[2]) ;
+       jsprognu += 1 ;
      }
-     var cojsprogw = Math.ceil((xi/ccw)*100) ;
+     var cojsprogw = Math.ceil((jsprognu/ccwa)*100) ;
      $('#cojsprog').css({'width':cojsprogw + '%'});
    }
     if(getMode(rgb_rm).length > 0 && getMode(rgb_gm).length > 0 && getMode(rgb_bm).length > 0) {
