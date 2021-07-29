@@ -715,6 +715,8 @@ genid5 += '-' + genid4 ;
   
   
   
+let getMode=e=>{let t={};e.forEach(e=>{t[e]=(t[e]||0)+1});let l=0,r=[];for(let e in t)if(t[e]>l?(l=t[e],r=[e]):t[e]===l&&r.push(e),r.length===Object.keys(t).length)return[];return r};
+  
   
   
 function componentToHex(c) {
@@ -784,6 +786,10 @@ function handleFileSelect(evt) {
 var rgb_r = 0 ;     
 var rgb_g = 0 ;   
 var rgb_b = 0 ; 
+var rgb_rm = '0' ;
+var rgb_gm = '0' ;
+var rgb_bm = '0' ;
+
 var load = 0 ;
       gtag('event', 'photo', {
     'event_category': 'color',
@@ -796,6 +802,9 @@ var load = 0 ;
   rgb_r += ctx.getImageData(xi, yi, 1, 1).data[0] ;
   rgb_g += ctx.getImageData(xi, yi, 1, 1).data[1] ;
   rgb_b += ctx.getImageData(xi, yi, 1, 1).data[2] ; 
+  rgb_rm += ',' + ctx.getImageData(xi, yi, 1, 1).data[0] ;
+  rgb_gm += ',' + ctx.getImageData(xi, yi, 1, 1).data[1] ;
+  rgb_bm += ',' + ctx.getImageData(xi, yi, 1, 1).data[2] ;
      }
    }
     var rgbs = Math.ceil(rgb_r/ccwa) + ',' + Math.ceil(rgb_g/ccwa) + ',' + Math.ceil(rgb_b/ccwa) ;
