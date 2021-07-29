@@ -834,8 +834,12 @@ var load = 0 ;
   rgb_bm.push(ctx.getImageData(xi, yi, 1, 1).data[2]) ;
        jsprognu += 1 ;
      }
+     //prog
      var cojsprogw = Math.ceil((jsprognu/ccwa)*100) ;
+     setTimeout(function() {
      $('#colorjsloading').html('解析中(' + cojsprogw + '%)');
+     },10);
+     //progend
    }
     if(getMode(rgb_rm).length > 0 && getMode(rgb_gm).length > 0 && getMode(rgb_bm).length > 0) {
       var rgbs = getMode(rgb_rm) + ',' + getMode(rgb_gm) + ',' + getMode(rgb_bm) ;
