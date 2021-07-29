@@ -795,8 +795,8 @@ function handleFileSelect(evt) {
       //showing file converted to base64
       
 
-      $('#colorjsloading').css({'display':'flex'});
-      $('#cojs').css({'display':'block'});
+      $('#colorjsloading').fadeIn(1).css({'display':'flex'});
+      //$('#cojs').css({'display':'block'});
       var ctx = document.getElementById('cc').getContext('2d');
       
   var img = new Image();
