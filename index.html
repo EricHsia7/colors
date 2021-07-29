@@ -450,8 +450,21 @@ tfoot {
 }
   
   
-  
+  #colorjsloading {
+    display:none;
+  justify-content: center;
+  align-items: center;
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    background:#fff;
+  }
   @media (prefers-color-scheme: dark) {
+    #colorjsloading {
+    background:#1a1a1a;
+  }
       #deleting {
     background:#1a1a1a;color:#fff;
   }
@@ -506,15 +519,8 @@ background:#fff;
   }
   #cojs {
     width:180px;
-    position:fixed;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    display:none;
   }
-  #colorjsloading {
-    display:none;
-  }
+  
 </style>
 <canvas id="cc" width="128" height="128" style="background:#fff;"></canvas>
 <span id="filerj">
@@ -905,7 +911,7 @@ function handleFileSelect(evt) {
       //showing file converted to base64
       
 
-      
+      $('#colorjsloading').css({'display':'flex'});
       var ctx = document.getElementById('cc').getContext('2d');
       
   var img = new Image();
