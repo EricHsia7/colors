@@ -462,6 +462,22 @@ tfoot {
     background:#fff;
     font-size:1.3rem;font-weight:500;
   }
+  .cojsprogbg {
+    height:5px;
+    width:120px;
+    background:#e3e3e3;
+    border-radius:99em;
+    position:relative;
+  }
+    .cojsprog {
+    height:5px;
+    width:0%;
+    background:#000;
+    border-radius:99em;
+    position:absolute;
+    top:0px;
+    left:0px;
+  }
   @media (prefers-color-scheme: dark) {
     #colorjsloading {
     background:#1a1a1a;
@@ -626,7 +642,12 @@ background:#fff;
   </span>
 </div>
 
-<div id="colorjsloading">解析中</div>
+<div id="colorjsloading">
+  解析中
+  <div class="cojsprogbg">
+    <div class="cojsprog"></div>
+  </div>
+</div>
 
 <div id="deleting" style="position:fixed;left:0px;top:0px;width:100%;height:100%;display:none;justify-content: center;align-items: center;font-size:1.3rem;font-weight:500;">刪除中</div>
 
@@ -828,6 +849,8 @@ var load = 0 ;
   rgb_gm.push(ctx.getImageData(xi, yi, 1, 1).data[1]) ;
   rgb_bm.push(ctx.getImageData(xi, yi, 1, 1).data[2]) ;
      }
+     var cojsprogw = Math.ceil((xi/ccw)*100) ;
+     $('#cojsprog').css({'width':cojsprogw + '%'});
    }
     if(getMode(rgb_rm).length > 0 && getMode(rgb_gm).length > 0 && getMode(rgb_bm).length > 0) {
       var rgbs = getMode(rgb_rm) + ',' + getMode(rgb_gm) + ',' + getMode(rgb_bm) ;
