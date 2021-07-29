@@ -519,6 +519,7 @@ background:#fff;
   }
   #cojs {
     width:180px;
+    display:none;
   }
   
 </style>
@@ -630,10 +631,10 @@ background:#fff;
     style="
         -webkit-animation: rotate 2s linear infinite;
         animation: rotate 2s linear infinite;
-        height: 100%;
+        height: 180px;
         -webkit-transform-origin: center center;
         transform-origin: center center;
-        width: 100%;
+        width: 180px;
         position: absolute;
         top: 0;
         bottom: 0;
@@ -912,6 +913,7 @@ function handleFileSelect(evt) {
       
 
       $('#colorjsloading').css({'display':'flex'});
+      $('#cojs').css({'display':'block'});
       var ctx = document.getElementById('cc').getContext('2d');
       
   var img = new Image();
