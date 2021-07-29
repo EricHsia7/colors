@@ -786,9 +786,9 @@ function handleFileSelect(evt) {
 var rgb_r = 0 ;     
 var rgb_g = 0 ;   
 var rgb_b = 0 ; 
-var rgb_rm = '0' ;
-var rgb_gm = '0' ;
-var rgb_bm = '0' ;
+var rgb_rm = [] ;
+var rgb_gm = [] ;
+var rgb_bm = [] ;
 
 var load = 0 ;
       gtag('event', 'photo', {
@@ -802,16 +802,26 @@ var load = 0 ;
   rgb_r += ctx.getImageData(xi, yi, 1, 1).data[0] ;
   rgb_g += ctx.getImageData(xi, yi, 1, 1).data[1] ;
   rgb_b += ctx.getImageData(xi, yi, 1, 1).data[2] ; 
-  rgb_rm += ',' + ctx.getImageData(xi, yi, 1, 1).data[0] ;
-  rgb_gm += ',' + ctx.getImageData(xi, yi, 1, 1).data[1] ;
-  rgb_bm += ',' + ctx.getImageData(xi, yi, 1, 1).data[2] ;
+  rgb_rm.push(ctx.getImageData(xi, yi, 1, 1).data[0]) ;
+  rgb_gm.push(ctx.getImageData(xi, yi, 1, 1).data[1]) ;
+  rgb_bm.push(ctx.getImageData(xi, yi, 1, 1).data[2]) ;
      }
    }
-    var rgbs = Math.ceil(rgb_r/ccwa) + ',' + Math.ceil(rgb_g/ccwa) + ',' + Math.ceil(rgb_b/ccwa) ;
+    if(getMode(rgb_rm).length > 0 && getMode(rgb_gm).length > 0 && getMode(rgb_bm).length > 0) {
+      var rgbs = getMode(rgb_rm) + ',' + getMode(rgb_gm) + ',' + getMode(rgb_bm) ;
+      var rgbvfr = rgbToHex(getMode(rgb_rm),getMode(rgb_gm),getMode(rgb_nm)) ;
+    }
+      else {
+        var rgbs = Math.ceil(rgb_r/ccwa) + ',' + Math.ceil(rgb_g/ccwa) + ',' + Math.ceil(rgb_b/ccwa) ;
+        var rgbvfr = rgbToHex(Math.ceil(rgb_r/ccwa), Math.ceil(rgb_g/ccwa), Math.ceil(rgb_b/ccwa)) ;
+      }
+      
+      
+    //var rgbs = Math.ceil(rgb_r/ccwa) + ',' + Math.ceil(rgb_g/ccwa) + ',' + Math.ceil(rgb_b/ccwa) ;
     
     
-    $('#rgb').val(rgbToHex(Math.ceil(rgb_r/ccwa), Math.ceil(rgb_g/ccwa), Math.ceil(rgb_b/ccwa)));
-    $('.color').css({'background':rgbToHex(Math.ceil(rgb_r/ccwa), Math.ceil(rgb_g/ccwa), Math.ceil(rgb_b/ccwa)) });
+    $('#rgb').val(rgbvfr);
+    $('.color').css({'background':rgbvfr });
   
     if((Math.ceil(rgb_r/ccwa)+Math.ceil(rgb_g/ccwa)+Math.ceil(rgb_b/ccwa))/3 > 128) {
       $('#rgb').css({'color':'#000'});
@@ -820,7 +830,7 @@ var load = 0 ;
       $('#rgb').css({'color':'#fff'});
     }
     //$('.color').fadeIn(222);
-    location.href = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(Math.ceil(rgb_r/ccwa), Math.ceil(rgb_g/ccwa), Math.ceil(rgb_b/ccwa))) + '&r=' + genid('random');
+    location.href = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbvfr) + '&r=' + genid('random');
   },200);
     }
   }); 
