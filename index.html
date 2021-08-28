@@ -1264,6 +1264,14 @@ $('#rgb').attr('hex', shcolor);
 $('#rgb').attr('cmyk',rgbtocmyk(hexToRgb(shcolor).r,hexToRgb(shcolor).g,hexToRgb(shcolor).b).cmykstr);
 $('#rgb').attr('hsl',rgbtohsl(hexToRgb(shcolor).r,hexToRgb(shcolor).g,hexToRgb(shcolor).b).hslstr);
 $('#rgb').attr('hsv',rgbtohsv(hexToRgb(shcolor).r,hexToRgb(shcolor).g,hexToRgb(shcolor).b).hsvstr);
+  
+  
+$('input[t="rgb"]').val('rgb(' + $('#rgb').attr('rgb') + ')');
+$('input[t="cmyk"]').val('cmyk(' + parseInt($('#rgb').attr('cmyk').split(',')[0]) + '%,' + parseInt($('#rgb').attr('cmyk').split(',')[1]) + '%,' + parseInt($('#rgb').attr('cmyk').split(',')[2]) + '%,' + parseInt($('#rgb').attr('cmyk').split(',')[3]) + '%)');
+$('input[t="hsl"]').val('hsl(' + parseInt($('#rgb').attr('hsl').split(',')[0]) + ',' + parseInt($('#rgb').attr('hsl').split(',')[1]) + '%,' + parseInt($('#rgb').attr('hsl').split(',')[2]) + '%)');
+$('input[t="hsv"]').val('hsv(' + parseInt($('#rgb').attr('hsv').split(',')[0]) + ',' + parseInt($('#rgb').attr('hsv').split(',')[1]) + '%,' + parseInt($('#rgb').attr('hsv').split(',')[2]) + '%)');
+
+
 if((hexToRgb(shcolor).r+hexToRgb(shcolor).g+hexToRgb(shcolor).b)/3 > 128) {
       $('#rgb').css({'color':'#000'});
       $('.ladbar').css({'background':'#000'});
@@ -1312,6 +1320,12 @@ $('.color').fadeIn(222);
   
 }
   if(sharecolor === "2") {
+    
+    $('input[t="rgb"]').val('暫不支援');
+$('input[t="cmyk"]').val('暫不支援');
+$('input[t="hsl"]').val('暫不支援');
+$('input[t="hsv"]').val('暫不支援');
+    
     
     if((hexToRgb(gc1).r+hexToRgb(gc1).g+hexToRgb(gc1).b+hexToRgb(gc2).r+hexToRgb(gc2).g+hexToRgb(gc2).b)/6 > 128) {
       $('#rgb').css({'color':'#000'});
@@ -1627,5 +1641,89 @@ if(keyNum==70){
   $('.linechat').click(function() {
     location.href = 'http://line.me/R/app/1656197609-DznLgN7A?c=' + btoa(shcolor) ;
   });
+  
+  
+  
+  
+  
+  
+  let mouseXcd = 0
+let mouseYcd = 0
+let offsetXcd = 0
+let offsetYcd = 0
+let isDowncd = false
+var divcd = document.querySelector(".colorinps2");
+
+
+
+
+divcd.addEventListener('touchstart', function(e) {
+  isDowncd = true
+  mouseXcd = e.pageX
+  mouseYcd = e.pageY
+  document.addEventListener('touchmove', movecd)
+});
+
+document.addEventListener('touchend', function(e) {
+  if (isDowncd) {
+    offsetXcd += e.pageX - mouseXcd
+    offsetYcd += e.pageY - mouseYcd
+  }
+  isDowncd = false
+   //gggggg 
+    const dxcd = e.pageX - mouseXcd
+    //console.log(offsetXcd+dxcd + ',' + $(window).width())
+    if((offsetXcd+dxcd) < 1-($(window).width()*0)+$(window).width()*0.5 && (offsetXcd+dxcd) > 1-($(window).width()*1)+$(window).width()*0.5) {
+      $('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*0)) + 'px) translateY(-50%)','transition':'0.5s'});
+      console.log('0')
+      offsetXcd = (0-($(window).width()*0))
+    }
+    if((offsetXcd+dxcd) < 1-($(window).width()*1)+$(window).width()*0.5 && (offsetXcd+dxcd) > 1-($(window).width()*2)+$(window).width()*0.5) {
+      $('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*1)) + 'px) translateY(-50%)','transition':'0.5s'});
+      console.log('1')
+      offsetXcd = (0-($(window).width()*1)) 
+    }
+    if((offsetXcd+dxcd) < 1-($(window).width()*2)+$(window).width()*0.5 && (offsetXcd+dxcd) > 1-($(window).width()*3)+$(window).width()*0.5) {
+$('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*2)) + 'px) translateY(-50%)','transition':'0.5s'});
+      console.log('2')
+      offsetXcd = (0-($(window).width()*2))
+    }
+    if((offsetXcd+dxcd) < 1-($(window).width()*3)+$(window).width()*0.5 && (offsetXcd+dxcd) > 1-($(window).width()*4)+$(window).width()*0.5) {
+      $('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*3)) + 'px) translateY(-50%)','transition':'0.5s'});
+      console.log('3')
+      offsetXcd = (0-($(window).width()*3))
+    }
+    if((offsetXcd+dxcd) < 1-($(window).width()*4)+$(window).width()*0.5 && (offsetXcd+dxcd) > 1-($(window).width()*5)+$(window).width()*0.5) {
+      $('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*4)) + 'px) translateY(-50%)','transition':'0.5s'});
+      console.log('4')
+      offsetXcd = (0-($(window).width()*4))
+    }
+  document.removeEventListener('touchmove',movecd)
+});
+function movecd(e) {
+  if (isDowncd) {
+    const dxcd = e.pageX - mouseXcd
+    const dycd = e.pageY - mouseYcd
+    var fgtey = ($(window).width()-$('.colorvlcm').eq(0).width())/2 ;
+    if((offsetXcd+dxcd) < 50 && (offsetXcd+dxcd) > (0-50-($(window).width()*4))) {
+      $('.colorinps2').css({'transform':'translateX('+ (offsetXcd+dxcd) + 'px) translateY(-50%)','transition':'0s'});
+    }
+    else {
+      if((offsetXcd+dxcd) > 50) {
+      $('.colorinps2').css({'transform':'translateX('+ (0) + 'px) translateY(-50%)','transition':'0.5s'});
+      offsetXcd = (0-($(window).width()*0))
+      }
+      
+      if((offsetXcd+dxcd) < (0-50-($(window).width()*4))) {
+        $('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*4)) + 'px) translateY(-50%)','transition':'0.5s'});
+      offsetXcd = (0-($(window).width()*4))
+        
+      }
+    }
+    
+    //console.log(offsetXcd+dxcd + ',' + (0-($(window).width()*4))) ;
+
+  }
+}
 </script>
 
