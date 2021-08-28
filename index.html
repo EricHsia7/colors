@@ -1416,8 +1416,25 @@ for (var iwq = 0; iwq < favda.length; iwq++) {
   
 var rgbinput =document.getElementById('rgb');
 rgbinput.addEventListener('copy', (event) => {
-        $('body').prompt({'message':'已複製','time':1200,'animate':'slide'});
+        $('body').prompt({'message':'已複製(hex)','time':1200,'animate':'slide'});
 });
+var rgb2input =document.document.querySelector('input[t="rgb"]');
+rgb2input.addEventListener('copy', (event) => {
+        $('body').prompt({'message':'已複製(rgb)','time':1200,'animate':'slide'});
+});
+var cmykinput =document.document.querySelector('input[t="cmyk"]');
+cmykinput.addEventListener('copy', (event) => {
+        $('body').prompt({'message':'已複製(cmyk)','time':1200,'animate':'slide'});
+});
+var hslkinput =document.document.querySelector('input[t="hsl"]');
+hslkinput.addEventListener('copy', (event) => {
+        $('body').prompt({'message':'已複製(hsl)','time':1200,'animate':'slide'});
+});
+var hsvinput =document.document.querySelector('input[t="hsv"]');
+hsvinput.addEventListener('copy', (event) => {
+        $('body').prompt({'message':'已複製(hsv)','time':1200,'animate':'slide'});
+});
+ 
   $(document).ready(function() {
     
       if(getCookie('hdloaded') === 'true') {
