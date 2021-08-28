@@ -1701,7 +1701,7 @@ $('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*2)) + 'px
   document.removeEventListener('touchmove',movecd)
 });
 function movecd(e) {
-  if (isDowncd && isDown = false) {
+  if (isDowncd) {
     const dxcd = e.pageX - mouseXcd
     const dycd = e.pageY - mouseYcd
     var fgtey = ($(window).width()-$('.colorvlcm').eq(0).width())/2 ;
