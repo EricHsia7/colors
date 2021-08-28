@@ -68,11 +68,9 @@
   font-size:1.6rem;
   display:none;
 }
-.color #rgb {
-  position:absolute;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,-50%);
+
+  
+  .color #rgb,.color .colorvlcm {
   background:rgba(0, 0, 0, 0.08);
   padding:8px;
   border-radius:99em;
@@ -83,6 +81,28 @@
   width:120px;
    text-align:center;
 }
+.colorinps2 {
+  position:fixed;
+  top:50%;
+  left:0px;
+  height:100%;
+  width:500%;
+  transform:translateY(-50%) translateX(0px);
+}
+.colorinps {
+  position:absolute;
+  top:50%;
+  left:0px;
+  transform:translateY(-50%) translateX(0px);
+  height:55px;
+  width:100%;
+  display: flex;
+  justify-content: space-around;
+}
+  
+  
+  
+  
 .colorte {
   position:fixed;
   top:0px;
@@ -550,7 +570,21 @@ background:#fff;
 </div>
 </span>
 <div class="color" topi="0"> 
-  <input type="text" id="rgb" value="" readonly="readonly">  
+  
+  
+<div class="colorinps2">
+<div class="colorinps">
+<input type="text" id="rgb" value="" readonly="readonly">
+<input type="text" class="colorvlcm" value="1" t="rgb">
+<input type="text" class="colorvlcm" value="2" t="cmyk">
+<input type="text" class="colorvlcm" value="3" t="hsl">
+<input type="text" class="colorvlcm" value="4" t="hsv">  
+</div>
+</div>
+  
+  
+  
+  
   <div id="menuj">
   <div class="fi2 lle btn"></div>
   <div class="fi3 lle btn"></div>
