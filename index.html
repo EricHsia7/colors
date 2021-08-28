@@ -786,7 +786,8 @@ function rgbtocmyk(r, g, b, normalized){
         c: c,
         m: m,
         y: y,
-        k: k
+        k: k,
+        cmykstr:c + ',' + m + ',' + y + ',' + k
     }
 }
 
@@ -823,7 +824,8 @@ function rgbtohsv(r, g, b) {
     return {
         h: Math.round(h * 360),
         s: percentRoundFn(s * 100),
-        v: percentRoundFn(v * 100)
+        v: percentRoundFn(v * 100),
+        hsvstr: Math.round(h * 360) + ',' + percentRoundFn(s * 100) + ',' + percentRoundFn(v * 100)
     };
 }
 
@@ -870,7 +872,8 @@ function rgbtohsl(r,g,b){
     return {
         h: H,
         s: S,
-        l: L
+        l: L,
+        hslstr: H + ',' + S + ',' + L
     };;
 }
   
@@ -1222,6 +1225,7 @@ gtag('event', 'generator', {
   
   
 if(sharecolor === "1") {
+$('#rgb').attr('cmyk',rgbtocmyk(hexToRgb(shcolor).r,hexToRgb(shcolor).g,hexToRgb(shcolor).b).cmykstr)
 if((hexToRgb(shcolor).r+hexToRgb(shcolor).g+hexToRgb(shcolor).b)/3 > 128) {
       $('#rgb').css({'color':'#000'});
       $('.ladbar').css({'background':'#000'});
