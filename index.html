@@ -1707,6 +1707,8 @@ function movecd(e) {
     var fgtey = ($(window).width()-$('.colorvlcm').eq(0).width())/2 ;
     if((offsetXcd+dxcd) < 50 && (offsetXcd+dxcd) > (0-50-($(window).width()*4))) {
       $('.colorinps2').css({'transform':'translateX('+ (offsetXcd+dxcd) + 'px) translateY(-50%)','transition':'0s'});
+      $('.color').css({'transform':'translateY(0px) scale(0)'});
+      
     }
     else {
       if((offsetXcd+dxcd) > 50) {
