@@ -1225,7 +1225,9 @@ gtag('event', 'generator', {
   
   
 if(sharecolor === "1") {
-$('#rgb').attr('cmyk',rgbtocmyk(hexToRgb(shcolor).r,hexToRgb(shcolor).g,hexToRgb(shcolor).b).cmykstr)
+$('#rgb').attr('cmyk',rgbtocmyk(hexToRgb(shcolor).r,hexToRgb(shcolor).g,hexToRgb(shcolor).b).cmykstr);
+$('#rgb').attr('hsl',rgbtohsl(hexToRgb(shcolor).r,hexToRgb(shcolor).g,hexToRgb(shcolor).b).hslstr);
+$('#rgb').attr('hsv',rgbtohsv(hexToRgb(shcolor).r,hexToRgb(shcolor).g,hexToRgb(shcolor).b).hsvstr);
 if((hexToRgb(shcolor).r+hexToRgb(shcolor).g+hexToRgb(shcolor).b)/3 > 128) {
       $('#rgb').css({'color':'#000'});
       $('.ladbar').css({'background':'#000'});
