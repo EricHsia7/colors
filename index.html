@@ -1709,7 +1709,8 @@ document.addEventListener('touchend', function(e) {
   }
   isDowncd = false
    //gggggg 
-//$('#menuj').css({'transform':'translateX(-50%) scale(1) translateY(0px)','transition':'0.3s'})
+//$('#menuj').css({'transform':'translateX(-50%) scale(1) translateY(0px)','transition':'0.3s'});
+    $('input').blur();
     const dxcd = e.pageX - mouseXcd
     //console.log(offsetXcd+dxcd + ',' + $(window).width())
     if((offsetXcd+dxcd) < 1-($(window).width()*0)+$(window).width()*0.5 && (offsetXcd+dxcd) > 1-($(window).width()*1)+$(window).width()*0.5) {
