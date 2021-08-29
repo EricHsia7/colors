@@ -1067,6 +1067,8 @@ if(sharecolor === "1" || sharecolor === "2") {
   
 
 $('.fi2').click(function() {
+ $('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*copycolmode)) + 'px) translateY(-50%)','transition':'0.5s'});
+      offsetXcd = (0-($(window).width()*copycolmode));
   if(copycolmode === 0) {
    var copys2 = $('#rgb');
   }
