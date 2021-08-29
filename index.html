@@ -1717,6 +1717,7 @@ document.addEventListener('touchend', function(e) {
     $('.color input').eq(2).click();
     $('.color input').eq(3).click();
     $('.color input').eq(4).click();
+
     const dxcd = e.pageX - mouseXcd
     //console.log(offsetXcd+dxcd + ',' + $(window).width())
     if((offsetXcd+dxcd) < 1-($(window).width()*0)+$(window).width()*0.5 && (offsetXcd+dxcd) > 1-($(window).width()*1)+$(window).width()*0.5) {
@@ -1783,7 +1784,13 @@ window.addEventListener('resize', function(e) {
       offsetXcd = (0-($(window).width()*copycolmode)) 
 });
   
-  var gyhcyvgeee = new Event("touchmove", {});
-divcd.dispatchEvent(gyhcyvgeee);
+  //var gyhcyvgeee = new Event("touchmove", {});
+//divcd.dispatchEvent(gyhcyvgeee);
+    $('.color input').eq(0).select();
+    $('.color input').eq(1).select();
+    $('.color input').eq(2).select();
+    $('.color input').eq(3).select();
+    $('.color input').eq(4).select();
+  
 </script>
 
