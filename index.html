@@ -1710,7 +1710,11 @@ document.addEventListener('touchend', function(e) {
   isDowncd = false
    //gggggg 
 //$('#menuj').css({'transform':'translateX(-50%) scale(1) translateY(0px)','transition':'0.3s'});
-    $('input').blur();
+    $('input').eq(0).blur();
+    $('input').eq(1).blur();
+    $('input').eq(2).blur();
+    $('input').eq(3).blur();
+    $('input').eq(4).blur();
     const dxcd = e.pageX - mouseXcd
     //console.log(offsetXcd+dxcd + ',' + $(window).width())
     if((offsetXcd+dxcd) < 1-($(window).width()*0)+$(window).width()*0.5 && (offsetXcd+dxcd) > 1-($(window).width()*1)+$(window).width()*0.5) {
