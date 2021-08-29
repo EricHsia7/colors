@@ -1709,6 +1709,7 @@ document.addEventListener('touchend', function(e) {
   }
   isDowncd = false
    //gggggg 
+$('#menuj').css({'transform':'translateX(-50%) scale(1) translateY(0px)','transition':'0.3s'})
     const dxcd = e.pageX - mouseXcd
     //console.log(offsetXcd+dxcd + ',' + $(window).width())
     if((offsetXcd+dxcd) < 1-($(window).width()*0)+$(window).width()*0.5 && (offsetXcd+dxcd) > 1-($(window).width()*1)+$(window).width()*0.5) {
@@ -1745,6 +1746,7 @@ $('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*2)) + 'px
 });
 function movecd(e) {
   if (isDowncd) {
+$('#menuj').css({'transform':'translateX(-50%) scale(0.3) translateY(50px)','transition':'0.3s'});
     const dxcd = e.pageX - mouseXcd
     const dycd = e.pageY - mouseYcd
     var fgtey = ($(window).width()-$('.colorvlcm').eq(0).width())/2 ;
