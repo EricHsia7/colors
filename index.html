@@ -1757,6 +1757,7 @@ function movecd(e) {
 //$('#menuj').css({'transform':'translateX(-50%) scale(0.3) translateY(50px)','transition':'0.3s'});
     const dxcd = e.pageX - mouseXcd
     const dycd = e.pageY - mouseYcd
+    console.log('dxcd ' + dxcd);
     var fgtey = ($(window).width()-$('.colorvlcm').eq(0).width())/2 ;
     if((offsetXcd+dxcd) < 50 && (offsetXcd+dxcd) > (0-50-($(window).width()*4))) {
       $('.colorinps2').css({'transform':'translateX('+ (offsetXcd+dxcd) + 'px) translateY(-50%)','transition':'0s'});
@@ -1776,7 +1777,7 @@ function movecd(e) {
     }
     
     //console.log(offsetXcd+dxcd + ',' + (0-($(window).width()*4))) ;
-
+console.log('offsetXcd ' + offsetXcd);
   }
 }
 window.addEventListener('resize', function(e) {
