@@ -1712,11 +1712,11 @@ document.addEventListener('touchend', function(e) {
   isDowncd = false
    //gggggg 
 //$('#menuj').css({'transform':'translateX(-50%) scale(1) translateY(0px)','transition':'0.3s'});
-    $('.color input').eq(0).click();
+    /*$('.color input').eq(0).click();
     $('.color input').eq(1).click();
     $('.color input').eq(2).click();
     $('.color input').eq(3).click();
-    $('.color input').eq(4).click();
+    $('.color input').eq(4).click();*/
 
     const dxcd = e.pageX - mouseXcd
     //console.log(offsetXcd+dxcd + ',' + $(window).width())
@@ -1754,23 +1754,17 @@ $('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*2)) + 'px
   
   
   //test
-  if((offsetXcd+dxcd) < 50 && (offsetXcd+dxcd) > (0-50-($(window).width()*4))) {
-
-    }
-    else {
+  
       
       if((offsetXcd+dxcd) > 50) {
       $('.colorinps2').css({'transform':'translateX('+ (0) + 'px) translateY(-50%)','transition':'0.5s'});
       offsetXcd = (0-($(window).width()*0))
       }
-      
       if((offsetXcd+dxcd) < (0-50-($(window).width()*4))) {
         $('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*4)) + 'px) translateY(-50%)','transition':'0.5s'});
       offsetXcd = (0-($(window).width()*4))
-        
       }
       
-    }
   //testend
   
   
