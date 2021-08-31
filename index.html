@@ -1069,6 +1069,7 @@ if(sharecolor === "1" || sharecolor === "2") {
 $('.fi2').click(function() {
  //$('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*copycolmode)) + 'px) translateY(-50%)','transition':'0.5s'});
       //offsetXcd = (0-($(window).width()*copycolmode));
+  document.removeEventListener('touchmove',movecd)
   if(copycolmode === 0) {
    var copys2 = $('#rgb');
   }
@@ -1808,11 +1809,11 @@ window.addEventListener('resize', function(e) {
   
   //var gyhcyvgeee = new Event("touchmove", {});
 //divcd.dispatchEvent(gyhcyvgeee);
-    $('.color input').eq(0).select();
+    /*$('.color input').eq(0).select();
     $('.color input').eq(1).select();
     $('.color input').eq(2).select();
     $('.color input').eq(3).select();
-    $('.color input').eq(4).select();
+    $('.color input').eq(4).select();*/
   
 </script>
 
