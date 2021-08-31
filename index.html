@@ -1721,33 +1721,33 @@ document.addEventListener('touchend', function(e) {
     const dxcd = e.pageX - mouseXcd
     //console.log(offsetXcd+dxcd + ',' + $(window).width())
     if((offsetXcd+dxcd) < 0-($(window).width()*0)+$(window).width()*0.5 && (offsetXcd+dxcd) > 0-($(window).width()*1)+$(window).width()*0.5) {
-      $('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*0))+1 + 'px) translateY(-50%)','transition':'0.5s'});
+      $('.colorinps2').css({'transform':'translateX('+ (1-($(window).width()*0)) + 'px) translateY(-50%)','transition':'0.5s'});
       console.log('0')
-      offsetXcd = (0-($(window).width()*0))+1
+      offsetXcd = (1-($(window).width()*0))
       copycolmode = 0 ;
     }
     if((offsetXcd+dxcd) < 0-($(window).width()*1)+$(window).width()*0.5 && (offsetXcd+dxcd) > 0-($(window).width()*2)+$(window).width()*0.5) {
-      $('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*1))+1 + 'px) translateY(-50%)','transition':'0.5s'});
+      $('.colorinps2').css({'transform':'translateX('+ (1-($(window).width()*1)) + 'px) translateY(-50%)','transition':'0.5s'});
       console.log('1')
-      offsetXcd = (0-($(window).width()*1))+1
+      offsetXcd = (1-($(window).width()*1))
       copycolmode = 1 ;
     }
     if((offsetXcd+dxcd) < 0-($(window).width()*2)+$(window).width()*0.5 && (offsetXcd+dxcd) > 0-($(window).width()*3)+$(window).width()*0.5) {
-$('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*2))+1 + 'px) translateY(-50%)','transition':'0.5s'});
+$('.colorinps2').css({'transform':'translateX('+ (1-($(window).width()*2)) + 'px) translateY(-50%)','transition':'0.5s'});
       console.log('2')
-      offsetXcd = (0-($(window).width()*2))+1
+      offsetXcd = (1-($(window).width()*2))
       copycolmode = 2 ;
     }
     if((offsetXcd+dxcd) < 0-($(window).width()*3)+$(window).width()*0.5 && (offsetXcd+dxcd) > 0-($(window).width()*4)+$(window).width()*0.5) {
-      $('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*3))+1 + 'px) translateY(-50%)','transition':'0.5s'});
+      $('.colorinps2').css({'transform':'translateX('+ (1-($(window).width()*3)) + 'px) translateY(-50%)','transition':'0.5s'});
       console.log('3')
-      offsetXcd = (0-($(window).width()*3))+1
+      offsetXcd = (1-($(window).width()*3))
       copycolmode = 3 ;
     }
     if((offsetXcd+dxcd) < 0-($(window).width()*4)+$(window).width()*0.5 && (offsetXcd+dxcd) > 0-($(window).width()*5)+$(window).width()*0.5) {
-      $('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*4)) + 'px) translateY(-50%)','transition':'0.5s'});
+      $('.colorinps2').css({'transform':'translateX('+ (1-($(window).width()*4)) + 'px) translateY(-50%)','transition':'0.5s'});
       console.log('4')
-      offsetXcd = (0-($(window).width()*4))+1
+      offsetXcd = (1-($(window).width()*4))
       copycolmode = 4 ;
     }
   
