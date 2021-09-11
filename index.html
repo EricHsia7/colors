@@ -1730,10 +1730,12 @@ if(keyNum==70){
   
   $('.arrbtco').click(function() {
     if(copycolmode < 5) {
-    copycolmode += 1 ;
-     $('.colorinps2').css({'transform':'translateX('+ (1-($(window).width()*copycolmode)) + 'px) translateY(-50%)','transition':'0.5s'});
+     copycolmode += 1 ;
     }
-    
+    else {
+      copycolmode = 0 ;
+    }
+    $('.colorinps2').css({'transform':'translateX('+ (1-($(window).width()*copycolmode)) + 'px) translateY(-50%)','transition':'0.5s'});
   });
   
   
