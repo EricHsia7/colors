@@ -1735,17 +1735,6 @@ if(keyNum==70){
     }
     $('.colorinps2').css({'transform':'translateX('+ (1-($(window).width()*copycolmode)) + 'px) translateY(-50%)','transition':'0.5s'});
   });
-  
-  $('.arrbtco').click(function() {
-    if(copycolmode < 4) {
-     copycolmode += 1 ;
-    }
-    else {
-      copycolmode = 0 ;
-    }
-    $('.colorinps2').css({'transform':'translateX('+ (1-($(window).width()*copycolmode)) + 'px) translateY(-50%)','transition':'0.5s'});
-  });
-
   $('.arrbtco-2').click(function() {
     if(copycolmode > 0) {
      copycolmode -= 1 ;
