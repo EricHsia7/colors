@@ -211,6 +211,23 @@ background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/line.png
   transform:translateY(-50%)
 } 
   
+.arrow-left {
+  background:rgba(0,0,0,0.08) url(https://erichsia7.github.io/colors/arrow-right.png);
+  position:fixed;
+  top:50%;
+  right:30px;
+  transform:translateY(-50%) rotate(180deg);
+}
+.arrow-left-light {
+  background:rgba(0,0,0,0.08) url(https://erichsia7.github.io/colors/arrow-right-light.png);
+  position:fixed;
+  top:50%;
+  right:30px;
+  transform:translateY(-50%) rotate(180deg)
+} 
+  
+  
+  
   
   
   
@@ -604,7 +621,7 @@ background:#fff;
 </div>
   
   <div class="arrow-right btn arrbtco"></div>
-  
+  <div class="arrow-left btn arrbtco-2"></div>
   
   
   <div id="menuj">
@@ -1318,11 +1335,13 @@ if((hexToRgb(shcolor).r+hexToRgb(shcolor).g+hexToRgb(shcolor).b)/3 > 128) {
       $('#rgb,.colorvlcm').css({'color':'#000'});
       $('.ladbar').css({'background':'#000'});
       $('.arrbtco').attr('class','arrow-right btn arrbtco');
+      $('.arrbtco-2').attr('class','arrow-left btn arrbtco-2');
     }
     else {
       $('#rgb,.colorvlcm').css({'color':'#fff'});
       $('.ladbar').css({'background':'#fff'});
       $('.arrbtco').attr('class','arrow-right-light btn arrbtco');
+      $('.arrbtco-2').attr('class','arrow-left-light btn arrbtco-2');
     }
   if(open === "fav") {
 $('.color').css({'display':'block'});
@@ -1374,10 +1393,14 @@ $('input[t="hsv"]').val('暫不支援');
     if((hexToRgb(gc1).r+hexToRgb(gc1).g+hexToRgb(gc1).b+hexToRgb(gc2).r+hexToRgb(gc2).g+hexToRgb(gc2).b)/6 > 128) {
       $('#rgb,.colorvlcm').css({'color':'#000'});
       $('.ladbar').css({'background':'#000'});
+      $('.arrbtco').attr('class','arrow-right btn arrbtco');
+      $('.arrbtco-2').attr('class','arrow-left btn arrbtco-2');
     }
     else {
       $('#rgb,.colorvlcm').css({'color':'#fff'});
       $('.ladbar').css({'background':'#fff'});
+      $('.arrbtco').attr('class','arrow-right-light btn arrbtco');
+      $('.arrbtco-2').attr('class','arrow-left-light btn arrbtco-2');
     }
     
     var grdarc = rgbToHex(Math.ceil((hexToRgb(gc1).r+hexToRgb(gc2).r)/2),Math.ceil((hexToRgb(gc1).g+hexToRgb(gc2).g)/2),Math.ceil((hexToRgb(gc1).b+hexToRgb(gc2).b)/2)) ;
