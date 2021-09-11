@@ -1726,6 +1726,30 @@ if(keyNum==70){
     location.href = 'http://line.me/R/app/1656197609-DznLgN7A?c=' + btoa(shcolor) ;
   });
   
+  function arrbtcoctft() {
+    $('.colorinps2').css({'transform':'translateX('+ (1-($(window).width()*copycolmode)) + 'px) translateY(-50%)','transition':'0.5s'});
+     
+    if(copycolmode === 0) {
+  var atrxtgtww = '#rgb' ;
+  }
+  if(copycolmode === 1) {
+   var atrxtgtww = 'input[t="rgb"]' ;
+  }
+  if(copycolmode === 2) {
+   var atrxtgtww = 'input[t="cmyk"]' ;
+  }
+  if(copycolmode === 3) {
+   var atrxtgtww = 'input[t="hsl"]' ;
+  }
+  if(copycolmode === 4) {
+   var atrxtgtww = 'input[t="hsv"]' ;
+  }
+    $('#rgb,input[t="rgb"],input[t="cmyk"],input[t="hsl"],input[t="hsv"]').css({'opacity':'0'});
+    $(copycolmode).css({'opacity':'1'});
+  }
+  
+  
+  
   $('.arrbtco').click(function() {
     if(copycolmode < 4) {
      copycolmode += 1 ;
@@ -1733,7 +1757,7 @@ if(keyNum==70){
     else {
       copycolmode = 0 ;
     }
-    $('.colorinps2').css({'transform':'translateX('+ (1-($(window).width()*copycolmode)) + 'px) translateY(-50%)','transition':'0.5s'});
+    arrbtcoctft();
   });
   $('.arrbtco-2').click(function() {
     if(copycolmode > 0) {
@@ -1742,7 +1766,7 @@ if(keyNum==70){
     else {
       copycolmode = 4 ;
     }
-    $('.colorinps2').css({'transform':'translateX('+ (1-($(window).width()*copycolmode)) + 'px) translateY(-50%)','transition':'0.5s'});
+arrbtcoctft();
   });
   
   
