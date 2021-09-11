@@ -217,18 +217,20 @@ background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/line.png
   top:50%;
   left:30px;
   transform:translateY(-50%) rotate(180deg);
+  transition:0.3s;
+  opacity:0;
 }
 .arrow-left-light {
   background:rgba(0,0,0,0.08) url(https://erichsia7.github.io/colors/arrow-right-light.png);
   position:fixed;
   top:50%;
   left:30px;
-  transform:translateY(-50%) rotate(180deg)
-} 
-  
-  
-  
-  
+  transform:translateY(-50%) rotate(180deg);
+  transition:0.3s;
+  opacity:0;
+}
+
+
   
   
   .btn {
@@ -1726,7 +1728,13 @@ if(keyNum==70){
     location.href = 'http://line.me/R/app/1656197609-DznLgN7A?c=' + btoa(shcolor) ;
   });
   
-  
+  $('.arrbtco').click(function() {
+    if(copycolmode < 5) {
+    copycolmode += 1 ;
+     $('.colorinps2').css({'transform':'translateX('+ (1-($(window).width()*copycolmode)) + 'px) translateY(-50%)','transition':'0.5s'});
+    }
+    
+  });
   
   
   
