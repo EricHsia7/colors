@@ -1792,7 +1792,26 @@ arrbtcoctft();
  window.addEventListener('resize', function(e) {
   $('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*copycolmode)) + 'px) translateY(-50%)','transition':'0.5s'});
 });
-   
+
+window.onload=function(){
+  document.addEventListener('touchstart',function (event) { 
+      if(event.touches.length>=2){ 
+        event.preventDefault(); 
+      } 
+  }) 
+  
+  document.addEventListener('touchmove',function (event) { 
+      if(event.touches.length>=2){ 
+        event.preventDefault(); 
+      } 
+  }) 
+  
+  document.addEventListener('touchend',function (event) { 
+      if(event.touches.length>=2){ 
+        event.preventDefault(); 
+      } 
+  }) 
+}
   
   
   
