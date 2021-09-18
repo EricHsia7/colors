@@ -856,6 +856,8 @@ var seicocor = '255' ;
  
  $('.coloropenbtnj').click(function() {
   if(cardselect === "0") {
+   $('#' + $(this).attr('crdid')).css({'opacity':'0','transition':'0s'});
+   $('.card').css({'opacity':'0','transition':'0.3s'});
 $('.clopanblur').fadeIn(300);
    //$('.cardbox').css({'position':'fixed','top':(0-$(window).scrollTop()),'left':(0-$(window).scrollLeft())});
 var fghidf = genid('uuid') ;
