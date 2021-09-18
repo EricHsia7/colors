@@ -773,6 +773,12 @@ var ccwa = (ccw*ccw) ;
 document.getElementById('cc').width = ccw ;
 document.getElementById('cc').height = ccw ;
 
+function gettimerandomnumber(min,max) {
+  var timeseedrandom = new Date().getTime();
+  var myrng = new Math.seedrandom(String(timeseedrandom));
+  return Math.floor(myrng()*(max - min) + min)
+}
+
   
   
   function genid(mode) {
@@ -1260,9 +1266,9 @@ if((hexToRgb($('#textu').val()).r+hexToRgb($('#textu').val()).g+hexToRgb($('#tex
 });
   
   $('.rand2').click(function() {
-var rand_r = Math.floor(Math.random() * 255);
-var rand_g = Math.floor(Math.random() * 255);  
-var rand_b = Math.floor(Math.random() * 255);
+var rand_r = gettimerandomnumber(0,255);
+var rand_g = gettimerandomnumber(0,255);  
+var rand_b = gettimerandomnumber(0,255);
     
     gtag('event', 'generator', {
     'event_category': 'color',
