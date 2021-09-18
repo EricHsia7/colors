@@ -1762,9 +1762,10 @@ function move(e) {
         
         $('.color').css({'width':favorite_close_per_w,'height':favorite_close_per_h,'top':favorite_close_per_y,'left':favorite_close_per_x,'border-radius':favorite_close_per_border_radius,'transition':'0.3s'});
         
-        $('.colorinps2').css({'transform':'translateX('+ (favorite_close_per_w-(favorite_close_per_w*copycolmode*(favorite_close_per_w/$(window).width()))) + 'px) translateY(-50%)','transition':'0s'});
-        
-        
+        //$('.colorinps2').css({'transform':'translateX('+ (favorite_close_per_w-(favorite_close_per_w*copycolmode*(favorite_close_per_w/$(window).width()))) + 'px) translateY(-50%)','transition':'0s'});
+        //testing
+        $('.colorinps2').css({'transform':'translateX('+ favorite_close_per_w*(copycolmode-1) + 'px) translateY(-50%)','transition':'0s'});
+        //testingend
         
         
         
