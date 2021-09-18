@@ -1658,7 +1658,7 @@ document.addEventListener('touchend', function(e) {
     const dy = e.pageY - mouseY
     
     var favorite_close_percentage = dy/(Math.abs(($(window).height()-mouseX-95)-mouseX)) ;
-    if(favorite_close_percentage > 0.5) {
+    if(favorite_close_percentage > 0.3) {
       
       setTimeout(function() {
     $('.fi').click();
@@ -1734,6 +1734,7 @@ function move(e) {
       
       if(favorite_close_percentage < 1 && favorite_close_percentage > 0) {
       $('.color').css({'width':favorite_close_per_w,'height':favorite_close_per_h,'top':favorite_close_per_y,'left':favorite_close_per_x,'border-radius':favorite_close_per_border_radius,'transition':'0s'});
+      $('body').css({'background':''});
       }
       else {
         if(favorite_close_percentage > 1) {
