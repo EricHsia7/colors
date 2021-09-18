@@ -1656,12 +1656,13 @@ document.addEventListener('touchend', function(e) {
   if(open === 'fav') {
     const dx = e.pageX - mouseX
     const dy = e.pageY - mouseY
-    var gtipu = (1-(dy/$(window).height()));
-          //$('.color').css({'transform':'scale(' + 1 + ')','border-radius':'0px','transition':0.3+(1-(dy/$(window).height()))*0.07 + 's'}).attr('scale','1');
-       
+    
     var favorite_close_percentage = dy/(Math.abs(($(window).height()-mouseX-95)-mouseX)) ;
     if(favorite_close_percentage > 0.5) {
-      $('.fi').click();
+      
+      setTimeout(function() {
+    $('.fi').click();
+            },300);
       favorite_close_percentage = 0 ;
      var favorite_close_per_w = parseInt(url.searchParams.get('fgw'))+($(window).width()-parseInt(url.searchParams.get('fgw')))*(1-favorite_close_percentage) ;
      var favorite_close_per_h = parseInt(url.searchParams.get('fgh'))+($(window).height()-parseInt(url.searchParams.get('fgh')))*(1-favorite_close_percentage) ;
@@ -1688,16 +1689,7 @@ document.addEventListener('touchend', function(e) {
       $('body').css({'background':$('#rgb').attr('arc')});
     }
     
-    if(gtipu < 0.9) {
-      $('body').css({'background':''});
-      $('.color').attr('scale','1');
-    setTimeout(function() {
-    $('.fi').click();
-            },(0.3+(1-(dy/$(window).height()))*0.07)*1000);
-    }
-    else {
-      $('body').css({'background':$('#rgb').attr('arc')});
-    }
+    
     
   }
   else {
@@ -1728,17 +1720,7 @@ function move(e) {
     if (isDown) {
     const dx = e.pageX - mouseX
     const dy = e.pageY - mouseY
-    var gtipu = (1-(dy/$(window).height()));
-   if(gtipu > 0.6 && gtipu < 1.00001) {
-     //testing
-     //$('.color').css({'transform':'scale(' + gtipu + ')','border-radius':'15px','transition':'0s'}).attr('scale',gtipu);
-     $('body').css({'background':''});
-   }
-    else {
-      //testing
- //$('.color').css({'transform':'scale(' + 1 + ')','border-radius':'0px','transition':'0.3s'}).attr('scale',gtipu);
-      
-    }
+    
       //test-favorite-close-percentage-calculate
       var favorite_close_percentage = dy/(Math.abs(($(window).height()-mouseX-95)-mouseX)) ;
 
