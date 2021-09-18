@@ -1708,6 +1708,8 @@ function move(e) {
       //test-favorite-close-percentage-calculate
       var favorite_close_percentage = dy/(Math.abs(($(window).height()-mouseX-95)-mouseX))
 
+      var favorite_close_min_w = parseInt(url.searchParams.get('fgw'))+($(window).width()-parseInt(url.searchParams.get('fgw')))*(1-favorite_close_percentage) ;
+      var favorite_close_min_h = parseInt(url.searchParams.get('fgh'))+($(window).width()-parseInt(url.searchParams.get('fgh')))*(1-favorite_close_percentage) ;
       
       
       
