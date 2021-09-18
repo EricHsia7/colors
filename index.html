@@ -1764,7 +1764,7 @@ function move(e) {
         
         //$('.colorinps2').css({'transform':'translateX('+ (favorite_close_per_w-(favorite_close_per_w*copycolmode*(favorite_close_per_w/$(window).width()))) + 'px) translateY(-50%)','transition':'0s'});
         //testing
-        $('.colorinps2').css({'transform':'translateX('+ (0-(favorite_close_per_w*(copycolmode-1))) + 'px) translateY(-50%)','transition':'0s'});
+        $('.colorinps2').css({'transform':'translateX('+ (0-Math.abs(favorite_close_per_w*(copycolmode-1))) + 'px) translateY(-50%)','transition':'0s'});
         //testingend
         
         
