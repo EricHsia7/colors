@@ -1668,7 +1668,7 @@ document.addEventListener('touchend', function(e) {
       
      var favorite_close_per_x = parseInt(url.searchParams.get('fgx'))*favorite_close_percentage ;
      var favorite_close_per_y = parseInt(url.searchParams.get('fgy'))*favorite_close_percentage ;
-        $('.color').css({'width':favorite_close_per_w,'height':favorite_close_per_h,'top':favorite_close_per_y,'left':favorite_close_per_x,'transition':'0.3s'});
+        $('.color').css({'width':favorite_close_per_w,'height':favorite_close_per_h,'top':favorite_close_per_y,'left':favorite_close_per_x,'transition':'0.3s','transform':'translateX(0px)'});
       $('body').css({'background':$('#rgb').attr('arc')});
     }
     else {
@@ -1678,7 +1678,7 @@ document.addEventListener('touchend', function(e) {
       
      var favorite_close_per_x = parseInt(url.searchParams.get('fgx'))*favorite_close_percentage ;
      var favorite_close_per_y = parseInt(url.searchParams.get('fgy'))*favorite_close_percentage ;
-        $('.color').css({'width':favorite_close_per_w,'height':favorite_close_per_h,'top':favorite_close_per_y,'left':favorite_close_per_x,'transition':'0.3s'});
+        $('.color').css({'width':favorite_close_per_w,'height':favorite_close_per_h,'top':favorite_close_per_y,'left':favorite_close_per_x,'transition':'0.3s','transform':'translateX(0px)'});
       $('body').css({'background':$('#rgb').attr('arc')});
     }
     
@@ -1743,7 +1743,7 @@ function move(e) {
       var favorite_close_per_y = parseInt(url.searchParams.get('fgy'))*favorite_close_percentage ;
       
       if(favorite_close_percentage < 1 && favorite_close_percentage > 0) {
-      $('.color').css({'width':favorite_close_per_w,'height':favorite_close_per_h,'top':favorite_close_per_y,'left':favorite_close_per_x,'transition':'0s'});
+      $('.color').css({'width':favorite_close_per_w,'height':favorite_close_per_h,'top':favorite_close_per_y,'left':favorite_close_per_x,'transition':'0s','transform':'translateX(5px)'});
       }
       else {
         if(favorite_close_percentage > 1) {
@@ -1761,7 +1761,7 @@ function move(e) {
       favorite_close_per_x = parseInt(url.searchParams.get('fgx'))*favorite_close_percentage ;
       favorite_close_per_y = parseInt(url.searchParams.get('fgy'))*favorite_close_percentage ;
         
-        $('.color').css({'width':favorite_close_per_w,'height':favorite_close_per_h,'top':favorite_close_per_y,'left':favorite_close_per_x,'transition':'0.3s'});
+        $('.color').css({'width':favorite_close_per_w,'height':favorite_close_per_h,'top':favorite_close_per_y,'left':favorite_close_per_x,'transition':'0.3s','transform':'translateX(0px)'});
       }
       //test-favorite-close-percentage-calculate-end
   }
