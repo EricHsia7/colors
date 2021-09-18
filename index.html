@@ -1698,12 +1698,13 @@ document.addEventListener('touchend', function(e) {
   }
   isDown = false
   if(parseInt($(".color").attr('topi')) < ($(window).height()*0.12)) {
-    //$(".color").css({'transform':'translateY(0px)','border-radius':'0px','transition':'0.3s','opacity':'1'});
+    $(".color").css({'transform':'translateY(0px)','border-radius':'0px','transition':'0.3s','opacity':'1'});
     $('body').css({'background':$('#rgb').attr('arc')});
   }
   else {
-    //testing
-    //$('.color').css({'transform':'translateY(' + $(window).height() + 'px)','border-radius':'15px 15px 0px 0px','opacity':'0','transition':'0.3s'});
+    
+    
+    $('.color').css({'transform':'translateY(' + $(window).height() + 'px)','border-radius':'15px 15px 0px 0px','opacity':'0','transition':'0.3s'});
             setTimeout(function() {
     $('.fi').click();
             },50);
