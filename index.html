@@ -1656,8 +1656,13 @@ document.addEventListener('touchend', function(e) {
     const dx = e.pageX - mouseX
     const dy = e.pageY - mouseY
     var gtipu = (1-(dy/$(window).height()));
-          $('.color').css({'transform':'scale(' + 1 + ')','border-radius':'0px','transition':0.3+(1-(dy/$(window).height()))*0.07 + 's'}).attr('scale','1');
-          
+          //$('.color').css({'transform':'scale(' + 1 + ')','border-radius':'0px','transition':0.3+(1-(dy/$(window).height()))*0.07 + 's'}).attr('scale','1');
+       
+    var favorite_close_percentage = dy/(Math.abs(($(window).height()-mouseX-95)-mouseX)) ;
+    if(favorite_close_percentage > 0.5) {
+      $('.fi').click();
+    }
+    
     if(gtipu < 0.9) {
       $('body').css({'background':''});
       $('.color').attr('scale','1');
@@ -1708,7 +1713,7 @@ function move(e) {
       
     }
       //test-favorite-close-percentage-calculate
-      var favorite_close_percentage = dy/(Math.abs(($(window).height()-mouseX-95)-mouseX))
+      var favorite_close_percentage = dy/(Math.abs(($(window).height()-mouseX-95)-mouseX)) ;
 
       var favorite_close_per_w = parseInt(url.searchParams.get('fgw'))+($(window).width()-parseInt(url.searchParams.get('fgw')))*(1-favorite_close_percentage) ;
       var favorite_close_per_h = parseInt(url.searchParams.get('fgh'))+($(window).width()-parseInt(url.searchParams.get('fgh')))*(1-favorite_close_percentage) ;
@@ -1716,8 +1721,13 @@ function move(e) {
       var favorite_close_per_x = parseInt(url.searchParams.get('fgx'))*favorite_close_percentage ;
       var favorite_close_per_y = parseInt(url.searchParams.get('fgy'))*favorite_close_percentage ;
       
+      if(favorite_close_percentage < 1) {
       $('.color').css({'width':favorite_close_per_w,'height':favorite_close_per_h,'top':favorite_close_per_y,'left':favorite_close_per_x});
-      
+      }
+      else {
+        favorite_close_percentage = 1 ;
+        $('.color').css({'width':favorite_close_per_w,'height':favorite_close_per_h,'top':favorite_close_per_y,'left':favorite_close_per_x});
+      }
       //test-favorite-close-percentage-calculate-end
   }
 
