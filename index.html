@@ -1662,10 +1662,20 @@ document.addEventListener('touchend', function(e) {
     if(favorite_close_percentage > 0.5) {
       $('.fi').click();
       favorite_close_percentage = 1 ;
+     var favorite_close_per_w = parseInt(url.searchParams.get('fgw'))+($(window).width()-parseInt(url.searchParams.get('fgw')))*(1-favorite_close_percentage) ;
+     var favorite_close_per_h = parseInt(url.searchParams.get('fgh'))+($(window).width()-parseInt(url.searchParams.get('fgh')))*(1-favorite_close_percentage) ;
+      
+     var favorite_close_per_x = parseInt(url.searchParams.get('fgx'))*favorite_close_percentage ;
+     var favorite_close_per_y = parseInt(url.searchParams.get('fgy'))*favorite_close_percentage ;
         $('.color').css({'width':favorite_close_per_w,'height':favorite_close_per_h,'top':favorite_close_per_y,'left':favorite_close_per_x});
     }
     else {
       favorite_close_percentage = 0 ;
+      var favorite_close_per_w = parseInt(url.searchParams.get('fgw'))+($(window).width()-parseInt(url.searchParams.get('fgw')))*(1-favorite_close_percentage) ;
+     var favorite_close_per_h = parseInt(url.searchParams.get('fgh'))+($(window).width()-parseInt(url.searchParams.get('fgh')))*(1-favorite_close_percentage) ;
+      
+     var favorite_close_per_x = parseInt(url.searchParams.get('fgx'))*favorite_close_percentage ;
+     var favorite_close_per_y = parseInt(url.searchParams.get('fgy'))*favorite_close_percentage ;
         $('.color').css({'width':favorite_close_per_w,'height':favorite_close_per_h,'top':favorite_close_per_y,'left':favorite_close_per_x});
     }
     
@@ -1732,6 +1742,12 @@ function move(e) {
       }
       else {
         favorite_close_percentage = 1 ;
+      favorite_close_per_w = parseInt(url.searchParams.get('fgw'))+($(window).width()-parseInt(url.searchParams.get('fgw')))*(1-favorite_close_percentage) ;
+      favorite_close_per_h = parseInt(url.searchParams.get('fgh'))+($(window).width()-parseInt(url.searchParams.get('fgh')))*(1-favorite_close_percentage) ;
+      
+      favorite_close_per_x = parseInt(url.searchParams.get('fgx'))*favorite_close_percentage ;
+      favorite_close_per_y = parseInt(url.searchParams.get('fgy'))*favorite_close_percentage ;
+        
         $('.color').css({'width':favorite_close_per_w,'height':favorite_close_per_h,'top':favorite_close_per_y,'left':favorite_close_per_x});
       }
       //test-favorite-close-percentage-calculate-end
