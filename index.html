@@ -1659,7 +1659,7 @@ document.addEventListener('touchend', function(e) {
     const dx = e.pageX - mouseX
     const dy = e.pageY - mouseY
     
-    var favorite_close_percentage = dy/(Math.abs(($(window).height()-mouseX-95)-mouseX)) ;
+    var favorite_close_percentage = dy/(Math.abs(($(window).height()-mouseY-95)-mouseY)) ;
     if(favorite_close_percentage > 0.3) {
       
       setTimeout(function() {
@@ -1725,7 +1725,7 @@ function move(e) {
     const dy = e.pageY - mouseY
     
       //test-favorite-close-percentage-calculate
-      var favorite_close_percentage = dy/(Math.abs(($(window).height()-mouseX-95)-mouseX)) ;
+      var favorite_close_percentage = dy/(Math.abs(($(window).height()-mouseY-95)-mouseY)) ;
 
       var favorite_close_per_w = parseInt(url.searchParams.get('fgw'))+($(window).width()-parseInt(url.searchParams.get('fgw')))*(1-favorite_close_percentage) ;
       var favorite_close_per_h = parseInt(url.searchParams.get('fgh'))+($(window).height()-parseInt(url.searchParams.get('fgh')))*(1-favorite_close_percentage) ;
