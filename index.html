@@ -1698,21 +1698,25 @@ function move(e) {
     const dy = e.pageY - mouseY
     var gtipu = (1-(dy/$(window).height()));
    if(gtipu > 0.6 && gtipu < 1.00001) {
-     $('.color').css({'transform':'scale(' + gtipu + ')','border-radius':'15px','transition':'0s'}).attr('scale',gtipu);
+     //testing
+     //$('.color').css({'transform':'scale(' + gtipu + ')','border-radius':'15px','transition':'0s'}).attr('scale',gtipu);
      $('body').css({'background':''});
    }
     else {
- $('.color').css({'transform':'scale(' + 1 + ')','border-radius':'0px','transition':'0.3s'}).attr('scale',gtipu);
+      //testing
+ //$('.color').css({'transform':'scale(' + 1 + ')','border-radius':'0px','transition':'0.3s'}).attr('scale',gtipu);
       
     }
       //test-favorite-close-percentage-calculate
       var favorite_close_percentage = dy/(Math.abs(($(window).height()-mouseX-95)-mouseX))
 
-      var favorite_close_min_w = parseInt(url.searchParams.get('fgw'))+($(window).width()-parseInt(url.searchParams.get('fgw')))*(1-favorite_close_percentage) ;
-      var favorite_close_min_h = parseInt(url.searchParams.get('fgh'))+($(window).width()-parseInt(url.searchParams.get('fgh')))*(1-favorite_close_percentage) ;
+      var favorite_close_per_w = parseInt(url.searchParams.get('fgw'))+($(window).width()-parseInt(url.searchParams.get('fgw')))*(1-favorite_close_percentage) ;
+      var favorite_close_per_h = parseInt(url.searchParams.get('fgh'))+($(window).width()-parseInt(url.searchParams.get('fgh')))*(1-favorite_close_percentage) ;
       
+      var favorite_close_per_x = parseInt(url.searchParams.get('fgx'))*favorite_close_percentage ;
+      var favorite_close_per_y = parseInt(url.searchParams.get('fgy'))*favorite_close_percentage ;
       
-      
+      $('.color').css({'width':favorite_close_per_w,'height':favorite_close_per_h,'top':favorite_close_per_y,'left':favorite_close_per_x});
       
       //test-favorite-close-percentage-calculate-end
   }
