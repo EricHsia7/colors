@@ -1743,7 +1743,13 @@ function move(e) {
       $('.color').css({'width':favorite_close_per_w,'height':favorite_close_per_h,'top':favorite_close_per_y,'left':favorite_close_per_x,'transition':'0s'});
       }
       else {
+        if(favorite_close_percentage > 1) {
         favorite_close_percentage = 1 ;
+        }
+        if(favorite_close_percentage < 0) {
+        favorite_close_percentage = 0 ;
+        }
+        
       favorite_close_per_w = parseInt(url.searchParams.get('fgw'))+($(window).width()-parseInt(url.searchParams.get('fgw')))*(1-favorite_close_percentage) ;
       favorite_close_per_h = parseInt(url.searchParams.get('fgh'))+($(window).height()-parseInt(url.searchParams.get('fgh')))*(1-favorite_close_percentage) ;
       
