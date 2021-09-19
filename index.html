@@ -1667,7 +1667,10 @@ document.addEventListener('touchend', function(e) {
     $('.fi').click();
         $('body').css({'background':$('#rgb').attr('arc')});
             },300);
-      favorite_close_percentage = 0 ;
+      //favorite_close_percentage = 0 ;
+      //testing
+      favorite_close_percentage = 1 ;
+      //testing-end
      var favorite_close_per_w = parseInt(url.searchParams.get('fgw'))+($(window).width()-parseInt(url.searchParams.get('fgw')))*(1-favorite_close_percentage) ;
      var favorite_close_per_h = parseInt(url.searchParams.get('fgh'))+($(window).height()-parseInt(url.searchParams.get('fgh')))*(1-favorite_close_percentage) ;
       
