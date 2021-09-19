@@ -1769,7 +1769,9 @@ function move(e) {
         //testingend
      
         //$('.colorinps2').css({'transform':'translateX('+ (parseInt(url.searchParams.get('fgw'))*copycolmode-$(window).width())*(1-favorite_close_percentage) + 'px) translateY(-50%)','transition':'0s'});
-          $('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*copycolmode)) + 'px) translateY(-50%)','transition':'0s'});
+          //$('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*copycolmode)) + 'px) translateY(-50%)','transition':'0s'});
+        $('.colorinps2').css({'transform':'translateX('+ favorite_close_per_w*copycolmode/favorite_close_percentage + 'px) translateY(-50%)','transition':'0s'});
+        
         
       }
       //test-favorite-close-percentage-calculate-end
