@@ -1772,7 +1772,7 @@ function move(e) {
           //$('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*copycolmode)) + 'px) translateY(-50%)','transition':'0s'});
         //$('.colorinps2').css({'transform':'translateX('+ favorite_close_per_w*copycolmode/favorite_close_percentage + 'px) translateY(-50%)','transition':'0s'});
         
-        $('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*copycolmode))/(1-favorite_close_percentage)/copycolmode + 'px) translateY(-50%)','transition':'0s'});
+        $('.colorinps2').css({'transform':'translateX('+ $(window).width()*favorite_close_percentage*copycolmode*-1 + 'px) translateY(-50%)','transition':'0s'});
         
       }
       //test-favorite-close-percentage-calculate-end
