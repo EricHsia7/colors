@@ -1703,6 +1703,7 @@ document.addEventListener('touchend', function(e) {
         $('.color').css({'width':favorite_close_per_w,'height':favorite_close_per_h,'top':favorite_close_per_y,'left':favorite_close_per_x,'border-radius':favorite_close_per_border_radius,'transition':'0.3s'});
 $('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*copycolmode)) + 'px) translateY(-50%)','transform-origin':'','transition':'0s'});
         
+      $('#menuj').css({'opacity':(0.5),'transition':'0.3s'});
     }
     else {
       usedslideclosepp = 0 ;
@@ -1718,6 +1719,9 @@ $('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*copycolmo
         $('.color').css({'width':favorite_close_per_w,'height':favorite_close_per_h,'top':favorite_close_per_y,'left':favorite_close_per_x,'border-radius':favorite_close_per_border_radius,'transition':'0.3s'});
       $('body').css({'background':$('#rgb').attr('arc')});
       $('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*copycolmode)) + 'px) translateY(-50%)','transform-origin':'','transition':'0s'});
+      
+      $('#menuj').css({'opacity':(1),'transition':'0.3s'});
+      
     }
     
     
@@ -1795,6 +1799,9 @@ function move(e) {
       }
       //tested-ok
       $('.colorinps2').css({'transform':'translateX(' + (-20*copycolmode) + '%) translateY(-50%)','transition':'0s','transform-origin': '100% 50%'});
+      
+      //testing-menuopacity
+      $('#menuj').css({'opacity':(1-favorite_close_percentage)*0.5,'transition':'0s'});
       //test-favorite-close-percentage-calculate-end
       
   }
