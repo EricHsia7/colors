@@ -1763,25 +1763,11 @@ function move(e) {
         
         $('.color').css({'width':favorite_close_per_w,'height':favorite_close_per_h,'top':favorite_close_per_y,'left':favorite_close_per_x,'border-radius':favorite_close_per_border_radius,'transition':'0.3s'});
         
-        //$('.colorinps2').css({'transform':'translateX('+ (favorite_close_per_w-(favorite_close_per_w*copycolmode*(favorite_close_per_w/$(window).width()))) + 'px) translateY(-50%)','transition':'0s'});
-        //testing
-        //$('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*copycolmode))*parseInt(url.searchParams.get('fgw'))/$(window).width() + 'px) translateY(-50%)','transition':'0s'});
-        //testingend
-     
-        //$('.colorinps2').css({'transform':'translateX('+ (parseInt(url.searchParams.get('fgw'))*copycolmode-$(window).width())*(1-favorite_close_percentage) + 'px) translateY(-50%)','transition':'0s'});
-          //$('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*copycolmode)) + 'px) translateY(-50%)','transition':'0s'});
-        //$('.colorinps2').css({'transform':'translateX('+ favorite_close_per_w*copycolmode/favorite_close_percentage + 'px) translateY(-50%)','transition':'0s'});
-        
-        //$('.colorinps2').css({'transform':'translateX('+ $(window).width()*(1-favorite_close_percentage)*(4-copycolmode)*-1 + 'px) translateY(-50%)','transition':'0s'});
-        
-
-        
-        //$('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*copycolmode))+((parseInt(url.searchParams.get('fgw'))+($(window).width()-parseInt(url.searchParams.get('fgw')))*(1-1))-(parseInt(url.searchParams.get('fgw'))+($(window).width()-parseInt(url.searchParams.get('fgw')))*(1-0)))*(1-favorite_close_percentage)*copycolmode + 'px) translateY(-50%)','transition':'0s'});
         
         
         $('.colorinps2').css({'transform':'translateX(' + (-20*copycolmode) + '%) translateY(-50%)','transition':'0s','transform-origin': '100% 50%'});
       }
-      //ttt
+      //tested-ok
       $('.colorinps2').css({'transform':'translateX(' + (-20*copycolmode) + '%) translateY(-50%)','transition':'0s','transform-origin': '100% 50%'});
       //test-favorite-close-percentage-calculate-end
       
