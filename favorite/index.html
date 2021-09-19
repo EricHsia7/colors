@@ -645,6 +645,8 @@ var rgf =  atob(String(url.searchParams.get('rg'))) ;
 var rgcf = atob(String(url.searchParams.get('rgc'))) ;
 var scale = String(url.searchParams.get('scale')) ;
 var atrrffdreeclas = url.searchParams.get('lig') ;
+var usc = url.searchParams.get('usc') ;
+       
        
 function genid(mode) {
 if(mode === "random"){
@@ -908,10 +910,14 @@ $('#' + fghidf).css({'border-radius':'0px','width':'100%','height':'100%','posit
  if(open === "col") {
   $(document).scrollTop(favscroll);
   $('.clopanblur').css({'display':'block','opacity':'1'});
-  //$('body').append('<div class="clopan" style="transform:scale(' + scale + ');position:fixed;top:' + 0 + 'px;left:' + 0 + 'px;width:' + '100%' + ';height:' + '100%' + ';background:' + atob(oancf) +';border-radius:0px;transform:none;margin:0px;" id="' + oanif + '"><input type="text" id="rgb" value="' + rgf + '" style="color:' + rgcf +'" readonly="readonly">  <div class="arrow-right' + atrrffdreeclas + ' btn arrbtco"></div><div class="arrow-left' + atrrffdreeclas + ' btn arrbtco-2"></div><div id="menuj"><div class="fi2 lle btn"></div><div class="fi3 lle btn"></div><div class="qrt lle btn"></div><div class="favt lle btn"></div><div class="linechat lle btn" style="display:none;"></div><div class="fi lle btn"></div></div></div>');
-  //testing
+  if(usc === 1) {
+  $('body').append('<div class="clopan" style="transform:scale(' + scale + ');position:fixed;top:' + 0 + 'px;left:' + 0 + 'px;width:' + '100%' + ';height:' + '100%' + ';background:' + atob(oancf) +';border-radius:0px;transform:none;margin:0px;" id="' + oanif + '"><input type="text" id="rgb" value="' + rgf + '" style="color:' + rgcf +'" readonly="readonly">  <div class="arrow-right' + atrrffdreeclas + ' btn arrbtco"></div><div class="arrow-left' + atrrffdreeclas + ' btn arrbtco-2"></div><div id="menuj"><div class="fi2 lle btn"></div><div class="fi3 lle btn"></div><div class="qrt lle btn"></div><div class="favt lle btn"></div><div class="linechat lle btn" style="display:none;"></div><div class="fi lle btn"></div></div></div>');
+  }
+  else {
+  
   $('body').append('<div class="clopan" style="transform:scale(' + scale + ');position:fixed;top:' + (fgyf) + 'px;left:' + (fgxf) + 'px;width:' + fgwf + ';height:' + fghf + ';background:' + atob(oancf) +';border-radius:15px;transform:translateX(5px);margin:10px;" id="' + oanif + '"><input type="text" id="rgb" value="' + rgf + '" style="color:' + rgcf +'" readonly="readonly">  <div class="arrow-right' + atrrffdreeclas + ' btn arrbtco"></div><div class="arrow-left' + atrrffdreeclas + ' btn arrbtco-2"></div><div id="menuj"><div class="fi2 lle btn"></div><div class="fi3 lle btn"></div><div class="qrt lle btn"></div><div class="favt lle btn"></div><div class="linechat lle btn" style="display:none;"></div><div class="fi lle btn"></div></div></div>');
-  //testing-end
+  
+  }
  setTimeout(function(){
   $('#' + oanif).css({'width':fgwf + 'px','height':fghf + 'px','top':(fgyf) + 'px','left':(fgxf) + 'px','margin':'10px','border-radius':'15px','transition':'all 0.3s,opacity 0.6s','transform':'translateX(5px)','opacity':'1','transition-timing-function':'ease-in-out'});
   $('.clopanblur').fadeOut(350);
