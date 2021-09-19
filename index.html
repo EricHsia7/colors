@@ -1768,7 +1768,7 @@ function move(e) {
         //$('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*copycolmode))*parseInt(url.searchParams.get('fgw'))/$(window).width() + 'px) translateY(-50%)','transition':'0s'});
         //testingend
      
-        $('.colorinps2').css({'transform':'translateX('+ (parseInt(url.searchParams.get('fgw'))*copycolmode-$(window).width())*favorite_close_percentage + 'px) translateY(-50%)','transition':'0s'});
+        $('.colorinps2').css({'transform':'translateX('+ (parseInt(url.searchParams.get('fgw'))*copycolmode-$(window).width())*(1-favorite_close_percentage) + 'px) translateY(-50%)','transition':'0s'});
         
         
       }
