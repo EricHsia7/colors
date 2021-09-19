@@ -1760,8 +1760,8 @@ function move(e) {
       favorite_close_per_w = parseInt(url.searchParams.get('fgw'))+($(window).width()-parseInt(url.searchParams.get('fgw')))*(1-favorite_close_percentage) ;
       favorite_close_per_h = parseInt(url.searchParams.get('fgh'))+($(window).height()-parseInt(url.searchParams.get('fgh')))*(1-favorite_close_percentage) ;
       
-      favorite_close_per_x = parseInt(url.searchParams.get('fgx'))*favorite_close_percentage ;
-      favorite_close_per_y = parseInt(url.searchParams.get('fgy'))*favorite_close_percentage ;
+      favorite_close_per_x = parseInt(url.searchParams.get('fgx'))*favorite_close_percentage+15*favorite_close_percentage ;
+      favorite_close_per_y = parseInt(url.searchParams.get('fgy'))*favorite_close_percentage+10*favorite_close_percentage ;
         
        favorite_close_per_border_radius = 15*favorite_close_percentage ;
         
