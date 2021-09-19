@@ -1274,9 +1274,28 @@ var rand_r = gettimerandomnumber(0,255);
 var rand_g = gettimerandomnumber(0,255);  
 var rand_b = gettimerandomnumber(0,255);
     
+    
+    //tag 
+    var randtgrtag = 'other' ;
+    if(Math.max(rand_r,rand_g,rand_b) === rand_r) {
+       var randtgrtag = 'red' ;
+       }
+    if(Math.max(rand_r,rand_g,rand_b) === rand_g) {
+       var randtgrtag = 'green' ;
+       }
+    if(Math.max(rand_r,rand_g,rand_b) === rand_b) {
+       var randtgrtag = 'blue' ;
+       }
+    if(rand_r === rand_g && rand_g === rand_b) {
+       var randtgrtag = 'other' ;
+       }
+    //tagend
+
+    
+    
     gtag('event', 'generator', {
     'event_category': 'color',
-    'event_label': rgbToHex(rand_r,rand_g,rand_b),
+    'event_label': randtgrtag,
     'transport_type': 'beacon',
     'event_callback': function(){
     location.href = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(rand_r,rand_g,rand_b)) + '&r=' + genid('random') ;
