@@ -769,6 +769,7 @@ var shcolor = atob(url.searchParams.get('c')) ;
   var shortcuts = url.searchParams.get('shortcuts') ;
   
 var copycolmode = 0 ;
+  var usedslideclosepp = 0 ;
 
 var ccw = 256;
 var ccwa = (ccw*ccw) ;
@@ -1096,7 +1097,7 @@ if(sharecolor === "1" || sharecolor === "2") {
       $('body').css({'background':''});
       //$(".color").css({'transform':'translateY(0px)','border-radius':'0px','transition':'0s','opacity':'1','height':'100%','top':'0px'});
       $(".color").css({'transform':'translateY(0px)','transition':'0s','opacity':'1'});
-      location.href = 'https://erichsia7.github.io/colors/favorite/?open=col&scroll=' + favscroll + '&oani=' + url.searchParams.get('oani') + '&oanc=' + url.searchParams.get('oanc') + '&fgx=' + url.searchParams.get('fgx') + '&fgy=' + url.searchParams.get('fgy') + '&fgw=' + url.searchParams.get('fgw') + '&fgh=' + url.searchParams.get('fgh') + '&rg=' + url.searchParams.get('rg') + '&rgc=' + url.searchParams.get('rgc') + '&scale=' + $('.color').attr('scale') + '&lig=' + url.searchParams.get('lig') + '&r=' + genid('random') ;
+      location.href = 'https://erichsia7.github.io/colors/favorite/?open=col&scroll=' + favscroll + '&oani=' + url.searchParams.get('oani') + '&oanc=' + url.searchParams.get('oanc') + '&fgx=' + url.searchParams.get('fgx') + '&fgy=' + url.searchParams.get('fgy') + '&fgw=' + url.searchParams.get('fgw') + '&fgh=' + url.searchParams.get('fgh') + '&rg=' + url.searchParams.get('rg') + '&rgc=' + url.searchParams.get('rgc') + '&scale=' + $('.color').attr('scale') + '&lig=' + url.searchParams.get('lig') + '&usc=' + usedslideclosepp + '&r=' + genid('random') ;
       
       
       
@@ -1732,6 +1733,7 @@ function move(e) {
     const dy = e.pageY - mouseY
     
       //test-favorite-close-percentage-calculate
+    usedslideclosepp = 1 ;
       var favorite_close_percentage = dy/(Math.abs(($(window).height()-mouseY-95)-mouseY)) ;
 
       var favorite_close_per_w = parseInt(url.searchParams.get('fgw'))+($(window).width()-parseInt(url.searchParams.get('fgw')))*(1-favorite_close_percentage) ;
