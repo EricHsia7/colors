@@ -1664,7 +1664,7 @@ document.addEventListener('touchend', function(e) {
     
     var favorite_close_percentage = dy/(Math.abs(($(window).height()-mouseY-95)-mouseY)) ;
     if(favorite_close_percentage > 0.3) {
-      
+      usedslideclosepp = 1 ;
       setTimeout(function() {
     $('.fi').click();
         //$('body').css({'background':$('#rgb').attr('arc')});
@@ -1686,6 +1686,7 @@ $('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*copycolmo
         
     }
     else {
+      usedslideclosepp = 0 ;
       favorite_close_percentage = 0 ;
       var favorite_close_per_w = parseInt(url.searchParams.get('fgw'))+($(window).width()-parseInt(url.searchParams.get('fgw')))*(1-favorite_close_percentage) ;
      var favorite_close_per_h = parseInt(url.searchParams.get('fgh'))+($(window).height()-parseInt(url.searchParams.get('fgh')))*(1-favorite_close_percentage) ;
@@ -1733,7 +1734,7 @@ function move(e) {
     const dy = e.pageY - mouseY
     
       //test-favorite-close-percentage-calculate
-    usedslideclosepp = 1 ;
+    
       var favorite_close_percentage = dy/(Math.abs(($(window).height()-mouseY-95)-mouseY)) ;
 
       var favorite_close_per_w = parseInt(url.searchParams.get('fgw'))+($(window).width()-parseInt(url.searchParams.get('fgw')))*(1-favorite_close_percentage) ;
