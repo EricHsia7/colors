@@ -789,8 +789,7 @@ if(mode === "random"){
 var genidchars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
             var genid = "";
             for (var i = 0; i < 16; i++) {
-                var genrandomNumber = gettimerandomnumber(0,genidchars.length)
-                //var genrandomNumber = Math.floor(Math.random() * genidchars.length);
+                var genrandomNumber = Math.floor(Math.random() * genidchars.length);
                 genid += genidchars.substring(genrandomNumber, genrandomNumber + 1);
             }
   return genid ;
