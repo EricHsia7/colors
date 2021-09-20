@@ -36,7 +36,7 @@ var co = atob(url.searchParams.get('c')) ;
   
   function genid(mode) {
 if(mode === "random"){
-var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
+var genidchars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
             var genid = "";
             for (var i = 0; i < 16; i++) {
                 var genrandomNumber = Math.floor(Math.random() * genidchars.length);
