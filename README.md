@@ -6,4 +6,4 @@
 * 分享顏色
 
 # other
-icon source: [Flaticon](https://www.flaticon.com)
+* icon source: [Flaticon](https://www.flaticon.com)
