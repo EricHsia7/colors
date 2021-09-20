@@ -1432,7 +1432,7 @@ gtag('event', 'generator', {
   
   
 if(sharecolor === "1") {
-      $('#filerj').css({'position':'fixed'});
+      $('#filerj,.favrecommendcardbox').css({'position':'fixed'});
 $('#rgb').attr('rgb',hexToRgb(shcolor).r + ',' + hexToRgb(shcolor).g + ',' + hexToRgb(shcolor).b);
 $('#rgb').attr('hex', shcolor);
 $('#rgb').attr('cmyk',rgbtocmyk(hexToRgb(shcolor).r,hexToRgb(shcolor).g,hexToRgb(shcolor).b).cmykstr);
@@ -1499,7 +1499,7 @@ $('.color').fadeIn(222);
   
 }
   if(sharecolor === "2") {
-    $('#filerj').css({'position':'fixed'});
+    $('#filerj,.favrecommendcardbox').css({'position':'fixed'});
     $('input[t="rgb"]').val('暫不支援');
 $('input[t="cmyk"]').val('暫不支援');
 $('input[t="hsl"]').val('暫不支援');
