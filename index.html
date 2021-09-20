@@ -1983,11 +1983,42 @@ arrbtcoctft();
 
 
   //test-recommend-info-card
+  
   for (var fygeeew = 0; fygeeew < 10; fygeeew++) { 
  $('.favrecommendcardbox').append('<div class="favrecommendcard loading" dp="lo" type="recommend"><div class="favrecommendcardcontent"><h4>&nbsp</h4><div class="favrecommendcarddescription">&nbsp</div></div></div>');
 }
-  
- 
+  if(sharecolor === '1') {
+//ture
+  }
+ else {
+//false
+   if(sharecolor === '2') {
+//ture
+  }
+ else {
+//false
+   //start
+   $.ajax({type:'get',url:"https://docs.google.com/spreadsheets/d/e/2PACX-1vSKrUKs8Cq2a3Pubg_-MXmWp77GqLE0ImjKHy8VNAaVpqFH4Z94BeCcH-IQRsVnLTzmwaPG_66e35mH/pub?gid=1124579858&single=true&output=csv&" + genid('random'),dataType:'text',success:function(e) {
+  var favrecommenddataarr = e.split(/[\s\n]/).filter(function(n){ return n.length > 0}) ;
+  for (var fygeeew = 0; fygeeew < favrecommenddataarr.length; fygeeew++) {
+  if((hexToRgb(favrecommenddataarr[fygeeew]).r+hexToRgb(favrecommenddataarr[fygeeew]).g+hexToRgb(favrecommenddataarr[fygeeew]).b)/3 > 128) {
+   var favrecommendcardtitlecolor = '000' ;
+  }
+  else {
+    var favrecommendcardtitlecolor = 'fff' ;
+  }
+ //$('.favrecommendcardbox').prepend('<div class="favrecommendcard" dp="lo" type="recommend" style="background:' + favrecommenddataarr[fygeeew] + '"><div class="favrecommendcardcontent"><h4 style="color:#' + favrecommendcardtitlecolor + '">' + favrecommenddataarr[fygeeew] + '</h4><div class="favrecommendcarddescription"><a>查看顏色</a></div></div></div>');
+    
+    $('.favrecommendcard').eq(favrecommenddataarr.length-fygeeew-1).css({'background':favrecommenddataarr[fygeeew]}).attr('class','favrecommendcard');
+    $('.favrecommendcardcontent h4').eq(favrecommenddataarr.length-fygeeew-1).css({'color':'#' + favrecommendcardtitlecolor}).html(favrecommenddataarr[fygeeew]);
+    $('.favrecommendcarddescription').eq(favrecommenddataarr.length-fygeeew-1).html('<a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favrecommenddataarr[fygeeew]) + '&sou=recommend&r=' + genid('random') + '">查看顏色</a>');
+}
+}
+});
+   
+   //end
+ }
+ }
   
 </script>
 <script>
