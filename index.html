@@ -1356,6 +1356,7 @@ gtag('event', 'generator', {
   
   
 if(sharecolor === "1") {
+      $('#filerj').css({'position':'fixed'});
 $('#rgb').attr('rgb',hexToRgb(shcolor).r + ',' + hexToRgb(shcolor).g + ',' + hexToRgb(shcolor).b);
 $('#rgb').attr('hex', shcolor);
 $('#rgb').attr('cmyk',rgbtocmyk(hexToRgb(shcolor).r,hexToRgb(shcolor).g,hexToRgb(shcolor).b).cmykstr);
@@ -1383,7 +1384,7 @@ if((hexToRgb(shcolor).r+hexToRgb(shcolor).g+hexToRgb(shcolor).b)/3 > 128) {
     }
   if(open === "fav") {
 $('.color').css({'display':'block'});
-    $('#filerj').css({'opacity':'0'});
+    $('#filerj').css({'opacity':'0','position':'fixed'});
   }
 else {
   
@@ -1422,7 +1423,7 @@ $('.color').fadeIn(222);
   
 }
   if(sharecolor === "2") {
-    
+    $('#filerj').css({'position':'fixed'});
     $('input[t="rgb"]').val('暫不支援');
 $('input[t="cmyk"]').val('暫不支援');
 $('input[t="hsl"]').val('暫不支援');
@@ -1447,7 +1448,7 @@ $('input[t="hsv"]').val('暫不支援');
 if(open === "fav") {
 //$('.color').fadeIn(1);
   $('.color').css({'display':'block'});
-  $('#filerj').css({'opacity':'0'});
+  $('#filerj').css({'opacity':'0','position':'fixed'});
   }
 else {
   
