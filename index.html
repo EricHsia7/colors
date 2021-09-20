@@ -531,15 +531,12 @@ tfoot {
   .favrecommendcard {
   width:230px;
   height:100px;
-  background:#f5f5f5;
+  background:#fff;
   margin-top:15px;
   border-radius:15px;
+  border:1px #e3e3e3 solid;
 }
 .favrecommendcardcontent {
-  padding: 1.1rem 1.1rem;
-  position:relative;
-}
-.loading .favrecommendcardcontent {
   padding: 1.1rem 1.1rem;
   position:relative;
 }
@@ -561,7 +558,7 @@ tfoot {
  font-family: 'Noto Sans TC', sans-serif;
   font-weight:700;
  -webkit-user-select: none;
-  background:#e3e3e3;
+  background:#ededed;
   min-width:calc(230px - 1.1rem - 1.1rem)
 }
 .favrecommendcarddescription {
@@ -575,7 +572,7 @@ tfoot {
   line-height: 1.4rem;
   position:relative;
   min-height: 38px;
-  background:#e3e3e3;
+  background:#ededed;
   
 }
 .favrecommendcarddescription a {
@@ -597,13 +594,25 @@ width:230px;
     top:calc(50% - 100px * 0.5 + 100px + 15px);
     left:50%;
     transform:translateX(-50%);
+    padding-bottom:50px;
 }
   
   /*testend*/
   @media (prefers-color-scheme: dark) {
+    .favrecommendcard {
+background:#1a1a1a;
+border:1px #303030 solid;
+}
     .favrecommendcardbox h3 {
     color:#fff;
     }
+    .loading .favrecommendcarddescription {
+     background:#1f1f1f;
+    }
+    .loading h4 {
+  background:#1f1f1f;
+    }    
+    
     #colorjsloading {
     background:#1a1a1a;
       color:#fff;
@@ -690,7 +699,7 @@ background:#fff;
 </span>
 
 <div class="favrecommendcardbox">
-  <h3>建議(來自其他用戶，包括你)</h3>
+  <h3>建議的顏色(來自使用者，包括你)</h3>
 </div>
 
 <div class="color" topi="0"> 
