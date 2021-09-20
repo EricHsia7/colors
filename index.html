@@ -527,7 +527,79 @@ tfoot {
     font-size:1.3rem;font-weight:500;
   }
   
+  /*test*/
+  .favrecommendcard {
+  width:230px;
+  height:100px;
+  background:#f5f5f5;
+  margin-top:10px;
+  border-radius:15px;
+}
+.favrecommendcardcontent {
+  padding: 1.1rem 1.1rem;
+  position:relative;
+}
+.loading .favrecommendcardcontent {
+  padding: 1.1rem 1.1rem;
+  position:relative;
+}
+.favrecommendcard h4 {
+  margin: 0 0 0.35rem;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  position:relative;
+ font-family: 'Noto Sans TC', sans-serif;
+  font-weight:700;
+ -webkit-user-select: none;
+}
+.loading h4 {
+  margin: 0 0 0.35rem;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  min-height:1.5rem;
+  position:relative;
+ font-family: 'Noto Sans TC', sans-serif;
+  font-weight:700;
+ -webkit-user-select: none;
+  background:#e3e3e3;
+  min-width:calc(230px - 1.1rem - 1.1rem)
+}
+.favrecommendcarddescription {
+  font-size: 1rem;
+  line-height: 1.4rem;
+  position:relative;
+  min-height: 38px;
+}
+.loading .favrecommendcarddescription {
+  font-size: 1rem;
+  line-height: 1.4rem;
+  position:relative;
+  min-height: 38px;
+  background:#e3e3e3;
   
+}
+.favrecommendcarddescription a {
+text-decoration:none;
+  color:#000;
+  background:#f5f5f5;
+  padding:8px;
+  margin:0px;
+  border-radius:99em;
+  position:absolute;
+  top:0px;
+ font-family: 'Noto Sans TC', sans-serif;
+  font-weight:400;
+ -webkit-user-select: none;
+}
+  .favrecommendcardbox {
+width:230px;
+    position:absolute;
+    top:calc(50% - 100px * 0.5 + 100px + 50px);
+    left:50%;
+    trandform:translateX(-50%)
+}
+  
+  /*testend*/
   @media (prefers-color-scheme: dark) {
     #colorjsloading {
     background:#1a1a1a;
@@ -613,6 +685,10 @@ background:#fff;
   <div class="mor lle ooe btn"></div>
 </div>
 </span>
+
+<div class="favrecommendcardbox">
+</div>
+
 <div class="color" topi="0"> 
   
   
@@ -1906,8 +1982,10 @@ arrbtcoctft();
 });
 
 
-  
-  
+  //test-recommend-info-card
+  for (var fygeeew = 0; fygeeew < 10; fygeeew++) { 
+ $('.favrecommendcardbox').append('<div class="favrecommendcard loading" dp="lo" type="recommend"><div class="favrecommendcardcontent"><h4>&nbsp</h4><div class="favrecommendcarddescription">&nbsp</div></div></div>');
+}
   
  
   
