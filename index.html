@@ -2078,11 +2078,13 @@ arrbtcoctft();
   $(document).scroll(function(e) {
     if($(document).scrollTop() > $('#e2tenbdiha7q0hi0').offset().top) {
       //ture
-      $('.favrecommendfixedtitle').attr('class','favrecommendfixedtitle')
+      $('.favrecommendfixedtitle').attr('class','favrecommendfixedtitle');
+      $('#e2tenbdiha7q0hi0').css({'opacity':'0'});
     }
     else {
       //false
-      $('.favrecommendfixedtitle').attr('class','favrecommendfixedtitle favrecommendfixedtitleopacity0')
+      $('.favrecommendfixedtitle').attr('class','favrecommendfixedtitle favrecommendfixedtitleopacity0');
+      $('#e2tenbdiha7q0hi0').css({'opacity':'1'});
     }
   });
 </script>
