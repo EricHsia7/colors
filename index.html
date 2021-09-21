@@ -607,6 +607,32 @@ width:clamp(230px,90%,350px);
       text-align: center;
       -webkit-user-select: none;
     }
+  
+  
+  
+  
+  .favrecommendfixedtitle {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:45px;
+  -webkit-backdrop-filter: blur(15px);
+backdrop-filter: blur(15px);
+  background:rgba(255, 255, 255, 0.5);
+  display: flex;
+justify-content: center;
+align-items: center;
+  font-size:16px;
+  border-bottom:1px #e3e3e3 solid;
+}
+.favrecommendfixedtitleopacity0 {
+  opacity:0;
+  display:none;
+}
+  
+  
+  
   /*testend*/
   @media (prefers-color-scheme: dark) {
     .favrecommendcard {
@@ -711,6 +737,8 @@ background:#fff;
 <div class="favrecommendcardbox">
   <h3 id="e2tenbdiha7q0hi0">建議的顏色<br><bqta style="font-size:0.6em">(來自使用者，包括你)</bqta></h3>
 </div>
+
+<div class="favrecommendfixedtitle favrecommendfixedtitleopacity0">建議的顏色</div>
 
 <div class="color" topi="0"> 
   
@@ -2045,11 +2073,11 @@ arrbtcoctft();
   $(document).scroll(function(e) {
     if($(document).scrollTop() > $('#e2tenbdiha7q0hi0').offset().top) {
       //ture
-      console.log('ture!')
+      $('.favrecommendfixedtitle').attr('class','favrecommendfixedtitle')
     }
     else {
       //false
-      console.log('false!')
+      $('.favrecommendfixedtitle').attr('class','favrecommendfixedtitle favrecommendfixedtitleopacity0')
     }
   });
 </script>
