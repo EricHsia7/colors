@@ -2005,7 +2005,7 @@ arrbtcoctft();
 });
 
 
-  //test-recommend-info-card
+  //recommend-info-card
   
   for (var fygeeew = 0; fygeeew < 10; fygeeew++) { 
  $('.favrecommendcardbox').append('<div class="favrecommendcard loading" dp="lo" type="recommend"><div class="favrecommendcardcontent"><h4>&nbsp</h4><div class="favrecommendcarddescription">&nbsp</div></div></div>');
@@ -2042,7 +2042,16 @@ arrbtcoctft();
    //end
  }
  }
-  
+  $(document).scroll(function(e) {
+    if($(document).scrollTop() > $('#e2tenbdiha7q0hi0').offset().top) {
+      //ture
+      console.log('ture!')
+    }
+    else {
+      //false
+      console.log('false!')
+    }
+  });
 </script>
 <script>
 window.onload=function(){
