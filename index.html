@@ -709,7 +709,7 @@ background:#fff;
 </span>
 
 <div class="favrecommendcardbox">
-  <h3>建議的顏色<br><bqta style="font-size:0.6em">(來自使用者，包括你)</bqta></h3>
+  <h3 id="">建議的顏色<br><bqta style="font-size:0.6em">(來自使用者，包括你)</bqta></h3>
 </div>
 
 <div class="color" topi="0"> 
@@ -885,7 +885,7 @@ function gettimerandomnumber(min,max) {
   
   function genid(mode) {
 if(mode === "random"){
-var genidchars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
             var genid = "";
             for (var i = 0; i < 16; i++) {
                 var genrandomNumber = Math.floor(Math.random() * genidchars.length);
