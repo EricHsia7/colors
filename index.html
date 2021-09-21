@@ -1777,7 +1777,7 @@ div.addEventListener('touchstart', function(e) {
   mouseX = e.pageX
   mouseY = e.pageY
   document.addEventListener('touchmove', move)
-});
+}, {passive: true});
 
 document.addEventListener('touchend', function(e) {
   if(open === 'fav') {
