@@ -2060,7 +2060,7 @@ arrbtcoctft();
  else {
 //false
    //start
-   $.ajax({type:'get',url:"https://docs.google.com/spreadsheets/d/e/2PACX-1vSKrUKs8Cq2a3Pubg_-MXmWp77GqLE0ImjKHy8VNAaVpqFH4Z94BeCcH-IQRsVnLTzmwaPG_66e35mH/pub?gid=1124579858&single=true&output=csv&" + genid('random'),dataType:'text',success:function(e) {
+   $.ajax({type:'get',url:"https://docs.google.com/spreadsheets/d/e/2PACX-1vSKrUKs8Cq2a3Pubg_-MXmWp77GqLE0ImjKHy8VNAaVpqFH4Z94BeCcH-IQRsVnLTzmwaPG_66e35mH/pub?gid=1124579858&single=true&output=csv&" + genid('time') + '_' + genid('random'),dataType:'text',success:function(e) {
   var favrecommenddataarr = e.split(/[\s\n]/).filter(function(n){ return n.length > 0}) ;
   for (var fygeeew = 0; fygeeew < favrecommenddataarr.length; fygeeew++) {
   if((hexToRgb(favrecommenddataarr[fygeeew]).r+hexToRgb(favrecommenddataarr[fygeeew]).g+hexToRgb(favrecommenddataarr[fygeeew]).b)/3 > 128) {
