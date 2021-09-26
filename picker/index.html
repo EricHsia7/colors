@@ -112,6 +112,9 @@ align-items: center;
 <div class="btn">查看顏色</div>
 </div>
 <script>
+  const targetElement = document.querySelector("#someElementId");
+
+bodyScrollLock.disableBodyScroll(targetElement);
 function genid(mode) {
 if(mode === "random"){
 var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
