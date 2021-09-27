@@ -289,7 +289,7 @@ document.addEventListener('touchend', function(e) {
   
 });
 function m2(e) {
-  $(document).scrollTop(0);
+  //$(document).scrollTop(0);
   var px2 = e.pageX ;
   if(e.pageX > bar_width) {
     px2 = bar_width;
@@ -365,7 +365,7 @@ var picker_size = 20 ;
 
 function move(e) {
     if (isDown) {
-      $(document).scrollTop(0);
+      //$(document).scrollTop(0);
     const dx = e.pageX - mouseX
     const dy = e.pageY - mouseY
     var px = e.pageX ;
