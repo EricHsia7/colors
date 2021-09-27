@@ -302,7 +302,7 @@ function m2(e) {
   }
   
   
-  $('.picker2').css({'left':(px2-10) + 'px','background':'rgb(' + hsvToRgb(Math.round(px2/bar_width*359),100,100)[0] + ',' + hsvToRgb(Math.round(px2/bar_width*359),100,100)[1] + ',' + hsvToRgb(Math.round(px2/bar_width*359),100,100)[2] + ')'});
+  $('.picker2').css({'left':(px2-10) + 'px','background':'rgb(' + hsvToRgb(Math.round(px2/bar_width*359),100,100)[0] + ',' + hsvToRgb(Math.round(px2/bar_width*359),100,100)[1] + ',' + hsvToRgb(Math.round(px2/bar_width*359),100,100)[2] + ')'}).attr('h',Math.round(px2/bar_width*359));
   hsv_a = Math.round(px2/bar_width*359) ;
 rgbaColor = 'rgba(' + hsvToRgb(Math.round(px2/bar_width*359),100,100)[0] + ',' + hsvToRgb(Math.round(px2/bar_width*359),100,100)[1] + ',' + hsvToRgb(Math.round(px2/bar_width*359),100,100)[2] + ',1)' ;
   
@@ -327,7 +327,7 @@ $('.btn').css({'color':'#fff'})
 }
   
   fillbg();
-  $('.btn').attr('link','https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(hsvcolortorgb[0],hsvcolortorgb[1],hsvcolortorgb[2])) + '&open=picker&r=' + genid('random'));
+  $('.btn').attr('link','https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(hsvcolortorgb[0],hsvcolortorgb[1],hsvcolortorgb[2])) + '&open=picker&pih=' + $('.picker2').attr('h') + '&pis=' + $('.picker2').attr('s') + '&piv=' + $('.picker2').attr('v') + '&r=' + genid('random'));
 }
 
 
@@ -394,7 +394,7 @@ function move(e) {
       
     var hsvcolortorgb = hsvToRgb(hsv_a,hsv_x,hsv_y) ;
     $('.picker').css({'top':(py-13),'left':(px-13),'background':'rgb(' + hsvcolortorgb[0] + ',' + hsvcolortorgb[1] + ',' + hsvcolortorgb[2] + ')'}).attr('py',py).attr('px',px)
-      
+     $('.picker2').attr('s',hsv_x).attr('v',hsv_y);
       $('.box,.btn').css({'background':'rgb(' + hsvcolortorgb[0] + ',' + hsvcolortorgb[1] + ',' + hsvcolortorgb[2] + ')'})
       if((hsvcolortorgb[0]+hsvcolortorgb[1]+hsvcolortorgb[2])/3 > 128) {
 $('.btn').css({'color':'#000'})
@@ -402,7 +402,7 @@ $('.btn').css({'color':'#000'})
       else {
 $('.btn').css({'color':'#fff'})
 }
-      $('.btn').attr('link','https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(hsvcolortorgb[0],hsvcolortorgb[1],hsvcolortorgb[2])) + '&open=picker&r=' + genid('random'));
+      $('.btn').attr('link','https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(hsvcolortorgb[0],hsvcolortorgb[1],hsvcolortorgb[2])) + '&open=picker&pih=' + $('.picker2').attr('h') + '&pis=' + $('.picker2').attr('s') + '&piv=' + $('.picker2').attr('v') + '&r=' + genid('random'));
       //s-end
    
 }
