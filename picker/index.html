@@ -76,7 +76,7 @@ body {
 canvas#boxbg {
   width:100%;
   height:100%;
-  opacity:0;
+  opacity:1;
   -webkit-user-select: none;
 }
 
@@ -342,7 +342,7 @@ div.addEventListener('touchstart', function(e) {
   isDown = true
   mouseX = e.pageX
   mouseY = e.pageY
-  $('#boxbg').css({'opacity':'1','transition':'0.3s'})
+  //$('#boxbg').css({'opacity':'1','transition':'0.3s'})
   document.addEventListener('touchmove', move)
 }, {passive: true});
 
@@ -354,7 +354,7 @@ document.addEventListener('touchend', function(e) {
     offsetY += e.pageY - mouseY
   }
   isDown = false
-  $('#boxbg').css({'opacity':'0','transition':'0.3s'})
+  //$('#boxbg').css({'opacity':'0','transition':'0.3s'})
   document.removeEventListener('touchmove',move)
   
 });
