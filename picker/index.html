@@ -140,7 +140,7 @@ background:#fff;
 </div>
 <input type="text" id="hsv" style="display:none;-webkit-user-select: none;">
 <div class="btnbox">
-<div class="btn">返回</div>
+<div class="btn" id="back">返回</div>
 <div class="btn" id="view">查看顏色</div>
 </div>
 
@@ -504,7 +504,9 @@ $('.btn#view').attr('link','https://erichsia7.github.io/colors/?s=1&c=' + btoa('
 $('.btn#view').click(function() {
 location.href = $(this).attr('link');
 });
-  
+$('.btn#back').click(function() {
+location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random') ;
+});
 </script>
 <script>
 // left: 37, up: 38, right: 39, down: 40,
