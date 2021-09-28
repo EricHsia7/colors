@@ -499,11 +499,12 @@ function fillbg() {
 fillbg();
 
 $('.picker').css({'top':(py-13),'left':(px-13)}).attr('py',py).attr('px',px).attr('rg','0,0,0')
-
+$('.btn#view').attr('link','https://erichsia7.github.io/colors/?s=1&c=' + btoa('#000000') + '&open=picker&pih=' + 0 + '&pis=' + 0 + '&piv=' + 0 + '&r=' + genid('random'));
 
 $('.btn#view').click(function() {
 location.href = $(this).attr('link');
-})
+});
+  
 </script>
 <script>
 // left: 37, up: 38, right: 39, down: 40,
