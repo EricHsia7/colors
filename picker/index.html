@@ -42,13 +42,13 @@ body {
   -webkit-user-select: none;
 }
 .bar {
-  width:calc(100% - 20px);
+  width:calc(100% - 25px);
   height:15px;
   border-radius:99em;
   background: linear-gradient(90deg,rgba(255, 0, 0,1),rgba(255, 255, 0, 1), rgba(0, 255, 0, 1), rgba(0, 255, 255, 1), rgba(0, 0, 255, 1), rgba(255, 0, 255, 1), rgba(255, 0, 0, 1));
   position:fixed;
   top:calc(100% - 100px - 20px + 10px);
-  left:10px;
+  left:12.5px;
   -webkit-user-select: none;
 }
 .picker2 {
@@ -327,7 +327,7 @@ var hsv_a = 0 ;
 var px = 0 ;
 var py = $('.box').height() ;
 
-var bar_width = $(window).width()-20 ;
+var bar_width = $(window).width()-25 ;
 
 div2.addEventListener('touchstart', function(e) {
   isDown = true
