@@ -85,20 +85,7 @@ facingMode: "environment"
 		Webcam.attach( '#my_camera' );
 		
 		
-		document.querySelector('#vid').addEventListener('playing', function() {
-			
-			
-			Webcam.set({
-			width:this.videoWidth,
-			height:this.videoHeight,
-			image_format: 'jpeg',
-			jpeg_quality: 90,
-			constraints: {
-video: true,
-facingMode: "environment"
-}
-				
-}, false);
+		
 		
 		//document.querySelector('#my_camera').width = window.width ;
 	</script>
