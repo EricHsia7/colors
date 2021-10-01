@@ -1,8 +1,9 @@
 <meta charset="UTF-8">
 <title>Colors</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
 <link href="https://erichsia7.github.io/colors/c2_512.png" sizes="512x512" rel="apple-touch-icon-precomposed" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="defualt" />
@@ -11,70 +12,177 @@
 <link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="shortcut icon" />
 <link rel="manifest" href="https://erichsia7.github.io/colors/manifest.json?qoaa9">
 <style>
-	body {
-		padding:0px;
-		margin:0px;
-		background:#000;
-		overflow:hidden;
-	}
-#my_camera video {
-width:auto;
-height:auto;
- max-width:100%;
- max-height:100%;
-position:fixed;
-left:50%;
-top:50%;
-transform:translate(-50%,-50%);
-	}
-	.bottom {
-		position:fixed;
-		left:0px;
-		bottom:0px;
-		width:100%;
-		height:var(--gbh-h);
-		background:#fff;
-	}
-	.tt {
-		width:50px;
-		height:50px;
-		border-radius:99em;
-		position:fixed;
-		left:50%;
-		bottom:30px;
-		transform:translateX(-50%);
-		background:#fff;
-	}
-	.ttt {
-                width:56px;
-		height:56px;
-		border-radius:99em;
-		position:fixed;
-		left:50%;
-		bottom:22px;
-		transform:translateX(-50%);
-		background:rgba(0,0,0,0);
-border:5px #fff solid;
-	}
-	#my_camera {
-overflow:hidden;
-	}
-	</style>
+body {
+  background:#000;
+  -webkit-user-select: none;
+}
 
-<div style="position:fixed;top:0px;left:0px;background:rgba(0, 0, 0, 0);width:100%;height:100%;overflow:hidden;" class="opr">
-	<canvas id="cc" width="128" height="128" style="position:absolute;top:50%;left:50%;background:#000;transform:translate(-50%,-50%) scale(1.5)"></canvas>
-	<div style="position:absolute;top:0px;left:0px;width:100%;height:100%;background:rgba(0, 0, 0, 0.5);-webkit-backdrop-filter: blur(15px);backdrop-filter: blur(15px);"></div>
-	<div id="my_camera">
-<video autoplay="autoplay" playsinline="playsinline" id="vid"></video>
+.bottom {
+  position:fixed;
+  bottom:0px;
+  left:0px;
+  width:100%;
+  height:100px;
+  background:#000;
+  display: flex;
+justify-content: center;
+align-items: center;
+  -webkit-user-select: none;
+}
+
+.shutter {
+  width:55px;
+  height:55px;
+  background:#fff;
+  border-radius:99em;
+  box-shadow: 0px 0px 0px 3px #000,0px 0px 0px 8px rgba(255,255,255,1);
+  -webkit-user-select: none;
+}
+.camera {
+  position:fixed;
+  left:0px;
+  top:0px;
+  width:100%;
+  height:calc(100% - 100px);
+  background:#000;
+  transition:0.3s;
+  -webkit-user-select: none;
+}
+.at {
+  position:fixed;
+  left:0px;
+  bottom:calc(-45% * (1 - var(--op-t)));
+  width:100%;
+  height:45%;
+  border-radius:15px 15px 0px 0px;
+  background:#1a1a1a;
+  transition:0.3s;
+  -webkit-user-select: none;
+}
+.camera video {
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0px;
+  left:0px;
+  object-fit: cover;
+  transition:0.3s;
+  -webkit-user-select: none;
+}
+canvas#ccttt {
+  position:fixed;
+  top:0px;
+  left:0px;
+  height:0%;
+  width:0%;
+  display:block;
+  opacity:0;
+  object-fit: cover;
+  -webkit-user-select: none;
+}
+.attitle {
+  color:#fff;
+  font-size:25px;
+  position:absolute;
+  top:0px;
+  left:0px;
+  height:50px;
+  width:calc(100% - 15px);
+  background:none;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-left:15px;
+  border-bottom: solid 1px #1f1f1f;
+  -webkit-user-select: none;
+}
+
+#cf {
+  width:100%;
+  opacity:1;
+  -webkit-user-select: none;
+}
+.bg {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  background:#000;
+  -webkit-user-select: none;
+}
+.palettelist {
+  position:absolute;
+  top:51px;
+  left:0px;
+  list-style:none;
+  color:#fff;
+  font-size:23px;
+  width:100%;
+  height:calc(100% - 51px);
+  overflow:scroll;
+  -webkit-user-select: none;
+}
+.palettelist li {
+  margin-top:5px;
+  margin-left:15px;
+  height:40px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  position:relative;
+  -webkit-user-select: none;
+}
+.palettelistb {
+  width:35px;
+  height:35px;
+  border-radius:10px;
+  background:#1f1f1f;
+  -webkit-user-select: none;
+}
+.mgl {
+  float:left;
+}
+.text {
+  margin-left:5px;
+}
+.openbtn {
+  background:#fff;
+  color:#000;
+  font-size:18px;
+  width:55px;
+  height:35px;
+  border-radius:10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  right:15px;
+  top:50%;
+  transform:translateY(-50%);
+  -webkit-user-select: none;
+}
+</style>
+<img src="" id="cf">
+<div class="bg"></div>
+<div class="camera">
+  
+  <video autoplay="autoplay" playsinline="playsinline" id="vid"></video>
+  
 </div>
+<div class="bottom">
+  <div class="shutter"></div>
 </div>
-<div class="ttt"></div>
-<div class="tt"></div>
-	<script>
-		
-		Webcam.set({
-			width:1200,
-			height:1600,
+<div class="at" style="--op-t:0">
+  <div class="attitle">Colors</div>
+  <div class="palettelist">
+    
+  </div>
+</div>
+<canvas id="ccttt"></canvas>
+
+<script>
+ Webcam.set({
 			image_format: 'jpeg',
 			jpeg_quality: 90,
 			constraints: {
@@ -82,88 +190,80 @@ video: true,
 facingMode: "environment"
 }
 		});
-		Webcam.attach( '#my_camera' );
-		
-		
-		
-		
-		//document.querySelector('#my_camera').width = window.width ;
-	</script>
-	
-	<script>
-		//$(".bottom").css('height':($(window).heiht()-$('video').height())/2});
-		function genid(mode) {
-if(mode === "random"){
-var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
-            var genid = "";
-            for (var i = 0; i < 16; i++) {
-                var genrandomNumber = Math.floor(Math.random() * genidchars.length);
-                genid += genidchars.substring(genrandomNumber, genrandomNumber + 1);
-            }
-  return genid ;
-}
-          
- if(mode === "time"){
-   var gtoday=new Date();
-   var genid2 = (gtoday.getMonth()+1) + '_' + gtoday.getDate() + '_' + gtoday.getHours() + '_' + gtoday.getMinutes() + '_' + gtoday.getSeconds() + '-' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8));
-   
-   return genid2
- }
+		Webcam.attach( '.camera' );
   
-  if(mode === "number"){
-   
-   var genid3 = '' ;
-for (var i = 0; i < 16; i++) {
-  genid3 += '' + (0+Math.floor(Math.random() * 9))
+  function componentToHex(c) {
+  var hex = c.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
 }
-   return genid3
- }
-  
-  if(mode === "uuid"){
-var genidchars4 = "abcdef012345678";
-    var geniduu = [8,4,4,4,12];
-            var genid4 = "";
-            var genid5 = "";
-    for (var ia = 0; ia < geniduu.length; ia++) {
-      var genid4 = "";
-            for (var i = 0; i < geniduu[ia]; i++) {
-                var genrandomNumber4 = Math.floor(Math.random() * genidchars4.length);
-                genid4 += genidchars4.substring(genrandomNumber4, genrandomNumber4 + 1);
-            }
-genid5 += '-' + genid4 ;
-    }
-    return genid5.substring(1,genid5.length)
-  }
 
+function rgbToHex(r, g, b) {
+  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
-		function take_snapshot() {
-			var filename = genid('uuid');
-			// take snapshot and get image data
-			Webcam.snap( function(data_uri) {
-				
-				
-		var link = document.createElement("a");
-                document.body.appendChild(link);
-                link.download = filename + ".jpeg";
-                link.href = data_uri;
-                link.target = '_blank';
-                link.click();
-			} );
-		}
-		$('.tt').click(function() {
-			take_snapshot();
-		});
-		
-		document.getElementById('cc').width = $(window).width() ;
-		document.getElementById('cc').height = $(window).height() ;
-		var ctx = document.getElementById('cc').getContext('2d');
+
+
+document.getElementById('ccttt').width = ($(window).width()*($(window).height()*0.55))/($(window).height()-100) ;
+		document.getElementById('ccttt').height = $(window).height()*0.55 ;
+		var ctx = document.getElementById('ccttt').getContext('2d');
 		function gtg() {
 Webcam.snap( function(data_uri, canvas, context) {	
 		ctx.drawImage( canvas, 0, 0 );
-	});
-		}
-		Webcam.on( 'live', function() {
-		setInterval(gtg,1);
-	} );
-		
-	</script>
+});
+}
+
+function shutter() {
+  $('.at').css({'--op-t':'1'});
+  $('.camera').css({'height':$(window).height()*0.55,'width':($(window).width()*($(window).height()*0.55))/($(window).height()-100),'left':$(window).width()*0.5-(($(window).width()*($(window).height()*0.55))/($(window).height()-100))*0.5});
+  $('canvas#ccttt').css({'width':$(window).width(),'height':$(window).height()*0.55})
+  
+  
+  //$('#vid').attr('width',($(window).width()*($(window).height()*0.55))/($(window).height()-100))
+  $('.camera video').width(($(window).width()*($(window).height()*0.55))/($(window).height()-100)).height($(window).height()*0.55);
+  Webcam.snap( function(data_uri, canvas, context) {	$('#cf').attr('src',data_uri);
+		ctx.drawImage( canvas, 0-(($(window).height()*0.55*document.querySelector('.camera video').videoWidth/document.querySelector('.camera video').videoHeight)-(($(window).width()*($(window).height()*0.55))/($(window).height()-100)))/2 , 0 ,$(window).height()*0.55*document.querySelector('.camera video').videoWidth/document.querySelector('.camera video').videoHeight,$(window).height()*0.55);
+});
+ setTimeout(function() {
+   $('canvas#ccttt').css({'height':$(window).height()*0.55,'width':($(window).width()*($(window).height()*0.55))/($(window).height()-100),'left':$(window).width()*0.5-(($(window).width()*($(window).height()*0.55))/($(window).height()-100))*0.5,'display':'block','opacity':'1','transition':'0.3s'});
+   $('.camera video').fadeOut(300)
+ },1) 
+  
+  setTimeout(function() {
+  Webcam.reset();
+    
+    
+    
+    
+    
+    
+    const colorThief = new ColorThief();
+    const img = document.querySelector('#cf');
+
+    // Make sure image is finished loading
+    if (img.complete) {
+      
+      var imgcolorpalette = colorThief.getPalette(img) ;
+      
+      for (var i = 0; i < imgcolorpalette.length; i++) {
+        $('.palettelist').append('<li><div class="palettelistb mgl" style="background:' + rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2]) + '"></div><div class="text mgl">' + rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2]) + '</div><div class="openbtn" hexbase64="' + btoa(rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2])) + '">查看</div></li>');
+      }
+      
+      
+    } else {
+      img.addEventListener('load', function() {
+        colorThief.getColor(img);
+      });
+    }
+    
+    
+    
+    
+    
+  },400);
+  
+}
+$('.shutter').click(function() {
+  shutter();
+});
+
+
+</script>
