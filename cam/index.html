@@ -1,0 +1,165 @@
+<meta charset="UTF-8">
+<title>Colors</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js"></script>
+<link href="https://erichsia7.github.io/colors/c2_512.png" sizes="512x512" rel="apple-touch-icon-precomposed" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="defualt" />
+<link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="icon" />
+<link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="bookmark" />
+<link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="shortcut icon" />
+<link rel="manifest" href="https://erichsia7.github.io/colors/manifest.json?qoaa9">
+<style>
+	body {
+		padding:0px;
+		margin:0px;
+		background:#000;
+		overflow:hidden;
+	}
+#my_camera video {
+width:auto;
+height:auto;
+ max-width:100%;
+ max-height:100%;
+position:fixed;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+	}
+	.bottom {
+		position:fixed;
+		left:0px;
+		bottom:0px;
+		width:100%;
+		height:var(--gbh-h);
+		background:#fff;
+	}
+	.tt {
+		width:50px;
+		height:50px;
+		border-radius:99em;
+		position:fixed;
+		left:50%;
+		bottom:30px;
+		transform:translateX(-50%);
+		background:#fff;
+	}
+	.ttt {
+                width:56px;
+		height:56px;
+		border-radius:99em;
+		position:fixed;
+		left:50%;
+		bottom:22px;
+		transform:translateX(-50%);
+		background:rgba(0,0,0,0);
+border:5px #fff solid;
+	}
+	#my_camera {
+overflow:hidden;
+	}
+	</style>
+
+<div style="position:fixed;top:0px;left:0px;background:rgba(0, 0, 0, 0);width:100%;height:100%;overflow:hidden;" class="opr">
+	<canvas id="cc" width="128" height="128" style="position:absolute;top:50%;left:50%;background:#000;transform:translate(-50%,-50%) scale(1.5)"></canvas>
+	<div style="position:absolute;top:0px;left:0px;width:100%;height:100%;background:rgba(0, 0, 0, 0.5);-webkit-backdrop-filter: blur(15px);backdrop-filter: blur(15px);"></div>
+	<div id="my_camera">
+<video autoplay="autoplay" playsinline="playsinline"></video>
+</div>
+</div>
+<div class="ttt"></div>
+<div class="tt"></div>
+	<script>
+		
+		Webcam.set({
+			width:1200,
+			height:1600,
+			image_format: 'jpeg',
+			jpeg_quality: 35,
+			constraints: {
+video: true,
+facingMode: "environment"
+}
+		});
+		Webcam.attach( '#my_camera' );
+		//document.querySelector('#my_camera').width = window.width ;
+	</script>
+	
+	<script>
+		//$(".bottom").css('height':($(window).heiht()-$('video').height())/2});
+		function genid(mode) {
+if(mode === "random"){
+var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
+            var genid = "";
+            for (var i = 0; i < 16; i++) {
+                var genrandomNumber = Math.floor(Math.random() * genidchars.length);
+                genid += genidchars.substring(genrandomNumber, genrandomNumber + 1);
+            }
+  return genid ;
+}
+          
+ if(mode === "time"){
+   var gtoday=new Date();
+   var genid2 = (gtoday.getMonth()+1) + '_' + gtoday.getDate() + '_' + gtoday.getHours() + '_' + gtoday.getMinutes() + '_' + gtoday.getSeconds() + '-' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8));
+   
+   return genid2
+ }
+  
+  if(mode === "number"){
+   
+   var genid3 = '' ;
+for (var i = 0; i < 16; i++) {
+  genid3 += '' + (0+Math.floor(Math.random() * 9))
+}
+   return genid3
+ }
+  
+  if(mode === "uuid"){
+var genidchars4 = "abcdef012345678";
+    var geniduu = [8,4,4,4,12];
+            var genid4 = "";
+            var genid5 = "";
+    for (var ia = 0; ia < geniduu.length; ia++) {
+      var genid4 = "";
+            for (var i = 0; i < geniduu[ia]; i++) {
+                var genrandomNumber4 = Math.floor(Math.random() * genidchars4.length);
+                genid4 += genidchars4.substring(genrandomNumber4, genrandomNumber4 + 1);
+            }
+genid5 += '-' + genid4 ;
+    }
+    return genid5.substring(1,genid5.length)
+  }
+
+}
+		function take_snapshot() {
+			var filename = genid('uuid');
+			// take snapshot and get image data
+			Webcam.snap( function(data_uri) {
+				
+				
+		var link = document.createElement("a");
+                document.body.appendChild(link);
+                link.download = filename + ".jpeg";
+                link.href = data_uri;
+                link.target = '_blank';
+                link.click();
+			} );
+		}
+		$('.tt').click(function() {
+			take_snapshot();
+		});
+		
+		document.getElementById('cc').width = $(window).width() ;
+		document.getElementById('cc').height = $(window).height() ;
+		var ctx = document.getElementById('cc').getContext('2d');
+		function gtg() {
+Webcam.snap( function(data_uri, canvas, context) {	
+		ctx.drawImage( canvas, 0, 0 );
+	});
+		}
+		Webcam.on( 'live', function() {
+		setInterval(gtg,1);
+	} );
+		
+	</script>
