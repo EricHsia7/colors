@@ -314,8 +314,9 @@ function shutter() {
       var imgcolorpalette = colorThief.getPalette(img) ;
       
       for (var i = 0; i < imgcolorpalette.length; i++) {
-        $('.palettelist').append('<li><div class="palettelistb mgl" style="background:' + rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2]) + '"></div><div class="text mgl">' + rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2]) + '</div><div class="openbtn" hexbase64="' + btoa(rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2])) + '">查看</div></li>');
-	$('.openbtn').click(function() {
+	var drft = genid('random');
+        $('.palettelist').append('<li><div class="palettelistb mgl" style="background:' + rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2]) + '"></div><div class="text mgl">' + rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2]) + '</div><div class="openbtn" id="' + drft + '" hexbase64="' + btoa(rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2])) + '">查看</div></li>');
+	$('.openbtn#' + drft).click(function() {
 	window.open('https://erichsia7.github.io/colors/?s=1&c=' + $(this).attr('hexbase64') + '&open=camera&r=' + genid('random'))
 	});
       }
