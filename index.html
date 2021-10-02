@@ -635,6 +635,70 @@ align-items: center;
   
   
   /*testend*/
+  
+  /*er*/
+  .pickerbox {
+  height:calc(100% - 100px - 30px);
+  width:100%;
+  background:#e3e3e3;
+  position:absolute;
+  top:0px;
+  left:0px;
+}
+.pickerbar {
+  width:calc(100% - 25px);
+  height:15px;
+  border-radius:99em;
+  background: #e3e3e3;
+  position:absolute;
+  top:calc(100% - 100px - 20px + 10px);
+  left:12.5px;
+  -webkit-user-select: none;
+}
+
+.pickerbtnbox {
+  height:80px;
+  width:100%;
+  position:absolute;
+  left:0px;
+  bottom:0px;
+  display: flex;
+justify-content: center;
+align-items: center;
+  -webkit-user-select: none;
+}
+.pickerbtn {
+  width:clamp(80px,calc(50% - 50px),250px);
+  height:50px;
+  background:#e3e3e3;
+  border-radius:15px;
+  display: flex;
+justify-content: center;
+align-items: center;
+  flex-direction:row;
+  -webkit-user-select: none;
+  font-weight:700;
+  font-family: 'Noto Sans TC', sans-serif;
+  color:#fff;
+  transition:all 0s,color 0.3s
+}
+.pickerbtn[tfre="view"] {
+  margin-left:10px;
+}
+.pickerbg {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  background:#fff;
+  display:none;
+}
+  /*erend*/
+  
+  
+  
+  
   @media (prefers-color-scheme: dark) {
     .favrecommendfixedtitle {
      background:rgba(26,26,26,0.5);
@@ -841,6 +905,18 @@ background:#fff;
 </div>
 
 <div id="deleting" style="position:fixed;left:0px;top:0px;width:100%;height:100%;display:none;justify-content: center;align-items: center;font-size:1.3rem;font-weight:500;">刪除中</div>
+
+
+<div class="pickerbg">
+<div class="pickerbox"></div>
+<div class="pickerbar"></div>
+<div class="pickerbtnbox">
+<div class="pickerbtn" tfre="back"></div>
+<div class="pickerbtn" tfre="view"></div>
+</div>
+</div>
+
+
 
 <div class="ladbar" style="display:block;"></div>
 <script src="https://erichsia7.github.io/ripple.js/ripple.min.js"></script>
