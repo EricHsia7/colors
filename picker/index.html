@@ -515,12 +515,14 @@ location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random') ;
   
   if(open === 'col') {
     rgbaColor = 'rgba(' + hsvToRgb(parseInt(urpih),100,100)[0] + ',' + hsvToRgb(parseInt(urpih),100,100)[1] + ',' + hsvToRgb(parseInt(urpih),100,100)[2] + ',1)' ;
-    $('.picker2').css({'left':urpih/359*bar_width-12.5,'background':rgbaColor}).attr('h',urpih);
+    $('.picker2').css({'left':urpih/359*bar_width-12.5,'background':rgbaColor}).attr('h',urpih).attr('s',urpis).attr('v',urpiv);
     hsv_a = parseInt(urpih) ;
-    $('.picker').css({'top':$('.box').height()-($('.box').height()*parseInt(urpiv)/100),'left':($('.box').width()*parseInt(urpis)/100),'background':'rgb(' + hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv)).join(',') + ')'});
+    $('.picker').css({'top':$('.box').height()-($('.box').height()*parseInt(urpiv)/100),'left':($('.box').width()*parseInt(urpis)/100),'background':'rgb(' + hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv)).join(',') + ')'}).attr('px',($('.box').width()*parseInt(urpis)/100)).attr('py',$('.box').height()-($('.box').height()*parseInt(urpiv)/100));
     
+    hsv_x = parseInt(urpis);
+    hsv_y = parseInt(urpiv);
     
-    
+          $('.btn#view').attr('link','https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[0],hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[1],hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[2])) + '&open=picker&pih=' + $('.picker2').attr('h') + '&pis=' + $('.picker2').attr('s') + '&piv=' + $('.picker2').attr('v') + '&r=' + genid('random'));
     
     
     fillbg();
