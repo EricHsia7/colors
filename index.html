@@ -1325,7 +1325,10 @@ if(sharecolor === "1" || sharecolor === "2") {
       }
       else {
         if(open === 'picker') {
+          $('.color').fadeOut(222);
+          setTimeout(function(){
           location.href = 'https://erichsia7.github.io/colors/picker/?r=' + genid('random') ;
+                    }, 222);
         }
         else {
           
