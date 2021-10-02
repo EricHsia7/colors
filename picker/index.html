@@ -514,11 +514,12 @@ location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random') ;
 });
   
   if(open === 'col') {
-    $('.picker2').css({'left':urpih/359*bar_width-12.5}).attr('h',urpih);
-    
-    
-    
     rgbaColor = 'rgba(' + hsvToRgb(parseInt(urpih),100,100)[0] + ',' + hsvToRgb(parseInt(urpih),100,100)[1] + ',' + hsvToRgb(parseInt(urpih),100,100)[2] + ',1)' ;
+    $('.picker2').css({'left':urpih/359*bar_width-12.5,'background':rgbaColor}).attr('h',urpih);
+    
+    
+    
+    
     fillbg();
   }
 </script>
