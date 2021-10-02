@@ -177,9 +177,13 @@ $('.ladbar').css({'display':'none'});
 
 
 <script>
-  //const targetElement = document.querySelector(".box");
-
-//bodyScrollLock.disableBodyScroll(targetElement);
+  var getUrlString = location.href;
+var url = new URL(getUrlString);
+var open = url.searchParams.get('open') ;
+var urpih = url.searchParams.get('pih') ;
+var urpis = url.searchParams.get('pis') ; 
+var urpiv = url.searchParams.get('piv') ; 
+  
 function genid(mode) {
 if(mode === "random"){
 var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
@@ -508,6 +512,10 @@ location.href = $(this).attr('link');
 $('.btn#back').click(function() {
 location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random') ;
 });
+  
+  if(open === 'col') {
+    $('.picker2').css({'left':urpih/359*bar_width-12.5}).attr('h',urpih)
+  }
 </script>
 <script>
 // left: 37, up: 38, right: 39, down: 40,
