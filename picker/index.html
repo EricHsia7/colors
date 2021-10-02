@@ -518,7 +518,7 @@ location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random') ;
     $('.picker2').css({'left':urpih/359*bar_width-12.5,'background':rgbaColor}).attr('h',urpih).attr('s',urpis).attr('v',urpiv);
     hsv_a = parseInt(urpih) ;
     $('.picker').css({'top':$('.box').height()-($('.box').height()*parseInt(urpiv)/100),'left':($('.box').width()*parseInt(urpis)/100),'background':'rgb(' + hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv)).join(',') + ')'}).attr('px',($('.box').width()*parseInt(urpis)/100)).attr('py',$('.box').height()-($('.box').height()*parseInt(urpiv)/100));
-    
+    $('.btn').css({'background':'rgb(' + hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv)).join(',') + ')'});
     hsv_x = parseInt(urpis);
     hsv_y = parseInt(urpiv);
     
