@@ -726,11 +726,7 @@ background:#fff;
 </div>
 <input type="file" id="files2" name="files2" accept="image/*" />
 </label>
-<label for="files">
-<div class="filed-camera lle btn">
-</div>
-<input type="file" id="files" name="files" accept="image/*" capture="camera"/>
-</label>
+  <div class="filed-camera lle btn"></div>
   <div class="ft2 lle btn"></div>
   <div class="rand2 lle btn"></div>
   <div class="grd lle ooe btn"></div>
@@ -1255,7 +1251,9 @@ if(sharecolor === "1" || sharecolor === "2") {
   $('.favy').click(function() {
   location.href = 'https://erichsia7.github.io/colors/favorite/?r=' + genid('random') ;
   });
-  
+  $('.filed-camera').click(function() {
+  location.href = 'https://erichsia7.github.io/colors/camera/?r=' + genid('random') ;
+  });
 
 $('.fi2').click(function() {
  //$('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*copycolmode)) + 'px) translateY(-50%)','transition':'0.5s'});
