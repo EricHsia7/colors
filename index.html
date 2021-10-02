@@ -1321,10 +1321,11 @@ if(sharecolor === "1" || sharecolor === "2") {
     }
     else {
       if(open === 'camera') {
-        window.close()
+        window.close();
       }
       else {
         if(open === 'picker') {
+          $('body').css({'background':''});
           $('.color').fadeOut(222);
           setTimeout(function(){
           location.href = 'https://erichsia7.github.io/colors/picker/?r=' + genid('random') ;
