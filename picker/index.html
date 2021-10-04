@@ -455,12 +455,8 @@ function move(e) {
     $('.picker').css({'top':(py-13),'left':(px-13),'background':'rgb(' + hsvcolortorgb[0] + ',' + hsvcolortorgb[1] + ',' + hsvcolortorgb[2] + ')'}).attr('py',py).attr('px',px)
      $('.picker2').attr('s',hsv_x).attr('v',hsv_y);
       $('.box,.btn').css({'background':'rgb(' + hsvcolortorgb[0] + ',' + hsvcolortorgb[1] + ',' + hsvcolortorgb[2] + ')'})
-      if((hsvcolortorgb[0]+hsvcolortorgb[1]+hsvcolortorgb[2])/3 > 128) {
-$('.btn').css({'color':'#000'})
-}
-      else {
-$('.btn').css({'color':'#fff'})
-}
+      
+      
       $('.btn#view').attr('link','https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(hsvcolortorgb[0],hsvcolortorgb[1],hsvcolortorgb[2])) + '&open=picker&pih=' + $('.picker2').attr('h') + '&pis=' + $('.picker2').attr('s') + '&piv=' + $('.picker2').attr('v') + '&r=' + genid('random'));
       //s-end
    
@@ -522,8 +518,15 @@ location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random') ;
     hsv_x = parseInt(urpis);
     hsv_y = parseInt(urpiv);
     
-          $('.btn#view').attr('link','https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[0],hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[1],hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[2])) + '&open=picker&pih=' + $('.picker2').attr('h') + '&pis=' + $('.picker2').attr('s') + '&piv=' + $('.picker2').attr('v') + '&r=' + genid('random'));
     
+    
+          $('.btn#view').attr('link','https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[0],hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[1],hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[2])) + '&open=picker&pih=' + $('.picker2').attr('h') + '&pis=' + $('.picker2').attr('s') + '&piv=' + $('.picker2').attr('v') + '&r=' + genid('random'));
+    if((hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[0]+(hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[1]+(hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[2])/3 > 128) {
+$('.btn').css({'color':'#000'})
+}
+      else {
+$('.btn').css({'color':'#fff'})
+}
     
     fillbg();
   }
