@@ -456,6 +456,12 @@ function move(e) {
      $('.picker2').attr('s',hsv_x).attr('v',hsv_y);
       $('.box,.btn').css({'background':'rgb(' + hsvcolortorgb[0] + ',' + hsvcolortorgb[1] + ',' + hsvcolortorgb[2] + ')'})
       
+      if((hsvcolortorgb[0]+hsvcolortorgb[1]+hsvcolortorgb[2])/3 > 128) {
+ $('.btn').css({'color':'#000'})
+ }
+       else {
+ $('.btn').css({'color':'#fff'})
+ }
       
       $('.btn#view').attr('link','https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(hsvcolortorgb[0],hsvcolortorgb[1],hsvcolortorgb[2])) + '&open=picker&pih=' + $('.picker2').attr('h') + '&pis=' + $('.picker2').attr('s') + '&piv=' + $('.picker2').attr('v') + '&r=' + genid('random'));
       //s-end
