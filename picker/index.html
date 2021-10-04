@@ -521,7 +521,8 @@ location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random') ;
     
     
           $('.btn#view').attr('link','https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[0],hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[1],hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[2])) + '&open=picker&pih=' + $('.picker2').attr('h') + '&pis=' + $('.picker2').attr('s') + '&piv=' + $('.picker2').attr('v') + '&r=' + genid('random'));
-    if((hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[0]+(hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[1]+(hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[2])/3 > 128) {
+    
+    if((hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[0]+(hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[1]+(hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[2])/3 > 128))) {
 $('.btn').css({'color':'#000'})
 }
       else {
