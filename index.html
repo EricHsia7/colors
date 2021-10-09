@@ -1791,7 +1791,42 @@ else {
 }); 
 }
  //testend
-     
+    
+     //test2
+    if(localStorage.getItem('colorsiconloaded') === '1') {
+      
+      var ldiilistee = 'fti,grd,filed-camera,filed-img,fi,fi2,fi3,ft2,qrt,crtd,rand2,vis,favy,mor,meoi' ;
+    var ldiihdlistee = 'close2,gradient,camera,img,close2,copy2,share3,text2,qrcode,color-picker,random3,invisible,favorited,more,close2' ;
+    for (var ldiiee=0; ldiiee<ldiihdlistee.split(',').length; ldiiee++){
+      $('.' + ldiilistee[ldiiee]).css({'background':'rgba(250,250,250,0.8) url(' + localStorage.getItem('colorsicon_' + ldiihdlistee.split(',')[ldiiee]) + ')','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
+      console.log('loaded-' + ldiiee + '/' + ldiihdlistee.split(',').length);
+    }
+      
+      
+      
+      
+      
+      
+    }
+    else {
+    var ldiilistee = 'fti,grd,filed-camera,filed-img,fi,fi2,fi3,ft2,qrt,crtd,rand2,vis,favy,mor,meoi' ;
+    var ldiihdlistee = 'close2,gradient,camera,img,close2,copy2,share3,text2,qrcode,color-picker,random3,invisible,favorited,more,close2' ;
+    for (var ldiiee=0; ldiiee<ldiihdlistee.split(',').length; ldiiee++){
+      
+      $.ajax({type:'get',url:'https://erichsia7.github.io/colors/iconbase64/' + ldiihdlistee.split(',')[ldiiee] + '.txt',dataType:'text',success:function(e) {
+  localStorage.setItem('colorsicon_' + ldiihdlistee.split(',')[ldiiee], 'data:image/png;base64,' + e);
+  localStorage.setItem('colorsiconloaded', '1');
+  $('.' + ldiilistee[ldiiee]).css({'background':'rgba(250,250,250,0.8) url(data:image/png;base64,' + e + ')','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
+   console.log('loaded-' + ldiiee + '/' + ldiihdlistee.split(',').length);
+   }
+}); 
+    }
+    
+    
+    }
+    //test2end
+    
+    
     
      
       if(getCookie('hdloaded') === 'true') {
