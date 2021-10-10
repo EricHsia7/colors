@@ -506,7 +506,7 @@ var hsua = hsv2rgb(parseInt(text.replaceAll('(','').replaceAll(')','').replaceAl
 }
   result();
 }
-
+var viewurl = '' ;
 function result() {
   if(text.length >= 1) {
     $('.preview').fadeIn(333)
@@ -514,9 +514,7 @@ $('.colorcodetype').html(colorcodetype);
   $('.colorcode div[d="g"]').html(text);
   $('.colorbox').css({'background':gcolor})
   console.log(gcolor)
-  if(colorcodetype == 'hex') {
-    var viewurl = '' ;
-  }
+    viewurl = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(hcol) + '&open=text&r=' + genid('random') ;
 }
   else {
 $('.preview').fadeOut(333)
@@ -526,7 +524,9 @@ $('.preview').fadeOut(333)
   $('.texticon').click(function() {
   location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
   });
-
+  $('.viewbtn').click(function() {
+    location.href = viewurl ;
+  });
 
   $(document).ready(function() {
     //test 
