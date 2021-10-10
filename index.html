@@ -1353,7 +1353,10 @@ if(sharecolor === "1" || sharecolor === "2") {
   $('.filed-camera').click(function() {
   location.href = 'https://erichsia7.github.io/colors/camera/?r=' + genid('random') ;
   });
-
+$('.ft2').click(function() {
+  location.href = 'https://erichsia7.github.io/colors/text/?r=' + genid('random') ;
+  });
+  
 $('.fi2').click(function() {
  //$('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*copycolmode)) + 'px) translateY(-50%)','transition':'0.5s'});
       //offsetXcd = (0-($(window).width()*copycolmode));
@@ -1400,11 +1403,12 @@ if (navigator.share) {
 $('.fti').click(function() {
   $('.colorte').fadeOut(222);
 });
+  /*
 $('.ft2').click(function() {
   $('.colorte').fadeIn(222);
   $('#textu').val('');
 });
-  
+  */
   $('.qrt').click(function() {
 $('#qrbg').fadeIn(333);
  $('#qrbox').css({'display':'block'});
