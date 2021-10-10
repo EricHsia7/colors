@@ -193,6 +193,15 @@ font-family: 'Noto Sans TC', sans-serif;
 transform:rotate(180deg);
 border-radius:99em;
 }
+.ladbar {
+background:#fff;
+position:fixed;
+top:0px;
+left:0px;
+width:0px;
+height:1.3px;
+transition:width 0.3s ,background 0s;
+}
 </style>
 <img src="" id="cf">
 <div class="bg"></div>
@@ -212,6 +221,35 @@ border-radius:99em;
 </div>
 <canvas id="ccttt"></canvas>
 <div class="backbtn"></div>
+<div class="ladbar" style="display:block;"></div>
+<script>
+lade = 0 ;
+function ladbaradd() {
+lade += 5+Math.floor(Math.random() * 2) ;
+$('.ladbar').css({'width':lade + '%'});
+if(lade > 80) {
+clearInterval(ladbar);
+}
+}
+ladbaradd();
+var ladbar = setInterval(ladbaradd,300);
+
+$(document).ready(function() {
+setTimeout(function() {
+clearInterval(ladbar);
+$('.ladbar').css({'width':'105%','transition':'0.7s'});
+},1000);
+
+setTimeout(function() {
+$('.ladbar').css({'opacity':'0'});
+},1500);
+
+setTimeout(function() {
+$('.ladbar').css({'display':'none'});
+},2300);
+});
+</script>
+
 <script>
  Webcam.set({
 			image_format: 'jpeg',
