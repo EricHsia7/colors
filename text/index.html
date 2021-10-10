@@ -42,7 +42,8 @@ outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);
   position:absolute;
   top:0px;
   left:50px;
-  font-size:18px
+  font-size:18px;
+  background:rgba(0, 0, 0,0);
 }
 .texticon {
   background:url(https://erichsia7.github.io/colors/arrow-right.png);
@@ -127,6 +128,23 @@ justify-content: center;
 align-items: center;
   border-radius:10px;
 }
+    @media (prefers-color-scheme: dark) {
+    body,.textinput,.preview {
+      background:#1a1a1a;
+      color:#fff;
+      }
+      .textinput input {
+        background:#1a1a1a;
+        color:#fff;
+      }
+      .colorbox,.colorcodetype,.viewbtn {
+        background:#1f1f1f;
+        color:#fff;
+      }
+      .texticon {
+        filter: invert(100%);
+      }
+  }
 </style>
 <div class="result">
   <div class="preview">
