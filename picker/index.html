@@ -22,7 +22,7 @@
 <link rel="manifest" href="manifest.json?qpipoo">
 <style>
     * {outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);}
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
+
 
 body {
   margin:0px;
@@ -537,6 +537,24 @@ $('.btn').css({'color':'#fff'})
     
     fillbg();
   }
+  
+  $(document).ready(function() {
+    //test 
+        if(localStorage.getItem('googlefontNotoSansTCloaded') === '1') {
+  $('body').append('<style>' + localStorage.getItem('googlefontNotoSansTC') + '</style>');
+  console.log('loaded')
+}
+else {
+ $.ajax({type:'get',url:"https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap",dataType:'text',success:function(e) {
+  
+  localStorage.setItem('googlefontNotoSansTC', e); localStorage.setItem('googlefontNotoSansTCloaded', '1');
+   $('body').append('<style>' + e + '</style>');
+   
+   console.log('loaded2')
+   }
+}); 
+}
+  });
 </script>
 <script>
 // left: 37, up: 38, right: 39, down: 40,
