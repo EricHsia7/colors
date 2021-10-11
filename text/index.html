@@ -181,6 +181,7 @@ transition:width 0.3s ,background 0s;
     <div class="colorcode"><div d="g"></div><div class="colorcodetype">null</div></div>
     <div class="viewbtn">查看</div>
   </div>
+  <div class="feedbackbtn">意見回饋</div>
 </div>
 
 <div class="textinput">
@@ -603,6 +604,15 @@ $('.preview').fadeOut(333)
     location.href = viewurl ;
   });
 
+  
+  function feedback() {
+  var formurl = 'https://docs.google.com/forms/d/e/1FAIpQLSd80xA8ZbCgJliP6OuKpO6nfOY4EDtk4g59WV_2aCzvaMPBig/viewform?usp=pp_url&entry.1404143913=&entry.1926678780=' + encodeURIComponent(location.href) + '&entry.1896252888=' + encodeURIComponent($('body').html())
+  window.open(formurl)
+}
+  $('.feedbackbtn').click(function() {
+   feedback();
+  });
+  
   $(document).ready(function() {
     //test 
         if(localStorage.getItem('googlefontNotoSansTCloaded') === '1') {
