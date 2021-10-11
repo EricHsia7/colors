@@ -606,7 +606,7 @@ $('.preview').fadeOut(333)
 
   
   function feedback() {
-  var formurl = 'https://docs.google.com/forms/d/e/1FAIpQLSd80xA8ZbCgJliP6OuKpO6nfOY4EDtk4g59WV_2aCzvaMPBig/viewform?usp=pp_url&entry.1404143913=&entry.1926678780=' + encodeURIComponent(location.href) + '&entry.1896252888=' + encodeURIComponent($('body').html())
+  var formurl = 'https://docs.google.com/forms/d/e/1FAIpQLSd80xA8ZbCgJliP6OuKpO6nfOY4EDtk4g59WV_2aCzvaMPBig/viewform?usp=pp_url&entry.1404143913=&entry.1926678780=' + encodeURIComponent(location.href) + '&entry.1896252888=' + encodeURIComponent($('.result').html())
   window.open(formurl)
 }
   $('.feedbackbtn').click(function() {
