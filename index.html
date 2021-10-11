@@ -1434,9 +1434,11 @@ var favrecommendforms = $.ajax({url:"https://docs.google.com/forms/d/e/1FAIpQLSe
   
   $('.mor').click(function() {
     $('.cmore').fadeIn(333).css({'display':'flex'});
+    $('.favrecommendcardbox').css({'position':'fixed'});
   });
  $('.meoi').click(function() {
     $('.cmore').fadeOut(333);
+   $('.favrecommendcardbox').css({'position':'absolute'});
   }); 
   
   $('.rand2').click(function() {
