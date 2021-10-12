@@ -384,7 +384,10 @@ transition:width 0.3s ,background 0s;
   background:#4a8a86;
   color:#fff;
 }
-  
+.gh4 {
+  background:#376662
+  color:#fff;
+}
   
   .mobile-gesture-prompt-bg {
   background:rgba(0, 0, 0,0.5);
@@ -871,7 +874,7 @@ background:#fff;
   <div class="mbtn gh1" ripple-onclick="gotogithubpage()">Github</div>
   <div class="mbtn gh2" ripple-onclick="location.reload()">重新整理</div>
   <div class="mbtn gh3" ripple-onclick="location.href = 'https://lin.ee/AQadMnc'">LINE官方帳號</div>
-  
+  <div class="mbtn gh4" ripple-onclick="showuserid()">UserID</div>
     <span id="meoj">
     <div class="meoi lle btn"></div>
   </span>
@@ -1194,6 +1197,10 @@ function getCookie(cname)
     
   }
   //useridend
+  function showuserid() {
+    alert('UserId: ' + user_id);
+  }
+  
   
 if (window.File && window.FileReader && window.FileList && window.Blob) {
   //document.getElementById('files').addEventListener('change', handleFileSelect, false);
