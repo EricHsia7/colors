@@ -313,40 +313,7 @@ function rgbToHex(r, g, b) {
   return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
 
-  //userid
-  var user_id ;
-  if(localStorage.getItem('user_id_r') === '1') {
-    user_id = localStorage.getItem('user_id') ;
-    gtag('event', 'user_start', {
-    'event_category': 'count',
-    'event_label': user_id,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    console.log('user_id:' + user_id)
-    }
-  });
-  }
-  else {
-  var user_id_chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            user_id = "";
-            for (var useridi = 0; useridi < 64; useridi++) {
-                var user_id_randomNumber = Math.floor(Math.random() * user_id_chars.length);
-                user_id += user_id_chars.substring(user_id_randomNumber, user_id_randomNumber + 1);
-            }
-  localStorage.setItem('user_id_r', '1');
-  localStorage.setItem('user_id',user_id);
-   
-   gtag('event', 'user_start', {
-    'event_category': 'count',
-    'event_label': user_id,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    console.log('user_id:' + user_id)
-    }
-  });
-    
-  }
-  //useridend
+ 
 	
 	
 	
@@ -421,6 +388,43 @@ $('.backbtn').click(function() {
 location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
 });
 
+	
+	
+	
+ //userid
+  var user_id ;
+  if(localStorage.getItem('user_id_r') === '1') {
+    user_id = localStorage.getItem('user_id') ;
+    gtag('event', 'user_start', {
+    'event_category': 'count',
+    'event_label': user_id,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    console.log('user_id:' + user_id)
+    }
+  });
+  }
+  else {
+  var user_id_chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            user_id = "";
+            for (var useridi = 0; useridi < 64; useridi++) {
+                var user_id_randomNumber = Math.floor(Math.random() * user_id_chars.length);
+                user_id += user_id_chars.substring(user_id_randomNumber, user_id_randomNumber + 1);
+            }
+  localStorage.setItem('user_id_r', '1');
+  localStorage.setItem('user_id',user_id);
+   
+   gtag('event', 'user_start', {
+    'event_category': 'count',
+    'event_label': user_id,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    console.log('user_id:' + user_id)
+    }
+  });
+    
+  }
+  //useridend
 
   $(document).ready(function() {
     //test 
