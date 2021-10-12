@@ -1161,8 +1161,9 @@ function getCookie(cname)
 }
 
   //userid
+  var user_id ;
   if(localStorage.getItem('user_id_r') === '1') {
-    var user_id = localStorage.getItem('user_id') ;
+    user_id = localStorage.getItem('user_id') ;
     gtag('event', 'user_start', {
     'event_category': 'count',
     'event_label': user_id,
@@ -1174,7 +1175,7 @@ function getCookie(cname)
   }
   else {
   var user_id_chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            var user_id = "";
+            user_id = "";
             for (var useridi = 0; useridi < 64; useridi++) {
                 var user_id_randomNumber = Math.floor(Math.random() * user_id_chars.length);
                 user_id += user_id_chars.substring(user_id_randomNumber, user_id_randomNumber + 1);
