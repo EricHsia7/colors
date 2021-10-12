@@ -945,7 +945,9 @@ var shcolor = atob(url.searchParams.get('c')) ;
   var opensou = url.searchParams.get('sou') ;
 var copycolmode = 0 ;
   var usedslideclosepp = 0 ;
-
+var dpb = url.searchParams.get('dpb') ;
+  
+  
 var ccw = 256;
 var ccwa = (ccw*ccw) ;
 document.getElementById('cc').width = ccw ;
@@ -1526,7 +1528,9 @@ gtag('event', 'generator', {
 if(open === 'picker') {
   $('.pickerbg').css({'display':'block'});
 }
-  
+if(dpb === '1') {
+  history.pushState(null, null,'https://erichsia7.github.io/c/' + btoa(shcolor));
+}
   
   
   
