@@ -1503,8 +1503,8 @@ var rand_b = gettimerandomnumber(0,255);
     
     
     gtag('event', 'generator', {
-    'event_category': 'color',
-    'event_label': randtgrtag,
+    'event_category': 'color_' + randtgrtag,
+    'event_label':user_id,
     'transport_type': 'beacon',
     'event_callback': function(){
     location.href = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(rand_r,rand_g,rand_b)) + '&r=' + genid('random') ;
@@ -1535,9 +1535,10 @@ var grd_g2 = gettimerandomnumber(0,255);
 var grd_b2 = gettimerandomnumber(0,255);
 
 var grd_deg = Math.floor(Math.random() * 360);
+    //rgbToHex(grd_r1,grd_g1,grd_b1) + ',' + rgbToHex(grd_r2,grd_g2,grd_b2) + ',' + grd_deg
 gtag('event', 'generator', {
     'event_category': 'linear-gradient',
-    'event_label': rgbToHex(grd_r1,grd_g1,grd_b1) + ',' + rgbToHex(grd_r2,grd_g2,grd_b2) + ',' + grd_deg ,
+    'event_label': user_id,
     'transport_type': 'beacon',
     'event_callback': function(){
     location.href = 'https://erichsia7.github.io/colors/?s=2&ga=' + btoa(rgbToHex(grd_r1,grd_g1,grd_b1)) + '&gb=' + btoa(rgbToHex(grd_r2,grd_g2,grd_b2)) + '&gdeg=' + grd_deg + '&r=' + genid('random') ;
