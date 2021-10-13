@@ -665,8 +665,42 @@ align-items: center;
 }
   /*erend*/
   
-  
-  
+  /*useridalert*/
+.alert {
+  background:#fff;
+  width:250px;
+  height:150px;
+  border-radius:15px;
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+.alert_content {
+  position:absolute;
+  top:10px;
+  left:10px;
+  width:calc(100% - 20px);
+  height:calc(100% - 20px - 40px);
+  overflow:scroll;
+  font-size:18px;
+}
+.alert_btn {
+  position:absolute;
+  bottom:10px;
+  right:10px;
+  width:230px;
+  height:40px;
+  background:none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size:20px;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.08);
+}
+  /*useridalertend*/
   
   @media (prefers-color-scheme: dark) {
     .pickerbox ,.pickerbar,.pickerbtn{
