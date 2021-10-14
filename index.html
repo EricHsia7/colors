@@ -685,7 +685,7 @@ backdrop-filter: blur(15px);
   position:fixed;
   top:50%;
   left:50%;
-  transform:translate(-50%,-50%);
+  transform:translate(-50%,-50%) scale(0.8);
   display:none;
   opacity:0;
 }
@@ -1255,8 +1255,26 @@ function getCookie(cname)
   }
   //useridend
   function showuserid() {
-    alert('UserId: ' + user_id);
+    //alert('UserId: ' + user_id);
+    $('.alert_blur').fadeIn(333);
+    $('.alert').css({'display':'block'});
+    $('.alert_content').html('UserId: ' + user_id);
+    setTimeout(function(){ 
+    $('.alert').css({'transform':'translate(-50%,-50%) scale(1)','opacity':'1'});
+    }, 1);
   }
+  
+    $('.alert_btn').click(function() {
+  $('.alert_blur').fadeOut(333);
+       
+      $('.alert').css({'transform':'translate(-50%,-50%) scale(0.8)','opacity':'0'});
+    setTimeout(function(){ 
+    $('.alert').css({'display':'none'});
+    }, 510);
+    });
+  
+  
+  
   
   
 if (window.File && window.FileReader && window.FileList && window.Blob) {
@@ -1534,6 +1552,8 @@ var favrecommendforms = $.ajax({url:"https://docs.google.com/forms/d/e/1FAIpQLSe
     $('.cmore').fadeOut(333);
    $('.favrecommendcardbox').css({'position':'absolute'});
   }); 
+  
+  
   
   $('.rand2').click(function() {
 var rand_r = gettimerandomnumber(0,255);
