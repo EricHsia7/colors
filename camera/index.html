@@ -202,7 +202,7 @@ height:1.3px;
 transition:width 0.3s ,background 0s;
 }
 /*test*/
-	.more {
+	.morebtn {
   background:rgba(255,255,255,0.6) url(https://erichsia7.github.io/colors/ico_min/more.png);
   -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
@@ -210,8 +210,6 @@ transition:width 0.3s ,background 0s;
   top:15px;
   right:15px;
   filter: invert(100%);
-}
-.btn {
   background-size:25px;
   background-position:center;
   background-repeat:no-repeat;
@@ -225,7 +223,7 @@ transition:width 0.3s ,background 0s;
   color:#333;
   width:40px;
   height:40px;
-  }
+}
 .moreopt {
   position:fixed;
   top:60px;
@@ -287,7 +285,7 @@ transition:width 0.3s ,background 0s;
 <div class="backbtn"></div>
 
 <div class="moreoptbg"></div>
-<div class="btn more"></div>
+<div class="morebtn"></div>
 <div class="moreopt" style="--list-count:2">
   <li>重新整理</li>
   <li>返回</li>
@@ -461,7 +459,34 @@ $('.backbtn').click(function() {
 location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
 });
 
-	
+var moreoptd = '0' ;
+$('.morebtn').click(function() {
+  if(moreoptd === '0') {
+   $('.moreoptbg').fadeIn(1);
+ $('.moreopt').css({'display':'block'});
+  setTimeout(function() {   $('.moreopt').css({'transform':'scale(1.02)','opacity':'1','border-radius':'15px'});
+  },1);
+    setTimeout(function() {   $('.moreopt').css({'transform':'scale(0.99)','opacity':'1','border-radius':'15px','transitio':'0.2s'});
+  },300);
+    setTimeout(function() {   $('.moreopt').css({'transform':'scale(1)'});
+  },500);
+    moreoptd = '1' ;
+  }
+  else {
+   $('.moreoptbg').fadeOut(1);
+  $('.moreopt').css({'transform':'scale(0)','opacity':'0','border-radius':'30px'});
+  setTimeout(function() {   $('.moreopt').css({'display':'none'});
+  },300)
+    moreoptd = '0'
+  }
+});
+$('.moreoptbg').click(function() {
+  $('.moreoptbg').fadeOut(1);
+  $('.moreopt').css({'transform':'scale(0)','opacity':'0','border-radius':'30px'});
+  setTimeout(function() {   $('.moreopt').css({'display':'none'});
+  },300)
+  moreoptd = '0'
+});
 	
 	
  //userid
@@ -499,34 +524,7 @@ location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
   }
   //useridend
 
-var moreoptd = '0' ;
-$('.more').click(function() {
-  if(moreoptd === '0') {
-   $('.moreoptbg').fadeIn(1);
- $('.moreopt').css({'display':'block'});
-  setTimeout(function() {   $('.moreopt').css({'transform':'scale(1.02)','opacity':'1','border-radius':'15px'});
-  },1);
-    setTimeout(function() {   $('.moreopt').css({'transform':'scale(0.99)','opacity':'1','border-radius':'15px','transitio':'0.2s'});
-  },300);
-    setTimeout(function() {   $('.moreopt').css({'transform':'scale(1)'});
-  },500);
-    moreoptd = '1' ;
-  }
-  else {
-   $('.moreoptbg').fadeOut(1);
-  $('.moreopt').css({'transform':'scale(0)','opacity':'0','border-radius':'30px'});
-  setTimeout(function() {   $('.moreopt').css({'display':'none'});
-  },300)
-    moreoptd = '0'
-  }
-});
-$('.moreoptbg').click(function() {
-  $('.moreoptbg').fadeOut(1);
-  $('.moreopt').css({'transform':'scale(0)','opacity':'0','border-radius':'30px'});
-  setTimeout(function() {   $('.moreopt').css({'display':'none'});
-  },300)
-  moreoptd = '0'
-})
+
 	
 	
   $(document).ready(function() {
