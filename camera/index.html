@@ -201,6 +201,71 @@ width:0px;
 height:1.3px;
 transition:width 0.3s ,background 0s;
 }
+/*test*/
+	.more {
+  background:rgba(255,255,255,0.6) url(https://erichsia7.github.io/colors/ico_min/more.png);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  position:fixed;
+  top:15px;
+  right:15px;
+  filter: invert(100%);
+}
+.btn {
+  background-size:25px;
+  background-position:center;
+  background-repeat:no-repeat;
+  border-radius:99em;
+  font-weight:medium;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size:1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#333;
+  width:40px;
+  height:40px;
+  }
+.moreopt {
+  position:fixed;
+  top:60px;
+  right:15px;
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  background: rgba(0,0,0,0.6);
+  height:calc(var(--list-count) * 40px);
+  width:200px;
+  border-radius:15px;
+  transform-origin: 100% 0%;
+  transform:scale(0);
+  display:none;
+  transition:0.3s;
+  opacity:0;
+  transition-timing-function: ease;
+  overflow:hidden;
+}
+.moreopt li {
+  list-style:none;
+  font-size:20px;
+  height:40px;
+  margin:0px;
+  padding-left:10px;
+  width:calc(100% - 10px);
+  color:#fff;
+  display: flex;
+  align-items: center;
+  border-bottom:1px rgba(255,255,255,0.3) solid;
+}
+.moreoptbg {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  background:rgba(0, 0, 0,0);
+  display:none;
+}
+	/*testend*/
 </style>
 <img src="" id="cf">
 <div class="bg"></div>
@@ -220,6 +285,14 @@ transition:width 0.3s ,background 0s;
 </div>
 <canvas id="ccttt"></canvas>
 <div class="backbtn"></div>
+
+<div class="moreoptbg"></div>
+<div class="btn more"></div>
+<div class="moreopt" style="--list-count:2">
+  <li>重新整理</li>
+  <li>返回</li>
+</div>
+
 <div class="ladbar" style="display:block;"></div>
 <script>
 lade = 0 ;
@@ -426,6 +499,36 @@ location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
   }
   //useridend
 
+var moreoptd = '0' ;
+$('.more').click(function() {
+  if(moreoptd === '0') {
+   $('.moreoptbg').fadeIn(1);
+ $('.moreopt').css({'display':'block'});
+  setTimeout(function() {   $('.moreopt').css({'transform':'scale(1.02)','opacity':'1','border-radius':'15px'});
+  },1);
+    setTimeout(function() {   $('.moreopt').css({'transform':'scale(0.99)','opacity':'1','border-radius':'15px','transitio':'0.2s'});
+  },300);
+    setTimeout(function() {   $('.moreopt').css({'transform':'scale(1)'});
+  },500);
+    moreoptd = '1' ;
+  }
+  else {
+   $('.moreoptbg').fadeOut(1);
+  $('.moreopt').css({'transform':'scale(0)','opacity':'0','border-radius':'30px'});
+  setTimeout(function() {   $('.moreopt').css({'display':'none'});
+  },300)
+    moreoptd = '0'
+  }
+});
+$('.moreoptbg').click(function() {
+  $('.moreoptbg').fadeOut(1);
+  $('.moreopt').css({'transform':'scale(0)','opacity':'0','border-radius':'30px'});
+  setTimeout(function() {   $('.moreopt').css({'display':'none'});
+  },300)
+  moreoptd = '0'
+})
+	
+	
   $(document).ready(function() {
     //test 
         if(localStorage.getItem('googlefontNotoSansTCloaded') === '1') {
