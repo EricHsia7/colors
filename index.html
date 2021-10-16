@@ -662,21 +662,23 @@ align-items: center;
   height:100%;
   background:#fff;
   display:none;
+  -webkit-user-select: none;
 }
   /*erend*/
   
   /*useridalert*/
-  .alert_blur {
+.alert_blur {
   background:rgba(0, 0, 0,0.5);
   width:100%;
   height:100%;
   position:fixed;
   top:0px;
   left:0px;  
--webkit-backdrop-filter: blur(15px);
-backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
   display:none;
-  }
+  -webkit-user-select: none;
+}
 .alert {
   background:#fff;
   width:250px;
@@ -689,6 +691,7 @@ backdrop-filter: blur(15px);
   display:none;
   opacity:0;
   transition:0.5s;
+  -webkit-user-select: none;
 }
 .alert_content {
   position:absolute;
@@ -704,6 +707,7 @@ backdrop-filter: blur(15px);
   word-break: break-all;
   font-weight:500;
   font-family: 'Noto Sans TC', sans-serif;
+  -webkit-user-select: none;
 }
 .alert_btn {
   position:absolute;
@@ -721,6 +725,7 @@ backdrop-filter: blur(15px);
   box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.08);
   font-weight:700;
   font-family: 'Noto Sans TC', sans-serif;
+  -webkit-user-select: none;
 }
   /*useridalertend*/
   
