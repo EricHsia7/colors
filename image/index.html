@@ -1,1 +1,200 @@
+<meta charset="UTF-8">
+<title>Colors</title>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-342D6M2MKX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-342D6M2MKX');
+</script>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js?1"></script>
+<link href="https://erichsia7.github.io/colors/c2_512.png" sizes="512x512" rel="apple-touch-icon-precomposed" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="defualt" />
+<link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="icon" />
+<link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="bookmark" />
+<link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="shortcut icon" />
+<link rel="manifest" href="manifest.json?qpipoo">
+<style>
+.title {
+  background:#fff;
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:55px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.05);
+  -webkit-user-select: none;
+  display: flex;
+justify-content: center;
+align-items: center;
+}
+.content {
+  position:fixed;
+  top:55px;
+  left:0px;
+  width:100%;
+  height:calc(100% - 55px);
+  overflow:scroll;
+  background:#fff;
+}
+input {
+  border:none;
+  background:#f5f5f5;
+  height:35px;
+  width:calc(50% - 30px);
+  border-radius:10px;
+  font-size:15px;
+  padding:0px;
+  padding-left:10px;
+  -webkit-appearance:none;
+outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+input[g="height"] {
+  margin-left:10px;
+}
+.group[g="gsize"] {
+  width:100%;
+  position:relative;
+  height:50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.group[g="filesize"] {
+  width:100%;
+  position:relative;
+  height:50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input[g="filesize"] {
+  width:calc(100% - 40px)
+}
+h4 {
+  margin:0px;
+  padding:0px;
+  padding-left:calc((100% - ((50% - 30px) * 2) - 30px) / 2);
+  margin-top:10px;
+}
+.preview {
+width:100%;
+height:300px;
+background:url(https://erichsia7.github.io/colors/image/block.png);
+background-repeat: repeat;
+background-size:10px;
+transition:.5s;
+  position:relative;
+}
+.preview img {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  max-width:100%;
+  max-height:100%;
+  width:auto;
+  height:auto;
+}
+.group[g="name"] {
+  width:100%;
+  position:relative;
+  height:50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input[g="name"] {
+  width:calc(100% - 40px)
+}
+.btn {
+  width:calc(100% - 30px);
+  height:35px;
+  background:#f5f5f5;
+  border-radius:10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.group[g="download"] {
+  width:100%;
+  position:relative;
+  height:50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#canvas {
+  display:none;
+}
+</style>
+<div class="content">
+  <div class="preview">
+    <img src="" id="result">
+  </div>
+  <h4>尺寸</h4>
+  <div class="group" g="gsize">
+  <input type="text" placeholder="寬度" g="width" value="100">
+  <input type="text" placeholder="高度" g="height" value="100">
+  </div>
+  <h4>名稱</h4>
+  <div class="group" g="name">
+  <input type="text" placeholder="名稱" g="name">
+  </div>
+  <h4>檔案大小</h4>
+  <div class="group" g="filesize">
+  <input ttpe="text" g="filesize" readonly="readonly" placeholder="檔案大小(僅供參考)">
+  </div>
+  <div class="group" g="download">
+    <div class="btn" g="downloadbtn" ripple-onclick="downloadimage()">下載</div>
+  </div>
+  <canvas id="canvas"></canvas>
+</div>
+<div class="title">轉換圖片</div>
+<script src="https://erichsia7.github.io/ripple.js/ripple.min.js"></script>
+<script>
+document.addEventListener("paste", function (e){
+  genimg();
+});
+document.addEventListener("cut", function (e){
+  genimg();
+});
+document.addEventListener("selectionchange", function (e){
+  genimg();
+});
+$('input[type="text"]').keyup(function() {
+  genimg();
+});
+var color = '#0856c3' ;
+var imagedataurl ;
+function genimg() {
+  $('#canvas').css({'width':$('input[g="width"]').val(),'height':$('input[g="height"]').val()}).attr('width',$('input[g="width"]').val()).attr('height',$('input[g="height"]').val());
+  var ctx = document.querySelector('#canvas').getContext('2d');
+  ctx.fillStyle = color ;
+  ctx.fillRect(0,0,parseInt($('input[g="width"]').val()),parseInt($('input[g="height"]').val()));
+  imagedataurl = document.querySelector('#canvas').toDataURL() ;
+  $('#result').attr('src',imagedataurl)
+  $('input[g="name"]').val(color.split('#')[1] + '_' + parseInt($('input[g="width"]').val()) + 'x' + parseInt($('input[g="height"]').val()));
+  var head = 'data:image/png;base64,';
+var imgFileSize = Math.round((imagedataurl.length - head.length)*3/4) ;
+  $('input[g="filesize"]').val((imgFileSize*0.001).toFixed(3) + 'KB');
+  
+}
+function downloadimage() {
+  var link = document.createElement("a");
+  document.body.appendChild(link);
+  link.download = $('input[g="name"]').val() + ".png";
+  link.href = imagedataurl;
+  link.target = '_blank';
+  link.click();
+  link.remove();
+}
+genimg();
+ripple('.btn','#000','0.3',1200,'true');
+</script>
