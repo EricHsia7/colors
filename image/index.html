@@ -21,6 +21,9 @@
 <link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="shortcut icon" />
 <link rel="manifest" href="manifest.json?qpipoo">
 <style>
+  :root {
+    --ripple-color:#000;
+  }
 .title {
   background:#fff;
   position:fixed;
@@ -143,6 +146,9 @@ input[g="name"] {
   display:none;
 }
 @media (prefers-color-scheme: dark) {
+  :root {
+    --ripple-color:#fff;
+  }
   body,.title,.content {
   background:#1a1a1a;
     color:#fff;
@@ -229,7 +235,7 @@ function downloadimage() {
   link.remove();
 }
 genimg();
-ripple('.btn','#000','0.3',1200,'true');
+ripple('.btn','var(--ripple-color)','0.3',1200,'true');
   
     $(document).ready(function() {
     //test 
