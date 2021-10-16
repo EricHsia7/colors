@@ -160,6 +160,16 @@ input[g="name"] {
 outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);
   -webkit-user-select: none;
 }
+  .ladbar {
+background:#000;
+position:fixed;
+top:0px;
+left:0px;
+width:0px;
+height:1.3px;
+transition:width 0.3s ,background 0s;
+-webkit-user-select: none;
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --ripple-color:#fff;
@@ -182,6 +192,9 @@ background-size:10px;
   }
   .texticon {
         filter: invert(100%);
+      }
+        .ladbar {
+        background:#fff;
       }
   }
 </style>
@@ -211,7 +224,35 @@ background-size:10px;
   <div class="texticon"></div>
   轉換圖片
 </div>
+<div class="ladbar" style="display:block;"></div>
 <script src="https://erichsia7.github.io/ripple.js/ripple.min.js"></script>
+<script>
+lade = 0 ;
+function ladbaradd() {
+lade += 5+Math.floor(Math.random() * 2) ;
+$('.ladbar').css({'width':lade + '%'});
+if(lade > 80) {
+clearInterval(ladbar);
+}
+}
+ladbaradd();
+var ladbar = setInterval(ladbaradd,300);
+
+$(document).ready(function() {
+setTimeout(function() {
+clearInterval(ladbar);
+$('.ladbar').css({'width':'105%','transition':'0.7s'});
+},1000);
+
+setTimeout(function() {
+$('.ladbar').css({'opacity':'0'});
+},1500);
+
+setTimeout(function() {
+$('.ladbar').css({'display':'none'});
+},2300);
+});
+</script>
 <script>
 var getUrlString = location.href;
 var url = new URL(getUrlString);
