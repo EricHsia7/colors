@@ -198,4 +198,22 @@ function downloadimage() {
 }
 genimg();
 ripple('.btn','#000','0.3',1200,'true');
+  
+    $(document).ready(function() {
+    //test 
+        if(localStorage.getItem('googlefontNotoSansTCloaded') === '1') {
+  $('body').append('<style>' + localStorage.getItem('googlefontNotoSansTC') + '</style>');
+  console.log('loaded')
+}
+else {
+ $.ajax({type:'get',url:"https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap",dataType:'text',success:function(e) {
+  
+  localStorage.setItem('googlefontNotoSansTC', e); localStorage.setItem('googlefontNotoSansTCloaded', '1');
+   $('body').append('<style>' + e + '</style>');
+   
+   console.log('loaded2')
+   }
+}); 
+}
+  });
 </script>
