@@ -168,6 +168,9 @@ input[g="name"] {
 <div class="title">轉換圖片</div>
 <script src="https://erichsia7.github.io/ripple.js/ripple.min.js"></script>
 <script>
+var getUrlString = location.href;
+var url = new URL(getUrlString);
+var shcol = url.searchParams.get('s');
 document.addEventListener("paste", function (e){
   genimg();
 });
@@ -180,7 +183,10 @@ document.addEventListener("selectionchange", function (e){
 $('input[type="text"]').keyup(function() {
   genimg();
 });
-var color = '#0856c3' ;
+var color = '#fff' ;
+if(shcol === '1') {
+  var color = atob(url.searchParams.get('c')) ;
+}
 var imagedataurl ;
 function genimg() {
   $('#canvas').css({'width':$('input[g="width"]').val(),'height':$('input[g="height"]').val()}).attr('width',$('input[g="width"]').val()).attr('height',$('input[g="height"]').val());
