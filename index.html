@@ -1697,12 +1697,14 @@ if((hexToRgb(shcolor).r+hexToRgb(shcolor).g+hexToRgb(shcolor).b)/3 > 128) {
       $('.ladbar').css({'background':'#000'});
       $('.arrbtco').attr('class','arrow-right btn arrbtco');
       $('.arrbtco-2').attr('class','arrow-left btn arrbtco-2');
+      $('.toimg').attr('class','toimg toimg-d btn');
     }
     else {
       $('#rgb,.colorvlcm').css({'color':'#fff'});
       $('.ladbar').css({'background':'#fff'});
       $('.arrbtco').attr('class','arrow-right-light btn arrbtco');
       $('.arrbtco-2').attr('class','arrow-left-light btn arrbtco-2');
+      $('.toimg').attr('class','toimg toimg-l btn');
     }
   if(open === "fav") {
 $('.color').css({'display':'block'});
@@ -1757,14 +1759,12 @@ $('input[t="hsv"]').val('暫不支援');
       $('.ladbar').css({'background':'#000'});
       $('.arrbtco').attr('class','arrow-right btn arrbtco');
       $('.arrbtco-2').attr('class','arrow-left btn arrbtco-2');
-      $('.toimg').attr('class','toimg toimg-d btn');
     }
     else {
       $('#rgb,.colorvlcm').css({'color':'#fff'});
       $('.ladbar').css({'background':'#fff'});
       $('.arrbtco').attr('class','arrow-right-light btn arrbtco');
       $('.arrbtco-2').attr('class','arrow-left-light btn arrbtco-2');
-      $('.toimg').attr('class','toimg toimg-l btn');
     }
     
     var grdarc = rgbToHex(Math.ceil((hexToRgb(gc1).r+hexToRgb(gc2).r)/2),Math.ceil((hexToRgb(gc1).g+hexToRgb(gc2).g)/2),Math.ceil((hexToRgb(gc1).b+hexToRgb(gc2).b)/2)) ;
