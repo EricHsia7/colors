@@ -1678,7 +1678,7 @@ if(dpb === '1') {
   
   
 if(sharecolor === "1") {
-      $('#filerj,.favrecommendcardbox').css({'position':'fixed'});
+$('#filerj,.favrecommendcardbox').css({'position':'fixed'});
 $('#rgb').attr('rgb',hexToRgb(shcolor).r + ',' + hexToRgb(shcolor).g + ',' + hexToRgb(shcolor).b);
 $('#rgb').attr('hex', shcolor);
 $('#rgb').attr('cmyk',rgbtocmyk(hexToRgb(shcolor).r,hexToRgb(shcolor).g,hexToRgb(shcolor).b).cmykstr);
@@ -1728,7 +1728,9 @@ $('.color').fadeIn(222);
   
   
 }
-    
+    $('.toimg').click(function() {
+      location.href = 'https://erichsia7.github.io/colors/image/?s=1&c=' + btoa(shcolor) + '&r=' + genid('random');
+    });
     $('.color').css({'background':shcolor})
       $('#rgb').val(shcolor).attr('arc',shcolor);
   setTimeout(function() {
