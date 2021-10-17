@@ -89,8 +89,9 @@ h4 {
   padding:0px;
   padding-left:calc((100% - ((50% - 30px) * 2) - 30px) / 2);
   margin-top:10px;
-    font-weight:700;
+  font-weight:700;
   font-family: 'Noto Sans TC', sans-serif;
+  -webkit-user-select: none;
 }
 .preview {
 width:100%;
@@ -99,7 +100,8 @@ background:url(https://erichsia7.github.io/colors/image/block.png);
 background-repeat: repeat;
 background-size:10px;
 transition:.5s;
-  position:relative;
+position:relative;
+-webkit-user-select: none;
 }
 .preview img {
   position:absolute;
@@ -111,6 +113,10 @@ transition:.5s;
   width:auto;
   height:auto;
   transition:0.3s;
+  -webkit-user-select: none;
+}
+.group {
+  -webkit-user-select: none;	
 }
 .group[g="name"] {
   width:100%;
@@ -133,6 +139,7 @@ input[g="name"] {
   align-items: center;
   font-weight:500;
   font-family: 'Noto Sans TC', sans-serif;
+  -webkit-user-select: none;
 }
 .group[g="download"] {
   width:100%;
