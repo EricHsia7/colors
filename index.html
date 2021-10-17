@@ -142,8 +142,8 @@ display:none;
 .ft2 {
   background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/ico_min/text2.png);
 }
-.qrt {
-  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/ico_min/qrcode.png);
+.colmorme {
+  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/ico_min/more.png);
 }
 .crtd {
   background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/ico_min/color-picker.png);
@@ -743,7 +743,47 @@ align-items: center;
   -webkit-user-select: none;
 }
   /*useridalertend*/
-  
+  /*test*/
+  .moreopt {
+  position:fixed;
+  top:60px;
+  right:15px;
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  background: rgba(0,0,0,0.6);
+  height:calc(var(--list-count) * 40px);
+  width:200px;
+  border-radius:15px;
+  transform-origin: 100% 0%;
+  transform:scale(0);
+  display:none;
+  transition:0.3s;
+  opacity:0;
+  transition-timing-function: ease;
+  overflow:hidden;
+}
+.moreopt li {
+  list-style:none;
+  font-size:20px;
+  height:40px;
+  margin:0px;
+  padding-left:10px;
+  width:calc(100% - 10px);
+  color:#fff;
+  display: flex;
+  align-items: center;
+  border-bottom:1px rgba(255,255,255,0.3) solid;
+}
+.moreoptbg {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  background:rgba(0, 0, 0,0);
+  display:none;
+}
+  /*testend*/
   @media (prefers-color-scheme: dark) {
     .pickerbox ,.pickerbar,.pickerbtn{
       background:#1f1f1f;
@@ -895,10 +935,17 @@ background:#fff;
   <div class="fi2 lle btn"></div>
   <div class="fi3 lle btn"></div>
     <div class="favt lle btn"></div>
-    <div class="qrt lle btn"></div>
+    <div class="qrt lle btn" style="display:none;"></div>
+    <div class="colmorme lle btn"></div>
     <div class="linechat lle btn" style="display:none;"></div>
   <div class="fi lle btn"></div>
   </div> 
+  
+  <div class="moreoptbg"></div>
+<div class="moreopt" style="--list-count:2">
+  <li f="qrcode">二維碼</li>
+  <li f="toimage">轉換圖片</li>
+</div>
   
 </div>
 
@@ -1910,9 +1957,9 @@ else {
     
      
       if(getCookie('hdloaded') === 'true') {
-        var ldiilist = 'grd,filed-camera,filed-img,fi,fi2,fi3,ft2,qrt,crtd,rand2,vis,favy,mor,meoi' ;
+        var ldiilist = 'grd,filed-camera,filed-img,fi,fi2,fi3,ft2,colmorme,crtd,rand2,vis,favy,mor,meoi' ;
     var ldiilists = ldiilist.split(',') ;
-    var ldiihdlist = 'gradient,camera,img,close2,copy2,share3,text2,qrcode,color-picker,random3,invisible,favorited,more,close2' ;
+    var ldiihdlist = 'gradient,camera,img,close2,copy2,share3,text2,more,color-picker,random3,invisible,favorited,more,close2' ;
     var ldiihdlists = ldiihdlist.split(',');
 for (var ldii=0; ldii<ldiilists.length; ldii++){  
   
@@ -1927,9 +1974,9 @@ for (var ldii=0; ldii<ldiilists.length; ldii++){
       }
       else {
         setTimeout(function() {
-    var ldiilist = 'grd,filed-camera,filed-img,fi,fi2,fi3,ft2,qrt,crtd,rand2,vis,favy,mor,meoi' ;
+    var ldiilist = 'grd,filed-camera,filed-img,fi,fi2,fi3,ft2,colmorme,crtd,rand2,vis,favy,mor,meoi' ;
     var ldiilists = ldiilist.split(',') ;
-    var ldiihdlist = 'gradient,camera,img,close2,copy2,share3,text2,qrcode,color-picker,random3,invisible,favorited,more,close2' ;
+    var ldiihdlist = 'gradient,camera,img,close2,copy2,share3,text2,more,color-picker,random3,invisible,favorited,more,close2' ;
     var ldiihdlists = ldiihdlist.split(',');
 for (var ldii=0; ldii<ldiilists.length; ldii++){
   
