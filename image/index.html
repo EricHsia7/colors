@@ -257,6 +257,7 @@ $('.ladbar').css({'display':'none'});
 var getUrlString = location.href;
 var url = new URL(getUrlString);
 var shcol = url.searchParams.get('s');
+var toimgbackid = url.searchParams.get('backid') ;
 document.addEventListener("paste", function (e){
   genimg();
 });
@@ -299,8 +300,8 @@ function downloadimage() {
 genimg();
 ripple('.btn','var(--ripple-color)','0.3',1200,'true');
 $('.texticon').click(function() {
-  //location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
-  window.history.back();
+  location.href = localStorage.getItem(toimgbackid) ;
+  //window.history.back();
   });
   
     //userid
