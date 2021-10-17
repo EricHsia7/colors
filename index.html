@@ -2231,6 +2231,12 @@ $('.colorinps2').css({'transform':'translateX(' + 0 + '%) translateY(-50%)','tra
 
 
 function move(e) {
+  $('.moreoptbg').fadeOut(1);
+  $('.moreopt').css({'transform':'scale(0)','opacity':'0'});
+  setTimeout(function() {   $('.moreopt').css({'display':'none'});
+  },300)
+    moreoptd = '0' ;
+  
   if(open === 'fav') {
     if (isDown) {
     const dx = e.pageX - mouseX
