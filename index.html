@@ -1710,7 +1710,7 @@ gtag('event', 'generator', {
     
 });
   //moreoptset
-  $('.moreopt').css({'bottom':'85px','right':$(window).width()-($('.colmorme').offset().left+($('.colmorme').width()*1))});
+  $('.moreopt').css({'bottom':'85px','right':$(window).width()-($('.colmorme').offset().left) + 'px'});
   $('.colmorme').click(function() {
   if(moreoptd === '0') {
    $('.moreoptbg').fadeIn(1);
