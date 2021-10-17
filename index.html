@@ -1449,6 +1449,12 @@ var load = 0 ;
   
   
 $('.fi').click(function() {
+  $('.moreoptbg').fadeOut(1);
+  $('.moreopt').css({'transform':'scale(0)','opacity':'0'});
+  setTimeout(function() {   $('.moreopt').css({'display':'none'});
+  },300)
+    moreoptd = '0' ;
+  
 if(sharecolor === "1" || sharecolor === "2") {
     if(open === "fav") {
       $('body').css({'background':''});
