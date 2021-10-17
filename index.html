@@ -1832,7 +1832,7 @@ $('.color').fadeIn(222);
 $('input[t="cmyk"]').val('暫不支援');
 $('input[t="hsl"]').val('暫不支援');
 $('input[t="hsv"]').val('暫不支援');
-    
+    $('li[f="toimage"]').css({'opacity':'0.3'});
     
     if((hexToRgb(gc1).r+hexToRgb(gc1).g+hexToRgb(gc1).b+hexToRgb(gc2).r+hexToRgb(gc2).g+hexToRgb(gc2).b)/6 > 128) {
       $('#rgb,.colorvlcm').css({'color':'#000'});
