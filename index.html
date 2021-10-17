@@ -142,8 +142,8 @@ display:none;
 .ft2 {
   background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/ico_min/text2.png);
 }
-.qrt {
-  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/ico_min/qrcode.png);
+.colmorme {
+  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/ico_min/more.png);
 }
 .crtd {
   background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/ico_min/color-picker.png);
@@ -163,22 +163,6 @@ background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/ico_min/
       .linechat {
 background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/line.png);
 }
-.toimg-l {
-  background:rgba(250,250,250,0.08) url(https://erichsia7.github.io/colors/img.png);
-  position:absolute;
-  top:30px;
-  right:30px;
-  -webkit-user-select: none;
-  filter: invert(100%);
-  }
-  .toimg-d {
-  background:rgba(0,0,0,0.08) url(https://erichsia7.github.io/colors/img.png);
-  position:absolute;
-  top:30px;
-  right:30px;
-  -webkit-user-select: none;
-  }
- 
   .arrow-right {
   background:rgba(0,0,0,0.08) url(https://erichsia7.github.io/colors/arrow-right.png);
   position:absolute;
@@ -743,7 +727,49 @@ align-items: center;
   -webkit-user-select: none;
 }
   /*useridalertend*/
-  
+  /*test*/
+  .moreopt {
+  position:fixed;
+  bottom:60px;
+  right:15px;
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  background: rgba(250,250,250,0.8);
+  height:calc(var(--list-count) * 40px);
+  width:200px;
+  border-radius:15px;
+  transform-origin: 100% 100%;
+  transform:scale(0);
+  display:none;
+  transition:0.3s;
+  opacity:0;
+  transition-timing-function: ease;
+  overflow:hidden;
+}
+.moreopt li {
+  list-style:none;
+  font-size:20px;
+  height:40px;
+  margin:0px;
+  padding-left:10px;
+  width:calc(100% - 10px);
+  color:#000;
+  display: flex;
+  align-items: center;
+  border-bottom:1px rgba(0,0,0,0.3) solid;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight:500;
+}
+.moreoptbg {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  background:rgba(0, 0, 0,0);
+  display:none;
+}
+  /*testend*/
   @media (prefers-color-scheme: dark) {
     .pickerbox ,.pickerbar,.pickerbtn{
       background:#1f1f1f;
@@ -829,6 +855,13 @@ background:#fff;
   background:#1a1a1a;
   color:#fff;
 }
+    .moreopt {
+  background: rgba(0,0,0,0.8);
+}
+.moreopt li {
+  color:#fff;
+  border-bottom:1px rgba(250,250,250,0.3) solid;
+    }
   }
   #cojs {
     width:180px;
@@ -889,16 +922,23 @@ background:#fff;
   <div class="arrow-right btn arrbtco"></div>
   <div class="arrow-left btn arrbtco-2"></div>
   
-  <div class="toimg btn"></div>
+  
   
   <div id="menuj">
   <div class="fi2 lle btn"></div>
   <div class="fi3 lle btn"></div>
-  <div class="qrt lle btn"></div>
     <div class="favt lle btn"></div>
+    <div class="qrt lle btn" style="display:none;"></div>
     <div class="linechat lle btn" style="display:none;"></div>
+    <div class="colmorme lle btn"></div>
   <div class="fi lle btn"></div>
   </div> 
+  
+  <div class="moreoptbg"></div>
+<div class="moreopt" style="--list-count:2">
+  <li f="qrcode">二維碼</li>
+  <li f="toimage">轉換圖片</li>
+</div>
   
 </div>
 
@@ -1036,7 +1076,7 @@ var shcolor = atob(url.searchParams.get('c')) ;
 var copycolmode = 0 ;
   var usedslideclosepp = 0 ;
 var dpb = url.searchParams.get('dpb') ;
-  
+var moreoptd = '0' ;
   
 var ccw = 256;
 var ccwa = (ccw*ccw) ;
@@ -1510,7 +1550,13 @@ $('.ft2').click(function() {
   $('#textu').val('');
 });
   */
-  $('.qrt').click(function() {
+  $('li[f="qrcode"]').click(function() {
+    $('.moreoptbg').fadeOut(1);
+  $('.moreopt').css({'transform':'scale(0)','opacity':'0'});
+  setTimeout(function() {   $('.moreopt').css({'display':'none'});
+  },300)
+    moreoptd = '0' ;
+    
 $('#qrbg').fadeIn(333);
  $('#qrbox').css({'display':'block'});
     setTimeout(function(){ 
@@ -1662,7 +1708,39 @@ gtag('event', 'generator', {
 });
     
 });
-  
+  //moreoptset
+  $('.moreopt').css({'bottom':'85px','right':(($(window).width()-$('#menuj').width())/2)+45+20});
+  $('.colmorme').click(function() {
+    $('.moreopt').css({'bottom':'85px','right':(($(window).width()-$('#menuj').width())/2)+45+20});
+  if(moreoptd === '0') {
+   $('.moreoptbg').fadeIn(1);
+ $('.moreopt').css({'display':'block'});
+  setTimeout(function() {   $('.moreopt').css({'transform':'scale(1.02)','opacity':'1'});
+  },1);
+    setTimeout(function() {   $('.moreopt').css({'transform':'scale(0.99)','opacity':'1','transitio':'0.2s'});
+  },300);
+    setTimeout(function() {   $('.moreopt').css({'transform':'scale(1)'});
+  },500);
+    moreoptd = '1' ;
+  }
+  else {
+   $('.moreoptbg').fadeOut(1);
+  $('.moreopt').css({'transform':'scale(0)','opacity':'0'});
+  setTimeout(function() {   $('.moreopt').css({'display':'none'});
+  },300)
+    moreoptd = '0'
+  }
+    
+  });
+  $('.moreoptbg').click(function() {
+    $('.moreopt').css({'bottom':'85px','right':(($(window).width()-$('#menuj').width())/2)+45+20});
+  $('.moreoptbg').fadeOut(1);
+  $('.moreopt').css({'transform':'scale(0)','opacity':'0'});
+  setTimeout(function() {   $('.moreopt').css({'display':'none'});
+  },300)
+  moreoptd = '0'
+})
+  //moreoptsetend
   
   if(shortcuts === "1") {
     $('.rand2').click()
@@ -1674,7 +1752,7 @@ if(open === 'picker') {
 if(dpb === '1') {
   history.pushState(null, null,'https://erichsia7.github.io/c/' + btoa(shcolor));
 }
-  
+
   
   
 if(sharecolor === "1") {
@@ -1697,14 +1775,14 @@ if((hexToRgb(shcolor).r+hexToRgb(shcolor).g+hexToRgb(shcolor).b)/3 > 128) {
       $('.ladbar').css({'background':'#000'});
       $('.arrbtco').attr('class','arrow-right btn arrbtco');
       $('.arrbtco-2').attr('class','arrow-left btn arrbtco-2');
-      $('.toimg').attr('class','toimg toimg-d btn');
+      //$('.toimg').attr('class','toimg toimg-d btn');
     }
     else {
       $('#rgb,.colorvlcm').css({'color':'#fff'});
       $('.ladbar').css({'background':'#fff'});
       $('.arrbtco').attr('class','arrow-right-light btn arrbtco');
       $('.arrbtco-2').attr('class','arrow-left-light btn arrbtco-2');
-      $('.toimg').attr('class','toimg toimg-l btn');
+      //$('.toimg').attr('class','toimg toimg-l btn');
     }
   if(open === "fav") {
 $('.color').css({'display':'block'});
@@ -1728,7 +1806,7 @@ $('.color').fadeIn(222);
   
   
 }
-    $('.toimg').click(function() {
+    $('li[f="toimage"]').click(function() {
       location.href = 'https://erichsia7.github.io/colors/image/?s=1&c=' + btoa(shcolor) + '&r=' + genid('random');
     });
     $('.color').css({'background':shcolor})
@@ -1754,7 +1832,7 @@ $('.color').fadeIn(222);
 $('input[t="cmyk"]').val('暫不支援');
 $('input[t="hsl"]').val('暫不支援');
 $('input[t="hsv"]').val('暫不支援');
-    
+    $('li[f="toimage"]').css({'opacity':'0.3'});
     
     if((hexToRgb(gc1).r+hexToRgb(gc1).g+hexToRgb(gc1).b+hexToRgb(gc2).r+hexToRgb(gc2).g+hexToRgb(gc2).b)/6 > 128) {
       $('#rgb,.colorvlcm').css({'color':'#000'});
@@ -1910,9 +1988,9 @@ else {
     
      
       if(getCookie('hdloaded') === 'true') {
-        var ldiilist = 'grd,filed-camera,filed-img,fi,fi2,fi3,ft2,qrt,crtd,rand2,vis,favy,mor,meoi' ;
+        var ldiilist = 'grd,filed-camera,filed-img,fi,fi2,fi3,ft2,colmorme,crtd,rand2,vis,favy,mor,meoi' ;
     var ldiilists = ldiilist.split(',') ;
-    var ldiihdlist = 'gradient,camera,img,close2,copy2,share3,text2,qrcode,color-picker,random3,invisible,favorited,more,close2' ;
+    var ldiihdlist = 'gradient,camera,img,close2,copy2,share3,text2,more,color-picker,random3,invisible,favorited,more,close2' ;
     var ldiihdlists = ldiihdlist.split(',');
 for (var ldii=0; ldii<ldiilists.length; ldii++){  
   
@@ -1927,9 +2005,9 @@ for (var ldii=0; ldii<ldiilists.length; ldii++){
       }
       else {
         setTimeout(function() {
-    var ldiilist = 'grd,filed-camera,filed-img,fi,fi2,fi3,ft2,qrt,crtd,rand2,vis,favy,mor,meoi' ;
+    var ldiilist = 'grd,filed-camera,filed-img,fi,fi2,fi3,ft2,colmorme,crtd,rand2,vis,favy,mor,meoi' ;
     var ldiilists = ldiilist.split(',') ;
-    var ldiihdlist = 'gradient,camera,img,close2,copy2,share3,text2,qrcode,color-picker,random3,invisible,favorited,more,close2' ;
+    var ldiihdlist = 'gradient,camera,img,close2,copy2,share3,text2,more,color-picker,random3,invisible,favorited,more,close2' ;
     var ldiihdlists = ldiihdlist.split(',');
 for (var ldii=0; ldii<ldiilists.length; ldii++){
   
