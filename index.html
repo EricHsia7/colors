@@ -1715,9 +1715,9 @@ gtag('event', 'generator', {
   if(moreoptd === '0') {
    $('.moreoptbg').fadeIn(1);
  $('.moreopt').css({'display':'block'});
-  setTimeout(function() {   $('.moreopt').css({'transform':'scale(1.02)','opacity':'1','border-radius':'15px'});
+  setTimeout(function() {   $('.moreopt').css({'transform':'scale(1.02)','opacity':'1'});
   },1);
-    setTimeout(function() {   $('.moreopt').css({'transform':'scale(0.99)','opacity':'1','border-radius':'15px','transitio':'0.2s'});
+    setTimeout(function() {   $('.moreopt').css({'transform':'scale(0.99)','opacity':'1','transitio':'0.2s'});
   },300);
     setTimeout(function() {   $('.moreopt').css({'transform':'scale(1)'});
   },500);
@@ -1725,7 +1725,7 @@ gtag('event', 'generator', {
   }
   else {
    $('.moreoptbg').fadeOut(1);
-  $('.moreopt').css({'transform':'scale(0)','opacity':'0','border-radius':'30px'});
+  $('.moreopt').css({'transform':'scale(0)','opacity':'0'});
   setTimeout(function() {   $('.moreopt').css({'display':'none'});
   },300)
     moreoptd = '0'
@@ -1735,7 +1735,7 @@ gtag('event', 'generator', {
   $('.moreoptbg').click(function() {
     $('.moreopt').css({'bottom':'85px','right':(($(window).width()-$('#menuj').width())/2)+45+20});
   $('.moreoptbg').fadeOut(1);
-  $('.moreopt').css({'transform':'scale(0)','opacity':'0','border-radius':'30px'});
+  $('.moreopt').css({'transform':'scale(0)','opacity':'0'});
   setTimeout(function() {   $('.moreopt').css({'display':'none'});
   },300)
   moreoptd = '0'
