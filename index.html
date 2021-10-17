@@ -1083,7 +1083,7 @@ var shcolor = atob(url.searchParams.get('c')) ;
 var copycolmode = 0 ;
   var usedslideclosepp = 0 ;
 var dpb = url.searchParams.get('dpb') ;
-  
+var moreoptd = '0' ;
   
 var ccw = 256;
 var ccwa = (ccw*ccw) ;
@@ -1709,7 +1709,37 @@ gtag('event', 'generator', {
 });
     
 });
-  
+  //moreoptset
+  $('.moreopt').css({'bottom':'85px','right':$(window).width()-($('.colmorme').offset().left+($('.colmorme').width()*1))});
+  $('.colmorme').click(function() {
+  if(moreoptd === '0') {
+   $('.moreoptbg').fadeIn(1);
+ $('.moreopt').css({'display':'block'});
+  setTimeout(function() {   $('.moreopt').css({'transform':'scale(1.02)','opacity':'1','border-radius':'15px'});
+  },1);
+    setTimeout(function() {   $('.moreopt').css({'transform':'scale(0.99)','opacity':'1','border-radius':'15px','transitio':'0.2s'});
+  },300);
+    setTimeout(function() {   $('.moreopt').css({'transform':'scale(1)'});
+  },500);
+    moreoptd = '1' ;
+  }
+  else {
+   $('.moreoptbg').fadeOut(1);
+  $('.moreopt').css({'transform':'scale(0)','opacity':'0','border-radius':'30px'});
+  setTimeout(function() {   $('.moreopt').css({'display':'none'});
+  },300)
+    moreoptd = '0'
+  }
+    
+  });
+  $('.moreoptbg').click(function() {
+  $('.moreoptbg').fadeOut(1);
+  $('.moreopt').css({'transform':'scale(0)','opacity':'0','border-radius':'30px'});
+  setTimeout(function() {   $('.moreopt').css({'display':'none'});
+  },300)
+  moreoptd = '0'
+})
+  //moreoptsetend
   
   if(shortcuts === "1") {
     $('.rand2').click()
@@ -1721,7 +1751,7 @@ if(open === 'picker') {
 if(dpb === '1') {
   history.pushState(null, null,'https://erichsia7.github.io/c/' + btoa(shcolor));
 }
-  
+
   
   
 if(sharecolor === "1") {
