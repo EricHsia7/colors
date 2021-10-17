@@ -1785,6 +1785,7 @@ if(dpb === '1') {
 }
 if(toimg === '1') {
   localStorage.removeItem(toimgbackid);
+  history.pushState(null, null,String(location.href).split('&r=')[0] + '&r=' + genid('random'));
 }
   
   
