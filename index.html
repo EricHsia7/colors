@@ -1566,7 +1566,13 @@ $('.ft2').click(function() {
   $('#textu').val('');
 });
   */
-  $('.qrt').click(function() {
+  $('li[f="qrcode"]').click(function() {
+    $('.moreoptbg').fadeOut(1);
+  $('.moreopt').css({'transform':'scale(0)','opacity':'0','border-radius':'30px'});
+  setTimeout(function() {   $('.moreopt').css({'display':'none'});
+  },300)
+    moreoptd = '0' ;
+    
 $('#qrbg').fadeIn(333);
  $('#qrbox').css({'display':'block'});
     setTimeout(function(){ 
