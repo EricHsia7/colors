@@ -163,22 +163,6 @@ background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/ico_min/
       .linechat {
 background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/line.png);
 }
-.toimg-l {
-  background:rgba(250,250,250,0.08) url(https://erichsia7.github.io/colors/img.png);
-  position:absolute;
-  top:30px;
-  right:30px;
-  -webkit-user-select: none;
-  filter: invert(100%);
-  }
-  .toimg-d {
-  background:rgba(0,0,0,0.08) url(https://erichsia7.github.io/colors/img.png);
-  position:absolute;
-  top:30px;
-  right:30px;
-  -webkit-user-select: none;
-  }
- 
   .arrow-right {
   background:rgba(0,0,0,0.08) url(https://erichsia7.github.io/colors/arrow-right.png);
   position:absolute;
@@ -938,7 +922,7 @@ background:#fff;
   <div class="arrow-right btn arrbtco"></div>
   <div class="arrow-left btn arrbtco-2"></div>
   
-  <div class="toimg btn"></div>
+  
   
   <div id="menuj">
   <div class="fi2 lle btn"></div>
@@ -1791,14 +1775,14 @@ if((hexToRgb(shcolor).r+hexToRgb(shcolor).g+hexToRgb(shcolor).b)/3 > 128) {
       $('.ladbar').css({'background':'#000'});
       $('.arrbtco').attr('class','arrow-right btn arrbtco');
       $('.arrbtco-2').attr('class','arrow-left btn arrbtco-2');
-      $('.toimg').attr('class','toimg toimg-d btn');
+      //$('.toimg').attr('class','toimg toimg-d btn');
     }
     else {
       $('#rgb,.colorvlcm').css({'color':'#fff'});
       $('.ladbar').css({'background':'#fff'});
       $('.arrbtco').attr('class','arrow-right-light btn arrbtco');
       $('.arrbtco-2').attr('class','arrow-left-light btn arrbtco-2');
-      $('.toimg').attr('class','toimg toimg-l btn');
+      //$('.toimg').attr('class','toimg toimg-l btn');
     }
   if(open === "fav") {
 $('.color').css({'display':'block'});
@@ -1822,7 +1806,7 @@ $('.color').fadeIn(222);
   
   
 }
-    $('.toimg').click(function() {
+    $('li[f="toimage"]').click(function() {
       location.href = 'https://erichsia7.github.io/colors/image/?s=1&c=' + btoa(shcolor) + '&r=' + genid('random');
     });
     $('.color').css({'background':shcolor})
