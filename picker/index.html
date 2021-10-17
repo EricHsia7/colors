@@ -354,7 +354,26 @@ function rgbToHex(r, g, b) {
     
   }
   //useridend
+   //darkmode
+let darkmodematched = window.matchMedia('(prefers-color-scheme: dark)').matches;
+var darkmodematchedstr = 'undefined' ;
+if(darkmodematched) {
+  darkmodematchedstr = 'true' ;
+}
+else {
+	darkmodematchedstr = 'false' ;
+}
   
+  gtag('event', 'dark_mode', {
+    'event_category': darkmodematchedstr,
+    'event_label': user_id,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    console.log('user_id:' + user_id)
+    }
+  });
+  
+  //darkmodeend
 
 
 let mouseX = 0
