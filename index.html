@@ -1076,6 +1076,8 @@ var shcolor = atob(url.searchParams.get('c')) ;
   var favscroll = url.searchParams.get('scroll') ;
   var shortcuts = url.searchParams.get('shortcuts') ;
   var opensou = url.searchParams.get('sou') ;
+  var toimgbackid = url.searchParams.get('backid') ;
+  var toimg = url.searchParams.get('toimg');
 var copycolmode = 0 ;
   var usedslideclosepp = 0 ;
 var dpb = url.searchParams.get('dpb') ;
@@ -1781,7 +1783,9 @@ if(open === 'picker') {
 if(dpb === '1') {
   history.pushState(null, null,'https://erichsia7.github.io/c/' + btoa(shcolor));
 }
-
+if(toimg === '1') {
+  localStorage.removeItem(toimgbackid);
+}
   
   
 if(sharecolor === "1") {
@@ -1836,7 +1840,9 @@ $('.color').fadeIn(222);
   
 }
     $('li[f="toimage"]').click(function() {
-      location.href = 'https://erichsia7.github.io/colors/image/?s=1&c=' + btoa(shcolor) + '&r=' + genid('random');
+      var toimgbackurlstorageid = genid('uuid') ;
+      localStorage.setItem(toimgbackurlstorageid, location.href + '&toimg=1&backid=' + toimgbackurlstorageid);
+      location.href = 'https://erichsia7.github.io/colors/image/?s=1&c=' + btoa(shcolor) + '&backid=' + toimgbackurlstorageid + '&r=' + genid('random');
     });
     $('.color').css({'background':shcolor})
       $('#rgb').val(shcolor).attr('arc',shcolor);
