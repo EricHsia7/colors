@@ -307,8 +307,12 @@ function downloadimage() {
 genimg();
 ripple('.btn','var(--ripple-color)','0.3',1200,'true');
 $('.texticon').click(function() {
+  if(localStorage.getItem(toimgbackid) === 'null') {
+   window.history.back();
+  }
+else {
   location.href = localStorage.getItem(toimgbackid) ;
-  //window.history.back();
+}
   });
   
     //userid
