@@ -1784,7 +1784,7 @@ if(dpb === '1') {
   history.pushState(null, null,'https://erichsia7.github.io/c/' + btoa(shcolor));
 }
 if(toimg === '1') {
-  localStorage.removeItem(toimgbackid);
+  sessionStorage.removeItem(toimgbackid);
   history.pushState(null, null,String(location.href).split('&r=')[0] + '&r=' + genid('random'));
 }
   
