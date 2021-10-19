@@ -1842,7 +1842,7 @@ $('.color').fadeIn(222);
 }
     $('li[f="toimage"]').click(function() {
       var toimgbackurlstorageid = genid('uuid') ;
-      localStorage.setItem(toimgbackurlstorageid, location.href + '&toimg=1&backid=' + toimgbackurlstorageid);
+      sessionStorage.setItem(toimgbackurlstorageid, location.href + '&toimg=1&backid=' + toimgbackurlstorageid);
       location.href = 'https://erichsia7.github.io/colors/image/?s=1&c=' + btoa(shcolor) + '&backid=' + toimgbackurlstorageid + '&r=' + genid('random');
     });
     $('.color').css({'background':shcolor})
