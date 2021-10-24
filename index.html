@@ -912,6 +912,7 @@ tfoot {
   <div class="moreoptbg"></div>
 <div class="moreopt" style="--list-count:2">
   <li f="qrcode">二維碼</li>
+  <li f="openinpicker">顏色選擇器</li>
   <li f="toimage">轉換圖片</li>
 </div>
   
@@ -1802,6 +1803,10 @@ $('.color').fadeIn(222);
       sessionStorage.setItem(toimgbackurlstorageid, location.href + '&toimg=1&backid=' + toimgbackurlstorageid);
       location.href = 'https://erichsia7.github.io/colors/image/?s=1&c=' + btoa(shcolor) + '&backid=' + toimgbackurlstorageid + '&r=' + genid('random');
     });
+    $('li[f="openinpicker"]').click(function() {
+      location.href = 'https://erichsia7.github.io/colors/picker/?open=col&pih=' + rgbtohsv(hexToRgb(shcolor).r,hexToRgb(shcolor).g,hexToRgb(shcolor).b).h + '&pis=' + rgbtohsv(hexToRgb(shcolor).r,hexToRgb(shcolor).g,hexToRgb(shcolor).b).s + '&piv=' + rgbtohsv(hexToRgb(shcolor).r,hexToRgb(shcolor).g,hexToRgb(shcolor).b).v + '&r=' + genid('random')
+    });
+    
     $('.color').css({'background':shcolor})
       $('#rgb').val(shcolor).attr('arc',shcolor);
   setTimeout(function() {
@@ -1825,7 +1830,7 @@ $('.color').fadeIn(222);
 $('input[t="cmyk"]').val('暫不支援');
 $('input[t="hsl"]').val('暫不支援');
 $('input[t="hsv"]').val('暫不支援');
-    $('li[f="toimage"]').css({'opacity':'0.3'});
+    $('li[f="toimage"],li[f="openinpicker"]').css({'opacity':'0.3'});
     
     if((hexToRgb(gc1).r+hexToRgb(gc1).g+hexToRgb(gc1).b+hexToRgb(gc2).r+hexToRgb(gc2).g+hexToRgb(gc2).b)/6 > 128) {
       $('#rgb,.colorvlcm').css({'color':'#000'});
