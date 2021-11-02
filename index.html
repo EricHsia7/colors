@@ -211,9 +211,12 @@ input#files2 {
   color: #fff;
 }
 #filej {
-  width: 230px;
+  width: clamp(230px, 90%, 350px);
   height: 100px;
   -webkit-user-select: none;
+  display:flex;
+  justify-content: space-between;
+  flex-wrap:wrap;
 }
 #filerj {
   position: absolute;
@@ -869,13 +872,13 @@ box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.05);
 </div>
 <input type="file" id="files2" name="files2" accept="image/*" />
 </label>
-  <div class="filed-camera lle btn"></div>
-  <div class="ft2 lle btn"></div>
-  <div class="rand2 lle btn"></div>
-  <div class="grd lle ooe btn"></div>
-  <div class="favy lle ooe btn"></div>
-  <div class="crtd lle ooe btn"></div>
-  <div class="mor lle ooe btn"></div>
+  <div class="filed-camera btn"></div>
+  <div class="ft2 btn"></div>
+  <div class="rand2 btn"></div>
+  <div class="grd ooe btn"></div>
+  <div class="favy ooe btn"></div>
+  <div class="crtd ooe btn"></div>
+  <div class="mor ooe btn"></div>
 </div>
 </span>
 
