@@ -360,7 +360,7 @@ function addpalette() {
        $(this).css({'color':inpcolorq})
     
     
-    
+    savetourl();
     
   });
   
@@ -368,7 +368,8 @@ function addpalette() {
   if($(this).val() === '') {
   }
     else {
-      $(this).attr('readonly','readonly')
+      $(this).attr('readonly','readonly');
+      savetourl();
   }  
   })
   
