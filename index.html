@@ -1628,7 +1628,9 @@ var favrecommendforms = $.ajax({url:"https://docs.google.com/forms/d/e/1FAIpQLSe
     $('.cmore').fadeOut(333);
    $('.favrecommendcardbox').css({'position':'absolute'});
   }); 
-  
+  $('.palettedd').click(function() {
+      location.href = 'https://erichsia7.github.io/colors/palette/?r=' + genid('random') ;
+    });
   
   
   $('.rand2').click(function() {
@@ -1816,9 +1818,6 @@ $('.color').fadeIn(222);
     });
     $('li[f="openinpicker"]').click(function() {
       location.href = 'https://erichsia7.github.io/colors/picker/?open=col&pih=' + rgbtohsv(hexToRgb(shcolor).r,hexToRgb(shcolor).g,hexToRgb(shcolor).b).h + '&pis=' + rgbtohsv(hexToRgb(shcolor).r,hexToRgb(shcolor).g,hexToRgb(shcolor).b).s + '&piv=' + rgbtohsv(hexToRgb(shcolor).r,hexToRgb(shcolor).g,hexToRgb(shcolor).b).v + '&r=' + genid('random')
-    });
-    $('.palettedd').click(function() {
-      location.href = 'https://erichsia7.github.io/colors/palette/?r=' + genid('random') ;
     });
     $('.color').css({'background':shcolor})
       $('#rgb').val(shcolor).attr('arc',shcolor);
