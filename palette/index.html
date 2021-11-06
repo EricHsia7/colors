@@ -487,7 +487,7 @@ $('.share').click(function() {
  if (navigator.share) { 
    navigator.share({
       title: 'Colors Palette',
-      url: 'https://erichsia7.github.io/colors/palette/?dt=1&cs=' + cs + '&r=' + genid('random')
+      url: 'https://erichsia7.github.io/colors/palette/?dt=1&cs=' + btoa(cs) + '&r=' + genid('random')
     }).then(() => {
       
     })
