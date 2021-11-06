@@ -494,10 +494,15 @@ var inpcolor = '#fff'
   
        
 $('.share').click(function() {
+  
+  var sharearr = [] ;
+  for (var i = 0; i < $('.box .palette').length; i++) {
+    sharearr.push($('.box .palette').eq(i).attr('rp'))
+  }
  if (navigator.share) { 
    navigator.share({
       title: 'Colors Palette',
-      url: 'https://erichsia7.github.io/colors/palette/?dt=1&cs=' + btoa(cs) + '&r=' + genid('random')
+      url: 'https://erichsia7.github.io/colors/palette/?dt=1&cs=' + btoa(sharearr.join(',')) + '&r=' + genid('random')
     }).then(() => {
       
     })
