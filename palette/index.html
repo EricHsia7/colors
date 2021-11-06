@@ -490,7 +490,7 @@ else {
   });
   
   function resizepalette() {
-    $('.palette').height($('.palette').eq(0).width())
+    $('.palette,.palette_add').height($('.palette').eq(0).width())
   }
   $(window).resize(function() {
   resizepalette();
