@@ -405,7 +405,8 @@ function addpalette() {
   $('.box').append('<div class="palette_add"></div>');
   
   $('.del[gt="' + iuid + '"]').click(function() {
-      $('#' + $(this).attr('gt')).remove()
+      $('#' + $(this).attr('gt')).remove();
+    resizepalette();
     })
   
   $('.palette_add').click(function() {
@@ -422,7 +423,8 @@ function addpalette() {
     }
     
     $('.palette#' + iuid).css({'background':$(this).val()}).attr('rp',$(this).val());
-     $('.palette#' + iuid + ' .btn').css({'color':inpcolorq}).attr('link','https://erichsia7.github.io/colors/?s=1&c=' + btoa(colorsarr[i]) + '&open=palette&r=' + genid('random'));
+     $('.palette#' + iuid + ' .btn').css({'color':inpcolorq})
+     $('.palette#' + iuid + ' .view').attr('link','https://erichsia7.github.io/colors/?s=1&c=' + btoa(colorsarr[i]) + '&open=palette&r=' + genid('random'));
     $('.view[hu="' + iuid + '"]').click(function() {
       window.open($(this).attr('link'));
     });
@@ -460,7 +462,8 @@ var inpcolor = '#fff'
     var erid = genid('random') ;
   $('.box').append('<div class="palette" style="background:' + colorsarr[i] + ';" id="' + erid + '" rp="' + colorsarr[i] + '"><input type="text" value="' + colorsarr[i] + '" style="color:' + inpcolor + '" readonly="readonly"><div class="view btn" style="color:' + inpcolor + '" link="https://erichsia7.github.io/colors/?s=1&c=' + btoa(colorsarr[i]) + '&open=palette&r=' + genid('random') + '" hu="' + erid + '">查看顏色</div><div class="del btn" style="color:' + inpcolor + '" gt="' + erid + '">刪除</div></div>');
     $('.del[gt="' + erid + '"]').click(function() {
-      $('#' + $(this).attr('gt')).remove()
+      $('#' + $(this).attr('gt')).remove();
+      resizepalette();
     });
     $('.view[hu="' + erid + '"]').click(function() {
       window.open($(this).attr('link'));
