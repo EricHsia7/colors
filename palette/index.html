@@ -116,6 +116,12 @@
   <div class="back"></div>
 </div>
 <script>
+  var getUrlString = location.href;
+var url = new URL(getUrlString);
+var dt = url.searchParams.get('dt') ;
+var cs = atob(url.searchParams.get('cs')) ;
+  
+  
 function genid(mode) {
 if(mode === "random"){
 var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
@@ -300,7 +306,12 @@ function rgbtohsl(r,g,b){
     };;
 }
 
-
+if(dt === '1') {
+  
+}
+  else {
+    location.href = 'https://erichsia7.github.io/colors/palette/?dt=1&cs=I2ZmZmZmZg==&r=' + genid('random')
+  }
 
 
 
@@ -348,7 +359,7 @@ function addpalette() {
   
 }
 
-var colorsstr = '#2c5963,#6eafa2,#64957f,#5a99e5'
+var colorsstr = cs ;
 var colorsarr = colorsstr.split(',')
 
 $(document).ready(function() {
