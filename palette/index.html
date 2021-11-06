@@ -171,7 +171,24 @@ height:1.3px;
 transition:width 0.3s ,background 0s;
 -webkit-user-select: none;
 }
-  
+@media (prefers-color-scheme: dark) {
+    .ladbar {
+    background: #fff;
+  }
+  body,.top{
+    background:#1a1a1a;
+  }
+  .palette {
+    background:#1f1f1f;
+  }
+  .palette_add::after,.back {
+    filter: invert(100%);
+  }
+  .addtofav,.share {
+    background:#1f1f1f;
+    color:#fff;
+  }
+  }
 </style>
 <div class="box">
 </div>
