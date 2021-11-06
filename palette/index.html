@@ -438,11 +438,11 @@ function addpalette() {
   
   
 }
-
+//start
 var colorsstr = cs ;
 var colorsarr = colorsstr.split(',')
 
-$(document).ready(function() {
+
   for (var i = 0; i < colorsarr.length; i++) {
     if((hexToRgb(colorsarr[i]).r+hexToRgb(colorsarr[i]).g+hexToRgb(colorsarr[i]).b)/3 > 128) {
       var inpcolor = '#000'
@@ -458,21 +458,16 @@ var inpcolor = '#fff'
     $('.view[hu="' + erid + '"]').click(function() {
       window.open($(this).attr('link'));
     });
-    
-    $('.box').append('<div class="palette_add"></div>');
+}
+
+  $('.box').append('<div class="palette_add"></div>');
   
   $('.palette_add').click(function() {
     addpalette()
   });
-    
-    
-}
+  //end
   
-  
-    
-    
-});
-  
+
     $(document).ready(function() {
     //test 
         if(localStorage.getItem('googlefontNotoSansTCloaded') === '1') {
