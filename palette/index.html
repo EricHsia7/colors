@@ -391,6 +391,13 @@ function addtofav() {
   $('.addtofav').click(function() {
   addtofav();
   });
+ function resizepalette() {
+    $('.palette,.palette_add').height($('.palette').eq(0).width())
+  }
+  $(window).resize(function() {
+  resizepalette();
+  });
+  
 function addpalette() {
   var iuid = genid('random') ;
   $('.palette_add').remove();
@@ -423,7 +430,7 @@ function addpalette() {
     
     
     savetourl();
-    
+    resizepalette();
   });
   
   $('.palette#' + iuid + ' input').blur(function() {
@@ -491,11 +498,6 @@ else {
   location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
   });
   
-  function resizepalette() {
-    $('.palette,.palette_add').height($('.palette').eq(0).width())
-  }
-  $(window).resize(function() {
-  resizepalette();
-  });
+  
   resizepalette();
 </script>
