@@ -458,14 +458,17 @@ var inpcolor = '#fff'
     $('.view[hu="' + erid + '"]').click(function() {
       window.open($(this).attr('link'));
     });
-}
-  setTimeout(function() {
-  $('.box').append('<div class="palette_add"></div>');
+    
+    $('.box').append('<div class="palette_add"></div>');
   
   $('.palette_add').click(function() {
     addpalette()
   });
-  },100);
+    
+    
+}
+  
+  
     
     
 });
