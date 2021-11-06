@@ -158,7 +158,8 @@ outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);
   }
 }
 </style>
-<div class="box"></div>
+<div class="box">
+</div>
 <div class="top">
   <div class="back"></div>
   <div class="title">Palette</div>
@@ -458,12 +459,15 @@ var inpcolor = '#fff'
       window.open($(this).attr('link'));
     });
 }
+  setTimeout(function() {
   $('.box').append('<div class="palette_add"></div>');
   
   $('.palette_add').click(function() {
     addpalette()
-  })
-  
+  });
+  },100);
+    
+    
 });
   
     $(document).ready(function() {
