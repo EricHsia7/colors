@@ -492,4 +492,8 @@ else {
   function resizepalette() {
     $('.palette').height($('.palette').eq(0).width())
   }
+  $(window).resize(function() {
+  resizepalette();
+  });
+  resizepalette();
 </script>
