@@ -378,7 +378,13 @@ document.addEventListener("cut", function (e){
 document.addEventListener("selectionchange", function (e){
     savetourl();
   });
-
+function addtofav() {
+  var ytgtpp = [] ;
+  for (var i = 0; i < $('.box .palette').length; i++) {
+    ytgtpp.push($('.box .palette').eq(i).attr('rp'))
+  }
+  location.href = 'https://erichsia7.github.io/colors/?favadd=1&favda=' + btoa(ytgtpp.join('&')) + '&sou=palette&r=' + genid('random') ;
+}
 function addpalette() {
   var iuid = genid('random') ;
   $('.palette_add').remove();
