@@ -312,8 +312,22 @@ if(dt === '1') {
   else {
     location.href = 'https://erichsia7.github.io/colors/palette/?dt=1&cs=I2ZmZmZmZg==&r=' + genid('random')
   }
-
-
+function savetourl() {
+  var unsaarr = [] ;
+  for (var i = 0; i < $('.box .palette').length; i++) {
+    unsaarr.push($('.box .palette').eq(i).attr('rp'))
+  }
+  history.pushState(null, null,'https://erichsia7.github.io/colors/palette/?dt=1&cs=' + btoa(unsaarr.join(',')) + '&r=' + genid('random'));
+}
+document.addEventListener("paste", function (e){
+    savetourl();
+  });
+document.addEventListener("cut", function (e){
+    savetourl();
+  });
+document.addEventListener("selectionchange", function (e){
+    savetourl();
+  });
 
 function addpalette() {
   var iuid = genid('random') ;
@@ -338,7 +352,7 @@ function addpalette() {
       var inpcolorq = '#fff'
     }
     
-    $('.palette#' + iuid).css({'background':$(this).val()});
+    $('.palette#' + iuid).css({'background':$(this).val()}).attr('rp',$(this).val());
      $('.palette#' + iuid + ' .btn').css({'color':inpcolorq})
        $(this).css({'color':inpcolorq})
     
@@ -371,7 +385,7 @@ $(document).ready(function() {
 var inpcolor = '#fff'
     }
     var erid = genid('random') ;
-  $('.box').append('<div class="palette" style="background:' + colorsarr[i] + ';" id="' + erid + '"><input type="text" value="' + colorsarr[i] + '" style="color:' + inpcolor + '" readonly="readonly"><div class="view btn" style="color:' + inpcolor + '">查看顏色</div><div class="del btn" style="color:' + inpcolor + '" gt="' + erid + '">刪除</div></div>');
+  $('.box').append('<div class="palette" style="background:' + colorsarr[i] + ';" id="' + erid + '" rp="' + colorsarr[i] + '"><input type="text" value="' + colorsarr[i] + '" style="color:' + inpcolor + '" readonly="readonly"><div class="view btn" style="color:' + inpcolor + '">查看顏色</div><div class="del btn" style="color:' + inpcolor + '" gt="' + erid + '">刪除</div></div>');
     $('.del[gt="' + erid + '"]').click(function() {
       $('#' + $(this).attr('gt')).remove()
     })
