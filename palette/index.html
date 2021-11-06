@@ -488,4 +488,8 @@ else {
   $('.back').click(function() {
   location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
   });
+  
+  function resizepalette() {
+    $('.palette').height($('.palette').eq(0).width())
+  }
 </script>
