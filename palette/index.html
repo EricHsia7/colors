@@ -385,6 +385,9 @@ function addtofav() {
   }
   location.href = 'https://erichsia7.github.io/colors/?favadd=1&favda=' + btoa(ytgtpp.join('&')) + '&sou=palette&r=' + genid('random') ;
 }
+  $('.addtofav').click(function() {
+  addtofav();
+  });
 function addpalette() {
   var iuid = genid('random') ;
   $('.palette_add').remove();
