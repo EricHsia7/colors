@@ -312,6 +312,9 @@ if(dt === '1') {
   else {
     location.href = 'https://erichsia7.github.io/colors/palette/?dt=1&cs=I2ZmZmZmZg==&r=' + genid('random')
   }
+if(cs === '') {
+  location.href = 'https://erichsia7.github.io/colors/palette/?dt=1&cs=I2ZmZmZmZg==&r=' + genid('random')
+}
 function savetourl() {
   var unsaarr = [] ;
   for (var i = 0; i < $('.box .palette').length; i++) {
