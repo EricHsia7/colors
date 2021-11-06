@@ -335,7 +335,7 @@ document.addEventListener("selectionchange", function (e){
 function addpalette() {
   var iuid = genid('random') ;
   $('.palette_add').remove();
-  $('.box').append('<div class="palette" id="' + iuid + '"><input type="text"><div class="view btn">查看顏色</div><div class="del btn" gt="' + iuid + '">刪除</div></div>')
+  $('.box').append('<div class="palette" id="' + iuid + '"><input type="text"><div class="view btn" hu="' + iuid + '">查看顏色</div><div class="del btn" gt="' + iuid + '">刪除</div></div>')
   $('.box').append('<div class="palette_add"></div>');
   
   $('.del[gt="' + iuid + '"]').click(function() {
@@ -356,7 +356,10 @@ function addpalette() {
     }
     
     $('.palette#' + iuid).css({'background':$(this).val()}).attr('rp',$(this).val());
-     $('.palette#' + iuid + ' .btn').css({'color':inpcolorq})
+     $('.palette#' + iuid + ' .btn').css({'color':inpcolorq}).attr('link','https://erichsia7.github.io/colors/?s=1&c=' + btoa(colorsarr[i]) + '&open=palette&r=' + genid('random'));
+    $('.view[hu="' + iuid + '"]').click(function() {
+      window.open($(this).attr('link'));
+    });
        $(this).css({'color':inpcolorq})
     
     
