@@ -482,7 +482,22 @@ var inpcolor = '#fff'
   });
   //end
   
-
+       
+$('.share').click(function() {
+ if (navigator.share) { 
+   navigator.share({
+      title: 'Colors Palette',
+      url: 'https://erichsia7.github.io/colors/palette/?dt=1&cs=' + cs + '&r=' + genid('random')
+    }).then(() => {
+      
+    })
+    .catch(console.error);
+    } else {
+        shareDialog.classList.add('is-open');
+    }
+});
+  
+  
     $(document).ready(function() {
     //test 
         if(localStorage.getItem('googlefontNotoSansTCloaded') === '1') {
