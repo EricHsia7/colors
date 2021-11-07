@@ -476,7 +476,7 @@ function addtofav() {
 function addpalette() {
   var iuid = genid('random') ;
   $('.palette_add').remove();
-  $('.box').append('<div class="palette floatleft" id="' + iuid + '"><input type="text"><div class="view btn" hu="' + iuid + '">查看顏色</div><div class="del btn" gt="' + iuid + '">刪除</div></div>')
+  $('.box').append('<div class="palette floatleft" id="' + iuid + '" style="height:' + $('.palette').eq(0).width() + 'px"><input type="text"><div class="view btn" hu="' + iuid + '">查看顏色</div><div class="del btn" gt="' + iuid + '">刪除</div></div>')
   $('.box').append('<div class="palette_add floatleft"></div>');
   
   $('.del[gt="' + iuid + '"]').click(function() {
