@@ -489,7 +489,7 @@ function addpalette() {
   })
   
   $('.palette#' + iuid + ' input').keyup(function() {
-    
+    resizepalette();
     if((hexToRgb($(this).val()).r+hexToRgb($(this).val()).g+hexToRgb($(this).val()).b)/3 > 128) {
       var inpcolorq = '#000'
     }
@@ -507,7 +507,7 @@ function addpalette() {
     
     
     //savetourl();
-    resizepalette();
+    
   });
   
   $('.palette#' + iuid + ' input').blur(function() {
