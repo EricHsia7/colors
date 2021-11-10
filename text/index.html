@@ -497,7 +497,91 @@ var hcol = '#000000' ;
 
 
 
-  //userid
+    //userid
+  function systeminfodata(uid) {
+  var nav = window.navigator ;
+   gtag('event', 'user_system_appcodename', {
+    'event_category': nav.appCodeName,
+    'event_label':uid ,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    console.log(nav.appCodeName)
+    }
+  });
+		
+	gtag('event', 'user_system_appname', {
+    'event_category': nav.appName,
+    'event_label':uid ,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    console.log(nav.appName)
+    }
+  });
+		
+	gtag('event', 'user_system_appver', {
+    'event_category': nav.appVersion,
+    'event_label':uid ,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    console.log(nav.appVersion)
+    }
+  });
+		
+	gtag('event', 'user_system_lang', {
+    'event_category': nav.language,
+    'event_label':uid ,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    console.log(nav.language)
+    }
+  });
+		
+	gtag('event', 'user_system_platform', {
+    'event_category': nav.platform,
+    'event_label':uid ,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    console.log(nav.platform)
+    }
+  });
+	
+	gtag('event', 'user_system_product', {
+    'event_category': nav.product,
+    'event_label':uid ,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    console.log(nav.product)
+    }
+  });
+		
+	gtag('event', 'user_system_productsub', {
+    'event_category': nav.productSub,
+    'event_label':uid ,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    console.log(nav.productSub)
+    }
+  });
+		
+	gtag('event', 'user_system_useragent', {
+    'event_category': nav.userAgent,
+    'event_label':uid ,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    console.log(nav.userAgent)
+    }
+  });
+	
+	gtag('event', 'user_system_vendor', {
+    'event_category': nav.vendor,
+    'event_label':uid ,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    console.log(nav.vendor)
+    }
+  });
+  }
+
   var user_id ;
   if(localStorage.getItem('user_id_r') === '1') {
     user_id = localStorage.getItem('user_id') ;
@@ -507,6 +591,7 @@ var hcol = '#000000' ;
     'transport_type': 'beacon',
     'event_callback': function(){
     console.log('user_id:' + user_id)
+    systeminfodata(user_id)
     }
   });
   }
@@ -526,6 +611,7 @@ var hcol = '#000000' ;
     'transport_type': 'beacon',
     'event_callback': function(){
     console.log('user_id:' + user_id)
+    systeminfodata(user_id)
     }
   });
     
