@@ -1268,21 +1268,7 @@ function getCookie(cname)
 
   //userid
   function systeminfodata(uid) {
-var nav = window.navigator ;
-/*
-var systeminfo = {
-'appcodename':nav.appCodeName,
-'appname':nav.appName,
-'appver':nav.appVersion,
-'lang':nav.language,
-'platform':nav.platform,
-'product':nav.product,
-'productsub':nav.productSub,
-'useragent':nav.userAgent,
-'vendor':nav.vendor,
-'userid':uid} ;
-var systeminfostr = JSON.stringify(systeminfo) ;
-*/
+  var nav = window.navigator ;
    gtag('event', 'user_system_appcodename', {
     'event_category': nav.appCodeName,
     'event_label':uid ,
