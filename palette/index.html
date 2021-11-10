@@ -432,8 +432,9 @@ function rgbtohsl(r,g,b){
 }
 
   
-    //userid
+    //userid(edited)
   function systeminfodata(uid) {
+if(dt === '1') {
   var nav = window.navigator ;
    gtag('event', 'user_system_appcodename', {
     'event_category': nav.appCodeName,
@@ -515,11 +516,14 @@ function rgbtohsl(r,g,b){
     console.log(nav.vendor)
     }
   });
+}
+	  
   }
 
   var user_id ;
   if(localStorage.getItem('user_id_r') === '1') {
     user_id = localStorage.getItem('user_id') ;
+    if(dt === '1') {
     gtag('event', 'user_start', {
     'event_category': 'count',
     'event_label': user_id,
@@ -529,6 +533,8 @@ function rgbtohsl(r,g,b){
     systeminfodata(user_id)
     }
   });
+    }
+	  
   }
   else {
   var user_id_chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -540,6 +546,7 @@ function rgbtohsl(r,g,b){
   localStorage.setItem('user_id_r', '1');
   localStorage.setItem('user_id',user_id);
    
+if(dt === '1') {
    gtag('event', 'user_start', {
     'event_category': 'count',
     'event_label': user_id,
@@ -549,10 +556,11 @@ function rgbtohsl(r,g,b){
     systeminfodata(user_id)
     }
   });
-    
+}
+	  
   }
   //useridend
-   //darkmode
+   //darkmode(edited)
 let darkmodematched = window.matchMedia('(prefers-color-scheme: dark)').matches;
 var darkmodematchedstr = 'undefined' ;
 if(darkmodematched) {
@@ -561,7 +569,7 @@ if(darkmodematched) {
 else {
 	darkmodematchedstr = 'false' ;
 }
-  
+  if(dt === '1') {
   gtag('event', 'dark_mode', {
     'event_category': darkmodematchedstr,
     'event_label': user_id,
@@ -570,6 +578,7 @@ else {
     console.log('user_id:' + user_id)
     }
   });
+  }
   
   //darkmodeend
   
