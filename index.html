@@ -1406,6 +1406,23 @@ else {
   });
   
   //darkmodeend
+  //windowresize
+  var window_sou_width = $(window).width();
+var window_sou_height = $(window).height();
+$(window).resize(function() {
+  var window_width_change = (window_sou_width-$(window).width()) ;
+  var window_height_change = (window_sou_height-$(window).widthheight()) ;
+	gtag('event', 'window_resize', {
+    'event_category':'{"before":"' + window_sou_width + ',' + window_sou_height + '","after":"' + $(window).width() + ',' + $(window).height() + '","change":"' + window_width_change + ',' + window_height_change + '"}',
+    'event_label': user_id,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    console.log('user_id:' + user_id)
+    }
+  });
+});
+	
+  //windowresizeend
   function showuserid() {
     //alert('UserId: ' + user_id);
     $('.alert_blur').fadeIn(333);
