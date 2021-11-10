@@ -1267,6 +1267,30 @@ function getCookie(cname)
 }
 
   //userid
+  function systeminfodata(uid) {
+var nav = window.navigator ;
+var systeminfo = {
+'appcodename':nav.appCodeName,
+'appname':nav.appName,
+'appver':nav.appVersion,
+'lang':nav.language,
+'platform':nav.platform,
+'product':nav.product,
+'productsub':nav.productSub,
+'useragent':nav.userAgent,
+'vendor':nav.vendor,
+'userid':uid} ;
+var systeminfostr = JSON.stringify(systeminfo) ;
+   gtag('event', 'user_system', {
+    'event_category': 'json',
+    'event_label': systeminfostr,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    console.log(systeminfostr)
+    }
+  });
+  }
+
   var user_id ;
   if(localStorage.getItem('user_id_r') === '1') {
     user_id = localStorage.getItem('user_id') ;
@@ -1276,6 +1300,7 @@ function getCookie(cname)
     'transport_type': 'beacon',
     'event_callback': function(){
     console.log('user_id:' + user_id)
+    systeminfodata(user_id)
     }
   });
   }
@@ -1295,6 +1320,7 @@ function getCookie(cname)
     'transport_type': 'beacon',
     'event_callback': function(){
     console.log('user_id:' + user_id)
+    systeminfodata(user_id)
     }
   });
     
