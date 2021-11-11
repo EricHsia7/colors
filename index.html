@@ -1472,6 +1472,9 @@ var imageurl = 'https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=' + ra
   if(frt === 0) {
     var avgresult = eval('(' + speedtestresultarr.join('+') + ')/' + speedtestresultarr.length) ;
     console.log('result:' + Math.round(avgresult) + 'Mbps')
+	  document.cookie = 'net_speed_d' + '=' + '1' + '; max-age='+60*15 ;
+	  document.cookie = 'net_speed' + '=' + Math.round(avgresult) + '; max-age='+60*15 ;
+	  
 	gtag('event', 'user_net_speed', {
     'event_category':Math.round(avgresult) + 'Mbps',
     'event_label': user_id,
@@ -1484,8 +1487,12 @@ var imageurl = 'https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=' + ra
   }
 }
 $(document).ready(function() {
-setTimeout(function(){ 
+setTimeout(function(){
+if(getCookie('net_speed_d') === '1') {
+}
+else {
 netseedtest_d(10)
+}
 },1500);
 });
 //speedtestend
