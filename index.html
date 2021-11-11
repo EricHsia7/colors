@@ -1509,7 +1509,12 @@ var imageurl = 'https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=' + ra
         binary += String.fromCharCode(responseText.charCodeAt(i) & 255)
     }
   //stop
+    if(binary.length > 0) {
     var netspeed = binary.length/testtime/1000 ;
+    }
+     else {
+     var netspeed = 0 ;
+     }
     //mbps
     frt -= 1 ;
     speedtestresultarr.push(netspeed)
