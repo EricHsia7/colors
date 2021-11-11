@@ -1423,6 +1423,72 @@ $(window).resize(function() {
 });
 	
   //windowresizeend
+  //speedtest
+var speedtestresultarr = [] ;
+var frt = 0 ;
+var frw = 0 ;
+function netseedtest_d(fre) {
+  speedtestresultarr = [] ;
+  frt = fre ;
+  frw = fre ;
+  netseedtest_t()
+}
+function netseedtest_t() {
+  if(frt > 0) {
+  var textchars = "0123456789abcdefghijklmnopqrstuvwxyz";
+            var randomtext = "";
+            for (var i = 0; i < 64; i++) {
+                var textrandomNumber = Math.floor(Math.random() * textchars.length);
+                randomtext += textchars.substring(textrandomNumber, textrandomNumber + 1);
+            }
+var imageurl = 'https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=' + randomtext + '&choe=UTF-8' ;
+  
+  var testtime = 0 ;
+  var timetimer = setInterval(function(){
+  testtime += 1/1000 ;
+  //0.001sec
+  }, 1);
+  $.ajax({type:'GET',url:imageurl,beforeSend:function (xhr) {xhr.overrideMimeType('text/plain; charset=x-user-defined');},async: true,success:function(result, textStatus, jqXHR) {
+    clearInterval(timetimer)
+    var binary = "";
+    var responseText = jqXHR.responseText;
+    var responseTextLen = responseText.length;
+
+    for ( i = 0; i < responseTextLen; i++ ) {
+        binary += String.fromCharCode(responseText.charCodeAt(i) & 255)
+    }
+  //stop
+    var netspeed = binary.length/testtime/1000 ;
+    //mbps
+    frt -= 1 ;
+    speedtestresultarr.push(netspeed)
+    console.log(frw-frt + '/' + frw + ' ' + netspeed)
+    netseedtest_t()
+   }
+}); 
+  
+  //console.log(imageurl)
+}
+  if(frt === 0) {
+    var avgresult = eval('(' + speedtestresultarr.join('+') + ')/' + speedtestresultarr.length) ;
+    console.log('result:' + Math.round(avgresult) + 'Mbps')
+	gtag('event', 'user_net_speed', {
+    'event_category':Math.round(avgresult) + 'Mbps',
+    'event_label': user_id,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    console.log('netspeedtestend')
+    }
+  });  
+	  
+  }
+}
+$(document).ready(function() {
+setTimeout(function(){ 
+netseedtest_d(10)
+},1500);
+});
+//speedtestend
   function showuserid() {
     //alert('UserId: ' + user_id);
     $('.alert_blur').fadeIn(333);
