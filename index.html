@@ -1461,7 +1461,7 @@ else {
 var window_sou_height = $(window).height();
 $(window).resize(function() {
   var window_width_change = (window_sou_width-$(window).width()) ;
-  var window_height_change = (window_sou_height-$(window).widthheight()) ;
+  var window_height_change = (window_sou_height-$(window).height()) ;
 	gtag('event', 'window_resize', {
     'event_category':'{"before":"' + window_sou_width + ',' + window_sou_height + '","after":"' + $(window).width() + ',' + $(window).height() + '","change":"' + window_width_change + ',' + window_height_change + '"}',
     'event_label': user_id,
