@@ -1478,13 +1478,17 @@ var speedtestresultarr = [] ;
 var frt = 0 ;
 var frw = 0 ;
 function netseedtest_d(fre) {
+$('.netspeedtest').css({'display':'block','bottom':'-80px','transition':'0s'});
+setTimeout(function() {
+$('.netspeedtest').css({'bottom':'0px','transition':'0.3s'});
+},1);
+
   speedtestresultarr = [] ;
   frt = fre ;
   frw = fre ;
   netseedtest_t()
 }
 function netseedtest_t() {
-$('.netspeedtest').css({'display':'block'});
   if(frt > 0) {
   var textchars = "0123456789abcdefghijklmnopqrstuvwxyz";
             var randomtext = "";
@@ -1539,7 +1543,10 @@ var imageurl = 'https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=' + ra
     'event_callback': function(){
     console.log('netspeedtestend')
     setTimeout(function() {
-      $('.netspeedtest').css({'display':'none'});
+      $('.netspeedtest').css({'bottom':'-80px','transition':'0.3s'});
+      setTimeout(function() {
+$('.netspeedtest').css({'display':'none','bottom':'0px','transition':'0s'});
+},350);
     },1000);
     }
   });  
