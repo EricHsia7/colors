@@ -1517,7 +1517,6 @@ function netseedtest_t() {
                 randomtext += textchars.substring(textrandomNumber, textrandomNumber + 1);
             }
 var imageurl = 'https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=' + randomtext + '&choe=UTF-8' ;
-  console.log(imageurl)
   var testtime = 0 ;
   var timetimer = setInterval(function(){
   testtime += 1/1000 ;
@@ -1539,7 +1538,6 @@ var imageurl = 'https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=' + ra
      else {
      var netspeed = 0 ;
      }
-     console.log(binary.length)
     //mbps
     frt -= 1 ;
     speedtestresultarr.push(netspeed)
