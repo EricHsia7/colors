@@ -1530,7 +1530,7 @@ var imageurl = 'https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=' + ra
     }
   //stop
     if(binary.length > 0) {
-    var netspeed = binary.length*8/testtime*0.000001 ;
+    var netspeed = binary.length*8/testtime*0.000001*1000 ;
     }
      else {
      var netspeed = 0 ;
