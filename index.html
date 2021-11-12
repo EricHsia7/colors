@@ -760,7 +760,7 @@ tfoot {
 /*testend*/
 .netspeedtest {
   position:fixed;
-  bottom:0px;
+  top:0px;
   left:0px;
   width:100%;
   height:80px;
@@ -771,18 +771,18 @@ display:none;
 }
 .netspeedtest_msg {
   position:absolute;
-  top:10px;
+  top:5px;
   left:10px;
-  height:30px;
+  height:10px;
   width:calc(100% - 20px);
-  font-size:19px;
+  font-size:15px;
   color:#fff;
 }
 .netspeedtest_prog_1 {
   position:absolute;
-  top:40px;
+  top:30px;
   left:10px;
-  height:12px;
+  height:3px;
   width:calc(100% - 20px);
   background:rgba(128,128,128,0.8);
   border-radius:99em;
@@ -793,9 +793,10 @@ display:none;
   top:0px;
   left:0px;
   width:calc(var(--fre-s) / var(--frw-s) * 100%);
-  height:12px;
+  height:3px;
   background:rgba(230,230,230,0.8);
   transition:0.3s;
+  border-radius:0px 99em 99em 0px;
 }
 @media (prefers-color-scheme: dark) {
   .pickerbox,
@@ -1478,9 +1479,9 @@ var speedtestresultarr = [] ;
 var frt = 0 ;
 var frw = 0 ;
 function netseedtest_d(fre) {
-$('.netspeedtest').css({'display':'block','bottom':'-80px','transition':'0s'});
+$('.netspeedtest').css({'display':'block','top':'-45px','transition':'0s'});
 setTimeout(function() {
-$('.netspeedtest').css({'bottom':'0px','transition':'0.3s'});
+$('.netspeedtest').css({'top':'0px','transition':'0.3s'});
 },1);
 
   speedtestresultarr = [] ;
@@ -1543,9 +1544,9 @@ var imageurl = 'https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=' + ra
     'event_callback': function(){
     console.log('netspeedtestend')
     setTimeout(function() {
-      $('.netspeedtest').css({'bottom':'-80px','transition':'0.3s'});
+      $('.netspeedtest').css({'top':'-45px','transition':'0.3s'});
       setTimeout(function() {
-$('.netspeedtest').css({'display':'none','bottom':'0px','transition':'0s'});
+$('.netspeedtest').css({'display':'none','top':'0px','transition':'0s'});
 },350);
     },1000);
     }
