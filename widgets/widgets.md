@@ -1,5 +1,5 @@
 # Colors Widgets
-Note: These widgets are only available for iOS and iPadOS
+These widgets are only available for iOS and iPadOS
 ## Get
 1. Download Scriptable on [AppStore](https://apps.apple.com/tw/app/scriptable/id1405459188)
 2. Choose a widget and click "Get JS"([All widgets](https://github.com/EricHsia7/colors/blob/main/widgets/widgets.md#widgets))
@@ -12,6 +12,8 @@ Note: These widgets are only available for iOS and iPadOS
 8. Add Widget to home screen
 9. Edit the widget and change the Script field to the name of the Script you just created.
 10. Enjoy it!
+## Notes
+* An independent widget needs an independent script to operate independently (one-to-one), otherwise the content of multiple widgets will be the same.
 ## Widgets
 ### Colors Random
 [Get JS](https://github.com/EricHsia7/colors/blob/main/widgets/js/colors_random.js)
