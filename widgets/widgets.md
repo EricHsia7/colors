@@ -1,7 +1,7 @@
 # Colors Widgets
 Note: These widgets are only available for iOS and iPadOS
 ## Get
-1. Download Scriptable App on [App store](https://apps.apple.com/tw/app/scriptable/id1405459188)
+1. Download Scriptable on [AppStore](https://apps.apple.com/tw/app/scriptable/id1405459188)
 2. Choose a widget and click "Get JS"
 3. Copy JS
 4. Open Scriptable to create a new Script
