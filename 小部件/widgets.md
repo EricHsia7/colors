@@ -4,7 +4,7 @@ These widgets are only available for iOS and iPadOS
 1. Download Scriptable on [AppStore](https://apps.apple.com/tw/app/scriptable/id1405459188)
 2. Choose a widget and click "Get JS"([All widgets](https://github.com/EricHsia7/colors/blob/main/widgets/widgets.md#widgets))
 3. Copy JS
-* moblie ![moblie](https://raw.githubusercontent.com/EricHsia7/colors/main/widgets/img/mobile.jpeg)
+* mobile ![mobile](https://raw.githubusercontent.com/EricHsia7/colors/main/widgets/img/mobile.jpeg)
 * table ![table](https://raw.githubusercontent.com/EricHsia7/colors/main/widgets/img/table.jpeg)
 4. Open Scriptable to create a new Script
 5. Paste JS
