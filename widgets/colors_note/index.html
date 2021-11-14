@@ -64,6 +64,8 @@ text-decoration:none;
 </style>
 <div id="cardbox"></div>
 <script>
+    var getUrlString = location.href;
+var url = new URL(getUrlString);
 function genid(mode) {
 if(mode === "random"){
 var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
@@ -147,7 +149,7 @@ function setcookie(cookiename,cookievalue) {
 document.cookie = cookiename + '=' + cookievalue + '; max-age='+60*60*24*7 + ';';
 }
 
-var scriptable_name = 'colors note' ;
+var scriptable_name = decodeURIComponent(url.searchParams.get('scriptable_name')) ;
 
 var favcolorss = getCookie('colorfav2').substring(1,getCookie('colorfav2').length).split('&') ;
   for (var ffpp = 0; ffpp < favcolorss.length; ffpp++) {
