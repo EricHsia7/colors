@@ -17,7 +17,7 @@ if(setoi === 'true') {
 file.writeString(file.joinPath(file.documentsDirectory(),'colornoteop.txt'), atob(args.queryParameters.col)) ;
 
   let myAlert = new Alert();
-myAlert.title = 'Color set!';
+myAlert.title = '顏色已設定！';
 myAlert.addAction("Close");
 await myAlert.present();
 
@@ -27,7 +27,7 @@ else {
     if(file.fileExists(file.joinPath(file.documentsDirectory(),'colornoteop.txt'))) {
     var note_text = args.widgetParameter
     if(note_text === null || note_text === '') {
-      note_text = 'Enter text in Parameter.'
+      note_text = '在Parameter欄位輸入文字。'
     }
   await file.downloadFileFromiCloud(file.joinPath(file.documentsDirectory(),'colornoteop.txt'))
 var coiol = file.readString(file.joinPath(file.documentsDirectory(),'colornoteop.txt'))
@@ -44,7 +44,7 @@ textobj.font = Font.blackSystemFont(20)
 widget.url = 'scriptable:///run/' + encodeURIComponent(Script.name())
 }
 else {
-  var tre = widget.addText('Please run the script first to set the background color.')
+  var tre = widget.addText('請先執行指令碼以設定背景顏色。')
 tre.centerAlignText()
   
 }
