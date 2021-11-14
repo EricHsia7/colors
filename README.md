@@ -5,5 +5,7 @@
 * 分享顏色
 * 隨機漸層
 * 顏色選擇器
+# Widgets
+[Document](https://github.com/EricHsia7/colors/blob/main/widgets/widgets.md)
 # other
 * icon source: [Flaticon](https://www.flaticon.com)
