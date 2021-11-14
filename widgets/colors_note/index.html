@@ -9,6 +9,9 @@ body {
   margin:0px;
   padding:0px;
 }
+  :root {
+--font-col:#000
+}
 .card {
   width: calc(100% - 30px);
   background-color: #fff;
@@ -68,6 +71,9 @@ text-decoration:none;
      .card {
   background-color: #1a1a1a;
  border:1px #303030 solid;
+}
+    :root {
+--font-col:#fff
 }
   }
 </style>
@@ -159,7 +165,10 @@ document.cookie = cookiename + '=' + cookievalue + '; max-age='+60*60*24*7 + ';'
 }
 
 var scriptable_name = decodeURIComponent(url.searchParams.get('scriptable_name')) ;
-
+if(getCookie('colorfav2') === '' || getCookie('colorfav2').indexOf('#') < 0) {
+$('#cardbox').append('<p style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--font-col)">您的喜好項目裡沒有任何顏色，請先新增至少一個顏色到喜好項目。</p>
+}
+else {
 var favcolorss = getCookie('colorfav2').substring(1,getCookie('colorfav2').length).split('&') ;
   for (var ffpp = 0; ffpp < favcolorss.length; ffpp++) {
    if(favcolorss[ffpp].indexOf('li') != -1) {
@@ -182,4 +191,6 @@ var seicocor = '255' ;
 
    }
   }
+
+}
 </script>
