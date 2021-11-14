@@ -169,7 +169,7 @@ if(getCookie('colorfav2') === '' || getCookie('colorfav2').indexOf('#') < 0) {
 $('#cardbox').append('<p style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--font-col);-webkit-user-select: none;">您的喜好項目裡沒有任何顏色，請先新增至少一個顏色到喜好項目。<a href="https://erichsia7.github.io/colors/" style="color:#147efb;-webkit-user-select: none;">回首頁</a></p>');
 }
 else {
-  $('#cardbox').append('<h1 style="text-align: center;color:var(--font-col)">選擇背景顏色</h1>');
+  
 var favcolorss = getCookie('colorfav2').substring(1,getCookie('colorfav2').length).split('&') ;
   for (var ffpp = 0; ffpp < favcolorss.length; ffpp++) {
    if(favcolorss[ffpp].indexOf('li') != -1) {
@@ -192,7 +192,7 @@ var seicocor = '255' ;
 
    }
   }
-
+$('#cardbox').prepend('<h1 style="text-align: center;color:var(--font-col)">選擇背景顏色</h1>');
 }
   $(document).ready(function() {
     //test 
