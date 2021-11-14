@@ -130,7 +130,7 @@ var iconimg = await new Request(iconurl).loadImage()
     var colorcod= sta.addText(rdataarr[(ia)])
     colorcod.centerAlignText()
     colorcod.font = new Font('Noto Sans TC', 20)
-    if((hexToRgb(rdataarr[(ia)]).r+hexToRgb(rdataarr[(ia)]).g+hexToRgb(rdataarr[(ia)]).b)/128 > 128) {
+    if((hexToRgb(rdataarr[(ia)]).r+hexToRgb(rdataarr[(ia)]).g+hexToRgb(rdataarr[(ia)]).b)/3 > 128) {
   colorcod.textColor = new Color('#000', 100)
 }
 else {
