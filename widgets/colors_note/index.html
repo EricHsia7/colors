@@ -166,7 +166,7 @@ document.cookie = cookiename + '=' + cookievalue + '; max-age='+60*60*24*7 + ';'
 
 var scriptable_name = decodeURIComponent(url.searchParams.get('scriptable_name')) ;
 if(getCookie('colorfav2') === '' || getCookie('colorfav2').indexOf('#') < 0) {
-$('#cardbox').append('<p style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--font-col)">您的喜好項目裡沒有任何顏色，請先新增至少一個顏色到喜好項目。</p>
+$('#cardbox').append('<p style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--font-col)">您的喜好項目裡沒有任何顏色，請先新增至少一個顏色到喜好項目。</p>');
 }
 else {
 var favcolorss = getCookie('colorfav2').substring(1,getCookie('colorfav2').length).split('&') ;
