@@ -169,7 +169,7 @@ var seicocor = '255' ;
      var arrbtctoiconcolorclass = '-light' ;
     }
     var crdiduu = genid('random') ;
-    $('#cardbox').prepend('<div class="card" style="background:' + favcolorss[ffpp] + ';color:' + tgzcolor + ';--seico-color:' + seicocor + '" type="col" id="' + crdiduu + '" rg="' + favcolorss[ffpp] +'" tag="' + tgrtag + '" arrtctcl="' + arrbtctoiconcolorclass + '" count="' + (favcolorss.length-ffpp-1) + '"><div class="content"><h4>' + favcolorss[ffpp] + '</h4><div class="description"><a href="scriptable:///run/' + encodeURIComponent(scriptable_name) + '" class="coloropenbtnj" crdid="' + crdiduu + '">使用此顏色</a><div class="cardki2 btn cardggbt" crdid="' + crdiduu + '"></div></div></div></div>');
+    $('#cardbox').prepend('<div class="card" style="background:' + favcolorss[ffpp] + ';color:' + tgzcolor + ';--seico-color:' + seicocor + '" type="col" id="' + crdiduu + '" rg="' + favcolorss[ffpp] +'" tag="' + tgrtag + '" arrtctcl="' + arrbtctoiconcolorclass + '" count="' + (favcolorss.length-ffpp-1) + '"><div class="content"><h4>' + favcolorss[ffpp] + '</h4><div class="description"><a href="scriptable:///run/' + encodeURIComponent(scriptable_name) + '?seto=true&col=' + btoa(favcolorss[ffpp]) + '" class="coloropenbtnj" crdid="' + crdiduu + '">使用此顏色</a><div class="cardki2 btn cardggbt" crdid="' + crdiduu + '"></div></div></div></div>');
 
    }
   }
