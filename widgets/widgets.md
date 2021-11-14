@@ -1,8 +1,8 @@
 # Colors Widgets
 這些Widget僅適用於iOS和iPadOS。
 ## 得到
-1. 下載 Scriptable: [AppStore](https://apps.apple.com/tw/app/scriptable/id1405459188)
-2. 選擇一個小部件，然後點擊“獲取JS”([所有Widget](https://github.com/EricHsia7/colors/blob/main/widgets/widgets.md#widgets))
+1. 下載 Scriptable [AppStore](https://apps.apple.com/tw/app/scriptable/id1405459188)
+2. 選擇一個Widget，然後點擊“獲取JS”([所有Widget](https://github.com/EricHsia7/colors/blob/main/widgets/widgets.md#widgets))
 3. 複製JS
 * iPhone（手機） ![mobile](https://raw.githubusercontent.com/EricHsia7/colors/main/widgets/img/mobile.jpeg)
 * iPad（桌面） ![table](https://raw.githubusercontent.com/EricHsia7/colors/main/widgets/img/table.jpeg)
@@ -18,8 +18,8 @@
 * 如果Widget不工作，請重新啟動您的裝置。
 ## Widgets
 ### Colors Random
-[Get JS](https://github.com/EricHsia7/colors/blob/main/widgets/js/colors_random.js)
+[獲取JS](https://github.com/EricHsia7/colors/blob/main/widgets/js/colors_random.js)
 ### Colors Recommend
-[Get JS](https://github.com/EricHsia7/colors/blob/main/widgets/js/colors_recommend.js)
+[獲取JS](https://github.com/EricHsia7/colors/blob/main/widgets/js/colors_recommend.js)
 ### Colors Note
-[Get JS](https://github.com/EricHsia7/colors/blob/main/widgets/js/colors_note.js)
+[獲取JS](https://github.com/EricHsia7/colors/blob/main/widgets/js/colors_note.js)
