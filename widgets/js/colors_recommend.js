@@ -143,7 +143,7 @@ sta.url = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(rdataarr[(ia)]) + 
   }
 }
 else {
-var netext = widget.addText('Can only use large.') ;
+var netext = widget.addText('只能使用Large。') ;
   netext.centerAlignText()
   netext.textColor = new Color('#ff0000', 100)
 }
