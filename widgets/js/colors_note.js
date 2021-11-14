@@ -18,7 +18,7 @@ file.writeString(file.joinPath(file.documentsDirectory(),'colornoteop.txt'), ato
 
   let myAlert = new Alert();
 myAlert.title = '顏色已設定！';
-myAlert.addAction("Close");
+myAlert.addAction("完成");
 await myAlert.present();
 
 }
