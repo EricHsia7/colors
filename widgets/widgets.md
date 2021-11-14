@@ -15,6 +15,7 @@ These widgets are only available for iOS and iPadOS
 ## Notes
 * It is recommended to use an independent script for an independent widget, otherwise the content of multiple widgets may be the same.
 * If you need to refresh the widget immediately, you need to open Scriptable and run the script corresponding to the widget.
+* If the widget is not working, please restart your device.
 ## Widgets
 ### Colors Random
 [Get JS](https://github.com/EricHsia7/colors/blob/main/widgets/js/colors_random.js)
