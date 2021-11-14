@@ -105,6 +105,10 @@ if(config.widgetFamily === 'large') {
 //   widget.setPadding(0, 0, 0, 0)
   var erw = parseInt(String(getwsize()).split('x')[0])
   var erh = parseInt(String(getwsize()).split('x')[1])
+if(Device.isPhone()) {
+  erw -= 20;
+  erh -= 20;
+}
   var allsta = widget.addStack() ;
   allsta.size = new Size(erw, erh)
   allsta.layoutVertically()
