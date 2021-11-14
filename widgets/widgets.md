@@ -18,3 +18,5 @@ These widgets are only available for iOS and iPadOS
 ## Widgets
 ### Colors Random
 [Get JS](https://github.com/EricHsia7/colors/blob/main/widgets/js/colors_random.js)
+### Colors Recommend
+[Get JS](https://github.com/EricHsia7/colors/blob/main/widgets/js/colors_recommend.js)
