@@ -1,0 +1,173 @@
+<meta charset="UTF-8">
+<title>Colors</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.0/masonry.pkgd.min.js"></script>
+<style>
+body {
+  background-color: #fff;
+  margin:0px;
+  padding:0px;
+}
+.card {
+  width: calc(100% - 30px);
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  position:relative;
+  margin:10px;
+  min-width:180px;
+ border:1px #e3e3e3 solid;
+ transform:translateX(5px);
+ -webkit-user-select: none;
+}
+.card .image {
+  width:100%;
+  height:120px;
+  position:relative;
+}
+.content {
+  padding: 2rem 1.8rem;
+  position:relative;
+}
+
+h4 {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  position:relative;
+ font-family: 'Noto Sans TC', sans-serif;
+  font-weight:700;
+ -webkit-user-select: none;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.4rem;
+  position:relative;
+  min-height: 38px;
+  
+}
+.description a {
+text-decoration:none;
+  color:#000;
+  background:#f5f5f5;
+  padding:8px;
+  margin:0px;
+  border-radius:99em;
+  position:absolute;
+  top:0px;
+ font-family: 'Noto Sans TC', sans-serif;
+  font-weight:400;
+ -webkit-user-select: none;
+}
+</style>
+<script>
+function genid(mode) {
+if(mode === "random"){
+var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
+            var genid = "";
+            for (var i = 0; i < 16; i++) {
+                var genrandomNumber = Math.floor(Math.random() * genidchars.length);
+                genid += genidchars.substring(genrandomNumber, genrandomNumber + 1);
+            }
+  return genid ;
+}
+          
+ if(mode === "time"){
+   var gtoday=new Date();
+   var genid2 = (gtoday.getMonth()+1) + '_' + gtoday.getDate() + '_' + gtoday.getHours() + '_' + gtoday.getMinutes() + '_' + gtoday.getSeconds() + '-' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8));
+   
+   return genid2
+ }
+  
+  if(mode === "number"){
+   
+   var genid3 = '' ;
+for (var i = 0; i < 16; i++) {
+  genid3 += '' + (0+Math.floor(Math.random() * 9))
+}
+   return genid3
+ }
+  
+  if(mode === "uuid"){
+var genidchars4 = "abcdef012345678";
+    var geniduu = [8,4,4,4,12];
+            var genid4 = "";
+            var genid5 = "";
+    for (var ia = 0; ia < geniduu.length; ia++) {
+      var genid4 = "";
+            for (var i = 0; i < geniduu[ia]; i++) {
+                var genrandomNumber4 = Math.floor(Math.random() * genidchars4.length);
+                genid4 += genidchars4.substring(genrandomNumber4, genrandomNumber4 + 1);
+            }
+genid5 += '-' + genid4 ;
+    }
+    return genid5.substring(1,genid5.length)
+  }
+
+}
+  
+  
+  
+let getMode=e=>{let t={};e.forEach(e=>{t[e]=(t[e]||0)+1});let l=0,r=[];for(let e in t)if(t[e]>l?(l=t[e],r=[e]):t[e]===l&&r.push(e),r.length===Object.keys(t).length)return[];return r};
+  
+  
+  
+function componentToHex(c) {
+  var hex = c.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b) {
+  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+function hexToRgb(hex) {
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : null;
+}
+
+function getCookie(cname)
+{
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0; i<ca.length; i++) 
+  {
+    var c = ca[i].trim();
+    if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+  }
+  return "";
+}
+function setcookie(cookiename,cookievalue) {
+document.cookie = cookiename + '=' + cookievalue + '; max-age='+60*60*24*7 + ';';
+}
+
+var scriptable_name = 'colors note' ;
+
+var favcolorss = getCookie('colorfav2').substring(1,getCookie('colorfav2').length).split('&') ;
+  for (var ffpp = 0; ffpp < favcolorss.length; ffpp++) {
+   if(favcolorss[ffpp].indexOf('li') != -1) {
+   }
+   else {
+    //tag 
+    var tgrtag = 'other' ;
+ if((hexToRgb(favcolorss[ffpp]).r+hexToRgb(favcolorss[ffpp]).g+hexToRgb(favcolorss[ffpp]).b)/3 > 128) {
+var tgzcolor = '#000' ;
+var seicocor = '0' ;
+  var arrbtctoiconcolorclass = '' ;
+}
+    else {
+      var tgzcolor = '#fff' ;
+var seicocor = '255' ;
+     var arrbtctoiconcolorclass = '-light' ;
+    }
+    var crdiduu = genid('random') ;
+    $('#cardbox').prepend('<div class="card" style="background:' + favcolorss[ffpp] + ';color:' + tgzcolor + ';--seico-color:' + seicocor + '" type="col" id="' + crdiduu + '" rg="' + favcolorss[ffpp] +'" tag="' + tgrtag + '" arrtctcl="' + arrbtctoiconcolorclass + '" count="' + (favcolorss.length-ffpp-1) + '"><div class="content"><h4>' + favcolorss[ffpp] + '</h4><div class="description"><a href="scriptable:///run/' + encodeURIComponent(scriptable_name) + '" class="coloropenbtnj" crdid="' + crdiduu + '">使用此顏色</a><div class="cardki2 btn cardggbt" crdid="' + crdiduu + '"></div></div></div></div>');
+
+   }
+  }
+</script>
