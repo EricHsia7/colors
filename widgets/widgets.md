@@ -21,3 +21,5 @@ These widgets are only available for iOS and iPadOS
 [Get JS](https://github.com/EricHsia7/colors/blob/main/widgets/js/colors_random.js)
 ### Colors Recommend
 [Get JS](https://github.com/EricHsia7/colors/blob/main/widgets/js/colors_recommend.js)
+### Colors Note
+[Get JS](https://github.com/EricHsia7/colors/blob/main/widgets/js/colors_note.js)
