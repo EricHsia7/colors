@@ -45,7 +45,7 @@ widget.url = 'scriptable:///run/' + encodeURIComponent(Script.name())
 }
 else {
   var tre = widget.addText('Please run the script first to set the background color.')
-tre.centerAlignContent()
+tre.centerAlignText()
   
 }
 Script.setWidget(widget)
