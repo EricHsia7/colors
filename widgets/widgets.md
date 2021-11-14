@@ -1,21 +1,21 @@
 # Colors Widgets
-These widgets are only available for iOS and iPadOS
-## Get
-1. Download Scriptable on [AppStore](https://apps.apple.com/tw/app/scriptable/id1405459188)
-2. Choose a widget and click "Get JS"([All widgets](https://github.com/EricHsia7/colors/blob/main/widgets/widgets.md#widgets))
-3. Copy JS
-* iPhone(mobile) ![mobile](https://raw.githubusercontent.com/EricHsia7/colors/main/widgets/img/mobile.jpeg)
-* iPad(table) ![table](https://raw.githubusercontent.com/EricHsia7/colors/main/widgets/img/table.jpeg)
-4. Open Scriptable to create a new Script
-5. Paste JS
-6. Click "Done" in the upper right corner
-8. Add Widget to home screen
-9. Edit the widget and change the Script field to the name of the Script you just created.
-10. Enjoy it!
-## Notes
-* It is recommended to use an independent script for an independent widget, otherwise the content of multiple widgets may be the same.
-* If you need to refresh the widget immediately, you need to open Scriptable and run the script corresponding to the widget.
-* If the widget is not working, please restart your device.
+這些Widget僅適用於iOS和iPadOS。
+## 得到
+1. 下載 Scriptable: [AppStore](https://apps.apple.com/tw/app/scriptable/id1405459188)
+2. 選擇一個小部件，然後點擊“獲取JS”([所有Widget](https://github.com/EricHsia7/colors/blob/main/widgets/widgets.md#widgets))
+3. 複製JS
+* iPhone（手機） ![mobile](https://raw.githubusercontent.com/EricHsia7/colors/main/widgets/img/mobile.jpeg)
+* iPad（桌面） ![table](https://raw.githubusercontent.com/EricHsia7/colors/main/widgets/img/table.jpeg)
+4. 開啟Scriptable建立一個新的指令碼
+5. 貼上JS
+6. 點選右上角的“Done”（完成）
+8. 將Widget新增到主螢幕
+9. 編輯Widget，並將Script欄位更改為您剛剛建立的指令碼名稱。
+10. 好好享受吧！
+## 筆記
+* 建議對獨立Widget使用獨立指令碼，否則多個Widget的內容可能相同。
+* 如果您需要立即重新整理Widget，您需要開啟指令碼並執行與Widget對應的指令碼。
+* 如果Widget不工作，請重新啟動您的裝置。
 ## Widgets
 ### Colors Random
 [Get JS](https://github.com/EricHsia7/colors/blob/main/widgets/js/colors_random.js)
