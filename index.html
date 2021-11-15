@@ -22,6 +22,9 @@
 <link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="shortcut icon" />
 <link rel="manifest" href="manifest.json?qpipoo">
 <style id="mainstyle">
+:root {
+--morecard-btn-color:#e3e3e3;
+}
 * {
   outline: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -853,6 +856,9 @@ align-items: center;
   width:100%;
 }
 @media (prefers-color-scheme: dark) {
+:root {
+--morecard-btn-color:#1f1f1f;
+}
 .morecard {
   background:#1a1a1a;
   border-bottom:1px #303030 solid
@@ -1953,7 +1959,7 @@ var morecardjson = JSON.parse(e) ;
     
     $('.morecardimage').eq(i).css({'background':'url(https://erichsia7.github.io/colors/' + morecardthisjson.image + ')','background-size':'cover'})
 $('.morecardtitle').eq(i).html(morecardthisjson.title).css({'background':'rgba(0, 0, 0, 0)'})
-    $('.morecardbtn').eq(i).css({'background':'#f5f5f5','border-radius':'10px','width':'auto','padding-left':'8px','padding-right':'8px','height':'35px','top':'40px'}).html(morecardthisjson.btn).attr('ripple-onclick',morecardthisjson.script)
+    $('.morecardbtn').eq(i).css({'background':'var(--morecard-btn-color)','border-radius':'10px','width':'auto','padding-left':'8px','padding-right':'8px','height':'35px','top':'40px'}).html(morecardthisjson.btn).attr('ripple-onclick',morecardthisjson.script)
   }
 }
 });
