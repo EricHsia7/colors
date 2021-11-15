@@ -22,6 +22,10 @@
 <link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="shortcut icon" />
 <link rel="manifest" href="manifest.json?qpipoo">
 <style id="mainstyle">
+:root {
+--morecard-btn-color:#e3e3e3;
+--morecard-btn-ripple:#000;
+}
 * {
   outline: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -101,8 +105,8 @@ input#files,
 input#files2 {
   display: none;
 }
-.palettedd {
-  background: rgba(250, 250, 250, 0.8) url(https://erichsia7.github.io/colors/ico_min/pantone.png);
+.mor {
+  background: rgba(250, 250, 250, 0.8) url(https://erichsia7.github.io/colors/ico_min/more.png);
 }
 .filed-camera {
   background: rgba(250, 250, 250, 0.8) url(https://erichsia7.github.io/colors/ico_min/camera.png);
@@ -138,9 +142,6 @@ input#files2 {
   background: rgba(250, 250, 250, 0.8) url(https://erichsia7.github.io/colors/ico_min/favorited.png);
 }
 
-.mor {
-  background: rgba(250, 250, 250, 0.8);
-}
 .linechat {
   background: rgba(250, 250, 250, 0.8) url(https://erichsia7.github.io/colors/line.png);
 }
@@ -217,7 +218,7 @@ input#files2 {
 }
 #filej {
   width: 230px;
-  height: 155px;
+  height: 105px;
   -webkit-user-select: none;
 }
 #filerj {
@@ -342,7 +343,7 @@ input#files2 {
   display: none;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  overflow:scroll
 }
 .mbtn {
   width: 120px;
@@ -556,7 +557,7 @@ tfoot {
 .favrecommendcardbox {
   width: clamp(230px, 90%, 350px);
   position: absolute;
-  top: calc(50% - 155px * 0.5 + 155px + 15px);
+  top: calc(50% - 105px * 0.5 + 105px + 15px);
   left: 50%;
   transform: translateX(-50%);
   padding-bottom: 50px;
@@ -803,7 +804,74 @@ border-bottom: 1px #e3e3e3 solid;
   border-radius:0px 99em 99em 0px;
   -webkit-user-select: none;
 }
+.morecard {
+  width:100%;
+  height:80px;
+  background:#fff;
+  position:relative;
+  border-bottom:1px #e3e3e3 solid;
+  -webkit-user-select: none;
+}
+.morecardimage {
+  width:70px;
+  height:70px;
+  position:absolute;
+  top:5px;
+  left:5px;
+  background:#e3e3e3;
+  border-radius:8px;
+  -webkit-user-select: none;
+}
+.morecardtitle {
+  position:absolute;
+  background:#e3e3e3;
+  left:80px;
+  top:5px;
+  height:35px;
+  width:calc(100% - 80px - 5px);
+  border-radius:8px;
+  font-size:20px;
+  display: flex;
+  align-items: center;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight:700;
+  -webkit-user-select: none;
+}
+.morecardbtn {
+  position:absolute;
+  background:#e3e3e3;
+  left:80px;
+  top:45px;
+  height:30px;
+  width:80px;
+  border-radius:8px;
+  display: flex;
+align-items: center;
+  justify-content: center;
+  font-size:15px;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight:500;
+  -webkit-user-select: none;
+}
+#morespace {
+  height:55px;
+  width:100%;
+  -webkit-user-select: none;
+}
 @media (prefers-color-scheme: dark) {
+:root {
+--morecard-btn-color:#1f1f1f;
+--morecard-btn-ripple:#fff;
+}
+.morecard {
+  background:#1a1a1a;
+  border-bottom:1px #303030 solid
+}
+.morecardtitle,.morecardbtn,.morecardimage {
+  background:#1f1f1f;
+  color:#fff;
+}
+	
 .netspeedtest {
 border-bottom: 1px #303030 solid;
 background: rgba(26, 26, 26, 0.5);
@@ -939,8 +1007,7 @@ box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.05);
   <div class="grd lle ooe btn"></div>
   <div class="favy lle ooe btn"></div>
   <div class="crtd lle ooe btn"></div>
-  <div class="palettedd lle ooe btn"></div>
-  <div class="mor lle ooe btn" style="width:210px;font-size:16.5px;font-weight:700;">更多選項</div>
+  <div class="mor lle ooe btn"></div>
 </div>
 </span>
 
@@ -1034,12 +1101,6 @@ box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.05);
   <div id="qrclbtn">關閉</div>
 </div>
 <div class="cmore">
-  <div class="mbtn gh1" ripple-onclick="gotogithubpage()">Github</div>
-  <div class="mbtn gh2" ripple-onclick="location.reload()">重新整理</div>
-  <div class="mbtn gh3" ripple-onclick="location.href = 'https://lin.ee/AQadMnc'">LINE官方帳號</div>
-  <div class="mbtn gh3" ripple-onclick="location.href = 'https://github.com/EricHsia7/colors/blob/main/widgets/widgets.md'">Widgets</div>
-  <div class="mbtn gh4" ripple-onclick="showuserid()">UserID</div>
-  <div class="mbtn gh4" ripple-onclick="netseedtest_d(15)">重新測試網路</div>
     <span id="meoj">
     <div class="meoi lle btn"></div>
   </span>
@@ -1884,20 +1945,36 @@ var favrecommendforms = $.ajax({url:"https://docs.google.com/forms/d/e/1FAIpQLSe
     } 
     }
   });
-  
+  var morecardloaded = 0 ;
   $('.mor').click(function() {
-    $('.cmore').fadeIn(333).css({'display':'flex'});
+    if(morecardloaded === 0) {
+morecardloaded = 1
+    for (var i = 0; i < 7; i++) {
+$('.cmore').prepend('<div class="morecard"><div class="morecardimage"></div><div class="morecardtitle"></div><div class="morecardbtn"></div></div>')
+}
+
+$.ajax({type:'get',url:"https://erichsia7.github.io/colors/json/more_options.json?p",dataType:'text',success:function(e) {
+var morecardjson = JSON.parse(e) ;
+  for (var i = 0; i < 7; i++) {
+    var morebtnid = genid('random')
+    var morecardthisjson = morecardjson[i] ;
+
+    
+    $('.morecardimage').eq(i).css({'background':'url(https://erichsia7.github.io/colors/' + morecardthisjson.image + ')','background-size':'cover'})
+$('.morecardtitle').eq(i).html(morecardthisjson.title).css({'background':'rgba(0, 0, 0, 0)'})
+    $('.morecardbtn').eq(i).css({'background':'var(--morecard-btn-color)','border-radius':'10px','width':'auto','padding-left':'8px','padding-right':'8px','height':'35px','top':'40px'}).html(morecardthisjson.btn).attr('ripple-onclick',morecardthisjson.script).attr('poid',morebtnid)
+    ripple('.morecardbtn[poid="' + morebtnid + '"]','var(--morecard-btn-ripple)','0.3',800,'false');
+  }
+}
+});
+    }
+    $('.cmore').fadeIn(333).css({'display':'flexblock'});
     $('.favrecommendcardbox').css({'position':'fixed'});
   });
  $('.meoi').click(function() {
     $('.cmore').fadeOut(333);
    $('.favrecommendcardbox').css({'position':'absolute'});
   }); 
-  $('.palettedd').click(function() {
-      location.href = 'https://erichsia7.github.io/colors/palette/?r=' + genid('random') ;
-    });
-  
-  
   $('.rand2').click(function() {
 var rand_r = gettimerandomnumber(0,255);
 var rand_g = gettimerandomnumber(0,255);  
@@ -2263,9 +2340,9 @@ else {
     
      
       if(getCookie('hdloaded') === 'true') {
-        var ldiilist = 'grd,filed-camera,filed-img,fi,fi2,fi3,ft2,colmorme,crtd,rand2,vis,favy,meoi,palettedd' ;
+        var ldiilist = 'grd,filed-camera,filed-img,fi,fi2,fi3,ft2,colmorme,crtd,rand2,vis,favy,meoi,mor' ;
     var ldiilists = ldiilist.split(',') ;
-    var ldiihdlist = 'gradient,camera,img,close2,copy2,share3,text2,more,color-picker,random3,invisible,favorited,close2,pantone' ;
+    var ldiihdlist = 'gradient,camera,img,close2,copy2,share3,text2,more,color-picker,random3,invisible,favorited,close2,more' ;
     var ldiihdlists = ldiihdlist.split(',');
 	      if(getCookie('net_speed_d') === '1' && parseInt(getCookie('net_speed')) > 45) {
 		      
@@ -2278,9 +2355,9 @@ for (var ldii=0; ldii<ldiilists.length; ldii++){
       }
       else {
         setTimeout(function() {
-    var ldiilist = 'grd,filed-camera,filed-img,fi,fi2,fi3,ft2,colmorme,crtd,rand2,vis,favy,meoi,palettedd' ;
+    var ldiilist = 'grd,filed-camera,filed-img,fi,fi2,fi3,ft2,colmorme,crtd,rand2,vis,favy,meoi,mor' ;
     var ldiilists = ldiilist.split(',') ;
-    var ldiihdlist = 'gradient,camera,img,close2,copy2,share3,text2,more,color-picker,random3,invisible,favorited,close2,pantone' ;
+    var ldiihdlist = 'gradient,camera,img,close2,copy2,share3,text2,more,color-picker,random3,invisible,favorited,close2,more' ;
     var ldiihdlists = ldiihdlist.split(',');
 if(getCookie('net_speed_d') === '1' && parseInt(getCookie('net_speed')) > 45) {
 	
