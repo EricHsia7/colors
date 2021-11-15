@@ -1953,7 +1953,7 @@ morecardloaded = 1
 $('.cmore').prepend('<div class="morecard"><div class="morecardimage"></div><div class="morecardtitle"></div><div class="morecardbtn"></div></div>')
 }
 
-$.ajax({type:'get',url:"https://erichsia7.github.io/colors/json/more_options.json?p",dataType:'text',success:function(e) {
+$.ajax({type:'get',url:"https://erichsia7.github.io/colors/json/more_options.json?r=14dsz8",dataType:'text',success:function(e) {
 var morecardjson = JSON.parse(e) ;
   for (var i = 0; i < 7; i++) {
     var morebtnid = genid('random')
