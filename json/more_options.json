@@ -1,6 +1,6 @@
 [
  {
-  "title": "palette",
+  "title": "Palette",
   "image": "noimage.png",
   "script": "location.href = 'https://erichsia7.github.io/colors/palette/?r=' + genid('random') ;",
   "btn": "使用"
