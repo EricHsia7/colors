@@ -1884,9 +1884,30 @@ var favrecommendforms = $.ajax({url:"https://docs.google.com/forms/d/e/1FAIpQLSe
     } 
     }
   });
-  
+  var morecardloaded = 0 ;
   $('.mor').click(function() {
-    $('.cmore').fadeIn(333).css({'display':'flex'});
+    if(morecardloaded === 0) {
+morecardloaded = 1
+    for (var i = 0; i < 7; i++) {
+$('.cmore').prepend('<div class="morecard"><div class="morecardimage"></div><div class="morecardtitle"></div><div class="morecardbtn"></div></div>')
+}
+
+$.ajax({type:'get',url:"https://erichsia7.github.io/colors/json/more_options.json?p",dataType:'text',success:function(e) {
+var morecardjson = JSON.parse(e) ;
+  for (var i = 0; i < 7; i++) {
+    
+    var morecardthisjson = morecardjson[i] ;
+
+    
+    $('.morecardimage').eq(i).css({'background':'url(https://erichsia7.github.io/colors/' + morecardthisjson.image + ')','background-size':'cover'})
+$('.morecardtitle').eq(i).html(morecardthisjson.title).css({'background':'rgba(0, 0, 0, 0)'})
+    $('.morecardbtn').eq(i).css({'background':'#f5f5f5','border-radius':'10px','width':'auto','padding-left':'8px','padding-right':'8px','height':'35px','top':'40px'}).html(morecardthisjson.btn)
+  }
+}
+});
+
+    }
+    $('.cmore').fadeIn(333).css({'display':'flexblock'});
     $('.favrecommendcardbox').css({'position':'fixed'});
   });
  $('.meoi').click(function() {
