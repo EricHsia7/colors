@@ -24,6 +24,7 @@
 <style id="mainstyle">
 :root {
 --morecard-btn-color:#e3e3e3;
+--morecard-btn-ripple:#000;
 }
 * {
   outline: none;
@@ -863,6 +864,7 @@ align-items: center;
 @media (prefers-color-scheme: dark) {
 :root {
 --morecard-btn-color:#1f1f1f;
+--morecard-btn-ripple:#fff;
 }
 .morecard {
   background:#1a1a1a;
@@ -1958,13 +1960,14 @@ $('.cmore').prepend('<div class="morecard"><div class="morecardimage"></div><div
 $.ajax({type:'get',url:"https://erichsia7.github.io/colors/json/more_options.json?p",dataType:'text',success:function(e) {
 var morecardjson = JSON.parse(e) ;
   for (var i = 0; i < 7; i++) {
-    
+    var morebtnid = genid('random')
     var morecardthisjson = morecardjson[i] ;
 
     
     $('.morecardimage').eq(i).css({'background':'url(https://erichsia7.github.io/colors/' + morecardthisjson.image + ')','background-size':'cover'})
 $('.morecardtitle').eq(i).html(morecardthisjson.title).css({'background':'rgba(0, 0, 0, 0)'})
-    $('.morecardbtn').eq(i).css({'background':'var(--morecard-btn-color)','border-radius':'10px','width':'auto','padding-left':'8px','padding-right':'8px','height':'35px','top':'40px'}).html(morecardthisjson.btn).attr('ripple-onclick',morecardthisjson.script)
+    $('.morecardbtn').eq(i).css({'background':'var(--morecard-btn-color)','border-radius':'10px','width':'auto','padding-left':'8px','padding-right':'8px','height':'35px','top':'40px'}).html(morecardthisjson.btn).attr('ripple-onclick',morecardthisjson.script).attr('poid',morebtnid)
+    ripple('.morecardbtn[poid="' + morebtnid + '"]','var(--morecard-btn-ripple)','0.3',1200,'true');
   }
 }
 });
