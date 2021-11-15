@@ -1970,7 +1970,6 @@ $('.morecardtitle').eq(i).html(morecardthisjson.title).css({'background':'rgba(0
   }
 }
 });
-
     }
     $('.cmore').fadeIn(333).css({'display':'flexblock'});
     $('.favrecommendcardbox').css({'position':'fixed'});
@@ -1979,11 +1978,6 @@ $('.morecardtitle').eq(i).html(morecardthisjson.title).css({'background':'rgba(0
     $('.cmore').fadeOut(333);
    $('.favrecommendcardbox').css({'position':'absolute'});
   }); 
-  $('.palettedd').click(function() {
-      location.href = 'https://erichsia7.github.io/colors/palette/?r=' + genid('random') ;
-    });
-  
-  
   $('.rand2').click(function() {
 var rand_r = gettimerandomnumber(0,255);
 var rand_g = gettimerandomnumber(0,255);  
