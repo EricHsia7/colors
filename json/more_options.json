@@ -1,0 +1,42 @@
+[{
+"title":"palette",
+"image":"noimage.png",
+"script":"location.href = 'https://erichsia7.github.io/colors/palette/?r=' + genid('random') ;"
+"btn":"使用"
+},
+{
+"title":"Github",
+"image":"noimage.png",
+"script":"gotogithubpage()"
+"btn":"開啟"
+},
+{
+"title":"重新整理",
+"image":"noimage.png",
+"script":"location.reload()"
+"btn":"使用"
+} ,
+{
+"title":"LINE官方帳號",
+"image":"noimage.png",
+"script":"location.href = 'https://lin.ee/AQadMnc'"
+"btn":"開啟"
+} ,
+{
+"title":"Widgets",
+"image":"noimage.png",
+"script":"location.href = 'https://github.com/EricHsia7/colors/blob/main/widgets/widgets.md'"
+"btn":"開啟"
+},
+{
+"title":"UserID",
+"image":"noimage.png",
+"script":"showuserid()"
+"btn":"查看"
+} ,
+{
+"title":"重新測試網路",
+"image":"noimage.png",
+"script":"netseedtest_d(15)"
+"btn":"開始測試"
+}]
