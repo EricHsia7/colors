@@ -8,7 +8,7 @@
  {
   "title": "Github",
   "image": "2.png",
-  "script": "gotogithubpage()",
+  "script": "location.href = 'https://github.com/EricHsia7/colors' ;",
   "btn": "開啟"
  },
  {
