@@ -729,14 +729,15 @@ $('.share').click(function() {
   
     $(document).ready(function() {
     //test 
-        if(localStorage.getItem('googlefontNotoSansTCloaded') === '1') {
+        var googlefontloadtime = new Date().getTime() ;
+        if(googlefontloadtime-parseInt(localStorage.getItem('googlefontNotoSansTCloaded')) < 2592000000) {
   $('body').append('<style>' + localStorage.getItem('googlefontNotoSansTC') + '</style>');
   console.log('loaded')
 }
 else {
  $.ajax({type:'get',url:"https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap",dataType:'text',success:function(e) {
-  
-  localStorage.setItem('googlefontNotoSansTC', e); localStorage.setItem('googlefontNotoSansTCloaded', '1');
+  var googlefontloadtimedd = new Date().getTime() ;
+  localStorage.setItem('googlefontNotoSansTC', e); localStorage.setItem('googlefontNotoSansTCloaded', googlefontloadtimedd);
    $('body').append('<style>' + e + '</style>');
    
    console.log('loaded2')
