@@ -82,12 +82,6 @@ body {
   justify-content: space-around;
   overflow: hidden;
 }
-/*
-.fti {
-  background:rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/ico_min/close2.png);
-  margin-left:0px;
-}  
-  */
 .meoi {
   background: rgba(250, 250, 250, 0.8) url(https://erichsia7.github.io/colors/ico_min/close2.png);
   margin-left: 0px;
@@ -250,8 +244,6 @@ input#files2 {
   margin-top: 10px;
 }
 #icon {
-  /*width:70%;
-    max-width:120px;*/
   width: 120px;
   height: 28px;
   margin-bottom: 10px;
@@ -558,9 +550,6 @@ tfoot {
   display: none;
 }
 
-/*testend*/
-
-/*er*/
 .pickerbox {
   height: calc(100% - 100px - 30px);
   width: 100%;
@@ -619,9 +608,6 @@ tfoot {
   display: none;
   -webkit-user-select: none;
 }
-/*erend*/
-
-/*useridalert*/
 .alert_blur {
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
@@ -682,8 +668,7 @@ tfoot {
   font-family: "Noto Sans TC", sans-serif;
   -webkit-user-select: none;
 }
-/*useridalertend*/
-/*test*/
+
 .moreopt {
   position: fixed;
   bottom: 60px;
@@ -728,7 +713,6 @@ tfoot {
   display: none;
   -webkit-user-select: none;
 }
-/*testend*/
 .netspeedtest {
   position:fixed;
   top:0px;
@@ -1608,7 +1592,6 @@ netseedtest_d(5)
 });
 //speedtestend
   function showuserid() {
-    //alert('UserId: ' + user_id);
     $('.alert_blur').fadeIn(333);
     $('.alert').css({'display':'block'});
     $('.alert_content').html('UserId: ' + user_id);
@@ -1631,7 +1614,6 @@ netseedtest_d(5)
   
   
 if (window.File && window.FileReader && window.FileList && window.Blob) {
-  //document.getElementById('files').addEventListener('change', handleFileSelect, false);
   document.getElementById('files2').addEventListener('change', handleFileSelect, false);
 
 } else {
@@ -1700,37 +1682,27 @@ var load = 0 ;
         var rgbs = Math.ceil(rgb_r/ccwa) + ',' + Math.ceil(rgb_g/ccwa) + ',' + Math.ceil(rgb_b/ccwa) ;
         var rgbvfr = rgbToHex(Math.ceil(rgb_r/ccwa), Math.ceil(rgb_g/ccwa), Math.ceil(rgb_b/ccwa)) ;
       }
-      
-      
-    //var rgbs = Math.ceil(rgb_r/ccwa) + ',' + Math.ceil(rgb_g/ccwa) + ',' + Math.ceil(rgb_b/ccwa) ;
-    
-    
     $('#rgb').val(rgbvfr);
     $('.color').css({'background':rgbvfr });
-  
     if((Math.ceil(rgb_r/ccwa)+Math.ceil(rgb_g/ccwa)+Math.ceil(rgb_b/ccwa))/3 > 128) {
       $('#rgb').css({'color':'#000'});
     }
     else {
       $('#rgb').css({'color':'#fff'});
     }
-    //$('.color').fadeIn(222);
     location.href = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbvfr) + '&r=' + genid('random');
   },200);
     }
   }); 
     };
 
-    
-    
   })(f);
   // Read in the image file as a data URL.
   reader.readAsBinaryString(f);
 }
   //touch
       $.extend($.support, { touch: "ontouchend" in document });
-  
-  
+	
 $('.fi').click(function() {
   $('.moreoptbg').fadeOut(1);
   $('.moreopt').css({'transform':'scale(0)','opacity':'0'});
@@ -1741,13 +1713,8 @@ $('.fi').click(function() {
 if(sharecolor === "1" || sharecolor === "2") {
     if(open === "fav") {
       $('body').css({'background':''});
-      //$(".color").css({'transform':'translateY(0px)','border-radius':'0px','transition':'0s','opacity':'1','height':'100%','top':'0px'});
       $(".color").css({'transform':'translateY(0px)','transition':'0s','opacity':'1'});
       location.href = 'https://erichsia7.github.io/colors/favorite/?open=col&scroll=' + favscroll + '&oani=' + url.searchParams.get('oani') + '&oanc=' + url.searchParams.get('oanc') + '&fgx=' + url.searchParams.get('fgx') + '&fgy=' + url.searchParams.get('fgy') + '&fgw=' + url.searchParams.get('fgw') + '&fgh=' + url.searchParams.get('fgh') + '&rg=' + url.searchParams.get('rg') + '&rgc=' + url.searchParams.get('rgc') + '&scale=' + $('.color').attr('scale') + '&lig=' + url.searchParams.get('lig') + '&usc=' + usedslideclosepp + '&r=' + genid('random') ;
-      
-      
-      
-      
     }
     else {
       if(open === 'camera' || open === 'palette') {
@@ -1788,9 +1755,6 @@ $('.ft2').click(function() {
   });
   
 $('.fi2').click(function() {
- //$('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*copycolmode)) + 'px) translateY(-50%)','transition':'0.5s'});
-      //offsetXcd = (0-($(window).width()*copycolmode));
-  
   if(copycolmode === 0) {
    var copys2 = $('#rgb');
   }
@@ -1833,12 +1797,7 @@ if (navigator.share) {
 $('.fti').click(function() {
   $('.colorte').fadeOut(222);
 });
-  /*
-$('.ft2').click(function() {
-  $('.colorte').fadeIn(222);
-  $('#textu').val('');
-});
-  */
+  
   $('li[f="qrcode"]').click(function() {
     $('.moreoptbg').fadeOut(1);
   $('.moreopt').css({'transform':'scale(0)','opacity':'0'});
@@ -1877,8 +1836,6 @@ var qrcode = new QRCode(document.querySelector('#qr') , {
     }, 510);
     });
  
-
-
   $('.favt').click(function() {
     if(sharecolor === "1") {
       if(getCookie('colorfav2').indexOf('&' + shcolor) != -1) {
@@ -1958,8 +1915,6 @@ $('.morecardtitle').eq(i).html(morecardthisjson.title).css({'background':'rgba(0
 var rand_r = gettimerandomnumber(0,255);
 var rand_g = gettimerandomnumber(0,255);  
 var rand_b = gettimerandomnumber(0,255);
-    
-    
     //tag 
     var randtgrtag = 'other' ;
     if(Math.max(rand_r,rand_g,rand_b) === rand_r) {
@@ -1975,9 +1930,6 @@ var rand_b = gettimerandomnumber(0,255);
        var randtgrtag = 'other' ;
        }
     //tagend
-
-    
-    
     gtag('event', 'generator', {
     'event_category': 'color_' + randtgrtag,
     'event_label':user_id,
@@ -2237,9 +2189,6 @@ for (var iwq = 0; iwq < favda.length; iwq++) {
     },10);
      }
      
-  
-  
-  
 var rgbinput =document.getElementById('rgb');
 rgbinput.addEventListener('copy', (event) => {
         $('body').prompt({'message':'已複製(hex)','time':1200,'animate':'slide'});
@@ -2278,59 +2227,17 @@ else {
 }); 
 }
  //testend
-    
-     //test2
-    /*
-    if(localStorage.getItem('colorsiconloaded') === '1') {
-      
-      var ldiilistee = 'fti,grd,filed-camera,filed-img,fi,fi2,fi3,ft2,qrt,crtd,rand2,vis,favy,mor,meoi' ;
-    var ldiihdlistee = 'close2,gradient,camera,img,close2,copy2,share3,text2,qrcode,color-picker,random3,invisible,favorited,more,close2' ;
-    for (var ldiiee=0; ldiiee<ldiihdlistee.split(',').length; ldiiee++){
-      $('.' + ldiilistee[ldiiee]).css({'background':'rgba(250,250,250,0.8) url(' + localStorage.getItem('colorsicon_' + ldiiee) + ')','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
-      console.log('loaded1-' + ldiiee + '/' + ldiihdlistee.split(',').length);
-    }
-      
-      
-      
-      
-      
-      
-    }
-    else {
-    var ldiilistee = 'fti,grd,filed-camera,filed-img,fi,fi2,fi3,ft2,qrt,crtd,rand2,vis,favy,mor,meoi' ;
-    var ldiihdlistee = 'close2,gradient,camera,img,close2,copy2,share3,text2,qrcode,color-picker,random3,invisible,favorited,more,close2' ;
-    for (var ldiiee=0; ldiiee<ldiihdlistee.split(',').length; ldiiee++){
-      
-      $.ajax({type:'get',url:'https://erichsia7.github.io/colors/iconbase64/' + ldiihdlistee.split(',')[ldiiee] + '.txt',dataType:'text',success:function(e) {
-  localStorage.setItem('colorsicon_' + ldiiee, 'data:image/png;base64,' + e);
-  localStorage.setItem('colorsiconloaded', '1');
-  $('.' + ldiilistee[ldiiee]).css({'background':'rgba(250,250,250,0.8) url(data:image/png;base64,' + e + ')','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
-   console.log('loaded-' + ldiiee + '/' + ldiihdlistee.split(',').length);
-   }
-}); 
-    }
-    
-    
-    }
-    */
-    //test2end
-    
-    
-    
-     
       if(getCookie('hdloaded') === 'true') {
         var ldiilist = 'grd,filed-camera,filed-img,fi,fi2,fi3,ft2,colmorme,crtd,rand2,vis,favy,meoi,mor' ;
     var ldiilists = ldiilist.split(',') ;
     var ldiihdlist = 'gradient,camera,img,close2,copy2,share3,text2,more,color-picker,random3,invisible,favorited,close2,more' ;
     var ldiihdlists = ldiihdlist.split(',');
 	      if(getCookie('net_speed_d') === '1' && parseInt(getCookie('net_speed')) > 45) {
-		      
 for (var ldii=0; ldii<ldiilists.length; ldii++){  
                  $('.' + ldiilists[ldii]).css({'background':'rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/' + ldiihdlists[ldii] + '.png)','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
             }
 		      
 	      }
-      //$('#mainstyle').prepend("@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');");
       }
       else {
         setTimeout(function() {
@@ -2345,7 +2252,6 @@ for (var ldii=0; ldii<ldiilists.length; ldii++){
             }
 	
 	}
-      //$('#mainstyle').prepend("@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');");
       setcookie('hdloaded','true');
               },3000);
       }
@@ -2399,10 +2305,6 @@ $('#hotkey-prompt-bg').click(function() {
   $('#hotkey-prompt-bg').fadeOut(300);
   document.cookie = 'mgpp-p' + '=' + 'true' + '; max-age='+60*60*24*7;
 });
-
-  
-  
-  
   var startx, starty;
     function getAngle(angx, angy) {
         return Math.atan2(angy, angx) * 180 / Math.PI;
@@ -2448,11 +2350,7 @@ $('#hotkey-prompt-bg').click(function() {
             }
                 break;
             case 2:
-            if(open === 'fav') {
-            if(sharecolor === "2" || sharecolor === "1") {
-                //$('.fi').click();
-            }
-            }
+            
                 break;
             case 3:
             
@@ -2488,18 +2386,12 @@ document.addEventListener('touchend', function(e) {
       usedslideclosepp = 1 ;
       setTimeout(function() {
     $('.fi').click();
-        //$('body').css({'background':$('#rgb').attr('arc')});
             },300);
-      //favorite_close_percentage = 0 ;
-      //testing
       favorite_close_percentage = 1 ;
-      //testing-end
      var favorite_close_per_w = parseInt(url.searchParams.get('fgw'))+($(window).width()-parseInt(url.searchParams.get('fgw')))*(1-favorite_close_percentage) ;
      var favorite_close_per_h = parseInt(url.searchParams.get('fgh'))+($(window).height()-parseInt(url.searchParams.get('fgh')))*(1-favorite_close_percentage) ;
-      
      var favorite_close_per_x = (parseInt(url.searchParams.get('fgx'))+15)*favorite_close_percentage ;
      var favorite_close_per_y = (parseInt(url.searchParams.get('fgy'))+10)*favorite_close_percentage ;
-      
     var favorite_close_per_border_radius = 15*favorite_close_percentage ;
       
         $('.color').css({'width':favorite_close_per_w,'height':favorite_close_per_h,'top':favorite_close_per_y,'left':favorite_close_per_x,'border-radius':favorite_close_per_border_radius,'transition':'0.3s'});
@@ -2744,8 +2636,7 @@ arrbtcoctft();
   else {
     var favrecommendcardtitlecolor = 'fff' ;
   }
- //$('.favrecommendcardbox').prepend('<div class="favrecommendcard" dp="lo" type="recommend" style="background:' + favrecommenddataarr[fygeeew] + '"><div class="favrecommendcardcontent"><h4 style="color:#' + favrecommendcardtitlecolor + '">' + favrecommenddataarr[fygeeew] + '</h4><div class="favrecommendcarddescription"><a>查看顏色</a></div></div></div>');
-    
+ 
     $('.favrecommendcard').eq(favrecommenddataarr.length-fygeeew-1).css({'background':favrecommenddataarr[fygeeew]}).attr('class','favrecommendcard');
     $('.favrecommendcardcontent h4').eq(favrecommenddataarr.length-fygeeew-1).css({'color':'#' + favrecommendcardtitlecolor}).html(favrecommenddataarr[fygeeew]);
     $('.favrecommendcarddescription').eq(favrecommenddataarr.length-fygeeew-1).html('<a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favrecommenddataarr[fygeeew]) + '&sou=recommend&r=' + genid('random') + '">查看顏色</a>');
