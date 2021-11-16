@@ -18,11 +18,25 @@
 <vectornator:setting key="IsolateActiveLayer" value="0"/>
 <vectornator:setting key="SnapToGrid" value="0"/>
 </metadata>
+  <style>
+  :root {
+    --color-1:#19fce8;
+    --color-2:#465bd9;
+    --color-3:#ba2bd5;
+    }
+  @media (prefers-color-scheme: dark) {
+    :root {
+    --color-1:#ffffff;
+    --color-2:#ffffff;
+    --color-3:#ffffff;
+    }
+  }
+  </style>
 <defs>
 <linearGradient y1="223.447" id="LinearGradient" x1="165.903" y2="273.76" x2="370.992" gradientUnits="userSpaceOnUse" gradientTransform="matrix(3.2099 0 0 3.2099 -604.364 -740.845)">
-<stop stop-color="#19fce8" offset="0.00485437"/>
-<stop stop-color="#465bd9" offset="0.713592"/>
-<stop stop-color="#ba2bd5" offset="0.987864"/>
+<stop stop-color="var(--color-1)" offset="0.00485437"/>
+<stop stop-color="var(--color-2)" offset="0.713592"/>
+<stop stop-color="var(--color-3)" offset="0.987864"/>
 </linearGradient>
 </defs>
 <g id="圖層1" vectornator:layerName="圖層1">
