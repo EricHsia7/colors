@@ -1571,7 +1571,7 @@ var imageurl = 'https://picsum.photos/1024?' + genid('random') ;
     }
   //stop
     if(binary.length > 0) {
-    var netspeed = binary.length*0.000001/((testendtime.getTime()-teststarttime.getTime())/1000) ;
+    var netspeed = binary.length*0.001/((testendtime.getTime()-teststarttime.getTime())/1000) ;
     }
      else {
      var netspeed = 0 ;
@@ -1589,12 +1589,12 @@ var imageurl = 'https://picsum.photos/1024?' + genid('random') ;
 }
   if(frt === 0) {
     var avgresult = eval('(' + speedtestresultarr.join('+') + ')/' + speedtestresultarr.length) ;
-    console.log('result:' + Math.round(avgresult) + 'Mbps')
+    console.log('result:' + Math.round(avgresult) + 'Kbps')
 	  document.cookie = 'net_speed_d' + '=' + '1' + '; max-age='+60*30 ;
 	  document.cookie = 'net_speed' + '=' + Math.round(avgresult) + '; max-age='+60*30 ;
 	  
 	gtag('event', 'user_net_speed', {
-    'event_category':Math.round(avgresult) + 'Mbps',
+    'event_category':Math.round(avgresult) + 'Kbps',
     'event_label': user_id,
     'transport_type': 'beacon',
     'event_callback': function(){
