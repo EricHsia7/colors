@@ -1555,13 +1555,11 @@ function netseedtest_t() {
                 randomtext += textchars.substring(textrandomNumber, textrandomNumber + 1);
             }
 var imageurl = 'https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=' + randomtext + '&choe=UTF-8' ;
-  var testtime = 0 ;
-  var timetimer = setInterval(function(){
-  testtime += 1/1000 ;
-  //0.001sec
-  }, 1);
+  
+  var teststarttime = new Date() ;
+  
   $.ajax({type:'GET',url:imageurl,beforeSend:function (xhr) {xhr.overrideMimeType('text/plain; charset=x-user-defined');},async: true,success:function(result, textStatus, jqXHR) {
-    clearInterval(timetimer)
+    var testendtime = new Date() ;
     var binary = "";
     var responseText = jqXHR.responseText;
     var responseTextLen = responseText.length;
@@ -1571,7 +1569,7 @@ var imageurl = 'https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=' + ra
     }
   //stop
     if(binary.length > 0) {
-    var netspeed = binary.length*0.000001/(testtime/1000) ;
+    var netspeed = binary.length*0.000001/((testendtime.getTime()-teststarttime.getTime())/1000) ;
     }
      else {
      var netspeed = 0 ;
