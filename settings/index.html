@@ -22,9 +22,143 @@
 <link rel="manifest" href="manifest.json?qpipoo">
 
 <style>
+ .title {
+  background:#fff;
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:55px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.05);
+  -webkit-user-select: none;
+  display: flex;
+justify-content: center;
+align-items: center;
+}
+.backbtn {
+  background:url(https://erichsia7.github.io/colors/arrow-right.png);
+  background-size:20px;
+  background-position:center;
+  background-repeat:no-repeat;
+    width:55px;
+  height:55px;
+  position:fixed;
+  top:0px;
+  left:0px;
+  transform:rotate(180deg);
+  -webkit-appearance:none;
+outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);
+  -webkit-user-select: none;
+}
+.box {
+  position:fixed;
+  top:55px;
+  left:0px;
+  width:100%;
+  height:calc(100% - 55px);
+  overflow:hidden;
+}
+.settings {
+  height:55px;
+  width:100%;
+  position:relative;
+  display: flex;
+  align-items: center;
+  border-bottom:1px #e3e3e3 solid;
+}
+.name {
+  padding-left:10px;
+}
+.settingsinfo {
+  width:calc(100% - 20px);
+  position:relative;
+  padding:10px;
+  color:#888;
+  list-style:none;
+}
+.settingsswitch {
+  position:absolute;
+  right:40px;
+  top:12.5px;
+  
+}
+.settingsswitch input {
+  height:30px;
+  padding:0px;
+  margin:0px;
+  box-sizing: border-box;
+  border:none;
+  background:rgba(0, 0, 0,0);
+  transform:translateX(1px);
+}
+.settingsswitch input::before {
+  content:'';
+  background:#f5f5f5;
+  width:47px;
+  height:30px;
+  position:absolute;
+  top:0px;
+  left:-1px;
+  border-radius:99em;
+  transition:0.3s;
+}
+.settingsswitch input:checked::before {
+  background:#888;
+}
+.settingsswitch input::after {
+  content:'';
+  background:#fff;
+  width:27px;
+  height:27px;
+  position:absolute;
+  top:1.5px;
+  left:0.5px;
+  border-radius:99em;
+  transition:0.3s;
+}
+.settingsswitch input:checked::after {
+  content:'';
+  background:#fff;
+  width:27px;
+  height:27px;
+  position:absolute;
+  top:1.5px;
+  left:17.5px;
+}
+.ladbar {
+background:#000;
+position:fixed;
+top:0px;
+left:0px;
+width:0px;
+height:1.3px;
+transition:width 0.3s ,background 0s;
+-webkit-user-select: none;
+}
 </style>
 
+<div class="box">
+  
+  <div class="settings">
+    <div class="name">低數據模式</div>
+    <label for="lowspeed" class="settingsswitch"><input type="checkbox" id="lowspeed" name="lowspeed" checked></label>
+  </div>
+  
+  <div class="settings">
+    <div class="name">分享喜好項目</div>
+    <label for="sharefav" class="settingsswitch"><input type="checkbox" id="sharefav" name="sharefav" checked></label>
+  </div>
+  
+  <div class="settingsinfo">
+    <li>開啟低數據模式可以節省網路流量及加快載入速度。</li>
+    <li>分享喜好項目是匿名的，它會顯示在建議的顏色，關閉分享喜好項目後，將不會分享。</li>
+  </div>
+</div>
 
+<div class="title">
+  <div class="backbtn"></div>
+  <div>設定</div>
+</div>
 <div class="ladbar" style="display:block;"></div>
 <script>
 lade = 0 ;
@@ -54,7 +188,29 @@ $('.ladbar').css({'display':'none'});
 });
 </script>
 <script>
-  
+  //set
+if(localStorage.getItem('settings_lowspeed') === null || localStorage.getItem('settings_lowspeed') === '1') {
+  $('#lowspeed').prop('checked',true)
+}
+else {
+  $('#lowspeed').prop('checked',false)
+}
+
+if(localStorage.getItem('settings_sharefav') === null || localStorage.getItem('settings_sharefav') === '1') {
+  $('#sharefav').prop('checked',true)
+}
+else {
+  $('#sharefav').prop('checked',false)
+}
+//change
+$('.settingsswitch input').click(function() {
+  if($(this).prop('checked')) {
+    localStorage.setItem('settings_' + $(this).attr('name'),'1')
+  }
+  else {
+    localStorage.setItem('settings_' + $(this).attr('name'),'0')
+  }
+})
 </script>
 <script>
 // left: 37, up: 38, right: 39, down: 40,
