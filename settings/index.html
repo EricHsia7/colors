@@ -22,6 +22,9 @@
 <link rel="manifest" href="manifest.json?qpipoo">
 
 <style>
+      * {outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-user-select: none;}
+
+
  .title {
   background:#fff;
   position:fixed;
@@ -34,6 +37,8 @@
   display: flex;
 justify-content: center;
 align-items: center;
+  font-weight:700;
+  font-family: 'Noto Sans TC', sans-serif;
 }
 .backbtn {
   background:url(https://erichsia7.github.io/colors/arrow-right.png);
@@ -65,6 +70,8 @@ outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);
   display: flex;
   align-items: center;
   border-bottom:1px #e3e3e3 solid;
+  font-weight:500;
+  font-family: 'Noto Sans TC', sans-serif;
 }
 .name {
   padding-left:10px;
@@ -75,6 +82,8 @@ outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);
   padding:10px;
   color:#888;
   list-style:none;
+  font-weight:400;
+  font-family: 'Noto Sans TC', sans-serif;
 }
 .settingsswitch {
   position:absolute;
@@ -292,6 +301,26 @@ $('.settingsswitch input').click(function() {
 })
  $('.backbtn').click(function() {
   location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
+  });
+  
+    
+  $(document).ready(function() {
+    //test 
+        var googlefontloadtime = new Date().getTime() ;
+        if(googlefontloadtime-parseInt(localStorage.getItem('googlefontNotoSansTCloaded')) < 2592000000) {
+  $('body').append('<style>' + localStorage.getItem('googlefontNotoSansTC') + '</style>');
+  console.log('loaded')
+}
+else {
+ $.ajax({type:'get',url:"https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap",dataType:'text',success:function(e) {
+  var googlefontloadtimedd = new Date().getTime() ;
+  localStorage.setItem('googlefontNotoSansTC', e); localStorage.setItem('googlefontNotoSansTCloaded', googlefontloadtimedd);
+   $('body').append('<style>' + e + '</style>');
+   
+   console.log('loaded2')
+   }
+}); 
+}
   });
 </script>
 <script>
