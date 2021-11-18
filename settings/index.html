@@ -139,6 +139,9 @@ transition:width 0.3s ,background 0s;
   body,.title {
     background:#1a1a1a;
   }
+  .title {
+    color:#fff;
+  }
   .ladbar {
         background:#fff;
   }
@@ -146,6 +149,23 @@ transition:width 0.3s ,background 0s;
     border-bottom:1px #303030 solid;
     color:#fff;
   }
+  
+  .settingsswitch input::before {
+  content:'';
+  background:#1f1f1f;
+}
+.settingsswitch input:checked::before {
+  content:'';
+  background:#303030;
+}
+.settingsswitch input::after {
+  content:'';
+  background:#1f1f1f;
+}
+.settingsswitch input:checked::after {
+  content:'';
+  background:#1f1f1f;
+}
 }
 </style>
 
