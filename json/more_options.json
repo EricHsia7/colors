@@ -40,5 +40,11 @@
   "image": "6.png",
   "script": "netseedtest_d(15)",
   "btn": "開始測試"
+ },
+ {
+  "title": "設定",
+  "image": "7.png",
+  "script": "location.href = 'https://erichsia7.github.io/colors/settings/?r=' + genid('random') ;",
+  "btn": "開啟"
  }
 ]
