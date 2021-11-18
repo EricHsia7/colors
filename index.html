@@ -1532,10 +1532,10 @@ $(window).resize(function() {
 	
   //windowresizeend
   //settings
-  if(!(localStorage.getItem('settings_lowspeed') === '1')) {
+  if(!(localStorage.getItem('settings_lowspeed') === null)) {
     localStorage.setItem('settings_lowspeed','1')
   }
-  if(!(localStorage.getItem('settings_sharefav') === '1')) {
+  if(!(localStorage.getItem('settings_sharefav') === null)) {
     localStorage.setItem('settings_sharefav','1')
   }
   //settingsend
