@@ -936,7 +936,7 @@ display: none;
 </span>
 
 <div class="favrecommendcardbox">
-  <h3 id="e2tenbdiha7q0hi0">建議的顏色<br><bqta style="font-size:0.6em;opacity:0.6">來自使用者(包括你)的喜好項目</bqta></h3>
+  <h3 id="e2tenbdiha7q0hi0">建議的顏色<br><bqta style="font-size:0.6em;opacity:0.6" id="sharefavinfotext">來自使用者(包括你)的喜好項目</bqta></h3>
 </div>
 
 <div class="favrecommendfixedtitle favrecommendfixedtitleopacity0">建議的顏色</div>
@@ -1469,6 +1469,9 @@ $(window).resize(function() {
   }
   if(localStorage.getItem('settings_sharefav') === null) {
     localStorage.setItem('settings_sharefav','1')
+  }
+  if(!(localStorage.getItem('settings_sharefav') === '1')) {
+   $('#sharefavinfotext').html('來自使用者(不包括你)的喜好項目')
   }
   //settingsend
   
