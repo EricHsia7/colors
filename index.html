@@ -1751,17 +1751,17 @@ var favrecommendforms = $.ajax({url:"https://docs.google.com/forms/d/e/1FAIpQLSe
     }
   });
   var morecardloaded = 0 ;
-  var morecardv = 'w6pkyhc0kfy8iji2'
+  var morecardv = 'kbjzdjrqrcdyqom8'
   $('.mor').click(function() {
     if(morecardloaded === 0) {
     morecardloaded = 1
-    for (var i = 0; i < 8; i++) {
+    for (var i = 0; i < 7; i++) {
 $('.cmore').prepend('<div class="morecard"><div class="morecardimage"></div><div class="morecardtitle"></div><div class="morecardbtn"></div></div>')
     }
 if(localStorage.getItem('moreopt_d') === morecardv) {
    
   var morecardjson = JSON.parse(localStorage.getItem('moreopt')) ;
-  for (var i = 0; i < 8; i++) {
+  for (var i = 0; i < 7; i++) {
     var morebtnid = genid('random')
     var morecardthisjson = morecardjson[i] ;
     $('.morecardimage').eq(i).css({'background':'url(https://erichsia7.github.io/colors/more_options_image/' + morecardthisjson.image + ')','background-size':'cover'})
