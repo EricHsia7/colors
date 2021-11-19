@@ -982,9 +982,9 @@ display: none;
 </div>
 
 <div class="mobile-gesture-prompt-bg nw-top" id="mobile-gesture-prompt-bg">
-  <img src="https://erichsia7.github.io/colors/draw-arrow.png" class="mgp-arrow mpgt">
+  <img src="" class="mgp-arrow mpgt">
   <div class="text mpgtt">上滑<br>快速新增<br>喜好項目</div>
-  <img src="https://erichsia7.github.io/colors/draw-arrow.png" class="mgp-arrow mpgb">
+  <img src="" class="mgp-arrow mpgb">
   <div class="text mpgbb">下滑<br>快速關閉<br>顏色漸層</div>
   <div class="por">點擊任意位置繼續</div>
 </div>
@@ -2152,6 +2152,7 @@ else {
   }
   else {
   $('#mobile-gesture-prompt-bg').delay(800).fadeIn(300);
+  $('.mgp-arrow').attr('src','https://erichsia7.github.io/colors/draw-arrow.png')
   }
   //end
 }
