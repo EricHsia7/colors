@@ -524,6 +524,34 @@ left: 50%;
 transform: translateX(-50%);
 padding-bottom: 50px;
 }
+/*test*/
+.favrecommendcardtabbox {
+  width: clamp(230px, 90%, 350px);
+  height:45px;
+  display: flex;
+justify-content: center;
+align-items: center;
+  position:relative;
+}
+.favrecommendcardtab {
+  width:50%;
+  height:45px;
+  
+  display: flex;
+justify-content: center;
+align-items: center;
+}
+.favrecommendcardtabline {
+  background:#000;
+  width:50%;
+  height:3px;
+  position:absolute;
+  bottom:0px;
+  left:0px;
+  border-radius:5px 5px 0px 0px;
+}
+
+/*testend*/
 .favrecommendcardbox h3 {
 text-align: center;
 -webkit-user-select: none;
@@ -937,9 +965,11 @@ display: none;
 
 <div class="favrecommendcardbox">
 <div class="favrecommendcardtabbox">
-<div class="favrecommendcardtab">顏色</div>
+  <div class="favrecommendcardtab" style="background:rgba(0,0,0,0.08);">顏色</div>
 <div class="favrecommendcardtab">漸層</div>
+  <div class="favrecommendcardtabline"></div>
 </div>
+
 </div>
 
 <div class="favrecommendfixedtitle favrecommendfixedtitleopacity0">建議的顏色</div>
