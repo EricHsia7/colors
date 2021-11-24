@@ -2581,6 +2581,7 @@ $('#favrecommendcardtab_color').click(function() {
 });
 $('#favrecommendcardtab_ligrd').click(function() {
 	if(favrecommenddataarr_ligrd_html.length < 1) {
+		$('.favrecommendcard').remove()
 		for (var fygeeew = 0; fygeeew < recommend_info_card_cu; fygeeew++) { 
  $('.favrecommendcardbox').append('<div class="favrecommendcard loading" dp="lo" type="recommend"><div class="favrecommendcardcontent"><h4>&nbsp</h4><div class="favrecommendcarddescription">&nbsp</div></div></div>');
 }
