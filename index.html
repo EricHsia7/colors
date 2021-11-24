@@ -995,7 +995,7 @@ display: none;
 
 </div>
 
-<div class="favrecommendfixedtitle favrecommendfixedtitleopacity0">建議的顏色</div>
+<div class="favrecommendfixedtitle favrecommendfixedtitleopacity0">建議的顏色/漸層</div>
 
 <div class="pickerbg">
 <div class="pickerbox"></div>
@@ -2656,15 +2656,15 @@ $('#favrecommendcardtab_ligrd').attr('fm','1')
  }
 
   $(document).scroll(function(e) {
-    if($(document).scrollTop() > $('#e2tenbdiha7q0hi0').offset().top) {
+    if($(document).scrollTop() > $('.favrecommendcardtabbox').offset().top) {
       //ture
       $('.favrecommendfixedtitle').attr('class','favrecommendfixedtitle');
-      $('#e2tenbdiha7q0hi0').css({'opacity':'0'});
+      
     }
     else {
       //false
       $('.favrecommendfixedtitle').attr('class','favrecommendfixedtitle favrecommendfixedtitleopacity0');
-      $('#e2tenbdiha7q0hi0').css({'opacity':'1'});
+      
     }
   });
 </script>
