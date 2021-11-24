@@ -2527,6 +2527,8 @@ arrbtcoctft();
 
   //recommend-info-card
   var recommend_info_card_cu = 5 ;
+  var favrecommenddataarr_color_html = [] ;
+  var favrecommenddataarr_ligrd_html = [] ;
   if(!(localStorage.getItem('settings_lowspeed') === '1')) {
    recommend_info_card_cu = 10 ;
   }
@@ -2552,7 +2554,7 @@ arrbtcoctft();
    }
    $.ajax({type:'get',url:resulturl,dataType:'text',success:function(e) {
   var favrecommenddataarr = e.split(/[\s\n]/).filter(function(n){ return n.length > 0}) ;
-	var favrecommenddataarr_color_html = [] ;
+	
   for (var fygeeew = 0; fygeeew < favrecommenddataarr.length; fygeeew++) {
   if((hexToRgb(favrecommenddataarr[fygeeew]).r+hexToRgb(favrecommenddataarr[fygeeew]).g+hexToRgb(favrecommenddataarr[fygeeew]).b)/3 > 128) {
    var favrecommendcardtitlecolor = '000' ;
