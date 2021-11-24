@@ -524,6 +524,47 @@ left: 50%;
 transform: translateX(-50%);
 padding-bottom: 50px;
 }
+/*test*/
+.favrecommendcardtabbox {
+  width:100%;
+  height:45px;
+  display: flex;
+justify-content: center;
+align-items: center;
+  position:relative;
+  margin-top:15px;
+  overflow:hidden;
+  -webkit-user-select: none;
+}
+.favrecommendcardtab {
+  width:50%;
+  height:45px;
+  display: flex;
+justify-content: center;
+align-items: center;
+border-radius:10px 10px 0px 0px;
+-webkit-user-select: none;
+font-weight: 700;
+font-family: "Noto Sans TC", sans-serif;
+}
+.favrecommendcardtabline {
+  background:#000;
+  width:50%;
+  height:3px;
+  position:absolute;
+  bottom:0px;
+  left:0px;
+  border-radius:5px 5px 0px 0px;
+  transition:0.3s;
+  -webkit-user-select: none;
+}
+.favrecommendcardtab[fm="0"] {
+  color:#888;
+}
+.favrecommendcardtab[fm="1"] {
+  color:#000;
+}
+/*testend*/
 .favrecommendcardbox h3 {
 text-align: center;
 -webkit-user-select: none;
@@ -800,6 +841,16 @@ color: #fff;
 background: #1a1a1a;
 border: 1px #303030 solid;
 }
+.favrecommendcardtabline {
+  background:#fff;
+}
+.favrecommendcardtab[fm="0"] {
+  color:#888;
+}
+.favrecommendcardtab[fm="1"] {
+  color:#fff;
+}
+	
 .favrecommendcardbox h3 {
 color: #fff;
 }
@@ -936,7 +987,12 @@ display: none;
 </span>
 
 <div class="favrecommendcardbox">
-  <h3 id="e2tenbdiha7q0hi0">建議的顏色<br><bqta style="font-size:0.6em;opacity:0.6" id="sharefavinfotext">來自使用者(包括你)的喜好項目</bqta></h3>
+<div class="favrecommendcardtabbox">
+  <div class="favrecommendcardtab" id="favrecommendcardtab_color" fm="1">顏色</div>
+<div class="favrecommendcardtab" id="favrecommendcardtab_ligrd" fm="0">漸層</div>
+  <div class="favrecommendcardtabline"></div>
+</div>
+
 </div>
 
 <div class="favrecommendfixedtitle favrecommendfixedtitleopacity0">建議的顏色</div>
@@ -1743,8 +1799,16 @@ var favrecommendforms = $.ajax({url:"https://docs.google.com/forms/d/e/1FAIpQLSe
       if(getCookie('colorfav2').indexOf('&li]' + $('#rgb').attr('shdeg') + ']' + $('#rgb').attr('shga') + ']' + $('#rgb').attr('shgb')) != -1) {
     }
       else {
+if(opensou === 'recommend') {
+    
+      }
+     else {
+if(localStorage.getItem('settings_sharefav') === '1') {
+var favrecommendforms = $.ajax({url:'https://docs.google.com/forms/d/e/1FAIpQLScLxMmjmZNWrv7yyYazyAkuxp0eQAaN8jkYgx1I7BlXQWA4dg/formResponse?usp=pp_url&entry.1247563127=%23' + $('#rgb').attr('shga').split('#')[1] + '&entry.293943510=%23' + $('#rgb').attr('shgb').split('#')[1] + '&entry.123365810=' + $('#rgb').attr('shdeg') ,async:false});
+      }
+     }
     document.cookie = 'colorfav2=' + getCookie('colorfav2') + '&li]' + $('#rgb').attr('shdeg') + ']' + $('#rgb').attr('shga') + ']' + $('#rgb').attr('shgb') + '; max-age='+60*60*24*7 + '; domain=erichsia7.github.io' ;
-
+    
     $('.favt').css({'background':'rgba(250,250,250,0.8) url(https://erichsia7.github.io/colors/favorited.png)','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
             $('body').prompt({'message':'已新增至喜好項目','time':1200,'animate':'slide'});
     } 
@@ -2491,6 +2555,8 @@ arrbtcoctft();
 
   //recommend-info-card
   var recommend_info_card_cu = 5 ;
+  var favrecommenddataarr_color_html = [] ;
+  var favrecommenddataarr_ligrd_html = [] ;
   if(!(localStorage.getItem('settings_lowspeed') === '1')) {
    recommend_info_card_cu = 10 ;
   }
@@ -2510,12 +2576,17 @@ arrbtcoctft();
    //start
    var result10url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSKrUKs8Cq2a3Pubg_-MXmWp77GqLE0ImjKHy8VNAaVpqFH4Z94BeCcH-IQRsVnLTzmwaPG_66e35mH/pub?gid=1124579858&single=true&output=csv&" + genid('time') + '_' + genid('random') ;
    var result5url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSKrUKs8Cq2a3Pubg_-MXmWp77GqLE0ImjKHy8VNAaVpqFH4Z94BeCcH-IQRsVnLTzmwaPG_66e35mH/pub?gid=11228129&single=true&output=csv&'  + genid('time') + '_' + genid('random') ;
+	 var result10urlli = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQT08yDnvggfN_j-MxzVHnHFZQF307TYb09YV5Iab1MuzG0TY4-LSkiqLHZizZJxegTmcEtonh9ZKdn/pub?gid=1078464581&single=true&output=csv&' + genid('time') + '_' + genid('random') ;
+	 var result5urlli = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQT08yDnvggfN_j-MxzVHnHFZQF307TYb09YV5Iab1MuzG0TY4-LSkiqLHZizZJxegTmcEtonh9ZKdn/pub?gid=180621797&single=true&output=csv&' + genid('time') + '_' + genid('random') ;
    var resulturl = result5url ;
+	 var resulturlli = result5urlli ;
    if(!(localStorage.getItem('settings_lowspeed') === '1')) {
     resulturl = result10url ;
+		 var resulturlli = result10urlli ;
    }
    $.ajax({type:'get',url:resulturl,dataType:'text',success:function(e) {
   var favrecommenddataarr = e.split(/[\s\n]/).filter(function(n){ return n.length > 0}) ;
+	
   for (var fygeeew = 0; fygeeew < favrecommenddataarr.length; fygeeew++) {
   if((hexToRgb(favrecommenddataarr[fygeeew]).r+hexToRgb(favrecommenddataarr[fygeeew]).g+hexToRgb(favrecommenddataarr[fygeeew]).b)/3 > 128) {
    var favrecommendcardtitlecolor = '000' ;
@@ -2523,17 +2594,67 @@ arrbtcoctft();
   else {
     var favrecommendcardtitlecolor = 'fff' ;
   }
- 
+   favrecommenddataarr_color_html.push('<div class="favrecommendcard" dp="lo" type="recommend" style="background:' + favrecommenddataarr[fygeeew] + '"><div class="favrecommendcardcontent"><h4 style="color:#' + favrecommendcardtitlecolor + '">' + favrecommenddataarr[fygeeew] + '</h4><div class="favrecommendcarddescription">' + '<a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favrecommenddataarr[fygeeew]) + '&sou=recommend&r=' + genid('random') + '">查看顏色</a>' + '</div></div></div>')
     $('.favrecommendcard').eq(favrecommenddataarr.length-fygeeew-1).css({'background':favrecommenddataarr[fygeeew]}).attr('class','favrecommendcard');
     $('.favrecommendcardcontent h4').eq(favrecommenddataarr.length-fygeeew-1).css({'color':'#' + favrecommendcardtitlecolor}).html(favrecommenddataarr[fygeeew]);
     $('.favrecommendcarddescription').eq(favrecommenddataarr.length-fygeeew-1).html('<a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favrecommenddataarr[fygeeew]) + '&sou=recommend&r=' + genid('random') + '">查看顏色</a>');
+		
 }
+favrecommenddataarr_color_html = favrecommenddataarr_color_html.reverse().join('') ;
+//fn
+$('#favrecommendcardtab_color').click(function() {
+$('.favrecommendcard').remove()
+$('.favrecommendcardbox').append(favrecommenddataarr_color_html)
+$('.favrecommendcardtabline').css({'left':'0%'})
+$('#favrecommendcardtab_color').attr('fm','1')
+$('#favrecommendcardtab_ligrd').attr('fm','0')
+});
+$('#favrecommendcardtab_ligrd').click(function() {
+$('.favrecommendcardtabline').css({'left':'50%'})
+$('#favrecommendcardtab_color').attr('fm','0')
+$('#favrecommendcardtab_ligrd').attr('fm','1')
+	if(favrecommenddataarr_ligrd_html.length < 1) {
+		$('.favrecommendcard').remove()
+		for (var fygeeew = 0; fygeeew < recommend_info_card_cu; fygeeew++) { 
+ $('.favrecommendcardbox').append('<div class="favrecommendcard loading" dp="lo" type="recommend"><div class="favrecommendcardcontent"><h4>&nbsp</h4><div class="favrecommendcarddescription">&nbsp</div></div></div>');
+}
+		
+		$.ajax({type:'get',url:resulturlli,dataType:'text',success:function(e) {
+  var favrecommenddataarr = e.split(/[\s\n]/).filter(function(n){ return n.length > 0}) ;
+  for (var fygeeew = 0; fygeeew < favrecommenddataarr.length; fygeeew++) {
+	
+	var favrecommendgtfffctoo = favrecommenddataarr[fygeeew].replaceAll('@',',').replaceAll('$',' ').replaceAll('linear-gradient(','').replaceAll(' ','').replaceAll('100%','').replaceAll('0%','').replaceAll(')','').replaceAll('deg','').split(',')
+  if((hexToRgb(favrecommendgtfffctoo[1]).r+hexToRgb(favrecommendgtfffctoo[1]).g+hexToRgb(favrecommendgtfffctoo[1]).b+hexToRgb(favrecommendgtfffctoo[2]).r+hexToRgb(favrecommendgtfffctoo[2]).g+hexToRgb(favrecommendgtfffctoo[2]).b)/6 > 128) {
+   var favrecommendcardtitlecolor = '000' ;
+  }
+  else {
+    var favrecommendcardtitlecolor = 'fff' ;
+  }
+   favrecommenddataarr_ligrd_html.push('<div class="favrecommendcard" dp="lo" type="recommend" style="background:' + favrecommenddataarr[fygeeew].replaceAll('@',',').replaceAll('$',' ') + ';"><div class="favrecommendcardcontent"><h4 style="color:#' + favrecommendcardtitlecolor + '">' + favrecommenddataarr[fygeeew].replaceAll('@',',').replaceAll('$',' ').replaceAll('linear-gradient(','').replaceAll(' ','').replaceAll('100%','').replaceAll('0%','').replaceAll(')','').replaceAll('deg','') + '</h4><div class="favrecommendcarddescription">' + '<a href="' + 'https://erichsia7.github.io/colors/?s=2&ga=' + btoa(favrecommendgtfffctoo[1]) + '&gb=' + btoa(favrecommendgtfffctoo[2]) + '&gdeg=' + favrecommendgtfffctoo[0] + '&sou=recommend&r=' + genid('random') + '">查看顏色</a>' + '</div></div></div>')
+    $('.favrecommendcard').eq(favrecommenddataarr.length-fygeeew-1).css({'background':favrecommenddataarr[fygeeew].replaceAll('@',',').replaceAll('$',' ')}).attr('class','favrecommendcard');
+    $('.favrecommendcardcontent h4').eq(favrecommenddataarr.length-fygeeew-1).css({'color':'#' + favrecommendcardtitlecolor}).html(favrecommenddataarr[fygeeew].replaceAll('@',',').replaceAll('$',' ').replaceAll('linear-gradient(','').replaceAll(' ','').replaceAll('100%','').replaceAll('0%','').replaceAll(')','').replaceAll('deg',''));
+    $('.favrecommendcarddescription').eq(favrecommenddataarr.length-fygeeew-1).html('<a href="' + 'https://erichsia7.github.io/colors/?s=2&ga=' + btoa(favrecommendgtfffctoo[1]) + '&gb=' + btoa(favrecommendgtfffctoo[2]) + '&gdeg=' + favrecommendgtfffctoo[0] + '&sou=recommend&r=' + genid('random') + '">查看漸層</a>');
+}
+	favrecommenddataarr_ligrd_html = favrecommenddataarr_ligrd_html.reverse().join('');
+		}
+		});
+		
+		
+	}
+	else {
+	$('.favrecommendcard').remove()
+	$('.favrecommendcardbox').append(favrecommenddataarr_ligrd_html);
+	}
+	
+});
+//ed
 }
 });
    
    //end
  }
  }
+
   $(document).scroll(function(e) {
     if($(document).scrollTop() > $('#e2tenbdiha7q0hi0').offset().top) {
       //ture
