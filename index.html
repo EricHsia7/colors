@@ -552,8 +552,11 @@ border-radius:10px 10px 0px 0px;
   bottom:0px;
   left:0px;
   border-radius:5px 5px 0px 0px;
+  transition:0.3s;
 }
-
+.favrecommendcardtab[fm="1"] {
+  background:rgba(0,0,0,0.1)
+}
 /*testend*/
 .favrecommendcardbox h3 {
 text-align: center;
@@ -831,6 +834,14 @@ color: #fff;
 background: #1a1a1a;
 border: 1px #303030 solid;
 }
+.favrecommendcardtabline {
+  background:#fff;
+}
+.favrecommendcardtab[fm="1"] {
+  background:rgba(255,255,255,0.1);
+  color:#fff;
+}
+	
 .favrecommendcardbox h3 {
 color: #fff;
 }
@@ -2575,10 +2586,16 @@ arrbtcoctft();
 favrecommenddataarr_color_html = favrecommenddataarr_color_html.reverse().join('') ;
 //fn
 $('#favrecommendcardtab_color').click(function() {
-	$('.favrecommendcard').remove()
-	$('.favrecommendcardbox').append(favrecommenddataarr_color_html)
+$('.favrecommendcard').remove()
+$('.favrecommendcardbox').append(favrecommenddataarr_color_html)
+$('.favrecommendcardtabline').css({'left':'0%'})
+$('#favrecommendcardtab_color').attr('fm','1')
+$('#favrecommendcardtab_ligrd').attr('fm','0')
 });
 $('#favrecommendcardtab_ligrd').click(function() {
+$('.favrecommendcardtabline').css({'left':'50%'})
+$('#favrecommendcardtab_color').attr('fm','0')
+$('#favrecommendcardtab_ligrd').attr('fm','1')
 	if(favrecommenddataarr_ligrd_html.length < 1) {
 		$('.favrecommendcard').remove()
 		for (var fygeeew = 0; fygeeew < recommend_info_card_cu; fygeeew++) { 
