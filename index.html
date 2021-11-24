@@ -995,7 +995,7 @@ display: none;
 
 </div>
 
-<div class="favrecommendfixedtitle favrecommendfixedtitleopacity0">建議的顏色/漸層</div>
+<div class="favrecommendfixedtitle favrecommendfixedtitleopacity0">建議的顏色</div>
 
 <div class="pickerbg">
 <div class="pickerbox"></div>
@@ -2608,11 +2608,13 @@ $('.favrecommendcardbox').append(favrecommenddataarr_color_html)
 $('.favrecommendcardtabline').css({'left':'0%'})
 $('#favrecommendcardtab_color').attr('fm','1')
 $('#favrecommendcardtab_ligrd').attr('fm','0')
+$('.favrecommendfixedtitle').html('建議的顏色')
 });
 $('#favrecommendcardtab_ligrd').click(function() {
 $('.favrecommendcardtabline').css({'left':'50%'})
 $('#favrecommendcardtab_color').attr('fm','0')
 $('#favrecommendcardtab_ligrd').attr('fm','1')
+$('.favrecommendfixedtitle').html('建議的漸層')
 	if(favrecommenddataarr_ligrd_html.length < 1) {
 		$('.favrecommendcard').remove()
 		for (var fygeeew = 0; fygeeew < recommend_info_card_cu; fygeeew++) { 
@@ -2638,14 +2640,11 @@ $('#favrecommendcardtab_ligrd').attr('fm','1')
 	favrecommenddataarr_ligrd_html = favrecommenddataarr_ligrd_html.reverse().join('');
 		}
 		});
-		
-		
 	}
 	else {
 	$('.favrecommendcard').remove()
 	$('.favrecommendcardbox').append(favrecommenddataarr_ligrd_html);
 	}
-	
 });
 //ed
 }
@@ -2659,7 +2658,6 @@ $('#favrecommendcardtab_ligrd').attr('fm','1')
     if($(document).scrollTop() > $('.favrecommendcardtabbox').offset().top) {
       //ture
       $('.favrecommendfixedtitle').attr('class','favrecommendfixedtitle');
-      
     }
     else {
       //false
