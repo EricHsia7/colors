@@ -558,8 +558,11 @@ font-family: "Noto Sans TC", sans-serif;
   transition:0.3s;
   -webkit-user-select: none;
 }
+.favrecommendcardtab[fm="0"] {
+  color:#888;
+}
 .favrecommendcardtab[fm="1"] {
-  background:rgba(0,0,0,0.1)
+  color:#000;
 }
 /*testend*/
 .favrecommendcardbox h3 {
@@ -841,8 +844,10 @@ border: 1px #303030 solid;
 .favrecommendcardtabline {
   background:#fff;
 }
+.favrecommendcardtab[fm="0"] {
+  color:#888;
+}
 .favrecommendcardtab[fm="1"] {
-  background:rgba(255,255,255,0.1);
   color:#fff;
 }
 	
@@ -983,8 +988,8 @@ display: none;
 
 <div class="favrecommendcardbox">
 <div class="favrecommendcardtabbox">
-  <div class="favrecommendcardtab" id="favrecommendcardtab_color">顏色</div>
-<div class="favrecommendcardtab" id="favrecommendcardtab_ligrd">漸層</div>
+  <div class="favrecommendcardtab" id="favrecommendcardtab_color" fm="1">顏色</div>
+<div class="favrecommendcardtab" id="favrecommendcardtab_ligrd" fm="0">漸層</div>
   <div class="favrecommendcardtabline"></div>
 </div>
 
