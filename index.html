@@ -2552,6 +2552,7 @@ arrbtcoctft();
    }
    $.ajax({type:'get',url:resulturl,dataType:'text',success:function(e) {
   var favrecommenddataarr = e.split(/[\s\n]/).filter(function(n){ return n.length > 0}) ;
+	var favrecommenddataarr_color_html = [] ;
   for (var fygeeew = 0; fygeeew < favrecommenddataarr.length; fygeeew++) {
   if((hexToRgb(favrecommenddataarr[fygeeew]).r+hexToRgb(favrecommenddataarr[fygeeew]).g+hexToRgb(favrecommenddataarr[fygeeew]).b)/3 > 128) {
    var favrecommendcardtitlecolor = '000' ;
@@ -2559,11 +2560,15 @@ arrbtcoctft();
   else {
     var favrecommendcardtitlecolor = 'fff' ;
   }
- 
+   favrecommenddataarr_color_html.push('<div class="favrecommendcard" dp="lo" type="recommend" style="background:' + favrecommenddataarr[fygeeew] + '"><div class="favrecommendcardcontent"><h4 style="#' + favrecommendcardtitlecolor + '">' + favrecommenddataarr[fygeeew] + '</h4><div class="favrecommendcarddescription">' + '<a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favrecommenddataarr[fygeeew]) + '&sou=recommend&r=' + genid('random') + '">查看顏色</a>' + '</div></div></div>')
     $('.favrecommendcard').eq(favrecommenddataarr.length-fygeeew-1).css({'background':favrecommenddataarr[fygeeew]}).attr('class','favrecommendcard');
     $('.favrecommendcardcontent h4').eq(favrecommenddataarr.length-fygeeew-1).css({'color':'#' + favrecommendcardtitlecolor}).html(favrecommenddataarr[fygeeew]);
     $('.favrecommendcarddescription').eq(favrecommenddataarr.length-fygeeew-1).html('<a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favrecommenddataarr[fygeeew]) + '&sou=recommend&r=' + genid('random') + '">查看顏色</a>');
+		
 }
+		
+		 favrecommenddataarr_color_html = favrecommenddataarr_color_html.join('') ;
+		 
 }
 });
    
