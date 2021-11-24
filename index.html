@@ -1800,7 +1800,7 @@ var favrecommendforms = $.ajax({url:"https://docs.google.com/forms/d/e/1FAIpQLSe
     }
       else {
 if(localStorage.getItem('settings_sharefav') === '1') {
-var favrecommendforms = $.ajax({url:'https://docs.google.com/forms/d/e/1FAIpQLScLxMmjmZNWrv7yyYazyAkuxp0eQAaN8jkYgx1I7BlXQWA4dg/viewform?usp=pp_url&entry.1247563127=%23' + $('#rgb').attr('shga').split('#')[1] + '&entry.293943510=' + $('#rgb').attr('shgb').split('#')[1] + '&entry.123365810=' + $('#rgb').attr('shdeg') ,async:false});
+var favrecommendforms = $.ajax({url:'https://docs.google.com/forms/d/e/1FAIpQLScLxMmjmZNWrv7yyYazyAkuxp0eQAaN8jkYgx1I7BlXQWA4dg/viewform?usp=pp_url&entry.1247563127=%23' + $('#rgb').attr('shga').split('#')[1] + '&entry.293943510=%23' + $('#rgb').attr('shgb').split('#')[1] + '&entry.123365810=' + $('#rgb').attr('shdeg') ,async:false});
       }
 	   
     document.cookie = 'colorfav2=' + getCookie('colorfav2') + '&li]' + $('#rgb').attr('shdeg') + ']' + $('#rgb').attr('shga') + ']' + $('#rgb').attr('shgb') + '; max-age='+60*60*24*7 + '; domain=erichsia7.github.io' ;
