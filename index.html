@@ -2577,7 +2577,6 @@ favrecommenddataarr_color_html = favrecommenddataarr_color_html.reverse().join('
 $('#favrecommendcardtab_color').click(function() {
 	$('.favrecommendcard').remove()
 	$('.favrecommendcardbox').append(favrecommenddataarr_color_html)
-	
 });
 $('#favrecommendcardtab_ligrd').click(function() {
 	if(favrecommenddataarr_ligrd_html.length < 1) {
@@ -2602,7 +2601,7 @@ $('#favrecommendcardtab_ligrd').click(function() {
     $('.favrecommendcardcontent h4').eq(favrecommenddataarr.length-fygeeew-1).css({'color':'#' + favrecommendcardtitlecolor}).html(favrecommenddataarr[fygeeew].replaceAll('@',',').replaceAll('$',' ').replaceAll('linear-gradient(','').replaceAll(' ','').replaceAll('100%','').replaceAll('0%','').replaceAll(')','').replaceAll('deg',''));
     $('.favrecommendcarddescription').eq(favrecommenddataarr.length-fygeeew-1).html('<a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favrecommenddataarr[fygeeew]) + '&sou=recommend&r=' + genid('random') + '">查看顏色</a>');
 }
-	favrecommenddataarr_ligrd_html = favrecommenddataarr_ligrd_html.join('');
+	favrecommenddataarr_ligrd_html = favrecommenddataarr_ligrd_html.reverse().join('');
 		}
 		});
 		
@@ -2610,7 +2609,7 @@ $('#favrecommendcardtab_ligrd').click(function() {
 	}
 	else {
 	$('.favrecommendcard').remove()
-	$('.favrecommendcardbox').append(favrecommenddataarr_ligrd_html)
+	$('.favrecommendcardbox').append(favrecommenddataarr_ligrd_html);
 	}
 	
 });
