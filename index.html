@@ -2548,9 +2548,13 @@ arrbtcoctft();
    //start
    var result10url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSKrUKs8Cq2a3Pubg_-MXmWp77GqLE0ImjKHy8VNAaVpqFH4Z94BeCcH-IQRsVnLTzmwaPG_66e35mH/pub?gid=1124579858&single=true&output=csv&" + genid('time') + '_' + genid('random') ;
    var result5url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSKrUKs8Cq2a3Pubg_-MXmWp77GqLE0ImjKHy8VNAaVpqFH4Z94BeCcH-IQRsVnLTzmwaPG_66e35mH/pub?gid=11228129&single=true&output=csv&'  + genid('time') + '_' + genid('random') ;
+	 var result10urlli = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQT08yDnvggfN_j-MxzVHnHFZQF307TYb09YV5Iab1MuzG0TY4-LSkiqLHZizZJxegTmcEtonh9ZKdn/pub?gid=1078464581&single=true&output=csv&' + genid('time') + '_' + genid('random') ;
+	 var result5urlli = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQT08yDnvggfN_j-MxzVHnHFZQF307TYb09YV5Iab1MuzG0TY4-LSkiqLHZizZJxegTmcEtonh9ZKdn/pub?gid=180621797&single=true&output=csv&' + genid('time') + '_' + genid('random') ;
    var resulturl = result5url ;
+	 var resulturlli = result5urlli ;
    if(!(localStorage.getItem('settings_lowspeed') === '1')) {
     resulturl = result10url ;
+		 var resulturlli = result10urlli ;
    }
    $.ajax({type:'get',url:resulturl,dataType:'text',success:function(e) {
   var favrecommenddataarr = e.split(/[\s\n]/).filter(function(n){ return n.length > 0}) ;
@@ -2568,15 +2572,56 @@ arrbtcoctft();
     $('.favrecommendcarddescription').eq(favrecommenddataarr.length-fygeeew-1).html('<a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favrecommenddataarr[fygeeew]) + '&sou=recommend&r=' + genid('random') + '">查看顏色</a>');
 		
 }
+favrecommenddataarr_color_html = favrecommenddataarr_color_html.join('') ;
+//fn
+$('#favrecommendcardtab_color').click(function() {
+	$('.favrecommendcard').remove()
+	$('.favrecommendcardbox').append(favrecommenddataarr_color_html)
+	
+});
+$('#favrecommendcardtab_ligrd').click(function() {
+	if(favrecommenddataarr_ligrd_html.length < 1) {
+		for (var fygeeew = 0; fygeeew < recommend_info_card_cu; fygeeew++) { 
+ $('.favrecommendcardbox').append('<div class="favrecommendcard loading" dp="lo" type="recommend"><div class="favrecommendcardcontent"><h4>&nbsp</h4><div class="favrecommendcarddescription">&nbsp</div></div></div>');
+}
 		
-		 favrecommenddataarr_color_html = favrecommenddataarr_color_html.join('') ;
-		 
+		$.ajax({type:'get',url:resulturlli,dataType:'text',success:function(e) {
+  var favrecommenddataarr = e.split(/[\s\n]/).filter(function(n){ return n.length > 0}) ;
+  for (var fygeeew = 0; fygeeew < favrecommenddataarr.length; fygeeew++) {
+	/*
+  if((hexToRgb(favrecommenddataarr[fygeeew]).r+hexToRgb(favrecommenddataarr[fygeeew]).g+hexToRgb(favrecommenddataarr[fygeeew]).b)/3 > 128) {
+   var favrecommendcardtitlecolor = '000' ;
+  }
+  else {
+    var favrecommendcardtitlecolor = 'fff' ;
+  }
+	*/
+		var favrecommendcardtitlecolor = 'fff' ;
+   favrecommenddataarr_ligrd_html.push('<div class="favrecommendcard" dp="lo" type="recommend" style="background:' + favrecommenddataarr[fygeeew] + '"><div class="favrecommendcardcontent"><h4 style="#' + favrecommendcardtitlecolor + '">' + favrecommenddataarr[fygeeew] + '</h4><div class="favrecommendcarddescription">' + '<a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favrecommenddataarr[fygeeew]) + '&sou=recommend&r=' + genid('random') + '">查看顏色</a>' + '</div></div></div>')
+    $('.favrecommendcard').eq(favrecommenddataarr.length-fygeeew-1).css({'background':favrecommenddataarr[fygeeew]}).attr('class','favrecommendcard');
+    $('.favrecommendcardcontent h4').eq(favrecommenddataarr.length-fygeeew-1).css({'color':'#' + favrecommendcardtitlecolor}).html(favrecommenddataarr[fygeeew]);
+    $('.favrecommendcarddescription').eq(favrecommenddataarr.length-fygeeew-1).html('<a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favrecommenddataarr[fygeeew]) + '&sou=recommend&r=' + genid('random') + '">查看顏色</a>');
+}
+			favrecommenddataarr_ligrd_html = favrecommenddataarr_ligrd_html.join('');
+		}
+		});
+		
+		
+	}
+	else {
+	$('.favrecommendcard').remove()
+	$('.favrecommendcardbox').append(favrecommenddataarr_ligrd_html)
+	}
+	
+});
+//ed
 }
 });
    
    //end
  }
  }
+
   $(document).scroll(function(e) {
     if($(document).scrollTop() > $('#e2tenbdiha7q0hi0').offset().top) {
       //ture
