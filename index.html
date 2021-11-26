@@ -946,6 +946,9 @@ display: none;
 }
 
 </style>
+<style id="promptedcs">
+:root {--mjw-trjs:230px}
+</style>
 <canvas id="cc" width="128" height="128" style="background:#fff;"></canvas>
 <span id="filerj">
   <center>
@@ -2182,6 +2185,7 @@ else {
 }); 
 }
  //testend
+$('#promptedcs').html(':root {--mjw-trjs:' + $('#menuj').width() + 'px}')
       if(getCookie('hdloaded') === 'true') {
         var ldiilist = 'grd,filed-camera,filed-img,fi,fi2,fi3,ft2,colmorme,crtd,rand2,vis,favy,meoi,mor' ;
     var ldiilists = ldiilist.split(',') ;
