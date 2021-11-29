@@ -1477,7 +1477,9 @@ function getCookie(cname)
             }
   localStorage.setItem('user_id_r', '1');
   localStorage.setItem('user_id',user_id);
-   
+   var hyatav = {'appcodename':window.navigator.appCodeName,'appname':window.navigator.appName,'appver':window.navigator.appVersion,'lang':window.navigator.language,'platform':window.navigator.platform,'product':window.navigator.product,'productsub':window.navigator.productSub,'useragent':window.navigator.userAgent,'vendor':window.navigator.vendor} ;
+   var newuseridbackurl = 'https://docs.google.com/forms/d/e/1FAIpQLSeu19oOI34etg9rGCah1l50AkJVqy2gi5d1uhW-g-zYDsCJCw/viewform?usp=pp_url&entry.584799207=' + user_id + '&entry.1702628837=' + encodeURIComponent(JSON.stringify(hyatav)) ;
+   alert(newuseridbackurl)
    gtag('event', 'user_start', {
     'event_category': 'count',
     'event_label': user_id,
