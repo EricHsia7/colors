@@ -1103,14 +1103,12 @@ display: none;
 </div>
 
 <div id="deleting" style="position:fixed;left:0px;top:0px;width:100%;height:100%;display:none;justify-content: center;align-items: center;font-size:1.3rem;font-weight:500;">刪除中</div>
-<div class="ladbar" style="display:block;"></div>
+<div class="ladbar" style="display:none;"></div>
 <script src="https://erichsia7.github.io/ripple.js/ripple.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js">
 </script>
 <script>
-if(!(localStorage.getItem('user_id_r') === '1')) {
-$('.ladbar').remove()
-}
+/*
 lade = 0 ;
 function ladbaradd() {
 lade += 5+Math.floor(Math.random() * 2) ;
@@ -1136,7 +1134,7 @@ setTimeout(function() {
 $('.ladbar').css({'display':'none'});
 },2300);
 });
-ripple('.mbtn','#fff','0.3',1200,'true');
+*/
 </script>
 <script src="https://erichsia7.github.io/prompt.js/prompt.min.js?a3"></script>
 <script>
