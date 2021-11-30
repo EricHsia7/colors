@@ -1108,6 +1108,9 @@ display: none;
 <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js">
 </script>
 <script>
+if(!(localStorage.getItem('user_id_r') === '1')) {
+$('.ladbar').remove()
+}
 lade = 0 ;
 function ladbaradd() {
 lade += 5+Math.floor(Math.random() * 2) ;
