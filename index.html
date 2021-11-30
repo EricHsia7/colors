@@ -1037,10 +1037,11 @@ display: none;
   <div class="fi lle btn"></div>
   </div> 
   <div class="moreoptbg"></div>
-<div class="moreopt" style="--list-count:3">
+<div class="moreopt" style="--list-count:4">
   <li f="qrcode">二維碼</li>
   <li f="openinpicker">顏色選擇器</li>
   <li f="toimage">轉換圖片</li>
+  <li f="mixedgradient">混合漸層</li>
 </div>
   
 </div>
@@ -2001,8 +2002,9 @@ $('#rgb').attr('hex', shcolor);
 $('#rgb').attr('cmyk',rgbtocmyk(hexToRgb(shcolor).r,hexToRgb(shcolor).g,hexToRgb(shcolor).b).cmykstr);
 $('#rgb').attr('hsl',rgbtohsl(hexToRgb(shcolor).r,hexToRgb(shcolor).g,hexToRgb(shcolor).b).hslstr);
 $('#rgb').attr('hsv',rgbtohsv(hexToRgb(shcolor).r,hexToRgb(shcolor).g,hexToRgb(shcolor).b).hsvstr);
-  
-  
+
+$('li[f="mixedgradient"]').css({'opacity':'0.3'});
+
 $('input[t="rgb"]').val('rgb(' + $('#rgb').attr('rgb') + ')');
 $('input[t="cmyk"]').val('cmyk(' + parseInt($('#rgb').attr('cmyk').split(',')[0]) + '%,' + parseInt($('#rgb').attr('cmyk').split(',')[1]) + '%,' + parseInt($('#rgb').attr('cmyk').split(',')[2]) + '%,' + parseInt($('#rgb').attr('cmyk').split(',')[3]) + '%)');
 $('input[t="hsl"]').val('hsl(' + parseInt($('#rgb').attr('hsl').split(',')[0]) + ',' + parseInt($('#rgb').attr('hsl').split(',')[1]) + '%,' + parseInt($('#rgb').attr('hsl').split(',')[2]) + '%)');
@@ -2123,6 +2125,11 @@ $('.color').fadeIn(222);
     if(getCookie('colorfav2').indexOf('li]' + gcdeg + ']' + gc1 + ']' + gc2) != -1) {
       $('.favt').css({'background':'rgba(245,245,245,0.8) url(https://erichsia7.github.io/colors/favorited.png)','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
     }
+    
+    $('li[f="mixedgradient"]').click(function() {
+      location.href = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa($('#rgb').attr('arc')) + '&sou=mixgrd&r=' + genid('random') ;
+    });
+    
   }
   var added = 0 ;
   var addte = favda.length ;
