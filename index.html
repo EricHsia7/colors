@@ -2644,7 +2644,7 @@ $('.favrecommendfixedtitle').html('建議的漸層')
   var favrecommenddataarr = e.split(/[\s\n]/).filter(function(n){ return n.length > 0}) ;
   for (var fygeeew = 0; fygeeew < favrecommenddataarr.length; fygeeew++) {
 	
-	var favrecommendgtfffctoo = favrecommenddataarr[fygeeew].replaceAll('linear-gradient(','').replaceAll(')','').replaceAll('$0%','').replaceAll('$100%','').split('@') ;
+	var favrecommendgtfffctoo = favrecommenddataarr[fygeeew].replaceAll('deg','').replaceAll('linear-gradient(','').replaceAll(')','').replaceAll('$0%','').replaceAll('$100%','').split('@') ;
 
   if((hexToRgb(favrecommendgtfffctoo[1]).r+hexToRgb(favrecommendgtfffctoo[1]).g+hexToRgb(favrecommendgtfffctoo[1]).b+hexToRgb(favrecommendgtfffctoo[2]).r+hexToRgb(favrecommendgtfffctoo[2]).g+hexToRgb(favrecommendgtfffctoo[2]).b)/6 > 128) {
    var favrecommendcardtitlecolor = '000' ;
