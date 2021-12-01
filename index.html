@@ -2758,3 +2758,20 @@ function enableScroll() {
 disableScroll();
   }
 </script>
+<script>
+caches.open('static')
+        .then(function(cache){
+            cache.addAll([
+                '/',
+                '/index.html',
+                'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js?1',
+                'https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js',
+                '/manifest.json?qpipoo',
+                'https://erichsia7.github.io/ripple.js/ripple.min.js',
+                'https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js',
+                'https://erichsia7.github.io/prompt.js/prompt.min.js?a3',
+                'https://erichsia7.github.io/colors/c2_512.png',
+                'https://erichsia7.github.io/colors/c2_ico.ico'
+            ]);   
+        })  
+</script>
