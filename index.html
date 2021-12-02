@@ -826,8 +826,9 @@ width: 100%;
   font-size:15px;
   font-weight: 500;
   font-family: "Noto Sans TC", sans-serif;
-  /*border-top: 1px #888 solid;*/
 }
+.online::before{content:'';position:fixed;top:0;left:0;width:100%;height:calc(100% - 25px);background:rgba(0,0,0,0);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);opacity:0;transition:.3s}
+.online[h="1"]::before{opacity:1}
 @media (prefers-color-scheme: dark) {
 :root {
 --morecard-btn-color: #1f1f1f;
@@ -1157,7 +1158,6 @@ $('.ladbar').css({'display':'none'});
 },2300);
 });
 */
-$('#mainstyle').append(".online::before{content:'';position:fixed;top:0;left:0;width:100%;height:calc(100% - 25px);background:rgba(0,0,0,0);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);opacity:0;transition:.3s}.online[h="1"]::before{opacity:1}");
 function checkonline() {
   var onlinestr = '沒有網路連線' ;
   if(navigator.onLine) {
