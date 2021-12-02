@@ -810,6 +810,22 @@ height: 55px;
 width: 100%;
 -webkit-user-select: none;
 }
+
+.online {
+  position:fixed;
+  bottom:-30px;
+  left:0px;
+  width:100%;
+  height:25px;
+  background:#ac3c3d;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  color:#fff;
+  transition:0.3s;
+  font-size:15px;
+}
+
 @media (prefers-color-scheme: dark) {
 :root {
 --morecard-btn-color: #1f1f1f;
@@ -1099,6 +1115,9 @@ display: none;
   <div class="alert_content"></div>
   <div class="alert_btn">關閉</div>
 </div>
+
+<div class="online"></div>
+
 <div id="colorjsloading">
   解析中
 </div>
@@ -1136,6 +1155,47 @@ $('.ladbar').css({'display':'none'});
 },2300);
 });
 */
+function checkonline() {
+  var onlinestr = '沒有網路連線' ;
+  if(navigator.onLine) {
+      onlinestr = '已連上網路' ;
+      $('.online').html(onlinestr).css({'background':'#00945e'});
+      setTimeout(function() {
+        $('.online').css({'bottom':'-30px'});
+    },1500)
+      setTimeout(function() {
+        $('.online').css({'display':'none'});
+    },1800)
+    }
+  else {
+    $('.online').css({'display':'flex'});
+    $('.online').html(onlinestr)
+    setTimeout(function() {
+    $('.online').css({'bottom':'0px','background':'#ac3c3d'});
+    },1);
+  }
+}
+
+var offlineoe = '0'
+window.addEventListener('offline', function(e) {
+    offlineoe = '1'
+    checkonline()
+});
+document.addEventListener('offline', function(e) {
+    offlineoe = '1'
+    checkonline()
+});
+
+
+window.addEventListener('online', function(e) {
+    offlineoe = '0'
+    checkonline()
+});
+document.addEventListener('online', function(e) {
+    offlineoe = '0'
+    checkonline()
+});
+
 </script>
 <script src="https://erichsia7.github.io/prompt.js/prompt.min.js?a3"></script>
 <script>
