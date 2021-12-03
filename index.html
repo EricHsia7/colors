@@ -1239,7 +1239,14 @@ function setthemecol(hexcolsjs,delaytimems) {
   $('meta[name="theme-color"]').attr('content',hexcolsjs);
   },delaytimems);
 }
-  
+function darkmodehexcol() {
+if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  return '#1a1a1a'
+}
+else {
+return '#fff'
+}
+}
   
   function genid(mode) {
 if(mode === "random"){
