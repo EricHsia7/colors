@@ -15,7 +15,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js?1"></script>
 <link href="https://erichsia7.github.io/colors/c2_512.png" sizes="512x512" rel="apple-touch-icon-precomposed" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<!--<meta name="apple-mobile-web-app-status-bar-style" content="black" />-->
+<meta name="theme-color" content="#fff">
 <link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="icon" />
 <link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="bookmark" />
 <link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="shortcut icon" />
@@ -234,6 +235,21 @@ $('.ladbar').css({'display':'none'});
 */
 </script>
 <script>
+
+function setthemecol(hexcolsjs,delaytimems) {
+  setTimeout(function() {
+  $('meta[name="theme-color"]').attr('content',hexcolsjs);
+  },delaytimems);
+}
+function darkmodehexcol() {
+if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  return '#1a1a1a'
+}
+else {
+return '#fff'
+}
+}
+ setthemecol(darkmodehexcol(),1)
   function genid(mode) {
 if(mode === "random"){
 var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
