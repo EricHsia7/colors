@@ -17,7 +17,7 @@
 <link href="https://erichsia7.github.io/colors/c2_512.png" sizes="512x512" rel="apple-touch-icon-precomposed" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <!--<meta name="apple-mobile-web-app-status-bar-style" content="black" />-->
-<meta name="theme-color" content="#ff0000">
+<meta name="theme-color" content="#fff">
 <link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="icon" />
 <link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="bookmark" />
 <link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="shortcut icon" />
@@ -1564,6 +1564,7 @@ let darkmodematched = window.matchMedia('(prefers-color-scheme: dark)').matches;
 var darkmodematchedstr = 'undefined' ;
 if(darkmodematched) {
   darkmodematchedstr = 'true' ;
+  $('meta[name="theme-color"]').attr('content','#1a1a1a');
 }
 else {
 	darkmodematchedstr = 'false' ;
@@ -2073,7 +2074,7 @@ $('input[t="rgb"]').val('rgb(' + $('#rgb').attr('rgb') + ')');
 $('input[t="cmyk"]').val('cmyk(' + parseInt($('#rgb').attr('cmyk').split(',')[0]) + '%,' + parseInt($('#rgb').attr('cmyk').split(',')[1]) + '%,' + parseInt($('#rgb').attr('cmyk').split(',')[2]) + '%,' + parseInt($('#rgb').attr('cmyk').split(',')[3]) + '%)');
 $('input[t="hsl"]').val('hsl(' + parseInt($('#rgb').attr('hsl').split(',')[0]) + ',' + parseInt($('#rgb').attr('hsl').split(',')[1]) + '%,' + parseInt($('#rgb').attr('hsl').split(',')[2]) + '%)');
 $('input[t="hsv"]').val('hsv(' + parseInt($('#rgb').attr('hsv').split(',')[0]) + ',' + parseInt($('#rgb').attr('hsv').split(',')[1]) + '%,' + parseInt($('#rgb').attr('hsv').split(',')[2]) + '%)');
-
+$('meta[name="theme-color"]').attr('content',shcolor);
 
 if((hexToRgb(shcolor).r+hexToRgb(shcolor).g+hexToRgb(shcolor).b)/3 > 128) {
       $('#rgb,.colorvlcm').css({'color':'#000'});
@@ -2159,6 +2160,9 @@ $('input[t="hsv"]').val('暫不支援');
     
     var grdarc = rgbToHex(Math.ceil((hexToRgb(gc1).r+hexToRgb(gc2).r)/2),Math.ceil((hexToRgb(gc1).g+hexToRgb(gc2).g)/2),Math.ceil((hexToRgb(gc1).b+hexToRgb(gc2).b)/2)) ;
     var grd = 'linear-gradient(' + gcdeg + 'deg ,' +  gc1 + ' 0%,' +  gc2 + ' 100%)' ;
+	  
+    $('meta[name="theme-color"]').attr('content',grdarc);
+
 if(open === "fav") {
 //$('.color').fadeIn(1);
   $('.color').css({'display':'block'});
