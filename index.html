@@ -2104,6 +2104,7 @@ if((hexToRgb(shcolor).r+hexToRgb(shcolor).g+hexToRgb(shcolor).b)/3 > 128) {
   if(open === "fav") {
 $('.color').css({'display':'block'});
     $('#filerj,.favrecommendcardbox').css({'opacity':'0','position':'fixed'});
+setthemecol(shcolor,1);
   }
 else {
   
@@ -2115,7 +2116,6 @@ $('.color').css({'transform':'translateY(0px)','transition':'0.3s','opacity':'1'
   },1);
 $('.color').css({'display':'block'});
     setthemecol(shcolor,300);
-
   }
 else {
 $('.color').fadeIn(222);
@@ -2179,6 +2179,7 @@ if(open === "fav") {
 //$('.color').fadeIn(1);
   $('.color').css({'display':'block'});
   $('#filerj,.favrecommendcardbox').css({'opacity':'0','position':'fixed'});
+setthemecol(shcolor,1);
   }
 else {
   
