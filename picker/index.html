@@ -537,7 +537,7 @@ rgbaColor = 'rgba(' + hsvToRgb(Math.round(px2/bar_width*359),100,100)[0] + ',' +
     var hsvcolortorgb = hsvToRgb(hsv_a,hsv_x,hsv_y) ;
     $('.picker').css({'background':'rgb(' + hsvcolortorgb[0] + ',' + hsvcolortorgb[1] + ',' + hsvcolortorgb[2] + ')'})
   $('.box,.btn').css({'background':'rgb(' + hsvcolortorgb[0] + ',' + hsvcolortorgb[1] + ',' + hsvcolortorgb[2] + ')'});
-  
+  setthemecol(rgbToHex(hsvcolortorgb[0],hsvcolortorgb[1],hsvcolortorgb[2]),1)
   if((hsvcolortorgb[0]+hsvcolortorgb[1]+hsvcolortorgb[2])/3 > 128) {
 $('.btn').css({'color':'#000'})
 }
