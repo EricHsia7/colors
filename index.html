@@ -2465,6 +2465,7 @@ $('.colorinps2').css({'transform':'translateX(' + 0 + '%) translateY(-50%)','tra
       
         $('.color').css({'width':favorite_close_per_w,'height':favorite_close_per_h,'top':favorite_close_per_y,'left':favorite_close_per_x,'border-radius':favorite_close_per_border_radius,'transition':'0.3s'});
       $('body').css({'background':$('#rgb').attr('arc')});
+      setthemecol($('#rgb').attr('arc'),1)
       $('.colorinps2').css({'transform':'translateX(' + (-20*copycolmode) + '%) translateY(-50%)','transition':'0s'});
       
       $('#menuj').css({'opacity':(1),'transition':'0.3s'});
@@ -2483,6 +2484,7 @@ $('.colorinps2').css({'transform':'translateX(' + 0 + '%) translateY(-50%)','tra
   if(parseInt($(".color").attr('topi')) < ($(window).height()*0.12)) {
     $(".color").css({'transform':'translateY(0px)','border-radius':'0px','transition':'0.3s','opacity':'1'});
     $('body').css({'background':$('#rgb').attr('arc')});
+    setthemecol($('#rgb').attr('arc'),1)
   }
   else {
     
@@ -2524,16 +2526,19 @@ function move(e) {
       if(favorite_close_percentage < 1 && favorite_close_percentage > 0) {
       $('.color').css({'width':favorite_close_per_w,'height':favorite_close_per_h,'top':favorite_close_per_y,'left':favorite_close_per_x,'border-radius':favorite_close_per_border_radius,'transition':'0s'});
       $('body').css({'background':''});
+      setthemecol(darkmodehexcol(),1)
       }
       else {
         
         if(favorite_close_percentage > 1) {
         favorite_close_percentage = 1 ;
           $('body').css({'background':''});
+	  setthemecol(darkmodehexcol(),1)
         }
         if(favorite_close_percentage < 0) {
         favorite_close_percentage = 0 ;
           $('body').css({'background':$('#rgb').attr('arc')});
+	  setthemecol($('#rgb').attr('arc'),1)
         }
         
       favorite_close_per_w = parseInt(url.searchParams.get('fgw'))+($(window).width()-parseInt(url.searchParams.get('fgw')))*(1-favorite_close_percentage) ;
@@ -2569,6 +2574,7 @@ function move(e) {
      $('.color').css({'transform':'translateY(' + gtip + 'px)','border-radius':'15px 15px 0px 0px','transition':'0s'}).attr('topi',gtip);
      $('.color').css({'opacity':1-(parseInt($(".color").attr('topi'))/$(window).height()),'transition':'0.1s'});
      $('body').css({'background':''});
+     setthemecol(darkmodehexcol(),1)
    }
     else {
        $('.color').css({'border-radius':'0px','transition':'0.3s'});
