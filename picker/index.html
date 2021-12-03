@@ -684,7 +684,7 @@ location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random') ;
     $('.btn').css({'background':'rgb(' + hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv)).join(',') + ')'});
     hsv_x = parseInt(urpis);
     hsv_y = parseInt(urpiv);
-    
+    setthemecol(rgbToHex(hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[0],hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[1],hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[2]),1)
     
     
           $('.btn#view').attr('link','https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[0],hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[1],hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[2])) + '&open=picker&pih=' + $('.picker2').attr('h') + '&pis=' + $('.picker2').attr('s') + '&piv=' + $('.picker2').attr('v') + '&r=' + genid('random'));
