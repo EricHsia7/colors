@@ -1939,6 +1939,14 @@ var morecardjson = JSON.parse(e) ;
 $('.morecardtitle').eq(i).html(morecardthisjson.title).css({'background':'rgba(0, 0, 0, 0)'})
     $('.morecardbtn').eq(i).css({'background':'var(--morecard-btn-color)','border-radius':'10px','width':'auto','padding-left':'8px','padding-right':'8px','height':'35px','top':'40px'}).html(morecardthisjson.btn).attr('ripple-onclick',morecardthisjson.script).attr('poid',morebtnid)
     ripple('.morecardbtn[poid="' + morebtnid + '"]','var(--morecard-btn-ripple)','0.3',800,'false');
+    //test
+     event.waitUntil(
+      caches.open('static')
+        .then(function(cache){
+            cache.add('https://erichsia7.github.io/colors/more_options_image/' + morecardthisjson.image);
+        })  
+    ); 
+//testend	  	  
   }
 }});
 
