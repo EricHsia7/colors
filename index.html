@@ -1873,7 +1873,7 @@ var qrcode = new QRCode(document.querySelector('#qr') , {
       if(getCookie('colorfav2').indexOf('&' + shcolor) != -1) {
     }
       else {
-    document.cookie = 'colorfav2=' +  getCookie('colorfav2') + '&' + $('#rgb').val() + '; max-age='+60*60*24*7 + '; domain=erichsia7.github.io' ;
+    document.cookie = 'colorfav2=' +  getCookie('colorfav2') + '&' + $('#rgb').val() + '; max-age='+60*60*24*30 + '; domain=erichsia7.github.io' ;
     
       if(opensou === 'recommend') {
     
@@ -1899,7 +1899,7 @@ if(localStorage.getItem('settings_sharefav') === '1') {
 var favrecommendforms = $.ajax({url:'https://docs.google.com/forms/d/e/1FAIpQLScLxMmjmZNWrv7yyYazyAkuxp0eQAaN8jkYgx1I7BlXQWA4dg/formResponse?usp=pp_url&entry.1247563127=%23' + $('#rgb').attr('shga').split('#')[1] + '&entry.293943510=%23' + $('#rgb').attr('shgb').split('#')[1] + '&entry.123365810=' + $('#rgb').attr('shdeg') ,async:false});
       }
      }
-    document.cookie = 'colorfav2=' + getCookie('colorfav2') + '&li]' + $('#rgb').attr('shdeg') + ']' + $('#rgb').attr('shga') + ']' + $('#rgb').attr('shgb') + '; max-age='+60*60*24*7 + '; domain=erichsia7.github.io' ;
+    document.cookie = 'colorfav2=' + getCookie('colorfav2') + '&li]' + $('#rgb').attr('shdeg') + ']' + $('#rgb').attr('shga') + ']' + $('#rgb').attr('shgb') + '; max-age='+60*60*24*30 + '; domain=erichsia7.github.io' ;
     
     $('.favt').css({'background':'rgba(245,245,245,0.8) url(https://erichsia7.github.io/colors/favorited.png)','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
             $('body').prompt({'message':'已新增至喜好項目','time':1200,'animate':'slide'});
