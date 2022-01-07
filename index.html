@@ -1976,3 +1976,26 @@ function enableScroll() {
 disableScroll();
   }
 </script>
+<script>
+ window.onload = function() {
+caches.open('20220107_1dfeafd21703')
+        .then(function(cache){
+            cache.addAll([
+                'https://erichsia7.github.io/ripple.js/ripple.min.js',
+                'https://erichsia7.github.io/prompt.js/prompt.min.js?a3',
+                'https://erichsia7.github.io/colors/ico_min/img.png',
+                'https://erichsia7.github.io/colors/ico_min/camera.png',
+                'https://erichsia7.github.io/colors/ico_min/text2.png',
+                'https://erichsia7.github.io/colors/ico_min/random3.png',
+                'https://erichsia7.github.io/colors/ico_min/gradient.png',
+                'https://erichsia7.github.io/colors/ico_min/favorited.png',
+                'https://erichsia7.github.io/colors/ico_min/color-picker.png',
+                'https://erichsia7.github.io/colors/ico_min/more.png',
+		'https://erichsia7.github.io/colors/c2_ico.ico',
+		'https://erichsia7.github.io/colors/manifest.json?qpipoo',
+		'https://erichsia7.github.io/colors/ic/icon_144x144.png'
+            ]);   
+        })
+	 
+ }
+</script>
