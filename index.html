@@ -1999,3 +1999,47 @@ caches.open('20220107_1dfeafd21703')
 	 
  }
 </script>
+<script>
+var thsid
+var sel = ''
+var ft = '0.3s'
+var edg = function(evt) {
+  var thspagex = evt.pageX
+  var thspagey = evt.pageY
+  var agb = 30
+  var thsoffsetleft = $(sel).offset().left
+  var thsoffsettop = $(sel).offset().top
+  var thsw = $(sel).width()
+  var thsh = $(sel).height()
+  var btnctx = thsoffsetleft+(thsw/2)
+  var btncty = thsoffsettop+(thsh/2)
+  var scrolll = $(document).scrollLeft()
+  var scrollt = $(document).scrollTop()
+  var thstrx = (thspagex-btnctx)/3
+  var thstry = (thspagey-btncty)/3
+  ft = '0.3s'
+  
+  if(thspagex > thsoffsetleft-scrolll-agb && thspagey > thsoffsettop-scrollt-agb && thspagex < (thsoffsetleft-scrolll+thsw+agb) && thspagey < (thsoffsettop-scrollt+thsh+agb)) {
+    
+    $(sel).css({'transform':'scale(1.1) translate(' + thstrx + 'px,' + thstry + 'px)','transition':ft})
+    ft = '0s'
+  }
+  else {
+    $(sel).css({'transform':'scale(1) translate(0px,0px)','transition':'0.35s'})
+    document.removeEventListener('mousemove',edg,false)
+    
+  }
+  
+}
+var dee = '.btn'
+$(dee).hover(function() {
+  thsid = genid('random') ;
+  $(this).attr('mgid',thsid)
+  sel = String('*[mgid="' + thsid + '"]') ;
+  $(dee).css({'transform':''})
+document.addEventListener('mousemove',edg,false)
+  //g
+},function() {
+  
+});
+</script>
