@@ -2000,6 +2000,8 @@ caches.open('20220107_1dfeafd21703')
  }
 </script>
 <script>
+$.extend($.support, { touch: "ontouchend" in document });
+if($.support.touch) {
 var thsid
 var sel = ''
 var ft = '0.3s'
@@ -2042,4 +2044,6 @@ document.addEventListener('mousemove',edg,false)
 },function() {
   
 });
+
+}
 </script>
