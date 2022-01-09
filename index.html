@@ -2000,8 +2000,8 @@ caches.open('20220107_1dfeafd21703')
  }
 </script>
 <script>
-$.extend($.supportmos, { mouse: "touchmove" in document });
-if($.supportmos.mouse) {
+$.extend($.support, { touch: "ontouchend" in document });
+if(!($.support.touch)) {
 var thsid
 var sel = ''
 var ft = '0.3s'
