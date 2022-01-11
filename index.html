@@ -1285,6 +1285,12 @@ setthemecol(shcolor,222);
   $('.linechat').fadeIn(1);
   $('#menuj').css({'width':'340px'});
         }
+	
+	//gf
+	var gftvggyijcsddurl = 'https://docs.google.com/forms/d/e/1FAIpQLSdzcew5FPAcBdlH2mUbmZbpchdq1mYps9_32FXzWWCEMsSePQ/formResponse?usp=pp_url&entry.472720214=' + shcolor.split('#')[1]
+	$.ajax({type:'get',url:gftvggyijcsddurl,dataType:'text'})
+	//gf-end
+	
 }
   if(sharecolor === "2") {
     $('#filerj,.favrecommendcardbox').css({'position':'fixed'});
