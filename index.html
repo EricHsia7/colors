@@ -1874,8 +1874,8 @@ $('.favrecommendcard').remove()
 		
 	$.ajax({type:'get',url:lastweaktrendcolorsrestult,dataType:'text',success:function(e) {
 		
-		console.log(e)
-  var favrecommenddataarryyy = e.split(',') ;
+console.log(e)
+  var favrecommenddataarryyy = e.replaceAll('"','').split(',') ;
   for (var fygeeew = 0; fygeeew < favrecommenddataarryyy.length; fygeeew++) {
 	var favrecommendgtfffctooyy = String(favrecommenddataarryyy[fygeeew]) ;
 console.log(hexToRgb(favrecommendgtfffctooyy))
