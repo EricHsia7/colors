@@ -1820,7 +1820,7 @@ arrbtcoctft();
  else {
 //false
    //start
-   var lastweaktrendcolorsrestult = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTsFdgG3Pj2WrwKd9xUzKE41XD47xy2LLekYDFD_K0B8exPBiE5QJAvHoh78dobt1TJaJQj-hLv4eeN/pub?gid=1926518771&single=true&output=csv' ;
+   var lastweaktrendcolorsrestult = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTsFdgG3Pj2WrwKd9xUzKE41XD47xy2LLekYDFD_K0B8exPBiE5QJAvHoh78dobt1TJaJQj-hLv4eeN/pub?gid=1926518771&single=true&output=csv&'  + genid('time') + '_' + genid('random') ;
 	 
 	 
    var result10url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSKrUKs8Cq2a3Pubg_-MXmWp77GqLE0ImjKHy8VNAaVpqFH4Z94BeCcH-IQRsVnLTzmwaPG_66e35mH/pub?gid=1124579858&single=true&output=csv&" + genid('time') + '_' + genid('random') ;
@@ -1886,9 +1886,9 @@ $('.favrecommendcard').remove()
   
 //var favrecommendcardtitlecolor = 'fff' ;
    favrecommenddataarr_lastweektrend_html.push('<div class="favrecommendcard" dp="lo" type="recommend" style="background:' + favrecommendgtfffctooyy + ';"><div class="favrecommendcardcontent"><h4 style="color:#' + favrecommendcardtitlecolor + '">' + favrecommendgtfffctooyy + '</h4><div class="favrecommendcarddescription">' + '<a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favrecommendgtfffctooyy) + '&sou=trend&r=' + genid('random') + '">查看顏色</a>' + '</div></div></div>')
-    $('.favrecommendcard').eq(favrecommenddataarr.length-fygeeew-1).css({'background':favrecommendgtfffctooyy}).attr('class','favrecommendcard');
-    $('.favrecommendcardcontent h4').eq(favrecommenddataarr.length-fygeeew-1).css({'color':'#' + favrecommendcardtitlecolor}).html(favrecommendgtfffctooyy);
-    $('.favrecommendcarddescription').eq(favrecommenddataarr.length-fygeeew-1).html('<a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favrecommendgtfffctooyy) + '&sou=trend&r=' + genid('random') + '">查看顏色</a>');
+    $('.favrecommendcard').eq(favrecommenddataarryyy.length-fygeeew-1).css({'background':favrecommendgtfffctooyy}).attr('class','favrecommendcard');
+    $('.favrecommendcardcontent h4').eq(favrecommenddataarryyy.length-fygeeew-1).css({'color':'#' + favrecommendcardtitlecolor}).html(favrecommendgtfffctooyy);
+    $('.favrecommendcarddescription').eq(favrecommenddataarryyy.length-fygeeew-1).html('<a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favrecommendgtfffctooyy) + '&sou=trend&r=' + genid('random') + '">查看顏色</a>');
 }
 	favrecommenddataarr_lastweektrend_html = favrecommenddataarr_lastweektrend_html.reverse().join('');
 		}
