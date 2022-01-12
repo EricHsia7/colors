@@ -1877,7 +1877,7 @@ $('.favrecommendcard').remove()
 		console.log(e)
   var favrecommenddataarryyy = e.split(',') ;
   for (var fygeeew = 0; fygeeew < favrecommenddataarryyy.length; fygeeew++) {
-	var favrecommendgtfffctooyy = favrecommenddataarryyy[fygeeew] ;
+	var favrecommendgtfffctooyy = String(favrecommenddataarryyy[fygeeew]) ;
 console.log(favrecommenddataarryyy[fygeeew] + ', ' + fygeeew + ',' + favrecommendgtfffctooyy)
 	  
   if((hexToRgb(favrecommendgtfffctooyy).r+hexToRgb(favrecommendgtfffctooyy).g+hexToRgb(favrecommendgtfffctooyy).b)/3 > 128) {
