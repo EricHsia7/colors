@@ -1024,8 +1024,7 @@ var qrcode = new QRCode(document.querySelector('#qr') , {
     }
       else {
     document.cookie = 'colorfav2=' +  getCookie('colorfav2') + '&' + $('#rgb').val() + '; max-age='+60*60*24*30 + '; domain=erichsia7.github.io' ;
-    
-      if(opensou === 'recommend') {
+      if(opensou === 'recommend' || opensou === 'trend') {
     
       }
      else {
@@ -1041,7 +1040,7 @@ var favrecommendforms = $.ajax({url:"https://docs.google.com/forms/d/e/1FAIpQLSe
       if(getCookie('colorfav2').indexOf('&li]' + $('#rgb').attr('shdeg') + ']' + $('#rgb').attr('shga') + ']' + $('#rgb').attr('shgb')) != -1) {
     }
       else {
-if(opensou === 'recommend') {
+if(opensou === 'recommend' || opensou === 'trend') {
     
       }
      else {
