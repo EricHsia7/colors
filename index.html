@@ -1825,8 +1825,8 @@ arrbtcoctft();
 	 
    var result10url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSKrUKs8Cq2a3Pubg_-MXmWp77GqLE0ImjKHy8VNAaVpqFH4Z94BeCcH-IQRsVnLTzmwaPG_66e35mH/pub?gid=1124579858&single=true&output=csv&" + genid('time') + '_' + genid('random') ;
    var result5url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSKrUKs8Cq2a3Pubg_-MXmWp77GqLE0ImjKHy8VNAaVpqFH4Z94BeCcH-IQRsVnLTzmwaPG_66e35mH/pub?gid=11228129&single=true&output=csv&'  + genid('time') + '_' + genid('random') ;
-	 var result10urlli = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQT08yDnvggfN_j-MxzVHnHFZQF307TYb09YV5Iab1MuzG0TY4-LSkiqLHZizZJxegTmcEtonh9ZKdn/pub?gid=1078464581&single=true&output=csv&' + genid('time') + '_' + genid('random') ;
-	 var result5urlli = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQT08yDnvggfN_j-MxzVHnHFZQF307TYb09YV5Iab1MuzG0TY4-LSkiqLHZizZJxegTmcEtonh9ZKdn/pub?gid=180621797&single=true&output=csv&' + genid('time') + '_' + genid('random') ;
+   var result10urlli = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQT08yDnvggfN_j-MxzVHnHFZQF307TYb09YV5Iab1MuzG0TY4-LSkiqLHZizZJxegTmcEtonh9ZKdn/pub?gid=1078464581&single=true&output=csv&' + genid('time') + '_' + genid('random') ;
+   var result5urlli = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQT08yDnvggfN_j-MxzVHnHFZQF307TYb09YV5Iab1MuzG0TY4-LSkiqLHZizZJxegTmcEtonh9ZKdn/pub?gid=180621797&single=true&output=csv&' + genid('time') + '_' + genid('random') ;
    var resulturl = result5url ;
 	 var resulturlli = result5urlli ;
    if(!(localStorage.getItem('settings_lowspeed') === '1')) {
@@ -1851,7 +1851,7 @@ arrbtcoctft();
 }
 favrecommenddataarr_color_html = favrecommenddataarr_color_html.reverse().join('') ;
 //fn
-$('#favrecommendcardtab_ligrd').attr('hu','0');
+$('#favrecommendcardtab_ligrd,#favrecommendcardtab_lastweektrend').attr('hu','0');
 $('#favrecommendcardtab_color').click(function() {
 $('.favrecommendcard').remove()
 $('.favrecommendcardbox').append(favrecommenddataarr_color_html)
@@ -1859,6 +1859,12 @@ $('#favrecommendcardtab_color').attr('gj','1')
 $('#favrecommendcardtab_ligrd').attr('gj','0')
 $('.favrecommendfixedtitle').html('建議的顏色')
 });
+  
+$('#favrecommendcardtab_lastweektrend').click(function() {
+$('#favrecommendcardtab_lastweektrend').attr('gj','1')
+$('#favrecommendcardtab_ligrd,#favrecommendcardtab_color').attr('gj','0')
+});
+
 $('#favrecommendcardtab_ligrd').click(function() {
 $('#favrecommendcardtab_color').attr('gj','0')
 $('#favrecommendcardtab_ligrd').attr('gj','1')
