@@ -95,7 +95,7 @@ thead,tfoot{color:#fff}
 .favrecommendcarddescription a{text-decoration:none;color:#000;background:#f5f5f5;padding:8px;margin:0;border-radius:99em;position:absolute;top:0;font-family:"Noto Sans TC",sans-serif;font-weight:400;-webkit-user-select:none}
 .favrecommendcardbox{width:clamp(230px,90%,350px);position:absolute;top:calc(50% - 105px * 0.5 + 105px + 15px);left:50%;transform:translateX(-50%);padding-bottom:50px;-webkit-user-select:none}
 .favrecommendtabbox{width:100%;height:45px;background:#f5f5f5;border-radius:15px;display:flex;justify-content:center;align-items:center;margin-top:20px}
-.favrecommendtab{width:calc(100% / 2);height:45px;display:flex;justify-content:center;align-items:center;position:relative}
+.favrecommendtab{width:calc(100% / 3);height:45px;display:flex;justify-content:center;align-items:center;position:relative}
 .favrecommendtab::after{content:var(--text-d);position:absolute;top:3px;left:3px;width:calc(100% - 6px);height:calc(100% - 6px);background:rgba(0,0,0,0);border-radius:14px;display:flex;justify-content:center;align-items:center;color:#888;font-weight:500;font-family:"Noto Sans TC",sans-serif}
 .favrecommendtab[gj="1"]::after{background:#e3e3e3;color:#333}
 .favrecommendtab[hu="1"]::after{opacity:.3}
@@ -210,6 +210,7 @@ input#files,input#files2{display:none}
 <div class="favrecommendtabbox">
 <div class="favrecommendtab" style="--text-d: '顏色';" gj="1" id="favrecommendcardtab_color"></div>
 <div class="favrecommendtab" style="--text-d: '漸層';" gj="0" id="favrecommendcardtab_ligrd" hu="1"></div>
+<div class="favrecommendtab" style="--text-d: '上週趨勢';" gj="0" id="favrecommendcardtab_lastweektrend" hu="1"></div>
 </div>
 </div>
 <div class="favrecommendfixedtitle favrecommendfixedtitleopacity0">建議的顏色</div>
