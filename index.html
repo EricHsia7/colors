@@ -95,7 +95,7 @@ thead,tfoot{color:#fff}
 .favrecommendcarddescription a{text-decoration:none;color:#000;background:#f5f5f5;padding:8px;margin:0;border-radius:99em;position:absolute;top:0;font-family:"Noto Sans TC",sans-serif;font-weight:400;-webkit-user-select:none}
 .favrecommendcardbox{width:clamp(230px,90%,350px);position:absolute;top:calc(50% - 105px * 0.5 + 105px + 15px);left:50%;transform:translateX(-50%);padding-bottom:50px;-webkit-user-select:none}
 .favrecommendtabbox{width:100%;height:45px;background:#f5f5f5;border-radius:15px;display:flex;justify-content:center;align-items:center;margin-top:20px}
-.favrecommendtab{width:calc(100% / 2);height:45px;display:flex;justify-content:center;align-items:center;position:relative}
+.favrecommendtab{width:calc(100% / 3);height:45px;display:flex;justify-content:center;align-items:center;position:relative}
 .favrecommendtab::after{content:var(--text-d);position:absolute;top:3px;left:3px;width:calc(100% - 6px);height:calc(100% - 6px);background:rgba(0,0,0,0);border-radius:14px;display:flex;justify-content:center;align-items:center;color:#888;font-weight:500;font-family:"Noto Sans TC",sans-serif}
 .favrecommendtab[gj="1"]::after{background:#e3e3e3;color:#333}
 .favrecommendtab[hu="1"]::after{opacity:.3}
@@ -210,6 +210,7 @@ input#files,input#files2{display:none}
 <div class="favrecommendtabbox">
 <div class="favrecommendtab" style="--text-d: '顏色';" gj="1" id="favrecommendcardtab_color"></div>
 <div class="favrecommendtab" style="--text-d: '漸層';" gj="0" id="favrecommendcardtab_ligrd" hu="1"></div>
+<div class="favrecommendtab" style="--text-d: '上週趨勢';" gj="0" id="favrecommendcardtab_lastweektrend" hu="1"></div>
 </div>
 </div>
 <div class="favrecommendfixedtitle favrecommendfixedtitleopacity0">建議的顏色</div>
@@ -1802,6 +1803,7 @@ arrbtcoctft();
   var recommend_info_card_cu = 5 ;
   var favrecommenddataarr_color_html = [] ;
   var favrecommenddataarr_ligrd_html = [] ;
+  var favrecommenddataarr_lastweektrend_html = [] ;
   if(!(localStorage.getItem('settings_lowspeed') === '1')) {
    recommend_info_card_cu = 10 ;
   }
@@ -1819,13 +1821,13 @@ arrbtcoctft();
  else {
 //false
    //start
-   var lastweaktrendcolorsrestult = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTsFdgG3Pj2WrwKd9xUzKE41XD47xy2LLekYDFD_K0B8exPBiE5QJAvHoh78dobt1TJaJQj-hLv4eeN/pub?gid=1926518771&single=true&output=csv' ;
+   var lastweaktrendcolorsrestult = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTsFdgG3Pj2WrwKd9xUzKE41XD47xy2LLekYDFD_K0B8exPBiE5QJAvHoh78dobt1TJaJQj-hLv4eeN/pub?gid=1926518771&single=true&output=csv&'  + genid('time') + '_' + genid('random') ;
 	 
 	 
    var result10url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSKrUKs8Cq2a3Pubg_-MXmWp77GqLE0ImjKHy8VNAaVpqFH4Z94BeCcH-IQRsVnLTzmwaPG_66e35mH/pub?gid=1124579858&single=true&output=csv&" + genid('time') + '_' + genid('random') ;
    var result5url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSKrUKs8Cq2a3Pubg_-MXmWp77GqLE0ImjKHy8VNAaVpqFH4Z94BeCcH-IQRsVnLTzmwaPG_66e35mH/pub?gid=11228129&single=true&output=csv&'  + genid('time') + '_' + genid('random') ;
-	 var result10urlli = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQT08yDnvggfN_j-MxzVHnHFZQF307TYb09YV5Iab1MuzG0TY4-LSkiqLHZizZJxegTmcEtonh9ZKdn/pub?gid=1078464581&single=true&output=csv&' + genid('time') + '_' + genid('random') ;
-	 var result5urlli = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQT08yDnvggfN_j-MxzVHnHFZQF307TYb09YV5Iab1MuzG0TY4-LSkiqLHZizZJxegTmcEtonh9ZKdn/pub?gid=180621797&single=true&output=csv&' + genid('time') + '_' + genid('random') ;
+   var result10urlli = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQT08yDnvggfN_j-MxzVHnHFZQF307TYb09YV5Iab1MuzG0TY4-LSkiqLHZizZJxegTmcEtonh9ZKdn/pub?gid=1078464581&single=true&output=csv&' + genid('time') + '_' + genid('random') ;
+   var result5urlli = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQT08yDnvggfN_j-MxzVHnHFZQF307TYb09YV5Iab1MuzG0TY4-LSkiqLHZizZJxegTmcEtonh9ZKdn/pub?gid=180621797&single=true&output=csv&' + genid('time') + '_' + genid('random') ;
    var resulturl = result5url ;
 	 var resulturlli = result5urlli ;
    if(!(localStorage.getItem('settings_lowspeed') === '1')) {
@@ -1850,16 +1852,60 @@ arrbtcoctft();
 }
 favrecommenddataarr_color_html = favrecommenddataarr_color_html.reverse().join('') ;
 //fn
-$('#favrecommendcardtab_ligrd').attr('hu','0');
+$('#favrecommendcardtab_ligrd,#favrecommendcardtab_lastweektrend').attr('hu','0');
 $('#favrecommendcardtab_color').click(function() {
 $('.favrecommendcard').remove()
 $('.favrecommendcardbox').append(favrecommenddataarr_color_html)
 $('#favrecommendcardtab_color').attr('gj','1')
-$('#favrecommendcardtab_ligrd').attr('gj','0')
+$('#favrecommendcardtab_ligrd,#favrecommendcardtab_lastweektrend').attr('gj','0')
 $('.favrecommendfixedtitle').html('建議的顏色')
 });
+  
+$('#favrecommendcardtab_lastweektrend').click(function() {
+$('#favrecommendcardtab_lastweektrend').attr('gj','1');
+$('#favrecommendcardtab_ligrd,#favrecommendcardtab_color').attr('gj','0');
+	
+$('.favrecommendcard').remove()
+		for (var fygeeew = 0; fygeeew < 10; fygeeew++) { 
+ $('.favrecommendcardbox').append('<div class="favrecommendcard loading" dp="lo" type="recommend" lastweektrendmo="0"><div class="favrecommendcardcontent"><h4>&nbsp</h4><div class="favrecommendcarddescription">&nbsp</div></div></div>');
+}
+	
+	if(favrecommenddataarr_lastweektrend_html.length < 1) {
+		
+	$.ajax({type:'get',url:lastweaktrendcolorsrestult,dataType:'text',success:function(e) {
+		
+  var favrecommenddataarryyy = e.replaceAll('"','').split(',') ;
+  for (var fygeeew = 0; fygeeew < favrecommenddataarryyy.length; fygeeew++) {
+	var favrecommendgtfffctooyy = String(favrecommenddataarryyy[fygeeew]) ;
+
+  if((hexToRgb(favrecommendgtfffctooyy).r+hexToRgb(favrecommendgtfffctooyy).g+hexToRgb(favrecommendgtfffctooyy).b)/3 > 128) {
+   var favrecommendcardtitlecolor = '000' ;
+  }
+  else {
+    var favrecommendcardtitlecolor = 'fff' ;
+  }
+  
+//var favrecommendcardtitlecolor = 'fff' ;
+   favrecommenddataarr_lastweektrend_html.push('<div class="favrecommendcard" dp="lo" type="recommend" style="background:' + favrecommendgtfffctooyy + ';" lastweektrendmo="1"><div class="favrecommendcardcontent"><h4 style="color:#' + favrecommendcardtitlecolor + '">' + favrecommendgtfffctooyy + '</h4><div class="favrecommendcarddescription">' + '<a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favrecommendgtfffctooyy) + '&sou=trend&r=' + genid('random') + '">查看顏色</a>' + '</div></div></div>')
+    $('.favrecommendcard').eq(favrecommenddataarryyy.length-fygeeew-1).css({'background':favrecommendgtfffctooyy}).attr('class','favrecommendcard').attr('lastweektrendmo','1');
+    $('.favrecommendcardcontent h4').eq(favrecommenddataarryyy.length-fygeeew-1).css({'color':'#' + favrecommendcardtitlecolor}).html(favrecommendgtfffctooyy);
+    $('.favrecommendcarddescription').eq(favrecommenddataarryyy.length-fygeeew-1).html('<a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favrecommendgtfffctooyy) + '&sou=trend&r=' + genid('random') + '">查看顏色</a>');
+}
+$('.favrecommendcard[lastweektrendmo="0"]').remove()
+	favrecommenddataarr_lastweektrend_html = favrecommenddataarr_lastweektrend_html.reverse().join('');
+		}
+		});
+		//g
+	}
+	else {
+	$('.favrecommendcard').remove()
+	$('.favrecommendcardbox').append(favrecommenddataarr_lastweektrend_html);
+	}
+	//end
+});
+
 $('#favrecommendcardtab_ligrd').click(function() {
-$('#favrecommendcardtab_color').attr('gj','0')
+$('#favrecommendcardtab_color,#favrecommendcardtab_lastweektrend').attr('gj','0')
 $('#favrecommendcardtab_ligrd').attr('gj','1')
 $('.favrecommendfixedtitle').html('建議的漸層')
 	if(favrecommenddataarr_ligrd_html.length < 1) {
