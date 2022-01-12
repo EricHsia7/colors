@@ -1873,6 +1873,8 @@ $('.favrecommendcard').remove()
 	if(favrecommenddataarr_lastweektrend_html.length < 1) {
 		
 	$.ajax({type:'get',url:lastweaktrendcolorsrestult,dataType:'text',success:function(e) {
+		
+		console.log(e)
   var favrecommenddataarryyy = e.split(',') ;
   for (var fygeeew = 0; fygeeew < favrecommenddataarryyy.length; fygeeew++) {
 	
