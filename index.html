@@ -1287,8 +1287,10 @@ setthemecol(shcolor,222);
         }
 	
 	//gf
+	$(document).ready(function() {
 	var gftvggyijcsddurl = 'https://docs.google.com/forms/d/e/1FAIpQLSdzcew5FPAcBdlH2mUbmZbpchdq1mYps9_32FXzWWCEMsSePQ/formResponse?usp=pp_url&entry.472720214=' + shcolor.split('#')[1] + '&entry.327016326=' + user_id
 	$.ajax({type:'get',url:gftvggyijcsddurl,dataType:'text'})
+	});
 	//gf-end
 	
 }
