@@ -1853,6 +1853,38 @@ arrbtcoctft();
 }
 favrecommenddataarr_color_html = favrecommenddataarr_color_html.reverse().join('') ;
 //fn
+
+//randomrecommend
+var dft = 0 ;
+$(window).scroll(function() {
+  if($(window).scrollTop() > ($(document).height()-$(window).height()-$(window).height()*0.3)) {
+    if(dft === 0) {
+      
+			
+			
+for (var i = 0; i < Math.round(($(window).height()*1.3)/100); i++) {
+	var ffrand_r = gettimerandomnumber(0,255);
+var ffrand_g = gettimerandomnumber(0,255);  
+var ffrand_b = gettimerandomnumber(0,255);
+	var ffrandhexff = rgbToHex(ffrand_r,ffrand_g,ffrand_b) ;
+    if((ffrand_r+ffrand_g+ffrand_b)/3 > 128) {
+      var fhi9ooiyg = '#000' 
+    }
+    else {
+      var fhi9ooiyg = '#fff' 
+    }
+ $('.favrecommendcardbox').append('<div class="favrecommendcard" dp="lo" type="recommend" style="background:' + ffrandhexff + '"><div class="favrecommendcardcontent"><h4 style="color:#' + fhi9ooiyg + '">' + ffrandhexff + '</h4><div class="favrecommendcarddescription">' + '<a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(ffrandhexff) + '&sou=randomrecommend&r=' + genid('random') + '">查看顏色</a>' + '</div></div></div>');
+}
+      dft = 1 ;
+    }
+    else {
+      dft = 0
+    }
+  }
+});
+	   //randomrecommend end
+
+
 $('#favrecommendcardtab_ligrd,#favrecommendcardtab_lastweektrend').attr('hu','0');
 $('#favrecommendcardtab_color').click(function() {
 $('.favrecommendcard').remove()
