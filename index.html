@@ -1862,13 +1862,16 @@ favrecommenddataarr_color_html = favrecommenddataarr_color_html.reverse().join('
 //randomrecommend
 
 $(window).scroll(function() {
+if(sga === 1) {
   if($(window).scrollTop() > $('#randomrecommendtitletags').offset().top) {  
 $('.favrecommendfixedtitle').html('隨機顏色')
   }
   else {
 $('.favrecommendfixedtitle').html($('.favrecommendfixedtitle').attr('srtitle'))
 
-  }		
+  }
+}
+	
   if($(window).scrollTop() > ($(document).height()-$(window).height()-$(window).height()*0.3)) {
     if(dft === 0) {
     if(sga === 0) {
