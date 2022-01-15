@@ -124,7 +124,9 @@ thead,tfoot{color:#fff}
 .online{position:fixed;bottom:-30px;left:0;width:100%;height:25px;background:#ac3c3d;display:none;justify-content:center;align-items:center;color:#fff;transition:.3s;font-size:15px;font-weight:500;font-family:"Noto Sans TC",sans-serif}
 .online::before{content:'';position:fixed;top:0;left:0;width:100%;height:calc(100% - 25px);background:rgba(0,0,0,0);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);opacity:0;transition:.3s}
 .online[h="1"]::before{opacity:1}
+.gotop{display:none;position:fixed;bottom:30px;left:50%;transform:translateX(-50%);width:80px;height:45px;background:#fff;box-shadow:0 0 15px 1px rgba(0,0,0,0.08);border-radius:99em;display:flex;justify-content:center;align-items:center;font-size:16px;-webkit-user-select:none}
 @media (prefers-color-scheme: dark) {
+.gotop{background:#1f1f1f;color:#fff}
 :root{--morecard-btn-color:#1f1f1f;--morecard-btn-ripple:#fff}
 .morecard{background:#1a1a1a;border-bottom:1px #303030 solid}
 .morecardtitle,.morecardbtn,.morecardimage{background:#1f1f1f;color:#fff}
@@ -216,6 +218,7 @@ input#files,input#files2{display:none}
 </div>
 </div>
 <div class="favrecommendfixedtitle favrecommendfixedtitleopacity0" srtitle="建議的顏色">建議的顏色</div>
+<div class="gotop">回頂部</div>
 <div class="pickerbg">
 <div class="pickerbox"></div>
 <div class="pickerbar"></div>
@@ -2007,13 +2010,17 @@ $('.favrecommendfixedtitle').html('建議的漸層').attr('srtitle','建議的�
     if($(document).scrollTop() > $('.favrecommendtabbox').offset().top) {
       //ture
       $('.favrecommendfixedtitle').attr('class','favrecommendfixedtitle');
+      $('.gotop').css({'display':'block'});
     }
     else {
       //false
       $('.favrecommendfixedtitle').attr('class','favrecommendfixedtitle favrecommendfixedtitleopacity0');
-      
+      $('.gotop').css({'display':'none'});
     }
   });
+$('.gotop').click(function() {
+$(document).scrollTop(0)
+});
 </script>
 <script>
 window.onload=function(){
