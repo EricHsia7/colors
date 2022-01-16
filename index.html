@@ -1818,6 +1818,13 @@ arrbtcoctft();
    $('.color').css({'width':'100%','height':'100%'});
 });
 
+var observer = new MutationObserver(function(mutations) {
+  mutations.forEach(function(mutation) {
+    if (mutation.type === "attributes") {
+      console.log("attributes changed")
+    }
+  });
+});
 
 
 	function newrandomimagecolors() {
@@ -1844,6 +1851,9 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
 
     // Make sure image is finished loading
    // imgee.onload = function(){
+   observer.observe(imgee, {
+  attributes: true //configure it to listen to attribute changes
+});
     if (imgee.complete) {
 	    console.log('k1')
       var imgcolorpalette = colorThief.getPalette(imgee) ;
