@@ -14,6 +14,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js?1"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
 <link href="https://erichsia7.github.io/colors/c2_512.png" sizes="512x512" rel="apple-touch-icon-precomposed" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <!--<meta name="apple-mobile-web-app-status-bar-style" content="black" />-->
@@ -125,6 +126,14 @@ thead,tfoot{color:#fff}
 .online::before{content:'';position:fixed;top:0;left:0;width:100%;height:calc(100% - 25px);background:rgba(0,0,0,0);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);opacity:0;transition:.3s}
 .online[h="1"]::before{opacity:1}
 .gotop{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);width:80px;height:45px;background:#fff;box-shadow:0 0 15px 1px rgba(0,0,0,0.08);border-radius:99em;display:none;justify-content:center;align-items:center;font-size:16px;-webkit-user-select:none;font-family:"Noto Sans TC",sans-serif;font-weight:700;}
+.rrimgcard {
+  width:100%;
+  height:auto;
+}
+.rrimgbox {
+  width:100%;
+  height:30px;
+}
 @media (prefers-color-scheme: dark) {
 .gotop{background:#1f1f1f;color:#fff}
 :root{--morecard-btn-color:#1f1f1f;--morecard-btn-ripple:#fff}
@@ -1805,6 +1814,66 @@ arrbtcoctft();
 });
 
 
+	
+function newrandomimagecolors() {
+var imgid = 'd-' + genid('uuid')
+$('body').append('<img id="' + imgid + '" style="display:none;">')
+var rcimgwh = 350
+var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
+    $.ajax({type:'GET',url:rcimg,beforeSend:function (xhr) {xhr.overrideMimeType('text/plain; charset=x-user-defined');},async: true,success:function(result, textStatus, jqXHR) {
+    var binary = "";
+    var responseText = jqXHR.responseText;
+    var responseTextLen = responseText.length;
+
+    for ( i = 0; i < responseTextLen; i++ ) {
+        binary += String.fromCharCode(responseText.charCodeAt(i) & 255)
+    }
+  
+  $('#' + imgid).attr('src','data:image/jpeg;base64,' + btoa(binary))
+    //gg
+    
+    setTimeout(function() {             
+    const colorThief = new ColorThief();
+    const imgee = document.querySelector('#' + imgid);
+
+    // Make sure image is finished loading
+    if (imgee.complete) {
+      var imgcolorpalette = colorThief.getPalette(imgee) ;
+      
+      
+        var hfur = genid('random')
+        var imgsrcffd = String($('#' + imgid).attr('src'))
+        $('#' + imgid).remove()
+        $('.favrecommendcardbox').append('<div class="rrimgcard" id="' + hfur + '"><div class="rrimgbox" style="background:url(' + imgsrcffd + ');background-size:cover;background-position:cenetr;width:100%;height:300px"></div></div>')
+      $('#' + hfur + ' .rrimgbox').css({'height':$(this).width()})
+	//rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2])
+      for (var i = 0; i < imgcolorpalette.length; i++) {
+        var thsvstehecbwinsoiwpks = rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2])
+
+        if((imgcolorpalette[i][0]+imgcolorpalette[i][1]+imgcolorpalette[i][2])/3 > 128) {
+      var aafhi9ooiyg = '000' 
+    }
+    else {
+      var aafhi9ooiyg = 'fff' 
+    }
+        
+         $('#' + hfur).append('<div class="favrecommendcard" dp="lo" type="recommend" style="background:' + thsvstehecbwinsoiwpks + '"><div class="favrecommendcardcontent"><h4 style="color:#' + aafhi9ooiyg + '">' + thsvstehecbwinsoiwpks + '</h4><div class="favrecommendcarddescription">' + '<a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(thsvstehecbwinsoiwpks) + '&sou=randomrecommend&r=' + genid('random') + '">查看顏色</a>' + '</div></div></div>');
+      }
+      
+      
+    } else {
+      imgee.addEventListener('load', function() {
+        colorThief.getColor(imgee);
+      });
+    } 
+    },100)
+    //gg
+   }
+});            
+}
+	
+	
+	
   //recommend-info-card
   var recommend_info_card_cu = 5 ;
   var favrecommenddataarr_color_html = [] ;
@@ -1895,6 +1964,8 @@ var ffrand_b = gettimerandomnumber(0,255);
     }
  $('.favrecommendcardbox').append('<div class="favrecommendcard" dp="lo" type="recommend" style="background:' + ffrandhexff + '"><div class="favrecommendcardcontent"><h4 style="color:#' + fhi9ooiyg + '">' + ffrandhexff + '</h4><div class="favrecommendcarddescription">' + '<a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(ffrandhexff) + '&sou=randomrecommend&r=' + genid('random') + '">查看顏色</a>' + '</div></div></div>');
 }
+
+      newrandomimagecolors();
       dft = 1 ;
     }
     else {
