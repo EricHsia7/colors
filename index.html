@@ -1819,8 +1819,10 @@ arrbtcoctft();
 });
 
 
-	
+var rdicloaded = 1 ;
 function newrandomimagecolors() {
+if(rdicloaded === 1) {
+rdicloaded = 0
 var imgid = 'd-' + genid('uuid')
 $('body').append('<img id="' + imgid + '" style="display:none;">')
 var rcimgwh = 350
@@ -1865,16 +1867,20 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
          $('#' + hfur).append('<div class="favrecommendcard" dp="lo" type="recommend" style="background:' + thsvstehecbwinsoiwpks + '"><div class="favrecommendcardcontent"><h4 style="color:#' + aafhi9ooiyg + '">' + thsvstehecbwinsoiwpks + '</h4><div class="favrecommendcarddescription">' + '<a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(thsvstehecbwinsoiwpks) + '&sou=randomrecommend&r=' + genid('random') + '">查看顏色</a>' + '</div></div></div>');
       }
       
-      
+      rdicloaded = 1
     } else {
       imgee.addEventListener('load', function() {
         colorThief.getColor(imgee);
+	rdicloaded = 1
       });
     } 
     },100)
     //gg
    }
-});            
+});
+//f
+}
+
 }
 	
 	
