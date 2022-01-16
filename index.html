@@ -1818,26 +1818,13 @@ arrbtcoctft();
    $('.color').css({'width':'100%','height':'100%'});
 });
 
-var observer = new MutationObserver(function(mutations) {
-  mutations.forEach(function(mutation) {
-    if (mutation.type === "attributes") {
-      console.log("attributes changed")
-    }
-  });
-});
-
-
-	function newrandomimagecolors() {
+function newrandomimagecolors() {
 
 var imgid = 'd-' + genid('uuid')
 $('body').append('<img id="' + imgid + '" style="display:none;">')
 var rcimgwh = 350
 var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
-	
-observer.observe(document.querySelector('#' + imgid), {		
-   attributes: true //configure it to listen to attribute changes		
-});
-		
+
     $.ajax({type:'GET',url:rcimg,beforeSend:function (xhr) {xhr.overrideMimeType('text/plain; charset=x-user-defined');},async: true,success:function(result, textStatus, jqXHR) {
     var binary = "";
     var responseText = jqXHR.responseText;
@@ -1891,7 +1878,7 @@ observer.observe(document.querySelector('#' + imgid), {
 	//ggg    
     //};
     
-    },100);
+    },150);
 	    //ggggg
 	    
     //gg
