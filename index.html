@@ -1984,7 +1984,7 @@ var ffrand_b = gettimerandomnumber(0,255);
 $('#favrecommendcardtab_ligrd,#favrecommendcardtab_lastweektrend').attr('hu','0');
 $('#favrecommendcardtab_color').click(function() {
 sga = 0 
-$('.favrecommendcard,#randomrecommendtitletags').remove()
+$('.favrecommendcard,#randomrecommendtitletags,.rrimgcard').remove()
 $('.favrecommendcardbox').append(favrecommenddataarr_color_html)
 $('#favrecommendcardtab_color').attr('gj','1')
 $('#favrecommendcardtab_ligrd,#favrecommendcardtab_lastweektrend').attr('gj','0')
@@ -1996,7 +1996,7 @@ sga = 0
 $('#favrecommendcardtab_lastweektrend').attr('gj','1');
 $('#favrecommendcardtab_ligrd,#favrecommendcardtab_color').attr('gj','0');
 $('.favrecommendfixedtitle').html('上週趨勢').attr('srtitle','上週趨勢')
-$('.favrecommendcard,#randomrecommendtitletags').remove()
+$('.favrecommendcard,#randomrecommendtitletags,.rrimgcard').remove()
 		for (var fygeeew = 0; fygeeew < 10; fygeeew++) { 
  $('.favrecommendcardbox').append('<div class="favrecommendcard loading" dp="lo" type="recommend" lastweektrendmo="0"><div class="favrecommendcardcontent"><h4>&nbsp</h4><div class="favrecommendcarddescription">&nbsp</div></div></div>');
 }
@@ -2040,8 +2040,9 @@ sga = 0
 $('#favrecommendcardtab_color,#favrecommendcardtab_lastweektrend').attr('gj','0')
 $('#favrecommendcardtab_ligrd').attr('gj','1')
 $('.favrecommendfixedtitle').html('建議的漸層').attr('srtitle','建議的漸層')
+$('.favrecommendcard,#randomrecommendtitletags,.rrimgcard').remove()
+
 	if(favrecommenddataarr_ligrd_html.length < 1) {
-		$('.favrecommendcard,#randomrecommendtitletags').remove()
 		for (var fygeeew = 0; fygeeew < recommend_info_card_cu; fygeeew++) { 
  $('.favrecommendcardbox').append('<div class="favrecommendcard loading" dp="lo" type="recommend"><div class="favrecommendcardcontent"><h4>&nbsp</h4><div class="favrecommendcarddescription">&nbsp</div></div></div>');
 }
