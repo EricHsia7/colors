@@ -1867,7 +1867,7 @@ favrecommenddataarr_color_html = favrecommenddataarr_color_html.reverse().join('
 $(window).scroll(function() {
 if(sga === 1) {
   if($(window).scrollTop() > $('#randomrecommendtitletags').offset().top) {  
-$('.favrecommendfixedtitle').html('隨機顏色')
+$('.favrecommendfixedtitle').html('探索')
   }
   else {
 $('.favrecommendfixedtitle').html($('.favrecommendfixedtitle').attr('srtitle'))
@@ -1878,7 +1878,7 @@ $('.favrecommendfixedtitle').html($('.favrecommendfixedtitle').attr('srtitle'))
   if($(window).scrollTop() > ($(document).height()-$(window).height()-$(window).height()*0.6)) {
     if(dft === 0) {
     if(sga === 0) {
- $('.favrecommendcardbox').append('<h5 id="randomrecommendtitletags">隨機顏色</h5>')
+ $('.favrecommendcardbox').append('<h5 id="randomrecommendtitletags">探索</h5>')
       sga = 1
     }
 			
