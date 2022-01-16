@@ -1830,7 +1830,6 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
     var binary = "";
     var responseText = jqXHR.responseText;
     var responseTextLen = responseText.length;
-
     for ( i = 0; i < responseTextLen; i++ ) {
         binary += String.fromCharCode(responseText.charCodeAt(i) & 255)
     }
@@ -1838,7 +1837,9 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
   $('#' + imgid).attr('src','data:image/jpeg;base64,' + btoa(binary))
     //gg
     
-           
+    
+    
+	    
     const colorThief = new ColorThief();
     const imgee = document.querySelector('#' + imgid);
 
@@ -1875,8 +1876,9 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
       });
     } 
     
+    
     //gg
-   }
+   
 });
 
 
