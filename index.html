@@ -1845,8 +1845,6 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
     // Make sure image is finished loading
     if (imgee.complete) {
       var imgcolorpalette = colorThief.getPalette(imgee) ;
-      
-      
         var hfur = genid('random')
         var imgsrcffd = String($('#' + imgid).attr('src'))
         
@@ -1870,8 +1868,30 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
 	    
     } else {
       imgee.addEventListener('load', function() {
-        colorThief.getColor(imgee);
-	
+        //gy
+	 var imgcolorpalette = colorThief.getPalette(imgee) ;
+        var hfur = genid('random')
+        var imgsrcffd = String($('#' + imgid).attr('src'))
+        
+        $('.favrecommendcardbox').append('<div class="rrimgcard" id="' + hfur + '"><div class="rrimgbox" style="background:url(' + imgsrcffd + ');background-size:cover;background-position:cenetr;width:100%;height:300px"></div></div>')
+      $('#' + hfur + ' .rrimgbox').css({'height':document.querySelector('#' + hfur).clientWidth})
+	//rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2])
+      for (var i = 0; i < imgcolorpalette.length; i++) {
+        var thsvstehecbwinsoiwpks = rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2])
+
+        if((imgcolorpalette[i][0]+imgcolorpalette[i][1]+imgcolorpalette[i][2])/3 > 128) {
+      var aafhi9ooiyg = '000' 
+    }
+    else {
+      var aafhi9ooiyg = 'fff' 
+    }
+        
+         $('#' + hfur).append('<div class="favrecommendcard" dp="lo" type="recommend" style="background:' + thsvstehecbwinsoiwpks + '"><div class="favrecommendcardcontent"><h4 style="color:#' + aafhi9ooiyg + '">' + thsvstehecbwinsoiwpks + '</h4><div class="favrecommendcarddescription">' + '<a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(thsvstehecbwinsoiwpks) + '&sou=randomrecommend&r=' + genid('random') + '">查看顏色</a>' + '</div></div></div>');
+      }
+      
+      $('#' + imgid).remove()
+	    
+	//gy
       });
     } 
     
