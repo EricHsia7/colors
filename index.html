@@ -1844,6 +1844,7 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
 
     // Make sure image is finished loading
     if (imgee.complete) {
+	    console.log('k1')
       var imgcolorpalette = colorThief.getPalette(imgee) ;
         var hfur = genid('random')
         var imgsrcffd = String($('#' + imgid).attr('src'))
@@ -1867,7 +1868,9 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
       $('#' + imgid).remove()
 	    
     } else {
+	    console.log('k2')
       imgee.addEventListener('load', function() {
+	      console.log('k2-2')
         //gy
 	 var imgcolorpalette = colorThief.getPalette(imgee) ;
         var hfur = genid('random')
