@@ -1832,7 +1832,8 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
   
   $('#' + imgidff).attr('src','data:image/jpeg;base64,' + btoa(binary))
 	    
-    }});
+    }
+});
 }
 	
 	    
@@ -1840,7 +1841,7 @@ function newrandomimagecolors() {
 
 var imgid = 'd-' + genid('uuid')
 $('body').append('<img id="' + imgid + '" style="display:none;">')
-await newddjejload(imgid);
+newddjejload(imgid);
     //gg    
     const colorThief = new ColorThief();
     const imgee = document.querySelector('#' + imgid);
@@ -1878,9 +1879,6 @@ await newddjejload(imgid);
       });
     } 
     //gg
-    
-
-
 }
 	
 	
