@@ -129,12 +129,22 @@ thead,tfoot{color:#fff}
 .rrimgcard {
   width:100%;
   height:auto;
+  margin-top:10px;
 }
 .rrimgbox {
   width:100%;
   height:30px;
+  border-radius:15px;
+}
+.rrimgspline {
+  width:100%;
+	height:1.5px;
+	background:#e3e3e3;
+	margin-top:3px;
+	margin-bottom:3px;
 }
 @media (prefers-color-scheme: dark) {
+.rrimgspline {background:#1f1f1f;}
 .gotop{background:#1f1f1f;color:#fff}
 :root{--morecard-btn-color:#1f1f1f;--morecard-btn-ripple:#fff}
 .morecard{background:#1a1a1a;border-bottom:1px #303030 solid}
@@ -1844,7 +1854,7 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
         var hfur = genid('random')
         var imgsrcffd = String($('#' + imgid).attr('src'))
         $('#' + imgid).remove()
-        $('.favrecommendcardbox').append('<div class="rrimgcard" id="' + hfur + '"><div class="rrimgbox" style="background:url(' + imgsrcffd + ');background-size:cover;background-position:cenetr;width:100%;height:300px"></div></div>')
+        $('.favrecommendcardbox').append('<div class="rrimgcard" id="' + hfur + '"><div class="rrimgspline"></div><div class="rrimgbox" style="background:url(' + imgsrcffd + ');background-size:cover;background-position:cenetr;width:100%;height:300px"></div><div class="rrimgspline"></div></div>')
       $('#' + hfur + ' .rrimgbox').css({'height':$(this).width()})
 	//rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2])
       for (var i = 0; i < imgcolorpalette.length; i++) {
