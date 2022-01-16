@@ -1846,11 +1846,12 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
    // imgee.onload = function(){
    
     if (imgee.complete) {
-	    console.log('k1')
+	    
       var imgcolorpalette = colorThief.getPalette(imgee) ;
-        var hfur = genid('random')
+        var hfur = 'k-' + genid('random')
         var imgsrcffd = String($('#' + imgid).attr('src'))
-        
+        console.log(imgsrcffd)
+	    
         $('.favrecommendcardbox').append('<div class="rrimgcard" id="' + hfur + '"><div class="rrimgbox" style="background:url(' + imgsrcffd + ');background-size:cover;background-position:cenetr;width:100%;height:300px"></div></div>')
       $('#' + hfur + ' .rrimgbox').css({'height':document.querySelector('#' + hfur).clientWidth})
 	//rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2])
