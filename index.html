@@ -1850,11 +1850,6 @@ observer.observe(document.querySelector('#' + imgid), {
 	    
   $('#' + imgid).attr('src','data:image/jpeg;base64,' + btoa(binary))
     //gg
-    
-	    observer = new MutationObserver(function(mutations) {
-  mutations.forEach(function(mutation) {
-    if (mutation.type === "attributes") {
-      
 	    
     setTimeout(function() {
     const colorThief = new ColorThief();
@@ -1898,10 +1893,7 @@ observer.observe(document.querySelector('#' + imgid), {
     
     },100);
 	    //ggggg
-	    console.log("ggg attributes changed")
-    }
-  });
-});
+	    
     //gg
    }
 });
