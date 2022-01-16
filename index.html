@@ -1833,6 +1833,11 @@ var imgid = 'd-' + genid('uuid')
 $('body').append('<img id="' + imgid + '" style="display:none;">')
 var rcimgwh = 350
 var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
+	
+observer.observe(document.querySelector('#' + imgid), {		
+   attributes: true //configure it to listen to attribute changes		
+});
+		
     $.ajax({type:'GET',url:rcimg,beforeSend:function (xhr) {xhr.overrideMimeType('text/plain; charset=x-user-defined');},async: true,success:function(result, textStatus, jqXHR) {
     var binary = "";
     var responseText = jqXHR.responseText;
@@ -1842,18 +1847,18 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
         binary += String.fromCharCode(responseText.charCodeAt(i) & 255)
     }
   
+	    
   $('#' + imgid).attr('src','data:image/jpeg;base64,' + btoa(binary))
     //gg
     
+	    
     setTimeout(function() {
     const colorThief = new ColorThief();
     const imgee = document.querySelector('#' + imgid);
 
     // Make sure image is finished loading
    // imgee.onload = function(){
-   observer.observe(imgee, {
-  attributes: true //configure it to listen to attribute changes
-});
+   
     if (imgee.complete) {
 	    console.log('k1')
       var imgcolorpalette = colorThief.getPalette(imgee) ;
