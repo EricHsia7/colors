@@ -1838,6 +1838,7 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
   $('#' + imgid).attr('src','data:image/jpeg;base64,' + btoa(binary))
     //gg
 	    
+    $('#' + imgid).ready(function() {
     setTimeout(function() {
     const colorThief = new ColorThief();
     const imgee = document.querySelector('#' + imgid);
@@ -1880,6 +1881,7 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
     //};
     
     },150);
+    });
 	    //ggggg
 	    
     //gg
