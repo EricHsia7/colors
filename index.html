@@ -1824,7 +1824,7 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
         binary += String.fromCharCode(responseText.charCodeAt(i) & 255)
     }
   $('#' + imgid).attr('src','data:image/jpeg;base64,' + btoa(binary))
-    condole.log('id:' + jqXHR.getResponseHeader('picsum-id'))
+    console.log('id:' + jqXHR.getResponseHeader('picsum-id'))
     //gg
 	    
     $('#' + imgid).ready(function() {
