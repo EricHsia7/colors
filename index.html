@@ -1849,9 +1849,21 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
 	else {
 	var bigimgrdgghtmlcc = '' ;
 	}
-        $('.favrecommendcardbox').append('<div class="rrimgcard" id="' + hfur + '"><div class="rrimgbox" style="background:url(' + imgsrcffd + ');background-size:cover;background-position:cenetr;">' + bigimgrdgghtmlcc + '</div></div>')
-      $('#' + hfur + ' .rrimgbox').css({'height':(document.querySelector('#' + hfur).clientWidth-20)})
-	    
+	var fyhhutfcdseid = 'k-' + genid('random')
+        $('.favrecommendcardbox').append('<div class="rrimgcard" id="' + hfur + '"><div class="rrimgbox" style="background:url(' + imgsrcffd + ');background-size:cover;background-position:cenetr;" id="' + fyhhutfcdseid + '" imagelink="' + bigsizerdimgurl + '">' + bigimgrdgghtmlcc + '</div></div>')
+        $('#' + hfur + ' .rrimgbox').css({'height':(document.querySelector('#' + hfur).clientWidth-20)})
+	$('#' + fyhhutfcdseid).click(function() {
+	  var thsfijfpwkxkclinkur = String($(this).attr('imagelink'))
+	  
+	  var textArea = document.createElement("textarea");
+        textArea.value = thsfijfpwkxkclinkur ;
+        textArea.setAttribute('readonly','readonly') ;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand("Copy");
+        textArea.remove();
+	      $('body').prompt({'message':'已複製圖片連結','time':1200,'animate':'slide'});
+	});
 	//rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2])
       for (var i = 0; i < imgcolorpalette.length; i++) {
         var thsvstehecbwinsoiwpks = rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2])
