@@ -1826,7 +1826,7 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
     }
   $('#' + imgid).attr('src','data:image/jpeg;base64,' + btoa(binary))
     console.log('id:' + jqXHR.getResponseHeader('picsum-id'))
-    var bigsizerdimgurl = String('https://picsum.photos/id/' + jqXHR.getResponseHeader('picsum-id') + '/850/850')
+    var bigsizerdimgurl = String('https://picsum.photos/id/' + jqXHR.getResponseHeader('picsum-id') + '/1024/1024')
     //gg
 	    
     $('#' + imgid).ready(function() {
