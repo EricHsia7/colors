@@ -1826,7 +1826,7 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
     }
   $('#' + imgid).attr('src','data:image/jpeg;base64,' + btoa(binary))
     console.log('id:' + jqXHR.getResponseHeader('picsum-id'))
-    var bigsizerdimgurl = String('https://picsum.photos/id/' + jqXHR.getResponseHeader('picsum-id') + '/512/512')
+    var bigsizerdimgurl = String('https://picsum.photos/id/' + jqXHR.getResponseHeader('picsum-id') + '/800/800')
     //gg
 	    
     $('#' + imgid).ready(function() {
@@ -1843,8 +1843,13 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
         var hfur = 'k-' + genid('random')
         var imgsrcffd = String($('#' + imgid).attr('src'))
         console.log('k')
-	    
-        $('.favrecommendcardbox').append('<div class="rrimgcard" id="' + hfur + '"><div class="rrimgbox" style="background:url(' + imgsrcffd + ');background-size:cover;background-position:cenetr;"><img src="' + bigsizerdimgurl + '" class="rdimgbigsize"></div></div>')
+	if(!(localStorage.getItem('settings_lowspeed') === '1')) {
+	var bigimgrdgghtmlcc = '<img src="' + bigsizerdimgurl + '" class="rdimgbigsize">'
+	}
+	else {
+	var bigimgrdgghtmlcc = '' ;
+	}
+        $('.favrecommendcardbox').append('<div class="rrimgcard" id="' + hfur + '"><div class="rrimgbox" style="background:url(' + imgsrcffd + ');background-size:cover;background-position:cenetr;">' + bigimgrdgghtmlcc + '</div></div>')
       $('#' + hfur + ' .rrimgbox').css({'height':(document.querySelector('#' + hfur).clientWidth-20)})
 	    
 	//rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2])
