@@ -1824,6 +1824,7 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
         binary += String.fromCharCode(responseText.charCodeAt(i) & 255)
     }
   $('#' + imgid).attr('src','data:image/jpeg;base64,' + btoa(binary))
+    condole.log('id:' + jqXHR.getResponseHeader('picsum-id'))
     //gg
 	    
     $('#' + imgid).ready(function() {
@@ -1839,7 +1840,7 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
       var imgcolorpalette = colorThief.getPalette(imgee) ;
         var hfur = 'k-' + genid('random')
         var imgsrcffd = String($('#' + imgid).attr('src'))
-        console.log(imgsrcffd)
+        console.log('k')
 	    
         $('.favrecommendcardbox').append('<div class="rrimgcard" id="' + hfur + '"><div class="rrimgbox" style="background:url(' + imgsrcffd + ');background-size:cover;background-position:cenetr;"></div></div>')
       $('#' + hfur + ' .rrimgbox').css({'height':(document.querySelector('#' + hfur).clientWidth-20)})
