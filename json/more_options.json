@@ -18,6 +18,12 @@
   "btn": "使用"
  },
  {
+  "title": "Telegram",
+  "image": "4.png",
+  "script": "location.href = 'https://t.me/+UQn6twUfz8k3ZDll'",
+  "btn": "加入"
+ },
+ {
   "title": "LINE官方帳號",
   "image": "4.png",
   "script": "location.href = 'https://lin.ee/AQadMnc'",
