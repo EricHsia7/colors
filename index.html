@@ -1901,7 +1901,7 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
   var favrecommenddataarr_color_html = [] ;
   var favrecommenddataarr_ligrd_html = [] ;
   var favrecommenddataarr_lastweektrend_html = [] ;
-	
+  var explore_load_count = 0 ;
   var dft = 0 ;
   var sga = 0 ;
   if(!(localStorage.getItem('settings_lowspeed') === '1')) {
@@ -1972,7 +1972,16 @@ $('.favrecommendfixedtitle').html($('.favrecommendfixedtitle').attr('srtitle'))
  $('.favrecommendcardbox').append('<h5 id="randomrecommendtitletags">探索</h5>')
       sga = 1
     }
-			
+explore_load_count += 1 ;
+gtag('event', 'explore_load', {
+    'event_category': explore_load_count,
+    'event_label':user_id ,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    console.log(explore_load_count)
+    }
+  });
+
 for (var i = 0; i < Math.round(($(window).height()*1.6)/100); i++) {
 	var ffrand_r = gettimerandomnumber(0,255);
 var ffrand_g = gettimerandomnumber(0,255);  
