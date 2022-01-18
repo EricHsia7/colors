@@ -1811,14 +1811,11 @@ arrbtcoctft();
 });
 
 function getunsplashimgurlbyid(picid) {
-	var ftgyhgponbcawqab ;
-$.ajax({type:'get',url:'https://picsum.photos/id/' + picid + '/info',dataType:'text',success:function(opopkk) {
-      var unpinfojson = JSON.parse(opopkk)
-      ftgyhgponbcawqab = String(unpinfojson.url)
-      console.log(unpinfojson.url)
-	return String(unpinfojson.url)
-    }
-     });
+var ftgyhgponbcawqab ;
+var ggyiyunpkiggvgsdx = $.ajax({type:'get',url:'https://picsum.photos/id/' + picid + '/info',dataType:'text'});
+var unpinfojson = JSON.parse(ggyiyunpkiggvgsdx)
+ftgyhgponbcawqab = String(unpinfojson.url)
+return ftgyhgponbcawqab
 }
 function newrandomimagecolors() {
 var imgid = 'd-' + genid('uuid')
