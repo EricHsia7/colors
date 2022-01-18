@@ -1850,6 +1850,7 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
         $('#' + hfur + ' .rrimgbox').css({'height':(document.querySelector('#' + hfur).clientWidth-20)})
 	$('#' + fyhhutfcdseid).click(function() {
 	  if($(this).attr('imagelinkld') === '0') {
+	  $('body').prompt({'message':'正在載入連結','time':10000,'animate':'slide'});
 	  var thsfijfpwkxkclinkur = getunsplashimgurlbyid(String($(this).attr('imageid')))
 	  $(this).attr('imagelink',thsfijfpwkxkclinkur)
 	  $(this).attr('imagelinkld','1')
