@@ -1815,6 +1815,9 @@ function newrandomimagecolors() {
 var imgid = 'd-' + genid('uuid')
 $('body').append('<img id="' + imgid + '" style="display:none;">')
 var rcimgwh = (document.querySelector('.favrecommendcardbox').clientWidth-20)*0.6
+if(rcimgwh <= 256) {
+rcimgwh = 256
+}
 //var rcimgwh = 350
 var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
 
