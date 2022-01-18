@@ -1858,11 +1858,16 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
 	var bigimgrdgghtmlcc = '' ;
 	}
 	var fyhhutfcdseid = 'k-' + genid('random')
-        $('.favrecommendcardbox').append('<div class="rrimgcard" id="' + hfur + '"><div class="rrimgbox" style="background:url(' + imgsrcffd + ');background-size:cover;background-position:cenetr;" id="' + fyhhutfcdseid + '" imageid="' + jqXHR.getResponseHeader('picsum-id') + '">' + bigimgrdgghtmlcc + '</div></div>')
+        $('.favrecommendcardbox').append('<div class="rrimgcard" id="' + hfur + '"><div class="rrimgbox" style="background:url(' + imgsrcffd + ');background-size:cover;background-position:cenetr;" id="' + fyhhutfcdseid + '" imageid="' + jqXHR.getResponseHeader('picsum-id') + '" imagelinkld="0">' + bigimgrdgghtmlcc + '</div></div>')
         $('#' + hfur + ' .rrimgbox').css({'height':(document.querySelector('#' + hfur).clientWidth-20)})
 	$('#' + fyhhutfcdseid).click(function() {
+	  if($(this).attr('imagelinkld') === '0') {
 	  var thsfijfpwkxkclinkur = getunsplashimgurlbyid(String($(this).attr('imageid')))
-	  
+	  $(this).attr('imagelink',thsfijfpwkxkclinkur)
+	  }
+	  else {
+	  var thsfijfpwkxkclinkur = getunsplashimgurlbyid(String($(this).attr('imagelink')))
+	  }
 	  var textArea = document.createElement("textarea");
         textArea.value = thsfijfpwkxkclinkur ;
         textArea.setAttribute('readonly','readonly') ;
