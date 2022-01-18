@@ -1809,7 +1809,17 @@ arrbtcoctft();
   $('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*copycolmode)) + 'px) translateY(-50%)','transition':'0.5s'});
    $('.color').css({'width':'100%','height':'100%'});
 });
-var unsplashimglink ;
+
+function getunsplashimgurlbyid(picid) {
+	var ftgyhgponbcawqab ;
+$.ajax({type:'get',url:'https://picsum.photos/id/' + jqXHR.getResponseHeader('picsum-id') + '/info',dataType:'text',success:function(opopkk) {
+      var unpinfojson = JSON.parse(opopkk)
+      ftgyhgponbcawqab = String(unpinfojson.url)
+      console.log(unpinfojson)
+    }
+     });
+	return ftgyhgponbcawqab
+}
 function newrandomimagecolors() {
 var imgid = 'd-' + genid('uuid')
 $('body').append('<img id="' + imgid + '" style="display:none;">')
@@ -1829,11 +1839,7 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
     var bigsizerdimgurl = String('https://picsum.photos/id/' + jqXHR.getResponseHeader('picsum-id') + '/1024/1024')
     //https://picsum.photos/id/210/info
     
-    $.ajax({type:'get',url:'https://picsum.photos/id/' + jqXHR.getResponseHeader('picsum-id') + '/info',dataType:'text',success:function(opopkk) {
-      var unpinfojson = JSON.parse(opopkk)
-      unsplashimglink = String(unpinfojson.url)
-    }
-});
+    var unsplashimglink = getunsplashimgurlbyid(jqXHR.getResponseHeader('picsum-id'));
     //gg
 	    
     $('#' + imgid).ready(function() {
