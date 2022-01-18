@@ -1827,6 +1827,13 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
   $('#' + imgid).attr('src','data:image/jpeg;base64,' + btoa(binary))
     console.log('id:' + jqXHR.getResponseHeader('picsum-id'))
     var bigsizerdimgurl = String('https://picsum.photos/id/' + jqXHR.getResponseHeader('picsum-id') + '/1024/1024')
+    //https://picsum.photos/id/210/info
+    var unsplashimglink
+    $.ajax({type:'get',url:'https://picsum.photos/id/' + jqXHR.getResponseHeader('picsum-id') + '/info',dataType:'text',success:function(opopkk) {
+      var unpinfojson = JSON.parse(opopkk)
+      unsplashimglink = String(unpinfojson.url)
+    }
+});
     //gg
 	    
     $('#' + imgid).ready(function() {
@@ -1850,7 +1857,7 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
 	var bigimgrdgghtmlcc = '' ;
 	}
 	var fyhhutfcdseid = 'k-' + genid('random')
-        $('.favrecommendcardbox').append('<div class="rrimgcard" id="' + hfur + '"><div class="rrimgbox" style="background:url(' + imgsrcffd + ');background-size:cover;background-position:cenetr;" id="' + fyhhutfcdseid + '" imagelink="' + bigsizerdimgurl + '">' + bigimgrdgghtmlcc + '</div></div>')
+        $('.favrecommendcardbox').append('<div class="rrimgcard" id="' + hfur + '"><div class="rrimgbox" style="background:url(' + imgsrcffd + ');background-size:cover;background-position:cenetr;" id="' + fyhhutfcdseid + '" imagelink="' + unsplashimglink + '">' + bigimgrdgghtmlcc + '</div></div>')
         $('#' + hfur + ' .rrimgbox').css({'height':(document.querySelector('#' + hfur).clientWidth-20)})
 	$('#' + fyhhutfcdseid).click(function() {
 	  var thsfijfpwkxkclinkur = String($(this).attr('imagelink'))
