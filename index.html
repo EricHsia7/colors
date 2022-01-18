@@ -1811,11 +1811,9 @@ arrbtcoctft();
 });
 
 function getunsplashimgurlbyid(picid) {
-var ftgyhgponbcawqab ;
 var ggyiyunpkiggvgsdx = $.ajax({type:'get',url:'https://picsum.photos/id/' + picid + '/info',dataType:'text',async:false});
 var unpinfojson = JSON.parse(ggyiyunpkiggvgsdx.responseText)
-ftgyhgponbcawqab = String(unpinfojson.url)
-return ftgyhgponbcawqab
+return String(unpinfojson.url)
 }
 function newrandomimagecolors() {
 var imgid = 'd-' + genid('uuid')
@@ -1836,7 +1834,7 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
     var bigsizerdimgurl = String('https://picsum.photos/id/' + jqXHR.getResponseHeader('picsum-id') + '/1024/1024')
     //https://picsum.photos/id/210/info
     
-    var unsplashimglink = getunsplashimgurlbyid(jqXHR.getResponseHeader('picsum-id'));
+    //var unsplashimglink = getunsplashimgurlbyid(jqXHR.getResponseHeader('picsum-id'));
     //gg
 	    
     $('#' + imgid).ready(function() {
@@ -1860,10 +1858,10 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
 	var bigimgrdgghtmlcc = '' ;
 	}
 	var fyhhutfcdseid = 'k-' + genid('random')
-        $('.favrecommendcardbox').append('<div class="rrimgcard" id="' + hfur + '"><div class="rrimgbox" style="background:url(' + imgsrcffd + ');background-size:cover;background-position:cenetr;" id="' + fyhhutfcdseid + '" imagelink="' + unsplashimglink + '">' + bigimgrdgghtmlcc + '</div></div>')
+        $('.favrecommendcardbox').append('<div class="rrimgcard" id="' + hfur + '"><div class="rrimgbox" style="background:url(' + imgsrcffd + ');background-size:cover;background-position:cenetr;" id="' + fyhhutfcdseid + '" imageid="' + jqXHR.getResponseHeader('picsum-id') + '">' + bigimgrdgghtmlcc + '</div></div>')
         $('#' + hfur + ' .rrimgbox').css({'height':(document.querySelector('#' + hfur).clientWidth-20)})
 	$('#' + fyhhutfcdseid).click(function() {
-	  var thsfijfpwkxkclinkur = String($(this).attr('imagelink'))
+	  var thsfijfpwkxkclinkur = getunsplashimgurlbyid(String($(this).attr('imageid')))
 	  
 	  var textArea = document.createElement("textarea");
         textArea.value = thsfijfpwkxkclinkur ;
