@@ -783,7 +783,25 @@ $(window).resize(function() {
    $('#sharefavinfotext').html('來自使用者(不包括你)的喜好項目')
   }
   //settingsend
-  
+  //usage_point
+	function initializeusagepoint() {
+		var todaygg = new Date()
+		var tddatehh = todaygg.getFullYear()+ '-' + (todaygg.getMonth()+1) + '-' + todaygg.getDate()
+		if(localStorage.getItem('usage_point_' + tddatehh) === undefined) {
+			usagepoint_json = {"date":tddatehh}
+		}
+		else {
+			usagepoint_json = JSON.parse(String(localStorage.getItem('usage_point_' + tddatehh)))
+		}
+		
+	}
+  function usagepoint(eventname,points) {
+    var ydhstdjson = JSON.parse(String(localStorage.getItem('usage_point_' + tddatehh)))
+		eval('ydhstdjson.a_' + eventname + '_' + new Date().getTime() ' = "' + points + '"')
+  }
+	
+	initializeusagepoint()
+  //usage_point_end
   function showuserid() {
     $('.alert_blur').fadeIn(333);
     $('.alert').css({'display':'block'});
