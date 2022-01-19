@@ -1032,6 +1032,7 @@ var qrcode = new QRCode(document.querySelector('#qr') , {
     });
  
   $('.favt').click(function() {
+    usagepoint('favorite','+1.5')
     if(sharecolor === "1") {
       if(getCookie('colorfav2').indexOf('&' + shcolor) != -1) {
     }
@@ -1077,7 +1078,7 @@ var favrecommendforms = $.ajax({url:'https://docs.google.com/forms/d/e/1FAIpQLSc
 $('.cmore').prepend('<div class="morecard"><div class="morecardimage"></div><div class="morecardtitle"></div><div class="morecardbtn"></div></div>')
     }
 if(localStorage.getItem('moreopt_d') === morecardv) {
-   
+   usagepoint('more_options_open','+1.5')
   var morecardjson = JSON.parse(localStorage.getItem('moreopt')) ;
   for (var i = 0; i < 8; i++) {
     var morebtnid = genid('random')
@@ -1090,6 +1091,7 @@ $('.morecardtitle').eq(i).html(morecardthisjson.title).css({'background':'rgba(0
 
 }
 else {
+usagepoint('more_options_open','+1')
 $.ajax({type:'get',url:"https://erichsia7.github.io/colors/json/more_options.json?r=" + genid('random'),dataType:'text',success:function(e) {
 var morecardjson = JSON.parse(e) ;
   localStorage.setItem('moreopt',e)
@@ -1113,8 +1115,10 @@ $('.morecardtitle').eq(i).html(morecardthisjson.title).css({'background':'rgba(0
  $('.meoi').click(function() {
     $('.cmore').fadeOut(333);
    $('.favrecommendcardbox').css({'position':'absolute'});
+usagepoint('more_options_close','+0.1')
   }); 
   $('.rand2').click(function() {
+usagepoint('random_color','+3')
 var rand_r = gettimerandomnumber(0,255);
 var rand_g = gettimerandomnumber(0,255);  
 var rand_b = gettimerandomnumber(0,255);
@@ -1156,6 +1160,7 @@ var rand_b = gettimerandomnumber(0,255);
   });
   
   $('.grd').click(function() {
+usagepoint('random_grd','+3')
 var grd_r1 = gettimerandomnumber(0,255);
 var grd_g1 = gettimerandomnumber(0,255);  
 var grd_b1 = gettimerandomnumber(0,255);
@@ -1231,6 +1236,7 @@ if(toimg === '1') {
   history.pushState(null, null,String(location.href).split('&r=')[0] + '&r=' + genid('random'));
 }  
 if(sharecolor === "1") {
+usagepoint('open_color','+2')
 $('#filerj,.favrecommendcardbox').css({'position':'fixed'});
 $('#rgb').attr('rgb',hexToRgb(shcolor).r + ',' + hexToRgb(shcolor).g + ',' + hexToRgb(shcolor).b);
 $('#rgb').attr('hex', shcolor);
@@ -1260,6 +1266,7 @@ if((hexToRgb(shcolor).r+hexToRgb(shcolor).g+hexToRgb(shcolor).b)/3 > 128) {
       //$('.toimg').attr('class','toimg toimg-l btn');
     }
   if(open === "fav") {
+   usagepoint('open_color_fav','+5')
 $('.color').css({'display':'block'});
     $('#filerj,.favrecommendcardbox').css({'opacity':'0','position':'fixed'});
 setthemecol(shcolor,1);
@@ -1308,6 +1315,7 @@ setthemecol(shcolor,222);
 	
 }
   if(sharecolor === "2") {
+usagepoint('open_grd','+3')
     $('#filerj,.favrecommendcardbox').css({'position':'fixed'});
     $('input[t="rgb"],input[t="cmyk"],input[t="hsl"],input[t="hsv"]').val('暫不支援');
     $('li[f="toimage"],li[f="openinpicker"]').css({'opacity':'0.3'});  
@@ -1330,6 +1338,7 @@ setthemecol(shcolor,222);
     
 
 if(open === "fav") {
+usagepoint('open_grd_fav','+5')
 //$('.color').fadeIn(1);
   $('.color').css({'display':'block'});
   $('#filerj,.favrecommendcardbox').css({'opacity':'0','position':'fixed'});
@@ -1792,6 +1801,7 @@ if(keyNum==70){
       copycolmode = 0 ;
     }
     arrbtcoctft();
+    usagepoint('switch_color','+3.5')
   });
   $('.arrbtco-2').click(function() {
     if(copycolmode > 0) {
@@ -1801,6 +1811,7 @@ if(keyNum==70){
       copycolmode = 4 ;
     }
 arrbtcoctft();
+usagepoint('switch_color','+3.5')
   });
   
  window.addEventListener('resize', function(e) {
@@ -1977,6 +1988,7 @@ $('.favrecommendfixedtitle').html($('.favrecommendfixedtitle').attr('srtitle'))
  $('.favrecommendcardbox').append('<h5 id="randomrecommendtitletags">探索</h5>')
       sga = 1
     }
+usagepoint('explore_load','+5')
 explore_load_count += 1 ;
 gtag('event', 'explore_load', {
     'event_category': explore_load_count,
@@ -2014,6 +2026,7 @@ var ffrand_b = gettimerandomnumber(0,255);
 
 $('#favrecommendcardtab_ligrd,#favrecommendcardtab_lastweektrend').attr('hu','0');
 $('#favrecommendcardtab_color').click(function() {
+usagepoint('switch_recommend','+3')
 sga = 0 
 $('.favrecommendcard,#randomrecommendtitletags,.rrimgcard').remove()
 $('.favrecommendcardbox').append(favrecommenddataarr_color_html)
@@ -2023,6 +2036,7 @@ $('.favrecommendfixedtitle').html('建議的顏色').attr('srtitle','建議的�
 });
   
 $('#favrecommendcardtab_lastweektrend').click(function() {
+usagepoint('switch_recommend','+3')
 sga = 0
 $('#favrecommendcardtab_lastweektrend').attr('gj','1');
 $('#favrecommendcardtab_ligrd,#favrecommendcardtab_color').attr('gj','0');
@@ -2067,6 +2081,7 @@ $('.favrecommendcard[lastweektrendmo="0"]').remove()
 });
 
 $('#favrecommendcardtab_ligrd').click(function() {
+usagepoint('switch_recommend','+3')
 sga = 0 
 $('#favrecommendcardtab_color,#favrecommendcardtab_lastweektrend').attr('gj','0')
 $('#favrecommendcardtab_ligrd').attr('gj','1')
