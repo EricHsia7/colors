@@ -786,8 +786,8 @@ $(window).resize(function() {
   //usage_point
 function initializeusagepoint() {
 		var todaygg = new Date()
-		var tddatehh = todaygg.getFullYear()+ '-' + (todaygg.getMonth()+1) + '-' + todaygg.getDate()
-		if(localStorage.getItem('usage_point_' + tddatehh) === undefined) {
+		var tddatehh = todaygg.getFullYear() + '-' + (todaygg.getMonth()+1) + '-' + todaygg.getDate()
+		if(localStorage.getItem('usage_point_' + tddatehh) === undefined || localStorage.getItem('usage_point_' + tddatehh) === null) {
 			var usagepoint_json = {"date":tddatehh}
 		}
 		else {
