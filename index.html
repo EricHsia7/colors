@@ -784,7 +784,7 @@ $(window).resize(function() {
   }
   //settingsend
   //usage_point
-	function initializeusagepoint() {
+function initializeusagepoint() {
 		var todaygg = new Date()
 		var tddatehh = todaygg.getFullYear()+ '-' + (todaygg.getMonth()+1) + '-' + todaygg.getDate()
 		if(localStorage.getItem('usage_point_' + tddatehh) === undefined) {
@@ -800,7 +800,7 @@ $(window).resize(function() {
 	eval('ydhstdjson.a_' + eventname + '_' + new Date().getTime() ' = "' + points + '"')
   }
 	
-	initializeusagepoint()
+	//initializeusagepoint()
   //usage_point_end
   function showuserid() {
     $('.alert_blur').fadeIn(333);
