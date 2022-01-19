@@ -793,12 +793,15 @@ function initializeusagepoint() {
 		else {
 			var usagepoint_json = JSON.parse(String(localStorage.getItem('usage_point_' + tddatehh)))
 		}
-		
+		localStorage.setItem('usage_point_' + tddatehh,JSON.stringify(usagepoint_json))
 	}
 	
   function usagepoint(eventname,points) {
+	  var todaygg = new Date()
+		var tddatehh = todaygg.getFullYear()+ '-' + (todaygg.getMonth()+1) + '-' + todaygg.getDate()
     var ydhstdjson = JSON.parse(String(localStorage.getItem('usage_point_' + tddatehh)))
 	eval('ydhstdjson.a_' + eventname + '_' + new Date().getTime() + ' = "' + points + '"')
+	localStorage.setItem('usage_point_' + tddatehh,JSON.stringify(ydhstdjson))
   }
 	
 	initializeusagepoint()
