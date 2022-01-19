@@ -788,7 +788,7 @@ function initializeusagepoint() {
 		var todaygg = new Date()
 		var tddatehh = todaygg.getFullYear() + '-' + (todaygg.getMonth()+1) + '-' + todaygg.getDate()
 		if(localStorage.getItem('usage_point_' + tddatehh) === undefined || localStorage.getItem('usage_point_' + tddatehh) === null) {
-			var usagepoint_json = {"date":tddatehh}
+			var usagepoint_json = {"date":tddatehh,"events":{}}
 		}
 		else {
 			var usagepoint_json = JSON.parse(String(localStorage.getItem('usage_point_' + tddatehh)))
