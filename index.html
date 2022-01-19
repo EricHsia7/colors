@@ -784,7 +784,6 @@ $(window).resize(function() {
   }
   //settingsend
   //usage_point
-	/*
 function initializeusagepoint() {
 		var todaygg = new Date()
 		var tddatehh = todaygg.getFullYear()+ '-' + (todaygg.getMonth()+1) + '-' + todaygg.getDate()
@@ -796,13 +795,14 @@ function initializeusagepoint() {
 		}
 		
 	}
+	
   function usagepoint(eventname,points) {
     var ydhstdjson = JSON.parse(String(localStorage.getItem('usage_point_' + tddatehh)))
-	eval('ydhstdjson.a_' + eventname + '_' + new Date().getTime() ' = "' + points + '"')
+	eval('ydhstdjson.a_' + eventname + '_' + new Date().getTime() + ' = "' + points + '"')
   }
 	
-	//initializeusagepoint()
-	*/
+	initializeusagepoint()
+	
   //usage_point_end
   function showuserid() {
     $('.alert_blur').fadeIn(333);
