@@ -801,16 +801,10 @@ $(window).resize(function() {
     $('.alert').css({'display':'none'});
     }, 510);
     });
-  
-  
-  
-  
-  
 if (window.File && window.FileReader && window.FileList && window.Blob) {
   document.getElementById('files2').addEventListener('change', handleFileSelect, false);
-
 } else {
-  alert('您的瀏覽器不支援');
+  alert('No supported.');
 }
 
 function handleFileSelect(evt) {
@@ -824,18 +818,13 @@ function handleFileSelect(evt) {
       //Converting Binary Data to base 64
       var base64String = window.btoa(binaryData);
       //showing file converted to base64
-      
-
       $('#colorjsloading').fadeIn(1).css({'display':'flex'});
-      //$('#cojs').css({'display':'block'});
       var ctx = document.getElementById('cc').getContext('2d');
-      
   var img = new Image();
   img.onload = function(){
     ctx.drawImage(img,0,0,ccw,ccw);
   };
   img.src = 'data:image/jpeg;base64,' + base64String;
- 
 var rgb_r = 0 ;     
 var rgb_g = 0 ;   
 var rgb_b = 0 ; 
@@ -843,7 +832,7 @@ var rgb_rm = [] ;
 var rgb_gm = [] ;
 var rgb_bm = [] ;
 var jsprognu = 0 ;
-      
+
 var load = 0 ;
       gtag('event', 'photo', {
     'event_category': 'color',
@@ -919,10 +908,9 @@ if(sharecolor === "1" || sharecolor === "2") {
           $('.color').fadeOut(222);
           setTimeout(function(){
           location.href = 'https://erichsia7.github.io/colors/picker/?open=col&pih=' + url.searchParams.get('pih') + '&pis=' + url.searchParams.get('pis') + '&piv=' + url.searchParams.get('piv') + '&r=' + genid('random') ;
-                    }, 222);
+          }, 222);
         }
         else {
-          
       $('body').css({'background':'','transition':'0.222s'});
       $('.color').fadeOut(222);
       setTimeout(function(){
@@ -932,7 +920,6 @@ if(sharecolor === "1" || sharecolor === "2") {
         }
         
       }
-      
       
     }
 }
@@ -946,23 +933,15 @@ if(sharecolor === "1" || sharecolor === "2") {
 $('.ft2').click(function() {
   location.href = 'https://erichsia7.github.io/colors/text/?r=' + genid('random') ;
   });
-  
 $('.fi2').click(function() {
+  var gingdzyxyj = ['#rgb','rgb','cmyk','hsl','hsv']
   if(copycolmode === 0) {
    var copys2 = $('#rgb');
   }
-  if(copycolmode === 1) {
-   var copys2 = $('input[t="rgb"]');
+  else {
+  var copys2 = $('input[t="' + gingdzyxyj[copycolmode] + '"]');
   }
-  if(copycolmode === 2) {
-   var copys2 = $('input[t="cmyk"]');
-  }
-  if(copycolmode === 3) {
-   var copys2 = $('input[t="hsl"]');
-  }
-  if(copycolmode === 4) {
-   var copys2 = $('input[t="hsv"]');
-  }
+	
 copys2.select();
 document.execCommand("Copy");
 });
