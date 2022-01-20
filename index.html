@@ -836,7 +836,8 @@ function initializeusagepoint() {
 }
 function sendusagepoint() {
   var todaydated = new Date()
-  var lastdaydated = new Date().setTime(todaydated.getTime()-60*60*24*1000)
+  var lastdaydated = new Date()
+  lastdaydated.setTime(todaydated.getTime()-60*60*24*1000)
   var lastdatese = lastdaydated.getFullYear() + '-' + (lastdaydated.getMonth()+1) + '-' + lastdaydated.getDate()
   
   if(String(localStorage.getItem('usage_point_' + lastdatese)).length > 10 && !(localStorage.getItem('usage_point_' + lastdatese + '_send') === '1')) {
