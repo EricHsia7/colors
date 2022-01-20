@@ -806,7 +806,35 @@ function initializeusagepoint() {
 	
 	initializeusagepoint()
 	
+
   //usage_point_end
+  //usage_point_send
+  function calctotalpoint(dayy,datau) {
+   var keys = [];
+   var keysnorep = [] ;
+  var keysrepcount = {}
+  var keysreppoint = {}
+  var pointtotal = 0
+   for(var k in datau) {
+     keys.push(k);
+   }
+  for (var i = 0; i < keys.length; i++) {
+    eval('pointtotal = pointtotal' + eval('datau.' + keys[i]))
+    if(!(keysnorep.join(',').indexOf(keys[i].replaceAll('_' + String(keys[i]).split('_')[(String(keys[i]).split('_').length-1)],'')) > -1)) {
+      keysnorep.push(keys[i].replaceAll('_' + String(keys[i]).split('_')[(String(keys[i]).split('_').length-1)],''))
+      eval('keysrepcount.' + keys[i].replaceAll('_' + String(keys[i]).split('_')[(String(keys[i]).split('_').length-1)],'') + ' = 1')
+      eval('keysreppoint.' + keys[i].replaceAll('_' + String(keys[i]).split('_')[(String(keys[i]).split('_').length-1)],'') + ' = 0 + (' + eval('datau.' + keys[i]) + ')')
+    }
+    else {
+      eval('keysrepcount.' + keys[i].replaceAll('_' + String(keys[i]).split('_')[(String(keys[i]).split('_').length-1)],'') + ' = ' + 'parseInt(keysrepcount.' + keys[i].replaceAll('_' + String(keys[i]).split('_')[(String(keys[i]).split('_').length-1)],'') + ')+1' )
+      eval('keysreppoint.' + keys[i].replaceAll('_' + String(keys[i]).split('_')[(String(keys[i]).split('_').length-1)],'') + ' = (keysreppoint.' + keys[i].replaceAll('_' + String(keys[i]).split('_')[(String(keys[i]).split('_').length-1)],'') + ')+(' + eval('datau.' + keys[i]) + ')')
+    }
+  }
+  
+  var resultjsonddcsowcjfi = {"date":dayy.date,"events":{"event_count":keysrepcount,"event_point":keysreppoint,"event_point_total":pointtotal,"event_type_count":keysnorep.length}}
+   return resultjsonddcsowcjfi
+}
+  //usage_point_send_end
   function showuserid() {
     $('.alert_blur').fadeIn(333);
     $('.alert').css({'display':'block'});
