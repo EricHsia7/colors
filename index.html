@@ -840,7 +840,7 @@ function sendusagepoint() {
   lastdaydated.setTime(todaydated.getTime()-60*60*24*1000)
   var lastdatese = lastdaydated.getFullYear() + '-' + (lastdaydated.getMonth()+1) + '-' + lastdaydated.getDate()
   console.log(lastdatese)
-  if(String(localStorage.getItem('usage_point_' + lastdatese)).length > 10 && !(localStorage.getItem('usage_point_' + lastdatese + '_send') === '1')) {
+  if(String(localStorage.getItem('usage_point_' + lastdatese)).length > 10 && !(localStorage.getItem('usage_point_' + lastdatese + '_send') === '1') && !(localStorage.getItem('usage_point_' + lastdatese) === null) && !(localStorage.getItem('usage_point_' + lastdatese) === undefined)) {
   var lastdayresultjson = usgaepointresultjsoncalc(JSON.parse(String(localStorage.getItem('usage_point_' + lastdatese))), JSON.parse(String(localStorage.getItem('usage_point_' + lastdatese))).events)
   console.log('no send')
   console.log(lastdayresultjson)
@@ -900,6 +900,10 @@ function sendusagepoint() {
    
    localStorage.setItem('usage_point_' + lastdatese + '_send','1')
   //sendend  
+  }
+  if(localStorage.getItem('usage_point_' + lastdatese + '_send') === '1') {
+    localStorage.removeItem('usage_point_' + lastdatese)
+    localStorage.removeItem('usage_point_' + lastdatese + '_send')
   }
 }
 	sendusagepoint()
