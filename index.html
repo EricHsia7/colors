@@ -844,6 +844,28 @@ function sendusagepoint() {
   var lastdayresultjson = usgaepointresultjsoncalc(JSON.parse(String(localStorage.getItem('usage_point_' + lastdatese))), JSON.parse(String(localStorage.getItem('usage_point_' + lastdatese))).events)
   console.log('no send')
   console.log(lastdayresultjson)
+  var lastdayresultjson_event_count = lastdayresultjson.events.event_count
+  var lastdayresultjson_event_point = lastdayresultjson.events.event_point
+  var lastdayresultjson_event_point_total = lastdayresultjson.events.event_point_total
+  var lastdayresultjson_event_type_count = lastdayresultjson.events.event_type_count
+  //send
+  for(var hssu_1 in lastdayresultjson_event_count) {
+     //event_count
+     var thskeyname = hssu_1
+     var thskeyvalue = eval('lastdayresultjson_event_count.' + hssu_1)
+     console.log(thskeyname + ',' + thskeyvalue)
+   }
+   for(var hssu_2 in lastdayresultjson_event_point) {
+     //event_point
+   }
+   for(var hssu_3 in lastdayresultjson_event_point_total) {
+     //event_point_total
+   }
+   for(var hssu_4 in lastdayresultjson_event_type_count) {
+     //event_type_count
+   }
+   
+  //sendend  
   }
 }
 	sendusagepoint()
