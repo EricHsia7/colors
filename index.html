@@ -838,8 +838,9 @@ function sendusagepoint() {
   var todaydated = new Date()
   var lastdaydated = new Date().setTime(todaydated.getTime()-60*60*24*1000)
   var lastdatese = lastdaydated.getFullYear() + '-' + (lastdaydated.getMonth()+1) + '-' + lastdaydated.getDate()
+  
+  if(String(localStorage.getItem('usage_point_' + lastdatese)).length > 10 && !(localStorage.getItem('usage_point_' + lastdatese + '_send') === '1')) {
   var lastdayresultjson = usgaepointresultjsoncalc(JSON.parse(String(localStorage.getItem('usage_point_' + lastdatese))), JSON.parse(String(localStorage.getItem('usage_point_' + lastdatese))).events)
-  if(String(localStorage.getItem('usage_point_' + lastdatese)).length > 1 && !(localStorage.getItem('usage_point_' + lastdatese + '_send') === '1')) {
   console.log('no send')
   console.log(lastdayresultjson)
   }
