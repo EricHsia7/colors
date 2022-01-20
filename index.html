@@ -857,12 +857,21 @@ function sendusagepoint() {
    }
    for(var hssu_2 in lastdayresultjson_event_point) {
      //event_point
+     var thskeyname = hssu_2
+     var thskeyvalue = eval('lastdayresultjson_event_point.' + hssu_2)
+     console.log(thskeyname + ',' + thskeyvalue)
    }
    for(var hssu_3 in lastdayresultjson_event_point_total) {
      //event_point_total
+     var thskeyname = hssu_3
+     var thskeyvalue = eval('lastdayresultjson_event_point_total.' + hssu_3)
+     console.log(thskeyname + ',' + thskeyvalue)
    }
    for(var hssu_4 in lastdayresultjson_event_type_count) {
      //event_type_count
+     var thskeyname = hssu_4
+     var thskeyvalue = eval('lastdayresultjson_event_type_count.' + hssu_4)
+     console.log(thskeyname + ',' + thskeyvalue)
    }
    
   //sendend  
