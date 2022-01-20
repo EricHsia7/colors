@@ -322,49 +322,7 @@ input#files,input#files2{display:none}
 <script src="https://erichsia7.github.io/ripple.js/ripple.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js">
 </script>
-<script>
-function checkonline() {
-  var onlinestr = '沒有網路連線' ;
-  if(navigator.onLine) {
-      onlinestr = '已連上網路' ;
-      $('.online').html(onlinestr).css({'background':'#00945e'});
-      setTimeout(function() {
-        $('.online').css({'bottom':'-30px'}).attr('h','0');
-    },1500)
-      setTimeout(function() {
-        $('.online').css({'display':'none'});
-    },1800)
-    }
-  else {
-    $('.online').css({'display':'flex'});
-    $('.online').html(onlinestr)
-    setTimeout(function() {
-    $('.online').css({'bottom':'0px','background':'#ac3c3d'}).attr('h','1');
-    },1);
-  }
-}
 
-var offlineoe = '0'
-window.addEventListener('offline', function(e) {
-    offlineoe = '1'
-    checkonline()
-});
-document.addEventListener('offline', function(e) {
-    offlineoe = '1'
-    checkonline()
-});
-
-
-window.addEventListener('online', function(e) {
-    offlineoe = '0'
-    checkonline()
-});
-document.addEventListener('online', function(e) {
-    offlineoe = '0'
-    checkonline()
-});
-
-</script>
 <script src="https://erichsia7.github.io/prompt.js/prompt.min.js?a3"></script>
 <script>
   var getUrlString = location.href;
@@ -2253,6 +2211,51 @@ $('.favrecommendcard,#randomrecommendtitletags,.rrimgcard').remove()
 $('.gotop').click(function() {
 $(document).scrollTop(0)
 });
+	
+	
+function checkonline() {
+  var onlinestr = '沒有網路連線' ;
+  if(navigator.onLine) {
+      usagepoint('online','+0.01')
+      onlinestr = '已連上網路' ;
+      $('.online').html(onlinestr).css({'background':'#00945e'});
+      setTimeout(function() {
+        $('.online').css({'bottom':'-30px'}).attr('h','0');
+    },1500)
+      setTimeout(function() {
+        $('.online').css({'display':'none'});
+    },1800)
+    }
+  else {
+    usagepoint('offline','+0.01')
+    $('.online').css({'display':'flex'});
+    $('.online').html(onlinestr)
+    setTimeout(function() {
+    $('.online').css({'bottom':'0px','background':'#ac3c3d'}).attr('h','1');
+    },1);
+  }
+}
+
+var offlineoe = '0'
+window.addEventListener('offline', function(e) {
+    offlineoe = '1'
+    checkonline()
+});
+document.addEventListener('offline', function(e) {
+    offlineoe = '1'
+    checkonline()
+});
+
+
+window.addEventListener('online', function(e) {
+    offlineoe = '0'
+    checkonline()
+});
+document.addEventListener('online', function(e) {
+    offlineoe = '0'
+    checkonline()
+});
+
 </script>
 <script>
 window.onload=function(){
