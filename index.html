@@ -853,26 +853,51 @@ function sendusagepoint() {
      //event_count
      var thskeyname = hssu_1
      var thskeyvalue = eval('lastdayresultjson_event_count.' + hssu_1)
-     console.log(thskeyname + ',' + thskeyvalue)
+     
+     gtag('event', 'event_count_' + thskeyname, {
+    'event_category':thskeyvalue,
+    'event_label': user_id,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    console.log(thskeyname + ',' + thskeyvalue)
+    }
+  });
+	
    }
    for(var hssu_2 in lastdayresultjson_event_point) {
      //event_point
      var thskeyname = hssu_2
      var thskeyvalue = eval('lastdayresultjson_event_point.' + hssu_2)
      console.log(thskeyname + ',' + thskeyvalue)
+	   
+     gtag('event', 'event_point_' + thskeyname, {
+    'event_category':thskeyvalue,
+    'event_label': user_id,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    console.log(thskeyname + ',' + thskeyvalue)
+    }
+  });
+	   
    }
-   for(var hssu_3 in lastdayresultjson_event_point_total) {
-     //event_point_total
-     var thskeyname = hssu_3
-     var thskeyvalue = eval('lastdayresultjson_event_point_total.' + hssu_3)
-     console.log(thskeyname + ',' + thskeyvalue)
-   }
-   for(var hssu_4 in lastdayresultjson_event_type_count) {
-     //event_type_count
-     var thskeyname = hssu_4
-     var thskeyvalue = eval('lastdayresultjson_event_type_count.' + hssu_4)
-     console.log(thskeyname + ',' + thskeyvalue)
-   }
+   
+   gtag('event', 'event_point_total', {
+    'event_category':lastdayresultjson_event_point_total,
+    'event_label': user_id,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    console.log(lastdayresultjson_event_point_total)
+    }
+  });
+   gtag('event', 'event_type_count', {
+    'event_category':lastdayresultjson_event_type_count,
+    'event_label': user_id,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    console.log(lastdayresultjson_event_type_count)
+    }
+  });
+   
    
   //sendend  
   }
