@@ -325,6 +325,7 @@ input#files,input#files2{display:none}
 
 <script src="https://erichsia7.github.io/prompt.js/prompt.min.js?a3"></script>
 <script>
+var loadtimeloge = new Date() ;
   var getUrlString = location.href;
 var url = new URL(getUrlString);
 var sharecolor = url.searchParams.get('s') ;
@@ -2248,6 +2249,18 @@ document.addEventListener('online', function(e) {
     checkonline()
 });
 
+$(document).ready(function() {
+var loadtimelogd = new Date()
+var loadtimetotal = loadtimelogd.geiTime()-loadtimeloge.getTime()
+gtag('event', 'load_time_ms', {
+    'event_category': loadtimetotal,
+    'event_label':user_id ,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    
+    }
+  });
+});
 </script>
 <script>
 window.onload=function(){
