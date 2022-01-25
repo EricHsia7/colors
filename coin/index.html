@@ -485,7 +485,7 @@ function rexcoin(jsonaa) {
   }
   else {
   var tghsujs = JSON.parse(String(localStorage.getItem('coin_list')))
-  eval('tghsujs.allcoin.' + jsonaa.hash + ' = ' + dft)
+  eval('tghsujs.allcoin.' + jsonaa.hash + ' = "' + dft + '"')
   localStorage.setItem('coin_list',JSON.stringify(tghsujs))
 }
 return localStorage.getItem('coin_list')
