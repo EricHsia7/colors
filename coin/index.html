@@ -481,11 +481,11 @@ function rexcoin(jsonaa) {
   var dft = jsonaa.hash + ':' + jsonaa.json.va
   var cinoj = localStorage.getItem('coin_list')
   if(cinoj === null || cinoj === undefined || cinoj === '') {
-   localStorage.setItem('coin_list','{"allcoin":{"' + jsonaa.hash + '":"' + dft + '"}}')
+   localStorage.setItem('coin_list','{"allcoin":{coin_"' + jsonaa.hash + '":"' + dft + '"}}')
   }
   else {
   var tghsujs = JSON.parse(String(localStorage.getItem('coin_list')))
-  eval('tghsujs.allcoin.' + jsonaa.hash + ' = "' + dft + '"')
+  eval('tghsujs.allcoin.coin_' + jsonaa.hash + ' = "' + dft + '"')
   localStorage.setItem('coin_list',JSON.stringify(tghsujs))
 }
 return localStorage.getItem('coin_list')
