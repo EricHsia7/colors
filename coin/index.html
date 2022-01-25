@@ -1,0 +1,18 @@
+<script>
+function getcoinjson(md,uid,jsevt,va) {
+  var nwdgutime = new Date().getTime()
+  var randnum = Math.random()
+  var dthash = sha512(uid + ')' + nwdgutime + '(' + jsevt + '*' + va + '@' + md + '#$' + randnum)
+  var alldajson = {'userid':uid,'time':nwdgutime,'jsevt':jsevt,'random':randnum,'va':va,'md':md,'hash':dthash}
+  return {'json':alldajson,'hash':dthash}
+}
+function getclickeventda(evt) {
+  var clktime = new Date().getTime()
+  return {'x':evt.pageX,'y':evt.pageY,'time':clktime}
+}
+/*
+document.getElementById("button").addEventListener("click",function(event) {
+ console.log(getcoinjson('dayloginfreecoin','ABCefg1234567890',getclickeventda(event),100))
+  }, true);
+*/
+</script>
