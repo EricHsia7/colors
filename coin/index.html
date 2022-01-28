@@ -147,13 +147,13 @@ justify-content: center;
   <div class="sday_sing_bx">
     <div class="titl">七日獎勵</div>
     <div class="sday_sing_log">
-      <div class="sday_sing_block">+30</div>
-      <div class="sday_sing_block">+45</div>
-      <div class="sday_sing_block">+90</div>
-      <div class="sday_sing_block">+135</div>
-      <div class="sday_sing_block">+150</div>
-      <div class="sday_sing_block">+200</div>
-      <div class="sday_sing_block w10">+350</div>
+      <div class="sday_sing_block" j="1">+30</div>
+      <div class="sday_sing_block" j="2">+45</div>
+      <div class="sday_sing_block" j="3">+90</div>
+      <div class="sday_sing_block" j="4">+135</div>
+      <div class="sday_sing_block" j="5">+150</div>
+      <div class="sday_sing_block" j="6">+200</div>
+      <div class="sday_sing_block w10" j="7">+350</div>
 
     </div>
     
@@ -703,7 +703,27 @@ var hygftallcoinjhuarr = [] ;
 }
 return hygftallcoinjhuarr.length
 }
+function updht() {
 $('.coin_count').text(calccoin)
+	
+
+
+  for (var i = 0; i < 7; i++) {
+    var rrhsydt = new Date()
+    var rrhsy = rrhsydt.setTime(rrhsydt.getTime()-(60*60*24*1000*(i)))
+    //tya.push(datetostr(hsydt))
+    
+    if(String(localStorage.getItem('7daycoin_' + datetostr(hsydt))) === '1') {
+     $('.sday_sing_block[j="' + i + '"]').attr('g','1')
+    }
+     else {
+     tya.push('0')
+     }
+     
+  }
+	
+}
+updht()
 /*
 document.getElementById("button").addEventListener("click",function(event) {
  console.log(getcoinjson('dayloginfreecoin','ABCefg1234567890',getclickeventda(event),100))
