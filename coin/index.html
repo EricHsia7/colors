@@ -623,7 +623,7 @@ function rexcoin(jsonaa) {
   var dft = jsonaa.hash + ':' + jsonaa.json.va
   var cinoj = localStorage.getItem('coin_list')
   if(cinoj === null || cinoj === undefined || cinoj === '') {
-   localStorage.setItem('coin_list','{"allcoin":{coin_"' + jsonaa.hash + '":"' + jsonaa.json.va + '"}}')
+   localStorage.setItem('coin_list','{"allcoin":{"coin_"' + jsonaa.hash + '":"' + jsonaa.json.va + '"}}')
   }
   else {
   var tghsujs = JSON.parse(String(localStorage.getItem('coin_list')))
