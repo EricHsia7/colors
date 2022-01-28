@@ -639,6 +639,27 @@ const tddat = new Date()
 //var lastday = new Date()
 //const lastdayhy = lastday.setTime(tddat.getTime()-(60*60*24*1000))
 function get7daycoin() {
+  var hsydgt = new Date()
+  var hsyg = hsydgt.setTime(hsydgt.getTime()-(60*60*24*1000*(1)))
+  if(localStorage.getItem('7daycoin_' + datetostr(hsydgt)) === '1') {
+ }
+else {
+//uu
+for (var i = 1; i < 365; i++) {
+    var hsydtff = new Date()
+    var hsyff = hsydtff.setTime(hsydtff.getTime()-(60*60*24*1000*(i)))
+    //tya.push(datetostr(hsydt))
+    if(String(localStorage.getItem('7daycoin_' + datetostr(hsydtff))) === '1') {
+     localStorage.removeItem('7daycoin_' + datetostr(hsydtff))
+    }
+     else {
+     
+     }
+  }
+//gy
+}
+	
+	
   var ydhwj = 0 ;
   var tya = []
   for (var i = 0; i < 7; i++) {
@@ -653,11 +674,10 @@ function get7daycoin() {
      }
   }
   //console.log(eval(tya.join('+')))
-  var hsydgt = new Date()
-  var hsyg = hsydgt.setTime(hsydgt.getTime()-(60*60*24*1000*(1)))
+  
     
   var tdcoingot = localStorage.getItem('7daycoin_' + datetostr(tddat))
- if(localStorage.getItem('7daycoin_' + datetostr(hsydgt)) === '1') {
+ 
   if(tdcoingot === undefined || tdcoingot === null || tdcoingot === '') {
   for (var i = 0; i < coin7d[eval(tya.join('+'))]; i++) {
    var thsdrjson = getcoinjson('7dcoin',user_id,'aab225e6-4dd4-aad3-ff4b-6d3c8e768bc3',1)
@@ -670,22 +690,7 @@ function get7daycoin() {
   
   }
 	 
- }
-else {
-//uu
-for (var i = 0; i < 365; i++) {
-    var hsydtff = new Date()
-    var hsyff = hsydtff.setTime(hsydtff.getTime()-(60*60*24*1000*(i)))
-    //tya.push(datetostr(hsydt))
-    if(String(localStorage.getItem('7daycoin_' + datetostr(hsydtff))) === '1') {
-     localStorage.removeItem('7daycoin_' + datetostr(hsydtff))
-    }
-     else {
-     
-     }
-  }
-//gy
-}
+ 
 	
 }
 $('.sday_sing_block').css({'height':$('.sday_sing_block').width()})
