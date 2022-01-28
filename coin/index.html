@@ -632,7 +632,14 @@ function rexcoin(jsonaa) {
 }
 return localStorage.getItem('coin_list')
 }
-	
+const coin7d = [30,45,90,135,150,200,350] ;
+function get7daycoin() {
+  for (var i = 0; i < coin7d[6]; i++) {
+   var thsdrjson = getcoinjson('7dcoin',user_id,'aab225e6-4dd4-aad3-ff4b-6d3c8e768bc3',1)
+   rexcoin(thsdrjson)
+   //registertodatalib()
+  }
+}
 $('.sday_sing_block').css({'height':$('.sday_sing_block').width()})
 /*
 document.getElementById("button").addEventListener("click",function(event) {
