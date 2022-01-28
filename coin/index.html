@@ -720,7 +720,7 @@ $('.coin_count').text(calccoin)
     //tya.push(datetostr(hsydt))
     
     if(String(localStorage.getItem('7daycoin_' + datetostr(rrhsydt))) === '1') {
-     $('.sday_sing_block[j="' + (i+1) + '"]').attr('g','1').css({'--drtb-w':$(this).width() + 'px','--drtb-h':$(this).height() + 'px'})
+     $('.sday_sing_block[j="' + (i+1) + '"]').attr('g','1').css({'--drtb-w':$('.sday_sing_block[j="' + (i+1) + '"]').width() + 'px','--drtb-h':$('.sday_sing_block[j="' + (i+1) + '"]').height() + 'px'})
     }
      else {
      tya.push('0')
