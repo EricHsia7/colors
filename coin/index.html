@@ -713,7 +713,7 @@ $('.coin_count').text(calccoin)
     var rrhsy = rrhsydt.setTime(rrhsydt.getTime()-(60*60*24*1000*(i)))
     //tya.push(datetostr(hsydt))
     
-    if(String(localStorage.getItem('7daycoin_' + datetostr(hsydt))) === '1') {
+    if(String(localStorage.getItem('7daycoin_' + datetostr(rrhsydt))) === '1') {
      $('.sday_sing_block[j="' + (i+1) + '"]').attr('g','1')
     }
      else {
