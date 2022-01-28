@@ -644,7 +644,7 @@ function get7daycoin() {
   for (var i = 0; i < 7; i++) {
     var hsydt = new Date()
     var hsy = hsydt.setTime(tddat.getTime()-(60*60*24*1000*(i)))
-    tya.push(hsy)
+    tya.push(datetostr(hsydt))
   }
   console.log(tya)
   var tdcoingot = localStorage.getItem('7daycoin_' + datetostr(tddat))
