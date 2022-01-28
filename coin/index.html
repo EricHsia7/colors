@@ -124,7 +124,7 @@ align-items: center;
     grid-row-end: 3;
 }
 
-.sing_btn {
+.get_btn {
   width:clamp(250px,90%,500px);
   margin-left:calc((100% - clamp(250px,90%,500px)) / 2);
   background:#e3e3e3;
@@ -157,7 +157,7 @@ justify-content: center;
 
     </div>
     
-    <div class="sing_btn">
+    <div class="get_btn">
       領取
     </div>
     
@@ -634,7 +634,7 @@ return localStorage.getItem('coin_list')
 }
 const coin7d = [30,45,90,135,150,200,350] ;
 function get7daycoin() {
-  for (var i = 0; i < coin7d[6]; i++) {
+  for (var i = 0; i < coin7d[0]; i++) {
    var thsdrjson = getcoinjson('7dcoin',user_id,'aab225e6-4dd4-aad3-ff4b-6d3c8e768bc3',1)
    rexcoin(thsdrjson)
    //registertodatalib()
@@ -656,4 +656,7 @@ document.getElementById("button").addEventListener("click",function(event) {
  console.log(getcoinjson('dayloginfreecoin','ABCefg1234567890',getclickeventda(event),100))
   }, true);
 */
+$('.get_btn').click(function() {
+get7daycoin()
+});
 </script>
