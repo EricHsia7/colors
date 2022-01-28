@@ -607,7 +607,7 @@ else {
 }
   });
 function datetostr(dat) {
-  return dat.getFullYear() + '-' + dat.getMonth() + '-' + dat.getDate()
+  return dat.getFullYear() + '-' + (dat.getMonth()+1) + '-' + dat.getDate()
 }
   
 function getcoinjson(md,uid,jsevt,va) {
