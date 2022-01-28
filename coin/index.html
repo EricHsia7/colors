@@ -116,8 +116,8 @@ align-items: center;
   content:'已領取';
   background:rgba(0,0,0,0.8);
   color:#fff;
-  width:100%;
-  height:100%;
+  width:var(--drtb-w);
+  height:var(--drtb-h);
   display: flex;
 justify-content: center;
   align-items: center;
@@ -720,7 +720,7 @@ $('.coin_count').text(calccoin)
     //tya.push(datetostr(hsydt))
     
     if(String(localStorage.getItem('7daycoin_' + datetostr(rrhsydt))) === '1') {
-     $('.sday_sing_block[j="' + (i+1) + '"]').attr('g','1')
+     $('.sday_sing_block[j="' + (i+1) + '"]').attr('g','1').css({'--drtb-w':$(this).width() + 'px','--drtb-h':$(this).height() + 'px'})
     }
      else {
      tya.push('0')
