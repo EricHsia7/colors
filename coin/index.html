@@ -706,14 +706,17 @@ for (var i = 1; i < 365; i++) {
 //$('.sday_sing_block').css({'height':$('.sday_sing_block').width()})
 
 function getdaycoin() {
+console.log('1')
 var tdcoingot = localStorage.getItem('7daycoin_' + datetostr(tddat))
 if(tdcoingot === undefined || tdcoingot === null || tdcoingot === '') {
   for (var i = 0; i < 30; i++) {
    var thsdrjson = getcoinjson('1dcoin',user_id,'aab225e6-4dd4-aad3-ff4b-6d3c8e768bc3',1)
    rexcoin(thsdrjson)
+   console.log('2')
    //registertodatalib()
   }
   localStorage.setItem('7daycoin_' + datetostr(tddat),'1')
+  console.log('3')
   }
 
 	/*
