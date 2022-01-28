@@ -644,7 +644,7 @@ $('.sday_sing_block').css({'height':$('.sday_sing_block').width()})
 
 function calccoin() {
 var hygftallcoinjhuarr = [] ;
- var hygftallcoinjhu = JSON.parse(String(localStorage.getItem('coin_list')))
+ var hygftallcoinjhu = JSON.parse(String(localStorage.getItem('coin_list'))).allcoin
  for(var calccoinjuh in hygftallcoinjhu) {
   hygftallcoinjhuarr.push(calccoinjuh)
 }
