@@ -153,13 +153,13 @@ justify-content: center;
   <div class="sday_sing_bx">
     <div class="titl">七日獎勵</div>
     <div class="sday_sing_log">
-      <div class="sday_sing_block" j="1">+30</div>
-      <div class="sday_sing_block" j="2">+45</div>
-      <div class="sday_sing_block" j="3">+90</div>
-      <div class="sday_sing_block" j="4">+135</div>
-      <div class="sday_sing_block" j="5">+150</div>
-      <div class="sday_sing_block" j="6">+200</div>
-      <div class="sday_sing_block w10" j="7">+350</div>
+      <div class="sday_sing_block" j="0">+30</div>
+      <div class="sday_sing_block" j="1">+45</div>
+      <div class="sday_sing_block" j="2">+90</div>
+      <div class="sday_sing_block" j="3">+135</div>
+      <div class="sday_sing_block" j="4">+150</div>
+      <div class="sday_sing_block" j="5">+200</div>
+      <div class="sday_sing_block w10" j="6">+350</div>
 
     </div>
     
@@ -720,7 +720,7 @@ $('.coin_count').text(calccoin)
     //tya.push(datetostr(hsydt))
     
     if(String(localStorage.getItem('7daycoin_' + datetostr(rrhsydt))) === '1') {
-     $('.sday_sing_block[j="' + (i+1) + '"]').attr('g','1').css({'--drtb-w':$('.sday_sing_block[j="' + (i+1) + '"]').width() + 'px','--drtb-h':$('.sday_sing_block[j="' + (i+1) + '"]').height() + 'px'})
+     $('.sday_sing_block[j="' + (i) + '"]').attr('g','1').css({'--drtb-w':$('.sday_sing_block[j="' + (i) + '"]').width() + 'px','--drtb-h':$('.sday_sing_block[j="' + (i) + '"]').height() + 'px'})
     }
      else {
      
