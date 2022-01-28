@@ -644,6 +644,7 @@ const coin7d = [1,45,90,135,150,200,350] ;
 const tddat = new Date()
 //var lastday = new Date()
 //const lastdayhy = lastday.setTime(tddat.getTime()-(60*60*24*1000))
+/*
 function get7daycoin() {
   var hsydgt = new Date()
   var hsyg = hsydgt.setTime(hsydgt.getTime()-(60*60*24*1000*(1)))
@@ -699,7 +700,34 @@ for (var i = 1; i < 365; i++) {
  
 	
 }
+*/
 $('.sday_sing_block').css({'height':$('.sday_sing_block').width()})
+
+function getdaycoin() {
+var tdcoingot = localStorage.getItem('7daycoin_' + datetostr(tddat))
+if(tdcoingot === undefined || tdcoingot === null || tdcoingot === '') {
+  for (var i = 0; i < 30; i++) {
+   var thsdrjson = getcoinjson('1dcoin',user_id,'aab225e6-4dd4-aad3-ff4b-6d3c8e768bc3',1)
+   rexcoin(thsdrjson)
+   //registertodatalib()
+  }
+  localStorage.setItem('7daycoin_' + datetostr(tddat),'1')
+  }
+
+	
+for (var i = 1; i < 365; i++) {
+    var hsydtff = new Date()
+    var hsyff = hsydtff.setTime(hsydtff.getTime()-(60*60*24*1000*(i)))
+    //tya.push(datetostr(hsydt))
+    if(String(localStorage.getItem('7daycoin_' + datetostr(hsydtff))) === '1') {
+     localStorage.removeItem('7daycoin_' + datetostr(hsydtff))
+    }
+     else {
+     
+     }
+  }
+
+}
 
 function calccoin() {
 var hygftallcoinjhuarr = [] ;
@@ -736,6 +764,6 @@ document.getElementById("button").addEventListener("click",function(event) {
   }, true);
 */
 $('.get_btn').click(function() {
-get7daycoin()
+getdaycoin()
 });
 </script>
