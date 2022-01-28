@@ -716,9 +716,9 @@ $('.coin_count').text(calccoin)
 
   for (var i = 1; i < 8; i++) {
     var rrhsydt = new Date()
-    var rrhsy = rrhsydt.setTime(rrhsydt.getTime()-(60*60*24*1000*(i)))
+    var rrhsy = rrhsydt.setTime(rrhsydt.getTime()-(60*60*24*1000*(i-1)))
     //tya.push(datetostr(hsydt))
-    
+    console.log(datetostr(rrhsydt))
     if(String(localStorage.getItem('7daycoin_' + datetostr(rrhsydt))) === '1') {
      $('.sday_sing_block[j="' + (i) + '"]').attr('g','1').css({'--drtb-w':$('.sday_sing_block[j="' + (i) + '"]').width() + 'px','--drtb-h':$('.sday_sing_block[j="' + (i) + '"]').height() + 'px'}).attr('kd',datetostr(rrhsydt))
     }
