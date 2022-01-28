@@ -644,9 +644,15 @@ function get7daycoin() {
   for (var i = 0; i < 7; i++) {
     var hsydt = new Date()
     var hsy = hsydt.setTime(tddat.getTime()-(60*60*24*1000*(i)))
-    tya.push(datetostr(hsydt))
+    //tya.push(datetostr(hsydt))
+    if(String(localStorage.getItem('7daycoin_' + datetostr(hsydt))) === '1') {
+     tya.push('1')
+    }
+     else {
+     tya.push('0')
+     }
   }
-  console.log(tya)
+  console.log(eval(tya.join('+')))
   var tdcoingot = localStorage.getItem('7daycoin_' + datetostr(tddat))
  
   if(tdcoingot === undefined || tdcoingot === null || tdcoingot === '') {
