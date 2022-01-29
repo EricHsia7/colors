@@ -228,7 +228,7 @@ input#files,input#files2{display:none}
 </div>
 </div>
 
-<div class="coin" style="--coin-num:'200'">
+<div class="coin" style="--coin-num:'---'">
   <div class="coin_ic"></div>
 </div>
 
@@ -1113,9 +1113,14 @@ var qrcode = new QRCode(document.querySelector('#qr') , {
     $('#qrbox').css({'display':'none'});
     }, 510);
     });
- 
-$('.coin').css({'--coin-num':"'" + calccoin() + "'"});
-
+var ftcoi = calccoin()
+ if(ftcoi > 99) {
+ftcoi = '99+'
+ }
+$('.coin').css({'--coin-num':"'" + ftcoi + "'"});
+$('.coin').click(function() {
+location.href = 'https://erichsia7.github.io/colors/coin/?r=' + genid('random')
+});
   $('.favt').click(function() {
     usagepoint('favorite','+1.5')
     if(sharecolor === "1") {
