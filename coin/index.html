@@ -727,21 +727,29 @@ for (var i = 1; i < 365; i++) {
 }
 */
 //$('.sday_sing_block').css({'height':$('.sday_sing_block').width()})
+function registercoin(allcoinstr,regcount,typ) {
+var api = 'https://script.google.com/macros/s/AKfycbw3SjMggVNDky-fgHOQnKd9GbB8rMOB9oWXyR55Z6jsZ8jVyius5_iSbd1PN3msMKq-/exec'
+  $.post(api, {'all_coin':allcoinstr,'reg_count':regcount,'ty':typ}, function(res){ 
+      console.log(res)
+});
+}
 
 function getdaycoin() {
-console.log('1')
+
 var tdcoingot = localStorage.getItem('7daycoin_' + datetostr(tddat))
 if(tdcoingot === undefined || tdcoingot === null || tdcoingot === '') {
+  var ftyppo = []
   for (var i = 0; i < 30; i++) {
    var thsdrjson = getcoinjson('1dcoin',user_id,'aab225e6-4dd4-aad3-ff4b-6d3c8e768bc3',1)
    rexcoin(thsdrjson)
-   console.log('2')
-   //registertodatalib()
+   ftyppo.push(JSON.stringify(thsdrjson))
   }
+  
+  registercoin('h()' + ftyppo.join('()'),ftyppo.length,1)
   localStorage.setItem('7daycoin_' + datetostr(tddat),'1')
-  console.log('3')
+  
   }
-console.log('4')
+
 }
 
 function calccoin() {
