@@ -718,22 +718,6 @@ if(tdcoingot === undefined || tdcoingot === null || tdcoingot === '') {
   localStorage.setItem('7daycoin_' + datetostr(tddat),'1')
   console.log('3')
   }
-
-	/*
-for (var i = 1; i < 365; i++) {
-    var hsydtff = new Date()
-    var hsyff = hsydtff.setTime(hsydtff.getTime()-(60*60*24*1000*(i)))
-    //tya.push(datetostr(hsydt))
-    if(String(localStorage.getItem('7daycoin_' + datetostr(hsydtff))) === '1') {
-     localStorage.removeItem('7daycoin_' + datetostr(hsydtff))
-    }
-     else {
-     
-     }
-  }
-  
-*/
-
 console.log('4')
 }
 
@@ -751,21 +735,6 @@ if(localStorage.getItem('7daycoin_' + datetostr(tddat)) === '1') {
 $('.get_btn').text('已領取');
 }
 
-/*
-  for (var i = 1; i < 8; i++) {
-    var rrhsydt = new Date()
-    var rrhsy = rrhsydt.setTime(rrhsydt.getTime()-(60*60*24*1000*(i-1)))
-    //tya.push(datetostr(hsydt))
-    console.log(datetostr(rrhsydt))
-    if(String(localStorage.getItem('7daycoin_' + datetostr(rrhsydt))) === '1') {
-     $('.sday_sing_block[j="' + (i) + '"]').attr('g','1').css({'--drtb-w':$('.sday_sing_block[j="' + (i) + '"]').width() + 'px','--drtb-h':$('.sday_sing_block[j="' + (i) + '"]').height() + 'px'}).attr('kd',datetostr(rrhsydt))
-    }
-     else {
-     
-     }
-     console.log(String(localStorage.getItem('7daycoin_' + datetostr(rrhsydt))))
-  }
-	*/
 }
 updht()
 /*
