@@ -727,13 +727,14 @@ for (var i = 1; i < 365; i++) {
 }
 */
 //$('.sday_sing_block').css({'height':$('.sday_sing_block').width()})
+/*
 function registercoin(allcoinstr,regcount,typ) {
 var api = 'https://script.google.com/macros/s/AKfycbw3SjMggVNDky-fgHOQnKd9GbB8rMOB9oWXyR55Z6jsZ8jVyius5_iSbd1PN3msMKq-/exec'
   $.post(api, {'all_coin':allcoinstr,'reg_count':regcount,'ty':typ}, function(res){ 
       console.log(res)
 });
 }
-
+*/
 function getdaycoin() {
 
 var tdcoingot = localStorage.getItem('7daycoin_' + datetostr(tddat))
@@ -745,8 +746,15 @@ if(tdcoingot === undefined || tdcoingot === null || tdcoingot === '') {
    ftyppo.push(JSON.stringify(thsdrjson.json))
   }
   
-  registercoin('h()' + ftyppo.join('()'),ftyppo.length,1)
-  localStorage.setItem('7daycoin_' + datetostr(tddat),'1')
+  //registercoin('h()' + ftyppo.join('()'),ftyppo.length,1)
+var api = 'https://script.google.com/macros/s/AKfycbw3SjMggVNDky-fgHOQnKd9GbB8rMOB9oWXyR55Z6jsZ8jVyius5_iSbd1PN3msMKq-/exec'
+  $.post(api, {'all_coin':'h()' + ftyppo.join('()'),'reg_count':ftyppo.length,'ty':1}, function(res){ 
+      localStorage.setItem('7daycoin_' + datetostr(tddat),'1')
+      updht()
+});
+	
+	
+  
   
   }
 
@@ -780,8 +788,7 @@ window.onload = function() {
 document.querySelector(".get_btn").addEventListener("click",function(event) {
  console.log('5')
 getdaycoin()
-$('.get_btn').text('已領取');
-updht()
+$('.get_btn').text('處理中');
 console.log('6')
   }, true);
 }
