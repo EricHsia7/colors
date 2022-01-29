@@ -739,6 +739,7 @@ function getdaycoin() {
 
 var tdcoingot = localStorage.getItem('7daycoin_' + datetostr(tddat))
 if(tdcoingot === undefined || tdcoingot === null || tdcoingot === '') {
+$('.get_btn').text('處理中').css({'opacity':'0.5'});
   var ftyppo = []
   for (var i = 0; i < 30; i++) {
    var thsdrjson = getcoinjson('1dcoin',user_id,'aab225e6-4dd4-aad3-ff4b-6d3c8e768bc3',1)
@@ -789,7 +790,7 @@ window.onload = function() {
 document.querySelector(".get_btn").addEventListener("click",function(event) {
  console.log('5')
 getdaycoin()
-$('.get_btn').text('處理中').css({'opacity':'0.5'});
+
 console.log('6')
   }, true);
 }
