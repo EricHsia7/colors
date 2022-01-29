@@ -719,7 +719,8 @@ $('.get_btn').text('已領取');
 updht()
 
 
-	
+window.onload = function() {
+
 document.querySelector(".get_btn").addEventListener("click",function(event) {
  console.log('5')
 getdaycoin()
@@ -727,7 +728,7 @@ $('.get_btn').text('已領取');
 updht()
 console.log('6')
   }, true);
-
+}
 
 $(document).ready(function() {
     //test 
