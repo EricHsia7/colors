@@ -702,12 +702,17 @@ console.log('4')
 }
 
 function calccoin() {
+if(!(localStorage.getItem('coin_list') === null)) {
 var hygftallcoinjhuarr = [] ;
  var hygftallcoinjhu = JSON.parse(String(localStorage.getItem('coin_list'))).allcoin
  for(var calccoinjuh in hygftallcoinjhu) {
   hygftallcoinjhuarr.push(calccoinjuh)
 }
 return hygftallcoinjhuarr.length
+}
+else {
+return 0
+}
 }
 function updht() {
 $('.coin_count').text(calccoin)
