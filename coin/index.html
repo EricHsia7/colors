@@ -720,17 +720,18 @@ $('.get_btn').text('已領取');
 
 }
 updht()
-$(document).ready(function() {
 
-$('.get_btn').click(function() {
-console.log('5')
+
+	
+document.querySelector(".get_btn").addEventListener("click",function(event) {
+ console.log('5')
 getdaycoin()
 $('.get_btn').text('已領取');
 updht()
 console.log('6')
-});
+  }, true);
 
-});
+
 $(document).ready(function() {
     //test 
         var googlefontloadtime = new Date().getTime() ;
