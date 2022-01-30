@@ -129,9 +129,6 @@ thead,tfoot{color:#fff}
 .rrimgbox{width:calc(100% - 20px);height:30px;border-radius:15px;position:relative;left:10px;overflow:hidden;}
 .rrimgcard .favrecommendcard{width:calc(100% - 20px);position:relative;left:10px;}
 .rdimgbigsize{width:100%;height:100%;position:relative;}
-/*dsjsjjs*/.coin{display:block;width:calc(35px + 50px);height:35px;background:#f5f5f5;border-radius:99em;position:absolute;top:10px;right:10px}
-.coin .coin_ic{width:30px;height:30px;background:url(https://erichsia7.github.io/colors/coin_icon/coin_64.png);background-position:center;background-size:cover;border-radius:99em;position:absolute;top:2.5px;left:2.5px}
-.coin::after{content:var(--coin-num);position:absolute;top:0;left:35px;height:35px;width:52px;display:flex;align-items:center;justify-content:left;color:#333;font-size:19.5px;padding-left:3px;font-weight:500;font-family:"Noto Sans TC",sans-serif}
 @media (prefers-color-scheme: dark) {
 .coin {background:#1f1f1f;}
 .coin::after {color:#fff;}
@@ -228,9 +225,7 @@ input#files,input#files2{display:none}
 </div>
 </div>
 
-<div class="coin" style="--coin-num:'---'">
-  <div class="coin_ic"></div>
-</div>
+
 
 <div class="favrecommendfixedtitle favrecommendfixedtitleopacity0" srtitle="建議的顏色">建議的顏色</div>
 <div class="gotop">回頂部</div>
@@ -578,19 +573,7 @@ function getCookie(cname)
   }
   return "";
 }
-function calccoin() {
-if(!(localStorage.getItem('coin_list') === null)) {
-var hygftallcoinjhuarr = [] ;
- var hygftallcoinjhu = JSON.parse(String(localStorage.getItem('coin_list'))).allcoin
- for(var calccoinjuh in hygftallcoinjhu) {
-  hygftallcoinjhuarr.push(calccoinjuh)
-}
-return hygftallcoinjhuarr.length
-}
-else {
-return 0
-}
-}
+
 
   //userid
   function systeminfodata(uid) {
@@ -1113,21 +1096,9 @@ var qrcode = new QRCode(document.querySelector('#qr') , {
     $('#qrbox').css({'display':'none'});
     }, 510);
     });
-var ftcoi = calccoin()
-if(ftcoi < 10) {
-ftcoi = '00' + ftcoi
-}
-if(ftcoi > 9 && ftcoi < 100) {
-ftcoi = '0' + ftcoi
-}
- if(ftcoi > 99) {
-ftcoi = '99+'
- }
 
-$('.coin').css({'--coin-num':"'" + ftcoi + "'"});
-$('.coin').click(function() {
-location.href = 'https://erichsia7.github.io/colors/coin/?r=' + genid('random')
-});
+	
+
   $('.favt').click(function() {
     usagepoint('favorite','+1.5')
     if(sharecolor === "1") {
