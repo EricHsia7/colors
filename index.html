@@ -1952,9 +1952,10 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
         textArea.remove();
 	      $('body').prompt({'message':'已複製圖片連結','time':1200,'animate':'slide'});
 	});
+      var pltcchexpej = []
       for (var i = 0; i < imgcolorpalette.length; i++) {
         var thsvstehecbwinsoiwpks = rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2])
-
+        pltcchexpej.push(thsvstehecbwinsoiwpks)
         if((imgcolorpalette[i][0]+imgcolorpalette[i][1]+imgcolorpalette[i][2])/3 > 128) {
       var aafhi9ooiyg = '000' 
     }
@@ -1964,9 +1965,9 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
         
          $('#' + hfur).append('<div class="favrecommendcard" dp="lo" type="recommend" style="background:' + thsvstehecbwinsoiwpks + '"><div class="favrecommendcardcontent"><h4 style="color:#' + aafhi9ooiyg + '">' + thsvstehecbwinsoiwpks + '</h4><div class="favrecommendcarddescription">' + '<a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(thsvstehecbwinsoiwpks) + '&sou=randomrecommend&r=' + genid('random') + '">查看顏色</a>' + '</div></div></div>');
       }
-      
+      $('#' + hfur).append('<div class="faveeimpltbtn">複製Palette連結</div>')
       $('#' + imgid).remove()
-	    
+      $('#' + hfur).attr('pltlink','https://erichsia7.github.io/colors/palette/?dt=1&cs=' + btoa(pltcchexpej.join(',')) + '&r=' + genid('random'))
     } else {
 	    console.log('k2')
       imgee.addEventListener('load', function() {
