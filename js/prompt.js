@@ -1,6 +1,6 @@
 
 $("body").append(
-    "<style>.promptcenter{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:#000;font-size:15px;font-family:"Noto Sans TC",sans-serif;font-weight:700}.promptcenter *{color:#000;font-size:15px;font-family:"Noto Sans TC",sans-serif;font-weight:700}.prompt{width:clamp(280px,80vw,400px);height:60px;background:#fff;border-radius:15px;position:fixed;left:50%;bottom:-80px;opacity:0;transform:translateX(-50%);box-shadow:0 0 8px 1px rgba(0,0,0,0.09)}@media (prefers-color-scheme: dark){.promptcenter,.promptcenter *{color:#fff}.prompt{background:#1f1f1f}}</style>"
+    "<style>.promptcenter{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:#000;font-size:15px;font-family:'Noto Sans TC',sans-serif;font-weight:700}.promptcenter *{color:#000;font-size:15px;font-family:'Noto Sans TC',sans-serif;font-weight:700}.prompt{width:clamp(280px,80vw,400px);height:60px;background:#fff;border-radius:15px;position:fixed;left:50%;bottom:-80px;opacity:0;transform:translateX(-50%);box-shadow:0 0 8px 1px rgba(0,0,0,0.09)}@media (prefers-color-scheme: dark){.promptcenter,.promptcenter *{color:#fff}.prompt{background:#1f1f1f}}</style>"
 );
 
 (function ($) {
