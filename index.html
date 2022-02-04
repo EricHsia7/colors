@@ -805,8 +805,9 @@ function initializeusagepoint() {
 }
 function sendusagepoint() {
   var todaydated = new Date()
+  for (var i = 1; i < 366; i++) {
   var lastdaydated = new Date()
-  lastdaydated.setTime(todaydated.getTime()-60*60*24*1000)
+  lastdaydated.setTime(todaydated.getTime()-60*60*24*1000*i)
   var lastdatese = lastdaydated.getFullYear() + '-' + (lastdaydated.getMonth()+1) + '-' + lastdaydated.getDate()
   console.log(lastdatese)
   if(String(localStorage.getItem('usage_point_' + lastdatese)).length > 10 && !(localStorage.getItem('usage_point_' + lastdatese + '_send') === '1') && !(localStorage.getItem('usage_point_' + lastdatese) === null) && !(localStorage.getItem('usage_point_' + lastdatese) === undefined)) {
@@ -873,6 +874,8 @@ function sendusagepoint() {
     localStorage.removeItem('usage_point_' + lastdatese)
     localStorage.removeItem('usage_point_' + lastdatese + '_send')
   }
+  }
+
 }
 	sendusagepoint()
   //usage_point_send_end
