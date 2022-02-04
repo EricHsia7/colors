@@ -333,23 +333,28 @@ input#files,input#files2{display:none}
 var loadtimeloge = new Date() ;
   var getUrlString = location.href;
 var url = new URL(getUrlString);
-var sharecolor = url.searchParams.get('s') ;
-var shcolor = atob(url.searchParams.get('c')) ;
-  var gc1 = atob(url.searchParams.get('ga')) ;
-  var gc2 = atob(url.searchParams.get('gb')) ;
-  var gcdeg = url.searchParams.get('gdeg') ;
-  var open = url.searchParams.get('open') ;
-  var favadd = url.searchParams.get('favadd') ;
-  var favda = atob(url.searchParams.get('favda')).split('&');
-  var favdel = url.searchParams.get('del') ;
-  var favscroll = url.searchParams.get('scroll') ;
-  var shortcuts = url.searchParams.get('shortcuts') ;
-  var opensou = url.searchParams.get('sou') ;
-  var toimgbackid = url.searchParams.get('backid') ;
-  var toimg = url.searchParams.get('toimg');
+function gup(param) {
+param = String(param)
+return url.searchParams.get(param)
+}
+
+var sharecolor = gup('s') ;
+var shcolor = atob(gup('c')) ;
+  var gc1 = atob(gup('ga')) ;
+  var gc2 = atob(gup('gb')) ;
+  var gcdeg = gup('gdeg') ;
+  var open = gup('open') ;
+  var favadd = gup('favadd') ;
+  var favda = atob(gup('favda')).split('&');
+  var favdel = gup('del') ;
+  var favscroll = gup('scroll') ;
+  var shortcuts = gup('shortcuts') ;
+  var opensou = gup('sou') ;
+  var toimgbackid = gup('backid') ;
+  var toimg = gup('toimg');
 var copycolmode = 0 ;
   var usedslideclosepp = 0 ;
-var dpb = url.searchParams.get('dpb') ;
+var dpb = gup('dpb') ;
 var moreoptd = '0' ;
   
 var ccw = 256;
