@@ -284,7 +284,7 @@ transition:width 0.3s ,background 0s;
 
 
 <div class="moreoptbg"></div>
-<div class="morebtn"></div>
+
 <div class="moreopt" style="--list-count:2">
   <li g="reload">重新整理</li>
   <li g="back">返回</li>
@@ -451,7 +451,7 @@ $('.close').click(function() {
     $('.option,.back,.shutter').css({'display':'block'})
 })
  
-	  
+
 $('.back').click(function() {
 location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
 });
@@ -461,6 +461,7 @@ location.href = 'https://erichsia7.github.io/colors/camera/?r=' + genid('random'
 $('li[g="back"]').click(function() {
 location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
 });
+
 var moreoptd = '0' ;
 $('.option').click(function() {
   if(moreoptd === '0') {
@@ -489,7 +490,7 @@ $('.moreoptbg').click(function() {
   },300)
   moreoptd = '0'
 });
-	
+
   //userid
   function systeminfodata(uid) {
   var nav = window.navigator ;
