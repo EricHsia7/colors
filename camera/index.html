@@ -13,185 +13,182 @@
 <link rel="manifest" href="https://erichsia7.github.io/colors/manifest.json?qoaa9">
 <style>
 	  * {outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);}
-body {
-  background:#000;
-  -webkit-user-select: none;
-}
 
-.bottom {
-  position:fixed;
-  bottom:0px;
-  left:0px;
-  width:100%;
-  height:100px;
-  background:#000;
-  display: flex;
-justify-content: center;
-align-items: center;
-  -webkit-user-select: none;
-}
 
-.shutter {
-  width:55px;
-  height:55px;
-  background:#fff;
-  border-radius:99em;
-  box-shadow: 0px 0px 0px 3px #000,0px 0px 0px 8px rgba(255,255,255,1);
+.camera_box {
+  background: #000;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
   -webkit-user-select: none;
 }
-.camera {
-  position:fixed;
-  left:0px;
+.video_window {
+  background: #000;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  -webkit-user-select: none;
+}
+.video_window video {
+  position:absolute;
   top:0px;
-  width:100%;
-  height:calc(100% - 100px);
-  background:#000;
-  transition:0.3s;
-  -webkit-user-select: none;
-}
-.at {
-  position:fixed;
   left:0px;
-  bottom:calc(-45% * (1 - var(--op-t)));
   width:100%;
-  height:45%;
-  border-radius:15px 15px 0px 0px;
-  background:#1a1a1a;
-  transition:0.3s;
-  -webkit-user-select: none;
+  height:100%;
+  object-fit: cover;
+  object-position:center center;
 }
-.camera video {
+.mask {
   width:100%;
   height:100%;
   position:absolute;
   top:0px;
   left:0px;
-  object-fit: cover;
-  transition:0.3s;
+  background:rgba(0,0,0,0);
   -webkit-user-select: none;
 }
-canvas#ccttt {
-  position:fixed;
-  top:0px;
-  left:0px;
-  height:0%;
-  width:0%;
-  display:block;
-  opacity:0;
-  object-fit: cover;
-  -webkit-user-select: none;
+.hidden_box {
+  display:none;
 }
-.attitle {
-  color:#fff;
-  font-size:25px;
-  position:absolute;
-  top:0px;
-  left:0px;
-  height:50px;
-  width:calc(100% - 15px);
-  background:none;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  padding-left:15px;
-  border-bottom: solid 1px #1f1f1f;
-  -webkit-user-select: none;
-  font-family: 'Noto Sans TC', sans-serif;
-  font-weight:700;
-}
-
-#cf {
-  width:100%;
-  opacity:1;
-  -webkit-user-select: none;
-}
-.bg {
-  position:fixed;
-  top:0px;
-  left:0px;
-  width:100%;
-  height:100%;
-  background:#000;
-  -webkit-user-select: none;
-}
-.palettelist {
-  position:absolute;
-  top:51px;
-  left:0px;
-  list-style:none;
-  color:#fff;
-  font-size:23px;
-  width:100%;
-  height:calc(100% - 51px);
-  overflow:scroll;
-  -webkit-user-select: none;
-}
-.palettelist li {
-  margin-top:5px;
-  margin-left:15px;
-  height:40px;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  position:relative;
-  -webkit-user-select: none;
-  font-family: 'Noto Sans TC', sans-serif;
-  font-weight:500;
-}
-.palettelistb {
-  width:35px;
-  height:35px;
-  border-radius:10px;
-  background:#1f1f1f;
-  -webkit-user-select: none;
-}
-.mgl {
-  float:left;
-}
-.text {
-  margin-left:5px;
-}
-.openbtn {
-  background:#fff;
-  color:#000;
-  font-size:18px;
-  width:55px;
-  height:35px;
-  border-radius:10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position:absolute;
-  right:15px;
-  top:50%;
-  transform:translateY(-50%);
-  -webkit-user-select: none;
-  font-family: 'Noto Sans TC', sans-serif;
-  font-weight:400;
-}
-	
-	.backbtn {
-  background: rgba(0,0,0,0.6) url(https://erichsia7.github.io/colors/arrow-right-light.png);
-background-size:25px;
-  background-position:center;
-  background-repeat:no-repeat;
-  position:fixed;
-  top:15px;
-  left:15px;
-  width:40px;
-  height:40px;
-  display: flex;
-justify-content: center;
-align-items: center;
-  color:#fff;
-  font-size:20px;
-font-family: 'Noto Sans TC', sans-serif;
-  font-weight:400;
+.back {
+  background: rgba(0, 0, 0, 0.6)
+    url(https://erichsia7.github.io/colors/arrow-right-light.png);
   -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
-transform:rotate(180deg);
-border-radius:15px;
+  left: 15px;
+  top: 15px;
+  transform: rotate(180deg);
 }
+.option {
+  background: rgba(255, 255, 255, 0.6)
+    url(https://erichsia7.github.io/colors/ico_min/more.png);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  right: 15px;
+  filter: invert(100%);
+  top: 15px;
+}
+.close {
+  background: rgba(255, 255, 255, 0.6)
+    url(https://erichsia7.github.io/colors/ico_min/close2.png);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  left: 50%;
+  filter: invert(100%);
+  bottom: 30px;
+  transform: translateX(-50%);
+}
+.btn {
+  background-size: 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  font-size: 20px;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 400;
+  border-radius: 15px;
+  -webkit-user-select: none;
+}
+.shutter {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 55px;
+  height: 55px;
+  background: rgba(255, 255, 255, 0.6)
+    url(https://erichsia7.github.io/colors/ico_min/camera.png);
+  background-size: 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  border-radius: 99em;
+  filter: invert(100%);
+}
+.result {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.3);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  display:none;
+}
+.rttitle {
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:70px;
+  display: flex;
+justify-content: center;
+align-items: center;
+  color:#fff;
+}
+.rtbox {
+  position:absolute;
+  top:70px;
+  left:0px;
+  width:100%;
+  height:calc(100% - 70px);
+}
+.lt {
+  position:absolute;
+  top:0px;
+  left:50%;
+  transform:translateX(-50%);
+  width:clamp(230px,90%,350px);
+  max-height:calc(100% - 70px);
+  overflow:scroll;
+}
+.lty {
+  color:#fff;
+  width:100%;
+  height:45px;
+  position:relative;
+  margin-top:10px;
+}
+.lt_c {
+  position:absolute;
+  top:0px;
+  left:0px;
+  height:45px;
+  width:45px;
+  background:var(--gt-b);
+  border-radius:15px;
+  
+}
+.lt_ti {
+  position:absolute;
+  top:0px;
+  left:50px;
+  height:100%;
+  display: flex;
+  align-items: center;
+  width:calc(100% - 50px - 80px);
+  font-size:20px;
+}
+.lt_vi {
+  position:absolute;
+  top:50%;
+  right:0px;
+  transform:translateY(-50%);
+  width:calc(100% - 50px - (100% - 50px - 80px) - 5px);
+  display: flex;
+justify-content: center;
+align-items: center;
+}
+	
 .ladbar {
 background:#fff;
 position:fixed;
@@ -265,24 +262,26 @@ transition:width 0.3s ,background 0s;
 }
 	/*testend*/
 </style>
-<img src="" id="cf">
-<div class="bg"></div>
-<div class="camera">
-  
-  <video autoplay="autoplay" playsinline="playsinline" id="vid"></video>
-  
-</div>
-<div class="bottom">
+
+<div class="hidden_box"></div>
+<div class="camera_box">
+  <div class="video_window">
+    <video autoplay="autoplay" playsinline="playsinline" id="vid"></video>
+  </div>
+  <div class="mask"></div>
+  <div class="back btn"></div>
+  <div class="option btn"></div>
   <div class="shutter"></div>
 </div>
-<div class="at" style="--op-t:0">
-  <div class="attitle">Colors</div>
-  <div class="palettelist">
-    
+<div class="result">
+  <div class="rttitle">圖片中的顏色</div>
+  <div class="rtbox">
+    <div class="lt"></div>
   </div>
+  <div class="close btn"></div>
 </div>
-<canvas id="ccttt"></canvas>
-<div class="backbtn"></div>
+
+
 
 <div class="moreoptbg"></div>
 <div class="morebtn"></div>
@@ -323,17 +322,9 @@ $('.ladbar').css({'display':'none'});
 </script>
 
 <script>
- Webcam.set({
-			image_format: 'jpeg',
-			jpeg_quality: 90,
-			constraints: {
-video: true,
-facingMode: "environment"
-}
-		});
-		Webcam.attach( '.camera' );
-	
-    function genid(mode) {
+ 
+
+function genid(mode) {
 if(mode === "random"){
 var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
             var genid = "";
@@ -377,7 +368,8 @@ genid5 += '-' + genid4 ;
   }
 
 }
-  function componentToHex(c) {
+
+function componentToHex(c) {
   var hex = c.toString(16);
   return hex.length == 1 ? "0" + hex : hex;
 }
@@ -386,78 +378,81 @@ function rgbToHex(r, g, b) {
   return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
 
- 
-	
-	
-	
-	
-document.getElementById('ccttt').width = ($(window).width()*($(window).height()*0.55))/($(window).height()-100) ;
-		document.getElementById('ccttt').height = $(window).height()*0.55 ;
-		var ctx = document.getElementById('ccttt').getContext('2d');
-		function gtg() {
-Webcam.snap( function(data_uri, canvas, context) {	
-		ctx.drawImage( canvas, 0, 0 );
-});
+window.onload = function() {
+  var vidw = $('.video_window')
+  Webcam.set({
+			image_format: 'jpeg',
+			jpeg_quality: 90,
+			constraints: {
+video: true,
+facingMode: "environment"
 }
+		});
+		Webcam.attach('.video_window');
+  
+  
+  //$('.video_window video').width(vidw.width()).height(vidw.height())
+}
+/*
+$(window).resize(function() {
+  //var vidw = document.querySelector('.video_window')
+  
+  //$('.video_window video').css({'width':vidw.clientWidth + 'px','height':vidw.clientHeight + 'px'});
+  location.reload() 
+})
+*/
+
 
 function shutter() {
-  $('.at').css({'--op-t':'1'});
-  $('.camera').css({'height':$(window).height()*0.55,'width':($(window).width()*($(window).height()*0.55))/($(window).height()-100),'left':$(window).width()*0.5-(($(window).width()*($(window).height()*0.55))/($(window).height()-100))*0.5});
-  $('canvas#ccttt').css({'width':$(window).width(),'height':$(window).height()*0.55})
-  
-  
-  //$('#vid').attr('width',($(window).width()*($(window).height()*0.55))/($(window).height()-100))
-  $('.camera video').width(($(window).width()*($(window).height()*0.55))/($(window).height()-100)).height($(window).height()*0.55);
-  Webcam.snap( function(data_uri, canvas, context) {	$('#cf').attr('src',data_uri);
-		ctx.drawImage( canvas, 0-(($(window).height()*0.55*document.querySelector('.camera video').videoWidth/document.querySelector('.camera video').videoHeight)-(($(window).width()*($(window).height()*0.55))/($(window).height()-100)))/2 , 0 ,$(window).height()*0.55*document.querySelector('.camera video').videoWidth/document.querySelector('.camera video').videoHeight,$(window).height()*0.55);
-});
- setTimeout(function() {
-   $('canvas#ccttt').css({'height':$(window).height()*0.55,'width':($(window).width()*($(window).height()*0.55))/($(window).height()-100),'left':$(window).width()*0.5-(($(window).width()*($(window).height()*0.55))/($(window).height()-100))*0.5,'display':'block','opacity':'1','transition':'0.3s'});
-   $('.camera video').fadeOut(300)
- },1) 
-  
-  setTimeout(function() {
-  Webcam.reset();
+  Webcam.snap(function(data_uri) {
+    var juid = 'i-' + genid('random')
+    $('.hidden_box').html('<img src="' + data_uri + '" id="' + juid + '">') ;
+    $('.result').css({'display':'block'})
+    $('.option,.back,.shutter').css({'display':'none'})
+    //$('.lt').html('')
+    var img = document.querySelector('#' + juid);
     
     
+    img.addEventListener('load',function() {
+       var colorThief = new ColorThief();
     
-    
-    
-    
-    const colorThief = new ColorThief();
-    const img = document.querySelector('#cf');
 
     // Make sure image is finished loading
     if (img.complete) {
       
       var imgcolorpalette = colorThief.getPalette(img) ;
-      
+      var paltarr = []
       for (var i = 0; i < imgcolorpalette.length; i++) {
 	var drft = genid('random');
-        $('.palettelist').append('<li><div class="palettelistb mgl" style="background:' + rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2]) + '"></div><div class="text mgl">' + rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2]) + '</div><div class="openbtn" id="' + drft + '" hexbase64="' + btoa(rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2])) + '">查看</div></li>');
-	$('.openbtn#' + drft).click(function() {
-	window.open('https://erichsia7.github.io/colors/?s=1&c=' + $(this).attr('hexbase64') + '&open=camera&r=' + genid('random'))
-	});
+        //$('.lt').append('<li><div class="palettelistb mgl" style="background:' + rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2]) + '"></div><div class="text mgl">' + rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2]) + '</div><div class="openbtn" id="' + drft + '" hexbase64="' + btoa(rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2])) + '">查看</div></li>');
+	//$('.openbtn#' + drft).click(function() {
+	//window.open('https://erichsia7.github.io/colors/?s=1&c=' + $(this).attr('hexbase64') + '&open=camera&r=' + genid('random'))
+	//});
+        
+       paltarr.push('<div class="lty"><div class="lt_c" style="--gt-b:' + rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2]) + '"></div><div class="lt_ti">' + rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2]) + '</div><div class="lt_vi">查看顏色</div></div>')
       }
-      
-      
+      $('.lt').html(paltarr.join(''))
     } else {
-      img.addEventListener('load', function() {
-        colorThief.getColor(img);
-      });
+      
     }
-    
-    
-    
-    
-    
-  },400);
-  
+      
+      
+     
+    });
+  })
 }
+
 $('.shutter').click(function() {
-  shutter();
-});
-$('.backbtn').click(function() {
+  shutter()
+})
+$('.close').click(function() {
+  $('.result').css({'display':'none'})
+  $('.lt').html('')
+    $('.option,.back,.shutter').css({'display':'block'})
+})
+ 
+	  
+$('.back').click(function() {
 location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
 });
 $('li[g="reload"]').click(function() {
@@ -467,7 +462,7 @@ $('li[g="back"]').click(function() {
 location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
 });
 var moreoptd = '0' ;
-$('.morebtn').click(function() {
+$('.option').click(function() {
   if(moreoptd === '0') {
    $('.moreoptbg').fadeIn(1);
  $('.moreopt').css({'display':'block'});
