@@ -589,7 +589,7 @@ function getCookie(cname)
     'event_label':uid ,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log(nav.appCodeName)
+    
     }
   });
 		
@@ -598,7 +598,7 @@ function getCookie(cname)
     'event_label':uid ,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log(nav.appName)
+    
     }
   });
 		
@@ -607,7 +607,7 @@ function getCookie(cname)
     'event_label':uid ,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log(nav.appVersion)
+    
     }
   });
 		
@@ -616,7 +616,7 @@ function getCookie(cname)
     'event_label':uid ,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log(nav.language)
+    
     }
   });
 		
@@ -625,7 +625,7 @@ function getCookie(cname)
     'event_label':uid ,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log(nav.platform)
+    
     }
   });
 	
@@ -634,7 +634,7 @@ function getCookie(cname)
     'event_label':uid ,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log(nav.product)
+    
     }
   });
 		
@@ -643,7 +643,7 @@ function getCookie(cname)
     'event_label':uid ,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log(nav.productSub)
+    
     }
   });
 		
@@ -652,7 +652,7 @@ function getCookie(cname)
     'event_label':uid ,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log(nav.userAgent)
+    
     }
   });
 	
@@ -661,7 +661,7 @@ function getCookie(cname)
     'event_label':uid ,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log(nav.vendor)
+    
     }
   });
   }
@@ -674,7 +674,7 @@ function getCookie(cname)
     'event_label': user_id,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log('user_id:' + user_id)
+    
     //systeminfodata(user_id)
     }
   });
@@ -699,7 +699,7 @@ function getCookie(cname)
     'event_label': user_id,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log('user_id:' + user_id)
+    
     systeminfodata(user_id)
     }
   });
@@ -722,7 +722,7 @@ else {
     'event_label': user_id,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log('user_id:' + user_id)
+    
     }
   });
   
@@ -738,7 +738,7 @@ $(window).resize(function() {
     'event_label': user_id,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log('user_id:' + user_id)
+    
     }
   });
 });
@@ -809,11 +809,10 @@ function sendusagepoint() {
   var lastdaydated = new Date()
   lastdaydated.setTime(todaydated.getTime()-60*60*24*1000*i)
   var lastdatese = lastdaydated.getFullYear() + '-' + (lastdaydated.getMonth()+1) + '-' + lastdaydated.getDate()
-  console.log(lastdatese)
+  
   if(String(localStorage.getItem('usage_point_' + lastdatese)).length > 10 && !(localStorage.getItem('usage_point_' + lastdatese + '_send') === '1') && !(localStorage.getItem('usage_point_' + lastdatese) === null) && !(localStorage.getItem('usage_point_' + lastdatese) === undefined)) {
   var lastdayresultjson = usgaepointresultjsoncalc(JSON.parse(String(localStorage.getItem('usage_point_' + lastdatese))), JSON.parse(String(localStorage.getItem('usage_point_' + lastdatese))).events)
-  console.log('no send')
-  console.log(lastdayresultjson)
+  
   var lastdayresultjson_event_count = lastdayresultjson.events.event_count
   var lastdayresultjson_event_point = lastdayresultjson.events.event_point
   var lastdayresultjson_event_point_total = lastdayresultjson.events.event_point_total
@@ -829,7 +828,7 @@ function sendusagepoint() {
     'event_label': user_id,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log(thskeyname + ',' + thskeyvalue)
+    
     }
   });
 	
@@ -838,14 +837,14 @@ function sendusagepoint() {
      //event_point
      var thskeyname = hssu_2
      var thskeyvalue = eval('lastdayresultjson_event_point.' + hssu_2)
-     console.log(thskeyname + ',' + thskeyvalue)
+     
 	   
      gtag('event', 'event_point_' + thskeyname, {
     'event_category':thskeyvalue,
     'event_label': user_id,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log(thskeyname + ',' + thskeyvalue)
+    
     }
   });
 	   
@@ -856,7 +855,7 @@ function sendusagepoint() {
     'event_label': user_id,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log(lastdayresultjson_event_point_total)
+    
     }
   });
    gtag('event', 'event_type_count', {
@@ -864,7 +863,7 @@ function sendusagepoint() {
     'event_label': user_id,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log(lastdayresultjson_event_type_count)
+    
     }
   });
    localStorage.setItem('usage_point_' + lastdatese + '_send','1')
@@ -898,7 +897,7 @@ function sendusagepoint() {
 if (window.File && window.FileReader && window.FileList && window.Blob) {
   document.getElementById('files2').addEventListener('change', handleFileSelect, false);
 } else {
-  alert('No supported.');
+  //tvenyu6kcvw3zz16
 }
 
 function handleFileSelect(evt) {
@@ -1504,19 +1503,15 @@ hsvinput.addEventListener('copy', (event) => {
 });
  
   $(document).ready(function() {
-    //test 
-	  var googlefontloadtime = new Date().getTime() ;
-        if(googlefontloadtime-parseInt(localStorage.getItem('googlefontNotoSansTCloaded')) < 2592000000) {
+ var googlefontloadtime = new Date().getTime() ;
+ if(googlefontloadtime-parseInt(localStorage.getItem('googlefontNotoSansTCloaded')) < 2592000000) {
   $('body').append('<style>' + localStorage.getItem('googlefontNotoSansTC') + '</style>');
-  console.log('loaded')
 }
 else {
  $.ajax({type:'get',url:"https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap",dataType:'text',success:function(e) {
   var googlefontloadtimedd = new Date().getTime() ;
   localStorage.setItem('googlefontNotoSansTC', e); localStorage.setItem('googlefontNotoSansTCloaded', googlefontloadtimedd);
    $('body').append('<style>' + e + '</style>');
-   
-   console.log('loaded2')
    }
 }); 
 }
@@ -1918,7 +1913,6 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
         binary += String.fromCharCode(responseText.charCodeAt(i) & 255)
     }
   $('#' + imgid).attr('src','data:image/jpeg;base64,' + btoa(binary))
-    console.log('id:' + jqXHR.getResponseHeader('picsum-id'))
     var bigsizerdimgurl = String('https://picsum.photos/id/' + jqXHR.getResponseHeader('picsum-id') + '/1024/1024')
     $('#' + imgid).ready(function() {
     setTimeout(function() {
@@ -1930,7 +1924,6 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
       var imgcolorpalette = colorThief.getPalette(imgee) ;
         var hfur = 'k-' + genid('random')
         var imgsrcffd = String($('#' + imgid).attr('src'))
-        console.log('k')
 	if(!(localStorage.getItem('settings_lowspeed') === '1')) {
 	var bigimgrdgghtmlcc = '<div style="background:url(' + bigsizerdimgurl + ');background-size:cover;background-position:center;" class="rdimgbigsize"></div>'
 	}
@@ -1993,13 +1986,7 @@ var opcopjdid = 'o-' + genid('random')
 	      $('body').prompt({'message':'已複製Palette連結','time':1200,'animate':'slide'});
 	});
       //hu
-	    
-    } else {
-	    console.log('k2')
-      imgee.addEventListener('load', function() {
-	      console.log('k2-2')
-      });
-    } 
+    }
 	//ggg
     },150);
     });
@@ -2089,7 +2076,6 @@ gtag('event', 'explore_load', {
     'event_label':user_id ,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log(explore_load_count)
     }
   });
 
