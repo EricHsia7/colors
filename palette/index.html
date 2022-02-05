@@ -458,7 +458,6 @@ if(dt === '1') {
     'event_label':uid ,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log(nav.appCodeName)
     }
   });
 		
@@ -467,7 +466,7 @@ if(dt === '1') {
     'event_label':uid ,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log(nav.appName)
+    
     }
   });
 		
@@ -476,7 +475,7 @@ if(dt === '1') {
     'event_label':uid ,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log(nav.appVersion)
+    
     }
   });
 		
@@ -485,7 +484,7 @@ if(dt === '1') {
     'event_label':uid ,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log(nav.language)
+    
     }
   });
 		
@@ -494,7 +493,7 @@ if(dt === '1') {
     'event_label':uid ,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log(nav.platform)
+    
     }
   });
 	
@@ -503,7 +502,7 @@ if(dt === '1') {
     'event_label':uid ,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log(nav.product)
+    
     }
   });
 		
@@ -512,7 +511,7 @@ if(dt === '1') {
     'event_label':uid ,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log(nav.productSub)
+    
     }
   });
 		
@@ -521,7 +520,7 @@ if(dt === '1') {
     'event_label':uid ,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log(nav.userAgent)
+    
     }
   });
 	
@@ -530,7 +529,7 @@ if(dt === '1') {
     'event_label':uid ,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log(nav.vendor)
+    
     }
   });
 }
@@ -546,7 +545,7 @@ if(dt === '1') {
     'event_label': user_id,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log('user_id:' + user_id)
+    
     //systeminfodata(user_id)
     }
   });
@@ -569,7 +568,7 @@ if(dt === '1') {
     'event_label': user_id,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log('user_id:' + user_id)
+    
     systeminfodata(user_id)
     }
   });
@@ -585,7 +584,7 @@ if(darkmodematched) {
   setthemecol('#1a1a1a',1)
 }
 else {
-	darkmodematchedstr = 'false' ;
+darkmodematchedstr = 'false' ;
 }
   if(dt === '1') {
   gtag('event', 'dark_mode', {
@@ -593,7 +592,7 @@ else {
     'event_label': user_id,
     'transport_type': 'beacon',
     'event_callback': function(){
-    console.log('user_id:' + user_id)
+    
     }
   });
   }
@@ -697,8 +696,6 @@ function addpalette() {
 //start
 var colorsstr = cs ;
 var colorsarr = colorsstr.split(',')
-
-
   for (var i = 0; i < colorsarr.length; i++) {
     if((hexToRgb(colorsarr[i]).r+hexToRgb(colorsarr[i]).g+hexToRgb(colorsarr[i]).b)/3 > 128) {
       var inpcolor = '#000'
@@ -750,15 +747,13 @@ $('.share').click(function() {
         var googlefontloadtime = new Date().getTime() ;
         if(googlefontloadtime-parseInt(localStorage.getItem('googlefontNotoSansTCloaded')) < 2592000000) {
   $('body').append('<style>' + localStorage.getItem('googlefontNotoSansTC') + '</style>');
-  console.log('loaded')
+  
 }
 else {
  $.ajax({type:'get',url:"https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap",dataType:'text',success:function(e) {
   var googlefontloadtimedd = new Date().getTime() ;
   localStorage.setItem('googlefontNotoSansTC', e); localStorage.setItem('googlefontNotoSansTCloaded', googlefontloadtimedd);
    $('body').append('<style>' + e + '</style>');
-   
-   console.log('loaded2')
    }
 }); 
 }
@@ -768,7 +763,6 @@ else {
   $('.back').click(function() {
   location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
   });
-  
   
   resizepalette();
 </script>
