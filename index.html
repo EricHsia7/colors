@@ -260,11 +260,12 @@ input#files,input#files2{display:none}
 <div class="fi lle btn"></div>
 </div>
 <div class="moreoptbg"></div>
-<div class="moreopt" style="--list-count: 4;">
+<div class="moreopt" style="--list-count: 5;">
 <li f="qrcode">二維碼</li>
 <li f="openinpicker">顏色選擇器</li>
 <li f="toimage">轉換圖片</li>
 <li f="mixedgradient">混合漸層</li>
+<li f="similargradient">似色漸層</li>
 </div>
 </div>
 <div class="mobile-gesture-prompt-bg nw-top" id="mobile-gesture-prompt-bg">
@@ -1502,6 +1503,10 @@ $('.color').fadeIn(222);
 setthemecol(shcolor,222);
 }  
 }
+    $('li[f="similargradient"]').click(function() {
+var yshgrdsyqhooa = getligrd(shcolor)
+'https://erichsia7.github.io/colors/?s=2&ga=' + btoa(yshgrdsyqhooa[1]) + '&gb=' + btoa(yshgrdsyqhooa[2]) + '&gdeg=' + yshgrdsyqhooa[0] + '&r=' + genid('random')
+    });
     $('li[f="toimage"]').click(function() {
       usagepoint('toimage','+7')
       var toimgbackurlstorageid = genid('uuid') ;
