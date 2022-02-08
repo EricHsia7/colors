@@ -645,7 +645,7 @@ function hsvToRgb(h, s, v) {
 }
 
 function getligrd(nscol) {
-var uj = 25 ;
+var uj = 35 ;
 var co = hexToRgb(nscol)
 var hsg = rgbtohsv(co.r,co.g,co.b)
 
@@ -2318,7 +2318,6 @@ $('.favrecommendcard,#randomrecommendtitletags,.rrimgcard').remove()
 		for (var fygeeew = 0; fygeeew < recommend_info_card_cu; fygeeew++) { 
  $('.favrecommendcardbox').append('<div class="favrecommendcard loading" dp="lo" type="recommend"><div class="favrecommendcardcontent"><h4>&nbsp</h4><div class="favrecommendcarddescription">&nbsp</div></div></div>');
 }
-		
 		$.ajax({type:'get',url:resulturlli,dataType:'text',success:function(e) {
   var favrecommenddataarr = e.split(/[\s\n]/).filter(function(n){ return n.length > 0}) ;
   for (var fygeeew = 0; fygeeew < favrecommenddataarr.length; fygeeew++) {
@@ -2370,7 +2369,7 @@ $('.favrecommendcard,#randomrecommendtitletags,.rrimgcard').remove()
 $('.gotop').click(function() {
 $(document).scrollTop(0)
 });
-	
+
 	
 function checkonline() {
   var onlinestr = '沒有網路連線' ;
@@ -2404,7 +2403,6 @@ document.addEventListener('offline', function(e) {
     offlineoe = '1'
     checkonline()
 });
-
 
 window.addEventListener('online', function(e) {
     offlineoe = '0'
