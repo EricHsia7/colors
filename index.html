@@ -332,37 +332,34 @@ input#files,input#files2{display:none}
 <script src="https://erichsia7.github.io/prompt.js/prompt.min.js?p"></script>
 <script>
 var loadtimeloge = new Date() ;
-  var getUrlString = location.href;
+var getUrlString = location.href;
 var url = new URL(getUrlString);
 function gup(param) {
 param = String(param)
 return url.searchParams.get(param)
 }
-
 var sharecolor = gup('s') ;
 var shcolor = atob(gup('c')) ;
-  var gc1 = atob(gup('ga')) ;
-  var gc2 = atob(gup('gb')) ;
-  var gcdeg = gup('gdeg') ;
-  var open = gup('open') ;
-  var favadd = gup('favadd') ;
-  var favda = atob(gup('favda')).split('&');
-  var favdel = gup('del') ;
-  var favscroll = gup('scroll') ;
-  var shortcuts = gup('shortcuts') ;
-  var opensou = gup('sou') ;
-  var toimgbackid = gup('backid') ;
-  var toimg = gup('toimg');
+var gc1 = atob(gup('ga')) ;
+var gc2 = atob(gup('gb')) ;
+var gcdeg = gup('gdeg') ;
+var open = gup('open') ;
+var favadd = gup('favadd') ;
+var favda = atob(gup('favda')).split('&');
+var favdel = gup('del') ;
+var favscroll = gup('scroll') ;
+var shortcuts = gup('shortcuts') ;
+var opensou = gup('sou') ;
+var toimgbackid = gup('backid') ;
+var toimg = gup('toimg');
 var copycolmode = 0 ;
-  var usedslideclosepp = 0 ;
+var usedslideclosepp = 0 ;
 var dpb = gup('dpb') ;
 var moreoptd = '0' ;
-  
 var ccw = 256;
 var ccwa = (ccw*ccw) ;
 document.getElementById('cc').width = ccw ;
 document.getElementById('cc').height = ccw ;
-
 function gettimerandomnumber(min,max) {
   var timeseedrandom = new Date().getTime();
   var myrng = new Math.seedrandom(String(timeseedrandom + '.' + Math.random()));
@@ -382,64 +379,51 @@ return '#fff'
 }
 }
   
-  function genid(mode) {
+function genid(mode) {
 if(mode === "random"){
 var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
-            var genid = "";
-            for (var i = 0; i < 16; i++) {
-                var genrandomNumber = Math.floor(Math.random() * genidchars.length);
-                genid += genidchars.substring(genrandomNumber, genrandomNumber + 1);
-            }
-  return genid ;
-}
-          
- if(mode === "time"){
-   var gtoday=new Date();
-   var genid2 = (gtoday.getMonth()+1) + '_' + gtoday.getDate() + '_' + gtoday.getHours() + '_' + gtoday.getMinutes() + '_' + gtoday.getSeconds() + '-' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8));
-   
-   return genid2
- }
-  
-  if(mode === "number"){
-   
-   var genid3 = '' ;
+var genid = "";
 for (var i = 0; i < 16; i++) {
-  genid3 += '' + (0+Math.floor(Math.random() * 9))
+var genrandomNumber = Math.floor(Math.random() * genidchars.length);
+genid += genidchars.substring(genrandomNumber, genrandomNumber + 1);
 }
-   return genid3
- }
-  
-  if(mode === "uuid"){
+return genid ;
+}       
+if(mode === "time"){
+var gtoday=new Date();
+var genid2 = (gtoday.getMonth()+1) + '_' + gtoday.getDate() + '_' + gtoday.getHours() + '_' + gtoday.getMinutes() + '_' + gtoday.getSeconds() + '-' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8));
+return genid2
+}
+if(mode === "number"){
+var genid3 = '' ;
+for (var i = 0; i < 16; i++) {
+genid3 += '' + (0+Math.floor(Math.random() * 9))
+}
+return genid3
+}
+if(mode === "uuid"){
 var genidchars4 = "abcdef012345678";
-    var geniduu = [8,4,4,4,12];
-            var genid4 = "";
-            var genid5 = "";
-    for (var ia = 0; ia < geniduu.length; ia++) {
-      var genid4 = "";
-            for (var i = 0; i < geniduu[ia]; i++) {
-                var genrandomNumber4 = Math.floor(Math.random() * genidchars4.length);
-                genid4 += genidchars4.substring(genrandomNumber4, genrandomNumber4 + 1);
-            }
+var geniduu = [8,4,4,4,12];
+var genid4 = "";
+var genid5 = "";
+for (var ia = 0; ia < geniduu.length; ia++) {
+var genid4 = "";
+for (var i = 0; i < geniduu[ia]; i++) {
+var genrandomNumber4 = Math.floor(Math.random() * genidchars4.length);
+genid4 += genidchars4.substring(genrandomNumber4, genrandomNumber4 + 1);
+}
 genid5 += '-' + genid4 ;
-    }
-    return genid5.substring(1,genid5.length)
-  }
-
 }
-  
-  
-  
-let getMode=e=>{let t={};e.forEach(e=>{t[e]=(t[e]||0)+1});let l=0,r=[];for(let e in t)if(t[e]>l?(l=t[e],r=[e]):t[e]===l&&r.push(e),r.length===Object.keys(t).length)return[];return r};
-  
-  
-  
+return genid5.substring(1,genid5.length)
+}
+} 
+let getMode=e=>{let t={};e.forEach(e=>{t[e]=(t[e]||0)+1});let l=0,r=[];for(let e in t)if(t[e]>l?(l=t[e],r=[e]):t[e]===l&&r.push(e),r.length===Object.keys(t).length)return[];return r};  
 function componentToHex(c) {
-  var hex = c.toString(16);
-  return hex.length == 1 ? "0" + hex : hex;
+var hex = c.toString(16);
+return hex.length == 1 ? "0" + hex : hex;
 }
-
 function rgbToHex(r, g, b) {
-  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
 function hexToRgb(hex) {
   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -450,34 +434,24 @@ function hexToRgb(hex) {
   } : null;
 }
 function rgbtocmyk(r, g, b, normalized){
-    var c = 1 - (r / 255);
-    var m = 1 - (g / 255);
-    var y = 1 - (b / 255);
-    var k = Math.min(c, Math.min(m, y));
-    
-    c = (c - k) / (1 - k);
-    m = (m - k) / (1 - k);
-    y = (y - k) / (1 - k);
-    
-    if(!normalized){
-        c = Math.round(c * 10000) / 100;
-        m = Math.round(m * 10000) / 100;
-        y = Math.round(y * 10000) / 100;
-        k = Math.round(k * 10000) / 100;
-    }
-    
-    c = isNaN(c) ? 0 : c;
-    m = isNaN(m) ? 0 : m;
-    y = isNaN(y) ? 0 : y;
-    k = isNaN(k) ? 0 : k;
-    
-    return {
-        c: c,
-        m: m,
-        y: y,
-        k: k,
-        cmykstr:c + ',' + m + ',' + y + ',' + k
-    }
+var c = 1 - (r / 255);
+var m = 1 - (g / 255);
+var y = 1 - (b / 255);
+var k = Math.min(c, Math.min(m, y));   
+c = (c - k) / (1 - k);
+m = (m - k) / (1 - k);
+y = (y - k) / (1 - k);
+if(!normalized){
+c = Math.round(c * 10000) / 100;
+m = Math.round(m * 10000) / 100;
+y = Math.round(y * 10000) / 100;
+k = Math.round(k * 10000) / 100;
+}
+c = isNaN(c) ? 0 : c;
+m = isNaN(m) ? 0 : m;
+y = isNaN(y) ? 0 : y;
+k = isNaN(k) ? 0 : k;    
+return {c: c,m: m,y: y,k: k,cmykstr:c + ',' + m + ',' + y + ',' + k}
 }
 
 function rgbtohsv(r, g, b) {
