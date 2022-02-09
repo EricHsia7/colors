@@ -706,7 +706,17 @@ function getCookie(cname)
   }
   return "";
 }
-
+function setlocalst(cname,cva) {
+	localStorage.setItem(cname,cva)
+}
+function getlocalst(cname) {
+	if(localStorage.getItem(cname) === null) {
+		return ""
+	}
+	else {
+	return localStorage.getItem(cname)
+	}
+}
 
   //userid
   function systeminfodata(uid) {
