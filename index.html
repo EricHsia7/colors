@@ -1469,14 +1469,12 @@ if((hexToRgb(shcolor).r+hexToRgb(shcolor).g+hexToRgb(shcolor).b)/3 > 128) {
       $('.ladbar').css({'background':'#000'});
       $('.arrbtco').attr('class','arrow-right btn arrbtco');
       $('.arrbtco-2').attr('class','arrow-left btn arrbtco-2');
-      //$('.toimg').attr('class','toimg toimg-d btn');
     }
     else {
       $('#rgb,.colorvlcm').css({'color':'#fff'});
       $('.ladbar').css({'background':'#fff'});
       $('.arrbtco').attr('class','arrow-right-light btn arrbtco');
       $('.arrbtco-2').attr('class','arrow-left-light btn arrbtco-2');
-      //$('.toimg').attr('class','toimg toimg-l btn');
     }
   if(open === "fav") {
    usagepoint('open_color_fav','+5')
@@ -1554,12 +1552,8 @@ usagepoint('open_grd','+3')
     
     var grdarc = rgbToHex(Math.ceil((hexToRgb(gc1).r+hexToRgb(gc2).r)/2),Math.ceil((hexToRgb(gc1).g+hexToRgb(gc2).g)/2),Math.ceil((hexToRgb(gc1).b+hexToRgb(gc2).b)/2)) ;
     var grd = 'linear-gradient(' + gcdeg + 'deg ,' +  gc1 + ' 0%,' +  gc2 + ' 100%)' ;
-	  
-    
-
 if(open === "fav") {
 usagepoint('open_grd_fav','+5')
-//$('.color').fadeIn(1);
   $('.color').css({'display':'block'});
   $('#filerj,.favrecommendcardbox').css({'opacity':'0','position':'fixed'});
 setthemecol(grdarc,1);
@@ -1850,11 +1844,7 @@ $('.colorinps2').css({'transform':'translateX(' + 0 + '%) translateY(-50%)','tra
       $('.colorinps2').css({'transform':'translateX(' + (-20*copycolmode) + '%) translateY(-50%)','transition':'0s'});
       
       $('#menuj').css({'opacity':(1),'transition':'0.3s'});
-      
     }
-    
-    
-    
   }
   else {
   if (isDown) {
@@ -2140,7 +2130,6 @@ var opcopjdid = 'o-' + genid('random')
 });
 
 }
-	
   //recommend-info-card
   var recommend_info_card_cu = 5 ;
   var favrecommenddataarr_color_html = [] ;
@@ -2191,13 +2180,11 @@ var opcopjdid = 'o-' + genid('random')
     $('.favrecommendcard').eq(favrecommenddataarr.length-fygeeew-1).css({'background':favrecommenddataarr[fygeeew]}).attr('class','favrecommendcard');
     $('.favrecommendcardcontent h4').eq(favrecommenddataarr.length-fygeeew-1).css({'color':'#' + favrecommendcardtitlecolor}).html(favrecommenddataarr[fygeeew]);
     $('.favrecommendcarddescription').eq(favrecommenddataarr.length-fygeeew-1).html('<a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favrecommenddataarr[fygeeew]) + '&sou=recommend&r=' + genid('random') + '">查看顏色</a>');
-		
 }
 favrecommenddataarr_color_html = favrecommenddataarr_color_html.reverse().join('') ;
 //fn
 
 //randomrecommend
-
 $(window).scroll(function() {
 if(sga === 1) {
   if($(window).scrollTop() > $('#randomrecommendtitletags').offset().top) {  
@@ -2208,7 +2195,6 @@ $('.favrecommendfixedtitle').html($('.favrecommendfixedtitle').attr('srtitle'))
 
   }
 }
-
   if($(window).scrollTop() > ($(document).height()-$(window).height()-$(window).height()*0.6)) {
     if(dft === 0) {
     if(sga === 0) {
@@ -2247,9 +2233,7 @@ var ffrand_b = gettimerandomnumber(0,255);
     }
   }
 });
-	   //randomrecommend end
-
-
+//randomrecommend end
 $('#favrecommendcardtab_ligrd,#favrecommendcardtab_lastweektrend').attr('hu','0');
 $('#favrecommendcardtab_color').click(function() {
 usagepoint('switch_recommend','+3')
@@ -2260,7 +2244,6 @@ $('#favrecommendcardtab_color').attr('gj','1')
 $('#favrecommendcardtab_ligrd,#favrecommendcardtab_lastweektrend').attr('gj','0')
 $('.favrecommendfixedtitle').html('建議的顏色').attr('srtitle','建議的顏色')
 });
-  
 $('#favrecommendcardtab_lastweektrend').click(function() {
 usagepoint('switch_recommend','+3')
 sga = 0
@@ -2268,26 +2251,20 @@ $('#favrecommendcardtab_lastweektrend').attr('gj','1');
 $('#favrecommendcardtab_ligrd,#favrecommendcardtab_color').attr('gj','0');
 $('.favrecommendfixedtitle').html('上週趨勢').attr('srtitle','上週趨勢')
 $('.favrecommendcard,#randomrecommendtitletags,.rrimgcard').remove()
-		for (var fygeeew = 0; fygeeew < 10; fygeeew++) { 
+for (var fygeeew = 0; fygeeew < 10; fygeeew++) { 
  $('.favrecommendcardbox').append('<div class="favrecommendcard loading" dp="lo" type="recommend" lastweektrendmo="0"><div class="favrecommendcardcontent"><h4>&nbsp</h4><div class="favrecommendcarddescription">&nbsp</div></div></div>');
 }
-	
 	if(favrecommenddataarr_lastweektrend_html.length < 1) {
-		
 	$.ajax({type:'get',url:lastweaktrendcolorsrestult,dataType:'text',success:function(e) {
-		
   var favrecommenddataarryyy = e.replaceAll('"','').split(',') ;
   for (var fygeeew = 0; fygeeew < favrecommenddataarryyy.length; fygeeew++) {
-	var favrecommendgtfffctooyy = String(favrecommenddataarryyy[fygeeew]) ;
-
+var favrecommendgtfffctooyy = String(favrecommenddataarryyy[fygeeew]) ;
   if((hexToRgb(favrecommendgtfffctooyy).r+hexToRgb(favrecommendgtfffctooyy).g+hexToRgb(favrecommendgtfffctooyy).b)/3 > 128) {
    var favrecommendcardtitlecolor = '000' ;
   }
   else {
     var favrecommendcardtitlecolor = 'fff' ;
   }
-  
-//var favrecommendcardtitlecolor = 'fff' ;
    favrecommenddataarr_lastweektrend_html.push('<div class="favrecommendcard" dp="lo" type="recommend" style="background:' + favrecommendgtfffctooyy + ';" lastweektrendmo="1"><div class="favrecommendcardcontent"><h4 style="color:#' + favrecommendcardtitlecolor + '">' + favrecommendgtfffctooyy + '</h4><div class="favrecommendcarddescription">' + '<a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favrecommendgtfffctooyy) + '&sou=trend&r=' + genid('random') + '">查看顏色</a>' + '</div></div></div>')
     $('.favrecommendcard').eq(favrecommenddataarryyy.length-fygeeew-1).css({'background':favrecommendgtfffctooyy}).attr('class','favrecommendcard').attr('lastweektrendmo','1');
     $('.favrecommendcardcontent h4').eq(favrecommenddataarryyy.length-fygeeew-1).css({'color':'#' + favrecommendcardtitlecolor}).html(favrecommendgtfffctooyy);
@@ -2297,13 +2274,13 @@ $('.favrecommendcard[lastweektrendmo="0"]').remove()
 favrecommenddataarr_lastweektrend_html = favrecommenddataarr_lastweektrend_html.reverse().join('');
 }
 });
-		//g
-	}
-	else {
-	$('.favrecommendcard').remove()
-	$('.favrecommendcardbox').append(favrecommenddataarr_lastweektrend_html);
-	}
-	//end
+//g
+}
+else {
+$('.favrecommendcard').remove()
+$('.favrecommendcardbox').append(favrecommenddataarr_lastweektrend_html);
+}
+//end
 });
 
 $('#favrecommendcardtab_ligrd').click(function() {
@@ -2313,17 +2290,14 @@ $('#favrecommendcardtab_color,#favrecommendcardtab_lastweektrend').attr('gj','0'
 $('#favrecommendcardtab_ligrd').attr('gj','1')
 $('.favrecommendfixedtitle').html('建議的漸層').attr('srtitle','建議的漸層')
 $('.favrecommendcard,#randomrecommendtitletags,.rrimgcard').remove()
-
-	if(favrecommenddataarr_ligrd_html.length < 1) {
-		for (var fygeeew = 0; fygeeew < recommend_info_card_cu; fygeeew++) { 
+if(favrecommenddataarr_ligrd_html.length < 1) {
+for (var fygeeew = 0; fygeeew < recommend_info_card_cu; fygeeew++) { 
  $('.favrecommendcardbox').append('<div class="favrecommendcard loading" dp="lo" type="recommend"><div class="favrecommendcardcontent"><h4>&nbsp</h4><div class="favrecommendcarddescription">&nbsp</div></div></div>');
 }
-		$.ajax({type:'get',url:resulturlli,dataType:'text',success:function(e) {
+$.ajax({type:'get',url:resulturlli,dataType:'text',success:function(e) {
   var favrecommenddataarr = e.split(/[\s\n]/).filter(function(n){ return n.length > 0}) ;
   for (var fygeeew = 0; fygeeew < favrecommenddataarr.length; fygeeew++) {
-	
-	var favrecommendgtfffctoo = favrecommenddataarr[fygeeew].replaceAll('deg','').replaceAll('linear-gradient(','').replaceAll(')','').replaceAll('$0%','').replaceAll('$100%','').split('@') ;
-
+var favrecommendgtfffctoo = favrecommenddataarr[fygeeew].replaceAll('deg','').replaceAll('linear-gradient(','').replaceAll(')','').replaceAll('$0%','').replaceAll('$100%','').split('@') ;
   if((hexToRgb(favrecommendgtfffctoo[1]).r+hexToRgb(favrecommendgtfffctoo[1]).g+hexToRgb(favrecommendgtfffctoo[1]).b+hexToRgb(favrecommendgtfffctoo[2]).r+hexToRgb(favrecommendgtfffctoo[2]).g+hexToRgb(favrecommendgtfffctoo[2]).b)/6 > 128) {
    var favrecommendcardtitlecolor = '000' ;
   }
@@ -2349,11 +2323,9 @@ $('.favrecommendcard,#randomrecommendtitletags,.rrimgcard').remove()
 //ed
 }
 });
-   
    //end
  }
  }
-
   $(document).scroll(function(e) {
     if($(document).scrollTop() > $('.favrecommendtabbox').offset().top) {
       //ture
@@ -2370,7 +2342,6 @@ $('.gotop').click(function() {
 $(document).scrollTop(0)
 });
 
-	
 function checkonline() {
   var onlinestr = '沒有網路連線' ;
   if(navigator.onLine) {
