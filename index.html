@@ -1644,8 +1644,9 @@ hsvinput.addEventListener('copy', (event) => {
         $('body').prompt({'message':'已複製(hsv)','time':1200,'animate':'slide'});
 });
  
-  $(document).ready(function() {
- var googlefontloadtime = new Date().getTime() ;
+$(document).ready(function() {
+if(localStorage.getItem('first_load') === "1") {
+var googlefontloadtime = new Date().getTime() ;
  if(googlefontloadtime-parseInt(localStorage.getItem('googlefontNotoSansTCloaded')) < 2592000000) {
   $('body').append('<style>' + localStorage.getItem('googlefontNotoSansTC') + '</style>');
 }
@@ -1657,19 +1658,22 @@ else {
    }
 }); 
 }
- //testend
+//f
+}
+else {
+localStorage.setItem('first_load','1')
+}
 $('#promptedcs').html(':root {--mjw-trjs:' + $('#menuj').width() + 'px}')
-      if(getCookie('hdloaded') === 'true') {
-        var ldiilist = 'grd,filed-camera,filed-img,fi,fi2,fi3,ft2,colmorme,crtd,rand2,vis,favy,meoi,mor' ;
-    var ldiilists = ldiilist.split(',') ;
-    var ldiihdlist = 'gradient,camera,img,close2,copy2,share3,text2,more,color-picker,random3,invisible,favorited,close2,more' ;
-    var ldiihdlists = ldiihdlist.split(',');
-	      if(!(localStorage.getItem('settings_lowspeed') === '1')) {
+ if(getCookie('hdloaded') === 'true') {
+ var ldiilist = 'grd,filed-camera,filed-img,fi,fi2,fi3,ft2,colmorme,crtd,rand2,vis,favy,meoi,mor' ;
+  var ldiilists = ldiilist.split(',') ;
+var ldiihdlist = 'gradient,camera,img,close2,copy2,share3,text2,more,color-picker,random3,invisible,favorited,close2,more' ;
+var ldiihdlists = ldiihdlist.split(',');
+if(!(localStorage.getItem('settings_lowspeed') === '1')) {
 for (var ldii=0; ldii<ldiilists.length; ldii++){  
-                 $('.' + ldiilists[ldii]).css({'background':'rgba(245, 245, 245,0.8) url(https://erichsia7.github.io/colors/' + ldiihdlists[ldii] + '.png)','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
-            }
-		      
-	      }
+$('.' + ldiilists[ldii]).css({'background':'rgba(245, 245, 245,0.8) url(https://erichsia7.github.io/colors/' + ldiihdlists[ldii] + '.png)','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
+}
+}
       }
       else {
         setTimeout(function() {
@@ -2290,9 +2294,9 @@ $('.favrecommendcard,#randomrecommendtitletags,.rrimgcard').remove()
     $('.favrecommendcarddescription').eq(favrecommenddataarryyy.length-fygeeew-1).html('<a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(favrecommendgtfffctooyy) + '&sou=trend&r=' + genid('random') + '">查看顏色</a>');
 }
 $('.favrecommendcard[lastweektrendmo="0"]').remove()
-	favrecommenddataarr_lastweektrend_html = favrecommenddataarr_lastweektrend_html.reverse().join('');
-		}
-		});
+favrecommenddataarr_lastweektrend_html = favrecommenddataarr_lastweektrend_html.reverse().join('');
+}
+});
 		//g
 	}
 	else {
