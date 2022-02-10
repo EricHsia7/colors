@@ -31,7 +31,6 @@ body{background:#fff;transition:.222s}
 .color #rgb,.color .colorvlcm{background:rgba(0,0,0,0.08);padding:8px;border-radius:99em;border:none;font-weight:bold;font-family:"Noto Sans TC",sans-serif;font-size:1.3rem;width:120px;text-align:center;transition:.5s}
 .colorinps2{position:absolute;top:50%;left:0;height:calc(100% - 100px);width:500%;transform:translateY(-50%) translateX(0px);overflow:hidden}
 .colorinps{position:absolute;top:50%;left:0;transform:translateY(-50%) translateX(0px);height:55px;width:100%;display:flex;justify-content:space-around;overflow:hidden}
-.meoi{background:var(--rg-245) url(https://erichsia7.github.io/colors/ico_min/close2.png);margin-left:0}
 .grd{background:var(--rg-245) url(https://erichsia7.github.io/colors/ico_min/gradient.png)}
 #cc{position:fixed;top:0;left:0;display:none}
 input#files,input#files2{display:none}
@@ -57,7 +56,7 @@ input#files,input#files2{display:none}
 .copied{position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.5);display:none;justify-content:center;align-items:center;font-weight:medium;font-family:"Noto Sans TC",sans-serif;font-size:1.3rem;color:#fff}
 #filej{width:230px;height:105px;-webkit-user-select:none}
 #filerj{position:absolute;left:50%;top:35%;transform:translate(-50%,-50%);-webkit-user-select:none}
-#menuj,#tej,#meoj{position:fixed;left:50%;bottom:30px;transform:translateX(-50%);-webkit-user-select:none}
+#menuj,#tej{position:fixed;left:50%;bottom:30px;transform:translateX(-50%);-webkit-user-select:none}
 #menuj{position:absolute;width:285px;height:45px}
 .lle{float:left;margin-left:10px}
 .ooe{margin-top:10px}
@@ -330,9 +329,6 @@ input#files,input#files2{display:none}
 <div id="qrclbtn">關閉</div>
 </div>
 <div class="cmore">
-<span id="meoj">
-<div class="meoi lle btn"></div>
-</span>
 <div class="cmoretit"><div class="cmoreclose"></div>更多</div>
 </div>
 <div class="alert_blur"></div>
@@ -1347,7 +1343,7 @@ $('.morecardtitle').eq(i).html(morecardthisjson.title).css({'background':'rgba(0
     $('.cmore').fadeIn(333).css({'display':'block'});
     $('.favrecommendcardbox').css({'position':'fixed'});
   });
- $('.meoi,.cmoreclose').click(function() {
+ $('.cmoreclose').click(function() {
     $('.cmore').fadeOut(333);
    $('.favrecommendcardbox').css({'position':'absolute'});
 usagepoint('more_options_close','+0.1')
@@ -1663,9 +1659,9 @@ localStorage.setItem('first_load','1')
 }
 $('#promptedcs').html(':root {--mjw-trjs:' + $('#menuj').width() + 'px}')
  if(getCookie('hdloaded') === 'true') {
- var ldiilist = 'grd,filed-camera,filed-img,fi,fi2,fi3,ft2,colmorme,crtd,rand2,vis,favy,meoi,mor' ;
+ var ldiilist = 'grd,filed-camera,filed-img,fi,fi2,fi3,ft2,colmorme,crtd,rand2,vis,favy,mor' ;
   var ldiilists = ldiilist.split(',') ;
-var ldiihdlist = 'gradient,camera,img,close2,copy2,share3,text2,more,color-picker,random3,invisible,favorited,close2,more' ;
+var ldiihdlist = 'gradient,camera,img,close2,copy2,share3,text2,more,color-picker,random3,invisible,favorited,more' ;
 var ldiihdlists = ldiihdlist.split(',');
 if(!(localStorage.getItem('settings_lowspeed') === '1')) {
 for (var ldii=0; ldii<ldiilists.length; ldii++){  
@@ -1675,9 +1671,9 @@ $('.' + ldiilists[ldii]).css({'background':'rgba(245, 245, 245,0.8) url(https://
       }
       else {
         setTimeout(function() {
-    var ldiilist = 'grd,filed-camera,filed-img,fi,fi2,fi3,ft2,colmorme,crtd,rand2,vis,favy,meoi,mor' ;
+    var ldiilist = 'grd,filed-camera,filed-img,fi,fi2,fi3,ft2,colmorme,crtd,rand2,vis,favy,mor' ;
     var ldiilists = ldiilist.split(',') ;
-    var ldiihdlist = 'gradient,camera,img,close2,copy2,share3,text2,more,color-picker,random3,invisible,favorited,close2,more' ;
+    var ldiihdlist = 'gradient,camera,img,close2,copy2,share3,text2,more,color-picker,random3,invisible,favorited,more' ;
     var ldiihdlists = ldiihdlist.split(',');
 if(!(localStorage.getItem('settings_lowspeed') === '1')) {
 	
