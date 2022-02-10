@@ -1308,11 +1308,11 @@ $('.morecardtitle').eq(i).html(morecardthisjson.title).css({'background':'rgba(0
 }
 	    
     }
-    $('.cmore').fadeIn(333).css({'display':'block'});
+    $('.cmore').css({'display':'block','opacity':'1'});
     $('.favrecommendcardbox').css({'position':'fixed'});
   });
  $('.cmoreclose').click(function() {
-    $('.cmore').fadeOut(333);
+    $('.cmore').css({'display':'none','opacity':'0'});
    $('.favrecommendcardbox').css({'position':'absolute'});
 usagepoint('more_options_close','+0.1')
   }); 
