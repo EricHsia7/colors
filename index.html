@@ -86,6 +86,21 @@ align-items: center;
 font-weight:700;
 font-family: 'Noto Sans TC', sans-serif;
 }
+.cmoreclose {
+  background:url(https://erichsia7.github.io/colors/arrow-right.png);
+  background-size:20px;
+  background-position:center;
+  background-repeat:no-repeat;
+  width:55px;
+  height:55px;
+  position:fixed;
+  top:0px;
+  left:0px;
+  transform:rotate(180deg);
+  -webkit-appearance:none;
+outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);
+  -webkit-user-select: none;
+}
 .cmorespe {
 width:100%;
 height:55px;
@@ -317,7 +332,7 @@ input#files,input#files2{display:none}
 <span id="meoj">
 <div class="meoi lle btn"></div>
 </span>
-<div class="cmoretit">更多</div>
+<div class="cmoretit"><div class="cmoreclose"></div>更多</div>
 </div>
 <div class="alert_blur"></div>
 <div class="alert">
@@ -1331,7 +1346,7 @@ $('.morecardtitle').eq(i).html(morecardthisjson.title).css({'background':'rgba(0
     $('.cmore').fadeIn(333).css({'display':'block'});
     $('.favrecommendcardbox').css({'position':'fixed'});
   });
- $('.meoi').click(function() {
+ $('.meoi,.cmoreclose').click(function() {
     $('.cmore').fadeOut(333);
    $('.favrecommendcardbox').css({'position':'absolute'});
 usagepoint('more_options_close','+0.1')
