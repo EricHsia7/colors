@@ -1293,10 +1293,10 @@ var favrecommendforms = $.ajax({url:'https://docs.google.com/forms/d/e/1FAIpQLSc
   $('.mor').click(function() {
     if(morecardloaded === 0) {
     morecardloaded = 1
-    $('.cmore').prepend('<div class="cmorespe"></div>')
     for (var i = 0; i < 8; i++) {
 $('.cmore').prepend('<div class="morecard"><div class="morecardimage"></div><div class="morecardtitle"></div><div class="morecardbtn"></div></div>')
     }
+    $('.cmore').prepend('<div class="cmorespe"></div>')
 if(localStorage.getItem('moreopt_d') === morecardv) {
    usagepoint('more_options_open','+1.5')
   var morecardjson = JSON.parse(localStorage.getItem('moreopt')) ;
@@ -1329,7 +1329,7 @@ $('.morecardtitle').eq(i).html(morecardthisjson.title).css({'background':'rgba(0
 }
 	    
     }
-    $('.cmore').fadeIn(333).css({'display':'flexblock'});
+    $('.cmore').fadeIn(333).css({'display':'block'});
     $('.favrecommendcardbox').css({'position':'fixed'});
   });
  $('.meoi').click(function() {
