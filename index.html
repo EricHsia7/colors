@@ -315,7 +315,6 @@ input#files,input#files2{display:none}
 <div id="qrclbtn">關閉</div>
 </div>
 <div class="cmore">
-<div class="cmorespe"></div>
 <span id="meoj">
 <div class="meoi lle btn"></div>
 </span>
@@ -1294,6 +1293,7 @@ var favrecommendforms = $.ajax({url:'https://docs.google.com/forms/d/e/1FAIpQLSc
   $('.mor').click(function() {
     if(morecardloaded === 0) {
     morecardloaded = 1
+    $('.cmore').prepend('<div class="cmorespe"></div>')
     for (var i = 0; i < 8; i++) {
 $('.cmore').prepend('<div class="morecard"><div class="morecardimage"></div><div class="morecardtitle"></div><div class="morecardbtn"></div></div>')
     }
