@@ -677,6 +677,19 @@ function textcol(r,g,b) {
   }
 }
 
+function lcxt(r,g,b) {
+  //var textcolrgbfy = (r*0.213+g*0.718+b*0.072)
+  var textcolrgbfy = (r+g+b)/3
+  if(textcolrgbfy>(255/2)) {
+    return true
+    //#000
+  }
+  else {
+    return false
+    //#fff
+  }
+}
+	
 function setcookie(cookiename,cookievalue) {
 document.cookie = cookiename + '=' + cookievalue + '; max-age='+60*10;
 }
