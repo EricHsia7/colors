@@ -312,15 +312,18 @@ input#files,input#files2{display:none}
 <div class="ladbar" style="display: none;"></div>
 
 <script>
-if(localStorage.getItem('c_data_usage') === null) {
+var td = new Date()
+var tddate = td.getFullYear() + '-' + (td.getMonth()+1) + '-' + td.getDate()
+var tdna = 'c_data_usage_' + tddate
+if(localStorage.getItem(tdna) === null) {
 var datausage = 0
 }
 else {
-var datausage = parseInt(localStorage.getItem('c_data_usage'))
+var datausage = parseInt(localStorage.getItem(tdna))
 }
 $(document).ajaxSuccess(function(event, xhr, settings) {
   datausage = datausage+(xhr.responseText.length)
-  localStorage.setItem('c_data_usage',datausage)
+  localStorage.setItem(tdna,datausage)
 });
 </script>
 <script src="https://erichsia7.github.io/ripple.js/ripple.min.js"></script>
