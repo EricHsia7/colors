@@ -310,10 +310,21 @@ input#files,input#files2{display:none}
 </div>
 <div id="deleting" style="position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; display: none; justify-content: center; align-items: center; font-size: 1.3rem; font-weight: 500;">刪除中</div>
 <div class="ladbar" style="display: none;"></div>
-<script src="https://erichsia7.github.io/ripple.js/ripple.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js">
-</script>
 
+<script>
+if(localStorage.getItem('c_data_usage') === null) {
+var datausage = 0
+}
+else {
+var datausage = parseInt(localStorage.getItem('c_data_usage'))
+}
+$(document).ajaxSuccess(function(event, xhr, settings) {
+  datausage = datausage+(xhr.responseText.length)
+  localStorage.setItem('c_data_usage',datausage)
+});
+</script>
+<script src="https://erichsia7.github.io/ripple.js/ripple.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
 <script src="https://erichsia7.github.io/prompt.js/prompt.min.js?p"></script>
 <script>
 var loadtimeloge = new Date() ;
