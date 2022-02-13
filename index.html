@@ -328,7 +328,7 @@ $(document).ajaxSuccess(function(event, xhr, settings) {
 });
 */
 
-if(localStorage('devmode') === '1') {
+if(localStorage.getItem('devmode') === '1') {
 $('body').append('<style>.xhrprg{background:#000;position:fixed;left:0;top:0;height:1.5px;width:0;transition:.3s}</style><div class="xhrprg"></div>')
 	
 var xhrprgff = 0
