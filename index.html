@@ -333,13 +333,7 @@ console.log(new Date().getTime())
 console.log(event)
 console.log(jqxhr)
 console.log(settings)
-var jqid = '' ;
-for(var et in event) {
-     if(String(et).indexOf('jQuery') > -1) {
-     jqid = String(et)
-     }
-   }
-console.log(jqid)
+console.log(btoa(encodeURIComponent(settings.url)))
 console.log('---')
 });
 $(document).ajaxSuccess(function(event, xhr, settings) {
