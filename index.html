@@ -327,6 +327,12 @@ $(document).ajaxSuccess(function(event, xhr, settings) {
   localStorage.setItem(tdna,datausage)
 });
 */
+$(document).ajaxSuccess(function(event, xhr, settings) {
+  console.log(xhr.responseText.length)
+});
+$(document).ajaxStart(function(event, xhr, settings) {
+console.log(settings.url)
+});
 </script>
 <script src="https://erichsia7.github.io/ripple.js/ripple.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
