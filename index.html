@@ -330,8 +330,8 @@ $(document).ajaxSuccess(function(event, xhr, settings) {
 $(document).ajaxSuccess(function(event, xhr, settings) {
   console.log(xhr.responseText.length)
 });
-$(document).ajaxStart(function(event, xhr, settings) {
-console.log(settings.url)
+$(document).ajaxStart(function() {
+console.log('k')
 });
 </script>
 <script src="https://erichsia7.github.io/ripple.js/ripple.min.js"></script>
