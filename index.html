@@ -355,6 +355,9 @@ var thsjjid = 'aj_' + thsudhs
 eval('ajlojson.success.' + thsjjid + ' = {"time":"' + event.timeStamp + '","replength":"' + xhr.responseText.length + '"}')
 console.log(ajlojson)
 console.log('---')
+
+console.log(eval('parseInt(ajlojson.success.' + thsjjid + '.time) - parseInt(ajlojson.send.' + thsjjid + '.time)'))
+
 });
 </script>
 
