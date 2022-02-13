@@ -311,6 +311,9 @@ input#files,input#files2{display:none}
 <div id="deleting" style="position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; display: none; justify-content: center; align-items: center; font-size: 1.3rem; font-weight: 500;">刪除中</div>
 <div class="ladbar" style="display: none;"></div>
 
+<script src="https://erichsia7.github.io/ripple.js/ripple.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
+<script src="https://erichsia7.github.io/prompt.js/prompt.min.js?p"></script>
 <script>
 /*
 var td = new Date()
@@ -333,7 +336,7 @@ console.log(new Date().getTime())
 console.log(event)
 console.log(jqxhr)
 console.log(settings)
-console.log(btoa(encodeURIComponent(settings.url)))
+console.log(String(new Math.seedrandom(String(settings.url))))
 console.log('---')
 });
 $(document).ajaxSuccess(function(event, xhr, settings) {
@@ -345,9 +348,7 @@ console.log(settings)
 console.log('---')
 });
 </script>
-<script src="https://erichsia7.github.io/ripple.js/ripple.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
-<script src="https://erichsia7.github.io/prompt.js/prompt.min.js?p"></script>
+
 <script>
 var loadtimeloge = new Date() ;
 var getUrlString = location.href;
