@@ -324,10 +324,10 @@ eval('ajlojson.send.' + thsjjid + ' = {"time":"' + event.timeStamp + '"}')
 $(document).ajaxSuccess(function(event, xhr, settings) {
 var thsudhs = btoa(encodeURIComponent(String(settings.url))).replaceAll('=','')
 var thsjjid = 'aj_' + thsudhs
-eval('ajlojson.success.' + thsjjid + ' = {"time":"' + event.timeStamp + '","replength":"' + xhr.responseText.length + '"}')
+eval('ajlojson.success.' + thsjjid + ' = {"time":"' + event.timeStamp + '","replength":"' + xhr.responseText.length + '","reu":"' + settings.url + '"}')
 gtag('event', 'xhr_load_time_ms', {
     'event_category': eval('parseInt(ajlojson.success.' + thsjjid + '.time) - parseInt(ajlojson.send.' + thsjjid + '.time)'),
-    'event_label':eval('ajlojson.success.' + thsjjid + '.replength') ,
+    'event_label':eval('ajlojson.success.' + thsjjid + '.reu') ,
     'transport_type': 'beacon',
     'event_callback': function(){
     
