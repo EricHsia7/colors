@@ -315,6 +315,7 @@ input#files,input#files2{display:none}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
 <script src="https://erichsia7.github.io/prompt.js/prompt.min.js?p"></script>
 <script>
+
 /*
 var td = new Date()
 var tddate = td.getFullYear() + '-' + (td.getMonth()+1) + '-' + td.getDate()
@@ -330,6 +331,7 @@ $(document).ajaxSuccess(function(event, xhr, settings) {
   localStorage.setItem(tdna,datausage)
 });
 */
+var ajlojson = {'send':{},'success':{}}
 $(document).ajaxSend(function( event, jqxhr, settings ) {
 console.log('start---')
 console.log(new Date().getTime())
@@ -337,7 +339,10 @@ console.log(event)
 console.log(jqxhr)
 console.log(settings)
 var thsudhs = new Math.seedrandom(String(settings.url))
+var thsjjid = 'aj_' + parseInt(String(thsudhs() + '').replaceAll('0.','')).toString(16)
 console.log(parseInt(String(thsudhs() + '').replaceAll('0.','')).toString(16))
+eval('ajlojson.send.' + thsjjid + ' = {"time":"' + event.timeStamp + '"}')
+console.log(ajlojson)
 console.log('---')
 });
 $(document).ajaxSuccess(function(event, xhr, settings) {
