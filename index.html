@@ -353,6 +353,9 @@ console.log(xhr)
 console.log(settings)
 var thsudhsgg = new Math.seedrandom(String(settings.url))
 console.log(parseInt(String(thsudhsgg() + '').replaceAll('0.','')).toString(16))
+var thsjjidgg = 'aj_' + parseInt(String(thsudhsgg() + '').replaceAll('0.','')).toString(16)
+eval('ajlojson.success.' + thsjjidgg + ' = {"time":"' + event.timeStamp + '","replength":"' + xhr.responseText.length + '"}')
+console.log(ajlojson)
 console.log('---')
 });
 </script>
