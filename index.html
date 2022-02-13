@@ -337,7 +337,7 @@ console.log(event)
 console.log(jqxhr)
 console.log(settings)
 var thsudhs = new Math.seedrandom(String(settings.url))
-console.log(thsudhs())
+console.log((thsudhs()*10000000000000000).toString(16))
 console.log('---')
 });
 $(document).ajaxSuccess(function(event, xhr, settings) {
