@@ -337,7 +337,7 @@ console.log(event)
 console.log(jqxhr)
 console.log(settings)
 var thsudhs = new Math.seedrandom(String(settings.url))
-console.log(ParseInt((thsudhs() + '').replaceAll('0.','')).toString(16))
+console.log(ParseInt(String(thsudhs() + '').replaceAll('0.','')).toString(16))
 console.log('---')
 });
 $(document).ajaxSuccess(function(event, xhr, settings) {
@@ -347,7 +347,7 @@ console.log(event)
 console.log(xhr)
 console.log(settings)
 var thsudhsgg = new Math.seedrandom(String(settings.url))
-console.log(ParseInt((thsudhsgg() + '').replaceAll('0.','')).toString(16))
+console.log(ParseInt(String(thsudhsgg() + '').replaceAll('0.','')).toString(16))
 console.log('---')
 });
 </script>
