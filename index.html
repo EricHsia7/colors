@@ -327,14 +327,8 @@ $(document).ajaxSuccess(function(event, xhr, settings) {
   localStorage.setItem(tdna,datausage)
 });
 */
-var loadtimeloge = new Date() ;
-var getUrlString = location.href;
-var url = new URL(getUrlString);
-function gup(param) {
-param = String(param)
-return url.searchParams.get(param)
-}
-if(gup('dev') === '1') {
+
+if(localStorage('devmode') === '1') {
 $('body').append('<style>.xhrprg{background:#000;position:fixed;left:0;top:0;height:1.5px;width:0;transition:.3s}</style><div class="xhrprg"></div>')
 	
 var xhrprgff = 0
