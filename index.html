@@ -328,9 +328,12 @@ $(document).ajaxSuccess(function(event, xhr, settings) {
 });
 */
 $(document).ajaxSuccess(function(event, xhr, settings) {
+console.log('---')
+console.log(new Date().getTime())
 console.log(event)
 console.log(xhr)
 console.log(settings)
+console.log('---')
 });
 </script>
 <script src="https://erichsia7.github.io/ripple.js/ripple.min.js"></script>
