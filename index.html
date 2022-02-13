@@ -327,12 +327,42 @@ $(document).ajaxSuccess(function(event, xhr, settings) {
   localStorage.setItem(tdna,datausage)
 });
 */
+var loadtimeloge = new Date() ;
+var getUrlString = location.href;
+var url = new URL(getUrlString);
+function gup(param) {
+param = String(param)
+return url.searchParams.get(param)
+}
+if(gup('dev') === '1') {
+$('body').append('<style>.xhrprg{background:#000;position:fixed;left:0;top:0;height:3px;width:0;transition:.3s}</style><div class="xhrprg"></div>')
+	
+var xhrprgff = 0
+var xhrcltgff = 0 ;
+setInterval(function() {
+  if(xhrcltgff === 0) {
+    
+  xhrprgff += 5+Math.random()*2
+  if(xhrprgff >=95) {
+    xhrprgff = 95
+  }
+  $('.xhrprg').css({'width':xhrprgff + '%'})
+  }
+},350)
+	
 $(document).ajaxSuccess(function(event, xhr, settings) {
   console.log(xhr.responseText.length)
+
+  xhrcltgff = 1 ;
+$('.xhrprg').css({'width':100 + '%'})
 });
 $(document).ajaxStart(function() {
 console.log('k')
+xhrcltgff = 0 ;
+xhrprgff = 0
+$('.xhrprg').css({'width':0 + '%'})
 });
+}
 </script>
 <script src="https://erichsia7.github.io/ripple.js/ripple.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
