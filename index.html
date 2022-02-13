@@ -355,9 +355,14 @@ var thsjjid = 'aj_' + thsudhs
 eval('ajlojson.success.' + thsjjid + ' = {"time":"' + event.timeStamp + '","replength":"' + xhr.responseText.length + '"}')
 console.log(ajlojson)
 console.log('---')
-
-console.log(eval('parseInt(ajlojson.success.' + thsjjid + '.time) - parseInt(ajlojson.send.' + thsjjid + '.time)'))
-
+gtag('event', 'xhr_load_time_ms', {
+    'event_category': eval('parseInt(ajlojson.success.' + thsjjid + '.time) - parseInt(ajlojson.send.' + thsjjid + '.time)'),
+    'event_label':eval('ajlojson.success.' + thsjjid + '.replength') ,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    
+    }
+  });
 });
 </script>
 
