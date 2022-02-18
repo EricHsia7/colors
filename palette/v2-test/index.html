@@ -403,12 +403,19 @@ var offsetY = 0
 var tsta
 var tstb
 var ge = document.querySelector('.bx')
-
+function txco(hx) {
+  var thsoo = hexToRgb(hx)
+  if((thsoo.r+thsoo.g+thsoo.b)/3 > 128) {
+    return '#000'
+  }
+  else {
+    return '#fff'
+  }
+}
 function upd(ty,my,by) {
-$('.bx[h="top"] .vd').css({'background':ty,'background-size': 'cover','background-position': 'center','background-repeat': 'no-repeat'}).text(ty)
-$('.bx[h="medium"] .vd').css({'background':my,'background-size': 'cover','background-position': 'center','background-repeat': 'no-repeat'}).text(my)
-
-$('.bx[h="bottom"] .vd').css({'background':by,'background-size': 'cover','background-position': 'center','background-repeat': 'no-repeat'}).text(by)
+$('.bx[h="top"] .vd').css({'background':ty,'background-size': 'cover','background-position': 'center','background-repeat': 'no-repeat','color':txco(ty)}).text(ty)
+$('.bx[h="medium"] .vd').css({'background':my,'background-size': 'cover','background-position': 'center','background-repeat': 'no-repeat','color':txco(my)}).text(my)
+$('.bx[h="bottom"] .vd').css({'background':by,'background-size': 'cover','background-position': 'center','background-repeat': 'no-repeat','color':txco(by)}).text(by)
 
   
 }
