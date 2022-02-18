@@ -389,6 +389,9 @@ var nw = 0
 var ftop = idlist[nw]
 var fmedium = idlist[nw]
 var fbottom = idlist[nw]
+if(idlist.length > 1) {
+  fbottom = idlist[nw+1]
+}
 var canslide = true
 var transitionsec = '0.28s'
 var rds
