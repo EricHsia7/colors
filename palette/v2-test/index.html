@@ -1,5 +1,126 @@
+<meta charset="UTF-8">
+<title>Colors</title>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-342D6M2MKX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-342D6M2MKX');
+</script>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js?1"></script>
+<link href="https://erichsia7.github.io/colors/c2_512.png" sizes="512x512" rel="apple-touch-icon-precomposed" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!--<meta name="apple-mobile-web-app-status-bar-style" content="black" />-->
+<meta name="theme-color" content="#fff">
+<link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="icon" />
+<link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="bookmark" />
+<link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="shortcut icon" />
+<link rel="manifest" href="manifest.json?qpipoo">
 
 
+<style>
+.oe {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  background:#e3e3e3;
+}
+.bx {
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0);
+  position:absolute;
+  top:0px;
+  left:0px;
+  transition-timing-function: ease;
+}
+.bx[h="top"] {
+  left:-100%;
+  /*background:#ff0000;*/
+}
+.bx[h="medium"] {
+  left:0%;
+}
+.bx[h="bottom"] {
+  left:100%;
+  /*background:#fff000*/
+}
+.vd {
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size:30px;
+}
+.rdbx {
+  position:absolute;
+  top:0px;
+  left:0px;
+  height:9px;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rdb {
+  width:100%;
+  height:9px;
+  border-radius:12px;
+  position:relative;
+  /*
+  background:rgba(0,0,0,0.35);
+  -webkit-backdrop-filter:invert(100%);
+  backdrop-filter:invert(100%);
+  opacity:1
+  */
+}
+.rd {
+  height:9px;
+  position:absolute;
+  top:0px;
+  left:0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition:0.05s;
+  min-width:9px;
+}
+.rdp {
+  background:rgba(250,250,250,0.8);
+  border-radius:12px;
+  -webkit-backdrop-filter:invert(100%);
+  backdrop-filter:invert(100%);
+  width:calc(100% - 4px);
+  height:calc(100% - 6px);
+  min-width:5px;
+}
+.rdo {
+  width:calc(100% - 4px);
+  height:calc(100% - 6px);
+  background:rgba(0,0,0,0);
+  border-radius:12px;
+  position:absolute;
+  -webkit-backdrop-filter: grayscale(100%);
+  backdrop-filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  opacity:1;
+  min-width:5px;
+}
+</style>
 <div class="oe">
 <div class="bx" h="top">
   <div class="vd"></div>
