@@ -239,6 +239,16 @@ function pu() {
 
 upd(ftop,fmedium,fbottom)
 
+  
+  $.extend($.support, { touch: "ontouchend" in document });
+ 
+ var eventlistenert = ['touchstart','touchmove','touchend'] ;
+ if($.support.touch) {
+  eventlistenert = ['touchstart','touchmove','touchend'] ;
+ }
+ else {
+  eventlistenert = ['mousedown','mousemove','mouseup'] ;
+ }
 
 var el = document.querySelectorAll('.bx')[1]
 var touchm = false ;
@@ -305,7 +315,7 @@ $('.bx').css({'transform':'translateX(' + (0) + 'px)'})
 }
   
 }
-el.addEventListener("touchstart",function(e) {
+el.addEventListener(eventlistenert[0],function(e) {
   e.preventDefault();
   
   tsta = new Date()
@@ -316,10 +326,10 @@ $('.bx[h="top"]').css({'transition':'0s'})
 $('.bx[h="medium"]').css({'transition':'0s'})
 $('.bx[h="bottom"]').css({'transition':'0s'})
 
-  el.addEventListener("touchmove",mo,{passive: true});
+  el.addEventListener(eventlistenert[1],mo,{passive: true});
 },{passive: true});
 
-el.addEventListener("touchend",function(e) {
+el.addEventListener(eventlistenert[2],function(e) {
   e.preventDefault();
   tstb = new Date()
   transitionsec = (1-(Math.abs($('.bx[h="medium"]').offset().left)/$('.bx[h="medium"]').width()))*0.6 + 's'
@@ -367,7 +377,7 @@ $('.bx[h="bottom"]').css({'transform':'translateX(' + (0) + 'px)','transition':t
 
 
       
-document.removeEventListener('touchmove',mo)
+document.removeEventListener(eventlistenert[1],mo)
 },{passive: true});
 </script>
 
