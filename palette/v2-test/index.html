@@ -26,10 +26,10 @@
 <style>
 .oe {
   position:fixed;
-  top:0px;
+  top:55px;
   left:0px;
   width:100%;
-  height:100%;
+  height:calc(100% - 55px);
   overflow:hidden;
   background:#e3e3e3;
 }
@@ -120,6 +120,18 @@
   opacity:1;
   min-width:5px;
 }
+.ti {
+  background:#fff;
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:55px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.05);
+  -webkit-user-select: none;
+      -webkit-appearance:none;
+outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
 </style>
 <div class="oe">
 <div class="bx" h="top">
@@ -145,7 +157,7 @@
     
     </div>
 </div>
-
+<div class="ti"></div>
 <script>
   
 function upd(ty,my,by) {
