@@ -1,0 +1,270 @@
+
+
+<div class="oe">
+<div class="bx" h="top">
+  <div class="vd"></div>
+  <div class="gd"></div>
+</div>
+  <div class="bx" h="medium">
+  <div class="vd"></div>
+  <div class="gd"></div>
+</div>
+ <div class="bx" h="bottom">
+  <div class="vd"></div>
+  <div class="gd"></div>
+</div>
+  <div class="rdbx">
+    <div class="rdb">
+      <div class="rd">
+<div class="rdp"></div>
+<div class="rdo"></div>
+</div>
+    </div>
+    
+    
+    </div>
+</div>
+
+<script>
+  
+function upd(ty,my,by) {
+$('.bx[h="top"] .vd').css({'background':ty,'background-size': 'cover','background-position': 'center','background-repeat': 'no-repeat'}).text(ty)
+$('.bx[h="medium"] .vd').css({'background':my,'background-size': 'cover','background-position': 'center','background-repeat': 'no-repeat'}).text(my)
+
+$('.bx[h="bottom"] .vd').css({'background':by,'background-size': 'cover','background-position': 'center','background-repeat': 'no-repeat'}).text(by)
+
+  
+}
+
+
+var idlist = ["#ecebef","#3b4d52","#959b9c","#000000","#3b4d52","#959b9c","#3b4d52","#959b9c","#3b4d52","#959b9c","#3b4d52","#959b9c"]
+var nw = 0
+var ftop = idlist[nw]
+var fmedium = idlist[nw]
+var fbottom = idlist[nw+1]
+var canslide = true
+var transitionsec = '0.28s'
+var rds
+function acd() {
+  $('.bx[h="top"]').css({'transform':'translateX(' + (0) + 'px)','transition':'0s'})
+    $('.bx[h="medium"]').css({'transform':'translateX(' + (0) + 'px)','transition':'0s'})
+$('.bx[h="bottom"]').css({'transform':'translateX(' + (0) + 'px)','transition':'0s'})
+  
+  
+}
+function dw() {
+  document.removeEventListener('transitionend',dw)
+  if(nw<idlist.length-1) {
+    nw +=1
+    canslide = true
+  }
+  else {
+    canslide = false
+  }
+  ftop = idlist[nw-1]
+  fmedium = idlist[nw]
+  fbottom = idlist[nw+1]
+  acd()
+  upd(ftop,fmedium,fbottom)
+}
+
+function pu() {
+  document.removeEventListener('transitionend',pu)
+  
+  if(nw>0) {
+    nw -=1
+    canslide = true
+  }
+  else {
+    canslide = false
+  }
+  ftop = idlist[nw-1]
+  fmedium = idlist[nw]
+  fbottom = idlist[nw+1]
+  acd()
+  upd(ftop,fmedium,fbottom)
+}
+
+
+upd(ftop,fmedium,fbottom)
+
+
+var el = document.querySelectorAll('.bx')[1]
+var touchm = false ;
+var ft = 0
+var ofty = 0
+var mouseX = 0
+var mouseY = 0
+var offsetX = 0
+var offsetY = 0
+var tsta
+var tstb
+var ge = document.querySelector('.bx')
+$('.rd').width($('.rdb').width()/idlist.length)
+$(window).resize(function() {
+  $('.rd').width($('.rdb').width()/idlist.length)
+})
+function rdf() {
+var rdtra = (($('.bx[h="medium"]').width()*(nw-1))+($('.bx[h="medium"]').width()-$('.bx[h="medium"]').offset().left))/($('.bx[h="medium"]').width()*idlist.length)*$('.rdb').width()
+if(rdtra < 0) {
+rdtra = 0
+}
+if(rdtra > $('.rdb').width()-$('.rd').width()) {
+rdtra = $('.rdb').width()-$('.rd').width()
+}
+  $('.rd').css({'transform':'translateX(' + rdtra + 'px)'})
+}
+rds = setInterval(rdf,1)
+
+function uee(e) {
+  $('.bx').css({'transform':'translateX(0px)'})
+  mouseY = 0
+}
+
+function mo(e) {
+  e.preventDefault();
+  pagy= e.pageX-mouseX
+  
+  if(pagy > $('.bx[h="medium"]').width()) {
+    pagy = $('.bx[h="medium"]').width()
+  }
+  if(pagy < (0-$('.bx[h="medium"]').width())) {
+    pagy = (0-$('.bx[h="medium"]').width())
+  }
+  
+  
+$('.bx[h="top"]').css({'transform':'translateX(' + (pagy) + 'px)'})
+$('.bx[h="medium"]').css({'transform':'translateX(' + (pagy) + 'px)'})
+$('.bx[h="bottom"]').css({'transform':'translateX(' + (pagy) + 'px)'})
+ 
+  
+  
+  if(nw > 0 && nw < idlist.length-1) {
+    pagy= e.pageX-mouseX
+}
+  else {
+if(nw<1 &&  $('.bx[h="medium"]').offset().left >0) {
+$('.bx').css({'transform':'translateX(' + (0) + 'px)'})
+}
+    
+if(nw>(idlist.length-2) &&  $('.bx[h="medium"]').offset().left <-1) {
+$('.bx').css({'transform':'translateX(' + (0) + 'px)'})
+}
+    
+}
+  
+}
+el.addEventListener("touchstart",function(e) {
+  e.preventDefault();
+  
+  tsta = new Date()
+  touchm = true
+  mouseX = e.pageX
+  mouseY = e.pageY-$('.bx[h="medium"]').offset().top
+$('.bx[h="top"]').css({'transition':'0s'})
+$('.bx[h="medium"]').css({'transition':'0s'})
+$('.bx[h="bottom"]').css({'transition':'0s'})
+
+  el.addEventListener("touchmove",mo,{passive: true});
+},{passive: true});
+
+el.addEventListener("touchend",function(e) {
+  e.preventDefault();
+  tstb = new Date()
+  transitionsec = (1-(Math.abs($('.bx[h="medium"]').offset().left)/$('.bx[h="medium"]').width()))*0.6 + 's'
+  
+  
+  if(touchm) {
+  offsetX += e.pageX - mouseX
+  offsetY += e.pageY - mouseY
+  }
+  touchm = false
+   
+  
+if($('.bx[h="medium"]').offset().left < (0-($('.bx[h="medium"]').width()*0.23))) {
+ $('.bx[h="medium"]').css({'transform':'translateX(-100%)','transition':transitionsec})
+  
+  $('.bx[h="bottom"]').css({'transform':'translateX(-100%)','transition':transitionsec})
+ 
+  //down
+  
+  document.addEventListener('transitionend',dw)
+  
+  //downend
+}
+else {
+
+  
+  if($('.bx[h="medium"]').offset().left > (($('.bx[h="medium"]').width()*0.23))) {
+    $('.bx[h="medium"]').css({'transform':'translateX(100%)','transition':transitionsec})
+    $('.bx[h="top"]').css({'transform':'translateX(100%)','transition':transitionsec})
+   
+    //td
+    
+    document.addEventListener('transitionend',pu)
+    //upend
+  }
+  else {
+    $('.bx[h="top"]').css({'transform':'translateX(' + (0) + 'px)','transition':transitionsec})
+    $('.bx[h="medium"]').css({'transform':'translateX(' + (0) + 'px)','transition':transitionsec})
+$('.bx[h="bottom"]').css({'transform':'translateX(' + (0) + 'px)','transition':transitionsec})
+
+  }
+  
+
+}
+
+
+      
+document.removeEventListener('touchmove',mo)
+},{passive: true});
+</script>
+
+
+
+
+<script>
+// left: 37, up: 38, right: 39, down: 40,
+// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+
+function preventDefault(e) {
+  e.preventDefault();
+}
+
+function preventDefaultForScrollKeys(e) {
+  if (keys[e.keyCode]) {
+    preventDefault(e);
+    return false;
+  }
+}
+
+// modern Chrome requires { passive: false } when adding event
+var supportsPassive = false;
+try {
+  window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+    get: function () { supportsPassive = true; } 
+  }));
+} catch(e) {}
+
+var wheelOpt = supportsPassive ? { passive: false } : false;
+var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+
+// call this to Disable
+function disableScroll() {
+  window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+  window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+  window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+  window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+}
+
+// call this to Enable
+function enableScroll() {
+  window.removeEventListener('DOMMouseScroll', preventDefault, false);
+  window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
+  window.removeEventListener('touchmove', preventDefault, wheelOpt);
+  window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+}
+
+disableScroll();
+</script>
