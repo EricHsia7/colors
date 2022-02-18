@@ -388,7 +388,7 @@ var idlist = colorsarr
 var nw = 0
 var ftop = idlist[nw]
 var fmedium = idlist[nw]
-var fbottom = idlist[nw+1]
+var fbottom = idlist[nw]
 var canslide = true
 var transitionsec = '0.28s'
 var rds
@@ -404,14 +404,17 @@ var tsta
 var tstb
 var ge = document.querySelector('.bx')
 function txco(hx) {
+  if(hx === null || hx === '' || hx === undefined) {
+    return '#000'
+  }
+  else {
   var thsoo = hexToRgb(hx)
-  console.log(hx)
-  console.log(thsoo)
   if((thsoo.r+thsoo.g+thsoo.b)/3 > 128) {
     return '#000'
   }
   else {
     return '#fff'
+  }
   }
 }
 function upd(ty,my,by) {
