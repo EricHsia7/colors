@@ -63,6 +63,8 @@
   justify-content: center;
   align-items: center;
   font-size:30px;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight:700;
 }
 .rdbx {
   position:absolute;
@@ -600,6 +602,25 @@ $('.bx[h="bottom"]').css({'transform':'translateX(' + (0) + 'px)','transition':t
       
 document.removeEventListener(eventlistenert[1],mo)
 },{passive: true});
+  
+  
+  
+  $(document).ready(function() {
+    //test 
+        var googlefontloadtime = new Date().getTime() ;
+        if(googlefontloadtime-parseInt(localStorage.getItem('googlefontNotoSansTCloaded')) < 2592000000) {
+  $('body').append('<style>' + localStorage.getItem('googlefontNotoSansTC') + '</style>');
+  
+}
+else {
+ $.ajax({type:'get',url:"https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap",dataType:'text',success:function(e) {
+  var googlefontloadtimedd = new Date().getTime() ;
+  localStorage.setItem('googlefontNotoSansTC', e); localStorage.setItem('googlefontNotoSansTCloaded', googlefontloadtimedd);
+   $('body').append('<style>' + e + '</style>');
+   }
+}); 
+}
+  });
 </script>
 
 
