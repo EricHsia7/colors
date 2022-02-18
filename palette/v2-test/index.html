@@ -132,6 +132,22 @@
       -webkit-appearance:none;
 outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);
 }
+
+.back {
+  background:url(https://erichsia7.github.io/colors/arrow-right.png);
+  background-size:20px;
+  background-position:center;
+  background-repeat:no-repeat;
+    width:55px;
+  height:55px;
+  position:fixed;
+  top:0px;
+  left:0px;
+  transform:rotate(180deg);
+  -webkit-appearance:none;
+outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);
+  -webkit-user-select: none;
+}
 </style>
 <div class="oe">
 <div class="bx" h="top">
@@ -157,7 +173,9 @@ outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);
     
     </div>
 </div>
-<div class="ti"></div>
+<div class="ti">
+<div class="back"></div>
+</div>
 <script>
   
 function upd(ty,my,by) {
