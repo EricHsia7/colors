@@ -722,10 +722,14 @@ function addpalette() {
     }
     
     $('.palette#' + iuid).css({'background':$(this).val()}).attr('rp',$(this).val());
-     $('.palette#' + iuid + ' .btn').css({'color':inpcolorq})
-     $('.palette#' + iuid + ' .view').attr('link','https://erichsia7.github.io/colors/?s=1&c=' + btoa($(this).val()) + '&open=palette&r=' + genid('random'));
+     $('.palette#' + iuid).attr('link','https://erichsia7.github.io/colors/?s=1&c=' + btoa($(this).val()) + '&open=palette&r=' + genid('random'));
     $('.view[hu="' + iuid + '"]').click(function() {
       window.open($(this).attr('link'));
+    });
+	 
+    $('#' + iuid).click(function() {
+      $('.aodbx,.aod').css({'display':'block'});
+      $('.aod,.aod li').attr('io',$(this).attr('id'))
     });
        $(this).css({'color':inpcolorq})
     
