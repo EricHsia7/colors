@@ -262,9 +262,9 @@ transition:width 0.3s ,background 0s;
 <div class="aodbx"></div>
 <div class="aod">
   <h4>選項</h4>
-  <li>查看</li>
-  <li>刪除</li>
-  <li>關閉</li>
+  <li p="view">查看</li>
+  <li p="del">刪除</li>
+  <li p="clo">關閉</li>
 </div>
 <div class="ladbar" style="display:none;"></div>
 <script>
@@ -767,6 +767,7 @@ var inpcolor = '#fff'
     });
     $('#' + erid).click(function() {
       $('.aodbx,.aod').css({'display':'block'});
+      $('.aod,.aod li').attr('io',$(this).attr('id'))
     });
 }
 
@@ -775,6 +776,19 @@ var inpcolor = '#fff'
   $('.palette_add').click(function() {
     addpalette()
   });
+  
+  $('li[p="view"]').click(function() {
+    $('.aodbx,.aod').css({'display':'none'});
+    window.open($('#' + $(this).attr('io')).attr('link'));
+  });
+  $('li[p="del"]').click(function() {
+      $('#' + $(this).attr('io')).remove();
+      resizepalette();
+      $('.aodbx,.aod').css({'display':'none'});
+    });
+$('li[p="clo"]').click(function() {
+$('.aodbx,.aod').css({'display':'none'});
+});
   //end
   
        
