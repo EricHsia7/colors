@@ -423,23 +423,26 @@ function txco(hx) {
   }
   }
 }
+function setadd(sel) {
+  sel.css({'background':'#e3e3e3','color':'#000'}).html('<input type="text" placeholder="輸入顏色" class="oeaddpiinp">')
+}
 function upd(ty,my,by) {
 if(ty === ':add:') {
-  $('.bx[h="top"] .vd').css({'background':'#e3e3e3','color':'#000'}).text('add')
+  setadd($('.bx[h="top"] .vd'))
 }
 else {
 $('.bx[h="top"] .vd').css({'background':ty,'background-size': 'cover','background-position': 'center','background-repeat': 'no-repeat','color':txco(ty)}).text(ty)
 }
 
 if(my === ':add:') {
-  $('.bx[h="medium"] .vd').css({'background':'#e3e3e3','color':'#000'}).text('add')
+  setadd($('.bx[h="medium"] .vd'))
 }
 else {
 $('.bx[h="medium"] .vd').css({'background':my,'background-size': 'cover','background-position': 'center','background-repeat': 'no-repeat','color':txco(my)}).text(my)
 }
 
 if(by === ':add:') {
-  $('.bx[h="bottom"] .vd').css({'background':'#e3e3e3','color':'#000'}).text('add')
+  setadd($('.bx[h="bottom"] .vd'))
 }
 else {
 $('.bx[h="bottom"] .vd').css({'background':by,'background-size': 'cover','background-position': 'center','background-repeat': 'no-repeat','color':txco(by)}).text(by)
