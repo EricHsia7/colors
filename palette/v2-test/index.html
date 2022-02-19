@@ -387,6 +387,7 @@ if(cs === '') {
 
 
 var idlist = colorsarr
+idlist.push(':add:')
 var nw = 0
 var ftop = idlist[nw]
 var fmedium = idlist[nw]
@@ -423,11 +424,30 @@ function txco(hx) {
   }
 }
 function upd(ty,my,by) {
+if(ty === ':add:') {
+  $('.bx[h="top"] .vd').css({'background':'#e3e3e3','color':'#000'}).text('add')
+}
+else {
 $('.bx[h="top"] .vd').css({'background':ty,'background-size': 'cover','background-position': 'center','background-repeat': 'no-repeat','color':txco(ty)}).text(ty)
-$('.bx[h="medium"] .vd').css({'background':my,'background-size': 'cover','background-position': 'center','background-repeat': 'no-repeat','color':txco(my)}).text(my)
-$('.bx[h="bottom"] .vd').css({'background':by,'background-size': 'cover','background-position': 'center','background-repeat': 'no-repeat','color':txco(by)}).text(by)
+}
 
+if(my === ':add:') {
+  $('.bx[h="medium"] .vd').css({'background':'#e3e3e3','color':'#000'}).text('add')
+}
+else {
+$('.bx[h="medium"] .vd').css({'background':my,'background-size': 'cover','background-position': 'center','background-repeat': 'no-repeat','color':txco(my)}).text(my)
+}
+
+if(by === ':add:') {
+  $('.bx[h="bottom"] .vd').css({'background':'#e3e3e3','color':'#000'}).text('add')
+}
+else {
+$('.bx[h="bottom"] .vd').css({'background':by,'background-size': 'cover','background-position': 'center','background-repeat': 'no-repeat','color':txco(by)}).text(by)
+}
   
+  
+
+
 }
 function acd() {
   $('.bx[h="top"]').css({'transform':'translateX(' + (0) + 'px)','transition':'0s'})
