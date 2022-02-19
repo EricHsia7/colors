@@ -757,7 +757,7 @@ var colorsarr = colorsstr.split(',')
 var inpcolor = '#fff'
     }
     var erid = genid('random') ;
-  $('.box').append('<div class="palette floatleft" style="background:' + colorsarr[i] + ';" id="' + erid + '" rp="' + colorsarr[i] + '"><input type="text" value="' + colorsarr[i] + '" style="color:' + inpcolor + '" readonly="readonly"><div class="view btn" style="color:' + inpcolor + '" link="https://erichsia7.github.io/colors/?s=1&c=' + btoa(colorsarr[i]) + '&open=palette&r=' + genid('random') + '" hu="' + erid + '">查看顏色</div><div class="del btn" style="color:' + inpcolor + '" gt="' + erid + '">刪除</div></div>');
+  $('.box').append('<div class="palette floatleft" style="background:' + colorsarr[i] + ';" id="' + erid + '" rp="' + colorsarr[i] + '" link="https://erichsia7.github.io/colors/?s=1&c=' + btoa(colorsarr[i]) + '&open=palette&r=' + genid('random') + '"><input type="text" value="' + colorsarr[i] + '" style="color:' + inpcolor + '" readonly="readonly"><div class="view btn" style="color:' + inpcolor + '" link="https://erichsia7.github.io/colors/?s=1&c=' + btoa(colorsarr[i]) + '&open=palette&r=' + genid('random') + '" hu="' + erid + '">查看顏色</div><div class="del btn" style="color:' + inpcolor + '" gt="' + erid + '">刪除</div></div>');
     $('.del[gt="' + erid + '"]').click(function() {
       $('#' + $(this).attr('gt')).remove();
       resizepalette();
