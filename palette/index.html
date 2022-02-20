@@ -137,7 +137,7 @@ outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);
   -webkit-user-select: none;
 }
 
-  .addtofav,.share {
+  .addtofav,.share,.vwc {
   position:absolute;
   top:7.5px;
   left:55px;
@@ -158,6 +158,10 @@ outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);
   .share {
   left:190px;
   width:70px
+}
+.vwc {
+left:190px;
+  width:120px
 }
 .aodbx {
   position: fixed;
@@ -277,6 +281,8 @@ outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);
 outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);
 }
 
+	
+
 .oe {
   position:fixed;
   top:55px;
@@ -285,6 +291,7 @@ outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);
   height:calc(100% - 55px);
   overflow:hidden;
   background:#e3e3e3;
+  display:none;
 }
 .bx {
   width:100%;
@@ -455,6 +462,7 @@ transition:width 0.3s ,background 0s;
   <div class="back"></div>
   <div class="addtofav">新增至喜好項目</div>
    <div class="share">分享</div>
+   <div class="vwc">檢視模式</div>
 </div>
 
 <div class="aodbx"></div>
@@ -1011,8 +1019,17 @@ $('.share').click(function() {
         shareDialog.classList.add('is-open');
     }
 });
-  
-	
+var yaua = 0
+$('.vwc').click(function() {
+if(yaua === 0) {
+$('.oe').css({'display':'block'});
+yaua = 1
+}
+else {
+$('.oe').css({'display':'none'});
+yaua = 0
+}
+});
 	
 	
 	
