@@ -759,9 +759,10 @@ function addtofav() {
   });
   
 function addpalette() {
+  if(!($('#addcoissss').val() === '')) {
   var iuid = genid('random') ;
   $('.palette_add').remove();
-  $('.box').append('<div class="palette floatleft" id="' + iuid + '" style="height:' + $('.palette').eq(0).width() + 'px"><input type="text"><div class="view btn" hu="' + iuid + '">查看顏色</div><div class="del btn" gt="' + iuid + '">刪除</div></div>')
+  $('.box').append('<div class="palette floatleft" id="' + iuid + '" style="height:' + $('.palette').eq(0).width() + 'px"><input type="text" value="' + $('#addcoissss').val() + '"><div class="view btn" hu="' + iuid + '">查看顏色</div><div class="del btn" gt="' + iuid + '">刪除</div></div>')
   $('.box').append('<div class="palette_add floatleft" style="height:' + $('.palette').eq(0).width() + 'px"></div>');
   $('.box').scrollTop(document.querySelector('.box').scrollHeight)
   $('.del[gt="' + iuid + '"]').click(function() {
@@ -774,7 +775,7 @@ function addpalette() {
     $('.aodbx,.aed').css({'display':'block'});
   })
   
-  $('.palette#' + iuid + ' input').keyup(function() {
+  
     resizepalette();
     if((hexToRgb($(this).val()).r+hexToRgb($(this).val()).g+hexToRgb($(this).val()).b)/3 > 128) {
       var inpcolorq = '#000'
@@ -795,21 +796,10 @@ function addpalette() {
     });
        $(this).css({'color':inpcolorq})
     
-    
+
     //savetourl();
-    
-  });
   
-  $('.palette#' + iuid + ' input').blur(function() {
-  if($(this).val() === '') {
   }
-    else {
-      $(this).attr('readonly','readonly');
-      savetourl();
-  }  
-  })
-  
-  
   
 }
 //start
