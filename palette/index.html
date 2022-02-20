@@ -762,7 +762,7 @@ function addpalette() {
   if(!($('#addcoissss').val() === '')) {
   var iuid = genid('random') ;
   $('.palette_add').remove();
-  $('.box').append('<div class="palette floatleft" id="' + iuid + '" style="height:' + $('.palette').eq(0).width() + 'px;background:' + $('#addcoissss').val() + " rp="' + $('#addcoissss').val() + '" ><input type="text" value="' + $('#addcoissss').val() + '" readonly="readonly"><div class="view btn" hu="' + iuid + '">查看顏色</div><div class="del btn" gt="' + iuid + '">刪除</div></div>')
+  $('.box').append('<div class="palette floatleft" id="' + iuid + '" style="height:' + $('.palette').eq(0).width() + 'px;background:' + $('#addcoissss').val() + '" rp="' + $('#addcoissss').val() + '" ><input type="text" value="' + $('#addcoissss').val() + '" readonly="readonly"><div class="view btn" hu="' + iuid + '">查看顏色</div><div class="del btn" gt="' + iuid + '">刪除</div></div>')
   $('.box').append('<div class="palette_add floatleft" style="height:' + $('.palette').eq(0).width() + 'px"></div>');
   $('.box').scrollTop(document.querySelector('.box').scrollHeight)
   
