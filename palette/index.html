@@ -515,6 +515,8 @@ $('.ladbar').css({'display':'none'});
 var url = new URL(getUrlString);
 var dt = url.searchParams.get('dt') ;
 var cs = atob(url.searchParams.get('cs')) ;
+var colorsstr = cs ;
+var colorsarr = colorsstr.split(',')
 
 var idlist = colorsarr
 var nw = 0
@@ -958,8 +960,7 @@ function addpalette() {
   
 }
 //start
-var colorsstr = cs ;
-var colorsarr = colorsstr.split(',')
+
   for (var i = 0; i < colorsarr.length; i++) {
     if((hexToRgb(colorsarr[i]).r+hexToRgb(colorsarr[i]).g+hexToRgb(colorsarr[i]).b)/3 > 128) {
       var inpcolor = '#000'
