@@ -515,7 +515,12 @@ $('.ladbar').css({'display':'none'});
 var url = new URL(getUrlString);
 var dt = url.searchParams.get('dt') ;
 var cs = atob(url.searchParams.get('cs')) ;
-  
+
+var idlist = colorsarr
+var nw = 0
+var ftop = idlist[nw]
+var fmedium = idlist[nw]
+var fbottom = idlist[nw]
   
 function genid(mode) {
 if(mode === "random"){
@@ -883,6 +888,11 @@ function savetourl() {
   for (var i = 0; i < $('.box .palette').length; i++) {
     unsaarr.push($('.box .palette').eq(i).attr('rp'))
   }
+  idlist = unsaarr
+  nw = 0
+  ftop = idlist[nw]
+  fmedium = idlist[nw]
+  fbottom = idlist[nw]
   history.pushState(null, null,'https://erichsia7.github.io/colors/palette/?dt=1&cs=' + btoa(unsaarr.join(',')) + '&r=' + genid('random'));
 }
 document.addEventListener("paste", function (e){
@@ -1035,11 +1045,6 @@ yaua = 0
 	
 	
 	
-	var idlist = colorsarr
-var nw = 0
-var ftop = idlist[nw]
-var fmedium = idlist[nw]
-var fbottom = idlist[nw]
 if(idlist.length > 1) {
   fbottom = idlist[nw+1]
 }
