@@ -277,6 +277,106 @@ outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);
 outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);
 }
 
+.oe {
+  position:fixed;
+  top:55px;
+  left:0px;
+  width:100%;
+  height:calc(100% - 55px);
+  overflow:hidden;
+  background:#e3e3e3;
+}
+.bx {
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0);
+  position:absolute;
+  top:0px;
+  left:0px;
+  transition-timing-function: ease;
+}
+.bx[h="top"] {
+  left:-100%;
+  /*background:#ff0000;*/
+}
+.bx[h="medium"] {
+  left:0%;
+}
+.bx[h="bottom"] {
+  left:100%;
+  /*background:#fff000*/
+}
+.vd {
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size:30px;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight:700;
+}
+.rdbx {
+  position:absolute;
+  top:0px;
+  left:0px;
+  height:9px;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rdb {
+  width:100%;
+  height:9px;
+  border-radius:12px;
+  position:relative;
+  /*
+  background:rgba(0,0,0,0.35);
+  -webkit-backdrop-filter:invert(100%);
+  backdrop-filter:invert(100%);
+  opacity:1
+  */
+}
+.rd {
+  height:9px;
+  position:absolute;
+  top:0px;
+  left:0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*transition:0.05s;*/
+  min-width:9px;
+}
+.rdp {
+  background:rgba(250,250,250,0.8);
+  border-radius:12px;
+  -webkit-backdrop-filter:invert(100%);
+  backdrop-filter:invert(100%);
+  width:calc(100% - 4px);
+  height:calc(100% - 6px);
+  min-width:5px;
+}
+.rdo {
+  width:calc(100% - 4px);
+  height:calc(100% - 6px);
+  background:rgba(0,0,0,0);
+  border-radius:12px;
+  position:absolute;
+  -webkit-backdrop-filter: grayscale(100%);
+  backdrop-filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  opacity:1;
+  min-width:5px;
+}
+
+
 @media only screen and (min-width: 600px) {
   .palette,.palette_add {
   width:calc(100% / 3);
@@ -324,6 +424,33 @@ transition:width 0.3s ,background 0s;
 </style>
 <div class="box">
 </div>
+
+<div class="oe">
+<div class="bx" h="top">
+  <div class="vd"></div>
+  <div class="gd"></div>
+</div>
+  <div class="bx" h="medium">
+  <div class="vd"></div>
+  <div class="gd"></div>
+</div>
+ <div class="bx" h="bottom">
+  <div class="vd"></div>
+  <div class="gd"></div>
+</div>
+  <div class="rdbx">
+    <div class="rdb">
+      <div class="rd">
+<div class="rdp"></div>
+<div class="rdo"></div>
+</div>
+    </div>
+    
+    
+    </div>
+</div>
+
+
 <div class="top">
   <div class="back"></div>
   <div class="addtofav">新增至喜好項目</div>
@@ -885,6 +1012,253 @@ $('.share').click(function() {
     }
 });
   
+	
+	
+	
+	
+	
+	
+	var idlist = colorsarr
+var nw = 0
+var ftop = idlist[nw]
+var fmedium = idlist[nw]
+var fbottom = idlist[nw]
+if(idlist.length > 1) {
+  fbottom = idlist[nw+1]
+}
+var canslide = true
+var transitionsec = '0.28s'
+var rds
+var el = document.querySelectorAll('.bx')[1]
+var touchm = false ;
+var ft = 0
+var ofty = 0
+var mouseX = 0
+var mouseY = 0
+var offsetX = 0
+var offsetY = 0
+var tsta
+var tstb
+var ge = document.querySelector('.bx')
+function txco(hx) {
+  if(hx === null || hx === '' || hx === undefined) {
+    return '#000'
+  }
+  else {
+  var thsoo = hexToRgb(hx)
+  if((thsoo.r+thsoo.g+thsoo.b)/3 > 128) {
+    return '#000'
+  }
+  else {
+    return '#fff'
+  }
+  }
+}
+function setadd(sel) {
+  sel.css({'background':'#e3e3e3','color':'#000'}).html('<input type="text" placeholder="輸入顏色" class="oeaddpiinp">')
+}
+function upd(ty,my,by) {
+if(ty === ':add:') {
+  setadd($('.bx[h="top"] .vd'))
+}
+else {
+$('.bx[h="top"] .vd').css({'background':ty,'background-size': 'cover','background-position': 'center','background-repeat': 'no-repeat','color':txco(ty)}).text(ty)
+}
+
+if(my === ':add:') {
+  setadd($('.bx[h="medium"] .vd'))
+}
+else {
+$('.bx[h="medium"] .vd').css({'background':my,'background-size': 'cover','background-position': 'center','background-repeat': 'no-repeat','color':txco(my)}).text(my)
+}
+
+if(by === ':add:') {
+  setadd($('.bx[h="bottom"] .vd'))
+}
+else {
+$('.bx[h="bottom"] .vd').css({'background':by,'background-size': 'cover','background-position': 'center','background-repeat': 'no-repeat','color':txco(by)}).text(by)
+}
+  
+  
+
+
+}
+function acd() {
+  $('.bx[h="top"]').css({'transform':'translateX(' + (0) + 'px)','transition':'0s'})
+    $('.bx[h="medium"]').css({'transform':'translateX(' + (0) + 'px)','transition':'0s'})
+$('.bx[h="bottom"]').css({'transform':'translateX(' + (0) + 'px)','transition':'0s'})
+  
+  
+}
+function dw() {
+  document.removeEventListener('transitionend',dw)
+  if(nw<idlist.length-1) {
+    nw +=1
+    canslide = true
+  }
+  else {
+    canslide = false
+  }
+  ftop = idlist[nw-1]
+  fmedium = idlist[nw]
+  fbottom = idlist[nw+1]
+  acd()
+  upd(ftop,fmedium,fbottom)
+}
+
+function pu() {
+  document.removeEventListener('transitionend',pu)
+  
+  if(nw>0) {
+    nw -=1
+    canslide = true
+  }
+  else {
+    canslide = false
+  }
+  ftop = idlist[nw-1]
+  fmedium = idlist[nw]
+  fbottom = idlist[nw+1]
+  acd()
+  upd(ftop,fmedium,fbottom)
+}
+
+
+upd(ftop,fmedium,fbottom)
+
+  
+  $.extend($.support, { touch: "ontouchend" in document });
+ 
+ var eventlistenert = ['touchstart','touchmove','touchend'] ;
+ if($.support.touch) {
+  eventlistenert = ['touchstart','touchmove','touchend'] ;
+ }
+ else {
+  eventlistenert = ['mousedown','mousemove','mouseup'] ;
+ }
+
+
+$('.rd').width($('.rdb').width()/idlist.length)
+$(window).resize(function() {
+  $('.rd').width($('.rdb').width()/idlist.length)
+})
+function rdf() {
+var rdtra = (($('.bx[h="medium"]').width()*(nw-1))+($('.bx[h="medium"]').width()-$('.bx[h="medium"]').offset().left))/($('.bx[h="medium"]').width()*idlist.length)*$('.rdb').width()
+if(rdtra < 0) {
+rdtra = 0
+}
+if(rdtra > $('.rdb').width()-$('.rd').width()) {
+rdtra = $('.rdb').width()-$('.rd').width()
+}
+  $('.rd').css({'transform':'translateX(' + rdtra + 'px)'})
+}
+rds = setInterval(rdf,1)
+
+function uee(e) {
+  $('.bx').css({'transform':'translateX(0px)'})
+  mouseY = 0
+}
+
+function mo(e) {
+  e.preventDefault();
+  pagy= e.pageX-mouseX
+  
+  if(pagy > $('.bx[h="medium"]').width()) {
+    pagy = $('.bx[h="medium"]').width()
+  }
+  if(pagy < (0-$('.bx[h="medium"]').width())) {
+    pagy = (0-$('.bx[h="medium"]').width())
+  }
+  
+  
+$('.bx[h="top"]').css({'transform':'translateX(' + (pagy) + 'px)'})
+$('.bx[h="medium"]').css({'transform':'translateX(' + (pagy) + 'px)'})
+$('.bx[h="bottom"]').css({'transform':'translateX(' + (pagy) + 'px)'})
+ 
+  
+  
+  if(nw > 0 && nw < idlist.length-1) {
+    pagy= e.pageX-mouseX
+}
+  else {
+if(nw<1 &&  $('.bx[h="medium"]').offset().left >0) {
+$('.bx').css({'transform':'translateX(' + (0) + 'px)'})
+}
+    
+if(nw>(idlist.length-2) &&  $('.bx[h="medium"]').offset().left <-1) {
+$('.bx').css({'transform':'translateX(' + (0) + 'px)'})
+}
+    
+}
+  
+}
+el.addEventListener(eventlistenert[0],function(e) {
+  e.preventDefault();
+  
+  tsta = new Date()
+  touchm = true
+  mouseX = e.pageX
+  mouseY = e.pageY-$('.bx[h="medium"]').offset().top
+$('.bx[h="top"]').css({'transition':'0s'})
+$('.bx[h="medium"]').css({'transition':'0s'})
+$('.bx[h="bottom"]').css({'transition':'0s'})
+
+  el.addEventListener(eventlistenert[1],mo,{passive: true});
+},{passive: true});
+
+el.addEventListener(eventlistenert[2],function(e) {
+  e.preventDefault();
+  tstb = new Date()
+  transitionsec = (1-(Math.abs($('.bx[h="medium"]').offset().left)/$('.bx[h="medium"]').width()))*0.6 + 's'
+  
+  
+  if(touchm) {
+  offsetX += e.pageX - mouseX
+  offsetY += e.pageY - mouseY
+  }
+  touchm = false
+   
+  
+if($('.bx[h="medium"]').offset().left < (0-($('.bx[h="medium"]').width()*0.23))) {
+ $('.bx[h="medium"]').css({'transform':'translateX(-100%)','transition':transitionsec})
+  
+  $('.bx[h="bottom"]').css({'transform':'translateX(-100%)','transition':transitionsec})
+ 
+  //down
+  
+  document.addEventListener('transitionend',dw)
+  
+  //downend
+}
+else {
+
+  
+  if($('.bx[h="medium"]').offset().left > (($('.bx[h="medium"]').width()*0.23))) {
+    $('.bx[h="medium"]').css({'transform':'translateX(100%)','transition':transitionsec})
+    $('.bx[h="top"]').css({'transform':'translateX(100%)','transition':transitionsec})
+   
+    //td
+    
+    document.addEventListener('transitionend',pu)
+    //upend
+  }
+  else {
+    $('.bx[h="top"]').css({'transform':'translateX(' + (0) + 'px)','transition':transitionsec})
+    $('.bx[h="medium"]').css({'transform':'translateX(' + (0) + 'px)','transition':transitionsec})
+$('.bx[h="bottom"]').css({'transform':'translateX(' + (0) + 'px)','transition':transitionsec})
+
+  }
+  
+
+}
+
+
+      
+document.removeEventListener(eventlistenert[1],mo)
+},{passive: true});
+	
+	
+	
   
     $(document).ready(function() {
     //test 
