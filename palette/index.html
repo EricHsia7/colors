@@ -873,7 +873,29 @@ darkmodematchedstr = 'false' ;
   
   //darkmodeend
   
+  function upd(ty,my,by) {
+if(ty === ':add:') {
+  setadd($('.bx[h="top"] .vd'))
+}
+else {
+$('.bx[h="top"] .vd').css({'background':ty,'background-size': 'cover','background-position': 'center','background-repeat': 'no-repeat','color':txco(ty)}).text(ty)
+}
+
+if(my === ':add:') {
+  setadd($('.bx[h="medium"] .vd'))
+}
+else {
+$('.bx[h="medium"] .vd').css({'background':my,'background-size': 'cover','background-position': 'center','background-repeat': 'no-repeat','color':txco(my)}).text(my)
+}
+
+if(by === ':add:') {
+  setadd($('.bx[h="bottom"] .vd'))
+}
+else {
+$('.bx[h="bottom"] .vd').css({'background':by,'background-size': 'cover','background-position': 'center','background-repeat': 'no-repeat','color':txco(by)}).text(by)
+}
   
+}
   
   
 if(dt === '1') {
@@ -892,9 +914,12 @@ function savetourl() {
   }
   idlist = unsaarr
   nw = 0
-  ftop = idlist[nw]
+  ftop = idlist[nw-1]
   fmedium = idlist[nw]
-  fbottom = idlist[nw]
+  fbottom = idlist[nw+1]
+  acd()
+  upd(ftop,fmedium,fbottom)
+
   history.pushState(null, null,'https://erichsia7.github.io/colors/palette/?dt=1&cs=' + btoa(unsaarr.join(',')) + '&r=' + genid('random'));
 }
 document.addEventListener("paste", function (e){
@@ -1080,32 +1105,7 @@ function txco(hx) {
 function setadd(sel) {
   sel.css({'background':'#e3e3e3','color':'#000'}).html('<input type="text" placeholder="輸入顏色" class="oeaddpiinp">')
 }
-function upd(ty,my,by) {
-if(ty === ':add:') {
-  setadd($('.bx[h="top"] .vd'))
-}
-else {
-$('.bx[h="top"] .vd').css({'background':ty,'background-size': 'cover','background-position': 'center','background-repeat': 'no-repeat','color':txco(ty)}).text(ty)
-}
 
-if(my === ':add:') {
-  setadd($('.bx[h="medium"] .vd'))
-}
-else {
-$('.bx[h="medium"] .vd').css({'background':my,'background-size': 'cover','background-position': 'center','background-repeat': 'no-repeat','color':txco(my)}).text(my)
-}
-
-if(by === ':add:') {
-  setadd($('.bx[h="bottom"] .vd'))
-}
-else {
-$('.bx[h="bottom"] .vd').css({'background':by,'background-size': 'cover','background-position': 'center','background-repeat': 'no-repeat','color':txco(by)}).text(by)
-}
-  
-  
-
-
-}
 function acd() {
   $('.bx[h="top"]').css({'transform':'translateX(' + (0) + 'px)','transition':'0s'})
     $('.bx[h="medium"]').css({'transform':'translateX(' + (0) + 'px)','transition':'0s'})
