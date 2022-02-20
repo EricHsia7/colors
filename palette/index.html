@@ -523,7 +523,8 @@ var nw = 0
 var ftop = idlist[nw]
 var fmedium = idlist[nw]
 var fbottom = idlist[nw]
-  
+var yaua = 0
+
 function genid(mode) {
 if(mode === "random"){
 var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
@@ -912,6 +913,7 @@ function savetourl() {
   for (var i = 0; i < $('.box .palette').length; i++) {
     unsaarr.push($('.box .palette').eq(i).attr('rp'))
   }
+  if(yaua === 1) {
   idlist = unsaarr
   nw = 0
   ftop = idlist[nw-1]
@@ -919,6 +921,7 @@ function savetourl() {
   fbottom = idlist[nw+1]
   acd()
   upd(ftop,fmedium,fbottom)
+  }
 
   history.pushState(null, null,'https://erichsia7.github.io/colors/palette/?dt=1&cs=' + btoa(unsaarr.join(',')) + '&r=' + genid('random'));
 }
@@ -1104,7 +1107,7 @@ function enableScroll() {
 	
 	
 	
-var yaua = 0
+
 $('.vwc').click(function() {
 if(yaua === 0) {
 disableScroll();
