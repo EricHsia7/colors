@@ -1042,7 +1042,9 @@ var favrecommendforms = $.ajax({url:'https://docs.google.com/forms/d/e/1FAIpQLSc
     }
   });
   var morecardloaded = 0 ;
-  var morecardv = 'gl2xddas4lia2j51'
+  var morecardv = 'test_gl2xddas4lia2j51'
+  //var morecardiiu = 'https://erichsia7.github.io/colors/more_options_image/'
+  var morecardiiu = ''
   $('.mor').click(function() {
     if(morecardloaded === 0) {
     morecardloaded = 1
@@ -1056,7 +1058,7 @@ if(localStorage.getItem('moreopt_d') === morecardv) {
   for (var i = 0; i < 8; i++) {
     var morebtnid = genid('random')
     var morecardthisjson = morecardjson[i] ;
-    $('.morecardimage').eq(i).css({'background':'url(https://erichsia7.github.io/colors/more_options_image/' + morecardthisjson.image + ')','background-size':'cover'})
+    $('.morecardimage').eq(i).css({'background':'url(' + morecardiiu + morecardthisjson.image + ')','background-size':'cover'})
 $('.morecardtitle').eq(i).html(morecardthisjson.title).css({'background':'rgba(0, 0, 0, 0)'})
     $('.morecardbtn').eq(i).css({'background':'var(--morecard-btn-color)','border-radius':'10px','width':'auto','padding-left':'8px','padding-right':'8px','height':'35px','top':'10px'}).html(morecardthisjson.btn).attr('ripple-onclick',morecardthisjson.script).attr('poid',morebtnid)
     ripple('.morecardbtn[poid="' + morebtnid + '"]','var(--morecard-btn-ripple)','0.3',800,'false');
@@ -1065,14 +1067,14 @@ $('.morecardtitle').eq(i).html(morecardthisjson.title).css({'background':'rgba(0
 }
 else {
 usagepoint('more_options_open','+1')
-$.ajax({type:'get',url:"https://erichsia7.github.io/colors/json/more_options.json?r=" + genid('random'),dataType:'text',success:function(e) {
+$.ajax({type:'get',url:"https://erichsia7.github.io/colors/json/more_options_2.json?r=" + genid('random'),dataType:'text',success:function(e) {
 var morecardjson = JSON.parse(e) ;
   localStorage.setItem('moreopt',e)
   localStorage.setItem('moreopt_d',morecardv)
   for (var i = 0; i < 8; i++) {
     var morebtnid = genid('random')
     var morecardthisjson = morecardjson[i] ;
-    $('.morecardimage').eq(i).css({'background':'url(https://erichsia7.github.io/colors/more_options_image/' + morecardthisjson.image + ')','background-size':'cover'})
+    $('.morecardimage').eq(i).css({'background':'url(' + morecardiiu + morecardthisjson.image + ')','background-size':'cover'})
 $('.morecardtitle').eq(i).html(morecardthisjson.title).css({'background':'rgba(0, 0, 0, 0)'})
     $('.morecardbtn').eq(i).css({'background':'var(--morecard-btn-color)','border-radius':'10px','width':'auto','padding-left':'8px','padding-right':'8px','height':'35px','top':'10px'}).html(morecardthisjson.btn).attr('ripple-onclick',morecardthisjson.script).attr('poid',morebtnid)
     ripple('.morecardbtn[poid="' + morebtnid + '"]','var(--morecard-btn-ripple)','0.3',800,'false');	  
