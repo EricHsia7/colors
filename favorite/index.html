@@ -949,6 +949,11 @@ function start() {
  if(getCookie('colorfav2') === "") {
   $('#eelo').css({'display':'block'});
  }
+
+ caches.keys().then(function(names) {
+    for (let name of names)
+        caches.delete(name);
+});
 var favcolorss = getCookie('colorfav2').substring(1,getCookie('colorfav2').length).split('&') ;
   for (var ffpp = 0; ffpp < favcolorss.length; ffpp++) {
    if(favcolorss[ffpp].indexOf('li') != -1) {
