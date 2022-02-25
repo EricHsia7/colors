@@ -1051,8 +1051,13 @@ $('#' + fghidf).css({'border-radius':'0px','width':'100%','height':'100%','posit
    var oanggrg = btoa(String($('#' + $(this).attr('crdid')).attr('rg'))) ;
    var oanggrgc = btoa(String($('#' + $(this).attr('crdid')).css('color'))) ;
    var arrtfyygvgppoy = String($('#' + $(this).attr('crdid')).attr('arrtctcl')) ;
+   var peroplik = hsijllink + '&scroll=' + $(document).scrollTop() + '&oani=' + fghidf + '&oanc=' + oanggb + '&fgx=' + oanggx + '&fgy=' + oanggy + '&fgw=' + oanggw + '&fgh=' + oanggh + '&rg=' + oanggrg + '&rgc=' + oanggrgc + '&lig=' + arrtfyygvgppoy + '&r=' + genid('random') ;
+   caches.open("colors_fav_preload").then(function (cache) {
+cache.addAll([peroplik]);
+});
+
    setTimeout(function() {
-   location.href = hsijllink + '&scroll=' + $(document).scrollTop() + '&oani=' + fghidf + '&oanc=' + oanggb + '&fgx=' + oanggx + '&fgy=' + oanggy + '&fgw=' + oanggw + '&fgh=' + oanggh + '&rg=' + oanggrg + '&rgc=' + oanggrgc + '&lig=' + arrtfyygvgppoy + '&r=' + genid('random') ;
+   location.href = peroplik
    },310);
   //$('#' + $(this).attr('crdid')).css({'width':'100%','height':'100%','position':'fixed','top':'0px','left':'0px','transition':'0.75s'});
    
