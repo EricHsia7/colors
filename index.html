@@ -478,7 +478,13 @@ function getlocalst(cname) {
 	return localStorage.getItem(cname)
 	}
 }
+//standalone
+if (window.matchMedia('(display-mode: standalone)').matches) {  
+    if(!(localStorage.getItem('standalone_datatransfer') === '1')) {
 
+    }
+}  
+//standaloneend
   //userid
   function systeminfodata(uid) {
   var nav = window.navigator ;
