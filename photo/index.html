@@ -600,7 +600,7 @@ function handleFileSelect(evt) {
       //Converting Binary Data to base 64
       var base64String = window.btoa(binaryData);
       //showing file converted to base64
-      fo("data:image/jpeg;base64," + base64String);
+      fo("data:" + f.type + ";base64," + base64String);
     };
   })(f);
   // Read in the image file as a data URL.
@@ -621,7 +621,7 @@ function handleFileDrop(ev) {
           //Converting Binary Data to base 64
           var base64String = window.btoa(binaryData);
           //showing file converted to base64
-          fo("data:image/jpeg;base64," + base64String);
+          fo("data:" + file.type + ";base64," + base64String);
         };
       })(file);
       // Read in the image file as a data URL.
@@ -640,7 +640,7 @@ function handleFileDrop(ev) {
         //Converting Binary Data to base 64
         var base64String = window.btoa(binaryData);
         //showing file converted to base64
-        fo("data:image/jpeg;base64," + base64String);
+        fo("data:" + ev.dataTransfer.files[0].type + ";base64," + base64String);
       };
     })(ev.dataTransfer.files[0]);
     // Read in the image file as a data URL.
@@ -649,7 +649,7 @@ function handleFileDrop(ev) {
 }
 
 function dropHandler(ev) {
-  console.log("File(s) dropped");
+  
   $('*[hu="q"]').css({ display: "block" });
   $(".dropi").css({ opacity: "0" });
   // Prevent default behavior (Prevent file from being opened)
@@ -658,7 +658,7 @@ function dropHandler(ev) {
 }
 
 function dragOverHandler(ev) {
-  console.log("File(s) in drop zone");
+  
   $('*[hu="q"]').css({ display: "none" });
   $(".dropi").css({ opacity: "1" });
   // Prevent default behavior (Prevent file from being opened)
