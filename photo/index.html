@@ -622,9 +622,9 @@ function handleFileDrop(ev) {
           //Converting Binary Data to base 64
           var base64String = window.btoa(binaryData);
           //showing file converted to base64
-	  console.log(e.target.type)
+	  console.log(file.type)
 	  console.log('b')
-          fo("data:" + e.target.type + ";base64," + base64String);
+          fo("data:" + file.type + ";base64," + base64String);
 	  
         };
       })(file);
