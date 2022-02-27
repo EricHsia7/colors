@@ -600,6 +600,7 @@ function handleFileSelect(evt) {
       //Converting Binary Data to base 64
       var base64String = window.btoa(binaryData);
       //showing file converted to base64
+	  console.log('a')
       fo("data:" + f.type + ";base64," + base64String);
     };
   })(f);
@@ -622,6 +623,7 @@ function handleFileDrop(ev) {
           var base64String = window.btoa(binaryData);
           //showing file converted to base64
 	  console.log(e.target.type)
+	  console.log('b')
           fo("data:" + e.target.type + ";base64," + base64String);
 	  
         };
@@ -642,6 +644,7 @@ function handleFileDrop(ev) {
         var base64String = window.btoa(binaryData);
         //showing file converted to base64
 	  console.log(e.target.type)
+	   console.log('c')
         fo("data:" + ev.dataTransfer.files[0].type + ";base64," + base64String);
       };
     })(ev.dataTransfer.files[0]);
