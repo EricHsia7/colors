@@ -23,6 +23,7 @@
 <link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="shortcut icon" />
 <link rel="manifest" href="manifest.json?qpipoo">
 <style>
+  * {outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);}
 .title {
   background: #fff;
   position: fixed;
@@ -627,5 +628,8 @@ $('.close').click(function() {
   $(".dropi").css({ opacity: "0" });
   $('.rst').css({'display':'none'})
 })
+$('.backbtn').click(function() {
+location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
+});
   
 </script>
