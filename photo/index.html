@@ -569,7 +569,7 @@ function fo(bs64) {
         
        $('.lt').append('<div class="lty"><div class="lt_c" style="--gt-b:' + rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2]) + '"></div><div class="lt_ti">' + rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2]) + '</div><div class="lt_vi" id="' + drft + '" hexbase64="' + btoa(rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2])) + '">查看顏色</div></div>')
        $('.lt_vi#' + drft).click(function() {
-	 window.open('https://erichsia7.github.io/colors/?s=1&c=' + $(this).attr('hexbase64') + '&open=camera&r=' + genid('random'))
+	 window.open('https://erichsia7.github.io/colors/?s=1&c=' + $(this).attr('hexbase64') + '&open=photo&r=' + genid('random'))
        });
         
        
