@@ -621,7 +621,7 @@ function handleFileDrop(ev) {
           //Converting Binary Data to base 64
           var base64String = window.btoa(binaryData);
           //showing file converted to base64
-          fo("data:" + file.type + ";base64," + base64String);
+          fo("data:" + e.target.type + ";base64," + base64String);
         };
       })(file);
       // Read in the image file as a data URL.
@@ -630,8 +630,7 @@ function handleFileDrop(ev) {
       //**
     }
   } else {
-    console.log("... file[" + 0 + "].name = " + ev.dataTransfer.files[0].name);
-
+    
     var reader = new FileReader();
     // Closure to capture the file information.
     reader.onload = (function (theFile) {
