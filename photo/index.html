@@ -601,6 +601,7 @@ function handleFileSelect(evt) {
       var base64String = window.btoa(binaryData);
       //showing file converted to base64
 	  console.log('a')
+	   console.log(f.type)
       fo("data:" + f.type + ";base64," + base64String);
     };
   })(f);
