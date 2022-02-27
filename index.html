@@ -35,7 +35,6 @@ body{background:#fff;transition:.222s}
 .colorinps{position:absolute;top:50%;left:0;transform:translateY(-50%) translateX(0px);height:55px;width:100%;display:flex;justify-content:space-around;overflow:hidden}
 .grd{background:var(--rg-245) url(https://erichsia7.github.io/colors/ico_min/gradient.png)}
 #cc{position:fixed;top:0;left:0;display:none}
-input#files,input#files2{display:none}
 .mor{background:var(--rg-245) url(https://erichsia7.github.io/colors/ico_min/more.png)}
 .filed-camera{background:var(--rg-245) url(https://erichsia7.github.io/colors/ico_min/camera.png)}
 .filed-img{background:var(--rg-245) url(https://erichsia7.github.io/colors/ico_min/img.png)}
@@ -90,7 +89,6 @@ table,td{color:#fff;font-family:"Noto Sans TC",sans-serif}
 tr td:nth-child(1){width:40px;border:1px solid #fff;height:40px;padding:0;border-radius:10px;display:flex;justify-content:center;align-items:center;font-weight:700}
 tr td:nth-child(2){font-weight:500;font-size:18px}
 thead,tfoot{color:#fff}
-#colorjsloading{display:none;justify-content:center;align-items:center;position:fixed;top:0;left:0;width:100%;height:100%;background:#fff;font-size:1.3rem;font-weight:500}
 .favrecommendcard{width:100%;height:100px;background:#fff;margin-top:15px;border-radius:15px;border:1px #e3e3e3 solid;-webkit-user-select:none;box-sizing: border-box;}
 .favrecommendcardcontent{padding:1.1rem;position:relative;-webkit-user-select:none}
 .favrecommendcard h4{margin:0 0 .35rem;font-size:1.5rem;line-height:1.5rem;position:relative;font-family:"Noto Sans TC",sans-serif;font-weight:700;-webkit-user-select:none}
@@ -155,7 +153,6 @@ thead,tfoot{color:#fff}
 #randomrecommendtitletags{color:#fff}
 .loading .favrecommendcarddescription{background:#1f1f1f}
 .loading h4{background:#1f1f1f}
-#colorjsloading{background:#1a1a1a;color:#fff}
 #deleting{background:#1a1a1a;color:#fff}
 .cmore{background:#1a1a1a;display:none}
 body{background:#1a1a1a}
@@ -211,10 +208,7 @@ input#files,input#files2{display:none}
 </svg>
 </center>
 <div id="filej">
-<label for="files2">
 <div class="filed-img lle btn"></div>
-<input type="file" id="files2" name="files2" accept="image/*" />
-</label>
 <div class="filed-camera lle btn"></div>
 <div class="ft2 lle btn"></div>
 <div class="rand2 lle btn"></div>
@@ -307,9 +301,6 @@ input#files,input#files2{display:none}
 <div class="alert_btn">關閉</div>
 </div>
 <div class="online"></div>
-<div id="colorjsloading">
-解析中
-</div>
 <div id="deleting" style="position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; display: none; justify-content: center; align-items: center; font-size: 1.3rem; font-weight: 500;">刪除中</div>
 <div class="ladbar" style="display: none;"></div>
 
@@ -802,87 +793,9 @@ function sendusagepoint() {
     $('.alert').css({'display':'none'});
     }, 510);
     });
-if (window.File && window.FileReader && window.FileList && window.Blob) {
-  document.getElementById('files2').addEventListener('change', handleFileSelect, false);
-} else {
-  //tvenyu6kcvw3zz16
-}
-
-function handleFileSelect(evt) {
-  $('.loadbar').css({'width':'0%'})
-  var f = evt.target.files[0]; // FileList object
-  var reader = new FileReader();
-  // Closure to capture the file information.
-  reader.onload = (function(theFile) {
-    return function(e) {
-      var binaryData = e.target.result;
-      //Converting Binary Data to base 64
-      var base64String = window.btoa(binaryData);
-      //showing file converted to base64
-      $('#colorjsloading').fadeIn(1).css({'display':'flex'});
-      var ctx = document.getElementById('cc').getContext('2d');
-  var img = new Image();
-  img.onload = function(){
-    ctx.drawImage(img,0,0,ccw,ccw);
-  };
-  img.src = 'data:image/jpeg;base64,' + base64String;
-var rgb_r = 0 ;     
-var rgb_g = 0 ;   
-var rgb_b = 0 ; 
-var rgb_rm = [] ;
-var rgb_gm = [] ;
-var rgb_bm = [] ;
-var jsprognu = 0 ;
-
-var load = 0 ;
-      gtag('event', 'photo', {
-    'event_category': 'color',
-    'event_label': '--',
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    setTimeout(function() {
-   for (var xi=0; xi<ccw; xi++){
-     for (var yi=0; yi<ccw; yi++){
-  rgb_r += ctx.getImageData(xi, yi, 1, 1).data[0] ;
-  rgb_g += ctx.getImageData(xi, yi, 1, 1).data[1] ;
-  rgb_b += ctx.getImageData(xi, yi, 1, 1).data[2] ; 
-  rgb_rm.push(ctx.getImageData(xi, yi, 1, 1).data[0]) ;
-  rgb_gm.push(ctx.getImageData(xi, yi, 1, 1).data[1]) ;
-  rgb_bm.push(ctx.getImageData(xi, yi, 1, 1).data[2]) ;
-       jsprognu += 1 ;
-     }
-     //prog
-     var cojsprogw = Math.ceil((jsprognu/ccwa)*100) ;
-     $('#colorjsloading').html('解析中(' + cojsprogw + '%)');
-     
-     //progend
-   }
-    if(getMode(rgb_rm).length > 0 && getMode(rgb_gm).length > 0 && getMode(rgb_bm).length > 0) {
-      var rgbs = getMode(rgb_rm) + ',' + getMode(rgb_gm) + ',' + getMode(rgb_bm) ;
-      var rgbvfr = rgbToHex(parseInt(getMode(rgb_rm)),parseInt(getMode(rgb_gm)),parseInt(getMode(rgb_bm))) ;
-    }
-      else {
-        var rgbs = Math.ceil(rgb_r/ccwa) + ',' + Math.ceil(rgb_g/ccwa) + ',' + Math.ceil(rgb_b/ccwa) ;
-        var rgbvfr = rgbToHex(Math.ceil(rgb_r/ccwa), Math.ceil(rgb_g/ccwa), Math.ceil(rgb_b/ccwa)) ;
-      }
-    $('#rgb').val(rgbvfr);
-    $('.color').css({'background':rgbvfr });
-    if((Math.ceil(rgb_r/ccwa)+Math.ceil(rgb_g/ccwa)+Math.ceil(rgb_b/ccwa))/3 > 128) {
-      $('#rgb').css({'color':'#000'});
-    }
-    else {
-      $('#rgb').css({'color':'#fff'});
-    }
-    location.href = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbvfr) + '&r=' + genid('random');
-  },200);
-    }
-  }); 
-    };
-
-  })(f);
-  // Read in the image file as a data URL.
-  reader.readAsBinaryString(f);
-}
+$('.filed-img').click(function() {
+location.href = 'https://erichsia7.github.io/colors/photo/?r=' + genid('random')
+});
   //touch
       $.extend($.support, { touch: "ontouchend" in document });
 	
