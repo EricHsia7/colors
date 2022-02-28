@@ -444,7 +444,7 @@ function cllhi() {
   var hhsv = []
   var shsv = []
   var vhsv = []
-  var rdbx = ['a0_45','a46_90','a91_135','a136_180','a181_225','a226_270','a271_315','a316_360']
+  var rdbx = ['a0_15','a16_30','a31_45','a46_60','a61_75','a76_90','a91_105','a106_120','a121_135','a136_150','a151_165','a166_180','a181_195','a196_210','a211_225','a226_240','a241_255','a256_270','a271_285','a286_300','a301_315','a316_330','a331_345','a346_360']
   var yau = {
     'a0_15':[],
     'a16_30':[],
@@ -602,7 +602,7 @@ if (hhsv[u] > 345 && hhsv[u] <= 360) {
  var thhu = hsv2rgb(rstgg_h,rstgg_s,rstgg_v)
 
  var rsthex = rgbToHex(Math.floor(thhu[0]),Math.floor(thhu[1]),Math.floor(thhu[2]))
-  
+  console.log(yau)
   return rsthex
 }
 
