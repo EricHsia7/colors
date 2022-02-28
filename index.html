@@ -474,6 +474,8 @@ function cllhi() {
    }
     else {
       ttww.push(tthi[ffpp])
+      var yy_c = hexToRgb(tthi[ffpp])
+      hhsv.push(rgbtohsv(Math.floor(yy_c.r),Math.floor(yy_c.g),Math.floor(yy_c.b)).h)
     }
   }
   console.log(hhsv)
