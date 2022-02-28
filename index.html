@@ -592,17 +592,14 @@ if (hhsv[u] > 345 && hhsv[u] <= 360) {
    
   rsta = parseInt(rsty[0])
   rstb = parseInt(rsty[1])
-  
   var rstgg_h = rsta+Math.floor(Math.random()*(rstb-rsta))
-  
-  
   var rstgg_s = Math.floor(Math.random()*(100))
   var rstgg_v = Math.floor(Math.random()*(100))
   
  var thhu = hsv2rgb(rstgg_h,rstgg_s,rstgg_v)
 
  var rsthex = rgbToHex(Math.floor(thhu[0]),Math.floor(thhu[1]),Math.floor(thhu[2]))
-  console.log(yau)
+  
   return rsthex
 }
 
