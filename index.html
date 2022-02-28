@@ -423,6 +423,9 @@ function componentToHex(a){var t=a.toString(16);return 1==t.length?"0"+t:t}funct
 	
 function cllhi() {
   var tthi = getCookie('colorfav2').substring(1,getCookie('colorfav2').length).split('&')
+  if(tthi.length < 10) {
+  return false
+  }
   var ttww = []
   var hhsv = []
   var shsv = []
