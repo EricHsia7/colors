@@ -466,7 +466,6 @@ function cllhi() {
      var yy_a = hexToRgb(yywiw[2])
      var yy_b = hexToRgb(yywiw[3])
      
-     
      ttww.push(rgbToHex(Math.floor((yy_a.r+yy_b.r)/2),Math.floor((yy_a.g+yy_b.g)/2),Math.floor((yy_a.b+yy_b.b)/2)))
      
      hhsv.push((rgbtohsv(Math.floor((yy_a.r+yy_b.r)/2),Math.floor((yy_a.g+yy_b.g)/2),Math.floor((yy_a.b+yy_b.b)/2)).h))
@@ -503,7 +502,7 @@ function cllhi() {
      yau.a316_360.push(hhsv[u])
     }
   }
-  
+  console.log(yau)
   
   for(var t in yau) {
     eval('yau.' + t + ' = yau.' + t + '.length');
