@@ -430,7 +430,7 @@ function cllhi() {
   var hhsv = []
   var shsv = []
   var vhsv = []
-  var rdbx = []
+  var rdbx = ['a0_45','a46_90','a91_135','a136_180','a181_225','a226_270','a271_315','a316_360']
   var yau = {
     'a0_45':[],
     'a46_90':[],
@@ -1988,10 +1988,20 @@ gtag('event', 'explore_load', {
   });
 
 for (var i = 0; i < Math.round(($(window).height()*1.6)/100); i++) {
-	var ffrand_r = gettimerandomnumber(0,255);
+var fffre = cllhi()
+if(fffre === false) {
+var ffrand_r = gettimerandomnumber(0,255);
 var ffrand_g = gettimerandomnumber(0,255);  
 var ffrand_b = gettimerandomnumber(0,255);
-	var ffrandhexff = rgbToHex(ffrand_r,ffrand_g,ffrand_b) ;
+var ffrandhexff = rgbToHex(ffrand_r,ffrand_g,ffrand_b) ;
+}
+else {
+var ffrandhexff = fffre ;
+var ffrand_r = hexToRgb(fffre).r;
+var ffrand_g = hexToRgb(fffre).g;  
+var ffrand_b = hexToRgb(fffre).b;
+
+}
     if((ffrand_r+ffrand_g+ffrand_b)/3 > 128) {
       var fhi9ooiyg = '000' 
     }
