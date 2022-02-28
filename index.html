@@ -437,6 +437,7 @@ function componentToHex(a){var r=a.toString(16);return 1==r.length?"0"+r:r}funct
 	
 function cllhi() {
   var tthi = getCookie('colorfav2').substring(1,getCookie('colorfav2').length).split('&')
+  console.log(tthi)
   if(tthi.length < 10) {
   return false
   }
