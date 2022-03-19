@@ -1338,8 +1338,12 @@ if(sharecolor === "3") {
 $('#filerj,.favrecommendcardbox').css({'position':'fixed'});
 $('.color').css({'background':'url(' + gtffim(lc1,lc2,1.5) + ')','background-size':'cover','background-position':'center'});
 
-$('.color').css({'background':lc2})
+
+setTimeout(function() {
+    $('body').css({'background':lc2})
+    },300); 
 $('#rgb').attr('arc',lc2);
+
 if(open === "fav") {
    //usagepoint('open_color_fav','+5')
 $('.color').css({'display':'block'});
