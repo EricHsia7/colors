@@ -605,8 +605,22 @@ if (hhsv[u] > 345 && hhsv[u] <= 360) {
   return rsthex
 }
 
-
-function gtffim(l,b,s) {
+function gtffimpath(l,b,s) {
+var ssscale = s
+var ssssssw = window.innerWidth*ssscale
+var ssssssh = window.innerHeight*ssscale
+var sssizew = ssssssw*2
+var sssizeh = ssssssh*2
+var sssizex = -sssizew/2
+var sssizey = -sssizeh/2
+var sspath = ['M' + sssizex + ' ' + sssizey]
+for (var i = 0; i < 256; i++) {
+  sspath.push('S' + (sssizex+(Math.random()*(sssizew-sssizex))).toFixed(3) + ' ' + (sssizey+(Math.random()*(sssizeh-sssizey))).toFixed(3) + ' ' + (sssizex+(Math.random()*(sssizew-sssizex))).toFixed(3) + ' ' + (sssizey+(Math.random()*(sssizeh-sssizey))).toFixed(3))
+  
+}
+return sspath
+}
+function gtffim(l,b,s,pa) {
 var canvas = document.getElementById("ct");
 var ctx = canvas.getContext("2d");
 var ssscale = s
@@ -616,20 +630,20 @@ var sssizew = ssssssw*2
 var sssizeh = ssssssh*2
 var sssizex = -sssizew/2
 var sssizey = -sssizeh/2
-var sspath = ['M' + sssizex + ' ' + sssizey]
+//var sspath = ['M' + sssizex + ' ' + sssizey]
 
 document.querySelector('#ct').setAttribute('width',ssssssw)
 document.querySelector('#ct').setAttribute('height',ssssssh)
 
 ctx.fillStyle = b;
 ctx.fillRect(0, 0, ssssssw, ssssssh);
-	
+/*
 for (var i = 0; i < 256; i++) {
   sspath.push('S' + (sssizex+(Math.random()*(sssizew-sssizex))).toFixed(3) + ' ' + (sssizey+(Math.random()*(sssizeh-sssizey))).toFixed(3) + ' ' + (sssizex+(Math.random()*(sssizew-sssizex))).toFixed(3) + ' ' + (sssizey+(Math.random()*(sssizeh-sssizey))).toFixed(3))
   
 }
-
-var eep = new Path2D(sspath.join(' '));
+*/
+var eep = new Path2D(pa.join(' '));
 ctx.lineWidth = 0.4*ssscale;
 ctx.strokeStyle = l
 ctx.stroke(eep);
@@ -1327,11 +1341,11 @@ if(toimg === '1') {
 //new dot bg
 
 if(sharecolor === "3") {
-
-$('.color').css({'background':'url(' + gtffim('#333','#777',0.5) + ')','background-size':'cover','background-position':'center'});
+var thslinppfy = gtffimpath('#e3e3e3','#fff',1)
+$('.color').css({'background':'url(' + gtffim('#e3e3e3','#fff',0.5,thslinppfy) + ')','background-size':'cover','background-position':'center'});
 $(document).ready(function() {
 setTimeout(function() {
-$('.color').css({'background':'url(' + gtffim('#333','#777',3) + ')','background-size':'cover','background-position':'center'});
+$('.color').css({'background':'url(' + gtffim('#e3e3e3','#fff',3,thslinppfy) + ')','background-size':'cover','background-position':'center'});
 },800);
 });
 
