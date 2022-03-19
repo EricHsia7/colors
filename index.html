@@ -1339,6 +1339,8 @@ $('#filerj,.favrecommendcardbox').css({'position':'fixed'});
 $('.color').css({'background':'url(' + gtffim(lc1,lc2,1.5) + ')','background-size':'cover','background-position':'center'});
 $('input[t="rgb"],input[t="cmyk"],input[t="hsl"],input[t="hsv"]').val('暫不支援');
 $('#rgb').val('path(' + lc1 + ',' + lc2 + ')').attr('arc',lc2);
+$('.favt').css({'opacity':'0.3'});
+$('li[f="mixedgradient"],li[f="openinpicker"],li[f="toimage"],li[f="similargradient"]').css({'opacity':'0.3'});
 setTimeout(function() {
     $('body').css({'background':lc2})
     },300); 
