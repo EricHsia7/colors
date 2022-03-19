@@ -606,35 +606,33 @@ if (hhsv[u] > 345 && hhsv[u] <= 360) {
 }
 
 
-function gtffim(dot,bg,sc) {
+function gtffim(l,b,s) {
 var canvas = document.getElementById("ct");
 var ctx = canvas.getContext("2d");
-var ccscale = sc;
-var ctw = window.innerWidth * ccscale;
-var cth = window.innerHeight * ccscale;
-canvas.width = ctw;
-canvas.height = cth;
-var sqw = 5 * ccscale;
-var sqe = (ctw - (ctw % sqw)) / sqw;
-var sqa = (cth - (cth % sqw)) / sqw;
+var ssscale = s
+var ssssssw = window.innerWidth*ssscale
+var ssssssh = window.innerHeight*ssscale
+var sssizew = ssssssw*2
+var sssizeh = ssssssh*2
+var sssizex = -sssizew/2
+var sssizey = -sssizeh/2
+var sspath = ['M' + sssizex + ' ' + sssizey]
 
-var colss_a = dot; //dot
-var colss_b = bg; //bg
+document.querySelector('#ct').setAttribute('width',ssssssw)
+document.querySelector('#ct').setAttribute('height',ssssssh)
 
-ctx.fillStyle = colss_b;
-ctx.fillRect(0, 0, ctw, cth);
-
-for (var r = 0; r < Math.floor((sqa + 2) / 2); r++) {
-  for (var t = 0; t < sqe + 2; t++) {
-    ctx.fillStyle = colss_a;
-    ctx.beginPath();
-    ctx.arc(0 + sqw * t * 2, 2 * sqw * r, sqw / 2, 0, 2 * Math.PI);
-
-    ctx.fill();
-    ctx.closePath();
-  }
+for (var i = 0; i < 256; i++) {
+  sspath.push('S' + (sssizex+(Math.random()*(sssizew-sssizex))).toFixed(3) + ' ' + (sssizey+(Math.random()*(sssizeh-sssizey))).toFixed(3) + ' ' + (sssizex+(Math.random()*(sssizew-sssizex))).toFixed(3) + ' ' + (sssizey+(Math.random()*(sssizeh-sssizey))).toFixed(3))
+  
 }
 
+var eep = new Path2D(sspath.join(' '));
+ctx.lineWidth = 0.4*ssscale;
+ctx.strokeStyle = l
+ctx.stroke(eep);
+
+//document.querySelector('#ssp').setAttribute('d',sspath.join(' '))
+	
 return canvas.toDataURL()
 }
 
