@@ -353,6 +353,8 @@ var shortcuts = gup('shortcuts') ;
 var opensou = gup('sou') ;
 var toimgbackid = gup('backid') ;
 var toimg = gup('toimg');
+var lc1 = atob(gup('la')) ;
+var lc2 = atob(gup('lb')) ;
 var copycolmode = 0 ;
 var usedslideclosepp = 0 ;
 var dpb = gup('dpb') ;
@@ -1327,12 +1329,8 @@ if(toimg === '1') {
 //new line bg
 
 if(sharecolor === "3") {
-$('.color').css({'background':'url(' + gtffim('#e3e3e3','#fff',0.5) + ')','background-size':'cover','background-position':'center'});
-$(document).ready(function() {
-setTimeout(function() {
-$('.color').css({'background':'url(' + gtffim('#e3e3e3','#fff',3) + ')','background-size':'cover','background-position':'center'});
-},800);
-});
+$('.color').css({'background':'url(' + gtffim(lc1,lc2,2.5) + ')','background-size':'cover','background-position':'center'});
+
 
 if(open === "fav") {
    //usagepoint('open_color_fav','+5')
