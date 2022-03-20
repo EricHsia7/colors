@@ -1337,7 +1337,7 @@ if(toimg === '1') {
 
 if(sharecolor === "3") {
 $('#filerj,.favrecommendcardbox').css({'position':'fixed'});
-$('.color').css({'background':'url(' + lc2 + ')','background-size':'cover','background-position':'center'});
+$('.color').css({'background':lc2,'background-size':'cover','background-position':'center'});
 $('input[t="rgb"],input[t="cmyk"],input[t="hsl"],input[t="hsv"]').val('暫不支援');
 $('#rgb').val('path(' + lc1 + ',' + lc2 + ')').attr('arc',lc2);
 $('.colorinps input,.arrbtco,.arrbtco-2').css({'-webkit-backdrop-filter':'blur(3px)','backdrop-filter':'blur(3px)'});
