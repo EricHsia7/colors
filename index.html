@@ -266,6 +266,7 @@ input#files,input#files2{display:none}
 <li f="toimage">轉換圖片</li>
 <li f="mixedgradient">混合漸層</li>
 <li f="similargradient">似色漸層</li>
+<li f="simirandpath">似色路徑</li>
 </div>
 </div>
 <div class="mobile-gesture-prompt-bg nw-top" id="mobile-gesture-prompt-bg">
@@ -1340,7 +1341,7 @@ $('.color').css({'background':'url(' + gtffim(lc1,lc2,1.5) + ')','background-siz
 $('input[t="rgb"],input[t="cmyk"],input[t="hsl"],input[t="hsv"]').val('暫不支援');
 $('#rgb').val('path(' + lc1 + ',' + lc2 + ')').attr('arc',lc2);
 $('.favt').css({'opacity':'0.3'});
-$('li[f="mixedgradient"],li[f="openinpicker"],li[f="toimage"],li[f="similargradient"]').css({'opacity':'0.3'});
+$('li[f="mixedgradient"],li[f="openinpicker"],li[f="toimage"],li[f="similargradient"],li[f="simirandpath"]').css({'opacity':'0.3'});
 setTimeout(function() {
     $('body').css({'background':lc2})
     },300); 
@@ -1420,6 +1421,11 @@ $('.color').fadeIn(222);
 setthemecol(shcolor,222);
 }  
 }
+    
+    $('li[f="simirandpath"]').click(function() {
+var tfchonamonooa = getligrd(shcolor)
+location.href = 'https://erichsia7.github.io/colors/?s=3&la=' + btoa(tfchonamonooa[1]) + '&lb=' + btoa(tfchonamonooa[2]) + '&r=' + genid('random')
+    });
     $('li[f="similargradient"]').click(function() {
 usagepoint('similar_gradient','+5')
 var yshgrdsyqhooa = getligrd(shcolor)
@@ -1460,7 +1466,7 @@ location.href = 'https://erichsia7.github.io/colors/?s=2&ga=' + btoa(yshgrdsyqho
 usagepoint('open_grd','+3')
     $('#filerj,.favrecommendcardbox').css({'position':'fixed'});
     $('input[t="rgb"],input[t="cmyk"],input[t="hsl"],input[t="hsv"]').val('暫不支援');
-    $('li[f="toimage"],li[f="openinpicker"],li[f="similargradient"]').css({'opacity':'0.3'});  
+    $('li[f="toimage"],li[f="openinpicker"],li[f="similargradient"],li[f="simirandpath"]').css({'opacity':'0.3'});  
     if((hexToRgb(gc1).r+hexToRgb(gc1).g+hexToRgb(gc1).b+hexToRgb(gc2).r+hexToRgb(gc2).g+hexToRgb(gc2).b)/6 > 128) {
       $('#rgb,.colorvlcm').css({'color':'#000'});
       $('.ladbar').css({'background':'#000'});
