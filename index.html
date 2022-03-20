@@ -134,6 +134,7 @@ thead,tfoot{color:#fff}
 .rrimgcard .faveeimpltbtn {width:calc(100% - 20px);position:relative;left:10px;margin-top:10px;height:45px;background:#f5f5f5;font-family:"Noto Sans TC",sans-serif;font-weight:400;-webkit-user-select:none;border-radius:15px;display:flex;justify-content:center;align-items:center;}
 .rdimgbigsize{width:100%;height:100%;position:relative;}
 #ct{display:none;}
+.colorpath {position:absolute;top:0px;left:0px;width:10l%;height:100%;background:rgba(0, 0, 0, 0);}
 @media (prefers-color-scheme: dark) {
 .cmoretit{background:#1a1a1a;color:#fff;}
 .cmoreclose{filter: invert(100%);}
@@ -239,6 +240,7 @@ input#files,input#files2{display:none}
 </div>
 </div>
 <div class="color" topi="0">
+<div class="colorpath"></div>
 <div class="colorinps2">
 <div class="colorinps">
 <input type="text" id="rgb" value="" readonly="readonly" />
@@ -610,8 +612,10 @@ if (hhsv[u] > 345 && hhsv[u] <= 360) {
 
 
 function gtffim(l,b,s) {
+/*
 var canvas = document.getElementById("ct");
 var ctx = canvas.getContext("2d");
+*/
 var ssscale = s
 var ssssssw = window.innerWidth*ssscale
 var ssssssh = window.innerHeight*ssscale
@@ -631,15 +635,16 @@ for (var i = 0; i < 256; i++) {
   sspath.push('S' + (sssizex+(Math.random()*(sssizew-sssizex))).toFixed(3) + ' ' + (sssizey+(Math.random()*(sssizeh-sssizey))).toFixed(3) + ' ' + (sssizex+(Math.random()*(sssizew-sssizex))).toFixed(3) + ' ' + (sssizey+(Math.random()*(sssizeh-sssizey))).toFixed(3))
   
 }
-
+/*
 var eep = new Path2D(sspath.join(' '));
 ctx.lineWidth = 0.4*ssscale;
 ctx.strokeStyle = l
 ctx.stroke(eep);
-
-//document.querySelector('#ssp').setAttribute('d',sspath.join(' '))
+*/
+var thssvghtmlpp = '<svg xmlns="http://www.w3.org/2000/svg" id="sp"><path d="' + sspath.join(' ') + '" id="ssp" fill="transparent" stroke="' + l + '" stroke-width="0.6"/></svg>'
+//document.querySelector('#ssp').setAttribute('d',)
 	
-return canvas.toDataURL()
+return thssvghtmlpp
 }
 
 function textcol(r,g,b) {
@@ -1345,7 +1350,8 @@ $('.favt').css({'opacity':'0.3'});
 $('li[f="mixedgradient"],li[f="openinpicker"],li[f="toimage"],li[f="similargradient"],li[f="simirandpath"]').css({'opacity':'0.3'});
 setTimeout(function() {
 $('body').css({'background':lc2})
-$('.color').css({'background':lc2 + ' url(' + gtffim(lc1,lc2,1.12) + ')','background-size':'cover','background-position':'center'});
+//$('.color').css({'background':lc2 + ' url(' + gtffim(lc1,lc2,1.12) + ')','background-size':'cover','background-position':'center'});
+$('.colorpath').html(gtffim(lc1,lc2,1))
 },300);
 
 if((hexToRgb(lc2).r+hexToRgb(lc2).g+hexToRgb(lc2).b)/3 > 128) {
