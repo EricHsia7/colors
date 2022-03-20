@@ -1347,6 +1347,19 @@ setTimeout(function() {
     $('body').css({'background':lc2})
     },300);
 
+if((hexToRgb(lc2).r+hexToRgb(lc2).g+hexToRgb(lc2).b)/3 > 128) {
+      $('#rgb,.colorvlcm').css({'color':'#000'});
+      $('.ladbar').css({'background':'#000'});
+      $('.arrbtco').attr('class','arrow-right btn arrbtco');
+      $('.arrbtco-2').attr('class','arrow-left btn arrbtco-2');
+    }
+    else {
+      $('#rgb,.colorvlcm').css({'color':'#fff'});
+      $('.ladbar').css({'background':'#fff'});
+      $('.arrbtco').attr('class','arrow-right-light btn arrbtco');
+      $('.arrbtco-2').attr('class','arrow-left-light btn arrbtco-2');
+    }
+
 
 if(open === "fav") {
    //usagepoint('open_color_fav','+5')
