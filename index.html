@@ -1344,8 +1344,8 @@ $('.colorinps input,.arrbtco,.arrbtco-2').css({'-webkit-backdrop-filter':'blur(3
 $('.favt').css({'opacity':'0.3'});
 $('li[f="mixedgradient"],li[f="openinpicker"],li[f="toimage"],li[f="similargradient"],li[f="simirandpath"]').css({'opacity':'0.3'});
 setTimeout(function() {
-    $('body').css({'background':lc2})
-$('.color').css({'background':'url(' + gtffim(lc1,lc2,1.5) + ')','background-size':'cover','background-position':'center','transition':'0.5s'});
+$('body').css({'background':lc2})
+$('.color').css({'background':lc2 + ' url(' + gtffim(lc1,lc2,1.5) + ')','background-size':'cover','background-position':'center'});
     },300);
 
 if((hexToRgb(lc2).r+hexToRgb(lc2).g+hexToRgb(lc2).b)/3 > 128) {
