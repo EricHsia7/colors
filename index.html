@@ -1337,7 +1337,7 @@ if(toimg === '1') {
 
 if(sharecolor === "3") {
 $('#filerj,.favrecommendcardbox').css({'position':'fixed'});
-$('.color').css({'background':lc2 + ' url(' + gtffim(lc1,lc2,0.5) + ')','background-size':'cover','background-position':'center'});
+$('.color').css({'background':lc2});
 $('input[t="rgb"],input[t="cmyk"],input[t="hsl"],input[t="hsv"]').val('暫不支援');
 $('#rgb').val('path(' + lc1 + ',' + lc2 + ')').attr('arc',lc2);
 $('.colorinps input,.arrbtco,.arrbtco-2').css({'-webkit-backdrop-filter':'blur(3px)','backdrop-filter':'blur(3px)'});
@@ -1346,7 +1346,7 @@ $('li[f="mixedgradient"],li[f="openinpicker"],li[f="toimage"],li[f="similargradi
 setTimeout(function() {
 $('body').css({'background':lc2})
 $('.color').css({'background':lc2 + ' url(' + gtffim(lc1,lc2,1.12) + ')','background-size':'cover','background-position':'center'});
-    },300);
+},300);
 
 if((hexToRgb(lc2).r+hexToRgb(lc2).g+hexToRgb(lc2).b)/3 > 128) {
       $('#rgb,.colorvlcm').css({'color':'#000'});
