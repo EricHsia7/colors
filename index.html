@@ -1187,6 +1187,26 @@ var favrecommendforms = $.ajax({url:'https://docs.google.com/forms/d/e/1FAIpQLSc
             $('body').prompt({'message':'已新增至喜好項目','time':1200,'animate':'slide'});
     } 
     }
+
+if(sharecolor === "3") {
+      if(getCookie('colorfav2').indexOf('&pa]' + $('#rgb').attr('lc1') + ']' + $('#rgb').attr('lc2')) != -1) {
+    }
+      else {
+if(opensou === 'recommend' || opensou === 'trend') {
+    
+      }
+     else {
+if(localStorage.getItem('settings_sharefav') === '1') {
+//var favrecommendforms = $.ajax({url:'https://docs.google.com/forms/d/e/1FAIpQLScLxMmjmZNWrv7yyYazyAkuxp0eQAaN8jkYgx1I7BlXQWA4dg/formResponse?usp=pp_url&entry.1247563127=%23' + $('#rgb').attr('shga').split('#')[1] + '&entry.293943510=%23' + $('#rgb').attr('shgb').split('#')[1] + '&entry.123365810=' + $('#rgb').attr('shdeg') ,async:false});
+      }
+     }
+    document.cookie = 'colorfav2=' + getCookie('colorfav2') + '&pa]' + $('#rgb').attr('lc1') + ']' + $('#rgb').attr('lc2') + '; max-age='+60*60*24*30 + '; domain=erichsia7.github.io' ;
+    
+    $('.favt').css({'background':'rgba(245,245,245,0.8) url(https://erichsia7.github.io/colors/favorited.png)','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
+            $('body').prompt({'message':'已新增至喜好項目','time':1200,'animate':'slide'});
+    } 
+    }
+
   });
   var morecardloaded = 0 ;
   var morecardv = 'y0knvydw66tlu7se'
@@ -1347,7 +1367,7 @@ $('#filerj,.favrecommendcardbox').css({'position':'fixed'});
 $('.color').css({'background':lc2});
 $('.colorpath').html(gtffim(lc1,lc2,1))
 $('input[t="rgb"],input[t="cmyk"],input[t="hsl"],input[t="hsv"]').val('暫不支援');
-$('#rgb').val('path(' + lc1 + ',' + lc2 + ')').attr('arc',lc2);
+$('#rgb').val('path(' + lc1 + ',' + lc2 + ')').attr('arc',lc2).attr('lc1',lc1).attr('lc2',lc2);
 $('.colorinps input,.arrbtco,.arrbtco-2').css({'-webkit-backdrop-filter':'blur(3px)','backdrop-filter':'blur(3px)'});
 $('.favt').css({'opacity':'0.3'});
 $('li[f="mixedgradient"],li[f="openinpicker"],li[f="toimage"],li[f="similargradient"],li[f="simirandpath"]').css({'opacity':'0.3'});
