@@ -1132,9 +1132,16 @@ $('#' + fghidf).css({'border-radius':'0px','width':'100%','height':'100%','posit
    var oanggx = String(fgx) ;
    var oanggy = String(fgy) ;
    var oanggrg = btoa(String($('#' + $(this).attr('crdid')).attr('rg'))) ;
+   var oanggrgpp = String($('#' + $(this).attr('crdid')).attr('rgpp')) ;
+   var oanggrgh = String($('#' + $(this).attr('crdid')).attr('rgh')) ;
    var oanggrgc = btoa(String($('#' + $(this).attr('crdid')).css('color'))) ;
    var arrtfyygvgppoy = String($('#' + $(this).attr('crdid')).attr('arrtctcl')) ;
+   if(oanggrgpp === "1") {
+var peroplik = hsijllink + '&scroll=' + $(document).scrollTop() + '&oani=' + fghidf + '&oanc=' + oanggb + '&fgx=' + oanggx + '&fgy=' + oanggy + '&fgw=' + oanggw + '&fgh=' + oanggh + '&rg=' + oanggrg + '&rgpp=' + oanggrgpp + '&rgh=' + oanggrgh + '&rgc=' + oanggrgc + '&lig=' + arrtfyygvgppoy + '&r=' + genid('random') ;
+   }
+ else {
    var peroplik = hsijllink + '&scroll=' + $(document).scrollTop() + '&oani=' + fghidf + '&oanc=' + oanggb + '&fgx=' + oanggx + '&fgy=' + oanggy + '&fgw=' + oanggw + '&fgh=' + oanggh + '&rg=' + oanggrg + '&rgc=' + oanggrgc + '&lig=' + arrtfyygvgppoy + '&r=' + genid('random') ;
+ }
    caches.open("colors_fav_preload").then(function (cache) {
 cache.addAll([peroplik]);
 });
