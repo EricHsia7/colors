@@ -496,9 +496,19 @@ function cllhi() {
      
    }
     else {
+      if(tthi[ffpp].indexOf('pa') != -1) {
+      var tyv = tthi[ffpp].split(']')
+      var yy_y = hexToRgb(tyv[2])
+      ttww.push(tyv[2])
+      hhsv.push(rgbtohsv(Math.floor(yy_y.r),Math.floor(yy_y.g),Math.floor(yy_y.b)).h)
+	     
+      }
+      else {
       ttww.push(tthi[ffpp])
       var yy_c = hexToRgb(tthi[ffpp])
       hhsv.push(rgbtohsv(Math.floor(yy_c.r),Math.floor(yy_c.g),Math.floor(yy_c.b)).h)
+      }
+
     }
   }
   
