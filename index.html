@@ -499,9 +499,9 @@ function cllhi() {
       if(tthi[ffpp].indexOf('pa') != -1) {
       var tyv = tthi[ffpp].split(']')
       var yy_y = hexToRgb(tyv[2])
+      var yy_yr = hexToRgb(tyv[1])
       ttww.push(tyv[2])
-      hhsv.push(rgbtohsv(Math.floor(yy_y.r),Math.floor(yy_y.g),Math.floor(yy_y.b)).h)
-	     
+      hhsv.push(rgbtohsv(Math.floor((yy_y.r+yy_yr.r)/2),Math.floor((yy_y.g+yy_yr.g)/2),Math.floor((yy_y.b+yy_yr.b)/2)).h)
       }
       else {
       ttww.push(tthi[ffpp])
