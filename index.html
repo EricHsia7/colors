@@ -1026,7 +1026,12 @@ if(sharecolor === "1" || sharecolor === "2" || sharecolor === "3") {
     if(open === "fav") {
       $('body').css({'background':''});
       $(".color").css({'transform':'translateY(0px)','transition':'0s','opacity':'1'});
+	if(url.searchParams.get('rgpp') === '1') {
+	location.href = 'https://erichsia7.github.io/colors/favorite/?open=col&scroll=' + favscroll + '&oani=' + url.searchParams.get('oani') + '&oanc=' + url.searchParams.get('oanc') + '&fgx=' + url.searchParams.get('fgx') + '&fgy=' + url.searchParams.get('fgy') + '&fgw=' + url.searchParams.get('fgw') + '&fgh=' + url.searchParams.get('fgh') + '&rg=' + url.searchParams.get('rg') + '&rgh=' + url.searchParams.get('rgh') + '&rgpp=' + url.searchParams.get('rgpp') + '&rgc=' + url.searchParams.get('rgc') + '&scale=' + $('.color').attr('scale') + '&lig=' + url.searchParams.get('lig') + '&usc=' + usedslideclosepp + '&r=' + genid('random') ;
+	}
+	 else {
       location.href = 'https://erichsia7.github.io/colors/favorite/?open=col&scroll=' + favscroll + '&oani=' + url.searchParams.get('oani') + '&oanc=' + url.searchParams.get('oanc') + '&fgx=' + url.searchParams.get('fgx') + '&fgy=' + url.searchParams.get('fgy') + '&fgw=' + url.searchParams.get('fgw') + '&fgh=' + url.searchParams.get('fgh') + '&rg=' + url.searchParams.get('rg') + '&rgc=' + url.searchParams.get('rgc') + '&scale=' + $('.color').attr('scale') + '&lig=' + url.searchParams.get('lig') + '&usc=' + usedslideclosepp + '&r=' + genid('random') ;
+	 }
     }
     else {
       if(open === 'camera' || open === 'palette' || open === 'photo') {
@@ -1369,7 +1374,6 @@ $('.colorpath').html(gtffim(lc1,lc2,1))
 $('input[t="rgb"],input[t="cmyk"],input[t="hsl"],input[t="hsv"]').val('暫不支援');
 $('#rgb').val('path(' + lc1 + ',' + lc2 + ')').attr('arc',lc2).attr('lc1',lc1).attr('lc2',lc2);
 $('.colorinps input,.arrbtco,.arrbtco-2').css({'-webkit-backdrop-filter':'blur(3px)','backdrop-filter':'blur(3px)'});
-$('.favt').css({'opacity':'0.3'});
 $('li[f="mixedgradient"],li[f="openinpicker"],li[f="toimage"],li[f="similargradient"],li[f="simirandpath"]').css({'opacity':'0.3'});
 setTimeout(function() {
 $('body').css({'background':lc2})
@@ -1390,6 +1394,9 @@ if((hexToRgb(lc2).r+hexToRgb(lc2).g+hexToRgb(lc2).b)/3 > 128) {
       $('.arrbtco-2').attr('class','arrow-left-light btn arrbtco-2');
     }
 
+if(getCookie('colorfav2').indexOf('&pa]' + lc1 + ']' + lc2) != -1) {
+      $('.favt').css({'background':'rgba(245,245,245,0.8) url(https://erichsia7.github.io/colors/favorited.png)','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
+    }
 
 if(open === "fav") {
    //usagepoint('open_color_fav','+5')
