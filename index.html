@@ -2018,7 +2018,20 @@ usagepoint('switch_color','+3.5')
   $('.colorinps2').css({'transform':'translateX('+ (0-($(window).width()*copycolmode)) + 'px) translateY(-50%)','transition':'0.5s'});
    $('.color').css({'width':'100%','height':'100%'});
 });
+function fvrcgaddtofav(hxf,crdid) {
 
+if(getCookie('colorfav2').indexOf('&' + hxf) != -1) {
+    }
+      else {
+    document.cookie = 'colorfav2=' +  getCookie('colorfav2') + '&' + $('#rgb').val() + '; max-age='+60*60*24*30 + '; domain=erichsia7.github.io' ;
+     if(localStorage.getItem('settings_sharefav') === '1') {
+     var favrecommendforms = $.ajax({url:"https://docs.google.com/forms/d/e/1FAIpQLSeMGuvbZSK1mqORhroslYL_j1yCJ0WLvw2vIqk9_LpCmAYj5Q/formResponse?usp=pp_url&entry.450237995=%23" + $('#rgb').val().split('#')[1] ,async:false});
+      }
+    $('#' + crdid).css({'background':'rgba(245,245,245,0.8) url(https://erichsia7.github.io/colors/favorited.png)','background-size':'23px','background-position':'center','background-repeat':'no-repeat'});
+    $('body').prompt({'message':'已新增至喜好項目','time':1200,'animate':'slide'});
+    } 
+
+}
 function getunsplashimgurlbyid(picid) {
 var ggyiyunpkiggvgsdx = $.ajax({type:'get',url:'https://picsum.photos/id/' + picid + '/info',dataType:'text',async:false});
 var unpinfojson = JSON.parse(ggyiyunpkiggvgsdx.responseText)
@@ -2230,6 +2243,7 @@ var ffrand_b = hexToRgb(fffre).b;
  $('.cardki2').css({'--cardgg-g':document.querySelector('.favrecommendcarddescription a').offsetHeight + 'px','--openjj-w':document.querySelector('.favrecommendcarddescription a').offsetWidth + 'px'});
  $('.btn[fvguid="' + rgzhxid + '-fvbtn"]').click(function() {
  console.log($('#' + $(this).attr('fvopk')).attr('ckhx'))
+fvrcgaddtofav($('#' + $(this).attr('fvopk')).attr('ckhx'),rgzhxid + '-fvbtn')
  });
 }
 
