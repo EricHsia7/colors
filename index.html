@@ -2224,7 +2224,10 @@ var ffrand_b = hexToRgb(fffre).b;
     else {
       var fhi9ooiyg = 'fff' 
     }
- $('.favrecommendcardbox').append('<div class="favrecommendcard" dp="lo" type="recommend" style="background:' + ffrandhexff + '" ckhx="' + ffrandhexff + '" id="' + rgzhxid + '"><div class="favrecommendcardcontent"><h4 style="color:#' + fhi9ooiyg + '">' + ffrandhexff + '</h4><div class="favrecommendcarddescription">' + '<a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(ffrandhexff) + '&sou=explore&r=' + genid('random') + '">查看顏色</a>' + '</div></div></div>');
+ $('.favrecommendcardbox').append('<div class="favrecommendcard" dp="lo" type="recommend" style="background:' + ffrandhexff + '" ckhx="' + ffrandhexff + '" id="' + rgzhxid + '"><div class="favrecommendcardcontent"><h4 style="color:#' + fhi9ooiyg + '">' + ffrandhexff + '</h4><div class="favrecommendcarddescription">' + '<a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(ffrandhexff) + '&sou=explore&r=' + genid('random') + '">查看顏色</a>' + '<div class="cardki2 btn cardggbt" fvguid="' + rgzhxid + '-fvbtn"></div>' + '</div></div></div>');
+ $('.btn[fvguid="' + rgzhxid + '-fvbtn"]').click(function() {
+ console.log($('#' + $(this).attr('fvguid')).attr('ckhx'))
+ });
 }
 
       newrandomimagecolors();
