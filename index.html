@@ -2027,7 +2027,8 @@ if(getCookie('colorfav2').indexOf('&' + hxf) != -1) {
      if(localStorage.getItem('settings_sharefav') === '1') {
      var favrecommendformsyy = $.ajax({url:"https://docs.google.com/forms/d/e/1FAIpQLSeMGuvbZSK1mqORhroslYL_j1yCJ0WLvw2vIqk9_LpCmAYj5Q/formResponse?usp=pp_url&entry.450237995=%23" + $('#rgb').val().split('#')[1] ,async:false});
       }
-    $('#' + crdid).css({'background':'rgba(245,245,245,0.8) url(https://erichsia7.github.io/colors/favorited.png)','background-size':'23px','background-position':'center','background-repeat':'no-repeat'});
+    
+    $('.btn[fvguid="' + crdid + '"]').css({'background':'rgba(245,245,245,0.8) url(https://erichsia7.github.io/colors/favorited.png)','background-size':'23px','background-position':'center','background-repeat':'no-repeat'});
     $('body').prompt({'message':'已新增至喜好項目','time':1200,'animate':'slide'});
     } 
 
