@@ -2099,6 +2099,7 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
 	});
       var pltcchexpej = []
       for (var i = 0; i < imgcolorpalette.length; i++) {
+	var thsvgtkniaymoiidd = 'oplncv-' - genid('random')
         var thsvstehecbwinsoiwpks = rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2])
         pltcchexpej.push(thsvstehecbwinsoiwpks)
         if((imgcolorpalette[i][0]+imgcolorpalette[i][1]+imgcolorpalette[i][2])/3 > 128) {
@@ -2108,7 +2109,12 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
       var aafhi9ooiyg = 'fff' 
     }
         
-         $('#' + hfur).append('<div class="favrecommendcard" dp="lo" type="recommend" style="background:' + thsvstehecbwinsoiwpks + '"><div class="favrecommendcardcontent"><h4 style="color:#' + aafhi9ooiyg + '">' + thsvstehecbwinsoiwpks + '</h4><div class="favrecommendcarddescription">' + '<a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(thsvstehecbwinsoiwpks) + '&sou=explore_image&r=' + genid('random') + '">查看顏色</a>' + '</div></div></div>');
+         $('#' + hfur).append('<div class="favrecommendcard" dp="lo" type="recommend" style="background:' + thsvstehecbwinsoiwpks + '" ckhx="' + thsvstehecbwinsoiwpks + '" id="' + thsvgtkniaymoiidd + '"><div class="favrecommendcardcontent"><h4 style="color:#' + aafhi9ooiyg + '">' + thsvstehecbwinsoiwpks + '</h4><div class="favrecommendcarddescription">' + '<a href="' + 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(thsvstehecbwinsoiwpks) + '&sou=explore_image&r=' + genid('random') + '">查看顏色</a>' + '<div class="cardki2 btn cardggbt" fvguid="' + thsvgtkniaymoiidd + '-fvbtn" fvopk="' + thsvgtkniaymoiidd + '"></div>' + '</div></div></div>');
+ $('.cardki2').css({'--cardgg-g':document.querySelector('.favrecommendcarddescription a').offsetHeight + 'px','--openjj-w':document.querySelector('.favrecommendcarddescription a').offsetWidth + 'px'});
+ $('.btn[fvguid="' + thsvgtkniaymoiidd + '-fvbtn"]').click(function() {
+ console.log($('#' + $(this).attr('fvopk')).attr('ckhx'))
+fvrcgaddtofav($('#' + $(this).attr('fvopk')).attr('ckhx'),$(this).attr('fvguid'))
+ });
       }
 var opcopjdid = 'o-' + genid('random')
       $('#' + hfur).append('<div class="faveeimpltbtn" id="' + opcopjdid + '">複製Palette連結</div>')
