@@ -2025,7 +2025,7 @@ if(getCookie('colorfav2').indexOf('&' + hxf) != -1) {
       else {
     document.cookie = 'colorfav2=' +  getCookie('colorfav2') + '&' + hxf + '; max-age='+60*60*24*30 + '; domain=erichsia7.github.io' ;
      if(localStorage.getItem('settings_sharefav') === '1') {
-     var favrecommendformsyy = $.ajax({url:"https://docs.google.com/forms/d/e/1FAIpQLSeMGuvbZSK1mqORhroslYL_j1yCJ0WLvw2vIqk9_LpCmAYj5Q/formResponse?usp=pp_url&entry.450237995=%23" + $('#rgb').val().split('#')[1] ,async:false});
+     var favrecommendformsyy = $.ajax({url:"https://docs.google.com/forms/d/e/1FAIpQLSeMGuvbZSK1mqORhroslYL_j1yCJ0WLvw2vIqk9_LpCmAYj5Q/formResponse?usp=pp_url&entry.450237995=%23" + hxf.split('#')[1] ,async:false});
       }
     
     $('.cardki2[fvguid="' + crdijhu + '"]').css({'background':'#f5f5f5 url(https://erichsia7.github.io/colors/favorited.png)','background-size':'23px','background-position':'center','background-repeat':'no-repeat'});
