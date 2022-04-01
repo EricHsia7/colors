@@ -815,7 +815,7 @@ if (window.matchMedia('(display-mode: standalone)').matches) {
    
    var newuseridbackurl = 'https://docs.google.com/forms/d/e/1FAIpQLSeu19oOI34etg9rGCah1l50AkJVqy2gi5d1uhW-g-zYDsCJCw/formResponse?usp=pp_url&entry.584799207=' + user_id + '&entry.1702628837=' + encodeURIComponent(JSON.stringify(hyatav)) + '&entry.688790589=' + encodeURIComponent(location.href) ;
    $(document).ready(function() {
-   var newuseridbackurlajaxee = $.ajax({url:newuseridbackurl ,async:false});
+   var newuseridbackurlajaxee = $.ajax({url:newuseridbackurl ,async:true});
    });
    gtag('event', 'user_start', {
     'event_category': 'count',
@@ -2067,7 +2067,7 @@ if(getCookie('colorfav2').indexOf('&' + hxf) != -1) {
       else {
     document.cookie = 'colorfav2=' +  getCookie('colorfav2') + '&' + hxf + '; max-age='+60*60*24*30 + '; domain=erichsia7.github.io' ;
      if(localStorage.getItem('settings_sharefav') === '1') {
-     var favrecommendformsyy = $.ajax({url:"https://docs.google.com/forms/d/e/1FAIpQLSeMGuvbZSK1mqORhroslYL_j1yCJ0WLvw2vIqk9_LpCmAYj5Q/formResponse?usp=pp_url&entry.450237995=%23" + hxf.split('#')[1] ,async:false});
+     var favrecommendformsyy = $.ajax({url:"https://docs.google.com/forms/d/e/1FAIpQLSeMGuvbZSK1mqORhroslYL_j1yCJ0WLvw2vIqk9_LpCmAYj5Q/formResponse?usp=pp_url&entry.450237995=%23" + hxf.split('#')[1] ,async:true});
       }
     
     $('.cardki2[fvguid="' + crdijhu + '"]').css({'background':'#f5f5f5 url(https://erichsia7.github.io/colors/favorited.png)','background-size':'23px','background-position':'center','background-repeat':'no-repeat'});
