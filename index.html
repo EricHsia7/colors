@@ -1182,7 +1182,12 @@ var qrcode = new QRCode(document.querySelector('#qr') , {
 var favrecommendforms = $.ajax({url:"https://docs.google.com/forms/d/e/1FAIpQLSeMGuvbZSK1mqORhroslYL_j1yCJ0WLvw2vIqk9_LpCmAYj5Q/formResponse?usp=pp_url&entry.450237995=%23" + $('#rgb').val().split('#')[1] ,async:false});
       }
      }  
+    if(String(localStorage.getItem('favanimation')).length > 100) {
+$('.favt').attr('class','favt lle btn favoriteanimation')
+    }
+    else {
     $('.favt').css({'background':'rgba(245,245,245,0.8) url(https://erichsia7.github.io/colors/favorited.png)','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
+    }
     $('body').prompt({'message':'已新增至喜好項目','time':1200,'animate':'slide'});
     } 
     }
@@ -1200,7 +1205,12 @@ var favrecommendforms = $.ajax({url:'https://docs.google.com/forms/d/e/1FAIpQLSc
      }
     document.cookie = 'colorfav2=' + getCookie('colorfav2') + '&li]' + $('#rgb').attr('shdeg') + ']' + $('#rgb').attr('shga') + ']' + $('#rgb').attr('shgb') + '; max-age='+60*60*24*30 + '; domain=erichsia7.github.io' ;
     
+    if(String(localStorage.getItem('favanimation')).length > 100) {
+$('.favt').attr('class','favt lle btn favoriteanimation')
+    }
+    else {
     $('.favt').css({'background':'rgba(245,245,245,0.8) url(https://erichsia7.github.io/colors/favorited.png)','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
+    }
             $('body').prompt({'message':'已新增至喜好項目','time':1200,'animate':'slide'});
     } 
     }
@@ -1219,7 +1229,12 @@ if(localStorage.getItem('settings_sharefav') === '1') {
      }
     document.cookie = 'colorfav2=' + getCookie('colorfav2') + '&pa]' + $('#rgb').attr('lc1') + ']' + $('#rgb').attr('lc2') + '; max-age='+60*60*24*30 + '; domain=erichsia7.github.io' ;
     
+    if(String(localStorage.getItem('favanimation')).length > 100) {
+$('.favt').attr('class','favt lle btn favoriteanimation')
+    }
+    else {
     $('.favt').css({'background':'rgba(245,245,245,0.8) url(https://erichsia7.github.io/colors/favorited.png)','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
+    }
             $('body').prompt({'message':'已新增至喜好項目','time':1200,'animate':'slide'});
     } 
     }
