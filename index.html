@@ -2070,13 +2070,14 @@ if(getCookie('colorfav2').indexOf('&' + hxf) != -1) {
      var favrecommendformsyy = $.ajax({url:"https://docs.google.com/forms/d/e/1FAIpQLSeMGuvbZSK1mqORhroslYL_j1yCJ0WLvw2vIqk9_LpCmAYj5Q/formResponse?usp=pp_url&entry.450237995=%23" + hxf.split('#')[1] ,async:true});
       }
     
-    //$('.cardki2[fvguid="' + crdijhu + '"]').css({'background':'#f5f5f5 url(https://erichsia7.github.io/colors/favorited.png)','background-size':'23px','background-position':'center','background-repeat':'no-repeat'});
+    /*
     if(String(localStorage.getItem('favanimation')).length > 100) {
     $('.cardki2[fvguid="' + crdijhu + '"]').attr('class','cardki2 btn cardggbt favoriteanimation')
     }
     else {
+    */
     $('.cardki2[fvguid="' + crdijhu + '"]').css({'background':'rgba(245,245,245,0.8) url(https://erichsia7.github.io/colors/favorited.png)','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
-    }
+    //}
     $('body').prompt({'message':'已新增至喜好項目','time':1200,'animate':'slide'});
     } 
 
