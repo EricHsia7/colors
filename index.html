@@ -1180,7 +1180,7 @@ var qrcode = new QRCode(document.querySelector('#qr') , {
       }
      else {
      if(localStorage.getItem('settings_sharefav') === '1') {
-var favrecommendforms = $.ajax({url:"https://docs.google.com/forms/d/e/1FAIpQLSeMGuvbZSK1mqORhroslYL_j1yCJ0WLvw2vIqk9_LpCmAYj5Q/formResponse?usp=pp_url&entry.450237995=%23" + $('#rgb').val().split('#')[1] ,async:false});
+var favrecommendforms = $.ajax({url:"https://docs.google.com/forms/d/e/1FAIpQLSeMGuvbZSK1mqORhroslYL_j1yCJ0WLvw2vIqk9_LpCmAYj5Q/formResponse?usp=pp_url&entry.450237995=%23" + $('#rgb').val().split('#')[1] ,async:true});
       }
      }  
     if(String(localStorage.getItem('favanimation')).length > 100) {
@@ -1204,7 +1204,7 @@ if(opensou === 'recommend' || opensou === 'trend') {
       }
      else {
 if(localStorage.getItem('settings_sharefav') === '1') {
-var favrecommendforms = $.ajax({url:'https://docs.google.com/forms/d/e/1FAIpQLScLxMmjmZNWrv7yyYazyAkuxp0eQAaN8jkYgx1I7BlXQWA4dg/formResponse?usp=pp_url&entry.1247563127=%23' + $('#rgb').attr('shga').split('#')[1] + '&entry.293943510=%23' + $('#rgb').attr('shgb').split('#')[1] + '&entry.123365810=' + $('#rgb').attr('shdeg') ,async:false});
+var favrecommendforms = $.ajax({url:'https://docs.google.com/forms/d/e/1FAIpQLScLxMmjmZNWrv7yyYazyAkuxp0eQAaN8jkYgx1I7BlXQWA4dg/formResponse?usp=pp_url&entry.1247563127=%23' + $('#rgb').attr('shga').split('#')[1] + '&entry.293943510=%23' + $('#rgb').attr('shgb').split('#')[1] + '&entry.123365810=' + $('#rgb').attr('shdeg') ,async:true});
       }
      }
     document.cookie = 'colorfav2=' + getCookie('colorfav2') + '&li]' + $('#rgb').attr('shdeg') + ']' + $('#rgb').attr('shga') + ']' + $('#rgb').attr('shgb') + '; max-age='+60*60*24*30 + '; domain=erichsia7.github.io' ;
