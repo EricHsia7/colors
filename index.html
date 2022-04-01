@@ -1645,6 +1645,22 @@ else {
    }
 }); 
 }
+//fv
+
+var favanimationloadtime = new Date().getTime() ;
+ if(favanimationloadtime-parseInt(localStorage.getItem('favanimationloaded')) < 2592000000) {
+  $('body').append('<style>/*' + localStorage.getItem('favanimation') + '*/</style>');
+}
+else {
+ $.ajax({type:'get',url:"https://erichsia7.github.io/colors/favorite_animation_png_3_1024_base64.txt",dataType:'text',success:function(e) {
+  var favanimationloadtimedd = new Date().getTime() ;
+  localStorage.setItem('favanimation', e); localStorage.setItem('favanimationloaded', favanimationloadtimedd);
+   $('body').append('<style>/*' + e + '*/</style>');
+   }
+}); 
+}
+
+
 //f
 }
 else {
