@@ -1169,6 +1169,7 @@ var qrcode = new QRCode(document.querySelector('#qr') , {
 
   $('.favt').click(function() {
     usagepoint('favorite','+1.5')
+    var favtdpromptdelaytime = 1 ;
     if(sharecolor === "1") {
       if(getCookie('colorfav2').indexOf('&' + shcolor) != -1) {
     }
@@ -1184,11 +1185,14 @@ var favrecommendforms = $.ajax({url:"https://docs.google.com/forms/d/e/1FAIpQLSe
      }  
     if(String(localStorage.getItem('favanimation')).length > 100) {
 $('.favt').attr('class','favt lle btn favoriteanimation')
+favtdpromptdelaytime = 460 ;
     }
     else {
     $('.favt').css({'background':'rgba(245,245,245,0.8) url(https://erichsia7.github.io/colors/favorited.png)','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
     }
+    setTimeout(function(){ 
     $('body').prompt({'message':'已新增至喜好項目','time':1200,'animate':'slide'});
+    },favtdpromptdelaytime);
     } 
     }
     if(sharecolor === "2") {
@@ -1207,11 +1211,14 @@ var favrecommendforms = $.ajax({url:'https://docs.google.com/forms/d/e/1FAIpQLSc
     
     if(String(localStorage.getItem('favanimation')).length > 100) {
 $('.favt').attr('class','favt lle btn favoriteanimation')
+favtdpromptdelaytime = 460 ;
     }
     else {
     $('.favt').css({'background':'rgba(245,245,245,0.8) url(https://erichsia7.github.io/colors/favorited.png)','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
     }
-            $('body').prompt({'message':'已新增至喜好項目','time':1200,'animate':'slide'});
+     setTimeout(function(){ 
+    $('body').prompt({'message':'已新增至喜好項目','time':1200,'animate':'slide'});
+    },favtdpromptdelaytime);
     } 
     }
 
@@ -1231,11 +1238,14 @@ if(localStorage.getItem('settings_sharefav') === '1') {
     
     if(String(localStorage.getItem('favanimation')).length > 100) {
 $('.favt').attr('class','favt lle btn favoriteanimation')
+favtdpromptdelaytime = 460 ;
     }
     else {
     $('.favt').css({'background':'rgba(245,245,245,0.8) url(https://erichsia7.github.io/colors/favorited.png)','background-size':'25px','background-position':'center','background-repeat':'no-repeat'});
     }
-            $('body').prompt({'message':'已新增至喜好項目','time':1200,'animate':'slide'});
+    setTimeout(function(){ 
+    $('body').prompt({'message':'已新增至喜好項目','time':1200,'animate':'slide'});
+    },favtdpromptdelaytime);
     } 
     }
 
