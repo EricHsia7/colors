@@ -2385,7 +2385,7 @@ for (var fygeeew = 0; fygeeew < recommend_info_card_cu; fygeeew++) {
 $.ajax({type:'get',url:resulturlpath,dataType:'text',success:function(e) {
   var favrecommenddataarr = e.split(/[\s\n]/).filter(function(n){ return n.length > 0}) ;
   for (var fygeeew = 0; fygeeew < favrecommenddataarr.length; fygeeew++) {
-var favrecommendgtfffctoo = favrecommenddataarr[fygeeew].replaceAll('[','').split('@') ;
+var favrecommendgtfffctoo = favrecommenddataarr[fygeeew].replaceAll('[','#').replaceAll('@','@#').split('@') ;
   if((hexToRgb(favrecommendgtfffctoo[1]).r+hexToRgb(favrecommendgtfffctoo[1]).g+hexToRgb(favrecommendgtfffctoo[1]).b)/3 > 128) {
    var favrecommendcardtitlecolor = '000' ;
   }
@@ -2394,10 +2394,10 @@ var favrecommendgtfffctoo = favrecommenddataarr[fygeeew].replaceAll('[','').spli
   }
   
 //var favrecommendcardtitlecolor = 'fff' ;
-   favrecommenddataarr_path_html.push('<div class="favrecommendcard" dp="lo" type="recommend" style="background:' + favrecommenddataarr[fygeeew].replaceAll('[','').split('@')[1] + ';"><div class="favrecommendcardcontent"><h4 style="color:#' + favrecommendcardtitlecolor + '">' + favrecommenddataarr[fygeeew].replaceAll('[','').replaceAll('@',',') + '</h4><div class="favrecommendcarddescription">' + '<a href="' + 'https://erichsia7.github.io/colors/?s=3&la=' + btoa(favrecommenddataarr[fygeeew].replaceAll('[','').split('@')[0]) + '&lb=' + btoa(favrecommenddataarr[fygeeew].replaceAll('[','').split('@')[1]) + '&sou=recommend&r=' + genid('random') + '">查看路徑</a>' + '</div></div></div>')
-    $('.favrecommendcard').eq(favrecommenddataarr.length-fygeeew-1).css({'background':favrecommenddataarr[fygeeew].replaceAll('[','').split('@')[1]}).attr('class','favrecommendcard');
-    $('.favrecommendcardcontent h4').eq(favrecommenddataarr.length-fygeeew-1).css({'color':'#' + favrecommendcardtitlecolor}).html(favrecommenddataarr[fygeeew].replaceAll('[','').replaceAll('@',','));
-    $('.favrecommendcarddescription').eq(favrecommenddataarr.length-fygeeew-1).html('<a href="' + 'https://erichsia7.github.io/colors/?s=3&la=' + btoa(favrecommenddataarr[fygeeew].replaceAll('[','').split('@')[0]) + '&lb=' + btoa(favrecommenddataarr[fygeeew].replaceAll('[','').split('@')[1]) + '&sou=recommend&r=' + genid('random') + '">查看路徑</a>');
+   favrecommenddataarr_path_html.push('<div class="favrecommendcard" dp="lo" type="recommend" style="background:' + favrecommenddataarr[fygeeew].replaceAll('[','#').replaceAll('@','@#').split('@')[1] + ';"><div class="favrecommendcardcontent"><h4 style="color:#' + favrecommendcardtitlecolor + '">' + favrecommenddataarr[fygeeew].replaceAll('[','#').replaceAll('@',',#') + '</h4><div class="favrecommendcarddescription">' + '<a href="' + 'https://erichsia7.github.io/colors/?s=3&la=' + btoa(favrecommenddataarr[fygeeew].replaceAll('[','#').replaceAll('@','@#').split('@')[0]) + '&lb=' + btoa(favrecommenddataarr[fygeeew].replaceAll('[','#').replaceAll('@','@#').split('@')[1]) + '&sou=recommend&r=' + genid('random') + '">查看路徑</a>' + '</div></div></div>')
+    $('.favrecommendcard').eq(favrecommenddataarr.length-fygeeew-1).css({'background':favrecommenddataarr[fygeeew].replaceAll('[','#').replaceAll('@','@#').split('@')[1]}).attr('class','favrecommendcard');
+    $('.favrecommendcardcontent h4').eq(favrecommenddataarr.length-fygeeew-1).css({'color':'#' + favrecommendcardtitlecolor}).html(favrecommenddataarr[fygeeew].replaceAll('[','#').replaceAll('@',',#'));
+    $('.favrecommendcarddescription').eq(favrecommenddataarr.length-fygeeew-1).html('<a href="' + 'https://erichsia7.github.io/colors/?s=3&la=' + btoa(favrecommenddataarr[fygeeew].replaceAll('[','#').replaceAll('@','@#').split('@')[0]) + '&lb=' + btoa(favrecommenddataarr[fygeeew].replaceAll('[','#').replaceAll('@','@#').split('@')[1]) + '&sou=recommend&r=' + genid('random') + '">查看路徑</a>');
 }
 	favrecommenddataarr_path_html = favrecommenddataarr_path_html.reverse().join('');
 		}
