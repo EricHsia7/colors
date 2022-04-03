@@ -1656,16 +1656,16 @@ else {
 //fv
 
 var favanimationloadid = '00j7h8s0dseefnyx' ;
-var ghgvyfavgimccs = 'background-size:45px 4500px;background-repeat:no-repeat;background-position:top 0px left 0px;animation-name:fav;animation-duration:.46s;animation-timing-function:steps(99,jump-start);animation-fill-mode:forwards}@keyframes fav{0%{background-position:top 0px left 0px}100%{background-position:top -4455px left 0px}}';
+
  if(favanimationloadid === localStorage.getItem('favanimationloadid')) {
-  $('body').append('<style>.favoriteanimation{background:rgba(245,245,245,0.8) url(' + localStorage.getItem('favanimation') + ');' + ghgvyfavgimccs + '</style>')
-}
+  $('body').append('<style>.favoriteanimation{background:rgba(245,245,245,0.8) url(' + localStorage.getItem('favanimation') + ');background-size:45px 4500px;background-repeat:no-repeat;background-position:top 0px left 0px;animation-name:fav;animation-duration:.46s;animation-timing-function:steps(99,jump-start);animation-fill-mode:forwards}@keyframes fav{0%{background-position:top 0px left 0px}100%{background-position:top -4455px left 0px}}.favoriteanimation-recommend{background:#f5f5f5 url(' + localStorage.getItem('favanimation') + ');background-size:38px 3800px;background-repeat:no-repeat;background-position:top 0px left 0px;animation-name:fav-recommend;animation-duration:.46s;animation-timing-function:steps(99,jump-start);animation-fill-mode:forwards}@keyframes fav-recommend{0%{background-position:top 0px left 0px}100%{background-position:top -3762px left 0px}}</style>')
+ }
 else {
  $.ajax({type:'get',url:"https://erichsia7.github.io/colors/favorite_animation_png_3_128_base64.txt",dataType:'text',success:function(e) {
   var favanimationloadtimedd = new Date().getTime() ;
   localStorage.setItem('favanimation', e); 
   localStorage.setItem('favanimationloadid', favanimationloadid);
-   $('body').append('<style>.favoriteanimation{background:rgba(245,245,245,0.8) url(' + e + ');' + ghgvyfavgimccs + '</style>')
+   $('body').append('<style>.favoriteanimation{background:rgba(245,245,245,0.8) url(' + e + ');background-size:45px 4500px;background-repeat:no-repeat;background-position:top 0px left 0px;animation-name:fav;animation-duration:.46s;animation-timing-function:steps(99,jump-start);animation-fill-mode:forwards}@keyframes fav{0%{background-position:top 0px left 0px}100%{background-position:top -4455px left 0px}}.favoriteanimation-recommend{background:#f5f5f5 url(' + e + ');background-size:38px 3800px;background-repeat:no-repeat;background-position:top 0px left 0px;animation-name:fav-recommend;animation-duration:.46s;animation-timing-function:steps(99,jump-start);animation-fill-mode:forwards}@keyframes fav-recommend{0%{background-position:top 0px left 0px}100%{background-position:top -3762px left 0px}}</style>')
    }
 }); 
 }
@@ -2055,14 +2055,14 @@ $('.cardki2[fvguid="' + crdijhu + '"]').css({'background':'#f5f5f5 url(https://e
      var favrecommendformsyy = $.ajax({url:"https://docs.google.com/forms/d/e/1FAIpQLSeMGuvbZSK1mqORhroslYL_j1yCJ0WLvw2vIqk9_LpCmAYj5Q/formResponse?usp=pp_url&entry.450237995=%23" + hxf.split('#')[1] ,async:true});
       }
     
-    /*
+    
     if(String(localStorage.getItem('favanimation')).length > 100) {
-    $('.cardki2[fvguid="' + crdijhu + '"]').attr('class','cardki2 btn cardggbt favoriteanimation')
+    $('.cardki2[fvguid="' + crdijhu + '"]').attr('class','cardki2 btn cardggbt favoriteanimation-recommend')
     }
     else {
-    */
+    
     $('.cardki2[fvguid="' + crdijhu + '"]').css({'background':'#f5f5f5 url(https://erichsia7.github.io/colors/favorited.png)','background-size':'23px','background-position':'center','background-repeat':'no-repeat'});
-    //}
+    }
     //$('body').prompt({'message':'已新增至喜好項目','time':1200,'animate':'slide'});
     } 
 
