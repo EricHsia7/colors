@@ -2064,6 +2064,7 @@ usagepoint('switch_color','+3.5')
 function fvrcgaddtofav(hxf,crdijhu) {
 
 if(getCookie('colorfav2').indexOf('&' + hxf) != -1) {
+$('.cardki2[fvguid="' + crdijhu + '"]').css({'background':'#f5f5f5 url(https://erichsia7.github.io/colors/favorited.png)','background-size':'23px','background-position':'center','background-repeat':'no-repeat'});
     }
       else {
     document.cookie = 'colorfav2=' +  getCookie('colorfav2') + '&' + hxf + '; max-age='+60*60*24*30 + '; domain=erichsia7.github.io' ;
