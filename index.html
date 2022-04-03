@@ -376,6 +376,16 @@ function gettimerandomnumber(min,max) {
   var myrng = new Math.seedrandom(String(timeseedrandom + '.' + Math.random()));
   return Math.floor(myrng()*(max - min) + min)
 }
+function favoriteshare() {
+var timeseedrandom = new Date().getTime();
+var myrng = new Math.seedrandom(String(new Date().getTime()))
+if(myrng()>0.5) {
+return true
+}
+else {
+return false
+}
+}
 function setthemecol(hexcolsjs,delaytimems) {
   setTimeout(function() {
   $('meta[name="theme-color"]').attr('content',hexcolsjs);
@@ -1162,7 +1172,7 @@ var qrcode = new QRCode(document.querySelector('#qr') , {
     
       }
      else {
-     if(localStorage.getItem('settings_sharefav') === '1') {
+     if(localStorage.getItem('settings_sharefav') === '1' && favoriteshare() === true) {
 var favrecommendforms = $.ajax({url:"https://docs.google.com/forms/d/e/1FAIpQLSeMGuvbZSK1mqORhroslYL_j1yCJ0WLvw2vIqk9_LpCmAYj5Q/formResponse?usp=pp_url&entry.450237995=%23" + $('#rgb').val().split('#')[1] ,async:true});
       }
      }  
@@ -1186,7 +1196,7 @@ if(opensou === 'recommend' || opensou === 'trend') {
     
       }
      else {
-if(localStorage.getItem('settings_sharefav') === '1') {
+if(localStorage.getItem('settings_sharefav') === '1' && favoriteshare() === true) {
 var favrecommendforms = $.ajax({url:'https://docs.google.com/forms/d/e/1FAIpQLScLxMmjmZNWrv7yyYazyAkuxp0eQAaN8jkYgx1I7BlXQWA4dg/formResponse?usp=pp_url&entry.1247563127=%23' + $('#rgb').attr('shga').split('#')[1] + '&entry.293943510=%23' + $('#rgb').attr('shgb').split('#')[1] + '&entry.123365810=' + $('#rgb').attr('shdeg') ,async:true});
       }
      }
@@ -1213,7 +1223,7 @@ if(opensou === 'recommend' || opensou === 'trend') {
     
       }
      else {
-if(localStorage.getItem('settings_sharefav') === '1') {
+if(localStorage.getItem('settings_sharefav') === '1' && favoriteshare() === true) {
 var favrecommendformsppw = $.ajax({url:'https://docs.google.com/forms/d/e/1FAIpQLSd4KLvL9x_6jhRCdst5eT0gGv91wO8e0yqa1lnnTGDzVHoS4A/formResponse?usp=pp_url&entry.669769670=%23' + $('#rgb').attr('lc1').split('#')[1] + '&entry.2145134131=%23' + $('#rgb').attr('lc2').split('#')[1] ,async:true});
       }
      }
@@ -2051,7 +2061,7 @@ $('.cardki2[fvguid="' + crdijhu + '"]').css({'background':'#f5f5f5 url(https://e
     }
       else {
     document.cookie = 'colorfav2=' +  getCookie('colorfav2') + '&' + hxf + '; max-age='+60*60*24*30 + '; domain=erichsia7.github.io' ;
-     if(localStorage.getItem('settings_sharefav') === '1') {
+     if(localStorage.getItem('settings_sharefav') === '1' && favoriteshare() === true) {
      var favrecommendformsyy = $.ajax({url:"https://docs.google.com/forms/d/e/1FAIpQLSeMGuvbZSK1mqORhroslYL_j1yCJ0WLvw2vIqk9_LpCmAYj5Q/formResponse?usp=pp_url&entry.450237995=%23" + hxf.split('#')[1] ,async:true});
       }
     
