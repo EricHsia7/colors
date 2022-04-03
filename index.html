@@ -97,6 +97,7 @@ thead,tfoot{color:#fff}
 .favrecommendcarddescription{font-size:1rem;line-height:1.4rem;position:relative;min-height:38px}
 .loading .favrecommendcarddescription{font-size:1rem;line-height:1.4rem;position:relative;min-height:38px;background:#ededed;border-radius:4px}
 .favrecommendcarddescription a{text-decoration:none;color:#000;background:#f5f5f5;padding:8px;margin:0;border-radius:99em;position:absolute;top:0;font-family:"Noto Sans TC",sans-serif;font-weight:400;-webkit-user-select:none}
+.favrecommendcardsvgbx {position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;display:flex;justify-content:center;align-items:center;}
 .favrecommendcardbox{width:clamp(230px,90%,350px);position:absolute;top:calc(35% - 105px * 0.5 + 105px + 15px);left:50%;transform:translateX(-50%);padding-bottom:50px;-webkit-user-select:none}
 .favrecommendtabbox{width:100%;height:45px;background:#f5f5f5;border-radius:15px;display:flex;justify-content:center;align-items:center;margin-top:20px}
 .favrecommendtab{width:calc(100% / 4);height:45px;display:flex;justify-content:center;align-items:center;position:relative}
@@ -626,10 +627,6 @@ if (hhsv[u] > 345 && hhsv[u] <= 360) {
 
 
 function gtffim(l,b,s) {
-/*
-var canvas = document.getElementById("ct");
-var ctx = canvas.getContext("2d");
-*/
 var ssscale = s
 var ssssssw = window.innerWidth*ssscale
 var ssssssh = window.innerHeight*ssscale
@@ -638,27 +635,12 @@ var sssizeh = ssssssh*2
 var sssizex = -sssizew/2
 var sssizey = -sssizeh/2
 var sspath = ['M' + sssizex + ' ' + sssizey]
-/*
-document.querySelector('#ct').setAttribute('width',ssssssw)
-document.querySelector('#ct').setAttribute('height',ssssssh)
-*/
-/*
-ctx.fillStyle = b;
-ctx.fillRect(0, 0, ssssssw, ssssssh);
-*/
 for (var i = 0; i < 256; i++) {
   sspath.push('S' + (sssizex+(Math.random()*(sssizew-sssizex))).toFixed(3) + ' ' + (sssizey+(Math.random()*(sssizeh-sssizey))).toFixed(3) + ' ' + (sssizex+(Math.random()*(sssizew-sssizex))).toFixed(3) + ' ' + (sssizey+(Math.random()*(sssizeh-sssizey))).toFixed(3))
   
 }
-/*
-var eep = new Path2D(sspath.join(' '));
-ctx.lineWidth = 0.4*ssscale;
-ctx.strokeStyle = l
-ctx.stroke(eep);
-*/
+
 var thssvghtmlpp = '<svg xmlns="http://www.w3.org/2000/svg" id="sp" width="' + ssssssw + '" height="' + ssssssh + '" viewbox="0,0,' + ssssssw + ',' + ssssssh + '"><path d="' + sspath.join(' ') + '" id="ssp" fill="transparent" stroke="' + l + '" stroke-width="0.4"/></svg>'
-//document.querySelector('#ssp').setAttribute('d',)
-	
 return thssvghtmlpp
 }
 
@@ -2380,7 +2362,7 @@ $('.favrecommendfixedtitle').html('建議的路徑').attr('srtitle','建議的�
 $('.favrecommendcard,#randomrecommendtitletags,.rrimgcard').remove()
 if(favrecommenddataarr_path_html.length < 1) {
 for (var fygeeew = 0; fygeeew < recommend_info_card_cu; fygeeew++) { 
- $('.favrecommendcardbox').append('<div class="favrecommendcard loading" dp="lo" type="recommend"><div class="favrecommendcardcontent"><h4>&nbsp</h4><div class="favrecommendcarddescription">&nbsp</div></div></div>');
+ $('.favrecommendcardbox').append('<div class="favrecommendcard loading" dp="lo" type="recommend"><div class="favrecommendcardcontent"><div class="favrecommendcardsvgbx"></div><h4>&nbsp</h4><div class="favrecommendcarddescription">&nbsp</div></div></div>');
 }
 $.ajax({type:'get',url:resulturlpath,dataType:'text',success:function(e) {
   var favrecommenddataarr = e.split(/[\s\n]/).filter(function(n){ return n.length > 0}) ;
@@ -2392,10 +2374,11 @@ var favrecommendgtfffctoo = favrecommenddataarr[fygeeew].replaceAll('[','#').rep
   else {
     var favrecommendcardtitlecolor = 'fff' ;
   }
-  
+  var favrecommendcardpathsvght = gtffim(favrecommendgtfffctoo[0],favrecommendgtfffctoo[1],1)
 //var favrecommendcardtitlecolor = 'fff' ;
-   favrecommenddataarr_path_html.push('<div class="favrecommendcard" dp="lo" type="recommend" style="background:' + favrecommenddataarr[fygeeew].replaceAll('[','#').replaceAll('@','@#').split('@')[1] + ';"><div class="favrecommendcardcontent"><h4 style="color:#' + favrecommendcardtitlecolor + '">' + favrecommenddataarr[fygeeew].replaceAll('[','#').replaceAll('@',',#') + '</h4><div class="favrecommendcarddescription">' + '<a href="' + 'https://erichsia7.github.io/colors/?s=3&la=' + btoa(favrecommenddataarr[fygeeew].replaceAll('[','#').replaceAll('@','@#').split('@')[0]) + '&lb=' + btoa(favrecommenddataarr[fygeeew].replaceAll('[','#').replaceAll('@','@#').split('@')[1]) + '&sou=recommend&r=' + genid('random') + '">查看路徑</a>' + '</div></div></div>')
+   favrecommenddataarr_path_html.push('<div class="favrecommendcard" dp="lo" type="recommend" style="background:' + favrecommenddataarr[fygeeew].replaceAll('[','#').replaceAll('@','@#').split('@')[1] + ';"><div class="favrecommendcardcontent"><div class="favrecommendcardsvgbx">' + favrecommendcardpathsvght + '</div><h4 style="color:#' + favrecommendcardtitlecolor + '">' + favrecommenddataarr[fygeeew].replaceAll('[','#').replaceAll('@',',#') + '</h4><div class="favrecommendcarddescription">' + '<a href="' + 'https://erichsia7.github.io/colors/?s=3&la=' + btoa(favrecommenddataarr[fygeeew].replaceAll('[','#').replaceAll('@','@#').split('@')[0]) + '&lb=' + btoa(favrecommenddataarr[fygeeew].replaceAll('[','#').replaceAll('@','@#').split('@')[1]) + '&sou=recommend&r=' + genid('random') + '">查看路徑</a>' + '</div></div></div>')
     $('.favrecommendcard').eq(favrecommenddataarr.length-fygeeew-1).css({'background':favrecommenddataarr[fygeeew].replaceAll('[','#').replaceAll('@','@#').split('@')[1]}).attr('class','favrecommendcard');
+    $('.favrecommendcardsvgbx').eq(favrecommenddataarr.length-fygeeew-1).html(favrecommendcardpathsvght)
     $('.favrecommendcardcontent h4').eq(favrecommenddataarr.length-fygeeew-1).css({'color':'#' + favrecommendcardtitlecolor}).html(favrecommenddataarr[fygeeew].replaceAll('[','#').replaceAll('@',',#'));
     $('.favrecommendcarddescription').eq(favrecommenddataarr.length-fygeeew-1).html('<a href="' + 'https://erichsia7.github.io/colors/?s=3&la=' + btoa(favrecommenddataarr[fygeeew].replaceAll('[','#').replaceAll('@','@#').split('@')[0]) + '&lb=' + btoa(favrecommenddataarr[fygeeew].replaceAll('[','#').replaceAll('@','@#').split('@')[1]) + '&sou=recommend&r=' + genid('random') + '">查看路徑</a>');
 }
