@@ -20,7 +20,8 @@ gtag('config', 'G-342D6M2MKX');
 <meta property="og:image" content="https://erichsia7.github.io/colors/og/colors_og_image_v1.jpeg" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-<meta name="theme-color" content="#fff">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" p="light">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a" p="dark">
 <link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="icon" />
 <link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="bookmark" />
 <link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="shortcut icon" />
@@ -831,7 +832,7 @@ let darkmodematched = window.matchMedia('(prefers-color-scheme: dark)').matches;
 var darkmodematchedstr = 'undefined' ;
 if(darkmodematched) {
   darkmodematchedstr = 'true' ;
-  setthemecol('#1a1a1a',1)
+  //setthemecol('#1a1a1a',1)
 }
 else {
   darkmodematchedstr = 'false' ;
