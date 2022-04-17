@@ -1163,7 +1163,6 @@ var qrcode = new QRCode(document.querySelector('#qr') , {
     });
 
 	
-
   $('.favt').click(function() {
     usagepoint('favorite','+1.5')
     var favtdpromptdelaytime = 1 ;
@@ -1357,7 +1356,10 @@ gtag('event', 'generator', {
   $('.colmorme').click(function() {
 $('.colmorme').attr('class','colmorme lle btn')
 setTimeout(function() {
-    $('.colmorme').attr('class','colmorme lle btn moreanimation')
+if(String(localStorage.getItem('moreanimation')).length > 100) {
+$('.colmorme').css({'transform':'rotate(0deg)'}).attr('class','colmorme lle btn moreanimation')
+    }
+    
 },1)
     $('.moreopt').css({'bottom':'85px','right':(($(window).width()-$('#menuj').width())/2)+45+20});
   if(moreoptd === '0') {
@@ -1382,7 +1384,9 @@ setTimeout(function() {
   $('.moreoptbg').click(function() {
 $('.colmorme').attr('class','colmorme lle btn')
 setTimeout(function() {
-    $('.colmorme').attr('class','colmorme lle btn moreanimation-f')
+    if(String(localStorage.getItem('moreanimation')).length > 100) {
+$('.colmorme').css({'transform':'rotate(180deg)'}).attr('class','colmorme lle btn moreanimation-f')
+    }
 },1)
     $('.moreopt').css({'bottom':'85px','right':(($(window).width()-$('#menuj').width())/2)+45+20});
   $('.moreoptbg').fadeOut(1);
