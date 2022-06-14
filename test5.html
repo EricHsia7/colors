@@ -27,6 +27,11 @@ gtag('config', 'G-342D6M2MKX');
 <link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="shortcut icon" />
 <link rel="manifest" href="https://erichsia7.github.io/colors/manifest.json?20220209_198de2381adfe">
   <style>
+	  * {
+-webkit-appearance:none;
+outline:none;
+-webkit-tap-highlight-color:rgba(0,0,0,0);
+	  }
   body {
 margin:0px;
   padding:0px
@@ -955,6 +960,7 @@ function initialize() {
 
 
 var gtg = 0 ;
+		var dbclick = {}
 function print() {
   
   for (var i = gtg; i < allcolor.length; i++) {
@@ -1105,7 +1111,16 @@ favtdpromptdelaytime = 460 ;
 	
 	
 		});
-		
+		$('.color[fid="' + allcolor[i].id + '"]').click(function() {
+			var dbclarr = eval('dbclick.' + allcolor[i].id)
+			dbclarr.push(new Date().getTime())
+		eval('dbclick.' + allcolor[i].id + ' = dbclarr')
+			if(dbclarr.length >= 2) {
+				if((dbclarr[dbclarr.length]-dbclarr[(dbclarr.length-1)]) > 10 && (dbclarr[dbclarr.length]-dbclarr[(dbclarr.length-1)]) < 100) {
+					$('.favorite[btnid="' + allcolor[i].id + '"]').click()
+				}
+			}
+		});
 		
     gtg +=1
   }
