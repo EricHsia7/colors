@@ -1113,6 +1113,9 @@ favtdpromptdelaytime = 460 ;
 		});
 		$('.color[fid="' + allcolor[i].id + '"]').click(function() {
 			var dbclarr = eval('dbclick.' + allcolor[i].id)
+			if(dbclarr === null || dbclarr = undefined) {
+			eval('dbclick.' + allcolor[i].id + ' = []')
+			}
 			dbclarr.push(new Date().getTime())
 		eval('dbclick.' + allcolor[i].id + ' = dbclarr')
 			if(dbclarr.length >= 2) {
