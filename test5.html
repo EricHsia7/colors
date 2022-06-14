@@ -1240,16 +1240,16 @@ else {
 }
 //fv
 
-var favanimationloadid = '00j7h8s0dseefnyx' ;
+var favanimationloadid = 'qi63fd57x934nr7i' ;
 
- if(favanimationloadid === localStorage.getItem('favanimationloadid')) {
-  $('body').append('<style>.favoriteanimation{background:rgba(245,245,245,0.8) url(' + localStorage.getItem('favanimation') + ');background-size:45px 4500px;background-repeat:no-repeat;background-position:top 0px left 0px;animation-name:fav;animation-duration:.46s;animation-timing-function:steps(99,jump-start);animation-fill-mode:forwards}@keyframes fav{0%{background-position:top 0px left 0px}100%{background-position:top -4455px left 0px}}.favoriteanimation-recommend{background:#f5f5f5 url(' + localStorage.getItem('favanimation') + ');background-size:38px 3800px;background-repeat:no-repeat;background-position:top 0px left 0px;animation-name:fav-recommend;animation-duration:.46s;animation-timing-function:steps(99,jump-start);animation-fill-mode:forwards}@keyframes fav-recommend{0%{background-position:top 0px left 0px}100%{background-position:top -3762px left 0px}}</style>')
+ if(favanimationloadid === localStorage.getItem('favanimationloadid_v2')) {
+  $('body').append('<style>.favoriteanimation{background:rgba(245,245,245,0.8) url(' + localStorage.getItem('favanimation_2') + ');background-size:45px 4500px;background-repeat:no-repeat;background-position:top 0px left 0px;animation-name:fav;animation-duration:.46s;animation-timing-function:steps(99,jump-start);animation-fill-mode:forwards}@keyframes fav{0%{background-position:top 0px left 0px}100%{background-position:top -4455px left 0px}}.favoriteanimation-recommend{background:#f5f5f5 url(' + localStorage.getItem('favanimation_v2') + ');background-size:38px 3800px;background-repeat:no-repeat;background-position:top 0px left 0px;animation-name:fav-recommend;animation-duration:.46s;animation-timing-function:steps(99,jump-start);animation-fill-mode:forwards}@keyframes fav-recommend{0%{background-position:top 0px left 0px}100%{background-position:top -3762px left 0px}}</style>')
  }
 else {
- $.ajax({type:'get',url:"https://erichsia7.github.io/colors/favorite_animation_png_3_128_base64.txt",dataType:'text',success:function(e) {
+ $.ajax({type:'get',url:"https://erichsia7.github.io/colors/favorite_animation_png_3_v2_128_base64.txt",dataType:'text',success:function(e) {
   var favanimationloadtimedd = new Date().getTime() ;
-  localStorage.setItem('favanimation', e); 
-  localStorage.setItem('favanimationloadid', favanimationloadid);
+  localStorage.setItem('favanimation_v2', e); 
+  localStorage.setItem('favanimationloadid_v2', favanimationloadid);
    $('body').append('<style>.favoriteanimation{background:rgba(245,245,245,0.8) url(' + e + ');background-size:45px 4500px;background-repeat:no-repeat;background-position:top 0px left 0px;animation-name:fav;animation-duration:.46s;animation-timing-function:steps(99,jump-start);animation-fill-mode:forwards}@keyframes fav{0%{background-position:top 0px left 0px}100%{background-position:top -4455px left 0px}}.favoriteanimation-recommend{background:#f5f5f5 url(' + e + ');background-size:38px 3800px;background-repeat:no-repeat;background-position:top 0px left 0px;animation-name:fav-recommend;animation-duration:.46s;animation-timing-function:steps(99,jump-start);animation-fill-mode:forwards}@keyframes fav-recommend{0%{background-position:top 0px left 0px}100%{background-position:top -3762px left 0px}}</style>')
    }
 }); 
