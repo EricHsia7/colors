@@ -984,18 +984,18 @@ function print() {
       groupprogressbar.push('<li></li>')
     }
       dftextcolor = allcolor[i].textcolor[0]
-			themecol = ths_ctx[0]
+	themecol = ths_ctx[0]
     }
     else {
       if(allcolor[i].type === 'color') {
         contents.push('<div class="colorcontent" style="background:' + ths_ctx[0] + ';color:' + allcolor[i].textcolor + '"><div class="colorcontent-text">' + ths_ctx + '</div></div>')
 	dftextcolor = allcolor[i].textcolor
-				themecol = ths_ctx[0]
+	themecol = ths_ctx[0]
       }
       if(allcolor[i].type === 'gradient') {
         contents.push('<div class="colorcontent" style="background:linear-gradient(' + ths_ctx[0] + 'deg ,' + ths_ctx[1] + ' ,' + ths_ctx[2] + ');color:' + allcolor[i].textcolor + '"><div class="colorcontent-text">' + ths_ctx + '</div></div>')
 	dftextcolor = allcolor[i].textcolor
-				themecol = ths_ctx[1]
+	themecol = ths_ctx[1]
       }
     }
     
