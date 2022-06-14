@@ -972,7 +972,7 @@ function print() {
     var contents = []
     var groupprogressbar = []
 		var dftextcolor = '#000000'
-    
+    var themecol = '#888'
     if(allcolor[i].group) {
      var contentindexoffset = 0
     if(allcolor[i].type === 'imagecolorgroup') {
@@ -984,19 +984,22 @@ function print() {
       groupprogressbar.push('<li></li>')
     }
       dftextcolor = allcolor[i].textcolor[0]
+			themecol = ths_ctx[0]
     }
     else {
       if(allcolor[i].type === 'color') {
         contents.push('<div class="colorcontent" style="background:' + ths_ctx[0] + ';color:' + allcolor[i].textcolor + '"><div class="colorcontent-text">' + ths_ctx + '</div></div>')
-				dftextcolor = allcolor[i].textcolor
+	dftextcolor = allcolor[i].textcolor
+				themecol = ths_ctx[0]
       }
       if(allcolor[i].type === 'gradient') {
         contents.push('<div class="colorcontent" style="background:linear-gradient(' + ths_ctx[0] + 'deg ,' + ths_ctx[1] + ' ,' + ths_ctx[2] + ');color:' + allcolor[i].textcolor + '"><div class="colorcontent-text">' + ths_ctx + '</div></div>')
-				dftextcolor = allcolor[i].textcolor
+	dftextcolor = allcolor[i].textcolor
+				themecol = ths_ctx[1]
       }
     }
     
-    $('.box').append('<div class="color" fid="' + allcolor[i].id + '" group="' + allcolor[i].group + '" i="' + i + '"><div class="colorbox">' + contents.join('') + '</div><div class="group-progress-bar">' + groupprogressbar.join('') + '</div><div class="rightbar" txtcolor="' + dftextcolor + '"><div class="favorite" btnid="' + allcolor[i].id + '"></div><div class="share" btnid="' + allcolor[i].id + '"></div><div class="options"></div></div></div>')
+    $('.box').append('<div class="color" fid="' + allcolor[i].id + '" group="' + allcolor[i].group + '" i="' + i + '" themecolor="' + themecol + '"><div class="colorbox">' + contents.join('') + '</div><div class="group-progress-bar">' + groupprogressbar.join('') + '</div><div class="rightbar" txtcolor="' + dftextcolor + '"><div class="favorite" btnid="' + allcolor[i].id + '"></div><div class="share" btnid="' + allcolor[i].id + '"></div><div class="options"></div></div></div>')
     
 	$('.share[btnid="' + allcolor[i].id + '"]').click(function() {
        var fidtt = $(this).attr('btnid')
@@ -1199,7 +1202,7 @@ var ns = Math.round(parseInt(div.getAttribute('dy'))/$('.container').height())*$
   
  
    
-  setthemecol($('.color[i="' + Math.ceil(parseInt(div.getAttribute('dy'))/$('.container').height()) + '"] .colorcontent').css('background-color'),1);
+  setthemecol($('.color[i="' + Math.ceil(parseInt(div.getAttribute('dy'))/$('.container').height()) + '"]').attr('themecolor'),1);
   
   var ws = parseInt(div.getAttribute('dy'))-ns
   offsetY -= ws
