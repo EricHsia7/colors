@@ -1137,7 +1137,7 @@ favtdpromptdelaytime = 460 ;
 	$('.box').css({'height':'calc(' + $('.box .color').length + ' * var(--ft-window-height))'});
 }
 
-let isScrolling;
+
 $(document).ready(function() {
 initialize()
 print()
@@ -1202,7 +1202,6 @@ var ns = Math.round(parseInt(div.getAttribute('dy'))/$('.container').height())*$
   
  
    
-  setthemecol($('.color').eq(Math.ceil(parseInt(div.getAttribute('dy'))/$('.container').height())).attr('themecolor'),1);
   
   var ws = parseInt(div.getAttribute('dy'))-ns
   offsetY -= ws
@@ -1241,7 +1240,9 @@ function move(e) {
     div.style.transition = '0s'
     }
     //ggg
-    
+	  
+    setthemecol($('.color').eq(Math.round(parseInt(div.getAttribute('dy'))/$('.container').height())).attr('themecolor'),1);
+  
   }
 }
     
