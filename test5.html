@@ -737,12 +737,12 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
 	}
 	
       var pltcchexpej = []
-      for (var i = 0; i < imgcolorpalette.length; i++) {
+      for (var hq = 0; hq < imgcolorpalette.length; hq++) {
 	
-        var thsvstehecbwinsoiwpks = rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2])
+        var thsvstehecbwinsoiwpks = rgbToHex(imgcolorpalette[hq][0],imgcolorpalette[hq][1],imgcolorpalette[hq][2])
         pltcchexpej.push(thsvstehecbwinsoiwpks)
 	      
-    if((imgcolorpalette[i][0]+imgcolorpalette[i][1]+imgcolorpalette[i][2])/3 > 128) {
+    if((imgcolorpalette[hq][0]+imgcolorpalette[hq][1]+imgcolorpalette[hq][2])/3 > 128) {
       var aafhi9ooiyg = '000' 
     }
     else {
@@ -840,10 +840,10 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
         
       var pltcolorhex = []
       var plttextcolor = []
-      for (var i = 0; i < imgcolorpalette.length; i++) {
-        var thshex = rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2])
+      for (var hq = 0; hq < imgcolorpalette.length; hq++) {
+        var thshex = rgbToHex(imgcolorpalette[hq][0],imgcolorpalette[hq][1],imgcolorpalette[hq][2])
         pltcolorhex.push(thshex)      
-        plttextcolor.push(textcol(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2]))    
+        plttextcolor.push(textcol(imgcolorpalette[hq][0],imgcolorpalette[hq][1],imgcolorpalette[hq][2]))    
       }
 
 	    
