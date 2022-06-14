@@ -1294,7 +1294,7 @@ var ns = Math.round(parseInt(div.getAttribute('dy'))/$('.container').height())*$
 	lastcolor = allcolor[allcolor.length-1]
 	stopload = 1
 	}
-	if(Math.abs(Math.floor(parseInt(div.getAttribute('dy'))/$('.container').height())) >= (allcolor.length)) {
+	if(Math.abs(Math.floor(parseInt(div.getAttribute('dy'))/$('.container').height())) >= (allcolor.length-1)) {
 	location.replace('https://erichsia7.github.io/colors/test5.html?db=1&dbjson=' + encodeURIComponent(JSON.stringify(lastcolor)))
 	}
   }
