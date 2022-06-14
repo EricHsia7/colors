@@ -1250,19 +1250,20 @@ favtdpromptdelaytime = 460 ;
   });
   var morecardloaded = 0 ;
   var morecardv = 'mr7p0i0y2b69j91k'
+  var morecardhh = 9 ;
   //var morecardiiu = 'https://erichsia7.github.io/colors/more_options_image/'
   var morecardiiu = ''
   $('.mor').click(function() {
     if(morecardloaded === 0) {
     morecardloaded = 1
-    for (var i = 0; i < 8; i++) {
+    for (var i = 0; i < morecardhh; i++) {
 $('.cmore').prepend('<div class="morecard"><div class="morecardimage"></div><div class="morecardtitle"></div><div class="morecardbtn"></div></div>')
     }
     $('.cmore').prepend('<div class="cmorespe"></div>')
 if(localStorage.getItem('moreopt_d') === morecardv) {
    usagepoint('more_options_open','+1.5')
   var morecardjson = JSON.parse(localStorage.getItem('moreopt')) ;
-  for (var i = 0; i < 8; i++) {
+  for (var i = 0; i < morecardhh; i++) {
     var morebtnid = genid('random')
     var morecardthisjson = morecardjson[i] ;
     $('.morecardimage').eq(i).css({'background':'url(' + morecardiiu + morecardthisjson.image + ')','background-size':'cover'})
@@ -1278,7 +1279,7 @@ $.ajax({type:'get',url:"https://erichsia7.github.io/colors/json/more_options_2.j
 var morecardjson = JSON.parse(e) ;
   localStorage.setItem('moreopt',e)
   localStorage.setItem('moreopt_d',morecardv)
-  for (var i = 0; i < 8; i++) {
+  for (var i = 0; i < morecardhh; i++) {
     var morebtnid = genid('random')
     var morecardthisjson = morecardjson[i] ;
     $('.morecardimage').eq(i).css({'background':'url(' + morecardiiu + morecardthisjson.image + ')','background-size':'cover'})
