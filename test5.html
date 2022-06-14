@@ -797,7 +797,7 @@ function addcolorcontent() {
     type: "color",
     group: false,
     content: [col],
-    shareurl: "",
+    shareurl: 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(col) + '&r=' + genid('random'),
     id:'c_' + genid('random'),
     textcolor:txc
   };
@@ -820,7 +820,7 @@ function addgradientcontent() {
     type: "gradient",
     group: false,
     content: grd,
-    shareurl: "",
+    shareurl: 'https://erichsia7.github.io/colors/?s=2&ga=' + btoa(grd[1]) + '&gb=' + btoa(grd[2]) + '&gdeg=' + grd[0] + '&r=' + genid('random'),
     id:'c_' + genid('random'),
     textcolor:txc
   };
