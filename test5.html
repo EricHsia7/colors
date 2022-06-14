@@ -1289,12 +1289,12 @@ var ns = Math.round(parseInt(div.getAttribute('dy'))/$('.container').height())*$
   }
   }
   print()
-	if(allcolor.length === 11) {
+	if(allcolor.length > 10 && allcolor.length < 12) {
 	addcolorcontent()
 	lastcolor = allcolor[allcolor.length-1]
 	stopload = 1
 	}
-	if(Math.abs(Math.floor(parseInt(div.getAttribute('dy'))/$('.container').height())) > 11) {
+	if(Math.abs(Math.floor(parseInt(div.getAttribute('dy'))/$('.container').height())) >= (allcolor.length)) {
 	location.replace('https://erichsia7.github.io/colors/test5.html?db=1&dbjson=' + encodeURIComponent(JSON.stringify(lastcolor)))
 	}
   }
