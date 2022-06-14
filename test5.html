@@ -745,7 +745,11 @@ function textcol(r, g, b) {
     return "#ffffff";
   }
 }
-
+function setthemecol(hexcolsjs,delaytimems) {
+  setTimeout(function() {
+  $('meta[name="theme-color"]').attr('content',hexcolsjs);
+  },delaytimems);
+}
 
 	  
 	  
@@ -1195,7 +1199,7 @@ var ns = Math.round(parseInt(div.getAttribute('dy'))/$('.container').height())*$
   
  
    
- 
+  setthemecol($('.color[i="' + Math.ceil(parseInt(div.getAttribute('dy'))/$('.container').height()) + '"]').css('background'),1);
   
   var ws = parseInt(div.getAttribute('dy'))-ns
   offsetY -= ws
