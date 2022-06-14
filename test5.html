@@ -1112,15 +1112,15 @@ favtdpromptdelaytime = 460 ;
 	
 		});
 		$('.color[fid="' + allcolor[i].id + '"]').click(function() {
-			var dbclarr = eval('dbclick.' + allcolor[i].id)
+			var dbclarr = eval('dbclick.' + $(this).attr('fid'))
 			if(dbclarr === null || dbclarr === undefined) {
-			eval('dbclick.' + allcolor[i].id + ' = []')
+			eval('dbclick.' + $(this).attr('fid') + ' = []')
 			}
 			dbclarr.push(new Date().getTime())
-		eval('dbclick.' + allcolor[i].id + ' = dbclarr')
+		eval('dbclick.' + $(this).attr('fid') + ' = dbclarr')
 			if(dbclarr.length >= 2) {
 				if((dbclarr[dbclarr.length]-dbclarr[(dbclarr.length-1)]) > 10 && (dbclarr[dbclarr.length]-dbclarr[(dbclarr.length-1)]) < 100) {
-					$('.favorite[btnid="' + allcolor[i].id + '"]').click()
+					$('.favorite[btnid="' + $(this).attr('fid') + '"]').click()
 				}
 			}
 		});
