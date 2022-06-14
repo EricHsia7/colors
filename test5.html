@@ -92,6 +92,29 @@ position:absolute;
 -webkit-backdrop-filter: blur(15px);
 backdrop-filter: blur(15px);
  }
+.rightbar {
+	width:55px;
+	height:calc(55px * 3);
+	  }
+.favorite {
+	background:url(https://erichsia7.github.io/colors/favorite.png);
+		}
+.share {
+	background:url(https://erichsia7.github.io/colors/share3.png);
+		}
+.options {
+	background:url(https://erichsia7.github.io/colors/more.png);
+		}
+.favorite,.share,.options {
+	width:55px;
+	height:55px;
+	background-size:35px;
+	background-position:center;
+	background-repeat:no-repeat;
+		}
+ .rightbar[txtcolor="#ffffff"] .favorite , .rightbar[txtcolor="#ffffff"] .share, .rightbar[txtcolor="#ffffff"] .options{
+	 filter: invert(100%);
+		}
   </style>
   <style id="ft">
 </style>
@@ -702,9 +725,9 @@ function textcol(r, g, b) {
   var textcolrgbfy = (r*0.213+g*0.718+b*0.072)
   //var textcolrgbfy = (r + g + b) / 3;
   if (textcolrgbfy > 255 / 2) {
-    return "#000";
+    return "#000000";
   } else {
-    return "#fff";
+    return "#ffffff";
   }
 }
 
@@ -926,6 +949,7 @@ function print() {
     var ths_ctx = allcolor[i].content
     var contents = []
     var groupprogressbar = []
+		var dftextcolor = '#000000'
     
     if(allcolor[i].group) {
      var contentindexoffset = 0
@@ -937,18 +961,20 @@ function print() {
       contents.push('<div class="colorcontent" style="background:' + ths_ctx[d] + ';--dx-li-f:' + d+contentindexoffset + ';color:' + allcolor[i].textcolor[d] + '"><div class="colorcontent-text">' + ths_ctx[d] + '</div></div>')
       groupprogressbar.push('<li></li>')
     }
-      
+      dftextcolor = allcolor[i].textcolor[0]
     }
     else {
       if(allcolor[i].type === 'color') {
         contents.push('<div class="colorcontent" style="background:' + ths_ctx[0] + ';color:' + allcolor[i].textcolor + '"><div class="colorcontent-text">' + ths_ctx + '</div></div>')
+				dftextcolor = allcolor[i].textcolor
       }
       if(allcolor[i].type === 'gradient') {
         contents.push('<div class="colorcontent" style="background:linear-gradient(' + ths_ctx[0] + 'deg ,' + ths_ctx[1] + ' ,' + ths_ctx[2] + ');color:' + allcolor[i].textcolor + '"><div class="colorcontent-text">' + ths_ctx + '</div></div>')
+				dftextcolor = allcolor[i].textcolor
       }
     }
     
-    $('.box').append('<div class="color" fid="' + allcolor[i].id + '" group="' + allcolor[i].group + '" i="' + i + '"><div class="colorbox">' + contents.join('') + '</div><div class="group-progress-bar">' + groupprogressbar.join('') + '</div><div class="rightbar"><div class="favorite"></div><div class="share"></div><div class="options"></div></div></div>')
+    $('.box').append('<div class="color" fid="' + allcolor[i].id + '" group="' + allcolor[i].group + '" i="' + i + '"><div class="colorbox">' + contents.join('') + '</div><div class="group-progress-bar">' + groupprogressbar.join('') + '</div><div class="rightbar" txtcolor="' + '"><div class="favorite"></div><div class="share"></div><div class="options"></div></div></div>')
     
     gtg +=1
   }
