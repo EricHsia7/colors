@@ -1119,7 +1119,7 @@ favtdpromptdelaytime = 460 ;
 			dbclarr.push(new Date().getTime())
 		eval('dbclick.' + $(this).attr('fid') + ' = dbclarr')
 			if(dbclarr.length >= 2) {
-				if((dbclarr[dbclarr.length-1]-dbclarr[(dbclarr.length-2)]) > 10 && (dbclarr[dbclarr.length-1]-dbclarr[(dbclarr.length-2)]) < 350) {
+				if((dbclarr[dbclarr.length-1]-dbclarr[(dbclarr.length-2)]) > 10 && (dbclarr[dbclarr.length-1]-dbclarr[(dbclarr.length-2)]) < 550) {
 					$('.favorite[btnid="' + $(this).attr('fid') + '"]').click()
 				}
 			}
