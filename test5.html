@@ -1114,7 +1114,7 @@ favtdpromptdelaytime = 460 ;
 		$('.color[fid="' + allcolor[i].id + '"]').click(function() {
 			var dbclarr = eval('dbclick.' + $(this).attr('fid'))
 			if(dbclarr === null || dbclarr === undefined) {
-			eval('dbclick.' + $(this).attr('fid') + ' = []')
+			eval('dbclick.' + $(this).attr('fid') + ' = [' + new Date().getTime() + ']')
 			}
 			dbclarr.push(new Date().getTime())
 		eval('dbclick.' + $(this).attr('fid') + ' = dbclarr')
