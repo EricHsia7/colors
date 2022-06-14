@@ -717,7 +717,7 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
     for ( i = 0; i < responseTextLen; i++ ) {
         binary += String.fromCharCode(responseText.charCodeAt(i) & 255)
     }
-  $('#' + imgid).attr('src','data:image/jpeg;base64,' + btoa(binary))
+    $('#' + imgid).attr('src','data:image/jpeg;base64,' + btoa(binary))
     var bigsizerdimgurl = String('https://picsum.photos/id/' + jqXHR.getResponseHeader('picsum-id') + '/1024/1024')
     $('#' + imgid).ready(function() {
     setTimeout(function() {
@@ -829,6 +829,12 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
   $('#' + imgid).attr('src',b64url)
 
     var bigsizerdimgurl = String('https://picsum.photos/id/' + jqXHR.getResponseHeader('picsum-id') + '/1024/1024')
+    
+    var imginfo = $.ajax({type:'get',url:'https://picsum.photos/id/' + picid + '/info',dataType:'text',async:false});
+var imginfojson = JSON.parse(ggyiyunpkiggvgsdx.responseText)
+
+
+	
     $('#' + imgid).ready(function() {
     setTimeout(function() {
     const colorThief = new ColorThief();
@@ -853,7 +859,8 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
     content: pltcolorhex,
     image: {
       dataurl: b64url,
-      source: "unsplash.com/....."
+      hdurl:imginfojson.download_url,
+      source: imginfojson.url
     },
     shareurl: "",
     id:'c_' + genid('random'),
@@ -906,8 +913,13 @@ function print() {
     var groupprogressbar = []
     
     if(allcolor[i].group) {
+     var contentindexoffset = 0
+    if(allcolor[i].type === 'imagecolorgroup') {
+      contentindexoffset = 1
+      contents.push('<div class="colorcontent" style="background:' + allcolor[i].image.dataurl + ';background-size:cover;background-position:center;background-repeat:no-repeat;--dx-li-f:' + 0 + ';"><img src="' + allcolor[i].image.hdurl + "></div>')
+    }
     for (var d = 0; d < allcolor[i].content.length; d++) {
-      contents.push('<div class="colorcontent" style="background:' + ths_ctx[d] + ';--dx-li-f:' + d + ';color:' + allcolor[i].textcolor[d] + '"><div class="colorcontent-text">' + ths_ctx[d] + '</div></div>')
+      contents.push('<div class="colorcontent" style="background:' + ths_ctx[d] + ';--dx-li-f:' + d+contentindexoffset + ';color:' + allcolor[i].textcolor[d] + '"><div class="colorcontent-text">' + ths_ctx[d] + '</div></div>')
       groupprogressbar.push('<li></li>')
     }
       
