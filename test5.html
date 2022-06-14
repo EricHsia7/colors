@@ -1257,7 +1257,7 @@ else {
 var favanimationloadid = 'qi63fd57x934nr7i' ;
 
  if(favanimationloadid === localStorage.getItem('favanimationloadid_v2')) {
-  $('body').append('<style>.favoriteanimation{background:url(' + localStorage.getItem('favanimation_2') + ');background-size:55px 5500px;background-repeat:no-repeat;background-position:top 0px left 0px;animation-name:fav;animation-duration:.46s;animation-timing-function:steps(99,jump-start);animation-fill-mode:forwards}@keyframes fav{0%{background-position:top 0px left 0px}100%{background-position:top -5445px left 0px}}</style>');
+  $('body').append('<style>.favoriteanimation{background:url(' + localStorage.getItem('favanimation_v2') + ');background-size:55px 5500px;background-repeat:no-repeat;background-position:top 0px left 0px;animation-name:fav;animation-duration:.46s;animation-timing-function:steps(99,jump-start);animation-fill-mode:forwards}@keyframes fav{0%{background-position:top 0px left 0px}100%{background-position:top -5445px left 0px}}</style>');
  }
 else {
  $.ajax({type:'get',url:"https://erichsia7.github.io/colors/favorite_animation_png_3_v2_128_base64.txt",dataType:'text',success:function(e) {
