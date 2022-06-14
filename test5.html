@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<meta charset="UTF-8">
+<title>Colors</title>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-342D6M2MKX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+gtag('config', 'G-342D6M2MKX');
+</script>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js?1"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+<link href="https://erichsia7.github.io/colors/c2_512.png" sizes="512x512" rel="apple-touch-icon-precomposed" />
+<meta property="og:image" content="https://erichsia7.github.io/colors/og/colors_og_image_v1.jpeg" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" p="light">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a" p="dark">
+<link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="icon" />
+<link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="bookmark" />
+<link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="shortcut icon" />
+<link rel="manifest" href="https://erichsia7.github.io/colors/manifest.json?20220209_198de2381adfe">
+  <style>
+  body {
+margin:0px;
+  padding:0px
+}
+.container {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+}
+.box {
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+}
+.color {
+  position:relative;
+  width:var(--ft-window-width);
+  height:var(--ft-window-height);
+  background:#333;
+}
+.colorbox {
+  position:absolute;
+  height:100%;
+  width:100%;
+  top:0px;
+  left:0px;
+  overflow:scroll;
+}
+.colorcontent {
+  position:absolute;
+  top:0px;
+  left:calc(var(--ft-window-width) * var(--dx-li-f));
+  width:var(--ft-window-width);
+  height:100%;
+  display: flex;
+justify-content: center;
+align-items: center;
+}
+.colorcontent-text {
+  font-size:25px;
+}
+  </style>
+  <style id="ft">
+</style>
+<div class="container">
+<div class="box" fy="0"></div>
+</div>
+  <script>
+  
+var allcolor = [];
+var allcolortt = []
+function genid(mode) {
+  if (mode === "random") {
+    var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
+    var genid = "";
+    for (var i = 0; i < 16; i++) {
+      var genrandomNumber = Math.floor(Math.random() * genidchars.length);
+      genid += genidchars.substring(genrandomNumber, genrandomNumber + 1);
+    }
+    return genid;
+  }
+  if (mode === "time") {
+    var gtoday = new Date();
+    var genid2 =
+      gtoday.getMonth() +
+      1 +
+      "_" +
+      gtoday.getDate() +
+      "_" +
+      gtoday.getHours() +
+      "_" +
+      gtoday.getMinutes() +
+      "_" +
+      gtoday.getSeconds() +
+      "-" +
+      (1 + Math.floor(Math.random() * 8)) +
+      "" +
+      (1 + Math.floor(Math.random() * 8)) +
+      "" +
+      (1 + Math.floor(Math.random() * 8)) +
+      "" +
+      (1 + Math.floor(Math.random() * 8)) +
+      "" +
+      (1 + Math.floor(Math.random() * 8)) +
+      "" +
+      (1 + Math.floor(Math.random() * 8)) +
+      "" +
+      (1 + Math.floor(Math.random() * 8)) +
+      "" +
+      (1 + Math.floor(Math.random() * 8));
+    return genid2;
+  }
+  if (mode === "number") {
+    var genid3 = "";
+    for (var i = 0; i < 16; i++) {
+      genid3 += "" + (0 + Math.floor(Math.random() * 9));
+    }
+    return genid3;
+  }
+  if (mode === "uuid") {
+    var genidchars4 = "abcdef012345678";
+    var geniduu = [8, 4, 4, 4, 12];
+    var genid4 = "";
+    var genid5 = "";
+    for (var ia = 0; ia < geniduu.length; ia++) {
+      var genid4 = "";
+      for (var i = 0; i < geniduu[ia]; i++) {
+        var genrandomNumber4 = Math.floor(Math.random() * genidchars4.length);
+        genid4 += genidchars4.substring(genrandomNumber4, genrandomNumber4 + 1);
+      }
+      genid5 += "-" + genid4;
+    }
+    return genid5.substring(1, genid5.length);
+  }
+}
+let getMode = (e) => {
+  let t = {};
+  e.forEach((e) => {
+    t[e] = (t[e] || 0) + 1;
+  });
+  let l = 0,
+    r = [];
+  for (let e in t)
+    if (
+      (t[e] > l ? ((l = t[e]), (r = [e])) : t[e] === l && r.push(e),
+      r.length === Object.keys(t).length)
+    )
+      return [];
+  return r;
+};
+
+function setcookie(cookiename, cookievalue) {
+  document.cookie = cookiename + "=" + cookievalue + "; max-age=" + 60 * 60 * 24 * 30;
+}
+function getCookie(cname) {
+  var name = cname + "=";
+  var ca = document.cookie.split(";");
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i].trim();
+    if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+  }
+  return "";
+}
+
+function componentToHex(a) {
+  var r = a.toString(16);
+  return 1 == r.length ? "0" + r : r;
+}
+function rgbToHex(a, r, t) {
+  return "#" + componentToHex(a) + componentToHex(r) + componentToHex(t);
+}
+function hexToRgb(a) {
+  var r = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(a);
+  return r
+    ? { r: parseInt(r[1], 16), g: parseInt(r[2], 16), b: parseInt(r[3], 16) }
+    : null;
+}
+function rgbtocmyk(a, r, t, o) {
+  var h = 1 - a / 255,
+    n = 1 - r / 255,
+    M = 1 - t / 255,
+    e = Math.min(h, Math.min(n, M));
+  return (
+    (h = (h - e) / (1 - e)),
+    (n = (n - e) / (1 - e)),
+    (M = (M - e) / (1 - e)),
+    o ||
+      ((h = Math.round(1e4 * h) / 100),
+      (n = Math.round(1e4 * n) / 100),
+      (M = Math.round(1e4 * M) / 100),
+      (e = Math.round(1e4 * e) / 100)),
+    {
+      c: (h = isNaN(h) ? 0 : h),
+      m: (n = isNaN(n) ? 0 : n),
+      y: (M = isNaN(M) ? 0 : M),
+      k: (e = isNaN(e) ? 0 : e),
+      cmykstr: h + "," + n + "," + M + "," + e
+    }
+  );
+}
+function rgbtohsv(a, r, t) {
+  let o, h, n, M, e, s, u, m, d, f, l, c;
+  return (
+    (o = a / 255),
+    (h = r / 255),
+    (n = t / 255),
+    (d = Math.max(o, h, n)),
+    (l = (a) => (d - a) / 6 / f + 0.5),
+    (c = (a) => Math.round(100 * a) / 100),
+    0 == (f = d - Math.min(o, h, n))
+      ? (u = m = 0)
+      : ((m = f / d),
+        (M = l(o)),
+        (e = l(h)),
+        (s = l(n)),
+        o === d
+          ? (u = s - e)
+          : h === d
+          ? (u = 1 / 3 + M - s)
+          : n === d && (u = 2 / 3 + e - M),
+        u < 0 ? (u += 1) : u > 1 && (u -= 1)),
+    {
+      h: Math.round(360 * u),
+      s: c(100 * m),
+      v: c(100 * d),
+      hsvstr: Math.round(360 * u) + "," + c(100 * m) + "," + c(100 * d)
+    }
+  );
+}
+function rgbtohsl(a, r, t) {
+  var o = [a, r, t],
+    h = o[0] / 255,
+    n = o[1] / 255,
+    M = o[2] / 255,
+    e = Math.max(h, n, M),
+    s = Math.min(h, n, M),
+    u = (e + s) / 2,
+    m = 0,
+    d = 0;
+  return (
+    e != s &&
+      ((m = u < 0.5 ? (e - s) / (e + s) : (e - s) / (2 - e - s)),
+      (d =
+        h == e
+          ? (n - M) / (e - s)
+          : n == e
+          ? 2 + (M - h) / (e - s)
+          : 4 + (h - n) / (e - s))),
+    (d *= 60) < 0 && (d += 360),
+    { h: d, s: (m *= 100), l: (u *= 100), hslstr: d + "," + m + "," + u }
+  );
+}
+function hsvToRgb(a, r, t) {
+  var o, h, n, M, e, s, u, m;
+  if (
+    ((a = Math.max(0, Math.min(360, a))),
+    (r = Math.max(0, Math.min(100, r))),
+    (t = Math.max(0, Math.min(100, t))),
+    (t /= 100),
+    0 == (r /= 100))
+  )
+    return (
+      (o = h = n = t),
+      [Math.round(255 * o), Math.round(255 * h), Math.round(255 * n)]
+    );
+  switch (
+    ((s = t * (1 - r)),
+    (u = t * (1 - r * (e = (a /= 60) - (M = Math.floor(a))))),
+    (m = t * (1 - r * (1 - e))),
+    M)
+  ) {
+    case 0:
+      (o = t), (h = m), (n = s);
+      break;
+    case 1:
+      (o = u), (h = t), (n = s);
+      break;
+    case 2:
+      (o = s), (h = t), (n = m);
+      break;
+    case 3:
+      (o = s), (h = u), (n = t);
+      break;
+    case 4:
+      (o = m), (h = s), (n = t);
+      break;
+    default:
+      (o = t), (h = s), (n = u);
+  }
+  return [Math.round(255 * o), Math.round(255 * h), Math.round(255 * n)];
+}
+function getligrd(a) {
+  var r = hexToRgb(a),
+    t = rgbtohsv(r.r, r.g, r.b),
+    o = Math.floor(360 * Math.random()),
+    h = 0,
+    n = 0,
+    M = 0,
+    e = 0,
+    s = 0,
+    u = 0;
+  t.h < 35 &&
+    ((h = t.h + Math.floor(35 * Math.random())),
+    (n = t.h + Math.floor(35 * Math.random()))),
+    t.h > 35 &&
+      t.h < 325 &&
+      ((h = t.h + Math.floor(70 * Math.random() - 35)),
+      (n = t.h + Math.floor(70 * Math.random() - 35))),
+    t.h > 325 &&
+      ((h = t.h - Math.floor(35 * Math.random())),
+      (n = t.h - Math.floor(35 * Math.random()))),
+    t.s < 35 &&
+      ((M = t.s + Math.floor(35 * Math.random())),
+      (e = t.s + Math.floor(35 * Math.random()))),
+    t.s > 35 &&
+      t.s < 65 &&
+      ((M = t.s + Math.floor(70 * Math.random() - 35)),
+      (e = t.s + Math.floor(70 * Math.random() - 35))),
+    t.s > 65 &&
+      ((M = t.s - Math.floor(35 * Math.random())),
+      (e = t.s - Math.floor(35 * Math.random()))),
+    t.v < 35 &&
+      ((s = t.v + Math.floor(35 * Math.random())),
+      (u = t.v + Math.floor(35 * Math.random()))),
+    t.v > 35 &&
+      t.v < 65 &&
+      ((s = t.v + Math.floor(70 * Math.random() - 35)),
+      (u = t.v + Math.floor(70 * Math.random() - 35))),
+    t.v > 65 &&
+      ((s = t.v - Math.floor(35 * Math.random())),
+      (u = t.v - Math.floor(35 * Math.random())));
+  var m = hsvToRgb(h, M, s),
+    d = hsvToRgb(n, e, u);
+  return [o, rgbToHex(m[0], m[1], m[2]), rgbToHex(d[0], d[1], d[2])];
+}
+function hsv2rgb(a, r, t) {
+  (a /= 60), (r /= 100), (t /= 100);
+  var o = Math.floor(a) % 6,
+    h = a - Math.floor(a),
+    n = 255 * t * (1 - r),
+    M = 255 * t * (1 - r * h),
+    e = 255 * t * (1 - r * (1 - h));
+  t *= 255;
+  switch (o) {
+    case 0:
+      return [t, e, n];
+    case 1:
+      return [M, t, n];
+    case 2:
+      return [n, t, e];
+    case 3:
+      return [n, M, t];
+    case 4:
+      return [e, n, t];
+    case 5:
+      return [t, n, M];
+  }
+}
+
+function cllhi() {
+  var tthi = getCookie("colorfav2")
+    .substring(1, getCookie("colorfav2").length)
+    .split("&");
+
+  if (tthi.length < 10) {
+    return false;
+  }
+  var ttww = [];
+  var hhsv = [];
+  var shsv = [];
+  var vhsv = [];
+  var rdbx = [
+    "a0_15",
+    "a16_30",
+    "a31_45",
+    "a46_60",
+    "a61_75",
+    "a76_90",
+    "a91_105",
+    "a106_120",
+    "a121_135",
+    "a136_150",
+    "a151_165",
+    "a166_180",
+    "a181_195",
+    "a196_210",
+    "a211_225",
+    "a226_240",
+    "a241_255",
+    "a256_270",
+    "a271_285",
+    "a286_300",
+    "a301_315",
+    "a316_330",
+    "a331_345",
+    "a346_360"
+  ];
+  var yau = {
+    a0_15: [],
+    a16_30: [],
+    a31_45: [],
+    a46_60: [],
+    a61_75: [],
+    a76_90: [],
+    a91_105: [],
+    a106_120: [],
+    a121_135: [],
+    a136_150: [],
+    a151_165: [],
+    a166_180: [],
+    a181_195: [],
+    a196_210: [],
+    a211_225: [],
+    a226_240: [],
+    a241_255: [],
+    a256_270: [],
+    a271_285: [],
+    a286_300: [],
+    a301_315: [],
+    a316_330: [],
+    a331_345: [],
+    a346_360: []
+  };
+  var yab = 0;
+
+  for (var ffpp = 0; ffpp < tthi.length; ffpp++) {
+    if (tthi[ffpp].indexOf("li") != -1) {
+      //li
+      var yywiw = tthi[ffpp].split("]");
+
+      var yy_a = hexToRgb(yywiw[2]);
+      var yy_b = hexToRgb(yywiw[3]);
+
+      ttww.push(
+        rgbToHex(
+          Math.floor((yy_a.r + yy_b.r) / 2),
+          Math.floor((yy_a.g + yy_b.g) / 2),
+          Math.floor((yy_a.b + yy_b.b) / 2)
+        )
+      );
+
+      hhsv.push(
+        rgbtohsv(
+          Math.floor((yy_a.r + yy_b.r) / 2),
+          Math.floor((yy_a.g + yy_b.g) / 2),
+          Math.floor((yy_a.b + yy_b.b) / 2)
+        ).h
+      );
+    } else {
+      if (tthi[ffpp].indexOf("pa") != -1) {
+        var tyv = tthi[ffpp].split("]");
+        var yy_y = hexToRgb(tyv[2]);
+        var yy_yr = hexToRgb(tyv[1]);
+        ttww.push(tyv[2]);
+        hhsv.push(
+          rgbtohsv(
+            Math.floor((yy_y.r + yy_yr.r) / 2),
+            Math.floor((yy_y.g + yy_yr.g) / 2),
+            Math.floor((yy_y.b + yy_yr.b) / 2)
+          ).h
+        );
+      } else {
+        ttww.push(tthi[ffpp]);
+        var yy_c = hexToRgb(tthi[ffpp]);
+        hhsv.push(
+          rgbtohsv(Math.floor(yy_c.r), Math.floor(yy_c.g), Math.floor(yy_c.b)).h
+        );
+      }
+    }
+  }
+
+  for (var u = 0; u < hhsv.length; u++) {
+    if (hhsv[u] >= 0 && hhsv[u] <= 15) {
+      yau.a0_15.push(hhsv[u]);
+    }
+    if (hhsv[u] > 15 && hhsv[u] <= 30) {
+      yau.a16_30.push(hhsv[u]);
+    }
+    if (hhsv[u] > 30 && hhsv[u] <= 45) {
+      yau.a31_45.push(hhsv[u]);
+    }
+    if (hhsv[u] > 45 && hhsv[u] <= 60) {
+      yau.a46_60.push(hhsv[u]);
+    }
+    if (hhsv[u] > 60 && hhsv[u] <= 75) {
+      yau.a61_75.push(hhsv[u]);
+    }
+    if (hhsv[u] > 75 && hhsv[u] <= 90) {
+      yau.a76_90.push(hhsv[u]);
+    }
+    if (hhsv[u] > 90 && hhsv[u] <= 105) {
+      yau.a91_105.push(hhsv[u]);
+    }
+    if (hhsv[u] > 105 && hhsv[u] <= 120) {
+      yau.a106_120.push(hhsv[u]);
+    }
+    if (hhsv[u] > 120 && hhsv[u] <= 135) {
+      yau.a121_135.push(hhsv[u]);
+    }
+    if (hhsv[u] > 135 && hhsv[u] <= 150) {
+      yau.a136_150.push(hhsv[u]);
+    }
+    if (hhsv[u] > 150 && hhsv[u] <= 165) {
+      yau.a151_165.push(hhsv[u]);
+    }
+    if (hhsv[u] > 165 && hhsv[u] <= 180) {
+      yau.a166_180.push(hhsv[u]);
+    }
+    if (hhsv[u] > 180 && hhsv[u] <= 195) {
+      yau.a181_195.push(hhsv[u]);
+    }
+    if (hhsv[u] > 195 && hhsv[u] <= 210) {
+      yau.a196_210.push(hhsv[u]);
+    }
+    if (hhsv[u] > 210 && hhsv[u] <= 225) {
+      yau.a211_225.push(hhsv[u]);
+    }
+    if (hhsv[u] > 225 && hhsv[u] <= 240) {
+      yau.a226_240.push(hhsv[u]);
+    }
+    if (hhsv[u] > 240 && hhsv[u] <= 255) {
+      yau.a241_255.push(hhsv[u]);
+    }
+    if (hhsv[u] > 255 && hhsv[u] <= 270) {
+      yau.a256_270.push(hhsv[u]);
+    }
+    if (hhsv[u] > 270 && hhsv[u] <= 285) {
+      yau.a271_285.push(hhsv[u]);
+    }
+    if (hhsv[u] > 285 && hhsv[u] <= 300) {
+      yau.a286_300.push(hhsv[u]);
+    }
+    if (hhsv[u] > 300 && hhsv[u] <= 315) {
+      yau.a301_315.push(hhsv[u]);
+    }
+    if (hhsv[u] > 315 && hhsv[u] <= 330) {
+      yau.a316_330.push(hhsv[u]);
+    }
+    if (hhsv[u] > 330 && hhsv[u] <= 345) {
+      yau.a331_345.push(hhsv[u]);
+    }
+    if (hhsv[u] > 345 && hhsv[u] <= 360) {
+      yau.a346_360.push(hhsv[u]);
+    }
+  }
+
+  for (var t in yau) {
+    eval("yau." + t + " = yau." + t + ".length");
+  }
+  for (var r in yau) {
+    yab += eval("yau." + r);
+  }
+
+  for (var w in yau) {
+    eval("yau." + w + "= Math.round((yau." + w + "/" + yab + ")*100)");
+  }
+
+  for (var x in yau) {
+    for (var u = 0; u < eval("yau." + x); u++) {
+      rdbx.push(x);
+    }
+  }
+
+  var rsty = rdbx[Math.floor(Math.random() * (rdbx.length - 1))]
+    .replaceAll("a", "")
+    .split("_");
+
+  rsta = parseInt(rsty[0]);
+  rstb = parseInt(rsty[1]);
+  var rstgg_h = rsta + Math.floor(Math.random() * (rstb - rsta));
+  var rstgg_s = Math.floor(Math.random() * 100);
+  var rstgg_v = Math.floor(Math.random() * 100);
+
+  var thhu = hsv2rgb(rstgg_h, rstgg_s, rstgg_v);
+
+  var rsthex = rgbToHex(
+    Math.floor(thhu[0]),
+    Math.floor(thhu[1]),
+    Math.floor(thhu[2])
+  );
+
+  return rsthex;
+}
+
+function gtffim(l, b, s) {
+  var ssscale = s;
+  var ssssssw = window.innerWidth * ssscale;
+  var ssssssh = window.innerHeight * ssscale;
+  var sssizew = ssssssw * 2;
+  var sssizeh = ssssssh * 2;
+  var sssizex = -sssizew / 2;
+  var sssizey = -sssizeh / 2;
+  var sspath = ["M" + sssizex + " " + sssizey];
+  for (var i = 0; i < 256; i++) {
+    sspath.push(
+      "S" +
+        (sssizex + Math.random() * (sssizew - sssizex)).toFixed(3) +
+        " " +
+        (sssizey + Math.random() * (sssizeh - sssizey)).toFixed(3) +
+        " " +
+        (sssizex + Math.random() * (sssizew - sssizex)).toFixed(3) +
+        " " +
+        (sssizey + Math.random() * (sssizeh - sssizey)).toFixed(3)
+    );
+  }
+
+  var thssvghtmlpp =
+    '<svg xmlns="http://www.w3.org/2000/svg" id="sp" width="' +
+    ssssssw +
+    '" height="' +
+    ssssssh +
+    '" viewbox="0,0,' +
+    ssssssw +
+    "," +
+    ssssssh +
+    '"><path d="' +
+    sspath.join(" ") +
+    '" id="ssp" fill="transparent" stroke="' +
+    l +
+    '" stroke-width="0.4"/></svg>';
+  return thssvghtmlpp;
+}
+
+function textcol(r, g, b) {
+  var textcolrgbfy = (r*0.213+g*0.718+b*0.072)
+  //var textcolrgbfy = (r + g + b) / 3;
+  if (textcolrgbfy > 255 / 2) {
+    return "#000";
+  } else {
+    return "#fff";
+  }
+}
+
+function addcolorcontent() {
+  var col = cllhi()
+  if(col === false) {
+    var random_r = Math.floor(Math.random()*255)
+    var random_g = Math.floor(Math.random()*255)
+    var random_b = Math.floor(Math.random()*255)
+    col = rgbToHex(random_r,random_g,random_b)
+  }
+  var txc = textcol(hexToRgb(col).r,hexToRgb(col).g,hexToRgb(col).b)
+  var content = {
+    type: "color",
+    group: false,
+    content: [col],
+    shareurl: "",
+    id:'c_' + genid('random'),
+    textcolor:txc
+  };
+  allcolor.push(content)
+}
+function addgradientcontent() {
+  var col = cllhi()
+  if(col === false) {
+    var random_r = Math.floor(Math.random*255)
+    var random_g = Math.floor(Math.random*255)
+    var random_b = Math.floor(Math.random*255)
+    col = rgbToHex(random_r,random_g,random_b)
+  }
+  
+  var grd = getligrd(col)
+  
+  var txc = textcol((hexToRgb(grd[1]).r+hexToRgb(grd[2]).r)*.5,(hexToRgb(grd[1]).g+hexToRgb(grd[2]).g)*.5,(hexToRgb(grd[1]).b+hexToRgb(grd[2]).b)*.5)
+  
+  var content = {
+    type: "gradient",
+    group: false,
+    content: grd,
+    shareurl: "",
+    id:'c_' + genid('random'),
+    textcolor:txc
+  };
+  allcolor.push(content)
+}
+function addimagecolorcontentgroup() {
+  var content = {
+    type: "imagecolorgroup",
+    group: true,
+    content: ["#ffffff", "#000000", "#ff0000"],
+    image: {
+      dataurl: "data:...",
+      source: "unsplash.com/....."
+    },
+    shareurl: "",
+    id:'c_' + genid('random'),
+    textcolor:['#000','#fff','#fff']
+  };
+  allcolor.push(content)
+}
+function addpathcontent() {
+  var content = {
+    type: "path",
+    group: false,
+    content: ["#ffffff", "#000000"],
+    path_data: "",
+    shareurl: "",
+    id:'c_' + genid('random')
+  };
+}
+
+function initialize() {
+  $('#ft').html(':root{--ft-window-width:' + $(window).width() + 'px;--ft-window-height:' + $('.container').height() + 'px;}')
+  addimagecolorcontentgroup()
+  for (var i = 0; i < 16; i++) {
+    addcolorcontent()
+    addgradientcontent()
+  }
+}
+
+
+
+var gtg = 0 ;
+function print() {
+  
+  for (var i = gtg; i < allcolor.length; i++) {
+    var ths_ctx = allcolor[i].content
+    var contents = []
+    var groupprogressbar = []
+    
+    if(allcolor[i].group) {
+    for (var d = gtg; d < allcolor[i].content.length; d++) {
+      contents.push('<div class="colorcontent" style="background:' + ths_ctx[d] + ';--dx-li-f:' + d + ';color:' + allcolor[i].textcolor[d] + '"><div class="colorcontent-text">' + ths_ctx[d] + '</div></div>')
+      groupprogressbar.push('<li></li>')
+    }
+      
+    }
+    else {
+      if(allcolor[i].type === 'color') {
+        contents.push('<div class="colorcontent" style="background:' + ths_ctx[0] + ';color:' + allcolor[i].textcolor + '"><div class="colorcontent-text">' + ths_ctx + '</div></div>')
+      }
+      if(allcolor[i].type === 'gradient') {
+        contents.push('<div class="colorcontent" style="background:linear-gradient(' + ths_ctx[0] + 'deg ,' + ths_ctx[1] + ' ,' + ths_ctx[2] + ');color:' + allcolor[i].textcolor + '"><div class="colorcontent-text">' + ths_ctx + '</div></div>')
+      }
+    }
+    
+    $('.box').append('<div class="color" fid="' + allcolor[i].id + '" group="' + allcolor[i].group + '" data-anchor="page-' + i + '"><div class="colorbox">' + contents.join('') + '</div><div class="group-progress-bar">' + groupprogressbar.join('') + '</div><div class="rightbar"><div class="favorite"></div><div class="share"></div><div class="options"></div></div></div>')
+    allcolortt.push('page-' + i)
+    gtg +=1
+  }
+}
+
+let isScrolling;
+$(document).ready(function() {
+initialize()
+print()
+});
+var dft = 0
+var bscroll = 0 
+var ascroll = 1 
+var ascrolltime = 0 
+var bscrolltime = 0
+
+  $('.box').scroll(function() {
+    //load
+  
+    
+    //load end
+   
+var ge = Math.round($('.container').scrollTop()/$('.container').height())
+    var te = (ge)
+    if(te < 0) {
+      te = 0
+    }
+  
+    /*
+    if(Math.abs(ascroll-bscroll)/Math.abs(ascrolltime-bscrolltime) < 0.4) {
+             $('.box').stop().animate({scrollTop:te*$('.box').height()}, 1)
+        
+    }
+    */
+    
+});
+
+
+
+
+/*
+var cgbwtd = false 
+var chbwtohm = ['touchmove','mousemove']
+var chbwtost = ['touchstart','mousedown']
+var chbwtoed = ['touchend','mouseup']
+var chbw = 1
+if($.support.touch) {
+var chbw = 0
+}
+*/
+
+
+
+
+
+let mouseX = 0
+let mouseY = 0
+let offsetX = 0
+let offsetY = 0
+let isDown = false
+var div = document.querySelector(".box");
+
+div.addEventListener('touchstart', function(e) {
+  isDown = true
+  mouseX = e.pageX
+  mouseY = e.pageY
+  document.addEventListener('touchmove', move)
+});
+
+document.addEventListener('touchend', function(e) {
+  if (isDown) {
+    offsetX += e.pageX - mouseX
+    offsetY += e.pageY - mouseY
+  }
+  isDown = false
+  document.removeEventListener('mousemove',move)
+                               
+  
+var ns = Math.round(parseInt(div.getAttribute('dy'))/$('.container').height())*$('.container').height() 
+  
+  if(Math.abs(parseInt(div.getAttribute('dy'))-parseInt(div.getAttribute('fy'))) > ($('.container').height()*0.2)) {
+    
+  if(parseInt(div.getAttribute('dy'))-parseInt(div.getAttribute('fy')) < 0) {
+    //down
+     ns = Math.ceil(Math.abs(parseInt(div.getAttribute('dy'))/$('.container').height()))*-1*$('.container').height() 
+    
+  }
+  else {
+    //up
+    var ns = Math.ceil(parseInt(div.getAttribute('dy'))/$('.container').height())*$('.container').height() 
+    
+  }
+  }
+  else {
+    ns = parseInt(div.getAttribute('fy'))
+  }
+    //ns = Math.ceil(parseInt(div.getAttribute('dy'))/$('.container').height())*$('.container').height() 
+  
+  
+ 
+ 
+   // ns = Math.ceil(Math.abs(parseInt(div.getAttribute('dy'))/$('.box').height()))*yg*$('.box').height()
+  
+  /*
+  if((ts-Math.floor(ts))*yg > 0.3) {
+    ns = Math.trunc(Math.abs(parseInt(div.getAttribute('dy'))/$('.box').height()))*yg*$('.box').height()
+  }
+  */
+  
+ // console.log((ts-Math.floor(ts))*yg)
+  
+ 
+   
+ 
+  
+  var ws = parseInt(div.getAttribute('dy'))-ns
+  offsetY -= ws
+  div.style.transform = 'translateY(' + (ns) + 'px)';
+  div.style.transition = '0.3s'
+  div.setAttribute('dy',(ns))
+  
+  addcolorcontent()
+  print()
+  div.setAttribute('fy',(ns))
+   
+ 
+ 
+  
+});
+
+
+function move(e) {
+  if (isDown) {
+    const dx = e.pageX - mouseX
+    const dy = e.pageY - mouseY
+   // const dy = e.pageY
+    if((offsetY+dy) <= 0) {
+      
+    
+    div.style.transform = 'translateY(' + (offsetY+dy) + 'px)';
+    div.setAttribute('dy',(offsetY+dy))
+    div.style.transition = '0s'
+    }
+    //ggg
+    
+  }
+}
+  </script>
