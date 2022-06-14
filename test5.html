@@ -678,6 +678,7 @@ function gtffim(l, b, s) {
     '" stroke-width="0.4"/></svg>';
   return thssvghtmlpp;
 }
+	  
 
 function textcol(r, g, b) {
   var textcolrgbfy = (r*0.213+g*0.718+b*0.072)
@@ -689,6 +690,82 @@ function textcol(r, g, b) {
   }
 }
 
+
+	  
+	  
+	  
+function getunsplashimgurlbyid(picid) {
+var ggyiyunpkiggvgsdx = $.ajax({type:'get',url:'https://picsum.photos/id/' + picid + '/info',dataType:'text',async:false});
+var unpinfojson = JSON.parse(ggyiyunpkiggvgsdx.responseText)
+return String(unpinfojson.url)
+}
+
+function newrandomimagecolors() {
+var imgid = 'd-' + genid('uuid')
+$('body').append('<img id="' + imgid + '" style="display:none;">')
+var rcimgwh = ($('.container').width())*0.6
+if(rcimgwh <= 256) {
+rcimgwh = 256
+}
+//var rcimgwh = 350
+var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
+
+    $.ajax({type:'GET',url:rcimg,beforeSend:function (xhr) {xhr.overrideMimeType('text/plain; charset=x-user-defined');},async: true,success:function(result, textStatus, jqXHR) {
+    var binary = "";
+    var responseText = jqXHR.responseText;
+    var responseTextLen = responseText.length;
+    for ( i = 0; i < responseTextLen; i++ ) {
+        binary += String.fromCharCode(responseText.charCodeAt(i) & 255)
+    }
+  $('#' + imgid).attr('src','data:image/jpeg;base64,' + btoa(binary))
+    var bigsizerdimgurl = String('https://picsum.photos/id/' + jqXHR.getResponseHeader('picsum-id') + '/1024/1024')
+    $('#' + imgid).ready(function() {
+    setTimeout(function() {
+    const colorThief = new ColorThief();
+    const imgee = document.querySelector('#' + imgid);
+
+    if (imgee.complete) {
+	    
+      var imgcolorpalette = colorThief.getPalette(imgee) ;
+        var hfur = 'k-' + genid('random')
+        var imgsrcffd = String($('#' + imgid).attr('src'))
+	if(!(localStorage.getItem('settings_lowspeed') === '1')) {
+	bigsizerdimgurl
+	}
+	else {
+	var bigimgrdgghtmlcc = '' ;
+	}
+	
+      var pltcchexpej = []
+      for (var i = 0; i < imgcolorpalette.length; i++) {
+	
+        var thsvstehecbwinsoiwpks = rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2])
+        pltcchexpej.push(thsvstehecbwinsoiwpks)
+	      
+    if((imgcolorpalette[i][0]+imgcolorpalette[i][1]+imgcolorpalette[i][2])/3 > 128) {
+      var aafhi9ooiyg = '000' 
+    }
+    else {
+      var aafhi9ooiyg = 'fff' 
+    }
+        
+      }
+    }
+	    
+   },150);
+    
+    });
+
+    }    
+});
+}
+
+	  
+	  
+	  
+	  
+	  
+	  
 function addcolorcontent() {
   var col = cllhi()
   if(col === false) {
