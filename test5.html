@@ -849,7 +849,7 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
     //var bigsizerdimgurl = String('https://picsum.photos/id/' + jqXHR.getResponseHeader('picsum-id') + '/1024/1024')
     
 $.ajax({type:'get',url:'https://picsum.photos/id/' + jqXHR.getResponseHeader('picsum-id') + '/info',dataType:'text',async:true,success:function(e){
-var imginfojson = JSON.parse(e.responseText)
+var imginfojson = JSON.parse(e)
 
 $('#' + imgid).ready(function() {
     setTimeout(function() {
