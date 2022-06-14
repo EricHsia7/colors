@@ -50,7 +50,7 @@ margin:0px;
   position:relative;
   width:var(--ft-window-width);
   height:var(--ft-window-height);
-  background:#333;
+  background:#888;
 }
 .colorbox {
   position:absolute;
@@ -74,6 +74,14 @@ align-items: center;
   font-size:25px;
   font-family:"Noto Sans TC",sans-serif;
 }
+.colorcontent-image {
+position:absolute;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  background:#000;
+ }
   </style>
   <style id="ft">
 </style>
@@ -916,7 +924,7 @@ function print() {
      var contentindexoffset = 0
     if(allcolor[i].type === 'imagecolorgroup') {
       contentindexoffset = 1
-      contents.push('<div class="colorcontent" style="background:' + allcolor[i].image.dataurl + ';background-size:cover;background-position:center;background-repeat:no-repeat;--dx-li-f:' + 0 + ';"><img src="' + allcolor[i].image.hdurl + '"></div>')
+      contents.push('<div class="colorcontent" style="background:' + allcolor[i].image.dataurl + ';background-size:contain;background-position:center;background-repeat:no-repeat;--dx-li-f:' + 0 + ';"><div class="colorcontent-image" style="background:url(' + allcolor[i].image.hdurl + ');background-size:contain;background-position:center;background-repeat:no-repeat;"></div></div>')
     }
     for (var d = 0; d < allcolor[i].content.length; d++) {
       contents.push('<div class="colorcontent" style="background:' + ths_ctx[d] + ';--dx-li-f:' + d+contentindexoffset + ';color:' + allcolor[i].textcolor[d] + '"><div class="colorcontent-text">' + ths_ctx[d] + '</div></div>')
