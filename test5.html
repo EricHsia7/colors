@@ -938,4 +938,60 @@ function move(e) {
     
   }
 }
+    
+    $(document).ready(function() {
+if(localStorage.getItem('first_load') === "1") {
+var googlefontloadtime = new Date().getTime() ;
+ if(googlefontloadtime-parseInt(localStorage.getItem('googlefontNotoSansTCloaded')) < 2592000000) {
+  $('body').append('<style>' + localStorage.getItem('googlefontNotoSansTC') + '</style>');
+}
+else {
+ $.ajax({type:'get',url:"https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap",dataType:'text',success:function(e) {
+  var googlefontloadtimedd = new Date().getTime() ;
+  localStorage.setItem('googlefontNotoSansTC', e); localStorage.setItem('googlefontNotoSansTCloaded', googlefontloadtimedd);
+   $('body').append('<style>' + e + '</style>');
+   }
+}); 
+}
+//fv
+
+var favanimationloadid = '00j7h8s0dseefnyx' ;
+
+ if(favanimationloadid === localStorage.getItem('favanimationloadid')) {
+  $('body').append('<style>.favoriteanimation{background:rgba(245,245,245,0.8) url(' + localStorage.getItem('favanimation') + ');background-size:45px 4500px;background-repeat:no-repeat;background-position:top 0px left 0px;animation-name:fav;animation-duration:.46s;animation-timing-function:steps(99,jump-start);animation-fill-mode:forwards}@keyframes fav{0%{background-position:top 0px left 0px}100%{background-position:top -4455px left 0px}}.favoriteanimation-recommend{background:#f5f5f5 url(' + localStorage.getItem('favanimation') + ');background-size:38px 3800px;background-repeat:no-repeat;background-position:top 0px left 0px;animation-name:fav-recommend;animation-duration:.46s;animation-timing-function:steps(99,jump-start);animation-fill-mode:forwards}@keyframes fav-recommend{0%{background-position:top 0px left 0px}100%{background-position:top -3762px left 0px}}</style>')
+ }
+else {
+ $.ajax({type:'get',url:"https://erichsia7.github.io/colors/favorite_animation_png_3_128_base64.txt",dataType:'text',success:function(e) {
+  var favanimationloadtimedd = new Date().getTime() ;
+  localStorage.setItem('favanimation', e); 
+  localStorage.setItem('favanimationloadid', favanimationloadid);
+   $('body').append('<style>.favoriteanimation{background:rgba(245,245,245,0.8) url(' + e + ');background-size:45px 4500px;background-repeat:no-repeat;background-position:top 0px left 0px;animation-name:fav;animation-duration:.46s;animation-timing-function:steps(99,jump-start);animation-fill-mode:forwards}@keyframes fav{0%{background-position:top 0px left 0px}100%{background-position:top -4455px left 0px}}.favoriteanimation-recommend{background:#f5f5f5 url(' + e + ');background-size:38px 3800px;background-repeat:no-repeat;background-position:top 0px left 0px;animation-name:fav-recommend;animation-duration:.46s;animation-timing-function:steps(99,jump-start);animation-fill-mode:forwards}@keyframes fav-recommend{0%{background-position:top 0px left 0px}100%{background-position:top -3762px left 0px}}</style>')
+   }
+}); 
+}
+
+	
+var moreanimationloadid = 'chaq4tdiy3tqqevs' ;
+
+ if(moreanimationloadid === localStorage.getItem('moreanimationloadid')) {
+  $('body').append('<style>.moreanimation{background:rgba(245,245,245,0.8) url(' + localStorage.getItem('moreanimation') + ');background-size:45px 4860px;background-repeat:no-repeat;background-position:top 0 left 0;animation-name:mor;animation-duration:.35s;animation-timing-function:steps(107,jump-start);animation-fill-mode:forwards}.moreanimation-f{background:rgba(245,245,245,0.8) url(' + localStorage.getItem('moreanimation') + ');background-size:45px 4860px;background-repeat:no-repeat;background-position:top 0 left 0;animation-name:morc;animation-duration:.35s;animation-timing-function:steps(107,jump-start);animation-fill-mode:forwards}@keyframes mor{0%{background-position:top 0 left 0}100%{background-position:top -4815px left 0}}@keyframes morc{0%{background-position:top -4815px left 0}100%{background-position:top 0 left 0}}</style>');
+ }
+else {
+ $.ajax({type:'get',url:"https://erichsia7.github.io/colors/more_animation_base64_1_128.txt",dataType:'text',success:function(e) {
+  var moreanimationloadtime = new Date().getTime() ;
+  localStorage.setItem('moreanimation', e); 
+  localStorage.setItem('moreanimationloadid', moreanimationloadid);
+   $('body').append('<style>.moreanimation{background:rgba(245,245,245,0.8) url(' + e + ');background-size:45px 4860px;background-repeat:no-repeat;background-position:top 0 left 0;animation-name:mor;animation-duration:.35s;animation-timing-function:steps(107,jump-start);animation-fill-mode:forwards}.moreanimation-f{background:rgba(245,245,245,0.8) url(' + e + ');background-size:45px 4860px;background-repeat:no-repeat;background-position:top 0 left 0;animation-name:morc;animation-duration:.35s;animation-timing-function:steps(107,jump-start);animation-fill-mode:forwards}@keyframes mor{0%{background-position:top 0 left 0}100%{background-position:top -4815px left 0}}@keyframes morc{0%{background-position:top -4815px left 0}100%{background-position:top 0 left 0}}</style>');
+   }
+}); 
+}
+
+
+
+//f
+}
+else {
+localStorage.setItem('first_load','1')
+}
+    });
   </script>
