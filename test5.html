@@ -828,9 +828,9 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
     var b64url = 'data:image/jpeg;base64,' + btoa(binary)
   $('#' + imgid).attr('src',b64url)
 
-    var bigsizerdimgurl = String('https://picsum.photos/id/' + jqXHR.getResponseHeader('picsum-id') + '/1024/1024')
+    //var bigsizerdimgurl = String('https://picsum.photos/id/' + jqXHR.getResponseHeader('picsum-id') + '/1024/1024')
     
-    var imginfo = $.ajax({type:'get',url:'https://picsum.photos/id/' + picid + '/info',dataType:'text',async:false});
+    var imginfo = $.ajax({type:'get',url:'https://picsum.photos/id/' + jqXHR.getResponseHeader('picsum-id') + '/info',dataType:'text',async:false});
 var imginfojson = JSON.parse(ggyiyunpkiggvgsdx.responseText)
 
 
