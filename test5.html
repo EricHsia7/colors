@@ -128,7 +128,7 @@ backdrop-filter: blur(15px);
 	 filter: invert(100%);
 		}
 		@media (prefers-color-scheme: dark) {
-			.bottom {bavkground:#1a1a1a;}
+			.bottom {background:#1a1a1a;}
 		}
   </style>
   <style id="iphonesafearea">
@@ -806,8 +806,12 @@ function setthemecol(hexcolsjs,delaytimems) {
   $('meta[name="theme-color"]').attr('content',hexcolsjs);
   },delaytimems);
 }
-
-	  
+function isRunningStandalone() {
+    return (window.matchMedia('(display-mode: standalone)').matches);
+}
+if(!(isRunningStandalone())) {
+  $('#iphonesafearea').html('')
+}
 	  
 	  
 function getunsplashimgurlbyid(picid) {
