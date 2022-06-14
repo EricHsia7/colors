@@ -906,7 +906,7 @@ function print() {
     var groupprogressbar = []
     
     if(allcolor[i].group) {
-    for (var d = gtg; d < allcolor[i].content.length; d++) {
+    for (var d = 0; d < allcolor[i].content.length; d++) {
       contents.push('<div class="colorcontent" style="background:' + ths_ctx[d] + ';--dx-li-f:' + d + ';color:' + allcolor[i].textcolor[d] + '"><div class="colorcontent-text">' + ths_ctx[d] + '</div></div>')
       groupprogressbar.push('<li></li>')
     }
