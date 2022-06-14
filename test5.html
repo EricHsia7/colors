@@ -27,6 +27,9 @@ gtag('config', 'G-342D6M2MKX');
 <link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="shortcut icon" />
 <link rel="manifest" href="https://erichsia7.github.io/colors/manifest.json?20220209_198de2381adfe">
   <style>
+:root {
+     --fx-bth:calc(55px + env(safe-area-inset-bottom))
+    }
 	  * {
 -webkit-appearance:none;
 outline:none;
@@ -42,7 +45,7 @@ margin:0px;
   top:0px;
   left:0px;
   width:100%;
-  height:calc(100% - 55px);
+  height:calc(100% - var(--fx-bth));
   overflow:hidden;
 }
 .box {
