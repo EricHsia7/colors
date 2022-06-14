@@ -1295,7 +1295,9 @@ var ns = Math.round(parseInt(div.getAttribute('dy'))/$('.container').height())*$
 	stopload = 1
 	}
 	if(Math.abs(Math.floor(parseInt(div.getAttribute('dy'))/$('.container').height())) >= (allcolor.length-1)) {
+	setTimeout(function(){ 
 	location.href = 'https://erichsia7.github.io/colors/test5.html?db=1&dbjson=' + encodeURIComponent(JSON.stringify(lastcolor))
+	},300);
 	}
   }
   div.setAttribute('fy',(ns))
