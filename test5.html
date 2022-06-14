@@ -188,7 +188,12 @@ backdrop-filter: blur(15px);
 	<div class="bottom"></div>
 </body>
   <script>
-  
+  var getUrlString = location.href;
+var url = new URL(getUrlString);
+function gup(param) {
+param = String(param)
+return url.searchParams.get(param)
+}
 var allcolor = [];
 // left: 37, up: 38, right: 39, down: 40,
 // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
@@ -1015,6 +1020,9 @@ function addpathcontent() {
 function initialize() {
   $('#ft').html(':root{--ft-window-width:' + $('.container').width() + 'px;--ft-window-height:' + $('.container').height() + 'px;}')
   //addimagecolorcontentgroup()
+	if(gup('db') === '1') {
+		allcolor.push(JSON.parse(decodeURIComponent(gup('dbjson'))))
+	}
   for (var i = 0; i < 2; i++) {
     addcolorcontent()
     addgradientcontent()
@@ -1203,7 +1211,7 @@ initialize()
 print()
 });
 
-
+var lastcolor
 let mouseX = 0
 let mouseY = 0
 let offsetX = 0
@@ -1278,6 +1286,13 @@ var ns = Math.round(parseInt(div.getAttribute('dy'))/$('.container').height())*$
    imagect = 3
   }
   print()
+	if(allcolor.length > 10) {
+		addcolorcontent()
+		lastcolor = allcolor[allcolor.length-1]
+	}
+	if(allcolor.length > 11) {
+		location.replace('https://erichsia7.github.io/colors/test5.html?db=1&dbjson=' + encodeURIComponent(JSON.stringify(lastcolor)))
+	}
   }
   div.setAttribute('fy',(ns))
    
