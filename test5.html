@@ -963,49 +963,6 @@ $(document).ready(function() {
 initialize()
 print()
 });
-var dft = 0
-var bscroll = 0 
-var ascroll = 1 
-var ascrolltime = 0 
-var bscrolltime = 0
-
-  $('.box').scroll(function() {
-    //load
-  
-    
-    //load end
-   
-var ge = Math.round($('.container').scrollTop()/$('.container').height())
-    var te = (ge)
-    if(te < 0) {
-      te = 0
-    }
-  
-    /*
-    if(Math.abs(ascroll-bscroll)/Math.abs(ascrolltime-bscrolltime) < 0.4) {
-             $('.box').stop().animate({scrollTop:te*$('.box').height()}, 1)
-        
-    }
-    */
-    
-});
-
-
-
-
-/*
-var cgbwtd = false 
-var chbwtohm = ['touchmove','mousemove']
-var chbwtost = ['touchstart','mousedown']
-var chbwtoed = ['touchend','mouseup']
-var chbw = 1
-if($.support.touch) {
-var chbw = 0
-}
-*/
-
-
-
 
 
 let mouseX = 0
@@ -1014,7 +971,7 @@ let offsetX = 0
 let offsetY = 0
 let isDown = false
 var div = document.querySelector(".box");
-
+var imagect = 3
 div.addEventListener('touchstart', function(e) {
   isDown = true
   mouseX = e.pageX
@@ -1077,7 +1034,11 @@ var ns = Math.round(parseInt(div.getAttribute('dy'))/$('.container').height())*$
   if(Math.abs(Math.floor(parseInt(div.getAttribute('dy'))/$('.container').height())) > allcolor.length-3) {
   addcolorcontent()
   addgradientcontent()
-  
+  imagect -= 1
+  if(imagect < 0) {
+   addimagecolorcontentgroup()
+   imagect = 3
+  }
   print()
   }
   div.setAttribute('fy',(ns))
