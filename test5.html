@@ -977,8 +977,23 @@ function print() {
       }
     }
     
-    $('.box').append('<div class="color" fid="' + allcolor[i].id + '" group="' + allcolor[i].group + '" i="' + i + '"><div class="colorbox">' + contents.join('') + '</div><div class="group-progress-bar">' + groupprogressbar.join('') + '</div><div class="rightbar" txtcolor="' + dftextcolor + '"><div class="favorite"></div><div class="share"></div><div class="options"></div></div></div>')
-    
+    $('.box').append('<div class="color" fid="' + allcolor[i].id + '" group="' + allcolor[i].group + '" i="' + i + '"><div class="colorbox">' + contents.join('') + '</div><div class="group-progress-bar">' + groupprogressbar.join('') + '</div><div class="rightbar" txtcolor="' + dftextcolor + '"><div class="favorite"></div><div class="share" btnid="' + allcolor[i].id + '"></div><div class="options"></div></div></div>')
+    $('.share[btnid="' + allcolor[i].id + '"]').click(function() {
+       var fidtt = $(this).attr('btnid')
+       var fidindex = parseInt($('.color[fid="' + fidtt + '"]').attr('i'))
+       var shareurltt = allcolor[fidindex].shareurl
+       if (navigator.share) { 
+   navigator.share({
+      title: 'Colors',
+      url: shareurltt
+    }).then(() => {
+      //ok
+    })
+    .catch(console.error);
+    } else {
+        shareDialog.classList.add('is-open');
+    }
+    });
     gtg +=1
   }
 	$('.box').css({'height':'calc(' + $('.box .color').length + ' * var(--ft-window-height))'});
