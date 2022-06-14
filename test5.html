@@ -1202,7 +1202,7 @@ var ns = Math.round(parseInt(div.getAttribute('dy'))/$('.container').height())*$
   
  
    
-  setthemecol($('.color[i="' + Math.ceil(parseInt(div.getAttribute('dy'))/$('.container').height()) + '"]').attr('themecolor'),1);
+  setthemecol($('.color').eq(Math.ceil(parseInt(div.getAttribute('dy'))/$('.container').height())).attr('themecolor'),1);
   
   var ws = parseInt(div.getAttribute('dy'))-ns
   offsetY -= ws
