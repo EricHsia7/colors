@@ -85,7 +85,6 @@ align-items: center;
   <script>
   
 var allcolor = [];
-var allcolortt = [];
 // left: 37, up: 38, right: 39, down: 40,
 // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
 var keys = {37: 1, 38: 1, 39: 1, 40: 1};
@@ -793,8 +792,8 @@ function print() {
       }
     }
     
-    $('.box').append('<div class="color" fid="' + allcolor[i].id + '" group="' + allcolor[i].group + '" data-anchor="page-' + i + '"><div class="colorbox">' + contents.join('') + '</div><div class="group-progress-bar">' + groupprogressbar.join('') + '</div><div class="rightbar"><div class="favorite"></div><div class="share"></div><div class="options"></div></div></div>')
-    allcolortt.push('page-' + i)
+    $('.box').append('<div class="color" fid="' + allcolor[i].id + '" group="' + allcolor[i].group + '" i="' + i + '"><div class="colorbox">' + contents.join('') + '</div><div class="group-progress-bar">' + groupprogressbar.join('') + '</div><div class="rightbar"><div class="favorite"></div><div class="share"></div><div class="options"></div></div></div>')
+    
     gtg +=1
   }
 }
@@ -915,10 +914,12 @@ var ns = Math.round(parseInt(div.getAttribute('dy'))/$('.container').height())*$
   div.style.transition = '0.3s'
   div.setAttribute('dy',(ns))
   
+  if(Math.abs(Math.floor(parseInt(div.getAttribute('dy'))/$('.container').height())) > allcolor.length-3) {
   addcolorcontent()
   addgradientcontent()
   
   print()
+  }
   div.setAttribute('fy',(ns))
    
  
