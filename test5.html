@@ -881,6 +881,7 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
     if (imgee.complete) {
 	    
       var imgcolorpalette = colorThief.getPalette(imgee) ;
+			
         var hfur = 'k-' + genid('random')
         var imgsrcffd = String($('#' + imgid).attr('src'))
 	if(!(localStorage.getItem('settings_lowspeed') === '1')) {
@@ -889,7 +890,7 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
 	else {
 	var bigimgrdgghtmlcc = '' ;
 	}
-	
+	    
       var pltcchexpej = []
       for (var hq = 0; hq < imgcolorpalette.length; hq++) {
 	
@@ -992,7 +993,8 @@ $('#' + imgid).ready(function() {
     if (imgee.complete) {
 	    
       var imgcolorpalette = colorThief.getPalette(imgee) ;
-        
+      var imgmaincolor = colorThief.getColor(imgee)
+			
       var pltcolorhex = []
       var plttextcolor = []
       for (var hq = 0; hq < imgcolorpalette.length; hq++) {
@@ -1000,7 +1002,7 @@ $('#' + imgid).ready(function() {
         pltcolorhex.push(thshex)      
         plttextcolor.push(textcol(imgcolorpalette[hq][0],imgcolorpalette[hq][1],imgcolorpalette[hq][2]))    
       }
-
+var imagetxc = textcol(imgmaincolor[0],imgmaincolor[1],imgmaincolor[2])
 	    
  var content = {
     type: "imagecolorgroup",
@@ -1013,7 +1015,8 @@ $('#' + imgid).ready(function() {
     },
     shareurl: "",
     id:'c_' + genid('random'),
-    textcolor:plttextcolor
+    textcolor:plttextcolor,
+	  imgtextcolor:imagetxc
   };
   allcolor.push(content)
 $('#' + imgid).remove()
