@@ -1119,7 +1119,7 @@ function print() {
 			allcolor[parseInt($(this).attr('i'))].content = pltcolorhex
 			allcolor[parseInt($(this).attr('i'))].textcolor = plttextcolor
 			for (var ag = 0; ag < pltcolorhex.length; ag++) {
-				$('.color[i="' + parseInt($(this).attr('i')) + '"] .colorcontent').eq(ag).css({'background':pltcolorhex[ag],'--dx-li-f':(ag+1),'color':plttextcolor[ag]}).html('<div class="colorcontent-text">' + pltcolorhex[ag] + '</div>')
+				$('.color[i="' + parseInt($(this).attr('i')) + '"] .colorcontent').eq(ag).css({'background':pltcolorhex[ag],'--dx-li-f':(ag+1),'color':plttextcolor[ag]}).html('<div class="colorcontent-text">' + pltcolorhex[ag] + '</div>').attr('f','1')
 				
 			}
 		}
