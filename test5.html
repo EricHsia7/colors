@@ -1132,10 +1132,20 @@ function print() {
 		
 		*/
 		$('.arrow-left[btnid="' + allcolor[i].id + '"]').click(function() {
-		
+		var gindex = parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('group-index'))
+		if(gindex > 0) {
+			gindex -=1
+			$('.color[fid="' + $(this).attr('btnid') + '"]').attr('group-index',gindex)
+			$('.color[fid="' + $(this).attr('btnid') + '"] .colorbox').css({'transform':'translateX(calc(var(--ft-window-width) * ' + gindex + ' * -1))'})
+		}
 		});
 		$('.arrow-right[btnid="' + allcolor[i].id + '"]').click(function() {
-		
+		var gindex = parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('group-index'))
+		if(gindex < 11) {
+			gindex +=1
+			$('.color[fid="' + $(this).attr('btnid') + '"]').attr('group-index',gindex)
+			$('.color[fid="' + $(this).attr('btnid') + '"] .colorbox').css({'transform':'translateX(calc(var(--ft-window-width) * ' + gindex + ' * -1))'})
+		}
 		});
 	$('.share[btnid="' + allcolor[i].id + '"]').click(function() {
        var fidtt = $(this).attr('btnid')
