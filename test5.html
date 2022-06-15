@@ -288,7 +288,14 @@ align-items: center;
 		<li h="picker">顏色選擇器</li>
 		<li h="toimg">轉換圖片</li>
 		<li h="llgrd">似色漸層</li>
+		<li h="mixgrd">混合漸層</li>
 		<li h="llpath">似色路徑</li>
+		<li h="copycolorcode">複製顏色代碼</li>
+		<li h="copyoptions">複製選項</li>
+		<li h="copysourceimageurl">複製圖片連結</li>
+    <li h="dlsourceimage">下載圖片</li>
+    <li h="addallfav">將全部顏色新增至喜好項目</li>
+    <li h="shareacolor">分享單個顏色</li>
 	</div>
 </body>
   <script>
@@ -1289,28 +1296,51 @@ function printcolor() {
 	var listcc = 0
 	
 	    if(fytype === 'color') {
-				listcc = 5
+				listcc = 7
 				$('.optionlist li[h="qrcode"]').css({'display':'flex'});
 				$('.optionlist li[h="picker"]').css({'display':'flex'});
 				$('.optionlist li[h="toimg"]').css({'display':'flex'});
 				$('.optionlist li[h="llgrd"]').css({'display':'flex'});
+				$('.optionlist li[h="mixgrd"]').css({'display':'none'});
 				$('.optionlist li[h="llpath"]').css({'display':'flex'});
+				$('.optionlist li[h="copycolorcode"]').css({'display':'flex'});
+				$('.optionlist li[h="copyoptions"]').css({'display':'flex'});
+				$('.optionlist li[h="copysourceimageurl"]').css({'display':'none'});
+				$('.optionlist li[h="dlsourceimage"]').css({'display':'none'});
+				$('.optionlist li[h="addallfav"]').css({'display':'none'});
+				$('.optionlist li[h="shareacolor"]').css({'display':'none'});
+				
+				
 			}
 			if(fytype === 'gradient') {
-				listcc = 1
+				listcc = 4
 				$('.optionlist li[h="qrcode"]').css({'display':'flex'});
 				$('.optionlist li[h="picker"]').css({'display':'none'});
 				$('.optionlist li[h="toimg"]').css({'display':'none'});
 				$('.optionlist li[h="llgrd"]').css({'display':'none'});
+				$('.optionlist li[h="mixgrd"]').css({'display':'flex'});
 				$('.optionlist li[h="llpath"]').css({'display':'none'});
+				$('.optionlist li[h="copycolorcode"]').css({'display':'flex'});
+				$('.optionlist li[h="copyoptions"]').css({'display':'flex'});
+				$('.optionlist li[h="copysourceimageurl"]').css({'display':'none'});
+				$('.optionlist li[h="dlsourceimage"]').css({'display':'none'});
+				$('.optionlist li[h="addallfav"]').css({'display':'none'});
+				$('.optionlist li[h="shareacolor"]').css({'display':'none'});
 			}
 			if(fytype === 'imagecolorgroup') {
-				listcc = 5
+				listcc = 7
 				$('.optionlist li[h="qrcode"]').css({'display':'flex'});
 				$('.optionlist li[h="picker"]').css({'display':'none'});
 				$('.optionlist li[h="toimg"]').css({'display':'none'});
 				$('.optionlist li[h="llgrd"]').css({'display':'none'});
+				$('.optionlist li[h="mixgrd"]').css({'display':'none'});
 				$('.optionlist li[h="llpath"]').css({'display':'none'});
+				$('.optionlist li[h="copycolorcode"]').css({'display':'flex'});
+				$('.optionlist li[h="copyoptions"]').css({'display':'flex'});
+				$('.optionlist li[h="copysourceimageurl"]').css({'display':'flex'});
+				$('.optionlist li[h="dlsourceimage"]').css({'display':'flex'});
+				$('.optionlist li[h="addallfav"]').css({'display':'flex'});
+				$('.optionlist li[h="shareacolor"]').css({'display':'flex'});
 			}
 			$('.optionlist').css({'--b-bottom-height':$('.bottom').height() + 'px','--b-option-list':listcc,'display':'block','opacity':'1','transition':'0.3s'});
 			$('.optionlist-mask').css({'display':'block','transition':'0.3s'});
