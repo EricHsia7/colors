@@ -1143,7 +1143,7 @@ function printcolor() {
 			if(gindex === 0) {
       nwcol = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))].imgtextcolor
 			}
-			$('.color[fid="' + $(this).attr('btnid') + '"] .rightbar').attr('txtcolor',nwcol)
+			$('.color[fid="' + $(this).attr('btnid') + '"] .rightbar,.color[fid="' + $(this).attr('btnid') + '"] .arrow').attr('txtcolor',nwcol)
 			
 			var cfl = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))].content[(gindex-1)]
 			if(getCookie('colorfav2').indexOf('&' + cfl) > -1) {
@@ -1165,7 +1165,7 @@ function printcolor() {
 			if(gindex === 0) {
       nwcol = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))].imgtextcolor
 			}
-			$('.color[fid="' + $(this).attr('btnid') + '"] .rightbar').attr('txtcolor',nwcol)
+			$('.color[fid="' + $(this).attr('btnid') + '"] .rightbar,.color[fid="' + $(this).attr('btnid') + '"] .arrow').attr('txtcolor',nwcol)
 			
 			var cfl = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))].content[(gindex-1)]
 			if(getCookie('colorfav2').indexOf('&' + cfl) > -1) {
