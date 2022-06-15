@@ -40,6 +40,7 @@ margin:0px;
   padding:0px
 }
 .bottom{height:calc(55px + env(safe-area-inset-bottom));width:100%;position:fixed;left:0;bottom:0;background:#ffffff;box-shadow:0 0 10px 2px rgba(0,0,0,0.045);background-size:var(--b-size);background-repeat:repeat;-webkit-user-select:none}
+		
 .container {
   position:fixed;
   top:0px;
@@ -1079,7 +1080,7 @@ function initialize() {
 	if(!(isRunningStandalone())) {
   $('#iphonesafearea').html('')
 }
-  $('#ft').html(':root{--ft-window-width:' + $('.container').width() + 'px;--ft-window-height:' + $('.container').height() + 'px;}')
+  $('#ft').html(':root{--ft-window-width:' + $('.container').width() + 'px;--ft-window-height:' + ($(window).height()-$('.bottom').height()) + 'px;}')
   //addimagecolorcontentgroup()
 	if(gup('db') === '1') {
 		allcolor.push(JSON.parse(decodeURIComponent(gup('dbjson'))))
