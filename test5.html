@@ -156,6 +156,26 @@ display:none;
 	.color[group="true"] .arrow {
 		display:block;
 		}
+	.optionlist {
+		position:fixed;
+		bottom:0px;
+		left:0px;
+		width:100%;
+		height:calc(var(--b-bottom-height) + (40px * var(--b-option-list)));
+		border-radius:15px 15px 0px 0px;
+		background:#fff;
+		transform:translateY(calc(var(--b-bottom-height) + (40px * var(--b-option-list))));
+		opacity:0;
+		display:none;
+		}
+		.optionlist-mask {
+			position:fixed;
+			top:0px;
+			left:0px;
+			background:rgba(0, 0, 0,0.5);
+			opacity:0;
+			display:none;
+		}
 	@media (prefers-color-scheme: dark) {
 			.bottom {
 				background:#1a1a1a;
