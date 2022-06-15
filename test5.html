@@ -138,6 +138,7 @@ backdrop-filter: blur(15px);
 	 background-size:35px;
 	background-position:center;
 	background-repeat:no-repeat;
+	 display:none;
 		}
 	.arrow-left {
 		left:10px;
@@ -148,6 +149,9 @@ backdrop-filter: blur(15px);
 		}
 	.arrow[txtcolor="#ffffff"] {
 		filter: invert(100%);
+		}
+	.color[group="true"] .arrow {
+		display:block;
 		}
 	@media (prefers-color-scheme: dark) {
 			.bottom {
