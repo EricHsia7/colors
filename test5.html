@@ -1101,7 +1101,11 @@ function print() {
     $('.box').append('<div class="color" fid="' + allcolor[i].id + '" group="' + allcolor[i].group + '" i="' + i + '" themecolor="' + themecol + '"><div class="colorbox">' + contents.join('') + '</div><div class="group-progress-bar">' + groupprogressbar.join('') + '</div><div class="arrow arrow-left" txtcolor="' + dftextcolor + '"></div><div class="arrow arrow-right" txtcolor="' + dftextcolor + '"></div><div class="rightbar" txtcolor="' + dftextcolor + '"><div class="favorite" btnid="' + allcolor[i].id + '"></div><div class="share" btnid="' + allcolor[i].id + '"></div><div class="options"></div></div></div>')
     
 		if(allcolor[i].type === 'imagecolorgroup') {
-		 $('#' + contentimageid).ready(function() {
+			
+		 
+    document.querySelector('#' + contentimageid).onload = function () {
+      
+  
 		const colorThief2 = new ColorThief();
     const imgee2 = document.querySelector('#' + contentimageid);
 
@@ -1125,7 +1129,11 @@ function print() {
 		}
 			 
 			 
-		 });
+		 
+		//ggg
+		
+    }
+		
 		}
 		
 	$('.share[btnid="' + allcolor[i].id + '"]').click(function() {
