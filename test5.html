@@ -1228,8 +1228,8 @@ favtdpromptdelaytime = 460 ;
     }
 		//hhhh
 		if(coltype === "imagecolorgroup") {
-		var cfystr = contentss[gindexff]
-		
+		var cfystr = contentss[(gindexff-1)]
+		if(!(cfystr === undefined)) {
 		
 		if(getCookie('colorfav2').indexOf('&' + cfystr) != -1) {
     }
@@ -1255,7 +1255,7 @@ favtdpromptdelaytime = 460 ;
 		
 		
 		
-		
+		}
 		
 		}
 //ggggg
