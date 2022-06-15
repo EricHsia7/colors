@@ -1075,7 +1075,8 @@ function print() {
      var contentindexoffset = 0
     if(allcolor[i].type === 'imagecolorgroup') {
       contentindexoffset = 1
-      contents.push('<div class="colorcontent" style="background:url(' + allcolor[i].image.dataurl + ');background-size:cover;background-position:center;background-repeat:no-repeat;--dx-li-f:' + 0 + ';"><div class="colorcontent-image-blur-mask"></div><div class="colorcontent-image" style="background:url(' + allcolor[i].image.hdurl + ');background-size:contain;background-position:center;background-repeat:no-repeat;"></div></div>')
+			var contentimageid = 'e_' + genid('uuid')
+      contents.push('<div class="colorcontent" style="background:url(' + allcolor[i].image.dataurl + ');background-size:cover;background-position:center;background-repeat:no-repeat;--dx-li-f:' + 0 + ';"><img src="' + allcolor[i].image.hdurl + '" style="display:none;" id="' + contentimageid + '" i="' + i + '"><div class="colorcontent-image-blur-mask"></div><div class="colorcontent-image" style="background:url(' + allcolor[i].image.hdurl + ');background-size:contain;background-position:center;background-repeat:no-repeat;"></div></div>')
     }
     for (var d = 0; d < allcolor[i].content.length; d++) {
       contents.push('<div class="colorcontent" style="background:' + ths_ctx[d] + ';--dx-li-f:' + d+contentindexoffset + ';color:' + allcolor[i].textcolor[d] + '"><div class="colorcontent-text">' + ths_ctx[d] + '</div></div>')
@@ -1099,6 +1100,34 @@ function print() {
     
     $('.box').append('<div class="color" fid="' + allcolor[i].id + '" group="' + allcolor[i].group + '" i="' + i + '" themecolor="' + themecol + '"><div class="colorbox">' + contents.join('') + '</div><div class="group-progress-bar">' + groupprogressbar.join('') + '</div><div class="arrow arrow-left" txtcolor="' + dftextcolor + '"></div><div class="arrow arrow-right" txtcolor="' + dftextcolor + '"></div><div class="rightbar" txtcolor="' + dftextcolor + '"><div class="favorite" btnid="' + allcolor[i].id + '"></div><div class="share" btnid="' + allcolor[i].id + '"></div><div class="options"></div></div></div>')
     
+		if(allcolor[i].type === 'imagecolorgroup') {
+		 $('#' + contentimageid).ready(function() {
+		const colorThief2 = new ColorThief();
+    const imgee2 = document.querySelector('#' + contentimageid);
+
+    if (imgee2.complete) {
+	    
+      var imgcolorpalette = colorThief2.getPalette(imgee2) ;
+        
+      var pltcolorhex = []
+      var plttextcolor = []
+      for (var hq = 0; hq < imgcolorpalette.length; hq++) {
+        var thshex = rgbToHex(imgcolorpalette[hq][0],imgcolorpalette[hq][1],imgcolorpalette[hq][2])
+        pltcolorhex.push(thshex)      
+        plttextcolor.push(textcol(imgcolorpalette[hq][0],imgcolorpalette[hq][1],imgcolorpalette[hq][2]))    
+      }
+			allcolor[parseInt($(this).attr('i'))].content = pltcolorhex
+			allcolor[parseInt($(this).attr('i'))].textcolor = plttextcolor
+			for (var ag = 0; ag < pltcolorhex.length; ag++) {
+				$('.color[i="' + parseInt($(this).attr('i')) + '"] .colorcontent').eq(ag).css({'background':pltcolorhex[ag],'--dx-li-f':(ag+1),'color':plttextcolor[ag]}).html('<div class="colorcontent-text">' + pltcolorhex[ag] + '</div>')
+				
+			}
+		}
+			 
+			 
+		 });
+		}
+		
 	$('.share[btnid="' + allcolor[i].id + '"]').click(function() {
        var fidtt = $(this).attr('btnid')
        var fidindex = parseInt($('.color[fid="' + fidtt + '"]').attr('i'))
