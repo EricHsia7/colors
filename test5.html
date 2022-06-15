@@ -1223,7 +1223,8 @@ function printcolor() {
 		
 		
 		$('.options[btnid="' + allcolor[i].id + '"]').click(function(evt) {
-			$('.optionlist').css({'--b-bottom-height':$('.bottom').height(),'--b-option-list':3,'display':'block','opacity':'1','transition':'0.3s'});
+			evt.stopPropagation();
+			$('.optionlist').css({'--b-bottom-height':$('.bottom').height() + 'px','--b-option-list':3,'display':'block','opacity':'1','transition':'0.3s'});
 			$('.optionlist-mask').css({'display':'block','transition':'0.3s'});
 			setTimeout(function() {
 			$('.optionlist').css({'transform':'translateY(0px)'});
