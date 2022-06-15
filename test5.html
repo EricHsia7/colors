@@ -982,7 +982,7 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
     
 $.ajax({type:'get',url:'https://picsum.photos/id/' + jqXHR.getResponseHeader('picsum-id') + '/info',dataType:'text',async:true,success:function(e){
 var imginfojson = JSON.parse(e)
-$('#' + imgid).attr('src',imginfojson.download_url)
+$('#' + imgid).attr('src',b64url)
 
 $('#' + imgid).ready(function() {
     setTimeout(function() {
