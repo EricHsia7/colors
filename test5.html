@@ -241,7 +241,13 @@ display:none;
 </div>
 	<div class="bottom"></div>
 	<div class="optionlist-mask"></div>
-	<div class="optionlist"></div>
+	<div class="optionlist">
+		<li h="qrcode">二維碼</li>
+		<li h="picker">顏色選擇器</li>
+		<li h="toimg">轉換圖片</li>
+		<li h="llgrd">似色漸層</li>
+		<li h"llpath">似色路徑</li>
+	</div>
 </body>
   <script>
   var getUrlString = location.href;
@@ -1231,14 +1237,30 @@ function printcolor() {
   var fidindex = parseInt($('.color[fid="' + fidtt + '"]').attr('i'))
   var fytype= allcolor[fidindex].type
 	var listcc = 0
+	
 	    if(fytype === 'color') {
-				listcc = 6
+				listcc = 5
+				$('.optionlist li[h="qrcode"]').css({'display':'block'});
+				$('.optionlist li[h="picker"]').css({'display':'block'});
+				$('.optionlist li[h="toimg"]').css({'display':'block'});
+				$('.optionlist li[h="llgrd"]').css({'display':'block'});
+				$('.optionlist li[h="llpath"]').css({'display':'block'});
 			}
 			if(fytype === 'gradient') {
-				listcc = 3
+				listcc = 1
+				$('.optionlist li[h="qrcode"]').css({'display':'block'});
+				$('.optionlist li[h="picker"]').css({'display':'none'});
+				$('.optionlist li[h="toimg"]').css({'display':'none'});
+				$('.optionlist li[h="llgrd"]').css({'display':'none'});
+				$('.optionlist li[h="llpath"]').css({'display':'none'});
 			}
 			if(fytype === 'imagecolorgroup') {
 				listcc = 5
+				$('.optionlist li[h="qrcode"]').css({'display':'block'});
+				$('.optionlist li[h="picker"]').css({'display':'none'});
+				$('.optionlist li[h="toimg"]').css({'display':'none'});
+				$('.optionlist li[h="llgrd"]').css({'display':'none'});
+				$('.optionlist li[h="llpath"]').css({'display':'none'});
 			}
 			$('.optionlist').css({'--b-bottom-height':$('.bottom').height() + 'px','--b-option-list':listcc,'display':'block','opacity':'1','transition':'0.3s'});
 			$('.optionlist-mask').css({'display':'block','transition':'0.3s'});
