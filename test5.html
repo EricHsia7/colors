@@ -1136,7 +1136,14 @@ function printcolor() {
 		if(gindex > 0) {
 			gindex -=1
 			$('.color[fid="' + $(this).attr('btnid') + '"]').attr('group-index',gindex)
-			$('.color[fid="' + $(this).attr('btnid') + '"] .colorbox').css({'transform':'translateX(calc(var(--ft-window-width) * ' + gindex + ' * -1))','transition':'0.3s'})
+			$('.color[fid="' + $(this).attr('btnid') + '"] .colorbox').css({'transform':'translateX(calc(var(--ft-window-width) * ' + gindex + ' * -1))','transition':'0.3s'});
+			var cfl = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))].content[(gindex-1)]
+			if(getCookie('colorfav2').indexOf('&' + cfl) > -1) {
+				$('.favorite[btnid="' + $(this).attr('btnid') + '"]').css({'background':'url(https://erichsia7.github.io/colors/favorited.png)','background-size':'35px','background-position':'center','background-repeat':'no-repeat'});
+			}
+			elee {
+				$('.favorite[btnid="' + $(this).attr('btnid') + '"]').css({'background':'url(https://erichsia7.github.io/colors/favorite.png)','background-size':'35px','background-position':'center','background-repeat':'no-repeat'});
+			}
 		}
 		});
 		$('.arrow-right[btnid="' + allcolor[i].id + '"]').click(function() {
@@ -1145,6 +1152,13 @@ function printcolor() {
 			gindex +=1
 			$('.color[fid="' + $(this).attr('btnid') + '"]').attr('group-index',gindex)
 			$('.color[fid="' + $(this).attr('btnid') + '"] .colorbox').css({'transform':'translateX(calc(var(--ft-window-width) * ' + gindex + ' * -1))','transition':'0.3s'})
+			var cfl = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))].content[(gindex-1)]
+			if(getCookie('colorfav2').indexOf('&' + cfl) > -1) {
+				$('.favorite[btnid="' + $(this).attr('btnid') + '"]').css({'background':'url(https://erichsia7.github.io/colors/favorited.png)','background-size':'35px','background-position':'center','background-repeat':'no-repeat'});
+			}
+			elee {
+				$('.favorite[btnid="' + $(this).attr('btnid') + '"]').css({'background':'url(https://erichsia7.github.io/colors/favorite.png)','background-size':'35px','background-position':'center','background-repeat':'no-repeat'});
+			}
 		}
 		});
 	$('.share[btnid="' + allcolor[i].id + '"]').click(function() {
