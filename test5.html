@@ -1166,6 +1166,7 @@ function printcolor() {
 		
 	$('.favorite[btnid="' + allcolor[i].id + '"]').click(function() {
 	var fidtt = $(this).attr('btnid')
+	var gindexff = parseInt($('.color[fid="' + fidtt + '"]').attr('group-index'))
   var fidindex = parseInt($('.color[fid="' + fidtt + '"]').attr('i'))
   var contentss= allcolor[fidindex].content
 	var contentindex = 0
@@ -1225,6 +1226,38 @@ favtdpromptdelaytime = 460 ;
      
     } 
     }
+		//hhhh
+		if(coltype === "imagecolorgroup") {
+		var cfystr = contentss[gindexff]
+		
+		
+		if(getCookie('colorfav2').indexOf('&' + cfystr) != -1) {
+    }
+      else {
+    setcookie('colorfav2',getCookie('colorfav2') + '&' + cfystr)
+      if(opensou === 'recommend' || opensou === 'trend') {
+    
+      }
+     else {
+     if(localStorage.getItem('settings_sharefav') === '1' && favoriteshare() === true) {
+var favrecommendforms = $.ajax({url:"https://docs.google.com/forms/d/e/1FAIpQLSeMGuvbZSK1mqORhroslYL_j1yCJ0WLvw2vIqk9_LpCmAYj5Q/formResponse?usp=pp_url&entry.450237995=%23" + cfystr.replaceAll('#','') ,async:true});
+      }
+     }  
+    if(String(localStorage.getItem('favanimation_v2')).length > 100) {
+$('.favorite[btnid="' + fidtt + '"]').attr('class','favorite favoriteanimation')
+favtdpromptdelaytime = 460 ;
+    }
+    else {
+    $('.favorite[btnid="' + fidtt + '"]').css({'background':'url(https://erichsia7.github.io/colors/favorited.png)','background-size':'35px','background-position':'center','background-repeat':'no-repeat'});
+    }
+    
+    } 
+		
+		
+		
+		
+		
+		}
 //ggggg
 if(coltype === "path") {
       if(getCookie('colorfav2').indexOf('&pa]' + $('#rgb').attr('lc1') + ']' + $('#rgb').attr('lc2')) != -1) {
