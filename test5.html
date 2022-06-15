@@ -127,6 +127,7 @@ backdrop-filter: blur(15px);
  .rightbar[txtcolor="#ffffff"] .favorite , .rightbar[txtcolor="#ffffff"] .share, .rightbar[txtcolor="#ffffff"] .options{
 	 filter: invert(100%);
 		}
+	
 
  .arrow {
 	 position:absolute;
@@ -1013,7 +1014,7 @@ var imagetxc = textcol(imgmaincolor[0],imgmaincolor[1],imgmaincolor[2])
       hdurl:imginfojson.download_url,
       source: imginfojson.url
     },
-    shareurl: "",
+    shareurl: 'https://erichsia7.github.io/colors/?s=4&grouplist=' + btoa(pltcolorhex.join(',')) + '&picid=' + jqXHR.getResponseHeader('picsum-id') + '&picurl=' + btoa(imginfojson.download_url) + '&picsou=' + btoa(imginfojson.url) + '&r=' + genid('random'),
     id:'c_' + genid('random'),
     textcolor:plttextcolor,
 	  imgtextcolor:imagetxc
