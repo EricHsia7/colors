@@ -1139,10 +1139,10 @@ function printcolor() {
 			$('.color[fid="' + $(this).attr('btnid') + '"] .colorbox').css({'transform':'translateX(calc(var(--ft-window-width) * ' + gindex + ' * -1))','transition':'0.3s'});
 			var cfl = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))].content[(gindex-1)]
 			if(getCookie('colorfav2').indexOf('&' + cfl) > -1) {
-				$('.favorite[btnid="' + $(this).attr('btnid') + '"]').css({'background':'url(https://erichsia7.github.io/colors/favorited.png)','background-size':'35px','background-position':'center','background-repeat':'no-repeat'});
+				$('.favorite[btnid="' + $(this).attr('btnid') + '"]').css({'background':'url(https://erichsia7.github.io/colors/favorited.png)','background-size':'35px','background-position':'center','background-repeat':'no-repeat'}).attr('class','favorite')
 			}
 			else {
-				$('.favorite[btnid="' + $(this).attr('btnid') + '"]').css({'background':'url(https://erichsia7.github.io/colors/favorite.png)','background-size':'35px','background-position':'center','background-repeat':'no-repeat'});
+				$('.favorite[btnid="' + $(this).attr('btnid') + '"]').css({'background':'url(https://erichsia7.github.io/colors/favorite.png)','background-size':'35px','background-position':'center','background-repeat':'no-repeat'}).attr('class','favorite')
 			}
 		}
 		});
@@ -1154,10 +1154,10 @@ function printcolor() {
 			$('.color[fid="' + $(this).attr('btnid') + '"] .colorbox').css({'transform':'translateX(calc(var(--ft-window-width) * ' + gindex + ' * -1))','transition':'0.3s'})
 			var cfl = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))].content[(gindex-1)]
 			if(getCookie('colorfav2').indexOf('&' + cfl) > -1) {
-				$('.favorite[btnid="' + $(this).attr('btnid') + '"]').css({'background':'url(https://erichsia7.github.io/colors/favorited.png)','background-size':'35px','background-position':'center','background-repeat':'no-repeat'});
+				$('.favorite[btnid="' + $(this).attr('btnid') + '"]').css({'background':'url(https://erichsia7.github.io/colors/favorited.png)','background-size':'35px','background-position':'center','background-repeat':'no-repeat'}).attr('class','favorite')
 			}
 			else {
-				$('.favorite[btnid="' + $(this).attr('btnid') + '"]').css({'background':'url(https://erichsia7.github.io/colors/favorite.png)','background-size':'35px','background-position':'center','background-repeat':'no-repeat'});
+				$('.favorite[btnid="' + $(this).attr('btnid') + '"]').css({'background':'url(https://erichsia7.github.io/colors/favorite.png)','background-size':'35px','background-position':'center','background-repeat':'no-repeat'}).attr('class','favorite')
 			}
 		}
 		});
