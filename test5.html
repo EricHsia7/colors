@@ -1131,7 +1131,8 @@ function printcolor() {
 		}
 		
 		*/
-		$('.arrow-left[btnid="' + allcolor[i].id + '"]').click(function() {
+		$('.arrow-left[btnid="' + allcolor[i].id + '"]').click(function(evt) {
+		evt.stopPropagation();
 		var gindex = parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('group-index'))
 		if(gindex > 0) {
 			gindex -=1
@@ -1146,7 +1147,8 @@ function printcolor() {
 			}
 		}
 		});
-		$('.arrow-right[btnid="' + allcolor[i].id + '"]').click(function() {
+		$('.arrow-right[btnid="' + allcolor[i].id + '"]').click(function(evt) {
+			evt.stopPropagation();
 		var gindex = parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('group-index'))
 		if(gindex < 10) {
 			gindex +=1
@@ -1161,7 +1163,8 @@ function printcolor() {
 			}
 		}
 		});
-	$('.share[btnid="' + allcolor[i].id + '"]').click(function() {
+	$('.share[btnid="' + allcolor[i].id + '"]').click(function(evt) {
+		evt.stopPropagation();
        var fidtt = $(this).attr('btnid')
        var fidindex = parseInt($('.color[fid="' + fidtt + '"]').attr('i'))
        var shareurltt = allcolor[fidindex].shareurl
@@ -1178,7 +1181,8 @@ function printcolor() {
     }
     });
 		
-	$('.favorite[btnid="' + allcolor[i].id + '"]').click(function() {
+	$('.favorite[btnid="' + allcolor[i].id + '"]').click(function(evt) {
+		evt.stopPropagation();
 	var fidtt = $(this).attr('btnid')
 	var gindexff = parseInt($('.color[fid="' + fidtt + '"]').attr('group-index'))
   var fidindex = parseInt($('.color[fid="' + fidtt + '"]').attr('i'))
