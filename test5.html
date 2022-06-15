@@ -845,9 +845,7 @@ function setthemecol(hexcolsjs,delaytimems) {
 function isRunningStandalone() {
     return (window.matchMedia('(display-mode: standalone)').matches);
 }
-if(!(isRunningStandalone())) {
-  $('#iphonesafearea').html('')
-}
+
 	  
 	  
 function getunsplashimgurlbyid(picid) {
@@ -1054,6 +1052,9 @@ function addpathcontent() {
 
 
 function initialize() {
+	if(!(isRunningStandalone())) {
+  $('#iphonesafearea').html('')
+}
   $('#ft').html(':root{--ft-window-width:' + $('.container').width() + 'px;--ft-window-height:' + $('.container').height() + 'px;}')
   //addimagecolorcontentgroup()
 	if(gup('db') === '1') {
