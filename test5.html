@@ -162,10 +162,10 @@ display:none;
 		bottom:0px;
 		left:0px;
 		width:100%;
-		height:calc(var(--b-bottom-height) + (40px * var(--b-option-list)));
+		height:calc(var(--b-bottom-height) + (45px * var(--b-option-list)));
 		border-radius:15px 15px 0px 0px;
 		background:#fff;
-		transform:translateY(calc(var(--b-bottom-height) + (40px * var(--b-option-list))));
+		transform:translateY(calc(var(--b-bottom-height) + (45px * var(--b-option-list))));
 		opacity:0;
 		display:none;
 		}
@@ -183,17 +183,21 @@ display:none;
 			list-style:none;
 			padding:0px;
 			margin:0px;
-			height:39px;
+			height:44px;
 			width:calc(100% - 10px);
 			padding-left:10px;
 			display: flex;
 align-items: center;
-			font-size:20px;
+			font-size:18px;
 			border-bottom:1px solid #f5f5f5;
 		}
 	@media (prefers-color-scheme: dark) {
-			.bottom {
+			.bottom ,.optionlist{
 				background:#1a1a1a;
+		}
+		.optionlist li {
+			border-bottom:1px solid #1f1f1f;
+			color:#fff;
 		}
 		}
   </style>
