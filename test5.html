@@ -872,6 +872,7 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
     }
     $('#' + imgid).attr('src','data:image/jpeg;base64,' + btoa(binary))
     var bigsizerdimgurl = String('https://picsum.photos/id/' + jqXHR.getResponseHeader('picsum-id') + '/1024/1024')
+    
     $('#' + imgid).ready(function() {
     setTimeout(function() {
     const colorThief = new ColorThief();
@@ -975,12 +976,13 @@ var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
         binary += String.fromCharCode(responseText.charCodeAt(i) & 255)
     }
     var b64url = 'data:image/jpeg;base64,' + btoa(binary)
-    $('#' + imgid).attr('src',b64url)
-
+    
+    
     //var bigsizerdimgurl = String('https://picsum.photos/id/' + jqXHR.getResponseHeader('picsum-id') + '/1024/1024')
     
 $.ajax({type:'get',url:'https://picsum.photos/id/' + jqXHR.getResponseHeader('picsum-id') + '/info',dataType:'text',async:true,success:function(e){
 var imginfojson = JSON.parse(e)
+$('#' + imgid).attr('src',imginfojson.download_url)
 
 $('#' + imgid).ready(function() {
     setTimeout(function() {
