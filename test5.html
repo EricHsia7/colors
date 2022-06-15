@@ -1349,20 +1349,7 @@ function printcolor() {
 			$('.optionlist-mask').css({'opacity':'1'});
 			},1);
 		});
-		//option touch evt
 		
-		var divooo = document.querySelector('.color[fid="' + String(allcolor[i].id) + '"]');
-    var divooolt = 0
-divooo.addEventListener('touchstart', function(e) {
-  divooolt = setTimeout(function() {
-		$('.options[btnid="' + String(allcolor[i].id) + '"]').click()
-	},500);
-});
-
-document.addEventListener('touchend', function(e) {
-	clearTimeout(divooolt)
-});
-		//option touch evt end
 	$('.favorite[btnid="' + allcolor[i].id + '"]').click(function(evt) {
 		evt.stopPropagation();
 	var fidtt = $(this).attr('btnid')
@@ -1652,6 +1639,24 @@ function move(e) {
   }
 }
     
+		
+		
+		//option touch evt
+		
+		var divooo = document.querySelector('.box');
+    var divooolt = 0
+divooo.addEventListener('touchstart', function(e) {
+  divooolt = setTimeout(function() {
+		$('.options[btnid="' + allcolor[Math.abs(parseInt(document.querySelector(".box").getAttribute('dy'))/$('.container').height())].id + '"]').click()
+	},500);
+});
+
+divooo.addEventListener('touchend', function(e) {
+	clearTimeout(divooolt)
+});
+		//option touch evt end
+		
+		
     $(document).ready(function() {
 if(localStorage.getItem('first_load') === "1") {
 var googlefontloadtime = new Date().getTime() ;
