@@ -186,6 +186,9 @@ display:none;
 			height:40px;
 			width:calc(100% - 10px);
 			padding-left:10px;
+			display: flex;
+align-items: center;
+			font-size:20px;
 		}
 	@media (prefers-color-scheme: dark) {
 			.bottom {
@@ -1248,15 +1251,15 @@ function printcolor() {
 	
 	    if(fytype === 'color') {
 				listcc = 5
-				$('.optionlist li[h="qrcode"]').css({'display':'block'});
-				$('.optionlist li[h="picker"]').css({'display':'block'});
-				$('.optionlist li[h="toimg"]').css({'display':'block'});
-				$('.optionlist li[h="llgrd"]').css({'display':'block'});
-				$('.optionlist li[h="llpath"]').css({'display':'block'});
+				$('.optionlist li[h="qrcode"]').css({'display':'flex'});
+				$('.optionlist li[h="picker"]').css({'display':'flex'});
+				$('.optionlist li[h="toimg"]').css({'display':'flex'});
+				$('.optionlist li[h="llgrd"]').css({'display':'flex'});
+				$('.optionlist li[h="llpath"]').css({'display':'flex'});
 			}
 			if(fytype === 'gradient') {
 				listcc = 1
-				$('.optionlist li[h="qrcode"]').css({'display':'block'});
+				$('.optionlist li[h="qrcode"]').css({'display':'flex'});
 				$('.optionlist li[h="picker"]').css({'display':'none'});
 				$('.optionlist li[h="toimg"]').css({'display':'none'});
 				$('.optionlist li[h="llgrd"]').css({'display':'none'});
@@ -1264,7 +1267,7 @@ function printcolor() {
 			}
 			if(fytype === 'imagecolorgroup') {
 				listcc = 5
-				$('.optionlist li[h="qrcode"]').css({'display':'block'});
+				$('.optionlist li[h="qrcode"]').css({'display':'flex'});
 				$('.optionlist li[h="picker"]').css({'display':'none'});
 				$('.optionlist li[h="toimg"]').css({'display':'none'});
 				$('.optionlist li[h="llgrd"]').css({'display':'none'});
