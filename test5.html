@@ -1066,7 +1066,7 @@ function initialize() {
 
 var gtg = 0 ;
 		var dbclick = {}
-function print() {
+function printcolor() {
   
   for (var i = gtg; i < allcolor.length; i++) {
     var ths_ctx = allcolor[i].content
@@ -1136,15 +1136,15 @@ function print() {
 		if(gindex > 0) {
 			gindex -=1
 			$('.color[fid="' + $(this).attr('btnid') + '"]').attr('group-index',gindex)
-			$('.color[fid="' + $(this).attr('btnid') + '"] .colorbox').css({'transform':'translateX(calc(var(--ft-window-width) * ' + gindex + ' * -1))'})
+			$('.color[fid="' + $(this).attr('btnid') + '"] .colorbox').css({'transform':'translateX(calc(var(--ft-window-width) * ' + gindex + ' * -1))','transition':'0.3s'})
 		}
 		});
 		$('.arrow-right[btnid="' + allcolor[i].id + '"]').click(function() {
 		var gindex = parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('group-index'))
-		if(gindex < 11) {
+		if(gindex < 10) {
 			gindex +=1
 			$('.color[fid="' + $(this).attr('btnid') + '"]').attr('group-index',gindex)
-			$('.color[fid="' + $(this).attr('btnid') + '"] .colorbox').css({'transform':'translateX(calc(var(--ft-window-width) * ' + gindex + ' * -1))'})
+			$('.color[fid="' + $(this).attr('btnid') + '"] .colorbox').css({'transform':'translateX(calc(var(--ft-window-width) * ' + gindex + ' * -1))','transition':'0.3s'})
 		}
 		});
 	$('.share[btnid="' + allcolor[i].id + '"]').click(function() {
@@ -1286,7 +1286,7 @@ favtdpromptdelaytime = 460 ;
 
 $(document).ready(function() {
 initialize()
-print()
+printcolor()
 });
 
 var lastcolor 
@@ -1366,7 +1366,7 @@ var ns = Math.round(parseInt(div.getAttribute('dy'))/$('.container').height())*$
    imagect = 3
   }
   
-  print()
+  printcolor()
 	  /*
 	if(allcolor.length > 10 && allcolor.length < 12) {
 	addcolorcontent()
