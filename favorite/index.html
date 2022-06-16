@@ -1229,6 +1229,7 @@ var seicocor = '255' ;
  
  $('.coloropenbtnj').click(function() {
   if(cardselect === "0") {
+/*
    $('#' + $(this).attr('crdid')).css({'opacity':'0','transition':'0s'});
    $('.card').css({'opacity':'0','transition':'0.3s'});
 $('.clopanblur').fadeIn(300);
@@ -1259,7 +1260,9 @@ $('#' + fghidf).css({'border-radius':'0px','width':'100%','height':'100%','posit
    }
       }
    },1);
+	*/
    //var crdbtnlinkjj = $(this).attr('link') + '' ;
+/*
    var hsijllink = String($(this).attr('link')) ;
    var oanggb = btoa(String($('#' + $(this).attr('crdid')).attr('rg'))) ;
    var oanggw = String($('#' + $(this).attr('crdid')).width()) ;
@@ -1271,11 +1274,14 @@ $('#' + fghidf).css({'border-radius':'0px','width':'100%','height':'100%','posit
    var oanggrgh = String($('#' + $(this).attr('crdid')).attr('rgh')) ;
    var oanggrgc = btoa(String($('#' + $(this).attr('crdid')).css('color'))) ;
    var arrtfyygvgppoy = String($('#' + $(this).attr('crdid')).attr('arrtctcl')) ;
+	  */
    if(oanggrgpp === "1") {
-var peroplik = hsijllink + '&scroll=' + $(document).scrollTop() + '&oani=' + fghidf + '&oanc=' + oanggb + '&fgx=' + oanggx + '&fgy=' + oanggy + '&fgw=' + oanggw + '&fgh=' + oanggh + '&rg=' + oanggrg + '&rgpp=' + oanggrgpp + '&rgh=' + btoa(oanggrgh) + '&rgc=' + oanggrgc + '&lig=' + arrtfyygvgppoy + '&r=' + genid('random') ;
+var peroplik = hsijllink
+//+ '&scroll=' + $(document).scrollTop() + '&oani=' + fghidf + '&oanc=' + oanggb + '&fgx=' + oanggx + '&fgy=' + oanggy + '&fgw=' + oanggw + '&fgh=' + oanggh + '&rg=' + oanggrg + '&rgpp=' + oanggrgpp + '&rgh=' + btoa(oanggrgh) + '&rgc=' + oanggrgc + '&lig=' + arrtfyygvgppoy + '&r=' + genid('random') ;
    }
  else {
-   var peroplik = hsijllink + '&scroll=' + $(document).scrollTop() + '&oani=' + fghidf + '&oanc=' + oanggb + '&fgx=' + oanggx + '&fgy=' + oanggy + '&fgw=' + oanggw + '&fgh=' + oanggh + '&rg=' + oanggrg + '&rgc=' + oanggrgc + '&lig=' + arrtfyygvgppoy + '&r=' + genid('random') ;
+   var peroplik = hsijllink
+   //+ '&scroll=' + $(document).scrollTop() + '&oani=' + fghidf + '&oanc=' + oanggb + '&fgx=' + oanggx + '&fgy=' + oanggy + '&fgw=' + oanggw + '&fgh=' + oanggh + '&rg=' + oanggrg + '&rgc=' + oanggrgc + '&lig=' + arrtfyygvgppoy + '&r=' + genid('random') ;
  }
    caches.open("colors_fav_preload").then(function (cache) {
 cache.addAll([peroplik]);
@@ -1285,11 +1291,11 @@ cache.addAll([peroplik]);
    location.href = peroplik
    },310);
    */
-document.addEventListener('transitionend',function() {
+//document.addEventListener('transitionend',function() {
 setTimeout(function() {
    location.href = peroplik
    },30);
-})
+//})
   //$('#' + $(this).attr('crdid')).css({'width':'100%','height':'100%','position':'fixed','top':'0px','left':'0px','transition':'0.75s'});
    
   }
