@@ -1486,7 +1486,25 @@ $('#selectall').attr('ser','0');
 $('.card[selectedy="1"]').click();
 }
 });
-       
+				
+  $('.bottom-btn').click(function() {
+  var k = $(this).attr('u')
+	if(k === 'home') {
+		location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
+	}
+	if(k === 'favorite') {
+		location.href = 'https://erichsia7.github.io/colors/favorite?r=' + genid('random')
+	}
+	if(k === 'option') {
+		
+	}
+	if(k === 'trend') {
+		
+	}
+	if(k === 'more') {
+		
+	}
+});
 $(document).ready(function() {
  //test 
 var googlefontloadtime = new Date().getTime() ;
