@@ -1310,7 +1310,7 @@ function printcolor() {
   var fidindex = parseInt($('.color[fid="' + fidtt + '"]').attr('i'))
   var fytype= allcolor[fidindex].type
 	var listcc = 0
-	
+	$('.optionlist').attr('f',fidtt)
 	    if(fytype === 'color') {
 				listcc = 7
 				$('.optionlist li[h="qrcode"]').css({'display':'flex'});
