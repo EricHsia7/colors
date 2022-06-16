@@ -105,15 +105,20 @@ height:55px;
   left:calc(var(--ft-window-width) * var(--dx-li-f));
   width:var(--ft-window-width);
   height:100%;
-  display: flex;
-justify-content: center;
-align-items: center;
 	-webkit-user-select: none;
 }
 .colorcontent-text {
   font-size:25px;
   font-family:"Noto Sans TC",sans-serif;
 	-webkit-user-select: none;
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	display: flex;
+justify-content: center;
+align-items: center;
 }
 .colorcontent-image {
 position:absolute;
@@ -1204,13 +1209,13 @@ function printcolor() {
       }
       if(allcolor[i].type === 'gradient') {
 				favstr = '&li]' + ths_ctx[0] + ']' + ths_ctx[1] + ']' + ths_ctx[2]
-        contents.push('<div class="colorcontent" style="background:linear-gradient(' + ths_ctx[0] + 'deg ,' + ths_ctx[1] + ' ,' + ths_ctx[2] + ');color:' + allcolor[i].textcolor + '"><div class="colorcontent-text">' + ths_ctx.join('<br>') + '</div></div>')
+        contents.push('<div class="colorcontent" style="background:linear-gradient(' + ths_ctx[0] + 'deg ,' + ths_ctx[1] + ' ,' + ths_ctx[2] + ');color:' + allcolor[i].textcolor + '"><div class="colorcontent-text">' + ths_ctx.join(',') + '</div></div>')
 	dftextcolor = allcolor[i].textcolor
 	themecol = ths_ctx[1]
       }
       if(allcolor[i].type === 'path') {
         favstr = '&pa]' + ths_ctx[0] + ']' + ths_ctx[1]
-        contents.push('<div class="colorcontent" style="background:' + ths_ctx[1] + ';color:' + allcolor[i].textcolor + '">' + allcolor[i].path_data + '<div class="colorcontent-text">' + ths_ctx.join('<br>') + '</div></div>')
+        contents.push('<div class="colorcontent" style="background:' + ths_ctx[1] + ';color:' + allcolor[i].textcolor + '">' + allcolor[i].path_data + '<div class="colorcontent-text">' + ths_ctx.join(',') + '</div></div>')
         dftextcolor = allcolor[i].textcolor
         themecol = ths_ctx[1]
       }
