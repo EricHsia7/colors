@@ -1223,6 +1223,9 @@ function initialize() {
 	if(!(isRunningStandalone())) {
   $('#iphonesafearea').html('')
 }
+	if(localStorage.getItem('colorfav2') === null) {
+		localStorage.setItem('colorfav2','')
+	}
   $('#ft').html(':root{--ft-window-width:' + $('.container').width() + 'px;--ft-window-height:' + ($(window).height()-$('.bottom').height()) + 'px;}')
   //addimagecolorcontentgroup()
 	if(gup('db') === '1') {
