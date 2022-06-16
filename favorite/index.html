@@ -68,13 +68,18 @@ height:55px;
 .container {
   height:auto;
   width:100%;
-  background:#fff;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 0px;
   grid-template-rows:auto;
   margin-bottom:100px;
 }
+.container-load {
+	width:100%;
+	height:10px;
+	opacity:0;
+	background:rgba(0,0,0,0);
+	}
 .color {
   background:#ff0000;
   height:var(--dd-container-n-height);
@@ -709,6 +714,7 @@ background:#fff;
 <style id="dd"></style>
 <div class="container">
 </div>
+	<div class="container-load"></div>
 
 <div id="fmenu" style="display:none">
  <div class="shfav lle btn"></div>
@@ -1547,7 +1553,8 @@ function textcol(r, g, b) {
 
 var colorfav2 = getCookie('colorfav2')
  var pt = 0 
-
+var dft = 0
+	var stopload = 0
 var allcolor = [] ;
 function preparejson() {
   if(String(colorfav2).length > 7) {
@@ -1610,6 +1617,7 @@ function printcolor() {
   var pt1 = (pt+10)
   if(pt1 >= allcolor.length) {
     pt1 = allcolor.length
+		stopload = true
   }
   for (var i = pt; i < pt1; i++) {
     if(allcolor[i].type === 'gradient') {
@@ -1637,9 +1645,29 @@ preparejson()
 	
 setTimeout(function(){ 
 printcolor()
-},100);
+},10);
 				
 				
+				
+				
+  $(document).scroll(function() {
+
+  if(($('.container-load').offset().top-$(document).scrollTop()) < ($(window).height()+240)) {
+    if(dft === 0) {
+      
+      if(!(stopload)) {
+      printcolor()
+      }
+      if(stopload) {
+        
+      }
+      dft = 1 ;
+    }
+    else {
+      dft = 0
+    }
+  }
+});
 				
 				
   $('.bottom-btn').click(function() {
