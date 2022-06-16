@@ -1585,6 +1585,7 @@ function initialize() {
   for (var i = 0; i < 2; i++) {
     addcolorcontent()
     addgradientcontent()
+		addpathcontent()
   }
 }
 
@@ -1627,7 +1628,7 @@ let offsetX = 0
 let offsetY = 0
 let isDown = false
 var div = document.querySelector(".box");
-var imagect = 3
+var imagect = 2
 div.addEventListener('touchstart', function(e) {
   isDown = true
   mouseX = e.pageX
@@ -1690,10 +1691,11 @@ var ns = Math.round(parseInt(div.getAttribute('dy'))/$('.container').height())*$
   
   addcolorcontent()
   addgradientcontent()
+	addpathcontent()
   imagect -= 1
   if(imagect < 0) {
    addimagecolorcontentgroup()
-   imagect = 3
+   imagect = 2
   }
   
   printcolor()
