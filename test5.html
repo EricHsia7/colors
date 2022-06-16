@@ -730,10 +730,12 @@ function hsv2rgb(a, r, t) {
 }
 
 function cllhi() {
-  var tthi = getCookie("colorfav2")
-    .substring(1, getCookie("colorfav2").length)
-    .split("&");
-
+	if(String(getCookie("colorfav2")).length > 10) {
+  var tthi = getCookie("colorfav2").substring(1, getCookie("colorfav2").length).split("&");
+	}
+	else {
+		return false;
+	}
   if (tthi.length < 10) {
     return false;
   }
