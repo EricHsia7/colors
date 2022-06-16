@@ -1571,8 +1571,18 @@ function preparejson() {
         //grdend
       }
       else {
-        if(String(colorfavarr[i]).indexOf('path]') > -1) {
+        if(String(colorfavarr[i]).indexOf('pa]') > -1) {
         //path
+			var content = {
+		type: "path",
+    group: false,
+    content: ["#ffffff", "#000000"],
+    path_data: "",
+    shareurl: "",
+    id:'c_' + genid('random')
+			}
+			allcolor.push(content)
+		//pathend
       }
         else {
           //color
@@ -1608,7 +1618,9 @@ function printcolor() {
     if(allcolor[i].type === 'color') {
     $('.container').append('<div class="color" style="background:' + allcolor[i].content[0] + ';" wi="' + allcolor[i].id + '"></div>')
     }
-    
+    if(allcolor[i].type === 'path') {
+    $('.container').append('<div class="color" style="background:' + allcolor[i].content[0] + ';" wi="' + allcolor[i].id + '"></div>')
+    }
     $('.color[wi="' + allcolor[i].id + '"]').click(function() {
       $(this).css({'transform':'translateX(' + (-1*$(this).offset().left+$(document).scrollLeft()) + 'px) translateY(' + (-1*$(this).offset().top+$(document).scrollTop()) + 'px) scale(3)','transition':'0.3s','z-index':($('.container .color').length+1)}) 
       $('.bottom').css({'z-index':($('.container .color').length+2)})
