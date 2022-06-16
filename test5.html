@@ -1112,9 +1112,9 @@ function addcolorcontent() {
 function addgradientcontent() {
   var col = cllhi()
   if(col === false) {
-    var random_r = Math.floor(Math.random*255)
-    var random_g = Math.floor(Math.random*255)
-    var random_b = Math.floor(Math.random*255)
+    var random_r = Math.floor(Math.random()*255)
+    var random_g = Math.floor(Math.random()*255)
+    var random_b = Math.floor(Math.random()*255)
     col = rgbToHex(random_r,random_g,random_b)
   }
   
