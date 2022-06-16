@@ -1621,17 +1621,21 @@ function printcolor() {
   }
   for (var i = pt; i < pt1; i++) {
     if(allcolor[i].type === 'gradient') {
-    $('.container').append('<div class="color" style="background:linear-gradient(' + allcolor[i].content[0] + 'deg ,' + allcolor[i].content[1] + ' ,' + allcolor[i].content[2] + ');" wi="' + allcolor[i].id + '"></div>')
+    $('.container').append('<div class="color" g="' + i + '" style="background:linear-gradient(' + allcolor[i].content[0] + 'deg ,' + allcolor[i].content[1] + ' ,' + allcolor[i].content[2] + ');" wi="' + allcolor[i].id + '"></div>')
     }
     if(allcolor[i].type === 'color') {
-    $('.container').append('<div class="color" style="background:' + allcolor[i].content[0] + ';" wi="' + allcolor[i].id + '"></div>')
+    $('.container').append('<div class="color" g="' + i + '" style="background:' + allcolor[i].content[0] + ';" wi="' + allcolor[i].id + '"></div>')
     }
     if(allcolor[i].type === 'path') {
-    $('.container').append('<div class="color" style="background:' + allcolor[i].content[0] + ';" wi="' + allcolor[i].id + '"></div>')
+    $('.container').append('<div class="color" g="' + i + '" style="background:' + allcolor[i].content[0] + ';" wi="' + allcolor[i].id + '"></div>')
     }
     $('.color[wi="' + allcolor[i].id + '"]').click(function() {
       $(this).css({'transform':'translateX(' + (-1*$(this).offset().left+$(document).scrollLeft()) + 'px) translateY(' + (-1*$(this).offset().top+$(document).scrollTop()) + 'px) scale(3)','transition':'0.3s','z-index':($('.container .color').length+1)}) 
       $('.bottom').css({'z-index':($('.container .color').length+2)})
+			var thsindex = String($(this).attr('g'))
+			setTimeout(function(){ 
+				location.href = allcolor[parseInt(thsindex)].shareurl
+			},350);
     })
     
     pt +=1
@@ -1651,7 +1655,7 @@ printcolor()
 				
 				
   $(document).scroll(function() {
-console.log(($('.container-load').offset().top-$(document).scrollTop()) + ',' + (window.innerHeight+10))
+console.log(($('.container-load').offset().top-$(document).scrollTop()) + ',' + (window.innerHeight*1.3))
   if(($('.container-load').offset().top-$(document).scrollTop()) < (window.innerHeight+10)) {
 	  
     if(dft === 0) {
