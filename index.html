@@ -1576,6 +1576,25 @@ function initialize() {
 		allcolor.push(sharecontent)
 	}
 	
+	if(gup('s') === '3') {
+	var patharr = [atob(gup('la')),atob(gup('lb'))]
+  var txc = textcol((hexToRgb(patharr[0]).r+hexToRgb(patharr[1]).r)*.5,(hexToRgb(patharr[0]).g+hexToRgb(patharr[1]).g)*.5,(hexToRgb(patharr[0]).b+hexToRgb(patharr[1]).b)*.5)
+  
+  var path_datahtml = gtffim(patharr[0],patharr[1],window.innerWidth,window.innerHeight)
+
+  var content = {
+    type: "path",
+    group: false,
+    content: patharr,
+    path_data: path_datahtml,
+    shareurl:'https://erichsia7.github.io/colors/?s=3&la=' + gup('la') + '&lb=' + gup('lb') + '&r=' + genid('random') ,
+    id:'c_' + genid('random'),
+    textcolor:txc
+  };
+	allcolor.push(content)
+	
+	}
+	
   for (var i = 0; i < 2; i++) {
     addcolorcontent()
     addgradientcontent()
