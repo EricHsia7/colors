@@ -49,16 +49,19 @@
 	display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 0px;
+	-webkit-user-select: none;
 		}
 .bottom-btn {
 height:55px;
 	display: flex;
   justify-content: center;
   align-items: center;
+	-webkit-user-select: none;
 		}
 .bottom-btn svg {
 	width:25px;
 	height:25px;
+	-webkit-user-select: none;
 		}
 	/*v2*/
 	body {
@@ -73,12 +76,14 @@ height:55px;
   grid-gap: 0px;
   grid-template-rows:auto;
   margin-bottom:100px;
+	-webkit-user-select: none;
 }
 .container-load {
 	width:100%;
 	height:10px;
 	opacity:0;
 	background:rgba(0,0,0,0);
+	-webkit-user-select: none;
 	}
 .color {
   background:#ff0000;
@@ -86,22 +91,21 @@ height:55px;
   width:var(--dd-container-n-width);
   transform:scale(1);
   transform-origin: top left;
+	position:relative;
+	overflow:hidden;
+	-webkit-user-select: none;
 }
-.bottom {
-  width:100%;
-  height:55px;
-  background:#e3e3e3;
-  position:fixed;
-  bottom:0px;
-  left:0px;
-}
+.colorcontentpathsvg {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	-webkit-user-select: none;
+	}
+
 	
-	
-	
-	
-	
-	
-	
+
 	/*end*/
 
 
@@ -930,42 +934,32 @@ return '#fff'
 }
 }
 
-function gtffim(l,b,s) {
-/*
-var canvas = document.getElementById("ct");
-var ctx = canvas.getContext("2d");
-*/
-var ssscale = s
-var ssssssw = window.innerWidth*ssscale
-var ssssssh = window.innerHeight*ssscale
-var sssizew = ssssssw*2
-var sssizeh = ssssssh*2
-var sssizex = -sssizew/2
-var sssizey = -sssizeh/2
-var sspath = ['M' + sssizex + ' ' + sssizey]
-/*
-document.querySelector('#ct').setAttribute('width',ssssssw)
-document.querySelector('#ct').setAttribute('height',ssssssh)
-*/
-/*
-ctx.fillStyle = b;
-ctx.fillRect(0, 0, ssssssw, ssssssh);
-*/
-for (var i = 0; i < 256; i++) {
-  sspath.push('S' + (sssizex+(Math.random()*(sssizew-sssizex))).toFixed(3) + ' ' + (sssizey+(Math.random()*(sssizeh-sssizey))).toFixed(3) + ' ' + (sssizex+(Math.random()*(sssizew-sssizex))).toFixed(3) + ' ' + (sssizey+(Math.random()*(sssizeh-sssizey))).toFixed(3))
-  
+function gtffim(l,b,w,h) {
+  var ssscale = 1;
+  var ssssssw = w * ssscale;
+  var ssssssh = h * ssscale;
+  var sssizew = ssssssw * 2;
+  var sssizeh = ssssssh * 2;
+  var sssizex = -sssizew / 2;
+  var sssizey = -sssizeh / 2;
+  var sspath = ["M" + sssizex + " " + sssizey];
+  for (var i = 0; i < 256; i++) {
+    sspath.push(
+      "S" +
+        (sssizex + Math.random() * (sssizew - sssizex)).toFixed(3) +
+        " " +
+        (sssizey + Math.random() * (sssizeh - sssizey)).toFixed(3) +
+        " " +
+        (sssizex + Math.random() * (sssizew - sssizex)).toFixed(3) +
+        " " +
+        (sssizey + Math.random() * (sssizeh - sssizey)).toFixed(3)
+    );
+  }
+
+  var thssvghtmlpp = '<svg xmlns="http://www.w3.org/2000/svg" viewbox="0,0,' + ssssssw + "," +ssssssh + '" class="colorcontentpathsvg"><path d="' + sspath.join(" ") + '" id="ssp" fill="transparent" stroke="' + l + '" stroke-width="0.4"/></svg>';
+  return thssvghtmlpp;
 }
-/*
-var eep = new Path2D(sspath.join(' '));
-ctx.lineWidth = 0.4*ssscale;
-ctx.strokeStyle = l
-ctx.stroke(eep);
-*/
-var thssvghtmlpp = '<svg xmlns="http://www.w3.org/2000/svg" id="sp" width="' + ssssssw + '" height="' + ssssssh + '" viewbox="0,0,' + ssssssw + ',' + ssssssh + '"><path d="' + sspath.join(' ') + '" id="ssp" fill="transparent" stroke="' + l + '" stroke-width="0.4"/></svg>'
-//document.querySelector('#ssp').setAttribute('d',)
-	
-return thssvghtmlpp
-}
+	  
 	    
   //userid
   function systeminfodata(uid) {
@@ -1580,14 +1574,18 @@ function preparejson() {
       else {
         if(String(colorfavarr[i]).indexOf('pa]') > -1) {
         //path
-			var content = {
-		type: "path",
+	var pathzz = colorfavarr[i].split(']')
+  var txc = textcol((hexToRgb(pathzz[1]).r+hexToRgb(pathzz[2]).r)*.5,(hexToRgb(pathzz[1]).g+hexToRgb(pathzz[2]).g)*.5,(hexToRgb(pathzz[1]).b+hexToRgb(pathzz[2]).b)*.5)
+  var path_datahtml = gtffim(pathzz[1],pathzz[2],window.innerWidth,window.innerHeight)
+  var content = {
+    type: "path",
     group: false,
-    content: ["#ffffff", "#000000"],
-    path_data: "",
-    shareurl: "",
-    id:'c_' + genid('random')
-			}
+    content: [pathzz[1],pathzz[2]],
+    path_data: path_datahtml,
+    shareurl:'https://erichsia7.github.io/colors/?s=3&la=' + btoa(pathzz[1]) + '&lb=' + btoa(pathzz[2]) + '&r=' + genid('random') ,
+    id:'c_' + genid('random'),
+    textcolor:txc
+  };
 			allcolor.push(content)
 		//pathend
       }
@@ -1629,7 +1627,7 @@ function printcolor() {
     $('.container').append('<div class="color" g="' + i + '" style="background:' + allcolor[i].content[0] + ';" wi="' + allcolor[i].id + '"></div>')
     }
     if(allcolor[i].type === 'path') {
-    $('.container').append('<div class="color" g="' + i + '" style="background:' + allcolor[i].content[0] + ';" wi="' + allcolor[i].id + '"></div>')
+    $('.container').append('<div class="color" g="' + i + '" style="background:' + allcolor[i].content[0] + ';" wi="' + allcolor[i].id + '">' + allcolor[i].path_data + '</div>')
     }
 		
 		caches.open("colors_fav_preload").then(function (cache) {
