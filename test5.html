@@ -39,8 +39,27 @@ outline:none;
 margin:0px;
   padding:0px
 }
-.bottom{height:calc(55px + env(safe-area-inset-bottom));width:100%;position:fixed;left:0;bottom:0;background:#ffffff;box-shadow:0 0 10px 2px rgba(0,0,0,0.045);background-size:var(--b-size);background-repeat:repeat;-webkit-user-select:none}
-		
+.bottom{
+	height:calc(55px + env(safe-area-inset-bottom));
+	width:100%;
+	position:fixed;
+	left:0;
+	bottom:0;
+	background:#ffffff;
+	box-shadow:0 0 10px 2px rgba(0,0,0,0.045);
+	background-size:var(--b-size);
+	background-repeat:repeat;
+	-webkit-user-select:none;
+	display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 0px;
+		}
+.bottom-btn {
+height:100%;
+	display: flex;
+  justify-content: center;
+  align-items: center;
+		}
 .container {
   position:fixed;
   top:0px;
@@ -297,7 +316,13 @@ align-items: center;
 <div class="container">
 <div class="box" dy="0" fy="0"></div>
 </div>
-	<div class="bottom"></div>
+	<div class="bottom">
+		<div class="bottom-btn"></div>
+		<div class="bottom-btn"></div>
+		<div class="bottom-btn"></div>
+		<div class="bottom-btn"></div>
+		<div class="bottom-btn"></div>
+	</div>
 	<div class="optionlist-mask"></div>
 	<div class="optionlist">
 		<li h="qrcode">二維碼</li>
