@@ -1591,13 +1591,14 @@ function initialize() {
   $('#ft').html(':root{--ft-window-width:' + $('.container').width() + 'px;--ft-window-height:' + ($(window).height()-$('.bottom').height()) + 'px;}')
   //addimagecolorcontentgroup()
 	if(gup('s') === '1') {
+		var sharedolor = atob(gup('c'))
 		var sharecontent = {
     type: "color",
     group: false,
-    content: [atob(gup('c'))],
+    content: [sharedolor],
     shareurl: 'https://erichsia7.github.io/colors/?s=1&c=' + gup('c') + '&r=' + genid('random'),
     id:'c_' + genid('random'),
-    textcolor:txc
+    textcolor:textcol(hexToRgb(sharedolor).r,hexToRgb(sharedolor).g,hexToRgb(sharedolor).b)
   };
 		allcolor.push(sharecontent)
 	}
