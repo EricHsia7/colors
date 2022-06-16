@@ -1127,13 +1127,28 @@ $('#' + imgid).remove()
   
 }
 function addpathcontent() {
+  var col = cllhi()
+  if(col === false) {
+    var random_r = Math.floor(Math.random()*255)
+    var random_g = Math.floor(Math.random()*255)
+    var random_b = Math.floor(Math.random()*255)
+    col = rgbToHex(random_r,random_g,random_b)
+  }
+  
+  var pathzz = getligrd(col)
+  
+  var txc = textcol((hexToRgb(pathzz[1]).r+hexToRgb(pathzz[2]).r)*.5,(hexToRgb(pathzz[1]).g+hexToRgb(pathzz[2]).g)*.5,(hexToRgb(pathzz[1]).b+hexToRgb(pathzz[2]).b)*.5)
+  
+  var path_datahtml = gtffim(pathzz[1],pathzz[2],window.innerWidth,window.innerHeight)
+
   var content = {
     type: "path",
     group: false,
-    content: ["#ffffff", "#000000"],
-    path_data: "",
-    shareurl: "",
-    id:'c_' + genid('random')
+    content: [pathzz[1],pathzz[2]],
+    path_data: path_datahtml,
+    shareurl:'https://erichsia7.github.io/colors/?s=3&la=' + btoa(pathzz[1]) + '&lb=' + btoa(pathzz[2]) + '&r=' + genid('random') ,
+    id:'c_' + genid('random'),
+    textcolor:txc
   };
 }
 
