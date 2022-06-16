@@ -1633,9 +1633,14 @@ function printcolor() {
       $(this).css({'transform':'translateX(' + (-1*$(this).offset().left+$(document).scrollLeft()) + 'px) translateY(' + (-1*$(this).offset().top+$(document).scrollTop()) + 'px) scale(3)','transition':'0.3s','z-index':($('.container .color').length+1)}) 
       $('.bottom').css({'z-index':($('.container .color').length+2)})
 			var thsindex = String($(this).attr('g'))
+			
+			caches.open("colors_fav_preload").then(function (cache) {
+cache.addAll([allcolor[parseInt(thsindex)].shareurl]);
+});
+			
 			setTimeout(function(){ 
 				location.href = allcolor[parseInt(thsindex)].shareurl
-			},350);
+			},300);
     })
     
     pt +=1
