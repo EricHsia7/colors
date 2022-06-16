@@ -1627,7 +1627,7 @@ function printcolor() {
     $('.container').append('<div class="color" g="' + i + '" style="background:' + allcolor[i].content[0] + ';" wi="' + allcolor[i].id + '"></div>')
     }
     if(allcolor[i].type === 'path') {
-    $('.container').append('<div class="color" g="' + i + '" style="background:' + allcolor[i].content[0] + ';" wi="' + allcolor[i].id + '">' + allcolor[i].path_data + '</div>')
+    $('.container').append('<div class="color" g="' + i + '" style="background:' + allcolor[i].content[1] + ';" wi="' + allcolor[i].id + '">' + allcolor[i].path_data + '</div>')
     }
 		
 		caches.open("colors_fav_preload").then(function (cache) {
