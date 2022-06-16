@@ -60,11 +60,45 @@ height:55px;
 	width:25px;
 	height:25px;
 		}
-body {
-  background-color: #fff;
+	/*v2*/
+	body {
   margin:0px;
   padding:0px;
 }
+.container {
+  height:auto;
+  width:100%;
+  background:#fff;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0px;
+  grid-template-rows:auto;
+  margin-bottom:100px;
+}
+.color {
+  background:#ff0000;
+  height:var(--dd-container-n-height);
+  width:var(--dd-container-n-width);
+  transform:scale(1);
+  transform-origin: top left;
+}
+.bottom {
+  width:100%;
+  height:55px;
+  background:#e3e3e3;
+  position:fixed;
+  bottom:0px;
+  left:0px;
+}
+	
+	
+	
+	
+	
+	
+	
+	/*end*/
+
 
 .card {
   width: calc(50vw - 30px);
@@ -1497,20 +1531,10 @@ $('.card[selectedy="1"]').click();
 });
 				//v2
 				
+				function isRunningStandalone() {
+    return (window.matchMedia('(display-mode: standalone)').matches);
+}
 				
-				function componentToHex(a) {
-  var r = a.toString(16);
-  return 1 == r.length ? "0" + r : r;
-}
-function rgbToHex(a, r, t) {
-  return "#" + componentToHex(a) + componentToHex(r) + componentToHex(t);
-}
-function hexToRgb(a) {
-  var r = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(a);
-  return r
-    ? { r: parseInt(r[1], 16), g: parseInt(r[2], 16), b: parseInt(r[3], 16) }
-    : null;
-}
 function textcol(r, g, b) {
   var textcolrgbfy = (r*0.213+g*0.718+b*0.072)
   //var textcolrgbfy = (r + g + b) / 3;
@@ -1520,74 +1544,10 @@ function textcol(r, g, b) {
     return "#ffffff";
   }
 }
-function genid(mode) {
-  if (mode === "random") {
-    var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
-    var genid = "";
-    for (var i = 0; i < 16; i++) {
-      var genrandomNumber = Math.floor(Math.random() * genidchars.length);
-      genid += genidchars.substring(genrandomNumber, genrandomNumber + 1);
-    }
-    return genid;
-  }
-  if (mode === "time") {
-    var gtoday = new Date();
-    var genid2 =
-      gtoday.getMonth() +
-      1 +
-      "_" +
-      gtoday.getDate() +
-      "_" +
-      gtoday.getHours() +
-      "_" +
-      gtoday.getMinutes() +
-      "_" +
-      gtoday.getSeconds() +
-      "-" +
-      (1 + Math.floor(Math.random() * 8)) +
-      "" +
-      (1 + Math.floor(Math.random() * 8)) +
-      "" +
-      (1 + Math.floor(Math.random() * 8)) +
-      "" +
-      (1 + Math.floor(Math.random() * 8)) +
-      "" +
-      (1 + Math.floor(Math.random() * 8)) +
-      "" +
-      (1 + Math.floor(Math.random() * 8)) +
-      "" +
-      (1 + Math.floor(Math.random() * 8)) +
-      "" +
-      (1 + Math.floor(Math.random() * 8));
-    return genid2;
-  }
-  if (mode === "number") {
-    var genid3 = "";
-    for (var i = 0; i < 16; i++) {
-      genid3 += "" + (0 + Math.floor(Math.random() * 9));
-    }
-    return genid3;
-  }
-  if (mode === "uuid") {
-    var genidchars4 = "abcdef012345678";
-    var geniduu = [8, 4, 4, 4, 12];
-    var genid4 = "";
-    var genid5 = "";
-    for (var ia = 0; ia < geniduu.length; ia++) {
-      var genid4 = "";
-      for (var i = 0; i < geniduu[ia]; i++) {
-        var genrandomNumber4 = Math.floor(Math.random() * genidchars4.length);
-        genid4 += genidchars4.substring(genrandomNumber4, genrandomNumber4 + 1);
-      }
-      genid5 += "-" + genid4;
-    }
-    return genid5.substring(1, genid5.length);
-  }
-}
 
-var colorfav2 = '&#076662&#6fceab&#3e696e&#1e7ca6&li]192]#6dacab]#6bae95&#89dabb&#140517&li]167]#57ab9a]#77b3db&li]15]#5de4c7]#61b4c3&#7c82ce&#638476&#053d36'
+var colorfav2 = getCookie('colorfav')
  var pt = 0 
-$('#dd').html(':root{--dd-container-height:' + ($(window).height()-$('.bottom').height()) + 'px;--dd-container-width:' + $(window).width() + 'px;--dd-container-n-height:' + ((($(window).width()/3)*($(window).height()-$('.bottom').height()))/$(window).width()) + 'px;--dd-container-n-width:' + ($(window).width()/3) + 'px;}')
+
 var allcolor = [] ;
 function preparejson() {
   if(String(colorfav2).length > 7) {
@@ -1656,6 +1616,10 @@ function printcolor() {
     pt +=1
   }
 }
+if(!(isRunningStandalone())) {
+  $('#iphonesafearea').html('')
+}
+$('#dd').html(':root{--dd-container-height:' + ($(window).height()-$('.bottom').height()) + 'px;--dd-container-width:' + $(window).width() + 'px;--dd-container-n-height:' + ((($(window).width()/3)*($(window).height()-$('.bottom').height()))/$(window).width()) + 'px;--dd-container-n-width:' + ($(window).width()/3) + 'px;}')
 preparejson()
 printcolor()
 				
