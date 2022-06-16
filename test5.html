@@ -1543,13 +1543,15 @@ function initialize() {
 		allcolor.push(sharecontent)
 	}
 	if(gup('s') === '2') {
+		var sharega = atob(gup('ga'))
+		var sharegb = atob(gup('gb'))
   var sharecontent = {
     type: "gradient",
     group: false,
-    content: [parseInt(gup('gdeg')),atob(gup('ga')),atob(gup('gb'))],
+    content: [parseInt(gup('gdeg')),sharega,sharegb],
     shareurl: 'https://erichsia7.github.io/colors/?s=2&ga=' + gup('ga') + '&gb=' + gup('gb') + '&gdeg=' + gup('gdeg') + '&r=' + genid('random'),
     id:'c_' + genid('random'),
-    textcolor:textcol((hexToRgb(grd[1]).r+hexToRgb(grd[2]).r)*.5,(hexToRgb(grd[1]).g+hexToRgb(grd[2]).g)*.5,(hexToRgb(grd[1]).b+hexToRgb(grd[2]).b)*.5)
+    textcolor:textcol((hexToRgb(sharega).r+hexToRgb(sharegb).r)*.5,(hexToRgb(sharega).g+hexToRgb(sharegb).g)*.5,(hexToRgb(sharega).b+hexToRgb(sharegb).b)*.5)
   };
 		allcolor.push(sharecontent)
 	}
