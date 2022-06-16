@@ -1219,23 +1219,7 @@ function addpathcontent() {
 
 
 
-function initialize() {
-	if(!(isRunningStandalone())) {
-  $('#iphonesafearea').html('')
-}
-	if(localStorage.getItem('colorfav2') === null) {
-		localStorage.setItem('colorfav2','')
-	}
-  $('#ft').html(':root{--ft-window-width:' + $('.container').width() + 'px;--ft-window-height:' + ($(window).height()-$('.bottom').height()) + 'px;}')
-  //addimagecolorcontentgroup()
-	if(gup('db') === '1') {
-		allcolor.push(JSON.parse(decodeURIComponent(gup('dbjson'))))
-	}
-  for (var i = 0; i < 2; i++) {
-    addcolorcontent()
-    addgradientcontent()
-  }
-}
+
 
 
 
@@ -1597,6 +1581,31 @@ favtdpromptdelaytime = 460 ;
 	$('.box').css({'height':'calc(' + $('.box .color').length + ' * var(--ft-window-height))'});
 }
 
+function initialize() {
+	if(!(isRunningStandalone())) {
+  $('#iphonesafearea').html('')
+}
+	if(localStorage.getItem('colorfav2') === null) {
+		localStorage.setItem('colorfav2','')
+	}
+  $('#ft').html(':root{--ft-window-width:' + $('.container').width() + 'px;--ft-window-height:' + ($(window).height()-$('.bottom').height()) + 'px;}')
+  //addimagecolorcontentgroup()
+	if(gup('s') === '1') {
+		var sharecontent = {
+    type: "color",
+    group: false,
+    content: [atob(gup('c'))],
+    shareurl: 'https://erichsia7.github.io/colors/?s=1&c=' + gup('c') + '&r=' + genid('random'),
+    id:'c_' + genid('random'),
+    textcolor:txc
+  };
+		allcolor.push(sharecontent)
+	}
+  for (var i = 0; i < 2; i++) {
+    addcolorcontent()
+    addgradientcontent()
+  }
+}
 
 $(document).ready(function() {
 initialize()
