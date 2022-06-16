@@ -1551,7 +1551,7 @@ var colorfav2 = getCookie('colorfav2')
 var allcolor = [] ;
 function preparejson() {
   if(String(colorfav2).length > 7) {
-    var colorfavarr = colorfav2.substring(1, String(colorfav2).length).split('&')
+    var colorfavarr = colorfav2.substring(1, String(colorfav2).length).split('&').reverse()
     for (var i = 0; i < colorfavarr.length; i++) {
       if(String(colorfavarr[i]).indexOf('li]') > -1) {
         //grd
@@ -1602,10 +1602,10 @@ function printcolor() {
   }
   for (var i = pt; i < pt1; i++) {
     if(allcolor[i].type === 'gradient') {
-    $('.container').prepend('<div class="color" style="background:linear-gradient(' + allcolor[i].content[0] + 'deg ,' + allcolor[i].content[1] + ' ,' + allcolor[i].content[2] + ');" wi="' + allcolor[i].id + '"></div>')
+    $('.container').append('<div class="color" style="background:linear-gradient(' + allcolor[i].content[0] + 'deg ,' + allcolor[i].content[1] + ' ,' + allcolor[i].content[2] + ');" wi="' + allcolor[i].id + '"></div>')
     }
     if(allcolor[i].type === 'color') {
-    $('.container').prepend('<div class="color" style="background:' + allcolor[i].content[0] + ';" wi="' + allcolor[i].id + '"></div>')
+    $('.container').append('<div class="color" style="background:' + allcolor[i].content[0] + ';" wi="' + allcolor[i].id + '"></div>')
     }
     
     $('.color[wi="' + allcolor[i].id + '"]').click(function() {
@@ -1621,8 +1621,9 @@ if(!(isRunningStandalone())) {
 }
 $('#dd').html(':root{--dd-container-height:' + ($(window).height()-$('.bottom').height()) + 'px;--dd-container-width:' + $(window).width() + 'px;--dd-container-n-height:' + ((($(window).width()/3)*($(window).height()-$('.bottom').height()))/$(window).width()) + 'px;--dd-container-n-width:' + ($(window).width()/3) + 'px;}')
 preparejson()
+setTimeout(function(){ 
 printcolor()
-				
+},100);
 				
 				
 				
