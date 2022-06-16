@@ -728,19 +728,24 @@ function hexToRgb(hex) {
 }
 
 
-function getCookie(cname)
-{
+function setcookie(cookiename, cookievalue) {
+  document.cookie = cookiename + "=" + cookievalue + "; max-age=" + 60 * 60 * 24 * 30;
+	localStorage.setItem(cookiename,cookievalue)
+}
+function getCookie(cname) {
+	if(localStorage.hasOwnProperty(cname)) {
+		return String(localStorage.getItem(cname))
+	}
   var name = cname + "=";
-  var ca = document.cookie.split(';');
-  for(var i=0; i<ca.length; i++) 
-  {
+  var ca = document.cookie.split(";");
+  for (var i = 0; i < ca.length; i++) {
     var c = ca[i].trim();
-    if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+    if (c.indexOf(name) == 0) {
+			localStorage.setItem(cname,c.substring(name.length, c.length))
+			return c.substring(name.length, c.length)
+		};
   }
   return "";
-}
-function setcookie(cookiename,cookievalue) {
-document.cookie = cookiename + '=' + cookievalue + '; max-age='+60*60*24*7 + '; domain=erichsia7.github.io';
 }
 
 function setthemecol(hexcolsjs,delaytimems) {
