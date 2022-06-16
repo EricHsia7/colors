@@ -1225,34 +1225,6 @@ function printcolor() {
 		}
     $('.box').append('<div class="color" fid="' + allcolor[i].id + '" group="' + allcolor[i].group + '" i="' + i + '" themecolor="' + themecol + '" group-index="0"><div class="colorbox">' + contents.join('') + '</div><div class="group-progress-bar" txtcolor="' + dftextcolor + '">' + groupprogressbar.join('') + '</div><div class="arrow arrow-left" txtcolor="' + dftextcolor + '" btnid="' + allcolor[i].id + '"></div><div class="arrow arrow-right" txtcolor="' + dftextcolor + '" btnid="' + allcolor[i].id + '"></div><div class="rightbar" txtcolor="' + dftextcolor + '"><div class="favorite" btnid="' + allcolor[i].id + '" style="' + favcss + '"></div><div class="share" btnid="' + allcolor[i].id + '"></div><div class="options" btnid="' + allcolor[i].id + '"></div></div></div>')
    
-		/*
-		if(allcolor[i].type === 'imagecolorgroup') {
-    document.querySelector('#' + contentimageid).onload = function () {
-		const colorThief2 = new ColorThief();
-    const imgee2 = document.querySelector('#' + contentimageid);
-    if (imgee2.complete) {
-      var imgcolorpalette = colorThief2.getPalette(imgee2) ;
-      var pltcolorhex = []
-      var plttextcolor = []
-      for (var hq = 0; hq < imgcolorpalette.length; hq++) {
-        var thshex = rgbToHex(imgcolorpalette[hq][0],imgcolorpalette[hq][1],imgcolorpalette[hq][2])
-        pltcolorhex.push(thshex)      
-        plttextcolor.push(textcol(imgcolorpalette[hq][0],imgcolorpalette[hq][1],imgcolorpalette[hq][2]))    
-      }
-			allcolor[parseInt($(this).attr('i'))].content = pltcolorhex
-			allcolor[parseInt($(this).attr('i'))].textcolor = plttextcolor
-			for (var ag = 0; ag < pltcolorhex.length; ag++) {
-				$('.color[i="' + parseInt($(this).attr('i')) + '"] .colorcontent').eq(ag).css({'background':pltcolorhex[ag],'--dx-li-f':(ag*1+1),'color':plttextcolor[ag]}).html('<div class="colorcontent-text">' + pltcolorhex[ag] + '</div>').attr('f','1')
-				console.log('k')
-			}
-		}
-		//ggg
-		
-    }
-		
-		}
-		
-		*/
 		$('.arrow-left[btnid="' + allcolor[i].id + '"]').click(function(evt) {
 		evt.stopPropagation();
 		var gindex = parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('group-index'))
@@ -1363,6 +1335,21 @@ function printcolor() {
 				$('.optionlist li[h="dlsourceimage"]').css({'display':'none'});
 				$('.optionlist li[h="addallfav"]').css({'display':'none'});
 				$('.optionlist li[h="shareacolor"]').css({'display':'none'});
+			}
+			if(fytype === 'path') {
+				listcc = 3
+				$('.optionlist li[h="qrcode"]').css({'display':'flex'});
+				$('.optionlist li[h="picker"]').css({'display':'none'});
+				$('.optionlist li[h="toimg"]').css({'display':'none'});
+				$('.optionlist li[h="llgrd"]').css({'display':'none'});
+				$('.optionlist li[h="mixgrd"]').css({'display':'none'});
+				$('.optionlist li[h="llpath"]').css({'display':'none'});
+				$('.optionlist li[h="copycolorcode"]').css({'display':'none'});
+				$('.optionlist li[h="copyoptions"]').css({'display':'flex'});
+				$('.optionlist li[h="copysourceimageurl"]').css({'display':'none'});
+				$('.optionlist li[h="dlsourceimage"]').css({'display':'none'});
+				$('.optionlist li[h="addallfav"]').css({'display':'none'});
+				$('.optionlist li[h="shareacolor"]').css({'display':'flex'});
 			}
 			if(fytype === 'imagecolorgroup') {
 				listcc = 7
