@@ -1664,8 +1664,7 @@ printcolor()
 				
 				
   $(document).scroll(function() {
-console.log(($('.container-load').offset().top-$(document).scrollTop()) + ',' + (window.innerHeight*1.3))
-  if(($('.container-load').offset().top-$(document).scrollTop()) < (window.innerHeight+10)) {
+  if(($('.container-load').offset().top-$(document).scrollTop()) < (window.innerHeight*1.5)) {
 	  
     if(dft === 0) {
       
