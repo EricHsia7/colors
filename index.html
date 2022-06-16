@@ -956,10 +956,10 @@ function cllhi() {
   return rsthex;
 }
 
-function gtffim(l, b, s) {
-  var ssscale = s;
-  var ssssssw = window.innerWidth * ssscale;
-  var ssssssh = window.innerHeight * ssscale;
+function gtffim(l,b,w,h) {
+  var ssscale = 1;
+  var ssssssw = w * ssscale;
+  var ssssssh = h * ssscale;
   var sssizew = ssssssw * 2;
   var sssizeh = ssssssh * 2;
   var sssizex = -sssizew / 2;
@@ -978,20 +978,7 @@ function gtffim(l, b, s) {
     );
   }
 
-  var thssvghtmlpp =
-    '<svg xmlns="http://www.w3.org/2000/svg" id="sp" width="' +
-    ssssssw +
-    '" height="' +
-    ssssssh +
-    '" viewbox="0,0,' +
-    ssssssw +
-    "," +
-    ssssssh +
-    '"><path d="' +
-    sspath.join(" ") +
-    '" id="ssp" fill="transparent" stroke="' +
-    l +
-    '" stroke-width="0.4"/></svg>';
+  var thssvghtmlpp = '<svg xmlns="http://www.w3.org/2000/svg" id="sp" viewbox="0,0,' + ssssssw + "," +ssssssh + '"><path d="' + sspath.join(" ") + '" id="ssp" fill="transparent" stroke="' + l + '" stroke-width="0.4"/></svg>';
   return thssvghtmlpp;
 }
 	  
