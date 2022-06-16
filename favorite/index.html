@@ -1651,8 +1651,8 @@ printcolor()
 				
 				
   $(document).scroll(function() {
-console.log(($('.container-load').offset().top-$(document).scrollTop()) + ',' + ($(window).height()+10))
-  if(($('.container-load').offset().top-$(document).scrollTop()) < ($(window).height()+10)) {
+console.log(($('.container-load').offset().top-$(document).scrollTop()) + ',' + (window.innerHeight+10))
+  if(($('.container-load').offset().top-$(document).scrollTop()) < (window.innerHeight+10)) {
 	  
     if(dft === 0) {
       
