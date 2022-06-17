@@ -1527,7 +1527,7 @@
                       hdurl: imginfojson.download_url,
                       source: imginfojson.url
                     },
-                    shareurl: 'https://erichsia7.github.io/colors/?s=4&grouplist=' + btoa(pltcolorhex.join(',')) + '&picid=' + jqXHR.getResponseHeader('picsum-id') + '&picurl=' + btoa(imginfojson.download_url) + '&picsou=' + btoa(imginfojson.url) + '&pictx=' + btoa(imagetxc) + '&r=' + genid('random'),
+                    shareurl: 'https://erichsia7.github.io/colors/?s=4&grouplist=' + btoa(pltcolorhex.join(',')) + '&picid=' + jqXHR.getResponseHeader('picsum-id') + '&picurl=' + btoa(imginfojson.download_url) + '&picsou=' + btoa(imginfojson.url) + '&pictx=' + btoa(imagetxc) + '&pictm=' + btoa(imgcol) + '&r=' + genid('random'),
                     id: 'c_' + genid('random'),
                     textcolor: plttextcolor,
                     imgtextcolor: imagetxc,
@@ -1960,7 +1960,8 @@
         content: [sharedolor],
         shareurl: 'https://erichsia7.github.io/colors/?s=1&c=' + gup('c') + '&r=' + genid('random'),
         id: thsid,
-        textcolor: textcol(hexToRgb(sharedolor).r, hexToRgb(sharedolor).g, hexToRgb(sharedolor).b)
+        textcolor: textcol(hexToRgb(sharedolor).r, hexToRgb(sharedolor).g, hexToRgb(sharedolor).b),
+        themecolor:sharedolor
       };
       allcolor.push(sharecontent)
       //gform
@@ -1986,7 +1987,8 @@
         content: [parseInt(gup('gdeg')), sharega, sharegb],
         shareurl: 'https://erichsia7.github.io/colors/?s=2&ga=' + gup('ga') + '&gb=' + gup('gb') + '&gdeg=' + gup('gdeg') + '&r=' + genid('random'),
         id: 'c_' + genid('random'),
-        textcolor: textcol((hexToRgb(sharega).r + hexToRgb(sharegb).r) * .5, (hexToRgb(sharega).g + hexToRgb(sharegb).g) * .5, (hexToRgb(sharega).b + hexToRgb(sharegb).b) * .5)
+        textcolor: textcol((hexToRgb(sharega).r + hexToRgb(sharegb).r) * .5, (hexToRgb(sharega).g + hexToRgb(sharegb).g) * .5, (hexToRgb(sharega).b + hexToRgb(sharegb).b) * .5),
+        themecolor:  rgbToHex(Math.floor((hexToRgb(sharega).r + hexToRgb(sharegb).r) * .5), Math.floor((hexToRgb(sharega).g + hexToRgb(sharegb).g) * .5), Math.floor((hexToRgb(sharega).b + hexToRgb(sharegb).b) * .5))
       };
       allcolor.push(sharecontent)
     }
@@ -2004,7 +2006,8 @@
         path_data: path_datahtml,
         shareurl: 'https://erichsia7.github.io/colors/?s=3&la=' + gup('la') + '&lb=' + gup('lb') + '&r=' + genid('random'),
         id: 'c_' + genid('random'),
-        textcolor: txc
+        textcolor: txc,
+        themecolor:patharr[1]
       };
       allcolor.push(content)
 
@@ -2013,10 +2016,13 @@
       var colorarr = atob(gup('grouplist')).split(',')
       var pictxc = atob(gup('pictx'))
       var coltxc = []
+      var thcol = []
+      thcol.push(atob(gup('pictm')))
       for (var j = 0; j < colorarr.length; j++) {
         var jrgb = hexToRgb(colorarr[j])
         var jtxc = textcol(jrgb.r, jrgb.g, jrgb.b)
         coltxc.push(jtxc)
+        thcol.push(colorarr[j])
       }
 
       var content = {
@@ -2028,10 +2034,11 @@
           hdurl: atob(gup('picurl')),
           source: atob(gup('picsou'))
         },
-        shareurl: 'https://erichsia7.github.io/colors/?s=4&grouplist=' + gup('grouplist') + '&picid=' + gup('picid') + '&picurl=' + gup('picurl') + '&picsou=' + gup('picsou') + '&r=' + genid('random'),
+        shareurl: 'https://erichsia7.github.io/colors/?s=4&grouplist=' + gup('grouplist') + '&picid=' + gup('picid') + '&picurl=' + gup('picurl') + '&picsou=' + gup('picsou') + '&pictm=' + gup('pictm') + '&r=' + genid('random'),
         id: 'c_' + genid('random'),
         textcolor: coltxc,
-        imgtextcolor: pictxc
+        imgtextcolor: pictxc,
+        themecolor:thcol
       };
       allcolor.push(content)
 
