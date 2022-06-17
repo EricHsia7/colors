@@ -1482,6 +1482,8 @@ function addpathcontent() {
 
 var gtg = 0 ;
 		var dbclick = {}
+    var sentcolors = {}
+
 function printcolor() {
   
   for (var i = gtg; i < allcolor.length; i++) {
@@ -1836,16 +1838,30 @@ function initialize() {
   $('#ft').html(':root{--ft-window-width:' + $('.container').width() + 'px;--ft-window-height:' + ($(window).height()-$('.bottom').height()) + 'px;}')
   //addimagecolorcontentgroup()
 	if(gup('s') === '1') {
+    var thsid = 'c_' + genid('random')
 		var sharedolor = atob(gup('c'))
 		var sharecontent = {
     type: "color",
     group: false,
     content: [sharedolor],
     shareurl: 'https://erichsia7.github.io/colors/?s=1&c=' + gup('c') + '&r=' + genid('random'),
-    id:'c_' + genid('random'),
+    id:thsid,
     textcolor:textcol(hexToRgb(sharedolor).r,hexToRgb(sharedolor).g,hexToRgb(sharedolor).b)
   };
 		allcolor.push(sharecontent)
+    //gform
+
+  if(eval('sentcolors.' + thsid) === undefined) {
+	var gformurl = 'https://docs.google.com/forms/d/e/1FAIpQLSdzcew5FPAcBdlH2mUbmZbpchdq1mYps9_32FXzWWCEMsSePQ/formResponse?usp=pp_url&entry.472720214=%23' + sharedolor.replaceAll('#','') + '&entry.327016326=' + user_id
+	$.ajax({type:'get',url:gformurl,dataType:'text'})
+  eval('sentcolors.' + thsid + ' = "1"')
+  }
+  else {
+
+  }
+
+
+    //gformend
 	}
 	if(gup('s') === '2') {
 		var sharega = atob(gup('ga'))
@@ -1917,7 +1933,6 @@ $('.bottom-btn').click(function() {
 	}
 });
 });
-var sentcolors = {}
 var lastcolor 
 var stopload = 0
 let mouseX = 0
@@ -1967,14 +1982,10 @@ var ns = Math.round(parseInt(div.getAttribute('dy'))/$('.container').height())*$
   div.style.transform = 'translateY(' + (ns) + 'px)';
   div.style.transition = '0.3s'
   div.setAttribute('dy',(ns))
-  console.log('a')
   var nowcolorjson = allcolor[Math.abs(Math.round(parseInt(document.querySelector(".box").getAttribute('dy'))/$('.container').height()))]
   if(!(nowcolorjson === undefined) && !(nowcolorjson === null)) {
-    console.log('b')
 if(nowcolorjson.type === 'color') {
-  console.log('c')
   if(eval('sentcolors.' + nowcolorjson.id) === undefined) {
-    console.log('d')
 	var gformurl = 'https://docs.google.com/forms/d/e/1FAIpQLSdzcew5FPAcBdlH2mUbmZbpchdq1mYps9_32FXzWWCEMsSePQ/formResponse?usp=pp_url&entry.472720214=%23' + nowcolorjson.content[0].replaceAll('#','') + '&entry.327016326=' + user_id
 	$.ajax({type:'get',url:gformurl,dataType:'text'})
   eval('sentcolors.' + nowcolorjson.id + ' = "1"')
