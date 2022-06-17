@@ -1105,7 +1105,16 @@ for (var i = 0; i < arr.length; i++) {
         colorfav2arr.push('pa]' + patharr.join(']'))
       }
       //trend
-
+      $.ajax({type:'get',url:rr_lasttweektrend,dataType:'text',success:function(e4) {
+        var arr4 = e4.replaceAll('"','').split(',') ;
+        for (var w = 0; w < arr4.length; w++) {
+          colorfav2arr.push(arr4[w])
+        }
+        //prepare
+        preparejson('&' + colorfav2arr.join('&'))
+        printcolor()
+        //prepareend
+      }});
       //trendend
     }});
 
@@ -1116,11 +1125,8 @@ for (var i = 0; i < arr.length; i++) {
   //allend
    }});
 
-preparejson()
 	
-setTimeout(function(){ 
-printcolor()
-},10);
+
 				
 				
 				
