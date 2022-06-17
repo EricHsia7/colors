@@ -1941,15 +1941,17 @@
     }
     $('.box').css({ 'height': 'calc(' + $('.box .color').length + ' * var(--ft-window-height))' });
   }
-
+  function setsize() {
+    $('#ft').html(':root{--ft-window-width:' + $('.container').width() + 'px;--ft-window-height:' + ($(window).height() - $('.bottom').height()) + 'px;}')
+  }
   function initialize() {
     if (!(isRunningStandalone())) {
       $('#iphonesafearea').html('')
     }
+    setsize()
     if (localStorage.getItem('colorfav2') === null) {
       localStorage.setItem('colorfav2', '')
     }
-    $('#ft').html(':root{--ft-window-width:' + $('.container').width() + 'px;--ft-window-height:' + ($(window).height() - $('.bottom').height()) + 'px;}')
     //addimagecolorcontentgroup()
     if (gup('s') === '1') {
       var thsid = 'c_' + genid('random')
@@ -2091,6 +2093,9 @@
 
       }
     });
+    $(window).resize(function() {
+      setsize()
+    })
   });
   var lastcolor
   var stopload = 0
