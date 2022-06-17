@@ -1,15 +1,16 @@
 <meta charset="UTF-8">
 <title>Colors</title>
+
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-342D6M2MKX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-342D6M2MKX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-342D6M2MKX');
-</script>
+    gtag('config', 'G-342D6M2MKX');
+  </script>
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js?1"></script>
@@ -22,114 +23,127 @@
 <link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="shortcut icon" />
 <link rel="manifest" href="manifest.json?qpipoo">
 <style>
-    * {outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);}
+  * {
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
 
 
-body {
-  margin:0px;
-  padding:0px;
-  overflow:hidden;
-  position:fixed;
-  top:0px;
-  left:0px;
-}
-.box {
-  width:calc(100%);
-  height:calc(100% - 100px - 30px);
-  background:#000;
-  position:fixed;
-  top:0px;
-  left:0px;
-  overflow:hidden;
-  -webkit-user-select: none;
-}
-.bar {
-  width:calc(100% - 25px);
-  height:15px;
-  border-radius:99em;
-  background: linear-gradient(90deg,rgba(255, 0, 0,1),rgba(255, 255, 0, 1), rgba(0, 255, 0, 1), rgba(0, 255, 255, 1), rgba(0, 0, 255, 1), rgba(255, 0, 255, 1), rgba(255, 0, 0, 1));
-  position:fixed;
-  top:calc(100% - 100px - 20px + 10px);
-  left:12.5px;
-  -webkit-user-select: none;
-}
-.picker2 {
-  width:25px;
-  height:25px;
-  border-radius:99em;
-  border:2px #fff solid;
-  box-sizing: border-box;
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  left:-5px;
-  background:#ff0000;
-  -webkit-user-select: none;
-}
-.picker {
-  width:26px;
-  height:26px;
-  border-radius:99em;
-  border:2px #fff solid;
-  box-sizing: border-box;
-  position:absolute;
-  top:0px;
-  left:0px;
-  background:#000;
-  -webkit-user-select: none;
-}
-canvas#boxbg {
-  width:100%;
-  height:100%;
-  opacity:1;
-  -webkit-user-select: none;
-}
+  body {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+  }
 
-.btnbox {
-  height:80px;
-  width:100%;
-  position:fixed;
-  left:0px;
-  bottom:0px;
-  display: flex;
-justify-content: center;
-align-items: center;
-  -webkit-user-select: none;
-}
-.btn {
-  width:clamp(80px,calc(50% - 50px),250px);
-  height:50px;
-  background:#000;
-  border-radius:15px;
-  display: flex;
-justify-content: center;
-align-items: center;
-  flex-direction:row;
-  -webkit-user-select: none;
-  font-weight:700;
-  font-family: 'Noto Sans TC', sans-serif;
-  color:#fff;
-  transition:all 0s,color 0.3s
-}
+  .box {
+    width: calc(100%);
+    height: calc(100% - 100px - 30px);
+    background: #000;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+    -webkit-user-select: none;
+  }
+
+  .bar {
+    width: calc(100% - 25px);
+    height: 15px;
+    border-radius: 99em;
+    background: linear-gradient(90deg, rgba(255, 0, 0, 1), rgba(255, 255, 0, 1), rgba(0, 255, 0, 1), rgba(0, 255, 255, 1), rgba(0, 0, 255, 1), rgba(255, 0, 255, 1), rgba(255, 0, 0, 1));
+    position: fixed;
+    top: calc(100% - 100px - 20px + 10px);
+    left: 12.5px;
+    -webkit-user-select: none;
+  }
+
+  .picker2 {
+    width: 25px;
+    height: 25px;
+    border-radius: 99em;
+    border: 2px #fff solid;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -5px;
+    background: #ff0000;
+    -webkit-user-select: none;
+  }
+
+  .picker {
+    width: 26px;
+    height: 26px;
+    border-radius: 99em;
+    border: 2px #fff solid;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: #000;
+    -webkit-user-select: none;
+  }
+
+  canvas#boxbg {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    -webkit-user-select: none;
+  }
+
+  .btnbox {
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-user-select: none;
+  }
+
+  .btn {
+    width: clamp(80px, calc(50% - 50px), 250px);
+    height: 50px;
+    background: #000;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    -webkit-user-select: none;
+    font-weight: 700;
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #fff;
+    transition: all 0s, color 0.3s
+  }
+
   #view {
-  margin-left:10px;
+    margin-left: 10px;
   }
-     .ladbar {
-background:#000;
-position:fixed;
-top:0px;
-left:0px;
-width:0px;
-height:1.3px;
-transition:width 0.3s ,background 0s;
-}
-    @media (prefers-color-scheme: dark) {
+
+  .ladbar {
+    background: #000;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 1.3px;
+    transition: width 0.3s, background 0s;
+  }
+
+  @media (prefers-color-scheme: dark) {
     body {
-    background:#1a1a1a;
-  }
-   .ladbar {
-background:#fff;
-}
+      background: #1a1a1a;
+    }
+
+    .ladbar {
+      background: #fff;
+    }
   }
 </style>
 
@@ -142,602 +156,603 @@ background:#fff;
 </div>
 <input type="text" id="hsv" style="display:none;-webkit-user-select: none;">
 <div class="btnbox">
-<div class="btn" id="back">返回</div>
-<div class="btn" id="view">查看顏色</div>
+  <div class="btn" id="back">返回</div>
+  <div class="btn" id="view">查看顏色</div>
 </div>
 
 <div class="ladbar" style="display:none;"></div>
 <script>
-/*
-lade = 0 ;
-function ladbaradd() {
-lade += 5+Math.floor(Math.random() * 2) ;
-$('.ladbar').css({'width':lade + '%'});
-if(lade > 80) {
-clearInterval(ladbar);
-}
-}
-ladbaradd();
-var ladbar = setInterval(ladbaradd,300);
-
-$(document).ready(function() {
-setTimeout(function() {
-clearInterval(ladbar);
-$('.ladbar').css({'width':'105%','transition':'0.7s'});
-},1000);
-
-setTimeout(function() {
-$('.ladbar').css({'opacity':'0'});
-},1500);
-
-setTimeout(function() {
-$('.ladbar').css({'display':'none'});
-},2300);
-});
-*/
+  /*
+  lade = 0 ;
+  function ladbaradd() {
+  lade += 5+Math.floor(Math.random() * 2) ;
+  $('.ladbar').css({'width':lade + '%'});
+  if(lade > 80) {
+  clearInterval(ladbar);
+  }
+  }
+  ladbaradd();
+  var ladbar = setInterval(ladbaradd,300);
+  
+  $(document).ready(function() {
+  setTimeout(function() {
+  clearInterval(ladbar);
+  $('.ladbar').css({'width':'105%','transition':'0.7s'});
+  },1000);
+  
+  setTimeout(function() {
+  $('.ladbar').css({'opacity':'0'});
+  },1500);
+  
+  setTimeout(function() {
+  $('.ladbar').css({'display':'none'});
+  },2300);
+  });
+  */
 </script>
 
 
 
 <script>
   var getUrlString = location.href;
-var url = new URL(getUrlString);
-var open = url.searchParams.get('open') ;
-var urpih = url.searchParams.get('pih') ;
-var urpis = url.searchParams.get('pis') ; 
-var urpiv = url.searchParams.get('piv') ; 
-  
-function genid(mode) {
-if(mode === "random"){
-var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
-            var genid = "";
-            for (var i = 0; i < 16; i++) {
-                var genrandomNumber = Math.floor(Math.random() * genidchars.length);
-                genid += genidchars.substring(genrandomNumber, genrandomNumber + 1);
-            }
-  return genid ;
-}
-          
- if(mode === "time"){
-   var gtoday=new Date();
-   var genid2 = (gtoday.getMonth()+1) + '_' + gtoday.getDate() + '_' + gtoday.getHours() + '_' + gtoday.getMinutes() + '_' + gtoday.getSeconds() + '-' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8));
-   
-   return genid2
- }
-  
-  if(mode === "number"){
-   
-   var genid3 = '' ;
-for (var i = 0; i < 16; i++) {
-  genid3 += '' + (0+Math.floor(Math.random() * 9))
-}
-   return genid3
- }
-  
-  if(mode === "uuid"){
-var genidchars4 = "abcdef012345678";
-    var geniduu = [8,4,4,4,12];
-            var genid4 = "";
-            var genid5 = "";
-    for (var ia = 0; ia < geniduu.length; ia++) {
-      var genid4 = "";
-            for (var i = 0; i < geniduu[ia]; i++) {
-                var genrandomNumber4 = Math.floor(Math.random() * genidchars4.length);
-                genid4 += genidchars4.substring(genrandomNumber4, genrandomNumber4 + 1);
-            }
-genid5 += '-' + genid4 ;
+  var url = new URL(getUrlString);
+  var open = url.searchParams.get('open');
+  var urpih = url.searchParams.get('pih');
+  var urpis = url.searchParams.get('pis');
+  var urpiv = url.searchParams.get('piv');
+
+  function genid(mode) {
+    if (mode === "random") {
+      var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
+      var genid = "";
+      for (var i = 0; i < 16; i++) {
+        var genrandomNumber = Math.floor(Math.random() * genidchars.length);
+        genid += genidchars.substring(genrandomNumber, genrandomNumber + 1);
+      }
+      return genid;
     }
-    return genid5.substring(1,genid5.length)
+
+    if (mode === "time") {
+      var gtoday = new Date();
+      var genid2 = (gtoday.getMonth() + 1) + '_' + gtoday.getDate() + '_' + gtoday.getHours() + '_' + gtoday.getMinutes() + '_' + gtoday.getSeconds() + '-' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8));
+
+      return genid2
+    }
+
+    if (mode === "number") {
+
+      var genid3 = '';
+      for (var i = 0; i < 16; i++) {
+        genid3 += '' + (0 + Math.floor(Math.random() * 9))
+      }
+      return genid3
+    }
+
+    if (mode === "uuid") {
+      var genidchars4 = "abcdef012345678";
+      var geniduu = [8, 4, 4, 4, 12];
+      var genid4 = "";
+      var genid5 = "";
+      for (var ia = 0; ia < geniduu.length; ia++) {
+        var genid4 = "";
+        for (var i = 0; i < geniduu[ia]; i++) {
+          var genrandomNumber4 = Math.floor(Math.random() * genidchars4.length);
+          genid4 += genidchars4.substring(genrandomNumber4, genrandomNumber4 + 1);
+        }
+        genid5 += '-' + genid4;
+      }
+      return genid5.substring(1, genid5.length)
+    }
+
   }
 
-}
-  
 
 
-function hsvToRgb(h, s, v) {
+  function hsvToRgb(h, s, v) {
     var r, g, b;
     var i;
     var f, p, q, t;
-     
+
     // Make sure our arguments stay in-range
     h = Math.max(0, Math.min(360, h));
     s = Math.max(0, Math.min(100, s));
     v = Math.max(0, Math.min(100, v));
-     
+
     // We accept saturation and value arguments from 0 to 100 because that's
     // how Photoshop represents those values. Internally, however, the
     // saturation and value are calculated from a range of 0 to 1. We make
     // That conversion here.
     s /= 100;
     v /= 100;
-     
-    if(s == 0) {
-        // Achromatic (grey)
-        r = g = b = v;
-        return [
-            Math.round(r * 255), 
-            Math.round(g * 255), 
-            Math.round(b * 255)
-        ];
+
+    if (s == 0) {
+      // Achromatic (grey)
+      r = g = b = v;
+      return [
+        Math.round(r * 255),
+        Math.round(g * 255),
+        Math.round(b * 255)
+      ];
     }
-     
+
     h /= 60; // sector 0 to 5
     i = Math.floor(h);
     f = h - i; // factorial part of h
     p = v * (1 - s);
     q = v * (1 - s * f);
     t = v * (1 - s * (1 - f));
-     
-    switch(i) {
-        case 0:
-            r = v;
-            g = t;
-            b = p;
-            break;
-     
-        case 1:
-            r = q;
-            g = v;
-            b = p;
-            break;
-     
-        case 2:
-            r = p;
-            g = v;
-            b = t;
-            break;
-     
-        case 3:
-            r = p;
-            g = q;
-            b = v;
-            break;
-     
-        case 4:
-            r = t;
-            g = p;
-            b = v;
-            break;
-     
-        default: // case 5:
-            r = v;
-            g = p;
-            b = q;
+
+    switch (i) {
+      case 0:
+        r = v;
+        g = t;
+        b = p;
+        break;
+
+      case 1:
+        r = q;
+        g = v;
+        b = p;
+        break;
+
+      case 2:
+        r = p;
+        g = v;
+        b = t;
+        break;
+
+      case 3:
+        r = p;
+        g = q;
+        b = v;
+        break;
+
+      case 4:
+        r = t;
+        g = p;
+        b = v;
+        break;
+
+      default: // case 5:
+        r = v;
+        g = p;
+        b = q;
     }
-     
+
     return [
-        Math.round(r * 255), 
-        Math.round(g * 255), 
-        Math.round(b * 255)
+      Math.round(r * 255),
+      Math.round(g * 255),
+      Math.round(b * 255)
     ];
-}
-
-
-function componentToHex(c) {
-  var hex = c.toString(16);
-  return hex.length == 1 ? "0" + hex : hex;
-}
-
-function rgbToHex(r, g, b) {
-  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-}
-
-function setthemecol(hexcolsjs,delaytimems) {
-  setTimeout(function() {
-  $('meta[name="theme-color"]').attr('content',hexcolsjs);
-  },delaytimems);
-}
-function darkmodehexcol() {
-if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  return '#1a1a1a'
-}
-else {
-return '#fff'
-}
-}
-
-  
-    //userid
-  function systeminfodata(uid) {
-  var nav = window.navigator ;
-   gtag('event', 'user_system_appcodename', {
-    'event_category': nav.appCodeName,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_appname', {
-    'event_category': nav.appName,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_appver', {
-    'event_category': nav.appVersion,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_lang', {
-    'event_category': nav.language,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_platform', {
-    'event_category': nav.platform,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-	
-	gtag('event', 'user_system_product', {
-    'event_category': nav.product,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_productsub', {
-    'event_category': nav.productSub,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_useragent', {
-    'event_category': nav.userAgent,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-	
-	gtag('event', 'user_system_vendor', {
-    'event_category': nav.vendor,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
   }
 
-  var user_id ;
-  if(localStorage.getItem('user_id_r') === '1') {
-    user_id = localStorage.getItem('user_id') ;
-    gtag('event', 'user_start', {
-    'event_category': 'count',
-    'event_label': user_id,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    //systeminfodata(user_id)
+
+  function componentToHex(c) {
+    var hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+  }
+
+  function rgbToHex(r, g, b) {
+    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+  }
+
+  function setthemecol(hexcolsjs, delaytimems) {
+    setTimeout(function () {
+      $('meta[name="theme-color"]').attr('content', hexcolsjs);
+    }, delaytimems);
+  }
+  function darkmodehexcol() {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return '#1a1a1a'
     }
-  });
+    else {
+      return '#fff'
+    }
+  }
+
+
+  //userid
+  function systeminfodata(uid) {
+    var nav = window.navigator;
+    gtag('event', 'user_system_appcodename', {
+      'event_category': nav.appCodeName,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_appname', {
+      'event_category': nav.appName,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_appver', {
+      'event_category': nav.appVersion,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_lang', {
+      'event_category': nav.language,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_platform', {
+      'event_category': nav.platform,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_product', {
+      'event_category': nav.product,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_productsub', {
+      'event_category': nav.productSub,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_useragent', {
+      'event_category': nav.userAgent,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_vendor', {
+      'event_category': nav.vendor,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+  }
+
+  var user_id;
+  if (localStorage.getItem('user_id_r') === '1') {
+    user_id = localStorage.getItem('user_id');
+    gtag('event', 'user_start', {
+      'event_category': 'count',
+      'event_label': user_id,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+        //systeminfodata(user_id)
+      }
+    });
   }
   else {
-  var user_id_chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            user_id = "";
-            for (var useridi = 0; useridi < 64; useridi++) {
-                var user_id_randomNumber = Math.floor(Math.random() * user_id_chars.length);
-                user_id += user_id_chars.substring(user_id_randomNumber, user_id_randomNumber + 1);
-            }
-  localStorage.setItem('user_id_r', '1');
-  localStorage.setItem('user_id',user_id);
-   
-   gtag('event', 'user_start', {
-    'event_category': 'count',
-    'event_label': user_id,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    systeminfodata(user_id)
+    var user_id_chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    user_id = "";
+    for (var useridi = 0; useridi < 64; useridi++) {
+      var user_id_randomNumber = Math.floor(Math.random() * user_id_chars.length);
+      user_id += user_id_chars.substring(user_id_randomNumber, user_id_randomNumber + 1);
     }
-  });
-    
+    localStorage.setItem('user_id_r', '1');
+    localStorage.setItem('user_id', user_id);
+
+    gtag('event', 'user_start', {
+      'event_category': 'count',
+      'event_label': user_id,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+        systeminfodata(user_id)
+      }
+    });
+
   }
   //useridend
-  
-   //darkmode
-let darkmodematched = window.matchMedia('(prefers-color-scheme: dark)').matches;
-var darkmodematchedstr = 'undefined' ;
-if(darkmodematched) {
-  darkmodematchedstr = 'true' ;
-  //setthemecol('#1a1a1a',1)
-}
-else {
-	darkmodematchedstr = 'false' ;
-}
-  
+
+  //darkmode
+  let darkmodematched = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  var darkmodematchedstr = 'undefined';
+  if (darkmodematched) {
+    darkmodematchedstr = 'true';
+    //setthemecol('#1a1a1a',1)
+  }
+  else {
+    darkmodematchedstr = 'false';
+  }
+
   gtag('event', 'dark_mode', {
     'event_category': darkmodematchedstr,
     'event_label': user_id,
     'transport_type': 'beacon',
-    'event_callback': function(){
-    
+    'event_callback': function () {
+
     }
   });
-  
+
   //darkmodeend
 
 
-let mouseX = 0
-let mouseY = 0
-let offsetX = 0
-let offsetY = 0
-let isDown = false
-var div = document.querySelector(".box");
-var div2 = document.querySelector(".bar");
-var hsv_a = 0 ;
-var px = 0 ;
-var py = $('.box').height() ;
+  let mouseX = 0
+  let mouseY = 0
+  let offsetX = 0
+  let offsetY = 0
+  let isDown = false
+  var div = document.querySelector(".box");
+  var div2 = document.querySelector(".bar");
+  var hsv_a = 0;
+  var px = 0;
+  var py = $('.box').height();
 
-var bar_width = $(window).width()-25 ;
+  var bar_width = $(window).width() - 25;
 
-div2.addEventListener('touchstart', function(e) {
-  isDown = true
-  mouseX = e.pageX
-  mouseY = e.pageY
-  document.addEventListener('touchmove', m2)
-}, {passive: true});
+  div2.addEventListener('touchstart', function (e) {
+    isDown = true
+    mouseX = e.pageX
+    mouseY = e.pageY
+    document.addEventListener('touchmove', m2)
+  }, { passive: true });
 
-document.addEventListener('touchend', function(e) {
-  if (isDown) {
-    offsetX += e.pageX - mouseX
-    offsetY += e.pageY - mouseY
+  document.addEventListener('touchend', function (e) {
+    if (isDown) {
+      offsetX += e.pageX - mouseX
+      offsetY += e.pageY - mouseY
+    }
+    isDown = false
+    document.removeEventListener('touchmove', m2)
+
+  });
+  function m2(e) {
+    //$(document).scrollTop(0);
+    var px2 = e.pageX;
+    if (e.pageX > bar_width) {
+      px2 = bar_width;
+    }
+    if (e.pageX < 0) {
+      px2 = 0;
+    }
+
+
+    $('.picker2').css({ 'left': (px2 - 12.5) + 'px', 'background': 'rgb(' + hsvToRgb(Math.round(px2 / bar_width * 359), 100, 100)[0] + ',' + hsvToRgb(Math.round(px2 / bar_width * 359), 100, 100)[1] + ',' + hsvToRgb(Math.round(px2 / bar_width * 359), 100, 100)[2] + ')' }).attr('h', Math.round(px2 / bar_width * 359));
+    hsv_a = Math.round(px2 / bar_width * 359);
+    rgbaColor = 'rgba(' + hsvToRgb(Math.round(px2 / bar_width * 359), 100, 100)[0] + ',' + hsvToRgb(Math.round(px2 / bar_width * 359), 100, 100)[1] + ',' + hsvToRgb(Math.round(px2 / bar_width * 359), 100, 100)[2] + ',1)';
+
+    var hsv_x = Math.round(parseInt($('.picker').attr('px')) / box_width * 100);
+    var hsv_y = (100 - Math.round(parseInt($('.picker').attr('py')) / box_height * 100));
+    document.querySelector('#hsv').value = hsv_a + '°,' + hsv_x + '%,' + hsv_y + '%';
+
+    var hsvcolortorgb = hsvToRgb(hsv_a, hsv_x, hsv_y);
+    $('.picker').css({ 'background': 'rgb(' + hsvcolortorgb[0] + ',' + hsvcolortorgb[1] + ',' + hsvcolortorgb[2] + ')' })
+    $('.box,.btn').css({ 'background': 'rgb(' + hsvcolortorgb[0] + ',' + hsvcolortorgb[1] + ',' + hsvcolortorgb[2] + ')' });
+    setthemecol(rgbToHex(hsvcolortorgb[0], hsvcolortorgb[1], hsvcolortorgb[2]), 1)
+    if ((hsvcolortorgb[0] + hsvcolortorgb[1] + hsvcolortorgb[2]) / 3 > 128) {
+      $('.btn').css({ 'color': '#000' })
+    }
+    else {
+      $('.btn').css({ 'color': '#fff' })
+    }
+
+    fillbg();
+    $('.btn#view').attr('link', 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(hsvcolortorgb[0], hsvcolortorgb[1], hsvcolortorgb[2])) + '&open=picker&pih=' + $('.picker2').attr('h') + '&pis=' + $('.picker2').attr('s') + '&piv=' + $('.picker2').attr('v') + '&r=' + genid('random'));
   }
-  isDown = false
-  document.removeEventListener('touchmove',m2)
-  
-});
-function m2(e) {
-  //$(document).scrollTop(0);
-  var px2 = e.pageX ;
-  if(e.pageX > bar_width) {
-    px2 = bar_width;
-  }
-  if(e.pageX < 0) {
-    px2 = 0;
-  }
-  
-  
-  $('.picker2').css({'left':(px2-12.5) + 'px','background':'rgb(' + hsvToRgb(Math.round(px2/bar_width*359),100,100)[0] + ',' + hsvToRgb(Math.round(px2/bar_width*359),100,100)[1] + ',' + hsvToRgb(Math.round(px2/bar_width*359),100,100)[2] + ')'}).attr('h',Math.round(px2/bar_width*359));
-  hsv_a = Math.round(px2/bar_width*359) ;
-rgbaColor = 'rgba(' + hsvToRgb(Math.round(px2/bar_width*359),100,100)[0] + ',' + hsvToRgb(Math.round(px2/bar_width*359),100,100)[1] + ',' + hsvToRgb(Math.round(px2/bar_width*359),100,100)[2] + ',1)' ;
-  
-  var hsv_x = Math.round(parseInt($('.picker').attr('px'))/box_width*100) ;
-    var hsv_y = (100-Math.round(parseInt($('.picker').attr('py'))/box_height*100)) ;
-    document.querySelector('#hsv').value = hsv_a + '°,' + hsv_x + '%,' + hsv_y + '%' ;
-      
-    var hsvcolortorgb = hsvToRgb(hsv_a,hsv_x,hsv_y) ;
-    $('.picker').css({'background':'rgb(' + hsvcolortorgb[0] + ',' + hsvcolortorgb[1] + ',' + hsvcolortorgb[2] + ')'})
-  $('.box,.btn').css({'background':'rgb(' + hsvcolortorgb[0] + ',' + hsvcolortorgb[1] + ',' + hsvcolortorgb[2] + ')'});
-  setthemecol(rgbToHex(hsvcolortorgb[0],hsvcolortorgb[1],hsvcolortorgb[2]),1)
-  if((hsvcolortorgb[0]+hsvcolortorgb[1]+hsvcolortorgb[2])/3 > 128) {
-$('.btn').css({'color':'#000'})
-}
-      else {
-$('.btn').css({'color':'#fff'})
-}
-  
-  fillbg();
-  $('.btn#view').attr('link','https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(hsvcolortorgb[0],hsvcolortorgb[1],hsvcolortorgb[2])) + '&open=picker&pih=' + $('.picker2').attr('h') + '&pis=' + $('.picker2').attr('s') + '&piv=' + $('.picker2').attr('v') + '&r=' + genid('random'));
-}
 
-div.addEventListener('touchstart', function(e) {
-  isDown = true
-  mouseX = e.pageX
-  mouseY = e.pageY
-  //$('#boxbg').css({'opacity':'1','transition':'0.3s'})
-  document.addEventListener('touchmove', move)
-}, {passive: true});
+  div.addEventListener('touchstart', function (e) {
+    isDown = true
+    mouseX = e.pageX
+    mouseY = e.pageY
+    //$('#boxbg').css({'opacity':'1','transition':'0.3s'})
+    document.addEventListener('touchmove', move)
+  }, { passive: true });
 
-document.addEventListener('touchend', function(e) {
+  document.addEventListener('touchend', function (e) {
 
 
-  if (isDown) {
-    offsetX += e.pageX - mouseX
-    offsetY += e.pageY - mouseY
-  }
-  isDown = false
-  //$('#boxbg').css({'opacity':'0','transition':'0.3s'})
-  document.removeEventListener('touchmove',move)
-  
-});
+    if (isDown) {
+      offsetX += e.pageX - mouseX
+      offsetY += e.pageY - mouseY
+    }
+    isDown = false
+    //$('#boxbg').css({'opacity':'0','transition':'0.3s'})
+    document.removeEventListener('touchmove', move)
 
-var box_width = $(window).width() ;
-var box_height = $('.box').height() ;
-var picker_size = 20 ;
+  });
 
-function move(e) {
+  var box_width = $(window).width();
+  var box_height = $('.box').height();
+  var picker_size = 20;
+
+  function move(e) {
     if (isDown) {
       //$(document).scrollTop(0);
-    const dx = e.pageX - mouseX
-    const dy = e.pageY - mouseY
-    var px = e.pageX ;
-    var py = e.pageY ;
-    if(e.pageX > box_width) {
-      px = box_width
-    }
-    if(e.pageY > box_height) {
-      py = box_height
-    }
-      
-    if(e.pageX < 0) {
-      px = 0
-    }
-    if(e.pageY < 0) {
-      py = 0
-    }
-    //s
-    
-    var hsv_x = Math.round(px/box_width*100) ;
-    var hsv_y = (100-Math.round(py/box_height*100)) ;
-    document.querySelector('#hsv').value = hsv_a + '°,' + hsv_x + '%,' + hsv_y + '%' ;
-      
-    var hsvcolortorgb = hsvToRgb(hsv_a,hsv_x,hsv_y) ;
-    $('.picker').css({'top':(py-13),'left':(px-13),'background':'rgb(' + hsvcolortorgb[0] + ',' + hsvcolortorgb[1] + ',' + hsvcolortorgb[2] + ')'}).attr('py',py).attr('px',px)
-     $('.picker2').attr('s',hsv_x).attr('v',hsv_y);
-      $('.box,.btn').css({'background':'rgb(' + hsvcolortorgb[0] + ',' + hsvcolortorgb[1] + ',' + hsvcolortorgb[2] + ')'})
-      setthemecol(rgbToHex(hsvcolortorgb[0],hsvcolortorgb[1],hsvcolortorgb[2]),1)
+      const dx = e.pageX - mouseX
+      const dy = e.pageY - mouseY
+      var px = e.pageX;
+      var py = e.pageY;
+      if (e.pageX > box_width) {
+        px = box_width
+      }
+      if (e.pageY > box_height) {
+        py = box_height
+      }
 
-      if((hsvcolortorgb[0]+hsvcolortorgb[1]+hsvcolortorgb[2])/3 > 128) {
- $('.btn').css({'color':'#000'})
- }
-       else {
- $('.btn').css({'color':'#fff'})
- }
-      
-      $('.btn#view').attr('link','https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(hsvcolortorgb[0],hsvcolortorgb[1],hsvcolortorgb[2])) + '&open=picker&pih=' + $('.picker2').attr('h') + '&pis=' + $('.picker2').attr('s') + '&piv=' + $('.picker2').attr('v') + '&r=' + genid('random'));
+      if (e.pageX < 0) {
+        px = 0
+      }
+      if (e.pageY < 0) {
+        py = 0
+      }
+      //s
+
+      var hsv_x = Math.round(px / box_width * 100);
+      var hsv_y = (100 - Math.round(py / box_height * 100));
+      document.querySelector('#hsv').value = hsv_a + '°,' + hsv_x + '%,' + hsv_y + '%';
+
+      var hsvcolortorgb = hsvToRgb(hsv_a, hsv_x, hsv_y);
+      $('.picker').css({ 'top': (py - 13), 'left': (px - 13), 'background': 'rgb(' + hsvcolortorgb[0] + ',' + hsvcolortorgb[1] + ',' + hsvcolortorgb[2] + ')' }).attr('py', py).attr('px', px)
+      $('.picker2').attr('s', hsv_x).attr('v', hsv_y);
+      $('.box,.btn').css({ 'background': 'rgb(' + hsvcolortorgb[0] + ',' + hsvcolortorgb[1] + ',' + hsvcolortorgb[2] + ')' })
+      setthemecol(rgbToHex(hsvcolortorgb[0], hsvcolortorgb[1], hsvcolortorgb[2]), 1)
+
+      if ((hsvcolortorgb[0] + hsvcolortorgb[1] + hsvcolortorgb[2]) / 3 > 128) {
+        $('.btn').css({ 'color': '#000' })
+      }
+      else {
+        $('.btn').css({ 'color': '#fff' })
+      }
+
+      $('.btn#view').attr('link', 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(hsvcolortorgb[0], hsvcolortorgb[1], hsvcolortorgb[2])) + '&open=picker&pih=' + $('.picker2').attr('h') + '&pis=' + $('.picker2').attr('s') + '&piv=' + $('.picker2').attr('v') + '&r=' + genid('random'));
       //s-end
-   
-}
-}
+
+    }
+  }
 
 
-var colorBlock = document.querySelector('#boxbg');
-var ctx1 = colorBlock.getContext('2d');
-var width1 = colorBlock.width;
-var height1 = colorBlock.height;
-
-
-
-var colorStrip = document.getElementById('boxbg');
-var ctx2 = colorStrip.getContext('2d');
-var width2 = colorStrip.width;
-var height2 = colorStrip.height;
+  var colorBlock = document.querySelector('#boxbg');
+  var ctx1 = colorBlock.getContext('2d');
+  var width1 = colorBlock.width;
+  var height1 = colorBlock.height;
 
 
 
-rgbaColor = 'rgba(255,0,0,1)' ;
-function fillbg() {
-  ctx1.fillStyle = rgbaColor;
-  ctx1.fillRect(0, 0, width1, height1);
+  var colorStrip = document.getElementById('boxbg');
+  var ctx2 = colorStrip.getContext('2d');
+  var width2 = colorStrip.width;
+  var height2 = colorStrip.height;
 
-  var grdWhite = ctx2.createLinearGradient(0, 0, width1, 0);
-  grdWhite.addColorStop(0, 'rgba(255,255,255,1)');
-  grdWhite.addColorStop(1, 'rgba(255,255,255,0)');
-  ctx1.fillStyle = grdWhite;
-  ctx1.fillRect(0, 0, width1, height1);
 
-  var grdBlack = ctx2.createLinearGradient(0, 0, 0, height1);
-  grdBlack.addColorStop(0, 'rgba(0,0,0,0)');
-  grdBlack.addColorStop(1, 'rgba(0,0,0,1)');
-  ctx1.fillStyle = grdBlack;
-  ctx1.fillRect(0, 0, width1, height1);
-}
-fillbg();
 
-$('.picker').css({'top':(py-13),'left':(px-13)}).attr('py',py).attr('px',px).attr('rg','0,0,0')
-$('.btn#view').attr('link','https://erichsia7.github.io/colors/?s=1&c=' + btoa('#000000') + '&open=picker&pih=' + 0 + '&pis=' + 0 + '&piv=' + 0 + '&r=' + genid('random'));
-$('.picker2').attr('h','0')
-$('.btn#view').click(function() {
-location.href = $(this).attr('link');
-});
-$('.btn#back').click(function() {
-location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random') ;
-});
-  
-  if(open === 'col') {
-    rgbaColor = 'rgba(' + hsvToRgb(parseInt(urpih),100,100)[0] + ',' + hsvToRgb(parseInt(urpih),100,100)[1] + ',' + hsvToRgb(parseInt(urpih),100,100)[2] + ',1)' ;
-    $('.picker2').css({'left':urpih/359*bar_width-12.5,'background':rgbaColor}).attr('h',urpih).attr('s',urpis).attr('v',urpiv);
-    hsv_a = parseInt(urpih) ;
-    $('.picker').css({'top':$('.box').height()-($('.box').height()*parseInt(urpiv)/100)-13,'left':($('.box').width()*parseInt(urpis)/100)-13,'background':'rgb(' + hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv)).join(',') + ')'}).attr('px',($('.box').width()*parseInt(urpis)/100)).attr('py',$('.box').height()-($('.box').height()*parseInt(urpiv)/100));
-    $('.btn').css({'background':'rgb(' + hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv)).join(',') + ')'});
+  rgbaColor = 'rgba(255,0,0,1)';
+  function fillbg() {
+    ctx1.fillStyle = rgbaColor;
+    ctx1.fillRect(0, 0, width1, height1);
+
+    var grdWhite = ctx2.createLinearGradient(0, 0, width1, 0);
+    grdWhite.addColorStop(0, 'rgba(255,255,255,1)');
+    grdWhite.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx1.fillStyle = grdWhite;
+    ctx1.fillRect(0, 0, width1, height1);
+
+    var grdBlack = ctx2.createLinearGradient(0, 0, 0, height1);
+    grdBlack.addColorStop(0, 'rgba(0,0,0,0)');
+    grdBlack.addColorStop(1, 'rgba(0,0,0,1)');
+    ctx1.fillStyle = grdBlack;
+    ctx1.fillRect(0, 0, width1, height1);
+  }
+  fillbg();
+
+  $('.picker').css({ 'top': (py - 13), 'left': (px - 13) }).attr('py', py).attr('px', px).attr('rg', '0,0,0')
+  $('.btn#view').attr('link', 'https://erichsia7.github.io/colors/?s=1&c=' + btoa('#000000') + '&open=picker&pih=' + 0 + '&pis=' + 0 + '&piv=' + 0 + '&r=' + genid('random'));
+  $('.picker2').attr('h', '0')
+  $('.btn#view').click(function () {
+    location.href = $(this).attr('link');
+  });
+  $('.btn#back').click(function () {
+    location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random');
+  });
+
+  if (open === 'col') {
+    rgbaColor = 'rgba(' + hsvToRgb(parseInt(urpih), 100, 100)[0] + ',' + hsvToRgb(parseInt(urpih), 100, 100)[1] + ',' + hsvToRgb(parseInt(urpih), 100, 100)[2] + ',1)';
+    $('.picker2').css({ 'left': urpih / 359 * bar_width - 12.5, 'background': rgbaColor }).attr('h', urpih).attr('s', urpis).attr('v', urpiv);
+    hsv_a = parseInt(urpih);
+    $('.picker').css({ 'top': $('.box').height() - ($('.box').height() * parseInt(urpiv) / 100) - 13, 'left': ($('.box').width() * parseInt(urpis) / 100) - 13, 'background': 'rgb(' + hsvToRgb(parseInt(urpih), parseInt(urpis), parseInt(urpiv)).join(',') + ')' }).attr('px', ($('.box').width() * parseInt(urpis) / 100)).attr('py', $('.box').height() - ($('.box').height() * parseInt(urpiv) / 100));
+    $('.btn').css({ 'background': 'rgb(' + hsvToRgb(parseInt(urpih), parseInt(urpis), parseInt(urpiv)).join(',') + ')' });
     hsv_x = parseInt(urpis);
     hsv_y = parseInt(urpiv);
-    setthemecol(rgbToHex(hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[0],hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[1],hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[2]),1)
-    
-    
-          $('.btn#view').attr('link','https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[0],hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[1],hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[2])) + '&open=picker&pih=' + $('.picker2').attr('h') + '&pis=' + $('.picker2').attr('s') + '&piv=' + $('.picker2').attr('v') + '&r=' + genid('random'));
-    
-    if((hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[0]+hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[1]+hsvToRgb(parseInt(urpih),parseInt(urpis),parseInt(urpiv))[2])/3 > 128) {
-$('.btn').css({'color':'#000'})
-}
-      else {
-$('.btn').css({'color':'#fff'})
-}
-    
+    setthemecol(rgbToHex(hsvToRgb(parseInt(urpih), parseInt(urpis), parseInt(urpiv))[0], hsvToRgb(parseInt(urpih), parseInt(urpis), parseInt(urpiv))[1], hsvToRgb(parseInt(urpih), parseInt(urpis), parseInt(urpiv))[2]), 1)
+
+
+    $('.btn#view').attr('link', 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(rgbToHex(hsvToRgb(parseInt(urpih), parseInt(urpis), parseInt(urpiv))[0], hsvToRgb(parseInt(urpih), parseInt(urpis), parseInt(urpiv))[1], hsvToRgb(parseInt(urpih), parseInt(urpis), parseInt(urpiv))[2])) + '&open=picker&pih=' + $('.picker2').attr('h') + '&pis=' + $('.picker2').attr('s') + '&piv=' + $('.picker2').attr('v') + '&r=' + genid('random'));
+
+    if ((hsvToRgb(parseInt(urpih), parseInt(urpis), parseInt(urpiv))[0] + hsvToRgb(parseInt(urpih), parseInt(urpis), parseInt(urpiv))[1] + hsvToRgb(parseInt(urpih), parseInt(urpis), parseInt(urpiv))[2]) / 3 > 128) {
+      $('.btn').css({ 'color': '#000' })
+    }
+    else {
+      $('.btn').css({ 'color': '#fff' })
+    }
+
     fillbg();
   }
-  
-  $(document).ready(function() {
+
+  $(document).ready(function () {
     //test 
-        var googlefontloadtime = new Date().getTime() ;
-        if(googlefontloadtime-parseInt(localStorage.getItem('googlefontNotoSansTCloaded')) < 2592000000) {
-  $('body').append('<style>' + localStorage.getItem('googlefontNotoSansTC') + '</style>');
-}
-else {
- $.ajax({type:'get',url:"https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap",dataType:'text',success:function(e) {
-  var googlefontloadtimedd = new Date().getTime() ;
-  localStorage.setItem('googlefontNotoSansTC', e); localStorage.setItem('googlefontNotoSansTCloaded', googlefontloadtimedd);
-   $('body').append('<style>' + e + '</style>');
-   }
-}); 
-}
+    var googlefontloadtime = new Date().getTime();
+    if (googlefontloadtime - parseInt(localStorage.getItem('googlefontNotoSansTCloaded')) < 2592000000) {
+      $('body').append('<style>' + localStorage.getItem('googlefontNotoSansTC') + '</style>');
+    }
+    else {
+      $.ajax({
+        type: 'get', url: "https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap", dataType: 'text', success: function (e) {
+          var googlefontloadtimedd = new Date().getTime();
+          localStorage.setItem('googlefontNotoSansTC', e); localStorage.setItem('googlefontNotoSansTCloaded', googlefontloadtimedd);
+          $('body').append('<style>' + e + '</style>');
+        }
+      });
+    }
   });
 </script>
 <script>
-// left: 37, up: 38, right: 39, down: 40,
-// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
-var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+  // left: 37, up: 38, right: 39, down: 40,
+  // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+  var keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
 
-function preventDefault(e) {
-  e.preventDefault();
-}
-
-function preventDefaultForScrollKeys(e) {
-  if (keys[e.keyCode]) {
-    preventDefault(e);
-    return false;
+  function preventDefault(e) {
+    e.preventDefault();
   }
-}
 
-// modern Chrome requires { passive: false } when adding event
-var supportsPassive = false;
-try {
-  window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
-    get: function () { supportsPassive = true; } 
-  }));
-} catch(e) {}
+  function preventDefaultForScrollKeys(e) {
+    if (keys[e.keyCode]) {
+      preventDefault(e);
+      return false;
+    }
+  }
 
-var wheelOpt = supportsPassive ? { passive: false } : false;
-var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+  // modern Chrome requires { passive: false } when adding event
+  var supportsPassive = false;
+  try {
+    window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+      get: function () { supportsPassive = true; }
+    }));
+  } catch (e) { }
 
-// call this to Disable
-function disableScroll() {
-  window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
-  window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
-  window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
-  window.addEventListener('keydown', preventDefaultForScrollKeys, false);
-}
+  var wheelOpt = supportsPassive ? { passive: false } : false;
+  var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
 
-// call this to Enable
-function enableScroll() {
-  window.removeEventListener('DOMMouseScroll', preventDefault, false);
-  window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
-  window.removeEventListener('touchmove', preventDefault, wheelOpt);
-  window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
-}
-disableScroll();
+  // call this to Disable
+  function disableScroll() {
+    window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+    window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+    window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+    window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+  }
+
+  // call this to Enable
+  function enableScroll() {
+    window.removeEventListener('DOMMouseScroll', preventDefault, false);
+    window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
+    window.removeEventListener('touchmove', preventDefault, wheelOpt);
+    window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+  }
+  disableScroll();
 </script>

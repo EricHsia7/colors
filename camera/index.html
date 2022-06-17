@@ -13,283 +13,305 @@
 <link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="shortcut icon" />
 <link rel="manifest" href="https://erichsia7.github.io/colors/manifest.json?qoaa9">
 <style>
-	  * {outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);}
+  * {
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
 
-body {
--webkit-user-select: none;
-background:#000;
-}
-.camera_box {
-  background: #000;
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  height: 100%;
-  -webkit-user-select: none;
-}
-.video_window {
-  background: #000;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  height: 100%;
-  -webkit-user-select: none;
-}
-.video_window video {
-  position:absolute;
-  top:0px;
-  left:0px;
-  width:100%;
-  height:100%;
-  object-fit: cover;
-  object-position:center center;
-  -webkit-user-select: none;
-}
-.mask {
-  width:100%;
-  height:100%;
-  position:absolute;
-  top:0px;
-  left:0px;
-  background:rgba(0,0,0,0);
-  -webkit-user-select: none;
-}
-.hidden_box {
-  display:none;
-  -webkit-user-select: none;
-}
-.back {
-  background: rgba(0, 0, 0, 0.6)
-    url(https://erichsia7.github.io/colors/arrow-right-light.png);
-  -webkit-backdrop-filter: blur(15px);
-  backdrop-filter: blur(15px);
-  left: 15px;
-  top: 15px;
-  transform: rotate(180deg);
-}
-.option {
-  background: rgba(255, 255, 255, 0.6)
-    url(https://erichsia7.github.io/colors/ico_min/more.png);
-  -webkit-backdrop-filter: blur(15px);
-  backdrop-filter: blur(15px);
-  right: 15px;
-  filter: invert(100%);
-  top: 15px;
-}
-.close {
-  background: rgba(255, 255, 255, 0.6)
-    url(https://erichsia7.github.io/colors/ico_min/close2.png);
-  -webkit-backdrop-filter: blur(15px);
-  backdrop-filter: blur(15px);
-  left: 50%;
-  filter: invert(100%);
-  bottom: 30px;
-  transform: translateX(-50%);
-}
-.btn {
-  background-size: 25px;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  color: #fff;
-  font-size: 20px;
-  font-family: "Noto Sans TC", sans-serif;
-  font-weight: 400;
-  border-radius: 15px;
-  -webkit-user-select: none;
-}
-.shutter {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 55px;
-  height: 55px;
-  background: rgba(255, 255, 255, 0.6)
-    url(https://erichsia7.github.io/colors/ico_min/camera.png);
-  background-size: 25px;
-  background-position: center;
-  background-repeat: no-repeat;
-  -webkit-backdrop-filter: blur(15px);
-  backdrop-filter: blur(15px);
-  border-radius: 99em;
-  filter: invert(100%);
-  -webkit-user-select: none;
-}
-.result {
-  position:fixed;
-  top:0px;
-  left:0px;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.3);
-  -webkit-backdrop-filter: blur(15px);
-  backdrop-filter: blur(15px);
-  display:none;
-  -webkit-user-select: none;
-}
-.rttitle {
-  position:absolute;
-  top:0px;
-  left:0px;
-  width:100%;
-  height:70px;
-  display: flex;
-justify-content: center;
-align-items: center;
-  color:#fff;
-  font-size:20px;
-  font-family: "Noto Sans TC", sans-serif;
-  font-weight:700;
-  -webkit-user-select: none;
-}
-.rtbox {
-  position:absolute;
-  top:70px;
-  left:0px;
-  width:100%;
-  height:calc(100% - 70px);
-  -webkit-user-select: none;
-}
-.lt {
-  position:absolute;
-  top:0px;
-  left:50%;
-  transform:translateX(-50%);
-  width:clamp(230px,90%,350px);
-  max-height:calc(100% - 70px);
-  overflow:scroll;
-  -webkit-user-select: none;
-}
-.lty {
-  color:#fff;
-  width:100%;
-  height:45px;
-  position:relative;
-  margin-top:10px;
-  -webkit-user-select: none;
-}
-.lt_c {
-  position:absolute;
-  top:0px;
-  left:0px;
-  height:45px;
-  width:45px;
-  background:var(--gt-b);
-  border-radius:15px;
-  -webkit-user-select: none;
-}
-.lt_ti {
-  position:absolute;
-  top:0px;
-  left:50px;
-  height:100%;
-  display: flex;
-  align-items: center;
-  width:calc(100% - 50px - 105px);
-  font-size:20px;
-  font-family: "Noto Sans TC", sans-serif;
-  font-weight:500;
-  -webkit-user-select: none;
-}
-.lt_vi {
-  position:absolute;
-  top:50%;
-  right:0px;
-  transform:translateY(-50%);
-  width:calc(100% - 50px - (100% - 50px - 105px) - 5px);
-  display: flex;
-justify-content: center;
-align-items: center;
-  font-size:20px;
-  font-family: "Noto Sans TC", sans-serif;
-  font-weight:500;
-  height:35px;
-  border-radius:15px;
-  border:1px #fff solid;
-  -webkit-user-select: none;
-}
-	
-.ladbar {
-background:#fff;
-position:fixed;
-top:0px;
-left:0px;
-width:0px;
-height:1.3px;
-transition:width 0.3s ,background 0s;
-}
-/*test*/
-	.morebtn {
-  background:rgba(255,255,255,0.6) url(https://erichsia7.github.io/colors/ico_min/more.png);
-  -webkit-backdrop-filter: blur(15px);
-  backdrop-filter: blur(15px);
-  position:fixed;
-  top:15px;
-  right:15px;
-  filter: invert(100%);
-  background-size:25px;
-  background-position:center;
-  background-repeat:no-repeat;
-  border-radius:15px;
-  font-weight:medium;
-  font-family: 'Noto Sans TC', sans-serif;
-  font-size:1.3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color:#333;
-  width:40px;
-  height:40px;
-  -webkit-user-select: none;
-}
-.moreopt {
-  position:fixed;
-  top:60px;
-  right:15px;
-  -webkit-backdrop-filter: blur(15px);
-  backdrop-filter: blur(15px);
-  background: rgba(0,0,0,0.6);
-  height:calc(var(--list-count) * 40px);
-  width:200px;
-  border-radius:15px;
-  transform-origin: 100% 0%;
-  transform:scale(0);
-  display:none;
-  transition:0.3s;
-  opacity:0;
-  transition-timing-function: ease;
-  overflow:hidden;
-  -webkit-user-select: none;
-}
-.moreopt li {
-  list-style:none;
-  font-size:20px;
-  height:40px;
-  margin:0px;
-  padding-left:10px;
-  width:calc(100% - 10px);
-  color:#fff;
-  display: flex;
-  align-items: center;
-  border-bottom:1px rgba(255,255,255,0.3) solid;
-  -webkit-user-select: none;
-}
-.moreoptbg {
-  position:fixed;
-  top:0px;
-  left:0px;
-  width:100%;
-  height:100%;
-  background:rgba(0, 0, 0,0);
-  display:none;
-  -webkit-user-select: none;
-}
-	/*testend*/
+  body {
+    -webkit-user-select: none;
+    background: #000;
+  }
+
+  .camera_box {
+    background: #000;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    -webkit-user-select: none;
+  }
+
+  .video_window {
+    background: #000;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    -webkit-user-select: none;
+  }
+
+  .video_window video {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    -webkit-user-select: none;
+  }
+
+  .mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, 0);
+    -webkit-user-select: none;
+  }
+
+  .hidden_box {
+    display: none;
+    -webkit-user-select: none;
+  }
+
+  .back {
+    background: rgba(0, 0, 0, 0.6) url(https://erichsia7.github.io/colors/arrow-right-light.png);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    left: 15px;
+    top: 15px;
+    transform: rotate(180deg);
+  }
+
+  .option {
+    background: rgba(255, 255, 255, 0.6) url(https://erichsia7.github.io/colors/ico_min/more.png);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    right: 15px;
+    filter: invert(100%);
+    top: 15px;
+  }
+
+  .close {
+    background: rgba(255, 255, 255, 0.6) url(https://erichsia7.github.io/colors/ico_min/close2.png);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    left: 50%;
+    filter: invert(100%);
+    bottom: 30px;
+    transform: translateX(-50%);
+  }
+
+  .btn {
+    background-size: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    font-size: 20px;
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 400;
+    border-radius: 15px;
+    -webkit-user-select: none;
+  }
+
+  .shutter {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 55px;
+    height: 55px;
+    background: rgba(255, 255, 255, 0.6) url(https://erichsia7.github.io/colors/ico_min/camera.png);
+    background-size: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    border-radius: 99em;
+    filter: invert(100%);
+    -webkit-user-select: none;
+  }
+
+  .result {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    display: none;
+    -webkit-user-select: none;
+  }
+
+  .rttitle {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 700;
+    -webkit-user-select: none;
+  }
+
+  .rtbox {
+    position: absolute;
+    top: 70px;
+    left: 0px;
+    width: 100%;
+    height: calc(100% - 70px);
+    -webkit-user-select: none;
+  }
+
+  .lt {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(230px, 90%, 350px);
+    max-height: calc(100% - 70px);
+    overflow: scroll;
+    -webkit-user-select: none;
+  }
+
+  .lty {
+    color: #fff;
+    width: 100%;
+    height: 45px;
+    position: relative;
+    margin-top: 10px;
+    -webkit-user-select: none;
+  }
+
+  .lt_c {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 45px;
+    width: 45px;
+    background: var(--gt-b);
+    border-radius: 15px;
+    -webkit-user-select: none;
+  }
+
+  .lt_ti {
+    position: absolute;
+    top: 0px;
+    left: 50px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: calc(100% - 50px - 105px);
+    font-size: 20px;
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 500;
+    -webkit-user-select: none;
+  }
+
+  .lt_vi {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    width: calc(100% - 50px - (100% - 50px - 105px) - 5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 500;
+    height: 35px;
+    border-radius: 15px;
+    border: 1px #fff solid;
+    -webkit-user-select: none;
+  }
+
+  .ladbar {
+    background: #fff;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 1.3px;
+    transition: width 0.3s, background 0s;
+  }
+
+  /*test*/
+  .morebtn {
+    background: rgba(255, 255, 255, 0.6) url(https://erichsia7.github.io/colors/ico_min/more.png);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    filter: invert(100%);
+    background-size: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    font-weight: medium;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    width: 40px;
+    height: 40px;
+    -webkit-user-select: none;
+  }
+
+  .moreopt {
+    position: fixed;
+    top: 60px;
+    right: 15px;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    background: rgba(0, 0, 0, 0.6);
+    height: calc(var(--list-count) * 40px);
+    width: 200px;
+    border-radius: 15px;
+    transform-origin: 100% 0%;
+    transform: scale(0);
+    display: none;
+    transition: 0.3s;
+    opacity: 0;
+    transition-timing-function: ease;
+    overflow: hidden;
+    -webkit-user-select: none;
+  }
+
+  .moreopt li {
+    list-style: none;
+    font-size: 20px;
+    height: 40px;
+    margin: 0px;
+    padding-left: 10px;
+    width: calc(100% - 10px);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px rgba(255, 255, 255, 0.3) solid;
+    -webkit-user-select: none;
+  }
+
+  .moreoptbg {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    display: none;
+    -webkit-user-select: none;
+  }
+
+  /*testend*/
 </style>
 
 <div class="hidden_box"></div>
@@ -321,366 +343,372 @@ transition:width 0.3s ,background 0s;
 
 <div class="ladbar" style="display:none;"></div>
 <script>
-/*
-lade = 0 ;
-function ladbaradd() {
-lade += 5+Math.floor(Math.random() * 2) ;
-$('.ladbar').css({'width':lade + '%'});
-if(lade > 80) {
-clearInterval(ladbar);
-}
-}
-ladbaradd();
-var ladbar = setInterval(ladbaradd,300);
-
-$(document).ready(function() {
-setTimeout(function() {
-clearInterval(ladbar);
-$('.ladbar').css({'width':'105%','transition':'0.7s'});
-},1000);
-
-setTimeout(function() {
-$('.ladbar').css({'opacity':'0'});
-},1500);
-
-setTimeout(function() {
-$('.ladbar').css({'display':'none'});
-},2300);
-});
-*/
-</script>
-<script>
-/*
-var td = new Date()
-var tddate = td.getFullYear() + '-' + (td.getMonth()+1) + '-' + td.getDate()
-var tdna = 'c_data_usage_' + tddate
-if(localStorage.getItem(tdna) === null) {
-var datausage = 0
-}
-else {
-var datausage = parseInt(localStorage.getItem(tdna))
-}
-$(document).ajaxSuccess(function(event, xhr, settings) {
-  datausage = datausage+(xhr.responseText.length)
-  localStorage.setItem(tdna,datausage)
-});
-*/
-</script>
-<script>
- 
-
-function genid(mode) {
-if(mode === "random"){
-var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
-            var genid = "";
-            for (var i = 0; i < 16; i++) {
-                var genrandomNumber = Math.floor(Math.random() * genidchars.length);
-                genid += genidchars.substring(genrandomNumber, genrandomNumber + 1);
-            }
-  return genid ;
-}
-          
- if(mode === "time"){
-   var gtoday=new Date();
-   var genid2 = (gtoday.getMonth()+1) + '_' + gtoday.getDate() + '_' + gtoday.getHours() + '_' + gtoday.getMinutes() + '_' + gtoday.getSeconds() + '-' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8));
-   
-   return genid2
- }
-  
-  if(mode === "number"){
-   
-   var genid3 = '' ;
-for (var i = 0; i < 16; i++) {
-  genid3 += '' + (0+Math.floor(Math.random() * 9))
-}
-   return genid3
- }
-  
-  if(mode === "uuid"){
-var genidchars4 = "abcdef012345678";
-    var geniduu = [8,4,4,4,12];
-            var genid4 = "";
-            var genid5 = "";
-    for (var ia = 0; ia < geniduu.length; ia++) {
-      var genid4 = "";
-            for (var i = 0; i < geniduu[ia]; i++) {
-                var genrandomNumber4 = Math.floor(Math.random() * genidchars4.length);
-                genid4 += genidchars4.substring(genrandomNumber4, genrandomNumber4 + 1);
-            }
-genid5 += '-' + genid4 ;
-    }
-    return genid5.substring(1,genid5.length)
+  /*
+  lade = 0 ;
+  function ladbaradd() {
+  lade += 5+Math.floor(Math.random() * 2) ;
+  $('.ladbar').css({'width':lade + '%'});
+  if(lade > 80) {
+  clearInterval(ladbar);
   }
-
-}
-
-function componentToHex(c) {
-  var hex = c.toString(16);
-  return hex.length == 1 ? "0" + hex : hex;
-}
-
-function rgbToHex(r, g, b) {
-  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-}
-
-window.onload = function() {
-  var vidw = $('.video_window')
-  Webcam.set({
-image_format: 'jpeg',
-jpeg_quality: 90,
-constraints: {
-video: true,
-facingMode: "environment"
-}
-});
-Webcam.attach('.video_window');
- 
-}
-
-
-function shutter() {
-  Webcam.snap(function(data_uri) {
-    var juid = 'i-' + genid('random')
-    $('.hidden_box').html('<img src="' + data_uri + '" id="' + juid + '">') ;
-    $('.result').css({'display':'block'})
-    $('.option,.back,.shutter').css({'display':'none'})
-    //$('.lt').html('')
-    var img = document.querySelector('#' + juid);
-    
-    
-    img.addEventListener('load',function() {
-       var colorThief = new ColorThief();
-    // Make sure image is finished loading
-    if (img.complete) {
-      
-      var imgcolorpalette = colorThief.getPalette(img) ;
-      var paltarr = []
-      for (var i = 0; i < imgcolorpalette.length; i++) {
-	var drft = genid('random');
-        //$('.lt').append('<li><div class="palettelistb mgl" style="background:' + rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2]) + '"></div><div class="text mgl">' + rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2]) + '</div><div class="openbtn" id="' + drft + '" hexbase64="' + btoa(rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2])) + '">查看</div></li>');
-	//$('.openbtn#' + drft).click(function() {
-	//window.open('https://erichsia7.github.io/colors/?s=1&c=' + $(this).attr('hexbase64') + '&open=camera&r=' + genid('random'))
-	//});
-        
-       $('.lt').append('<div class="lty"><div class="lt_c" style="--gt-b:' + rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2]) + '"></div><div class="lt_ti">' + rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2]) + '</div><div class="lt_vi" id="' + drft + '" hexbase64="' + btoa(rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2])) + '">查看顏色</div></div>')
-       $('.lt_vi#' + drft).click(function() {
-	 window.open('https://erichsia7.github.io/colors/?s=1&c=' + $(this).attr('hexbase64') + '&open=camera&r=' + genid('random'))
-       });
-      }
-      //$('.lt').html(paltarr.join(''))
-    } else {
-      
-    }
-      
-      
-     
-    });
-  })
-}
-
-$('.shutter').click(function() {
-  shutter()
-})
-$('.close').click(function() {
-  $('.result').css({'display':'none'})
-  $('.lt').html('')
-    $('.option,.back,.shutter').css({'display':'block'})
-})
- 
-
-$('.back').click(function() {
-location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
-});
-$('li[g="reload"]').click(function() {
-location.href = 'https://erichsia7.github.io/colors/camera/?r=' + genid('random')
-});
-$('li[g="back"]').click(function() {
-location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
-});
-
-var moreoptd = '0' ;
-$('.option').click(function() {
-  if(moreoptd === '0') {
-   $('.moreoptbg').fadeIn(1);
- $('.moreopt').css({'display':'block'});
-  setTimeout(function() {   $('.moreopt').css({'transform':'scale(1.02)','opacity':'1','border-radius':'15px'});
-  },1);
-    setTimeout(function() {   $('.moreopt').css({'transform':'scale(0.99)','opacity':'1','border-radius':'15px','transitio':'0.2s'});
-  },300);
-    setTimeout(function() {   $('.moreopt').css({'transform':'scale(1)'});
-  },500);
-    moreoptd = '1' ;
+  }
+  ladbaradd();
+  var ladbar = setInterval(ladbaradd,300);
+  
+  $(document).ready(function() {
+  setTimeout(function() {
+  clearInterval(ladbar);
+  $('.ladbar').css({'width':'105%','transition':'0.7s'});
+  },1000);
+  
+  setTimeout(function() {
+  $('.ladbar').css({'opacity':'0'});
+  },1500);
+  
+  setTimeout(function() {
+  $('.ladbar').css({'display':'none'});
+  },2300);
+  });
+  */
+</script>
+<script>
+  /*
+  var td = new Date()
+  var tddate = td.getFullYear() + '-' + (td.getMonth()+1) + '-' + td.getDate()
+  var tdna = 'c_data_usage_' + tddate
+  if(localStorage.getItem(tdna) === null) {
+  var datausage = 0
   }
   else {
-   $('.moreoptbg').fadeOut(1);
-  $('.moreopt').css({'transform':'scale(0)','opacity':'0','border-radius':'30px'});
-  setTimeout(function() {   $('.moreopt').css({'display':'none'});
-  },300)
-    moreoptd = '0'
+  var datausage = parseInt(localStorage.getItem(tdna))
   }
-});
-$('.moreoptbg').click(function() {
-  $('.moreoptbg').fadeOut(1);
-  $('.moreopt').css({'transform':'scale(0)','opacity':'0','border-radius':'30px'});
-  setTimeout(function() {   $('.moreopt').css({'display':'none'});
-  },300)
-  moreoptd = '0'
-});
+  $(document).ajaxSuccess(function(event, xhr, settings) {
+    datausage = datausage+(xhr.responseText.length)
+    localStorage.setItem(tdna,datausage)
+  });
+  */
+</script>
+<script>
+
+
+  function genid(mode) {
+    if (mode === "random") {
+      var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
+      var genid = "";
+      for (var i = 0; i < 16; i++) {
+        var genrandomNumber = Math.floor(Math.random() * genidchars.length);
+        genid += genidchars.substring(genrandomNumber, genrandomNumber + 1);
+      }
+      return genid;
+    }
+
+    if (mode === "time") {
+      var gtoday = new Date();
+      var genid2 = (gtoday.getMonth() + 1) + '_' + gtoday.getDate() + '_' + gtoday.getHours() + '_' + gtoday.getMinutes() + '_' + gtoday.getSeconds() + '-' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8));
+
+      return genid2
+    }
+
+    if (mode === "number") {
+
+      var genid3 = '';
+      for (var i = 0; i < 16; i++) {
+        genid3 += '' + (0 + Math.floor(Math.random() * 9))
+      }
+      return genid3
+    }
+
+    if (mode === "uuid") {
+      var genidchars4 = "abcdef012345678";
+      var geniduu = [8, 4, 4, 4, 12];
+      var genid4 = "";
+      var genid5 = "";
+      for (var ia = 0; ia < geniduu.length; ia++) {
+        var genid4 = "";
+        for (var i = 0; i < geniduu[ia]; i++) {
+          var genrandomNumber4 = Math.floor(Math.random() * genidchars4.length);
+          genid4 += genidchars4.substring(genrandomNumber4, genrandomNumber4 + 1);
+        }
+        genid5 += '-' + genid4;
+      }
+      return genid5.substring(1, genid5.length)
+    }
+
+  }
+
+  function componentToHex(c) {
+    var hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+  }
+
+  function rgbToHex(r, g, b) {
+    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+  }
+
+  window.onload = function () {
+    var vidw = $('.video_window')
+    Webcam.set({
+      image_format: 'jpeg',
+      jpeg_quality: 90,
+      constraints: {
+        video: true,
+        facingMode: "environment"
+      }
+    });
+    Webcam.attach('.video_window');
+
+  }
+
+
+  function shutter() {
+    Webcam.snap(function (data_uri) {
+      var juid = 'i-' + genid('random')
+      $('.hidden_box').html('<img src="' + data_uri + '" id="' + juid + '">');
+      $('.result').css({ 'display': 'block' })
+      $('.option,.back,.shutter').css({ 'display': 'none' })
+      //$('.lt').html('')
+      var img = document.querySelector('#' + juid);
+
+
+      img.addEventListener('load', function () {
+        var colorThief = new ColorThief();
+        // Make sure image is finished loading
+        if (img.complete) {
+
+          var imgcolorpalette = colorThief.getPalette(img);
+          var paltarr = []
+          for (var i = 0; i < imgcolorpalette.length; i++) {
+            var drft = genid('random');
+            //$('.lt').append('<li><div class="palettelistb mgl" style="background:' + rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2]) + '"></div><div class="text mgl">' + rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2]) + '</div><div class="openbtn" id="' + drft + '" hexbase64="' + btoa(rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2])) + '">查看</div></li>');
+            //$('.openbtn#' + drft).click(function() {
+            //window.open('https://erichsia7.github.io/colors/?s=1&c=' + $(this).attr('hexbase64') + '&open=camera&r=' + genid('random'))
+            //});
+
+            $('.lt').append('<div class="lty"><div class="lt_c" style="--gt-b:' + rgbToHex(imgcolorpalette[i][0], imgcolorpalette[i][1], imgcolorpalette[i][2]) + '"></div><div class="lt_ti">' + rgbToHex(imgcolorpalette[i][0], imgcolorpalette[i][1], imgcolorpalette[i][2]) + '</div><div class="lt_vi" id="' + drft + '" hexbase64="' + btoa(rgbToHex(imgcolorpalette[i][0], imgcolorpalette[i][1], imgcolorpalette[i][2])) + '">查看顏色</div></div>')
+            $('.lt_vi#' + drft).click(function () {
+              window.open('https://erichsia7.github.io/colors/?s=1&c=' + $(this).attr('hexbase64') + '&open=camera&r=' + genid('random'))
+            });
+          }
+          //$('.lt').html(paltarr.join(''))
+        } else {
+
+        }
+
+
+
+      });
+    })
+  }
+
+  $('.shutter').click(function () {
+    shutter()
+  })
+  $('.close').click(function () {
+    $('.result').css({ 'display': 'none' })
+    $('.lt').html('')
+    $('.option,.back,.shutter').css({ 'display': 'block' })
+  })
+
+
+  $('.back').click(function () {
+    location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
+  });
+  $('li[g="reload"]').click(function () {
+    location.href = 'https://erichsia7.github.io/colors/camera/?r=' + genid('random')
+  });
+  $('li[g="back"]').click(function () {
+    location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
+  });
+
+  var moreoptd = '0';
+  $('.option').click(function () {
+    if (moreoptd === '0') {
+      $('.moreoptbg').fadeIn(1);
+      $('.moreopt').css({ 'display': 'block' });
+      setTimeout(function () {
+        $('.moreopt').css({ 'transform': 'scale(1.02)', 'opacity': '1', 'border-radius': '15px' });
+      }, 1);
+      setTimeout(function () {
+        $('.moreopt').css({ 'transform': 'scale(0.99)', 'opacity': '1', 'border-radius': '15px', 'transitio': '0.2s' });
+      }, 300);
+      setTimeout(function () {
+        $('.moreopt').css({ 'transform': 'scale(1)' });
+      }, 500);
+      moreoptd = '1';
+    }
+    else {
+      $('.moreoptbg').fadeOut(1);
+      $('.moreopt').css({ 'transform': 'scale(0)', 'opacity': '0', 'border-radius': '30px' });
+      setTimeout(function () {
+        $('.moreopt').css({ 'display': 'none' });
+      }, 300)
+      moreoptd = '0'
+    }
+  });
+  $('.moreoptbg').click(function () {
+    $('.moreoptbg').fadeOut(1);
+    $('.moreopt').css({ 'transform': 'scale(0)', 'opacity': '0', 'border-radius': '30px' });
+    setTimeout(function () {
+      $('.moreopt').css({ 'display': 'none' });
+    }, 300)
+    moreoptd = '0'
+  });
 
   //userid
   function systeminfodata(uid) {
-  var nav = window.navigator ;
-   gtag('event', 'user_system_appcodename', {
-    'event_category': nav.appCodeName,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_appname', {
-    'event_category': nav.appName,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_appver', {
-    'event_category': nav.appVersion,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_lang', {
-    'event_category': nav.language,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_platform', {
-    'event_category': nav.platform,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-	
-	gtag('event', 'user_system_product', {
-    'event_category': nav.product,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_productsub', {
-    'event_category': nav.productSub,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_useragent', {
-    'event_category': nav.userAgent,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-	
-	gtag('event', 'user_system_vendor', {
-    'event_category': nav.vendor,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    }
-  });
+    var nav = window.navigator;
+    gtag('event', 'user_system_appcodename', {
+      'event_category': nav.appCodeName,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_appname', {
+      'event_category': nav.appName,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_appver', {
+      'event_category': nav.appVersion,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_lang', {
+      'event_category': nav.language,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_platform', {
+      'event_category': nav.platform,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_product', {
+      'event_category': nav.product,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_productsub', {
+      'event_category': nav.productSub,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_useragent', {
+      'event_category': nav.userAgent,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_vendor', {
+      'event_category': nav.vendor,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+      }
+    });
   }
 
-  var user_id ;
-  if(localStorage.getItem('user_id_r') === '1') {
-    user_id = localStorage.getItem('user_id') ;
+  var user_id;
+  if (localStorage.getItem('user_id_r') === '1') {
+    user_id = localStorage.getItem('user_id');
     gtag('event', 'user_start', {
-    'event_category': 'count',
-    'event_label': user_id,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    //systeminfodata(user_id)
-    }
-  });
+      'event_category': 'count',
+      'event_label': user_id,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+        //systeminfodata(user_id)
+      }
+    });
   }
   else {
-  var user_id_chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            user_id = "";
-            for (var useridi = 0; useridi < 64; useridi++) {
-                var user_id_randomNumber = Math.floor(Math.random() * user_id_chars.length);
-                user_id += user_id_chars.substring(user_id_randomNumber, user_id_randomNumber + 1);
-            }
-  localStorage.setItem('user_id_r', '1');
-  localStorage.setItem('user_id',user_id);
-   
-   gtag('event', 'user_start', {
-    'event_category': 'count',
-    'event_label': user_id,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    systeminfodata(user_id)
+    var user_id_chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    user_id = "";
+    for (var useridi = 0; useridi < 64; useridi++) {
+      var user_id_randomNumber = Math.floor(Math.random() * user_id_chars.length);
+      user_id += user_id_chars.substring(user_id_randomNumber, user_id_randomNumber + 1);
     }
-  });
-    
+    localStorage.setItem('user_id_r', '1');
+    localStorage.setItem('user_id', user_id);
+
+    gtag('event', 'user_start', {
+      'event_category': 'count',
+      'event_label': user_id,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+        systeminfodata(user_id)
+      }
+    });
+
   }
   //useridend
- //darkmode
-let darkmodematched = window.matchMedia('(prefers-color-scheme: dark)').matches;
-var darkmodematchedstr = 'undefined' ;
-if(darkmodematched) {
-  darkmodematchedstr = 'true' ;
-}
-else {
-	darkmodematchedstr = 'false' ;
-}
-  
+  //darkmode
+  let darkmodematched = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  var darkmodematchedstr = 'undefined';
+  if (darkmodematched) {
+    darkmodematchedstr = 'true';
+  }
+  else {
+    darkmodematchedstr = 'false';
+  }
+
   gtag('event', 'dark_mode', {
     'event_category': darkmodematchedstr,
     'event_label': user_id,
     'transport_type': 'beacon',
-    'event_callback': function(){
-    
+    'event_callback': function () {
+
     }
   });
-  
+
   //darkmodeend
 
-	
-	
-  $(document).ready(function() {
+
+
+  $(document).ready(function () {
     //test
-        var googlefontloadtime = new Date().getTime() ;
-        if(googlefontloadtime-parseInt(localStorage.getItem('googlefontNotoSansTCloaded')) < 2592000000) {
-  $('body').append('<style>' + localStorage.getItem('googlefontNotoSansTC') + '</style>');
-}
-else {
- $.ajax({type:'get',url:"https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap",dataType:'text',success:function(e) {
-  var googlefontloadtimedd = new Date().getTime() ;
-  localStorage.setItem('googlefontNotoSansTC', e); localStorage.setItem('googlefontNotoSansTCloaded', googlefontloadtimedd);
-   $('body').append('<style>' + e + '</style>');
-   }
-}); 
-}
+    var googlefontloadtime = new Date().getTime();
+    if (googlefontloadtime - parseInt(localStorage.getItem('googlefontNotoSansTCloaded')) < 2592000000) {
+      $('body').append('<style>' + localStorage.getItem('googlefontNotoSansTC') + '</style>');
+    }
+    else {
+      $.ajax({
+        type: 'get', url: "https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap", dataType: 'text', success: function (e) {
+          var googlefontloadtimedd = new Date().getTime();
+          localStorage.setItem('googlefontNotoSansTC', e); localStorage.setItem('googlefontNotoSansTCloaded', googlefontloadtimedd);
+          $('body').append('<style>' + e + '</style>');
+        }
+      });
+    }
   });
 
 

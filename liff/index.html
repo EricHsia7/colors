@@ -1,15 +1,16 @@
 <meta charset="UTF-8">
 <title>Colors</title>
+
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-342D6M2MKX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-342D6M2MKX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-342D6M2MKX');
-</script>
+    gtag('config', 'G-342D6M2MKX');
+  </script>
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -23,203 +24,205 @@
 <span id="text"></span>
 <div style="position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);display:none;" id="clb">
   <center>
-<div style="width:120px;height:45px;background:#f5f5f5;border-radius:12px;display: flex;justify-content: center;align-items: center;font-size:18px;font-weight:bold;" id="close">關閉</div>
-  <p style="color:#888">若沒有自動關閉，請點擊"關閉"按鈕。</p>
+    <div
+      style="width:120px;height:45px;background:#f5f5f5;border-radius:12px;display: flex;justify-content: center;align-items: center;font-size:18px;font-weight:bold;"
+      id="close">關閉</div>
+    <p style="color:#888">若沒有自動關閉，請點擊"關閉"按鈕。</p>
   </center>
 </div>
 <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 <script>
   var getUrlString = location.href;
-var url = new URL(getUrlString);
-var co = atob(url.searchParams.get('c')) ;
-  
-  
+  var url = new URL(getUrlString);
+  var co = atob(url.searchParams.get('c'));
+
+
   function genid(mode) {
-if(mode === "random"){
-var genidchars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            var genid = "";
-            for (var i = 0; i < 16; i++) {
-                var genrandomNumber = Math.floor(Math.random() * genidchars.length);
-                genid += genidchars.substring(genrandomNumber, genrandomNumber + 1);
-            }
-  return genid ;
-}
-          
- if(mode === "time"){
-   var gtoday=new Date();
-   var genid2 = (gtoday.getMonth()+1) + '_' + gtoday.getDate() + '_' + gtoday.getHours() + '_' + gtoday.getMinutes() + '_' + gtoday.getSeconds() + '-' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8));
-   
-   return genid2
- }
-  
-  if(mode === "number"){
-   
-   var genid3 = '' ;
-for (var i = 0; i < 16; i++) {
-  genid3 += '' + (0+Math.floor(Math.random() * 9))
-}
-   return genid3
- }
-  
-  if(mode === "uuid"){
-var genidchars4 = "abcdef012345678";
-    var geniduu = [8,4,4,4,12];
-            var genid4 = "";
-            var genid5 = "";
-    for (var ia = 0; ia < geniduu.length; ia++) {
-      var genid4 = "";
-            for (var i = 0; i < geniduu[ia]; i++) {
-                var genrandomNumber4 = Math.floor(Math.random() * genidchars4.length);
-                genid4 += genidchars4.substring(genrandomNumber4, genrandomNumber4 + 1);
-            }
-genid5 += '-' + genid4 ;
+    if (mode === "random") {
+      var genidchars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      var genid = "";
+      for (var i = 0; i < 16; i++) {
+        var genrandomNumber = Math.floor(Math.random() * genidchars.length);
+        genid += genidchars.substring(genrandomNumber, genrandomNumber + 1);
+      }
+      return genid;
     }
-    return genid5.substring(1,genid5.length)
+
+    if (mode === "time") {
+      var gtoday = new Date();
+      var genid2 = (gtoday.getMonth() + 1) + '_' + gtoday.getDate() + '_' + gtoday.getHours() + '_' + gtoday.getMinutes() + '_' + gtoday.getSeconds() + '-' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8));
+
+      return genid2
+    }
+
+    if (mode === "number") {
+
+      var genid3 = '';
+      for (var i = 0; i < 16; i++) {
+        genid3 += '' + (0 + Math.floor(Math.random() * 9))
+      }
+      return genid3
+    }
+
+    if (mode === "uuid") {
+      var genidchars4 = "abcdef012345678";
+      var geniduu = [8, 4, 4, 4, 12];
+      var genid4 = "";
+      var genid5 = "";
+      for (var ia = 0; ia < geniduu.length; ia++) {
+        var genid4 = "";
+        for (var i = 0; i < geniduu[ia]; i++) {
+          var genrandomNumber4 = Math.floor(Math.random() * genidchars4.length);
+          genid4 += genidchars4.substring(genrandomNumber4, genrandomNumber4 + 1);
+        }
+        genid5 += '-' + genid4;
+      }
+      return genid5.substring(1, genid5.length)
+    }
+
+  }
+  function componentToHex(c) {
+    var hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
   }
 
-}
-function componentToHex(c) {
-  var hex = c.toString(16);
-  return hex.length == 1 ? "0" + hex : hex;
-}
+  function rgbToHex(r, g, b) {
+    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+  }
+  function hexToRgb(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16)
+    } : null;
+  }
 
-function rgbToHex(r, g, b) {
-  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-}
-function hexToRgb(hex) {
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result ? {
-    r: parseInt(result[1], 16),
-    g: parseInt(result[2], 16),
-    b: parseInt(result[3], 16)
-  } : null;
-}
-  
-  
-  
-liff.init({
+
+
+  liff.init({
     liffId: "1656197609-DznLgN7A" // Use own liffId
   })
-  .then(() => {
-    // Start to use liff's api
-  //login
-  if (!liff.isLoggedIn()) {
-  liff.login({ redirectUri: "https://erichsia7.github.io/colors/liff/" });
-}
-  //getname
-  
-  liff.getProfile()
-.then(profile => {
-  const name = profile.displayName ;
-    
-  //share
-  if (liff.isApiAvailable('shareTargetPicker')) {
-  liff.shareTargetPicker([
-{
-  "type": "flex",
-  "altText": name + "向您傳送了Colors",
-  "contents": {
-    "type": "bubble",
-    "hero": {
-        "type": "image",
-        "url": "https://singlecolorimage.com/get/" + co.split('#')[1] + "/100x100",
-        "size": "full",
-        "aspectRatio": "23:13",
-        "aspectMode": "cover"
-    },
-    "body": {
-      "type": "box",
-      "layout": "vertical",
-      "contents": [
-    {
-                "type": "text",
-                "text": co,
-                "weight": "bold",
-                "size": "xl"
-     },
-     {
-        "type": "text",
-        "text": " ",
-        "size": "xs"
-      },
-      {
-                "type": "button",
-                "style": "secondary",
-                "height": "sm",
-                "action": {
-                    "type": "uri",
-                    "label": "查看",
-                    "uri": "https://line.me/R/app/1656197609-1DNP6Krg?s=1&c=" + btoa(co) + '&r=' + genid('random')
-                }
-            },
-            {
-        "type": "text",
-        "text": " ",
-        "size": "xs"
-            },
-            {
-                "type": "button",
-                "style": "secondary",
-                "height": "sm",
-                "action": {
-                    "type": "uri",
-                    "label": "分享",
-                    "uri": "http://line.me/R/app/1656197609-DznLgN7A?c=" + btoa(co)
-                }
-            }
-        
-        
-        
-      ]
-    }
-  }
-}
-    ])
-    .then(function (res) {
-      if (res) {
-        setTimeout(function() {
-liff.closeWindow();
-        },1);
-        // succeeded in sending a message through TargetPicker
-        console.log(`[${res.status}] Message sent!`);
-        
-      } else {
-        const [majorVer, minorVer] = (liff.getLineVersion() || "").split('.');
-        if (parseInt(majorVer) == 10 && parseInt(minorVer) < 11) {
-          // LINE 10.3.0 - 10.10.0
-          // Old LINE will access here regardless of user's action
-          console.log('TargetPicker was opened at least. Whether succeeded to send message is unclear');
-          setTimeout(function() {
-liff.closeWindow();
-        },1);
-        } else {
-          // LINE 10.11.0 -
-          // sending message canceled
-          console.log('TargetPicker was closed!');
-          setTimeout(function() {
-liff.closeWindow();
-        },1);
-        }
+    .then(() => {
+      // Start to use liff's api
+      //login
+      if (!liff.isLoggedIn()) {
+        liff.login({ redirectUri: "https://erichsia7.github.io/colors/liff/" });
       }
-    }).catch(function (error) {
-      // something went wrong before sending a message
-      console.log('something wrong happen');
-    alert('something wrong happen');
-    setTimeout(function() {
-liff.closeWindow();
-        },1);
+      //getname
+
+      liff.getProfile()
+        .then(profile => {
+          const name = profile.displayName;
+
+          //share
+          if (liff.isApiAvailable('shareTargetPicker')) {
+            liff.shareTargetPicker([
+              {
+                "type": "flex",
+                "altText": name + "向您傳送了Colors",
+                "contents": {
+                  "type": "bubble",
+                  "hero": {
+                    "type": "image",
+                    "url": "https://singlecolorimage.com/get/" + co.split('#')[1] + "/100x100",
+                    "size": "full",
+                    "aspectRatio": "23:13",
+                    "aspectMode": "cover"
+                  },
+                  "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": co,
+                        "weight": "bold",
+                        "size": "xl"
+                      },
+                      {
+                        "type": "text",
+                        "text": " ",
+                        "size": "xs"
+                      },
+                      {
+                        "type": "button",
+                        "style": "secondary",
+                        "height": "sm",
+                        "action": {
+                          "type": "uri",
+                          "label": "查看",
+                          "uri": "https://line.me/R/app/1656197609-1DNP6Krg?s=1&c=" + btoa(co) + '&r=' + genid('random')
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "text": " ",
+                        "size": "xs"
+                      },
+                      {
+                        "type": "button",
+                        "style": "secondary",
+                        "height": "sm",
+                        "action": {
+                          "type": "uri",
+                          "label": "分享",
+                          "uri": "http://line.me/R/app/1656197609-DznLgN7A?c=" + btoa(co)
+                        }
+                      }
+
+
+
+                    ]
+                  }
+                }
+              }
+            ])
+              .then(function (res) {
+                if (res) {
+                  setTimeout(function () {
+                    liff.closeWindow();
+                  }, 1);
+                  // succeeded in sending a message through TargetPicker
+                  console.log(`[${res.status}] Message sent!`);
+
+                } else {
+                  const [majorVer, minorVer] = (liff.getLineVersion() || "").split('.');
+                  if (parseInt(majorVer) == 10 && parseInt(minorVer) < 11) {
+                    // LINE 10.3.0 - 10.10.0
+                    // Old LINE will access here regardless of user's action
+                    console.log('TargetPicker was opened at least. Whether succeeded to send message is unclear');
+                    setTimeout(function () {
+                      liff.closeWindow();
+                    }, 1);
+                  } else {
+                    // LINE 10.11.0 -
+                    // sending message canceled
+                    console.log('TargetPicker was closed!');
+                    setTimeout(function () {
+                      liff.closeWindow();
+                    }, 1);
+                  }
+                }
+              }).catch(function (error) {
+                // something went wrong before sending a message
+                console.log('something wrong happen');
+                alert('something wrong happen');
+                setTimeout(function () {
+                  liff.closeWindow();
+                }, 1);
+              })
+          }
+        })
+        .catch((err) => {
+          console.log('error', err);
+        });
     })
-}
-})
-.catch((err) => {
-  console.log('error', err);
-});
-  })
-  .catch((err) => {
-    // Error happens during initialization
-    console.log(err.code, err.message);
-  });
-  $('#close').click(function() {
+    .catch((err) => {
+      // Error happens during initialization
+      console.log(err.code, err.message);
+    });
+  $('#close').click(function () {
     liff.closeWindow();
   });
   $('#clb').delay(1500).fadeIn(222);

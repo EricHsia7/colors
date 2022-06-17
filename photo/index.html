@@ -1,15 +1,16 @@
 <meta charset="UTF-8">
 <title>Colors</title>
+
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-342D6M2MKX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-342D6M2MKX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-342D6M2MKX');
-</script>
+    gtag('config', 'G-342D6M2MKX');
+  </script>
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js?1"></script>
@@ -24,275 +25,308 @@
 <link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="shortcut icon" />
 <link rel="manifest" href="manifest.json?qpipoo">
 <style>
-  * {outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-user-select:none;}
-.title {
-  background: #fff;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 55px;
-  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.05);
-  -webkit-user-select: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 700;
-  font-family: "Noto Sans TC", sans-serif;
-}
-.backbtn {
-  background: url(https://erichsia7.github.io/colors/arrow-right.png);
-  background-size: 20px;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 55px;
-  height: 55px;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  transform: rotate(180deg);
-  -webkit-appearance: none;
-  outline: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-user-select: none;
-}
-
-.box {
-  width: 100%;
-  height: calc(100% - 55px);
-  position: fixed;
-  left: 0px;
-  top: 55px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.box span {
-  margin-top: 10px;
-  font-family: "Noto Sans TC", sans-serif;
-  font-weight: 500;
-}
-.filebtn {
-  height: 45px;
-  width: 100px;
-  background: #e3e3e3;
-  border-radius: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Noto Sans TC", sans-serif;
-  font-weight: 500;
-}
-label[for="files2"] input {
-  display: none;
-}
-#drop_zone {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-}
-.dropi {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  font-family: "Noto Sans TC", sans-serif;
-  font-weight: 500;
-}
-*[hu="q"] {
-  z-index: 5;
-}
-.hidbx {
-  display:none;
-}
-.rst {
-  position:fixed;
-  top:55px;
-  left:0px;
-  width:100%;
-  height:calc(100% - 55px);
-  background:#fff;
-  display:none;
-}
-
-.rtbox {
-  position:absolute;
-  top:0px;
-  left:0px;
-  width:100%;
-  height:100%;
-  -webkit-user-select: none;
-}
-.lt {
-  position:absolute;
-  top:0px;
-  left:50%;
-  transform:translateX(-50%);
-  width:clamp(230px,90%,350px);
-  height:calc(100% - 0px);
-  overflow:scroll;
-  -webkit-user-select: none;
-}
-.lty {
-  color:#000;
-  width:100%;
-  height:45px;
-  position:relative;
-  margin-top:10px;
-  -webkit-user-select: none;
-}
-.lt_c {
-  position:absolute;
-  top:0px;
-  left:0px;
-  height:45px;
-  width:45px;
-  background:var(--gt-b);
-  border-radius:15px;
-  -webkit-user-select: none;
-}
-
-.lt_ti {
-  position:absolute;
-  top:0px;
-  left:50px;
-  height:100%;
-  display: flex;
-  align-items: center;
-  width:calc(100% - 50px - 105px);
-  font-size:20px;
-  font-family: "Noto Sans TC", sans-serif;
-  font-weight:500;
-  -webkit-user-select: none;
-  border-radius:15px;
-}
-
-.lt_vi {
-  position:absolute;
-  top:50%;
-  right:0px;
-  transform:translateY(-50%);
-  width:calc(100% - 50px - (100% - 50px - 105px) - 5px);
-  display: flex;
-justify-content: center;
-align-items: center;
-  font-size:20px;
-  font-family: "Noto Sans TC", sans-serif;
-  font-weight:500;
-  height:35px;
-  border-radius:15px;
-  border:1px #e3e3e3 solid;
-  -webkit-user-select: none;
-}
-
-.clbt {
-  width:clamp(230px,90%,350px);
-  height:45px;
-  background:#e3e3e3;
-  border-radius:15px;
-  position:absolute;
-  left:50%;
-  transform:translateX(-50%);
-  bottom:5px;
-  display: flex;
-justify-content: center;
-align-items: center;
-  font-size:20px;
-  font-family: "Noto Sans TC", sans-serif;
-  font-weight:500;
-}
-
-.close {
-  background: rgba(245, 245, 245, 0.6)
-    url(https://erichsia7.github.io/colors/ico_min/close2.png);
-  left: 50%;
-  bottom: 30px;
-  transform: translateX(-50%);
-}
-
-.btn {
-  background-size: 25px;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  color: #fff;
-  font-size: 20px;
-  font-family: "Noto Sans TC", sans-serif;
-  font-weight: 400;
-  border-radius: 15px;
-  -webkit-user-select: none;
-}
-.load .lt_vi {
-  background:#e3e3e3;
-  border:none;
-  height:45px;
-}
-.load .lt_ti {
-  background:#e3e3e3
-}
-.load .lt_c {
-  background:#e3e3e3
-}
-    @media (prefers-color-scheme: dark) {
-    body {
-    background:#1a1a1a;
+  * {
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-select: none;
   }
-.title {
-background:#1a1a1a;
-color:#fff;
- }
+
+  .title {
+    background: #fff;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 55px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.05);
+    -webkit-user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-family: "Noto Sans TC", sans-serif;
+  }
+
   .backbtn {
-filter: invert(100%);
- }
-.filebtn {
-background:#1f1f1f;
-color:#fff;
- }
-.box span {
-  color:#fff;
-}
-.rst {
-background:#1a1a1a;
-}
-.load .lt_vi {
-  background:#1f1f1f;
-  color:#fff;
-}
-.load .lt_ti {
-  background:#1f1f1f;
-  color:#fff;
-}
-.load .lt_c {
-  background:#1f1f1f;
-  color:#fff;
-}
-.lt_vi {
-  color:#fff;
-  border:1px #1f1f1f solid;
-}
-.lt_ti {
-  color:#fff;
-}
-.lt_c {
-  color:#fff;
-}
-.close {
-filter: invert(100%);
+    background: url(https://erichsia7.github.io/colors/arrow-right.png);
+    background-size: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 55px;
+    height: 55px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    transform: rotate(180deg);
+    -webkit-appearance: none;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-select: none;
   }
-.dropi {
-color:#fff;
-   }
+
+  .box {
+    width: 100%;
+    height: calc(100% - 55px);
+    position: fixed;
+    left: 0px;
+    top: 55px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .box span {
+    margin-top: 10px;
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 500;
+  }
+
+  .filebtn {
+    height: 45px;
+    width: 100px;
+    background: #e3e3e3;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 500;
+  }
+
+  label[for="files2"] input {
+    display: none;
+  }
+
+  #drop_zone {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+
+  .dropi {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 500;
+  }
+
+  *[hu="q"] {
+    z-index: 5;
+  }
+
+  .hidbx {
+    display: none;
+  }
+
+  .rst {
+    position: fixed;
+    top: 55px;
+    left: 0px;
+    width: 100%;
+    height: calc(100% - 55px);
+    background: #fff;
+    display: none;
+  }
+
+  .rtbox {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    -webkit-user-select: none;
+  }
+
+  .lt {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(230px, 90%, 350px);
+    height: calc(100% - 0px);
+    overflow: scroll;
+    -webkit-user-select: none;
+  }
+
+  .lty {
+    color: #000;
+    width: 100%;
+    height: 45px;
+    position: relative;
+    margin-top: 10px;
+    -webkit-user-select: none;
+  }
+
+  .lt_c {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 45px;
+    width: 45px;
+    background: var(--gt-b);
+    border-radius: 15px;
+    -webkit-user-select: none;
+  }
+
+  .lt_ti {
+    position: absolute;
+    top: 0px;
+    left: 50px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: calc(100% - 50px - 105px);
+    font-size: 20px;
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 500;
+    -webkit-user-select: none;
+    border-radius: 15px;
+  }
+
+  .lt_vi {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    width: calc(100% - 50px - (100% - 50px - 105px) - 5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 500;
+    height: 35px;
+    border-radius: 15px;
+    border: 1px #e3e3e3 solid;
+    -webkit-user-select: none;
+  }
+
+  .clbt {
+    width: clamp(230px, 90%, 350px);
+    height: 45px;
+    background: #e3e3e3;
+    border-radius: 15px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 500;
+  }
+
+  .close {
+    background: rgba(245, 245, 245, 0.6) url(https://erichsia7.github.io/colors/ico_min/close2.png);
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+  }
+
+  .btn {
+    background-size: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    font-size: 20px;
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 400;
+    border-radius: 15px;
+    -webkit-user-select: none;
+  }
+
+  .load .lt_vi {
+    background: #e3e3e3;
+    border: none;
+    height: 45px;
+  }
+
+  .load .lt_ti {
+    background: #e3e3e3
+  }
+
+  .load .lt_c {
+    background: #e3e3e3
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background: #1a1a1a;
+    }
+
+    .title {
+      background: #1a1a1a;
+      color: #fff;
+    }
+
+    .backbtn {
+      filter: invert(100%);
+    }
+
+    .filebtn {
+      background: #1f1f1f;
+      color: #fff;
+    }
+
+    .box span {
+      color: #fff;
+    }
+
+    .rst {
+      background: #1a1a1a;
+    }
+
+    .load .lt_vi {
+      background: #1f1f1f;
+      color: #fff;
+    }
+
+    .load .lt_ti {
+      background: #1f1f1f;
+      color: #fff;
+    }
+
+    .load .lt_c {
+      background: #1f1f1f;
+      color: #fff;
+    }
+
+    .lt_vi {
+      color: #fff;
+      border: 1px #1f1f1f solid;
+    }
+
+    .lt_ti {
+      color: #fff;
+    }
+
+    .lt_c {
+      color: #fff;
+    }
+
+    .close {
+      filter: invert(100%);
+    }
+
+    .dropi {
+      color: #fff;
+    }
   }
 </style>
 <div class="hidbx"></div>
@@ -322,299 +356,320 @@ color:#fff;
   <div>圖片</div>
 </div>
 <script>
- function genid(mode) {
-if(mode === "random"){
-var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
-            var genid = "";
-            for (var i = 0; i < 16; i++) {
-                var genrandomNumber = Math.floor(Math.random() * genidchars.length);
-                genid += genidchars.substring(genrandomNumber, genrandomNumber + 1);
-            }
-  return genid ;
-}
-          
- if(mode === "time"){
-   var gtoday=new Date();
-   var genid2 = (gtoday.getMonth()+1) + '_' + gtoday.getDate() + '_' + gtoday.getHours() + '_' + gtoday.getMinutes() + '_' + gtoday.getSeconds() + '-' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8));
-   
-   return genid2
- }
-  
-  if(mode === "number"){
-   
-   var genid3 = '' ;
-for (var i = 0; i < 16; i++) {
-  genid3 += '' + (0+Math.floor(Math.random() * 9))
-}
-   return genid3
- }
-  
-  if(mode === "uuid"){
-var genidchars4 = "abcdef012345678";
-    var geniduu = [8,4,4,4,12];
-            var genid4 = "";
-            var genid5 = "";
-    for (var ia = 0; ia < geniduu.length; ia++) {
+  function genid(mode) {
+    if (mode === "random") {
+      var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
+      var genid = "";
+      for (var i = 0; i < 16; i++) {
+        var genrandomNumber = Math.floor(Math.random() * genidchars.length);
+        genid += genidchars.substring(genrandomNumber, genrandomNumber + 1);
+      }
+      return genid;
+    }
+
+    if (mode === "time") {
+      var gtoday = new Date();
+      var genid2 = (gtoday.getMonth() + 1) + '_' + gtoday.getDate() + '_' + gtoday.getHours() + '_' + gtoday.getMinutes() + '_' + gtoday.getSeconds() + '-' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8));
+
+      return genid2
+    }
+
+    if (mode === "number") {
+
+      var genid3 = '';
+      for (var i = 0; i < 16; i++) {
+        genid3 += '' + (0 + Math.floor(Math.random() * 9))
+      }
+      return genid3
+    }
+
+    if (mode === "uuid") {
+      var genidchars4 = "abcdef012345678";
+      var geniduu = [8, 4, 4, 4, 12];
       var genid4 = "";
-            for (var i = 0; i < geniduu[ia]; i++) {
-                var genrandomNumber4 = Math.floor(Math.random() * genidchars4.length);
-                genid4 += genidchars4.substring(genrandomNumber4, genrandomNumber4 + 1);
-            }
-genid5 += '-' + genid4 ;
+      var genid5 = "";
+      for (var ia = 0; ia < geniduu.length; ia++) {
+        var genid4 = "";
+        for (var i = 0; i < geniduu[ia]; i++) {
+          var genrandomNumber4 = Math.floor(Math.random() * genidchars4.length);
+          genid4 += genidchars4.substring(genrandomNumber4, genrandomNumber4 + 1);
+        }
+        genid5 += '-' + genid4;
+      }
+      return genid5.substring(1, genid5.length)
     }
-    return genid5.substring(1,genid5.length)
+
+  }
+  function componentToHex(c) {
+    var hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
   }
 
-}
-function componentToHex(c) {
-  var hex = c.toString(16);
-  return hex.length == 1 ? "0" + hex : hex;
-}
+  function rgbToHex(r, g, b) {
+    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+  }
 
-function rgbToHex(r, g, b) {
-  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-}
-
-function setthemecol(hexcolsjs,delaytimems) {
-  setTimeout(function() {
-  $('meta[name="theme-color"]').attr('content',hexcolsjs);
-  },delaytimems);
-}
-function darkmodehexcol() {
-if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  return '#1a1a1a'
-}
-else {
-return '#fff'
-}
-}
-   //userid
+  function setthemecol(hexcolsjs, delaytimems) {
+    setTimeout(function () {
+      $('meta[name="theme-color"]').attr('content', hexcolsjs);
+    }, delaytimems);
+  }
+  function darkmodehexcol() {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return '#1a1a1a'
+    }
+    else {
+      return '#fff'
+    }
+  }
+  //userid
   function systeminfodata(uid) {
-  var nav = window.navigator ;
-   gtag('event', 'user_system_appcodename', {
-    'event_category': nav.appCodeName,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_appname', {
-    'event_category': nav.appName,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_appver', {
-    'event_category': nav.appVersion,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_lang', {
-    'event_category': nav.language,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_platform', {
-    'event_category': nav.platform,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-	
-	gtag('event', 'user_system_product', {
-    'event_category': nav.product,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_productsub', {
-    'event_category': nav.productSub,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_useragent', {
-    'event_category': nav.userAgent,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-	
-	gtag('event', 'user_system_vendor', {
-    'event_category': nav.vendor,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
+    var nav = window.navigator;
+    gtag('event', 'user_system_appcodename', {
+      'event_category': nav.appCodeName,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_appname', {
+      'event_category': nav.appName,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_appver', {
+      'event_category': nav.appVersion,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_lang', {
+      'event_category': nav.language,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_platform', {
+      'event_category': nav.platform,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_product', {
+      'event_category': nav.product,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_productsub', {
+      'event_category': nav.productSub,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_useragent', {
+      'event_category': nav.userAgent,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_vendor', {
+      'event_category': nav.vendor,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
   }
 
-  var user_id ;
-  if(localStorage.getItem('user_id_r') === '1') {
-    user_id = localStorage.getItem('user_id') ;
+  var user_id;
+  if (localStorage.getItem('user_id_r') === '1') {
+    user_id = localStorage.getItem('user_id');
     gtag('event', 'user_start', {
-    'event_category': 'count',
-    'event_label': user_id,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    //systeminfodata(user_id)
-    }
-  });
+      'event_category': 'count',
+      'event_label': user_id,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+        //systeminfodata(user_id)
+      }
+    });
   }
   else {
-  var user_id_chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            user_id = "";
-            for (var useridi = 0; useridi < 64; useridi++) {
-                var user_id_randomNumber = Math.floor(Math.random() * user_id_chars.length);
-                user_id += user_id_chars.substring(user_id_randomNumber, user_id_randomNumber + 1);
-            }
-  localStorage.setItem('user_id_r', '1');
-  localStorage.setItem('user_id',user_id);
-   
-   gtag('event', 'user_start', {
-    'event_category': 'count',
-    'event_label': user_id,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    systeminfodata(user_id)
+    var user_id_chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    user_id = "";
+    for (var useridi = 0; useridi < 64; useridi++) {
+      var user_id_randomNumber = Math.floor(Math.random() * user_id_chars.length);
+      user_id += user_id_chars.substring(user_id_randomNumber, user_id_randomNumber + 1);
     }
-  });
-    
+    localStorage.setItem('user_id_r', '1');
+    localStorage.setItem('user_id', user_id);
+
+    gtag('event', 'user_start', {
+      'event_category': 'count',
+      'event_label': user_id,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+        systeminfodata(user_id)
+      }
+    });
+
   }
   //useridend
- //darkmode
-let darkmodematched = window.matchMedia('(prefers-color-scheme: dark)').matches;
-var darkmodematchedstr = 'undefined' ;
-if(darkmodematched) {
-  darkmodematchedstr = 'true' ;
-  //setthemecol('#1a1a1a',1)
-}
-else {
-darkmodematchedstr = 'false' ;
-}
-  
+  //darkmode
+  let darkmodematched = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  var darkmodematchedstr = 'undefined';
+  if (darkmodematched) {
+    darkmodematchedstr = 'true';
+    //setthemecol('#1a1a1a',1)
+  }
+  else {
+    darkmodematchedstr = 'false';
+  }
+
   gtag('event', 'dark_mode', {
     'event_category': darkmodematchedstr,
     'event_label': user_id,
     'transport_type': 'beacon',
-    'event_callback': function(){
-    
+    'event_callback': function () {
+
     }
   });
-  
+
   //darkmodeend
 
-  
 
 
-function foldbx() {
-  $('.lt').html('')
-  for (var i = 0; i < 10; i++) {
-   $('.lt').append('<div class="lty load"><div class="lt_c"></div><div class="lt_ti">' + '&nbsp' + '</div><div class="lt_vi" id="' + 'loading' + '"></div></div>')
+
+  function foldbx() {
+    $('.lt').html('')
+    for (var i = 0; i < 10; i++) {
+      $('.lt').append('<div class="lty load"><div class="lt_c"></div><div class="lt_ti">' + '&nbsp' + '</div><div class="lt_vi" id="' + 'loading' + '"></div></div>')
     }
-  $('.rst').css({'display':'block'})
-}
+    $('.rst').css({ 'display': 'block' })
+  }
 
-function fo(bs64) {
-  
-  
-  var juid = 'i-' + genid('random')
-  
-  $('.hidbx').html('<img src="' + bs64 + '" id="' + juid + '">')
-  
-  
-  var img = document.querySelector('#' + juid);
-    
-  
-    img.addEventListener('load',function() {
-       var colorThief = new ColorThief();
-    // Make sure image is finished loading
-    if (img.complete) {
-      
-      
-      var imgcolorpalette = colorThief.getPalette(img) ;
-      var paltarr = []
-      
-      $('.lt').html('')
-      for (var i = 0; i < imgcolorpalette.length; i++) {
-	var drft = genid('random');
-    
-        
+  function fo(bs64) {
 
-        
-       $('.lt').append('<div class="lty"><div class="lt_c" style="--gt-b:' + rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2]) + '"></div><div class="lt_ti">' + rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2]) + '</div><div class="lt_vi" id="' + drft + '" hexbase64="' + btoa(rgbToHex(imgcolorpalette[i][0],imgcolorpalette[i][1],imgcolorpalette[i][2])) + '">查看顏色</div></div>')
-       $('.lt_vi#' + drft).click(function() {
-	 window.open('https://erichsia7.github.io/colors/?s=1&c=' + $(this).attr('hexbase64') + '&open=photo&r=' + genid('random'))
-       });
-        
-       
+
+    var juid = 'i-' + genid('random')
+
+    $('.hidbx').html('<img src="' + bs64 + '" id="' + juid + '">')
+
+
+    var img = document.querySelector('#' + juid);
+
+
+    img.addEventListener('load', function () {
+      var colorThief = new ColorThief();
+      // Make sure image is finished loading
+      if (img.complete) {
+
+
+        var imgcolorpalette = colorThief.getPalette(img);
+        var paltarr = []
+
+        $('.lt').html('')
+        for (var i = 0; i < imgcolorpalette.length; i++) {
+          var drft = genid('random');
+
+
+
+
+          $('.lt').append('<div class="lty"><div class="lt_c" style="--gt-b:' + rgbToHex(imgcolorpalette[i][0], imgcolorpalette[i][1], imgcolorpalette[i][2]) + '"></div><div class="lt_ti">' + rgbToHex(imgcolorpalette[i][0], imgcolorpalette[i][1], imgcolorpalette[i][2]) + '</div><div class="lt_vi" id="' + drft + '" hexbase64="' + btoa(rgbToHex(imgcolorpalette[i][0], imgcolorpalette[i][1], imgcolorpalette[i][2])) + '">查看顏色</div></div>')
+          $('.lt_vi#' + drft).click(function () {
+            window.open('https://erichsia7.github.io/colors/?s=1&c=' + $(this).attr('hexbase64') + '&open=photo&r=' + genid('random'))
+          });
+
+
+        }
+        //$('.lt').html(paltarr.join(''))
+        $('.lt').append('<div style="width:100%;height:100px"></div>')
+        $('.hidbx').html('')
+      } else {
+
       }
-      //$('.lt').html(paltarr.join(''))
-      $('.lt').append('<div style="width:100%;height:100px"></div>')
-      $('.hidbx').html('')
-    } else {
-      
-    }
-      
-      
-     
+
+
+
     });
-  
-  
-  
-}
 
-function handleFileSelect(evt) {
-  foldbx()
-  var f = evt.target.files[0]; // FileList object
-  var reader = new FileReader();
-  // Closure to capture the file information.
-  reader.onload = (function (theFile) {
-    return function (e) {
-      var binaryData = e.target.result;
-      //Converting Binary Data to base 64
-      var base64String = window.btoa(binaryData);
-      //showing file converted to base64
-	  console.log('a')
-	   console.log(f.type)
-      fo("data:" + f.type + ";base64," + base64String);
-    };
-  })(f);
-  // Read in the image file as a data URL.
-  reader.readAsBinaryString(f);
-}
 
-function handleFileDrop(ev) {
-  foldbx()
-  if (ev.dataTransfer.items) {
-    if (ev.dataTransfer.items[0].kind === "file") {
-      var file = ev.dataTransfer.items[0].getAsFile();
+
+  }
+
+  function handleFileSelect(evt) {
+    foldbx()
+    var f = evt.target.files[0]; // FileList object
+    var reader = new FileReader();
+    // Closure to capture the file information.
+    reader.onload = (function (theFile) {
+      return function (e) {
+        var binaryData = e.target.result;
+        //Converting Binary Data to base 64
+        var base64String = window.btoa(binaryData);
+        //showing file converted to base64
+        console.log('a')
+        console.log(f.type)
+        fo("data:" + f.type + ";base64," + base64String);
+      };
+    })(f);
+    // Read in the image file as a data URL.
+    reader.readAsBinaryString(f);
+  }
+
+  function handleFileDrop(ev) {
+    foldbx()
+    if (ev.dataTransfer.items) {
+      if (ev.dataTransfer.items[0].kind === "file") {
+        var file = ev.dataTransfer.items[0].getAsFile();
+
+        var reader = new FileReader();
+        // Closure to capture the file information.
+        reader.onload = (function (theFile) {
+          return function (e) {
+            var binaryData = e.target.result;
+            //Converting Binary Data to base 64
+            var base64String = window.btoa(binaryData);
+            //showing file converted to base64
+            console.log(file.type)
+            console.log('b')
+            fo("data:" + file.type + ";base64," + base64String);
+
+          };
+        })(file);
+        // Read in the image file as a data URL.
+        reader.readAsBinaryString(file);
+
+        //**
+      }
+    } else {
 
       var reader = new FileReader();
       // Closure to capture the file information.
@@ -624,93 +679,73 @@ function handleFileDrop(ev) {
           //Converting Binary Data to base 64
           var base64String = window.btoa(binaryData);
           //showing file converted to base64
-	  console.log(file.type)
-	  console.log('b')
-          fo("data:" + file.type + ";base64," + base64String);
-	  
+          console.log(ev.dataTransfer.files[0].type)
+          console.log('c')
+          fo("data:" + ev.dataTransfer.files[0].type + ";base64," + base64String);
         };
-      })(file);
+      })(ev.dataTransfer.files[0]);
       // Read in the image file as a data URL.
-      reader.readAsBinaryString(file);
-
-      //**
+      reader.readAsBinaryString(ev.dataTransfer.files[0]);
     }
-  } else {
-    
-    var reader = new FileReader();
-    // Closure to capture the file information.
-    reader.onload = (function (theFile) {
-      return function (e) {
-        var binaryData = e.target.result;
-        //Converting Binary Data to base 64
-        var base64String = window.btoa(binaryData);
-        //showing file converted to base64
-	  console.log(ev.dataTransfer.files[0].type)
-	   console.log('c')
-        fo("data:" + ev.dataTransfer.files[0].type + ";base64," + base64String);
-      };
-    })(ev.dataTransfer.files[0]);
-    // Read in the image file as a data URL.
-    reader.readAsBinaryString(ev.dataTransfer.files[0]);
   }
-}
 
-function dropHandler(ev) {
-  
-  $('*[hu="q"]').css({ display: "block" });
-  $(".dropi").css({ opacity: "0" });
-  // Prevent default behavior (Prevent file from being opened)
-  ev.preventDefault();
-  handleFileDrop(ev);
-}
+  function dropHandler(ev) {
 
-function dragOverHandler(ev) {
-  
-  $('*[hu="q"]').css({ display: "none" });
-  $(".dropi").css({ opacity: "1" });
-  // Prevent default behavior (Prevent file from being opened)
-  ev.preventDefault();
-}
+    $('*[hu="q"]').css({ display: "block" });
+    $(".dropi").css({ opacity: "0" });
+    // Prevent default behavior (Prevent file from being opened)
+    ev.preventDefault();
+    handleFileDrop(ev);
+  }
 
-function gdragleave(ev) {
-  $('*[hu="q"]').css({ display: "block" });
-  $(".dropi").css({ opacity: "0" });
-  ev.preventDefault();
-}
+  function dragOverHandler(ev) {
 
-document.addEventListener("dragleave",function (event) {
+    $('*[hu="q"]').css({ display: "none" });
+    $(".dropi").css({ opacity: "1" });
+    // Prevent default behavior (Prevent file from being opened)
+    ev.preventDefault();
+  }
+
+  function gdragleave(ev) {
+    $('*[hu="q"]').css({ display: "block" });
+    $(".dropi").css({ opacity: "0" });
+    ev.preventDefault();
+  }
+
+  document.addEventListener("dragleave", function (event) {
     $('*[hu="q"]').css({ display: "block" });
     $(".dropi").css({ opacity: "0" });
     event.preventDefault();
   },
-  false
-);
+    false
+  );
 
-document.getElementById("files2").addEventListener("change", handleFileSelect, false);
+  document.getElementById("files2").addEventListener("change", handleFileSelect, false);
 
 
-$('.close').click(function() {
-  $('*[hu="q"]').css({ display: "block" });
-  $(".dropi").css({ opacity: "0" });
-  $('.rst').css({'display':'none'})
-})
-$('.backbtn').click(function() {
-location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
-});
+  $('.close').click(function () {
+    $('*[hu="q"]').css({ display: "block" });
+    $(".dropi").css({ opacity: "0" });
+    $('.rst').css({ 'display': 'none' })
+  })
+  $('.backbtn').click(function () {
+    location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
+  });
 
-$(document).ready(function() {
+  $(document).ready(function () {
     //test 
-        var googlefontloadtime = new Date().getTime() ;
-        if(googlefontloadtime-parseInt(localStorage.getItem('googlefontNotoSansTCloaded')) < 2592000000) {
-  $('body').append('<style>' + localStorage.getItem('googlefontNotoSansTC') + '</style>');
-}
-else {
- $.ajax({type:'get',url:"https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap",dataType:'text',success:function(e) {
-  var googlefontloadtimedd = new Date().getTime() ;
-  localStorage.setItem('googlefontNotoSansTC', e); localStorage.setItem('googlefontNotoSansTCloaded', googlefontloadtimedd);
-   $('body').append('<style>' + e + '</style>');
-   }
-}); 
-}
+    var googlefontloadtime = new Date().getTime();
+    if (googlefontloadtime - parseInt(localStorage.getItem('googlefontNotoSansTCloaded')) < 2592000000) {
+      $('body').append('<style>' + localStorage.getItem('googlefontNotoSansTC') + '</style>');
+    }
+    else {
+      $.ajax({
+        type: 'get', url: "https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap", dataType: 'text', success: function (e) {
+          var googlefontloadtimedd = new Date().getTime();
+          localStorage.setItem('googlefontNotoSansTC', e); localStorage.setItem('googlefontNotoSansTCloaded', googlefontloadtimedd);
+          $('body').append('<style>' + e + '</style>');
+        }
+      });
+    }
   });
 </script>
