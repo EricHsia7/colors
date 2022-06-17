@@ -1210,10 +1210,8 @@
     });
     $(window).resize(function () {
       var scrolltop = $(document).scrollTop()
-      var beforewindowheight = parseInt(getComputedStyle(document.body).getPropertyValue('--dd-container-height'))
       setsize()
-      var afterwindowheight = parseInt(getComputedStyle(document.body).getPropertyValue('--dd-container-height'))
-$(document).scrollTop(scrolltop-(afterwindowheight-beforewindowheight))
+$(document).scrollTop(scrolltop)
     })
 
 
