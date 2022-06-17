@@ -1455,7 +1455,7 @@
     var grd = getligrd(col)
 
     var txc = textcol((hexToRgb(grd[1]).r + hexToRgb(grd[2]).r) * .5, (hexToRgb(grd[1]).g + hexToRgb(grd[2]).g) * .5, (hexToRgb(grd[1]).b + hexToRgb(grd[2]).b) * .5)
-    var mixcol = rgbToHex(Math.round((hexToRgb(grd[1]).r + hexToRgb(grd[2]).r) * .5), Math.round((hexToRgb(grd[1]).g + hexToRgb(grd[2]).g) * .5), Math.round((hexToRgb(grd[1]).b + hexToRgb(grd[2]).b) * .5))
+    var mixcol = rgbToHex(Math.floor((hexToRgb(grd[1]).r + hexToRgb(grd[2]).r) * .5), Math.floor((hexToRgb(grd[1]).g + hexToRgb(grd[2]).g) * .5), Math.floor((hexToRgb(grd[1]).b + hexToRgb(grd[2]).b) * .5))
 
 
     var content = {
