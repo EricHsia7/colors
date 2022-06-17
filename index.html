@@ -1640,16 +1640,18 @@
       $('.arrow-left[btnid="' + allcolor[i].id + '"]').click(function (evt) {
         evt.stopPropagation();
         var gindex = parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('group-index'))
-        var allcolorindex = parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))
-        setthemecol(allcolor[allcolorindex].themecolor[gindex])
-
         if (gindex > 0) {
           gindex -= 1
+
           $('.color[fid="' + $(this).attr('btnid') + '"]').attr('group-index', gindex)
           $('.color[fid="' + $(this).attr('btnid') + '"] .group-progress-bar li').attr('sl', '0')
           $('.color[fid="' + $(this).attr('btnid') + '"] .group-progress-bar li').eq(gindex).attr('sl', '1')
 
           $('.color[fid="' + $(this).attr('btnid') + '"] .colorbox').css({ 'transform': 'translateX(calc(var(--ft-window-width) * ' + gindex + ' * -1))', 'transition': '0.3s' });
+
+          var allcolorindex = parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))
+          setthemecol(allcolor[allcolorindex].themecolor[gindex])
+
 
 
           var nwcol = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))].textcolor[(gindex - 1)]
@@ -1671,10 +1673,6 @@
       $('.arrow-right[btnid="' + allcolor[i].id + '"]').click(function (evt) {
         evt.stopPropagation();
         var gindex = parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('group-index'))
-        var allcolorindex = parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))
-
-        setthemecol(allcolor[allcolorindex].themecolor[gindex])
-
 
         if (gindex < 10) {
           gindex += 1
@@ -1683,6 +1681,11 @@
           $('.color[fid="' + $(this).attr('btnid') + '"] .group-progress-bar li').eq(gindex).attr('sl', '1')
 
           $('.color[fid="' + $(this).attr('btnid') + '"] .colorbox').css({ 'transform': 'translateX(calc(var(--ft-window-width) * ' + gindex + ' * -1))', 'transition': '0.3s' })
+          var allcolorindex = parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))
+          setthemecol(allcolor[allcolorindex].themecolor[gindex])
+
+
+
           var nwcol = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))].textcolor[(gindex - 1)]
           if (gindex === 0) {
             nwcol = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))].imgtextcolor
