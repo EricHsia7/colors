@@ -1566,7 +1566,7 @@
 
     var txc = textcol((hexToRgb(pathzz[1]).r + hexToRgb(pathzz[2]).r) * .5, (hexToRgb(pathzz[1]).g + hexToRgb(pathzz[2]).g) * .5, (hexToRgb(pathzz[1]).b + hexToRgb(pathzz[2]).b) * .5)
 
-    var path_datahtml = gtffim(pathzz[1], pathzz[2], window.innerWidth, window.innerHeight)
+    var path_datahtml = gtffim(pathzz[1], pathzz[2], window.innerWidth, (window.innerHeight-$('.bottom').height()))
 
     var content = {
       type: "path",
@@ -1997,7 +1997,7 @@
       var patharr = [atob(gup('la')), atob(gup('lb'))]
       var txc = textcol((hexToRgb(patharr[0]).r + hexToRgb(patharr[1]).r) * .5, (hexToRgb(patharr[0]).g + hexToRgb(patharr[1]).g) * .5, (hexToRgb(patharr[0]).b + hexToRgb(patharr[1]).b) * .5)
 
-      var path_datahtml = gtffim(patharr[0], patharr[1], window.innerWidth, window.innerHeight)
+      var path_datahtml = gtffim(patharr[0], patharr[1], window.innerWidth, (window.innerHeight-$('.bottom').height()))
 
       var content = {
         type: "path",
