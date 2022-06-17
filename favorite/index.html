@@ -1140,7 +1140,7 @@
       //end
     }
     function setsize() {
-      $('#dd').html(':root{--dd-container-height:' + ($(window).height() - $('.bottom').height()) + 'px;--dd-container-width:' + $(window).width() + 'px;--dd-container-n-height:' + ((($(window).width() / 3) * ($(window).height() - $('.bottom').height())) / $(window).width()) + 'px;--dd-container-n-width:' + ($(window).width() / 3) + 'px;}')
+      $('#dd').html(':root{--dd-container-height:' + (window.innerHeight - $('.bottom').height()) + 'px;--dd-container-width:' + window.innerWidth + 'px;--dd-container-n-height:' + (((window.innerWidth / 3) * (window.innerHeight - $('.bottom').height())) / window.innerWidth) + 'px;--dd-container-n-width:' + (window.innerWidth / 3) + 'px;}')
     }
     function printcolor() {
       var pt1 = (pt + 10)
