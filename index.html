@@ -1438,7 +1438,8 @@
       content: [col],
       shareurl: 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(col) + '&r=' + genid('random'),
       id: 'c_' + genid('random'),
-      textcolor: txc
+      textcolor: txc,
+      themecolor: col
     };
     allcolor.push(content)
   }
@@ -1454,6 +1455,8 @@
     var grd = getligrd(col)
 
     var txc = textcol((hexToRgb(grd[1]).r + hexToRgb(grd[2]).r) * .5, (hexToRgb(grd[1]).g + hexToRgb(grd[2]).g) * .5, (hexToRgb(grd[1]).b + hexToRgb(grd[2]).b) * .5)
+    var mixcol = rgbToHex((hexToRgb(grd[1]).r + hexToRgb(grd[2]).r) * .5, (hexToRgb(grd[1]).g + hexToRgb(grd[2]).g) * .5, (hexToRgb(grd[1]).b + hexToRgb(grd[2]).b) * .5)
+
 
     var content = {
       type: "gradient",
@@ -1462,6 +1465,7 @@
       shareurl: 'https://erichsia7.github.io/colors/?s=2&ga=' + btoa(grd[1]) + '&gb=' + btoa(grd[2]) + '&gdeg=' + grd[0] + '&r=' + genid('random'),
       id: 'c_' + genid('random'),
       textcolor: txc
+      themecolor: mixcol
     };
     allcolor.push(content)
   }
@@ -1507,7 +1511,13 @@
                     plttextcolor.push(textcol(imgcolorpalette[hq][0], imgcolorpalette[hq][1], imgcolorpalette[hq][2]))
                   }
                   var imagetxc = textcol(imgmaincolor[0], imgmaincolor[1], imgmaincolor[2])
+                  var imgcol = rgbToHex(imgmaincolor[0], imgmaincolor[1], imgmaincolor[2])
 
+                  var thcol = []
+                  thcol.push(imgcol)
+                  for (var t = 0; t < pltcolorhex.length; t++) {
+                    thcol.push(pltcolorhex[t])
+                  }
                   var content = {
                     type: "imagecolorgroup",
                     group: true,
@@ -1520,7 +1530,8 @@
                     shareurl: 'https://erichsia7.github.io/colors/?s=4&grouplist=' + btoa(pltcolorhex.join(',')) + '&picid=' + jqXHR.getResponseHeader('picsum-id') + '&picurl=' + btoa(imginfojson.download_url) + '&picsou=' + btoa(imginfojson.url) + '&pictx=' + btoa(imagetxc) + '&r=' + genid('random'),
                     id: 'c_' + genid('random'),
                     textcolor: plttextcolor,
-                    imgtextcolor: imagetxc
+                    imgtextcolor: imagetxc,
+                    themecolor: thcol
                   };
                   allcolor.push(content)
                   $('#' + imgid).remove()
@@ -1564,7 +1575,8 @@
       path_data: path_datahtml,
       shareurl: 'https://erichsia7.github.io/colors/?s=3&la=' + btoa(pathzz[1]) + '&lb=' + btoa(pathzz[2]) + '&r=' + genid('random'),
       id: 'c_' + genid('random'),
-      textcolor: txc
+      textcolor: txc,
+      themecolor: pathzz[2]
     };
     allcolor.push(content)
   }
@@ -1586,7 +1598,6 @@
       var contents = []
       var groupprogressbar = []
       var dftextcolor = '#000000'
-      var themecol = '#888'
       var favstr = ''
       var favcss = ''
       if (allcolor[i].group) {
@@ -1603,32 +1614,28 @@
           groupprogressbar.push('<li></li>')
         }
         dftextcolor = allcolor[i].imgtextcolor
-        themecol = ths_ctx[0]
       }
       else {
         if (allcolor[i].type === 'color') {
           favstr = '&' + ths_ctx[0]
           contents.push('<div class="colorcontent" style="background:' + ths_ctx[0] + ';color:' + allcolor[i].textcolor + '"><div class="colorcontent-text">' + ths_ctx + '</div></div>')
           dftextcolor = allcolor[i].textcolor
-          themecol = ths_ctx[0]
         }
         if (allcolor[i].type === 'gradient') {
           favstr = '&li]' + ths_ctx[0] + ']' + ths_ctx[1] + ']' + ths_ctx[2]
           contents.push('<div class="colorcontent" style="background:linear-gradient(' + ths_ctx[0] + 'deg ,' + ths_ctx[1] + ' ,' + ths_ctx[2] + ');color:' + allcolor[i].textcolor + '"><div class="colorcontent-text">' + ths_ctx.join(',') + '</div></div>')
           dftextcolor = allcolor[i].textcolor
-          themecol = ths_ctx[1]
         }
         if (allcolor[i].type === 'path') {
           favstr = '&pa]' + ths_ctx[0] + ']' + ths_ctx[1]
           contents.push('<div class="colorcontent" style="background:' + ths_ctx[1] + ';color:' + allcolor[i].textcolor + '">' + allcolor[i].path_data + '<div class="colorcontent-text">' + ths_ctx.join(',') + '</div></div>')
           dftextcolor = allcolor[i].textcolor
-          themecol = ths_ctx[1]
         }
       }
       if (getCookie('colorfav2').indexOf(favstr) != -1) {
         favcss = 'background:url(https://erichsia7.github.io/colors/favorited.png);background-size:35px;background-position:center;background-repeat:no-repeat'
       }
-      $('.box').append('<div class="color" fid="' + allcolor[i].id + '" group="' + allcolor[i].group + '" i="' + i + '" themecolor="' + themecol + '" group-index="0"><div class="colorbox">' + contents.join('') + '</div><div class="group-progress-bar" txtcolor="' + dftextcolor + '">' + groupprogressbar.join('') + '</div><div class="arrow arrow-left" txtcolor="' + dftextcolor + '" btnid="' + allcolor[i].id + '"></div><div class="arrow arrow-right" txtcolor="' + dftextcolor + '" btnid="' + allcolor[i].id + '"></div><div class="rightbar" txtcolor="' + dftextcolor + '"><div class="favorite" btnid="' + allcolor[i].id + '" style="' + favcss + '"></div><div class="share" btnid="' + allcolor[i].id + '"></div><div class="options" btnid="' + allcolor[i].id + '"></div></div></div>')
+      $('.box').append('<div class="color" fid="' + allcolor[i].id + '" group="' + allcolor[i].group + '" i="' + i + '" group-index="0"><div class="colorbox">' + contents.join('') + '</div><div class="group-progress-bar" txtcolor="' + dftextcolor + '">' + groupprogressbar.join('') + '</div><div class="arrow arrow-left" txtcolor="' + dftextcolor + '" btnid="' + allcolor[i].id + '"></div><div class="arrow arrow-right" txtcolor="' + dftextcolor + '" btnid="' + allcolor[i].id + '"></div><div class="rightbar" txtcolor="' + dftextcolor + '"><div class="favorite" btnid="' + allcolor[i].id + '" style="' + favcss + '"></div><div class="share" btnid="' + allcolor[i].id + '"></div><div class="options" btnid="' + allcolor[i].id + '"></div></div></div>')
 
       $('.arrow-left[btnid="' + allcolor[i].id + '"]').click(function (evt) {
         evt.stopPropagation();
@@ -2109,7 +2116,7 @@
     var nowcolorjson = allcolor[Math.abs(Math.round(parseInt(document.querySelector(".box").getAttribute('dy')) / $('.container').height()))]
     if (!(nowcolorjson === undefined) && !(nowcolorjson === null)) {
       history.pushState(null, null, nowcolorjson.shareurl);
-
+      setthemecol(nowcolorjson.themecolor, 1)
       if (nowcolorjson.type === 'color') {
         if (eval('sentcolors.' + nowcolorjson.id) === undefined) {
           var gformurl = 'https://docs.google.com/forms/d/e/1FAIpQLSdzcew5FPAcBdlH2mUbmZbpchdq1mYps9_32FXzWWCEMsSePQ/formResponse?usp=pp_url&entry.472720214=%23' + nowcolorjson.content[0].replaceAll('#', '') + '&entry.327016326=' + user_id
