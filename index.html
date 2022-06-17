@@ -2128,7 +2128,7 @@
     if (!(nowcolorjson === undefined) && !(nowcolorjson === null)) {
       history.pushState(null, null, nowcolorjson.shareurl);
       if (nowcolorjson.type === 'imagecolorgroup') {
-        var nowgroupindex = parseInt($('.color[fid="' + nowcolorindex.id + '"]').attr('group-index'))
+        var nowgroupindex = parseInt($('.color[fid="' + nowcolorjson.id + '"]').attr('group-index'))
         setthemecol(nowcolorjson.themecolor[nowgroupindex], 1)
       }
       else {
