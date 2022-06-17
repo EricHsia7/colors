@@ -1265,13 +1265,13 @@
 
   //darkmodeend
   //windowresize
-  var window_sou_width = $(window).width();
-  var window_sou_height = $(window).height();
+  var window_sou_width = window.innerWidth;
+  var window_sou_height = window.innerHeight;
   $(window).resize(function () {
-    var window_width_change = (window_sou_width - $(window).width());
-    var window_height_change = (window_sou_height - $(window).height());
+    var window_width_change = (window_sou_width - window.innerWidth);
+    var window_height_change = (window_sou_height - window.innerHeight);
     gtag('event', 'window_resize', {
-      'event_category': '{"before":"' + window_sou_width + ',' + window_sou_height + '","after":"' + $(window).width() + ',' + $(window).height() + '","change":"' + window_width_change + ',' + window_height_change + '"}',
+      'event_category': '{"before":"' + window_sou_width + ',' + window_sou_height + '","after":"' + window.innerWidth + ',' + window.innerHeight + '","change":"' + window_width_change + ',' + window_height_change + '"}',
       'event_label': user_id,
       'transport_type': 'beacon',
       'event_callback': function () {
@@ -1942,7 +1942,7 @@
     $('.box').css({ 'height': 'calc(' + $('.box .color').length + ' * var(--ft-window-height))' });
   }
   function setsize() {
-    $('#ft').html(':root{--ft-window-width:' + $('.container').width() + 'px;--ft-window-height:' + ($(window).height() - $('.bottom').height()) + 'px;}')
+    $('#ft').html(':root{--ft-window-width:' + $('.container').width() + 'px;--ft-window-height:' + (window.innerHeight - $('.bottom').height()) + 'px;}')
   }
   function initialize() {
     if (!(isRunningStandalone())) {
@@ -2094,7 +2094,7 @@
       }
     });
     $(window).resize(function() {
-      setsize()
+      //setsize()
     })
   });
   var lastcolor

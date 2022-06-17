@@ -1208,7 +1208,7 @@
     if (!(isRunningStandalone())) {
       $('#iphonesafearea').html('')
     }
-    $('#dd').html(':root{--dd-container-height:' + ($(window).height() - $('.bottom').height()) + 'px;--dd-container-width:' + $(window).width() + 'px;--dd-container-n-height:' + ((($(window).width() / 3) * ($(window).height() - $('.bottom').height())) / $(window).width()) + 'px;--dd-container-n-width:' + ($(window).width() / 3) + 'px;}')
+    $('#dd').html(':root{--dd-container-height:' + (window.innerHeight - $('.bottom').height()) + 'px;--dd-container-width:' + window.innerWidth + 'px;--dd-container-n-height:' + (((window.innerWidth / 3) * (window.innerHeight - $('.bottom').height())) / window.innerWidth) + 'px;--dd-container-n-width:' + (window.innerWidth / 3) + 'px;}')
     var colorfav2arr = []
     var rr_lasttweektrend = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTsFdgG3Pj2WrwKd9xUzKE41XD47xy2LLekYDFD_K0B8exPBiE5QJAvHoh78dobt1TJaJQj-hLv4eeN/pub?gid=1926518771&single=true&output=csv&' + genid('time') + '_' + genid('random');
     var rr_color = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSKrUKs8Cq2a3Pubg_-MXmWp77GqLE0ImjKHy8VNAaVpqFH4Z94BeCcH-IQRsVnLTzmwaPG_66e35mH/pub?gid=1124579858&single=true&output=csv&" + genid('time') + '_' + genid('random');
