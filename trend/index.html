@@ -1084,6 +1084,27 @@ cache.addAll([allcolor[i].shareurl]);
     pt +=1
   }
 }
+function addloadevl() {
+  $(document).scroll(function() {
+  if(($('.container-load').offset().top-$(document).scrollTop()) < (window.innerHeight*1.5)) {
+	  
+    if(dft === 0) {
+      
+      if(!(stopload)) {
+      printcolor()
+      }
+      if(stopload) {
+        
+      }
+      dft = 1 ;
+    }
+    else {
+      dft = 0
+    }
+  }
+});
+
+}
 if(!(isRunningStandalone())) {
   $('#iphonesafearea').html('')
 }
@@ -1103,6 +1124,7 @@ $('#dd').html(':root{--dd-container-height:' + ($(window).height()-$('.bottom').
       colorfav2arr = String(localStorage.getItem('colors_trend'))
       preparejson(colorfav2arr)
       printcolor()
+      addloadevl()
     }
     else {
       var loadinghtml = []
@@ -1147,25 +1169,7 @@ for (var i = 0; i < arr.length; i++) {
         printcolor()
         localStorage.setItem('colors_trend','&' + colorfav2arr.join('&'))
         localStorage.setItem('colors_trend_update',new Date().getTime())
-
-        $(document).scroll(function() {
-  if(($('.container-load').offset().top-$(document).scrollTop()) < (window.innerHeight*1.5)) {
-	  
-    if(dft === 0) {
-      
-      if(!(stopload)) {
-      printcolor()
-      }
-      if(stopload) {
-        
-      }
-      dft = 1 ;
-    }
-    else {
-      dft = 0
-    }
-  }
-});
+        addloadevl()
 
 
         //prepareend
