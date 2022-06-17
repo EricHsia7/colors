@@ -1973,7 +1973,7 @@ var ns = Math.round(parseInt(div.getAttribute('dy'))/$('.container').height())*$
     console.log('b')
 if(nowcolorjson.type === 'color') {
   console.log('c')
-  if(eval('sentcolors.' + nowcolorjson.id) === null) {
+  if(eval('sentcolors.' + nowcolorjson.id) === undefined) {
     console.log('d')
 	var gformurl = 'https://docs.google.com/forms/d/e/1FAIpQLSdzcew5FPAcBdlH2mUbmZbpchdq1mYps9_32FXzWWCEMsSePQ/formResponse?usp=pp_url&entry.472720214=%23' + nowcolorjson.content[0].replaceAll('#','') + '&entry.327016326=' + user_id
 	$.ajax({type:'get',url:gformurl,dataType:'text'})
