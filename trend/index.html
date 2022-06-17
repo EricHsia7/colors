@@ -1,15 +1,16 @@
- <meta charset="UTF-8">
+<meta charset="UTF-8">
 <title>Colors</title>
+
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-342D6M2MKX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-342D6M2MKX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-342D6M2MKX');
-</script>
+    gtag('config', 'G-342D6M2MKX');
+  </script>
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js?1"></script>
@@ -25,1102 +26,1201 @@
 <link type="image/x-icon" href="https://erichsia7.github.io/colors/c2_ico.ico" rel="shortcut icon" />
 <link rel="manifest" href="https://erichsia7.github.io/colors/manifest.json?qoaa9">
 <style>
-:root {
-  --loading-grey: #ededed;
- --loading-ba:#fff;
- --loading-ffg: 255 ;
-  --fx-bth:calc(55px + env(safe-area-inset-bottom))
---bottom-icon-color:#000000;
-    
-}
+  :root {
+    --loading-grey: #ededed;
+    --loading-ba: #fff;
+    --loading-ffg: 255;
+    --fx-bth: calc(55px + env(safe-area-inset-bottom)) --bottom-icon-color:#000000;
 
-  * {outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);}
-.bottom{
-	height:calc(55px + env(safe-area-inset-bottom));
-	width:100%;
-	position:fixed;
-	left:0;
-	bottom:0;
-	background:#ffffff;
-	box-shadow:0 0 10px 2px rgba(0,0,0,0.045);
-	background-size:var(--b-size);
-	background-repeat:repeat;
-	-webkit-user-select:none;
-	display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 0px;
-	-webkit-user-select: none;
-		}
-.bottom-btn {
-height:55px;
-	display: flex;
-  justify-content: center;
-  align-items: center;
-	-webkit-user-select: none;
-		}
-.bottom-btn svg {
-	width:25px;
-	height:25px;
-	-webkit-user-select: none;
-		}
-	/*v2*/
-	body {
-  margin:0px;
-  padding:0px;
-}
-.container {
-  height:auto;
-  width:100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 0px;
-  grid-template-rows:auto;
-  margin-bottom:100px;
-	-webkit-user-select: none;
-}
-.container-load {
-	width:100%;
-	height:10px;
-	opacity:0;
-	background:rgba(0,0,0,0);
-	-webkit-user-select: none;
-	}
-.color {
-  background:#e3e3e3;
-  height:var(--dd-container-n-height);
-  width:var(--dd-container-n-width);
-  transform:scale(1);
-  transform-origin: top left;
-	position:relative;
-	overflow:hidden;
-	-webkit-user-select: none;
-  box-sizing: border-box;
-  border:1px solid #fff;
-}
-.color[loading="1"] {
-  background: #e3e3e3;
-}
-.colorcontentpathsvg {
-	position:absolute;
-	top:0px;
-	left:0px;
-	width:100%;
-	height:100%;
-	-webkit-user-select: none;
-	}
-
-	
-
-	/*end*/
-
- .cl2 {
-  background:rgba(245,245,245,0.8) url(https://erichsia7.github.io/colors/close2.png);
-}
- .de3 {
-  background:rgba(245,245,245,0.8) url(https://erichsia7.github.io/colors/delete.png);
-}
-  .shfav {
-  background:rgba(245,245,245,0.8) url(https://erichsia7.github.io/colors/share3.png);
-}
- .qrt {
-  background:rgba(245,245,245,0.8) url(https://erichsia7.github.io/colors/qrcode.png);
-}
- .set {
-  background:rgba(245,245,245,0.8) url(https://erichsia7.github.io/colors/edit.png);
-  opacity:0.3;
-  transition:0.3s;
- }
- 
- 
- .colmorme {
-  background:rgba(245,245,245,0.8) url(https://erichsia7.github.io/colors/ico_min/more.png);
-}
- .fi {
-  background:rgba(245,245,245,0.8) url(https://erichsia7.github.io/colors/ico_min/close2.png);
-}
-   .favt {
-    background:rgba(245,245,245,0.8) url(https://erichsia7.github.io/colors/favorited.png);
   }
- .fi2 {
-  background:rgba(245,245,245,0.8) url(https://erichsia7.github.io/colors/ico_min/copy2.png);
-}
-.fi3 {
-  background:rgba(245,245,245,0.8) url(https://erichsia7.github.io/colors/ico_min/share3.png);
-}
 
-	
-  
-  
+  * {
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
 
- 
- 
- 
-   .btn {
-  background-size:25px;
-  background-position:center;
-  background-repeat:no-repeat;
-  border-radius:15px;
-  font-weight:medium;
-  font-family: 'Noto Sans TC', sans-serif;
-  font-size:1.3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color:#333;
-  width:45px;
-  height:45px;
+  .bottom {
+    height: calc(55px + env(safe-area-inset-bottom));
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: #ffffff;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.045);
+    background-size: var(--b-size);
+    background-repeat: repeat;
     -webkit-user-select: none;
- }
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 0px;
+    -webkit-user-select: none;
+  }
 
- #fmenu ,#menuj{
-  position:fixed;
-  left:50%;
-  bottom:30px;
-  transform:translateX(-50%);
-  width:230px;
-  height:45px;
-}
- #menuj {
-  position:absolute;
-width:285px;
-  height:45px;
-}
- #menuj .btn {
-opacity:0.3;
- }
-.lle {
-  float:left;
-  margin-left:10px;
-}
- 
- #cardbox {
-  background:rgba(0, 0, 0, 0);
- }
- 
- #delbox {
-  position:fixed;
-  top:50%;
-  left:50%;
-  transform: translate(-50%,-50%) scale(0.8);
-  opacity:0;
-  width:280px;
-  height:180px;
-  background:#fff;
-  border-radius:15px;
-  overflow:hidden;
-  display:none;
-  transition:0.5s;
-}
-#delbox #delyes {
-  position:absolute;
-  bottom:10px;
-  left:10px;
-  background:#fff;
-  height:45px;
-  width:calc(50% - 15px);
-  border-radius:15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color:#000;
-  font-size:20px;
-  font-family: 'Noto Sans TC', sans-serif;
-  font-weight:700;
-  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.08);
-}
-#delbox #delno {
-  position:absolute;
-  bottom:10px;
-  right:10px;
-  background:#fff;
-  height:45px;
-  width:calc(50% - 15px);
-  border-radius:15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color:#000;
-  font-size:20px;
-  font-family: 'Noto Sans TC', sans-serif;
-  font-weight:700;
-  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.08);
-}
+  .bottom-btn {
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-user-select: none;
+  }
 
-#delbg {
-  position:fixed;
-  top:0px;
-  left:0px;
-  width:100%;
-  height:100%;
-  background:rgba(0, 0, 0, 0.6);
-  -webkit-backdrop-filter: blur(15px);
-backdrop-filter: blur(15px);
-  display:none;
-}  
-#delbox #deltxt {
-  position:absolute;
-  top:10px;
-  left:10px;
-  width:calc(100% - 20px);
-  height:calc(100% - 45px - 30px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color:#000;
-  font-size:20px;
-  font-family: 'Noto Sans TC', sans-serif;
-  font-weight:500;
-  flex-direction:column
-}
+  .bottom-btn svg {
+    width: 25px;
+    height: 25px;
+    -webkit-user-select: none;
+  }
 
- .empty {
-  width:100%;
-  max-width:300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position:absolute;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,-50%);
-}
-.empty img {
-  width:100%;
-  max-width:300px;
-}
-.empty span {
-  color:#1082af;
-}
- 
- 
- #qrbox {
-  position:fixed;
-  top:50%;
-  left:50%;
-  transform: translate(-50%,-50%) scale(0.8);
-  opacity:0;
-  width:250px;
-  height:305px;
-  background:#fff;
-  border-radius:15px;
-  overflow:hidden;
-  display:none;
-  transition:0.5s;
-}
-#qrbox #qrclbtn {
-  position:absolute;
-  bottom:10px;
-  left:50%;
-  transform:translateX(-50%);
-  background:#fff;
-  height:45px;
-  width:calc(100% - 20px);
-  border-radius:15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color:#000;
-  font-size:20px;
-  font-family: 'Noto Sans TC', sans-serif;
-  font-weight:700;
-  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.08);
-}
-#qr {
-  position:absolute;
-  top:0px;
-  left:0px;
-  width:250px;
-  height:250px;
-  background:#fff;
-  overflow:hidden;
-}
-#qr img {
-  width:230px;
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform: translate(-50%,-50%);
-}
-#qrbg {
-  position:fixed;
-  top:0px;
-  left:0px;
-  width:100%;
-  height:100%;
-  background:rgba(0, 0, 0, 0.6);
-  -webkit-backdrop-filter: blur(15px);
-backdrop-filter: blur(15px);
-  display:none;
-}  
- 
- .selecttop {
-  position:fixed;
-  top:-55px;
-  left:0px;
-  width:100%;
-  height:50px;
-  background:rgba(0,0,0,0.5);
-  -webkit-backdrop-filter: blur(15px);
-backdrop-filter: blur(15px);
-  color:#fff;
-  opacity:0;
-  transition:0.3s;
-}
-.selecttop span#selectnumber {
-position:absolute;
-  left:10px;
-  top:50%;
-  transform:translateY(-50%);
-  font-size:18px;
-}
-.selecttop span#selectall {
-  position:absolute;
-  right:10px;
-  top:50%;
-  transform:translateY(-50%);
-  font-size:18px;
-}
- .clopan {
-margin:10px;
-border-radius: 15px;
-  min-width:180px;
- border:1px rgba(0, 0, 0, 0) solid;
- transform:translateX(5px);
-  overflow:hidden;
-}
+  /*v2*/
+  body {
+    margin: 0px;
+    padding: 0px;
+  }
 
- .clopanblur {
-position:fixed;
-  top:0px;
-  left:0px;
-  width:100%;
-  height:100%;
-  background:#fff;
-  -webkit-backdrop-filter: blur(15px);
-backdrop-filter: blur(15px);
-  display:none;
- }
+  .container {
+    height: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0px;
+    grid-template-rows: auto;
+    margin-bottom: 100px;
+    -webkit-user-select: none;
+  }
+
+  .container-load {
+    width: 100%;
+    height: 10px;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0);
+    -webkit-user-select: none;
+  }
+
+  .color {
+    background: #e3e3e3;
+    height: var(--dd-container-n-height);
+    width: var(--dd-container-n-width);
+    transform: scale(1);
+    transform-origin: top left;
+    position: relative;
+    overflow: hidden;
+    -webkit-user-select: none;
+    box-sizing: border-box;
+    border: 1px solid #fff;
+  }
+
+  .color[loading="1"] {
+    background: #e3e3e3;
+  }
+
+  .colorcontentpathsvg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    -webkit-user-select: none;
+  }
+
+
+
+  /*end*/
+
+  .cl2 {
+    background: rgba(245, 245, 245, 0.8) url(https://erichsia7.github.io/colors/close2.png);
+  }
+
+  .de3 {
+    background: rgba(245, 245, 245, 0.8) url(https://erichsia7.github.io/colors/delete.png);
+  }
+
+  .shfav {
+    background: rgba(245, 245, 245, 0.8) url(https://erichsia7.github.io/colors/share3.png);
+  }
+
+  .qrt {
+    background: rgba(245, 245, 245, 0.8) url(https://erichsia7.github.io/colors/qrcode.png);
+  }
+
+  .set {
+    background: rgba(245, 245, 245, 0.8) url(https://erichsia7.github.io/colors/edit.png);
+    opacity: 0.3;
+    transition: 0.3s;
+  }
+
+
+  .colmorme {
+    background: rgba(245, 245, 245, 0.8) url(https://erichsia7.github.io/colors/ico_min/more.png);
+  }
+
+  .fi {
+    background: rgba(245, 245, 245, 0.8) url(https://erichsia7.github.io/colors/ico_min/close2.png);
+  }
+
+  .favt {
+    background: rgba(245, 245, 245, 0.8) url(https://erichsia7.github.io/colors/favorited.png);
+  }
+
+  .fi2 {
+    background: rgba(245, 245, 245, 0.8) url(https://erichsia7.github.io/colors/ico_min/copy2.png);
+  }
+
+  .fi3 {
+    background: rgba(245, 245, 245, 0.8) url(https://erichsia7.github.io/colors/ico_min/share3.png);
+  }
+
+
+
+
+
+
+
+
+  .btn {
+    background-size: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    font-weight: medium;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    width: 45px;
+    height: 45px;
+    -webkit-user-select: none;
+  }
+
+  #fmenu,
+  #menuj {
+    position: fixed;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    width: 230px;
+    height: 45px;
+  }
+
+  #menuj {
+    position: absolute;
+    width: 285px;
+    height: 45px;
+  }
+
+  #menuj .btn {
+    opacity: 0.3;
+  }
+
+  .lle {
+    float: left;
+    margin-left: 10px;
+  }
+
+  #cardbox {
+    background: rgba(0, 0, 0, 0);
+  }
+
+  #delbox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+    width: 280px;
+    height: 180px;
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    display: none;
+    transition: 0.5s;
+  }
+
+  #delbox #delyes {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: #fff;
+    height: 45px;
+    width: calc(50% - 15px);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    font-size: 20px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 700;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.08);
+  }
+
+  #delbox #delno {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #fff;
+    height: 45px;
+    width: calc(50% - 15px);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    font-size: 20px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 700;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.08);
+  }
+
+  #delbg {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    display: none;
+  }
+
+  #delbox #deltxt {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 45px - 30px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    font-size: 20px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 500;
+    flex-direction: column
+  }
+
+  .empty {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .empty img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .empty span {
+    color: #1082af;
+  }
+
+
+  #qrbox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+    width: 250px;
+    height: 305px;
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    display: none;
+    transition: 0.5s;
+  }
+
+  #qrbox #qrclbtn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    height: 45px;
+    width: calc(100% - 20px);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    font-size: 20px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 700;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.08);
+  }
+
+  #qr {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 250px;
+    height: 250px;
+    background: #fff;
+    overflow: hidden;
+  }
+
+  #qr img {
+    width: 230px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #qrbg {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    display: none;
+  }
+
+  .selecttop {
+    position: fixed;
+    top: -55px;
+    left: 0px;
+    width: 100%;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    color: #fff;
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  .selecttop span#selectnumber {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+  }
+
+  .selecttop span#selectall {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+  }
+
+  .clopan {
+    margin: 10px;
+    border-radius: 15px;
+    min-width: 180px;
+    border: 1px rgba(0, 0, 0, 0) solid;
+    transform: translateX(5px);
+    overflow: hidden;
+  }
+
+  .clopanblur {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    display: none;
+  }
+
   @media (prefers-color-scheme: dark) {
     .color {
-      border:1px solid #1a1a1a;
+      border: 1px solid #1a1a1a;
     }
-    .color[loading="1"] {
-  background: #1f1f1f;
-}
 
-   .clopanblur {
-  background:#1a1a1a;
-   }
-   #qrbox {
-  background:#1a1a1a;
-  display:none;
-}
-#qrbox #qrclbtn {
-  background:#1a1a1a;
-  color:#fff;
-}
-#qr {
-  background:#1a1a1a; 
-}
-#qr img {
-  filter: invert(89.79%);
-}
+    .color[loading="1"] {
+      background: #1f1f1f;
+    }
+
+    .clopanblur {
+      background: #1a1a1a;
+    }
+
+    #qrbox {
+      background: #1a1a1a;
+      display: none;
+    }
+
+    #qrbox #qrclbtn {
+      background: #1a1a1a;
+      color: #fff;
+    }
+
+    #qr {
+      background: #1a1a1a;
+    }
+
+    #qr img {
+      filter: invert(89.79%);
+    }
+
     #delbox {
-     background:#1a1a1a;
-   }
-   #delbox #delyes ,#delbox #delno {
-     background:#1a1a1a;
-    color:#fff;
-   }
-   #deltxt,#deltxt span,#deltxt b{
-    color:#fff;
-   }
+      background: #1a1a1a;
+    }
+
+    #delbox #delyes,
+    #delbox #delno {
+      background: #1a1a1a;
+      color: #fff;
+    }
+
+    #deltxt,
+    #deltxt span,
+    #deltxt b {
+      color: #fff;
+    }
+
     body {
-    background:#1a1a1a;
+      background: #1a1a1a;
+    }
+
+    :root {
+      --loading-grey: #1f1f1f;
+      --loading-ffg: 50;
+      --bottom-icon-color: #ffffff;
+    }
+
+    .bottom {
+      background: #1a1a1a;
+    }
   }
-   :root {
-  --loading-grey: #1f1f1f;
-  --loading-ffg: 50 ;
-	--bottom-icon-color:#ffffff;
-}
-	.bottom {
-				background:#1a1a1a;
-		}
- }
 </style>
 <style id="iphonesafearea">
-    :root {
-     --fx-bth:calc(55px + 24px)
+  :root {
+    --fx-bth: calc(55px + 24px)
+  }
+
+  @media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
+    .bottom {
+      height: var(--fx-bth);
     }
-    @media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
-        .bottom {
-          height:var(--fx-bth);
-        }
+  }
+
+  @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+    .bottom {
+      height: var(--fx-bth);
     }
-    @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
-        .bottom {
-            height:var(--fx-bth);
-        }
+  }
+
+  @media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
+    .bottom {
+      height: var(--fx-bth);
     }
-    @media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
-        .bottom {
-            height:var(--fx-bth);
-        }
+  }
+
+  @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
+    .bottom {
+      height: var(--fx-bth);
     }
-    @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
-        .bottom {
-            height:var(--fx-bth);
-    }
+
     @media (prefers-color-scheme: dark) {
+      .bottom {
+        height: var(--fx-bth);
+      }
+
+      @media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
         .bottom {
-            height:var(--fx-bth);
+          height: var(--fx-bth);
         }
-        @media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
-            .bottom {
-                height:var(--fx-bth);
-            }
+      }
+
+      @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+        .bottom {
+          height: var(--fx-bth);
         }
-        @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
-            .bottom {
-                height:var(--fx-bth);
-            }
+      }
+
+      @media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
+        .bottom {
+          height: var(--fx-bth);
         }
-        @media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
-            .bottom {
-                height:var(--fx-bth);
-            }
+      }
+
+      @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
+        .bottom {
+          height: var(--fx-bth);
         }
-        @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
-            .bottom {
-                height:var(--fx-bth);
-        }
-    }
+      }
 </style>
-	<style id="bottom-icon">
-	:root {
-		--bottom-icon-home:rgba(0,0,0,0);
-		--bottom-icon-favorite:rgba(0,0,0,0);
-		--bottom-icon-plus-a:rgba(0, 0, 0, 0);
-		--bottom-icon-plus-b:var(--bottom-icon-color);
-		--bottom-icon-trend:var(--bottom-icon-color);
-		--bottom-icon-more:rgba(0, 0, 0, 0);
-		}
-	</style>
+<style id="bottom-icon">
+  :root {
+    --bottom-icon-home: rgba(0, 0, 0, 0);
+    --bottom-icon-favorite: rgba(0, 0, 0, 0);
+    --bottom-icon-plus-a: rgba(0, 0, 0, 0);
+    --bottom-icon-plus-b: var(--bottom-icon-color);
+    --bottom-icon-trend: var(--bottom-icon-color);
+    --bottom-icon-more: rgba(0, 0, 0, 0);
+  }
+</style>
+
 <body>
 
 
-<div id="eelo" style="position:fixed;top:0px;left:0px;width:100%;height:100%;display:none;">
-<div class="empty">
-<img src="https://erichsia7.github.io/colors/favorite/empty_svg_3.svg">
-  <span>沒有任何喜好項目。</span>
-</div>
-</div>
+  <div id="eelo" style="position:fixed;top:0px;left:0px;width:100%;height:100%;display:none;">
+    <div class="empty">
+      <img src="https://erichsia7.github.io/colors/favorite/empty_svg_3.svg">
+      <span>沒有任何喜好項目。</span>
+    </div>
+  </div>
 
-<style id="dd"></style>
-<div class="container">
-</div>
-	<div class="container-load"></div>
+  <style id="dd"></style>
+  <div class="container">
+  </div>
+  <div class="container-load"></div>
 
-<div id="fmenu" style="display:none">
- <div class="shfav lle btn"></div>
- <div class="qrt lle btn"></div>
- <div class="de3 lle btn"></div>
- <div class="set lle btn" sdf="1" style="display:none;"></div>
- <div class="cl2 lle btn"></div>
-</div>
+  <div id="fmenu" style="display:none">
+    <div class="shfav lle btn"></div>
+    <div class="qrt lle btn"></div>
+    <div class="de3 lle btn"></div>
+    <div class="set lle btn" sdf="1" style="display:none;"></div>
+    <div class="cl2 lle btn"></div>
+  </div>
 
-<div class="bottom">
-		<div class="bottom-btn" u="home">
-<svg stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<path d="M256.219 46.8125C247.137 46.8125 239.182 50.8395 233.688 55.6875C233.827 55.564 233.951 55.4325 234.094 55.3125C196.023 87.2578 119.883 151.148 81.8125 183.094C76.7071 187.378 73.75 193.71 73.75 200.375C73.75 256.539 73.75 368.867 73.75 425.031C73.75 435.775 76.7738 447.787 85.6875 456.875C94.6005 465.963 106.651 469.25 117.531 469.25L393.156 469.25C403.973 469.25 416.136 466.002 425.062 456.719C433.801 447.631 436.75 435.746 436.75 425.031C436.75 368.469 436.75 255.344 436.75 198.781C436.75 192.118 433.792 185.784 428.688 181.5C391.102 149.953 315.93 86.8594 278.344 55.3125C278.486 55.4319 278.611 55.5646 278.75 55.6875C273.278 50.8596 265.318 46.8125 256.219 46.8125Z" fill="var(--bottom-icon-home)" fill-rule="evenodd" opacity="1" stroke="none"/>
-<path d="M256.219 30.7812C246.995 30.7812 238.383 34.1541 230.375 40.875L6.875 228.531C2.2991 232.249 0 236.923 0 242.5C0 246.933 1.64857 250.903 4.9375 254.406C8.22643 257.91 12.7176 259.656 18.4375 259.656C21.4404 259.656 24.2163 258.93 26.7188 257.5C29.2212 256.07 31.5871 254.497 33.875 252.781L61.7812 229.375L61.7812 433.812C61.7812 448.827 66.0229 460.487 74.5312 468.781C83.0396 477.075 94.9493 481.219 110.25 481.219L400.469 481.219C415.769 481.219 427.626 477.075 436.062 468.781C444.499 460.487 448.719 448.827 448.719 433.812L448.719 227.75L478.531 252.781C480.676 254.497 482.998 256.07 485.5 257.5C488.002 258.93 490.778 259.656 493.781 259.656C498.786 259.656 503.05 258.181 506.625 255.25C510.2 252.319 512 248.273 512 243.125C512 237.119 509.777 232.249 505.344 228.531L282.062 40.875C274.055 34.1542 265.442 30.7813 256.219 30.7812ZM256.219 69.375C258.864 69.375 261.413 70.4488 263.844 72.5938L414.188 198.781L414.188 425.031C414.188 432.038 412.387 437.376 408.812 441.094C405.238 444.812 400.02 446.688 393.156 446.688L117.531 446.688C110.667 446.688 105.428 444.812 101.781 441.094C98.1348 437.376 96.3125 432.038 96.3125 425.031L96.3125 200.375L248.594 72.5938C251.025 70.4488 253.573 69.375 256.219 69.375Z" fill="var(--bottom-icon-color)" fill-rule="evenodd" opacity="1" stroke="none"/>
-</svg>
-		</div>
-		<div class="bottom-btn" u="favorite">
-<svg stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<path d="M145.656 37.8125C122.015 37.8125 99.7275 43.6356 80.2188 55.4688C60.8707 67.2045 45.4898 83.902 34.6875 104.375C23.6548 125.285 18.4687 149.189 18.4688 175.062C18.4688 202.699 25.1963 230.307 37.9375 257.406C50.4044 283.922 67.1885 309.602 88.0625 334.469C108.694 359.047 131.975 382.432 157.875 404.594C183.584 426.592 210.345 446.785 238.125 465.188C237.751 464.94 237.39 464.675 237.031 464.406C238.789 465.725 240.353 466.868 242.344 468.062C243.362 468.673 244.479 469.317 246.219 470.062C247.87 470.77 250.37 472.125 256 472.125C261.607 472.125 263.974 470.832 265.531 470.188C267.204 469.495 268.277 468.887 269.281 468.312C271.041 467.307 272.529 466.304 274.125 465.188C274.232 465.117 274.332 465.041 274.438 464.969C302.104 446.623 328.764 426.508 354.375 404.594C380.285 382.424 403.538 359.033 424.094 334.438C444.872 309.576 461.605 283.901 474.062 257.406C486.802 230.312 493.531 202.7 493.531 175.062C493.531 149.195 488.346 125.286 477.312 104.375C466.516 83.9129 451.138 67.2098 431.781 55.4688C412.28 43.6404 389.998 37.8125 366.344 37.8125C347.495 37.8125 329.929 41.1708 314.469 48.8438C300.707 55.6735 288.469 64.4818 278.188 75.1875C269.722 84.002 262.403 92.8568 256.031 101.812C249.927 92.6671 242.815 83.757 234.469 75.0625C224.168 64.3325 211.769 55.5876 197.75 48.7812C182.149 41.2069 164.516 37.8125 145.656 37.8125Z" fill="var(--bottom-icon-favorite)" fill-rule="evenodd" opacity="1" stroke="none"/>
-<path d="M0 175.049C0 211.658 9.66767 247.879 29.003 283.714C48.3384 319.549 75.7946 354.438 111.372 388.383C146.949 422.327 188.971 454.767 237.438 485.704C240.188 487.423 243.325 489.012 246.848 490.473C250.371 491.934 253.422 492.665 256 492.665C258.75 492.665 261.887 491.934 265.41 490.473C268.933 489.012 272.07 487.423 274.82 485.704C323.287 454.767 365.266 422.327 400.757 388.383C436.248 354.438 463.662 319.549 482.997 283.714C502.332 247.879 512 211.658 512 175.049C512 152.191 508.348 131.266 501.043 112.274C493.739 93.2823 483.513 76.8258 470.365 62.9043C457.217 48.9829 441.748 38.241 423.96 30.6788C406.171 23.1165 386.793 19.3353 365.825 19.3353C341.935 19.3353 320.58 24.5774 301.76 35.0614C282.941 45.5455 267.687 59.4669 256 76.8258C244.485 59.4669 229.274 45.5455 210.369 35.0614C191.463 24.5774 170.065 19.3353 146.175 19.3353C125.379 19.3353 106.087 23.1165 88.2981 30.6788C70.5096 38.241 54.9983 48.9829 41.7644 62.9043C28.5304 76.8258 18.2612 93.2823 10.9567 112.274C3.65223 131.266 0 152.191 0 175.049ZM41.5065 175.049C41.5065 152.191 46.0181 132.211 55.0413 115.11C64.0645 98.0087 76.4391 84.6888 92.1652 75.1501C107.891 65.6113 125.723 60.8419 145.66 60.8419C161.815 60.8419 175.823 63.7207 187.682 69.4783C199.541 75.236 209.595 82.4115 217.845 91.005C226.095 99.5985 232.969 108.192 238.469 116.785C242.079 121.942 245.129 125.422 247.621 127.227C250.113 129.031 252.906 129.934 256 129.934C259.094 129.934 261.844 128.988 264.25 127.098C266.656 125.207 269.75 121.77 273.531 116.785C279.374 108.364 286.464 99.8134 294.8 91.1339C303.135 82.4545 313.104 75.236 324.705 69.4783C336.306 63.7207 350.185 60.8419 366.34 60.8419C386.277 60.8419 404.109 65.6113 419.835 75.1501C435.561 84.6888 447.936 98.0087 456.959 115.11C465.982 132.211 470.493 152.191 470.493 175.049C470.493 198.939 464.736 223.13 453.221 247.621C441.705 272.113 426.108 296.132 406.429 319.678C386.75 343.224 364.407 365.696 339.4 387.094C314.393 408.491 288.397 428.128 261.414 446.002C258.492 448.064 256.687 449.096 256 449.096C255.313 449.096 253.594 448.064 250.844 446.002C223.86 428.128 197.865 408.491 172.858 387.094C147.851 365.696 125.465 343.224 105.7 319.678C85.9349 296.132 70.2947 272.113 58.7795 247.621C47.2642 223.13 41.5065 198.939 41.5065 175.049Z" fill="var(--bottom-icon-color)" fill-rule="evenodd" opacity="1" stroke="none"/>
-</svg>
-		</div>
-		<div class="bottom-btn" u="option">
-<svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 512 512" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<path d="M255.75 18.5938C223.16 18.5938 192.13 24.6988 163.281 36.9688C134.756 49.1014 109.437 66.1893 87.8438 87.9688C66.2998 109.698 49.3276 135.062 37.2188 163.531C24.9498 192.377 18.8437 223.406 18.8438 256C18.8438 288.59 24.9488 319.62 37.2188 348.469C49.339 376.965 66.3687 402.306 88.0312 423.969C109.68 445.617 134.996 462.672 163.469 474.875C192.328 487.243 223.383 493.406 256 493.406C288.614 493.406 319.695 487.265 348.625 474.906C377.181 462.708 402.556 445.631 424.219 423.969C445.88 402.308 462.91 376.968 475.031 348.469C487.3 319.623 493.406 288.594 493.406 256C493.406 223.387 487.244 192.331 474.875 163.469C462.668 134.986 445.568 109.63 423.844 87.9062C402.109 66.1714 376.73 49.0952 348.219 36.9688C319.373 24.6998 288.344 18.5937 255.75 18.5938Z" fill="var(--bottom-icon-plus-a)" fill-rule="evenodd" opacity="1" stroke="none"/>
-<path d="M255.75 0C220.78 0 187.871 6.70813 157 20.0938C126.129 33.4794 98.9148 51.9391 75.4062 75.5312C51.8978 99.1234 33.4794 126.379 20.0938 157.25C6.70813 188.121 1.27157e-06 221.03 0 256C0 290.97 6.70813 323.879 20.0938 354.75C33.4794 385.621 51.9391 412.876 75.5312 436.469C99.1234 460.061 126.379 478.521 157.25 491.906C188.121 505.292 221.03 512 256 512C290.97 512 323.879 505.292 354.75 491.906C385.621 478.521 412.876 460.061 436.469 436.469C460.061 412.877 478.521 385.621 491.906 354.75C505.292 323.879 512 290.97 512 256C512 221.03 505.292 188.121 491.906 157.25C478.521 126.379 460.061 99.1234 436.469 75.5312C412.877 51.9391 385.579 33.4794 354.625 20.0938C323.671 6.70813 290.72 1.27157e-06 255.75 0ZM255.75 42.6562C285.366 42.6562 313.045 48.1343 338.812 59.0938C364.58 70.0532 387.267 85.3298 406.844 104.906C426.42 124.483 441.738 147.17 452.781 172.938C463.824 198.705 469.344 226.384 469.344 256C469.344 285.616 463.866 313.295 452.906 339.062C441.947 364.83 426.712 387.476 407.219 406.969C387.726 426.462 365.038 441.738 339.188 452.781C313.337 463.824 285.616 469.344 256 469.344C226.384 469.344 198.705 463.824 172.938 452.781C147.17 441.738 124.524 426.462 105.031 406.969C85.5384 387.476 70.3032 364.83 59.3438 339.062C48.3843 313.295 42.9063 285.616 42.9062 256C42.9062 226.384 48.3843 198.705 59.3438 172.938C70.3032 147.17 85.4971 124.483 104.906 104.906C124.315 85.3298 146.92 70.0532 172.688 59.0938C198.455 48.1343 226.134 42.6563 255.75 42.6562Z" fill="var(--bottom-icon-color)" fill-rule="evenodd" opacity="1" stroke="none"/>
-<path d="M255.5 139.031C249.309 139.031 244.327 141.047 240.562 145.062C236.798 149.078 234.906 154.267 234.906 160.625L234.906 235.156L160.375 235.156C153.85 235.156 148.62 237.13 144.688 241.062C140.755 244.995 138.781 250.142 138.781 256.5C138.781 262.524 140.797 267.464 144.812 271.312C148.828 275.161 154.017 277.094 160.375 277.094L234.906 277.094L234.906 351.875C234.906 358.233 236.798 363.38 240.562 367.312C244.327 371.245 249.309 373.219 255.5 373.219C261.858 373.219 267.006 371.245 270.938 367.312C274.87 363.38 276.844 358.233 276.844 351.875L276.844 277.094L351.625 277.094C357.816 277.094 362.922 275.161 366.938 271.312C370.953 267.464 372.969 262.524 372.969 256.5C372.969 250.142 370.995 244.994 367.062 241.062C363.13 237.13 357.983 235.156 351.625 235.156L276.844 235.156L276.844 160.625C276.844 154.267 274.87 149.078 270.938 145.062C267.005 141.047 261.858 139.031 255.5 139.031Z" fill="var(--bottom-icon-plus-b)" fill-rule="evenodd" opacity="1" stroke="none"/>
-</g>
-</svg>
-		</div>
-		<div class="bottom-btn" u="trend">
-<svg stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<path d="M415.281 93.7188C407.325 93.7188 401.047 95.1955 397.062 99.0938C393.044 103.025 391.531 109.337 391.531 117.281C391.531 186.695 391.531 325.523 391.531 394.938C391.531 402.772 393.064 408.994 397.062 412.906C401.053 416.81 407.336 418.281 415.281 418.281L459 418.281C467.08 418.281 473.412 416.814 477.406 412.906C481.403 408.996 482.969 402.774 482.969 394.938C482.969 325.523 482.969 186.695 482.969 117.281C482.969 109.314 481.411 103.012 477.406 99.0938C473.405 95.1799 467.068 93.7188 459 93.7188L415.281 93.7188ZM234.125 152.562C226.04 152.562 219.679 154.071 215.688 158.062C211.713 162.036 210.188 168.262 210.188 176.094C210.188 230.805 210.188 340.227 210.188 394.938C210.187 402.772 211.72 408.995 215.719 412.906C219.72 416.82 226.057 418.281 234.125 418.281L277.875 418.281C285.832 418.281 292.082 416.801 296.062 412.906C300.059 408.996 301.625 402.774 301.625 394.938C301.625 340.227 301.625 230.805 301.625 176.094C301.625 168.241 300.055 162.024 296.094 158.062C292.11 154.078 285.829 152.562 277.875 152.562L234.125 152.562ZM52.7812 211.188C44.8239 211.188 38.5748 212.668 34.5938 216.562C30.5826 220.486 29.0313 226.794 29.0312 234.75C29.0312 274.797 29.0312 354.891 29.0312 394.938C29.0312 402.784 30.6026 409.002 34.5938 412.906C38.5806 416.806 44.8342 418.281 52.7812 418.281L96.5312 418.281C104.611 418.281 110.943 416.814 114.938 412.906C118.942 408.989 120.469 402.762 120.469 394.938C120.469 354.891 120.469 274.797 120.469 234.75C120.469 226.794 118.95 220.488 114.938 216.562C110.937 212.649 104.599 211.188 96.5312 211.188L52.7812 211.188Z" fill="var(--bottom-icon-trend)" fill-rule="evenodd" opacity="1" stroke="none"/>
-<path d="M409.844 66.2812C394.261 66.2812 382.461 70.0978 374.469 77.6875C366.476 85.2772 362.5 96.5268 362.5 111.438L362.5 400.781C362.5 415.692 366.476 426.915 374.469 434.438C382.461 441.96 394.261 445.719 409.844 445.719L464.25 445.719C479.967 445.719 491.846 441.96 499.906 434.438C507.966 426.915 512 415.692 512 400.781L512 111.438C512 96.5268 507.966 85.2772 499.906 77.6875C491.846 70.0978 479.967 66.2812 464.25 66.2812L409.844 66.2812ZM415.281 96.7188L459 96.7188C466.791 96.7188 472.223 98.2276 475.312 101.25C478.402 104.272 479.969 109.624 479.969 117.281L479.969 394.938C479.969 402.46 478.402 407.728 475.312 410.75C472.223 413.772 466.791 415.281 459 415.281L415.281 415.281C407.624 415.281 402.246 413.772 399.156 410.75C396.067 407.728 394.531 402.46 394.531 394.938L394.531 117.281C394.531 109.624 396.067 104.272 399.156 101.25C402.246 98.2276 407.624 96.7188 415.281 96.7188ZM228.688 125.125C212.971 125.125 201.118 128.91 193.125 136.5C185.132 144.09 181.156 155.339 181.156 170.25L181.156 400.781C181.156 415.692 185.132 426.915 193.125 434.438C201.118 441.96 212.971 445.719 228.688 445.719L283.094 445.719C298.81 445.719 310.664 441.96 318.656 434.438C326.649 426.915 330.656 415.692 330.656 400.781L330.656 170.25C330.656 155.339 326.649 144.09 318.656 136.5C310.664 128.91 298.81 125.125 283.094 125.125L228.688 125.125ZM234.125 155.562L277.875 155.562C285.532 155.562 290.879 157.098 293.969 160.188C297.058 163.277 298.625 168.571 298.625 176.094L298.625 394.938C298.625 402.46 297.058 407.728 293.969 410.75C290.879 413.772 285.532 415.281 277.875 415.281L234.125 415.281C226.334 415.281 220.902 413.772 217.812 410.75C214.723 407.728 213.187 402.46 213.188 394.938L213.188 176.094C213.188 168.571 214.723 163.277 217.812 160.188C220.902 157.098 226.334 155.562 234.125 155.562ZM47.5625 183.75C31.8459 183.75 19.9927 187.567 12 195.156C4.00735 202.746 1.90735e-06 213.996 0 228.906L0 400.781C0 415.692 4.00734 426.915 12 434.438C19.9927 441.96 31.8459 445.719 47.5625 445.719L101.75 445.719C117.467 445.719 129.346 441.96 137.406 434.438C145.466 426.915 149.5 415.692 149.5 400.781L149.5 228.906C149.5 213.996 145.466 202.746 137.406 195.156C129.346 187.567 117.467 183.75 101.75 183.75L47.5625 183.75ZM52.7812 214.188L96.5312 214.188C104.322 214.188 109.754 215.696 112.844 218.719C115.933 221.741 117.469 227.093 117.469 234.75L117.469 394.938C117.469 402.46 115.933 407.728 112.844 410.75C109.754 413.772 104.322 415.281 96.5312 415.281L52.7812 415.281C45.1244 415.281 39.7771 413.772 36.6875 410.75C33.5979 407.728 32.0313 402.46 32.0312 394.938L32.0312 234.75C32.0312 227.093 33.5979 221.741 36.6875 218.719C39.7771 215.696 45.1244 214.188 52.7812 214.188Z" fill="var(--bottom-icon-color)" fill-rule="evenodd" opacity="1" stroke="none"/>
-</svg>
-	</div>
-		<div class="bottom-btn" u="more">
-<svg stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<path d="M78.7188 202.906C69.0794 202.906 60.0744 205.302 52 210.094C44.0119 214.834 37.5536 221.292 32.8125 229.281C28.0224 237.354 25.625 246.358 25.625 256C25.625 265.78 27.9981 274.851 32.8125 282.875C37.5568 290.782 44.0256 297.174 52 301.906C60.0723 306.696 69.0766 309.094 78.7188 309.094C88.6405 309.094 97.8279 306.719 105.938 301.906C113.908 297.176 120.371 290.788 125.188 282.906C130.091 274.882 132.531 265.803 132.531 256C132.531 241.453 127.226 228.701 116.875 218.438C106.518 208.168 93.5524 202.906 78.7188 202.906ZM256 202.906C246.361 202.906 237.356 205.302 229.281 210.094C221.284 214.839 214.851 221.305 210.188 229.312C205.487 237.383 203.156 246.378 203.156 256C203.156 265.76 205.495 274.791 210.219 282.812C214.886 290.738 221.298 297.169 229.281 301.906C237.354 306.696 246.358 309.094 256 309.094C265.78 309.094 274.851 306.721 282.875 301.906C290.767 297.171 297.17 290.768 301.906 282.875C306.719 274.853 309.094 265.783 309.094 256C309.094 241.458 303.825 228.7 293.562 218.438C283.309 208.184 270.555 202.906 256 202.906ZM433.281 202.906C423.501 202.906 414.379 205.273 406.219 210.062C398.143 214.803 391.651 221.286 386.906 229.281C382.116 237.354 379.719 246.358 379.719 256C379.719 265.78 382.092 274.851 386.906 282.875C391.654 290.787 398.156 297.205 406.219 301.938C414.377 306.726 423.498 309.094 433.281 309.094C442.921 309.094 451.926 306.698 460 301.906C467.973 297.175 474.442 290.784 479.188 282.875C484.001 274.853 486.375 265.783 486.375 256C486.375 241.458 481.106 228.7 470.844 218.438C460.591 208.184 447.836 202.906 433.281 202.906Z" fill="none" fill-rule="evenodd" opacity="1" stroke="var(--bottom-icon-more)" stroke-linecap="round" stroke-linejoin="round" stroke-width="12.2734"/>
-<path d="M78.7188 208.281C69.9701 208.281 61.9875 210.424 54.75 214.719C47.5125 219.014 41.7323 224.794 37.4375 232.031C33.1427 239.269 31 247.251 31 256C31 264.908 33.1427 272.936 37.4375 280.094C41.7323 287.252 47.5125 292.986 54.75 297.281C61.9875 301.576 69.9701 303.719 78.7188 303.719C87.7856 303.719 95.95 301.576 103.188 297.281C110.425 292.986 116.219 287.252 120.594 280.094C124.968 272.936 127.156 264.908 127.156 256C127.156 242.797 122.479 231.555 113.094 222.25C103.709 212.945 92.2394 208.281 78.7188 208.281ZM256 208.281C247.251 208.281 239.269 210.424 232.031 214.719C224.794 219.014 219.059 224.794 214.844 232.031C210.628 239.269 208.531 247.251 208.531 256C208.531 264.908 210.628 272.936 214.844 280.094C219.059 287.252 224.794 292.986 232.031 297.281C239.269 301.576 247.251 303.719 256 303.719C264.908 303.719 272.936 301.576 280.094 297.281C287.252 292.986 292.986 287.252 297.281 280.094C301.576 272.936 303.719 264.908 303.719 256C303.719 242.797 299.055 231.555 289.75 222.25C280.445 212.945 269.203 208.281 256 208.281ZM433.281 208.281C424.374 208.281 416.255 210.424 408.938 214.719C401.62 219.014 395.826 224.794 391.531 232.031C387.236 239.269 385.094 247.251 385.094 256C385.094 264.908 387.236 272.936 391.531 280.094C395.826 287.252 401.62 292.986 408.938 297.281C416.255 301.576 424.374 303.719 433.281 303.719C442.03 303.719 450.012 301.576 457.25 297.281C464.488 292.986 470.268 287.252 474.562 280.094C478.857 272.936 481 264.908 481 256C481 242.797 476.337 231.555 467.031 222.25C457.726 212.945 446.484 208.281 433.281 208.281Z" fill="var(--bottom-icon-color)" fill-rule="evenodd" opacity="1" stroke="none"/>
-</svg>
-	</div>
-	</div>
+  <div class="bottom">
+    <div class="bottom-btn" u="home">
+      <svg stroke-miterlimit="10"
+        style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1"
+        viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <path
+          d="M256.219 46.8125C247.137 46.8125 239.182 50.8395 233.688 55.6875C233.827 55.564 233.951 55.4325 234.094 55.3125C196.023 87.2578 119.883 151.148 81.8125 183.094C76.7071 187.378 73.75 193.71 73.75 200.375C73.75 256.539 73.75 368.867 73.75 425.031C73.75 435.775 76.7738 447.787 85.6875 456.875C94.6005 465.963 106.651 469.25 117.531 469.25L393.156 469.25C403.973 469.25 416.136 466.002 425.062 456.719C433.801 447.631 436.75 435.746 436.75 425.031C436.75 368.469 436.75 255.344 436.75 198.781C436.75 192.118 433.792 185.784 428.688 181.5C391.102 149.953 315.93 86.8594 278.344 55.3125C278.486 55.4319 278.611 55.5646 278.75 55.6875C273.278 50.8596 265.318 46.8125 256.219 46.8125Z"
+          fill="var(--bottom-icon-home)" fill-rule="evenodd" opacity="1" stroke="none" />
+        <path
+          d="M256.219 30.7812C246.995 30.7812 238.383 34.1541 230.375 40.875L6.875 228.531C2.2991 232.249 0 236.923 0 242.5C0 246.933 1.64857 250.903 4.9375 254.406C8.22643 257.91 12.7176 259.656 18.4375 259.656C21.4404 259.656 24.2163 258.93 26.7188 257.5C29.2212 256.07 31.5871 254.497 33.875 252.781L61.7812 229.375L61.7812 433.812C61.7812 448.827 66.0229 460.487 74.5312 468.781C83.0396 477.075 94.9493 481.219 110.25 481.219L400.469 481.219C415.769 481.219 427.626 477.075 436.062 468.781C444.499 460.487 448.719 448.827 448.719 433.812L448.719 227.75L478.531 252.781C480.676 254.497 482.998 256.07 485.5 257.5C488.002 258.93 490.778 259.656 493.781 259.656C498.786 259.656 503.05 258.181 506.625 255.25C510.2 252.319 512 248.273 512 243.125C512 237.119 509.777 232.249 505.344 228.531L282.062 40.875C274.055 34.1542 265.442 30.7813 256.219 30.7812ZM256.219 69.375C258.864 69.375 261.413 70.4488 263.844 72.5938L414.188 198.781L414.188 425.031C414.188 432.038 412.387 437.376 408.812 441.094C405.238 444.812 400.02 446.688 393.156 446.688L117.531 446.688C110.667 446.688 105.428 444.812 101.781 441.094C98.1348 437.376 96.3125 432.038 96.3125 425.031L96.3125 200.375L248.594 72.5938C251.025 70.4488 253.573 69.375 256.219 69.375Z"
+          fill="var(--bottom-icon-color)" fill-rule="evenodd" opacity="1" stroke="none" />
+      </svg>
+    </div>
+    <div class="bottom-btn" u="favorite">
+      <svg stroke-miterlimit="10"
+        style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1"
+        viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <path
+          d="M145.656 37.8125C122.015 37.8125 99.7275 43.6356 80.2188 55.4688C60.8707 67.2045 45.4898 83.902 34.6875 104.375C23.6548 125.285 18.4687 149.189 18.4688 175.062C18.4688 202.699 25.1963 230.307 37.9375 257.406C50.4044 283.922 67.1885 309.602 88.0625 334.469C108.694 359.047 131.975 382.432 157.875 404.594C183.584 426.592 210.345 446.785 238.125 465.188C237.751 464.94 237.39 464.675 237.031 464.406C238.789 465.725 240.353 466.868 242.344 468.062C243.362 468.673 244.479 469.317 246.219 470.062C247.87 470.77 250.37 472.125 256 472.125C261.607 472.125 263.974 470.832 265.531 470.188C267.204 469.495 268.277 468.887 269.281 468.312C271.041 467.307 272.529 466.304 274.125 465.188C274.232 465.117 274.332 465.041 274.438 464.969C302.104 446.623 328.764 426.508 354.375 404.594C380.285 382.424 403.538 359.033 424.094 334.438C444.872 309.576 461.605 283.901 474.062 257.406C486.802 230.312 493.531 202.7 493.531 175.062C493.531 149.195 488.346 125.286 477.312 104.375C466.516 83.9129 451.138 67.2098 431.781 55.4688C412.28 43.6404 389.998 37.8125 366.344 37.8125C347.495 37.8125 329.929 41.1708 314.469 48.8438C300.707 55.6735 288.469 64.4818 278.188 75.1875C269.722 84.002 262.403 92.8568 256.031 101.812C249.927 92.6671 242.815 83.757 234.469 75.0625C224.168 64.3325 211.769 55.5876 197.75 48.7812C182.149 41.2069 164.516 37.8125 145.656 37.8125Z"
+          fill="var(--bottom-icon-favorite)" fill-rule="evenodd" opacity="1" stroke="none" />
+        <path
+          d="M0 175.049C0 211.658 9.66767 247.879 29.003 283.714C48.3384 319.549 75.7946 354.438 111.372 388.383C146.949 422.327 188.971 454.767 237.438 485.704C240.188 487.423 243.325 489.012 246.848 490.473C250.371 491.934 253.422 492.665 256 492.665C258.75 492.665 261.887 491.934 265.41 490.473C268.933 489.012 272.07 487.423 274.82 485.704C323.287 454.767 365.266 422.327 400.757 388.383C436.248 354.438 463.662 319.549 482.997 283.714C502.332 247.879 512 211.658 512 175.049C512 152.191 508.348 131.266 501.043 112.274C493.739 93.2823 483.513 76.8258 470.365 62.9043C457.217 48.9829 441.748 38.241 423.96 30.6788C406.171 23.1165 386.793 19.3353 365.825 19.3353C341.935 19.3353 320.58 24.5774 301.76 35.0614C282.941 45.5455 267.687 59.4669 256 76.8258C244.485 59.4669 229.274 45.5455 210.369 35.0614C191.463 24.5774 170.065 19.3353 146.175 19.3353C125.379 19.3353 106.087 23.1165 88.2981 30.6788C70.5096 38.241 54.9983 48.9829 41.7644 62.9043C28.5304 76.8258 18.2612 93.2823 10.9567 112.274C3.65223 131.266 0 152.191 0 175.049ZM41.5065 175.049C41.5065 152.191 46.0181 132.211 55.0413 115.11C64.0645 98.0087 76.4391 84.6888 92.1652 75.1501C107.891 65.6113 125.723 60.8419 145.66 60.8419C161.815 60.8419 175.823 63.7207 187.682 69.4783C199.541 75.236 209.595 82.4115 217.845 91.005C226.095 99.5985 232.969 108.192 238.469 116.785C242.079 121.942 245.129 125.422 247.621 127.227C250.113 129.031 252.906 129.934 256 129.934C259.094 129.934 261.844 128.988 264.25 127.098C266.656 125.207 269.75 121.77 273.531 116.785C279.374 108.364 286.464 99.8134 294.8 91.1339C303.135 82.4545 313.104 75.236 324.705 69.4783C336.306 63.7207 350.185 60.8419 366.34 60.8419C386.277 60.8419 404.109 65.6113 419.835 75.1501C435.561 84.6888 447.936 98.0087 456.959 115.11C465.982 132.211 470.493 152.191 470.493 175.049C470.493 198.939 464.736 223.13 453.221 247.621C441.705 272.113 426.108 296.132 406.429 319.678C386.75 343.224 364.407 365.696 339.4 387.094C314.393 408.491 288.397 428.128 261.414 446.002C258.492 448.064 256.687 449.096 256 449.096C255.313 449.096 253.594 448.064 250.844 446.002C223.86 428.128 197.865 408.491 172.858 387.094C147.851 365.696 125.465 343.224 105.7 319.678C85.9349 296.132 70.2947 272.113 58.7795 247.621C47.2642 223.13 41.5065 198.939 41.5065 175.049Z"
+          fill="var(--bottom-icon-color)" fill-rule="evenodd" opacity="1" stroke="none" />
+      </svg>
+    </div>
+    <div class="bottom-btn" u="option">
+      <svg height="100%" stroke-miterlimit="10"
+        style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1"
+        viewBox="0 0 512 512" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <path
+          d="M255.75 18.5938C223.16 18.5938 192.13 24.6988 163.281 36.9688C134.756 49.1014 109.437 66.1893 87.8438 87.9688C66.2998 109.698 49.3276 135.062 37.2188 163.531C24.9498 192.377 18.8437 223.406 18.8438 256C18.8438 288.59 24.9488 319.62 37.2188 348.469C49.339 376.965 66.3687 402.306 88.0312 423.969C109.68 445.617 134.996 462.672 163.469 474.875C192.328 487.243 223.383 493.406 256 493.406C288.614 493.406 319.695 487.265 348.625 474.906C377.181 462.708 402.556 445.631 424.219 423.969C445.88 402.308 462.91 376.968 475.031 348.469C487.3 319.623 493.406 288.594 493.406 256C493.406 223.387 487.244 192.331 474.875 163.469C462.668 134.986 445.568 109.63 423.844 87.9062C402.109 66.1714 376.73 49.0952 348.219 36.9688C319.373 24.6998 288.344 18.5937 255.75 18.5938Z"
+          fill="var(--bottom-icon-plus-a)" fill-rule="evenodd" opacity="1" stroke="none" />
+        <path
+          d="M255.75 0C220.78 0 187.871 6.70813 157 20.0938C126.129 33.4794 98.9148 51.9391 75.4062 75.5312C51.8978 99.1234 33.4794 126.379 20.0938 157.25C6.70813 188.121 1.27157e-06 221.03 0 256C0 290.97 6.70813 323.879 20.0938 354.75C33.4794 385.621 51.9391 412.876 75.5312 436.469C99.1234 460.061 126.379 478.521 157.25 491.906C188.121 505.292 221.03 512 256 512C290.97 512 323.879 505.292 354.75 491.906C385.621 478.521 412.876 460.061 436.469 436.469C460.061 412.877 478.521 385.621 491.906 354.75C505.292 323.879 512 290.97 512 256C512 221.03 505.292 188.121 491.906 157.25C478.521 126.379 460.061 99.1234 436.469 75.5312C412.877 51.9391 385.579 33.4794 354.625 20.0938C323.671 6.70813 290.72 1.27157e-06 255.75 0ZM255.75 42.6562C285.366 42.6562 313.045 48.1343 338.812 59.0938C364.58 70.0532 387.267 85.3298 406.844 104.906C426.42 124.483 441.738 147.17 452.781 172.938C463.824 198.705 469.344 226.384 469.344 256C469.344 285.616 463.866 313.295 452.906 339.062C441.947 364.83 426.712 387.476 407.219 406.969C387.726 426.462 365.038 441.738 339.188 452.781C313.337 463.824 285.616 469.344 256 469.344C226.384 469.344 198.705 463.824 172.938 452.781C147.17 441.738 124.524 426.462 105.031 406.969C85.5384 387.476 70.3032 364.83 59.3438 339.062C48.3843 313.295 42.9063 285.616 42.9062 256C42.9062 226.384 48.3843 198.705 59.3438 172.938C70.3032 147.17 85.4971 124.483 104.906 104.906C124.315 85.3298 146.92 70.0532 172.688 59.0938C198.455 48.1343 226.134 42.6563 255.75 42.6562Z"
+          fill="var(--bottom-icon-color)" fill-rule="evenodd" opacity="1" stroke="none" />
+        <path
+          d="M255.5 139.031C249.309 139.031 244.327 141.047 240.562 145.062C236.798 149.078 234.906 154.267 234.906 160.625L234.906 235.156L160.375 235.156C153.85 235.156 148.62 237.13 144.688 241.062C140.755 244.995 138.781 250.142 138.781 256.5C138.781 262.524 140.797 267.464 144.812 271.312C148.828 275.161 154.017 277.094 160.375 277.094L234.906 277.094L234.906 351.875C234.906 358.233 236.798 363.38 240.562 367.312C244.327 371.245 249.309 373.219 255.5 373.219C261.858 373.219 267.006 371.245 270.938 367.312C274.87 363.38 276.844 358.233 276.844 351.875L276.844 277.094L351.625 277.094C357.816 277.094 362.922 275.161 366.938 271.312C370.953 267.464 372.969 262.524 372.969 256.5C372.969 250.142 370.995 244.994 367.062 241.062C363.13 237.13 357.983 235.156 351.625 235.156L276.844 235.156L276.844 160.625C276.844 154.267 274.87 149.078 270.938 145.062C267.005 141.047 261.858 139.031 255.5 139.031Z"
+          fill="var(--bottom-icon-plus-b)" fill-rule="evenodd" opacity="1" stroke="none" />
+        </g>
+      </svg>
+    </div>
+    <div class="bottom-btn" u="trend">
+      <svg stroke-miterlimit="10"
+        style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1"
+        viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <path
+          d="M415.281 93.7188C407.325 93.7188 401.047 95.1955 397.062 99.0938C393.044 103.025 391.531 109.337 391.531 117.281C391.531 186.695 391.531 325.523 391.531 394.938C391.531 402.772 393.064 408.994 397.062 412.906C401.053 416.81 407.336 418.281 415.281 418.281L459 418.281C467.08 418.281 473.412 416.814 477.406 412.906C481.403 408.996 482.969 402.774 482.969 394.938C482.969 325.523 482.969 186.695 482.969 117.281C482.969 109.314 481.411 103.012 477.406 99.0938C473.405 95.1799 467.068 93.7188 459 93.7188L415.281 93.7188ZM234.125 152.562C226.04 152.562 219.679 154.071 215.688 158.062C211.713 162.036 210.188 168.262 210.188 176.094C210.188 230.805 210.188 340.227 210.188 394.938C210.187 402.772 211.72 408.995 215.719 412.906C219.72 416.82 226.057 418.281 234.125 418.281L277.875 418.281C285.832 418.281 292.082 416.801 296.062 412.906C300.059 408.996 301.625 402.774 301.625 394.938C301.625 340.227 301.625 230.805 301.625 176.094C301.625 168.241 300.055 162.024 296.094 158.062C292.11 154.078 285.829 152.562 277.875 152.562L234.125 152.562ZM52.7812 211.188C44.8239 211.188 38.5748 212.668 34.5938 216.562C30.5826 220.486 29.0313 226.794 29.0312 234.75C29.0312 274.797 29.0312 354.891 29.0312 394.938C29.0312 402.784 30.6026 409.002 34.5938 412.906C38.5806 416.806 44.8342 418.281 52.7812 418.281L96.5312 418.281C104.611 418.281 110.943 416.814 114.938 412.906C118.942 408.989 120.469 402.762 120.469 394.938C120.469 354.891 120.469 274.797 120.469 234.75C120.469 226.794 118.95 220.488 114.938 216.562C110.937 212.649 104.599 211.188 96.5312 211.188L52.7812 211.188Z"
+          fill="var(--bottom-icon-trend)" fill-rule="evenodd" opacity="1" stroke="none" />
+        <path
+          d="M409.844 66.2812C394.261 66.2812 382.461 70.0978 374.469 77.6875C366.476 85.2772 362.5 96.5268 362.5 111.438L362.5 400.781C362.5 415.692 366.476 426.915 374.469 434.438C382.461 441.96 394.261 445.719 409.844 445.719L464.25 445.719C479.967 445.719 491.846 441.96 499.906 434.438C507.966 426.915 512 415.692 512 400.781L512 111.438C512 96.5268 507.966 85.2772 499.906 77.6875C491.846 70.0978 479.967 66.2812 464.25 66.2812L409.844 66.2812ZM415.281 96.7188L459 96.7188C466.791 96.7188 472.223 98.2276 475.312 101.25C478.402 104.272 479.969 109.624 479.969 117.281L479.969 394.938C479.969 402.46 478.402 407.728 475.312 410.75C472.223 413.772 466.791 415.281 459 415.281L415.281 415.281C407.624 415.281 402.246 413.772 399.156 410.75C396.067 407.728 394.531 402.46 394.531 394.938L394.531 117.281C394.531 109.624 396.067 104.272 399.156 101.25C402.246 98.2276 407.624 96.7188 415.281 96.7188ZM228.688 125.125C212.971 125.125 201.118 128.91 193.125 136.5C185.132 144.09 181.156 155.339 181.156 170.25L181.156 400.781C181.156 415.692 185.132 426.915 193.125 434.438C201.118 441.96 212.971 445.719 228.688 445.719L283.094 445.719C298.81 445.719 310.664 441.96 318.656 434.438C326.649 426.915 330.656 415.692 330.656 400.781L330.656 170.25C330.656 155.339 326.649 144.09 318.656 136.5C310.664 128.91 298.81 125.125 283.094 125.125L228.688 125.125ZM234.125 155.562L277.875 155.562C285.532 155.562 290.879 157.098 293.969 160.188C297.058 163.277 298.625 168.571 298.625 176.094L298.625 394.938C298.625 402.46 297.058 407.728 293.969 410.75C290.879 413.772 285.532 415.281 277.875 415.281L234.125 415.281C226.334 415.281 220.902 413.772 217.812 410.75C214.723 407.728 213.187 402.46 213.188 394.938L213.188 176.094C213.188 168.571 214.723 163.277 217.812 160.188C220.902 157.098 226.334 155.562 234.125 155.562ZM47.5625 183.75C31.8459 183.75 19.9927 187.567 12 195.156C4.00735 202.746 1.90735e-06 213.996 0 228.906L0 400.781C0 415.692 4.00734 426.915 12 434.438C19.9927 441.96 31.8459 445.719 47.5625 445.719L101.75 445.719C117.467 445.719 129.346 441.96 137.406 434.438C145.466 426.915 149.5 415.692 149.5 400.781L149.5 228.906C149.5 213.996 145.466 202.746 137.406 195.156C129.346 187.567 117.467 183.75 101.75 183.75L47.5625 183.75ZM52.7812 214.188L96.5312 214.188C104.322 214.188 109.754 215.696 112.844 218.719C115.933 221.741 117.469 227.093 117.469 234.75L117.469 394.938C117.469 402.46 115.933 407.728 112.844 410.75C109.754 413.772 104.322 415.281 96.5312 415.281L52.7812 415.281C45.1244 415.281 39.7771 413.772 36.6875 410.75C33.5979 407.728 32.0313 402.46 32.0312 394.938L32.0312 234.75C32.0312 227.093 33.5979 221.741 36.6875 218.719C39.7771 215.696 45.1244 214.188 52.7812 214.188Z"
+          fill="var(--bottom-icon-color)" fill-rule="evenodd" opacity="1" stroke="none" />
+      </svg>
+    </div>
+    <div class="bottom-btn" u="more">
+      <svg stroke-miterlimit="10"
+        style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1"
+        viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <path
+          d="M78.7188 202.906C69.0794 202.906 60.0744 205.302 52 210.094C44.0119 214.834 37.5536 221.292 32.8125 229.281C28.0224 237.354 25.625 246.358 25.625 256C25.625 265.78 27.9981 274.851 32.8125 282.875C37.5568 290.782 44.0256 297.174 52 301.906C60.0723 306.696 69.0766 309.094 78.7188 309.094C88.6405 309.094 97.8279 306.719 105.938 301.906C113.908 297.176 120.371 290.788 125.188 282.906C130.091 274.882 132.531 265.803 132.531 256C132.531 241.453 127.226 228.701 116.875 218.438C106.518 208.168 93.5524 202.906 78.7188 202.906ZM256 202.906C246.361 202.906 237.356 205.302 229.281 210.094C221.284 214.839 214.851 221.305 210.188 229.312C205.487 237.383 203.156 246.378 203.156 256C203.156 265.76 205.495 274.791 210.219 282.812C214.886 290.738 221.298 297.169 229.281 301.906C237.354 306.696 246.358 309.094 256 309.094C265.78 309.094 274.851 306.721 282.875 301.906C290.767 297.171 297.17 290.768 301.906 282.875C306.719 274.853 309.094 265.783 309.094 256C309.094 241.458 303.825 228.7 293.562 218.438C283.309 208.184 270.555 202.906 256 202.906ZM433.281 202.906C423.501 202.906 414.379 205.273 406.219 210.062C398.143 214.803 391.651 221.286 386.906 229.281C382.116 237.354 379.719 246.358 379.719 256C379.719 265.78 382.092 274.851 386.906 282.875C391.654 290.787 398.156 297.205 406.219 301.938C414.377 306.726 423.498 309.094 433.281 309.094C442.921 309.094 451.926 306.698 460 301.906C467.973 297.175 474.442 290.784 479.188 282.875C484.001 274.853 486.375 265.783 486.375 256C486.375 241.458 481.106 228.7 470.844 218.438C460.591 208.184 447.836 202.906 433.281 202.906Z"
+          fill="none" fill-rule="evenodd" opacity="1" stroke="var(--bottom-icon-more)" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="12.2734" />
+        <path
+          d="M78.7188 208.281C69.9701 208.281 61.9875 210.424 54.75 214.719C47.5125 219.014 41.7323 224.794 37.4375 232.031C33.1427 239.269 31 247.251 31 256C31 264.908 33.1427 272.936 37.4375 280.094C41.7323 287.252 47.5125 292.986 54.75 297.281C61.9875 301.576 69.9701 303.719 78.7188 303.719C87.7856 303.719 95.95 301.576 103.188 297.281C110.425 292.986 116.219 287.252 120.594 280.094C124.968 272.936 127.156 264.908 127.156 256C127.156 242.797 122.479 231.555 113.094 222.25C103.709 212.945 92.2394 208.281 78.7188 208.281ZM256 208.281C247.251 208.281 239.269 210.424 232.031 214.719C224.794 219.014 219.059 224.794 214.844 232.031C210.628 239.269 208.531 247.251 208.531 256C208.531 264.908 210.628 272.936 214.844 280.094C219.059 287.252 224.794 292.986 232.031 297.281C239.269 301.576 247.251 303.719 256 303.719C264.908 303.719 272.936 301.576 280.094 297.281C287.252 292.986 292.986 287.252 297.281 280.094C301.576 272.936 303.719 264.908 303.719 256C303.719 242.797 299.055 231.555 289.75 222.25C280.445 212.945 269.203 208.281 256 208.281ZM433.281 208.281C424.374 208.281 416.255 210.424 408.938 214.719C401.62 219.014 395.826 224.794 391.531 232.031C387.236 239.269 385.094 247.251 385.094 256C385.094 264.908 387.236 272.936 391.531 280.094C395.826 287.252 401.62 292.986 408.938 297.281C416.255 301.576 424.374 303.719 433.281 303.719C442.03 303.719 450.012 301.576 457.25 297.281C464.488 292.986 470.268 287.252 474.562 280.094C478.857 272.936 481 264.908 481 256C481 242.797 476.337 231.555 467.031 222.25C457.726 212.945 446.484 208.281 433.281 208.281Z"
+          fill="var(--bottom-icon-color)" fill-rule="evenodd" opacity="1" stroke="none" />
+      </svg>
+    </div>
+  </div>
 
-<div id="qrbg"></div>
-<div id="qrbox">
-<div id="qr"></div>
-  <div id="qrclbtn">關閉</div>
-</div>
+  <div id="qrbg"></div>
+  <div id="qrbox">
+    <div id="qr"></div>
+    <div id="qrclbtn">關閉</div>
+  </div>
 
   <div id="delbg"></div>
-<div id="delbox">
-  <div id="deltxt">
-    <span>確認<b>永久刪除</b>所有喜好項目</span>
+  <div id="delbox">
+    <div id="deltxt">
+      <span>確認<b>永久刪除</b>所有喜好項目</span>
+    </div>
+    <div id="delyes">確認</div>
+    <div id="delno">取消</div>
   </div>
-  <div id="delyes">確認</div>
-  <div id="delno">取消</div>
-</div>
- 
 
- 
- <div class="clopanblur"></div>
 
- <script>
-       var getUrlString = location.href;
-var url = new URL(getUrlString);
-var open = url.searchParams.get('open') ;
-var fado = url.searchParams.get('fado') ;
-var fadod = url.searchParams.get('fadod') ;
-var favscroll = url.searchParams.get('scroll') ;
-var oanif = String(url.searchParams.get('oani')) ;
-var oancf = String(url.searchParams.get('oanc')) ;
-var fgxf = String(url.searchParams.get('fgx')) ;
-var fgyf = String(url.searchParams.get('fgy')) ;
-var fghf = String(url.searchParams.get('fgh')) ;
-var fgwf = String(url.searchParams.get('fgw')) ;
-var rgf =  atob(String(url.searchParams.get('rg'))) ;
-var rgcf = atob(String(url.searchParams.get('rgc'))) ;
-var scale = String(url.searchParams.get('scale')) ;
-var atrrffdreeclas = url.searchParams.get('lig') ;
-var usc = url.searchParams.get('usc') ;
-var rgh = atob(url.searchParams.get('rgh')) ;
-var rgpp = url.searchParams.get('rgpp') ;
-function genid(mode) {
-if(mode === "random"){
-var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
-            var genid = "";
-            for (var i = 0; i < 16; i++) {
-                var genrandomNumber = Math.floor(Math.random() * genidchars.length);
-                genid += genidchars.substring(genrandomNumber, genrandomNumber + 1);
-            }
-  return genid ;
-}
-          
- if(mode === "time"){
-   var gtoday=new Date();
-   var genid2 = (gtoday.getMonth()+1) + '_' + gtoday.getDate() + '_' + gtoday.getHours() + '_' + gtoday.getMinutes() + '_' + gtoday.getSeconds() + '-' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8));
-   
-   return genid2
- }
-  
-  if(mode === "number"){
-   
-   var genid3 = '' ;
-for (var i = 0; i < 16; i++) {
-  genid3 += '' + (0+Math.floor(Math.random() * 9))
-}
-   return genid3
- }
-  
-  if(mode === "uuid"){
-var genidchars4 = "abcdef012345678";
-    var geniduu = [8,4,4,4,12];
-            var genid4 = "";
-            var genid5 = "";
-    for (var ia = 0; ia < geniduu.length; ia++) {
-      var genid4 = "";
-            for (var i = 0; i < geniduu[ia]; i++) {
-                var genrandomNumber4 = Math.floor(Math.random() * genidchars4.length);
-                genid4 += genidchars4.substring(genrandomNumber4, genrandomNumber4 + 1);
-            }
-genid5 += '-' + genid4 ;
+
+  <div class="clopanblur"></div>
+
+  <script>
+    var getUrlString = location.href;
+    var url = new URL(getUrlString);
+    var open = url.searchParams.get('open');
+    var fado = url.searchParams.get('fado');
+    var fadod = url.searchParams.get('fadod');
+    var favscroll = url.searchParams.get('scroll');
+    var oanif = String(url.searchParams.get('oani'));
+    var oancf = String(url.searchParams.get('oanc'));
+    var fgxf = String(url.searchParams.get('fgx'));
+    var fgyf = String(url.searchParams.get('fgy'));
+    var fghf = String(url.searchParams.get('fgh'));
+    var fgwf = String(url.searchParams.get('fgw'));
+    var rgf = atob(String(url.searchParams.get('rg')));
+    var rgcf = atob(String(url.searchParams.get('rgc')));
+    var scale = String(url.searchParams.get('scale'));
+    var atrrffdreeclas = url.searchParams.get('lig');
+    var usc = url.searchParams.get('usc');
+    var rgh = atob(url.searchParams.get('rgh'));
+    var rgpp = url.searchParams.get('rgpp');
+    function genid(mode) {
+      if (mode === "random") {
+        var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
+        var genid = "";
+        for (var i = 0; i < 16; i++) {
+          var genrandomNumber = Math.floor(Math.random() * genidchars.length);
+          genid += genidchars.substring(genrandomNumber, genrandomNumber + 1);
+        }
+        return genid;
+      }
+
+      if (mode === "time") {
+        var gtoday = new Date();
+        var genid2 = (gtoday.getMonth() + 1) + '_' + gtoday.getDate() + '_' + gtoday.getHours() + '_' + gtoday.getMinutes() + '_' + gtoday.getSeconds() + '-' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8));
+
+        return genid2
+      }
+
+      if (mode === "number") {
+
+        var genid3 = '';
+        for (var i = 0; i < 16; i++) {
+          genid3 += '' + (0 + Math.floor(Math.random() * 9))
+        }
+        return genid3
+      }
+
+      if (mode === "uuid") {
+        var genidchars4 = "abcdef012345678";
+        var geniduu = [8, 4, 4, 4, 12];
+        var genid4 = "";
+        var genid5 = "";
+        for (var ia = 0; ia < geniduu.length; ia++) {
+          var genid4 = "";
+          for (var i = 0; i < geniduu[ia]; i++) {
+            var genrandomNumber4 = Math.floor(Math.random() * genidchars4.length);
+            genid4 += genidchars4.substring(genrandomNumber4, genrandomNumber4 + 1);
+          }
+          genid5 += '-' + genid4;
+        }
+        return genid5.substring(1, genid5.length)
+      }
+
     }
-    return genid5.substring(1,genid5.length)
-  }
+    function componentToHex(c) {
+      var hex = c.toString(16);
+      return hex.length == 1 ? "0" + hex : hex;
+    }
 
-}
-function componentToHex(c) {
-  var hex = c.toString(16);
-  return hex.length == 1 ? "0" + hex : hex;
-}
-
-function rgbToHex(r, g, b) {
-  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-}
-function hexToRgb(hex) {
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result ? {
-    r: parseInt(result[1], 16),
-    g: parseInt(result[2], 16),
-    b: parseInt(result[3], 16)
-  } : null;
-}
+    function rgbToHex(r, g, b) {
+      return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+    }
+    function hexToRgb(hex) {
+      var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+      return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+      } : null;
+    }
 
 
-function setcookie(cookiename, cookievalue) {
-  document.cookie = cookiename + "=" + cookievalue + "; max-age=" + 60 * 60 * 24 * 30;
-	localStorage.setItem(cookiename,cookievalue)
-}
-function getCookie(cname) {
-	if(localStorage.hasOwnProperty(cname)) {
-		return String(localStorage.getItem(cname))
-	}
-  var name = cname + "=";
-  var ca = document.cookie.split(";");
-  for (var i = 0; i < ca.length; i++) {
-    var c = ca[i].trim();
-    if (c.indexOf(name) == 0) {
-			localStorage.setItem(cname,c.substring(name.length, c.length))
-			return c.substring(name.length, c.length)
-		};
-  }
-  return "";
-}
+    function setcookie(cookiename, cookievalue) {
+      document.cookie = cookiename + "=" + cookievalue + "; max-age=" + 60 * 60 * 24 * 30;
+      localStorage.setItem(cookiename, cookievalue)
+    }
+    function getCookie(cname) {
+      if (localStorage.hasOwnProperty(cname)) {
+        return String(localStorage.getItem(cname))
+      }
+      var name = cname + "=";
+      var ca = document.cookie.split(";");
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i].trim();
+        if (c.indexOf(name) == 0) {
+          localStorage.setItem(cname, c.substring(name.length, c.length))
+          return c.substring(name.length, c.length)
+        };
+      }
+      return "";
+    }
 
-function setthemecol(hexcolsjs,delaytimems) {
-  setTimeout(function() {
-  $('meta[name="theme-color"]').attr('content',hexcolsjs);
-  },delaytimems);
-}
-function darkmodehexcol() {
-if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  return '#1a1a1a'
-}
-else {
-return '#fff'
-}
-}
-
-function gtffim(l,b,w,h) {
-  var ssscale = 1;
-  var ssssssw = w * ssscale;
-  var ssssssh = h * ssscale;
-  var sssizew = ssssssw * 2;
-  var sssizeh = ssssssh * 2;
-  var sssizex = -sssizew / 2;
-  var sssizey = -sssizeh / 2;
-  var sspath = ["M" + sssizex + " " + sssizey];
-  for (var i = 0; i < 256; i++) {
-    sspath.push(
-      "S" +
-        (sssizex + Math.random() * (sssizew - sssizex)).toFixed(3) +
-        " " +
-        (sssizey + Math.random() * (sssizeh - sssizey)).toFixed(3) +
-        " " +
-        (sssizex + Math.random() * (sssizew - sssizex)).toFixed(3) +
-        " " +
-        (sssizey + Math.random() * (sssizeh - sssizey)).toFixed(3)
-    );
-  }
-
-  var thssvghtmlpp = '<svg xmlns="http://www.w3.org/2000/svg" viewbox="0,0,' + ssssssw + "," +ssssssh + '" class="colorcontentpathsvg"><path d="' + sspath.join(" ") + '" id="ssp" fill="transparent" stroke="' + l + '" stroke-width="0.4"/></svg>';
-  return thssvghtmlpp;
-}
-	  
-	    
-  //userid
-  function systeminfodata(uid) {
-  var nav = window.navigator ;
-   gtag('event', 'user_system_appcodename', {
-    'event_category': nav.appCodeName,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
+    function setthemecol(hexcolsjs, delaytimems) {
+      setTimeout(function () {
+        $('meta[name="theme-color"]').attr('content', hexcolsjs);
+      }, delaytimems);
     }
-  });
-		
-	gtag('event', 'user_system_appname', {
-    'event_category': nav.appName,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_appver', {
-    'event_category': nav.appVersion,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_lang', {
-    'event_category': nav.language,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_platform', {
-    'event_category': nav.platform,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-	
-	gtag('event', 'user_system_product', {
-    'event_category': nav.product,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_productsub', {
-    'event_category': nav.productSub,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_useragent', {
-    'event_category': nav.userAgent,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-	
-	gtag('event', 'user_system_vendor', {
-    'event_category': nav.vendor,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-  }
-
-  var user_id ;
-  if(localStorage.getItem('user_id_r') === '1') {
-    user_id = localStorage.getItem('user_id') ;
-    gtag('event', 'user_start', {
-    'event_category': 'count',
-    'event_label': user_id,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    //systeminfodata(user_id)
-    }
-  });
-  }
-  else {
-  var user_id_chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            user_id = "";
-            for (var useridi = 0; useridi < 64; useridi++) {
-                var user_id_randomNumber = Math.floor(Math.random() * user_id_chars.length);
-                user_id += user_id_chars.substring(user_id_randomNumber, user_id_randomNumber + 1);
-            }
-  localStorage.setItem('user_id_r', '1');
-  localStorage.setItem('user_id',user_id);
-   
-   gtag('event', 'user_start', {
-    'event_category': 'count',
-    'event_label': user_id,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    systeminfodata(user_id)
-    }
-  });
-    
-  }
-  //useridend
-        //darkmode
-let darkmodematched = window.matchMedia('(prefers-color-scheme: dark)').matches;
-var darkmodematchedstr = 'undefined' ;
-if(darkmodematched) {
-  darkmodematchedstr = 'true' ;
-	//setthemecol('#1a1a1a',1)
-}
-else {
-	darkmodematchedstr = 'false' ;
-}
-  
-  gtag('event', 'dark_mode', {
-    'event_category': darkmodematchedstr,
-    'event_label': user_id,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-  
-  //darkmodeend
-       
-       
-       
-
-       if(open === "col") {
-       //start();
-        history.pushState(null, null,'https://erichsia7.github.io/colors/favorite/?r=' + genid('random'));
-        $('title').html('Colors');
-       }
-       else {
-        //start()
-       }
-	
-       if(fado === "1") {
-        $('body').prompt({'message':'已匯入' + fadod.split(',')[0] + '個，重複' + fadod.split(',')[1] + '個，共' + fadod.split(',')[2] + '個','time':5000,'animate':'slide'});
-        history.pushState(null, null,'https://erichsia7.github.io/colors/favorite/?r=' + genid('random'));
-        $('title').html('Colors');
-       }
-	
-	
- //setInterval(start,3000);  
-$('.cl2').click(function() {
-    location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random') ;
-});
-
-       
-$('.shfav').click(function() {
- if (navigator.share) { 
-   navigator.share({
-      title: document.title,
-      url: 'https://erichsia7.github.io/colors/?favadd=1&favda=' + btoa(getCookie('colorfav2').substring(1,getCookie('colorfav2').length)) + '&r=' + genid('random')
-    }).then(() => {
-      
-    })
-    .catch(console.error);
-    } else {
-        shareDialog.classList.add('is-open');
-    }
-});
-       
-    $('.de3').click(function() {     
-            $('#delbg').fadeIn(333);
- $('#delbox').css({'display':'block'});
-    setTimeout(function(){ $('#delbox').css({'transform':'translate(-50%,-50%) scale(1)','opacity':'1'});
-    }, 1); 
-});
-       
-
-$('#delyes').click(function() {
-   location.href = 'https://erichsia7.github.io/colors/?del=1&r=' + genid('random') ;
-});
-
-$('#delno').click(function() {
-  $('#delbg').fadeOut(333);  
-$('#delbox').css({'transform':'translate(-50%,-50%) scale(0.8)','opacity':'0'});
-    setTimeout(function(){ 
-    $('#delbox').css({'display':'none'});
-    }, 510);
-    });
-       
-       $('.qrt').click(function() {
-$('#qrbg').fadeIn(333);
- $('#qrbox').css({'display':'block'});
-    setTimeout(function(){ 
-    $('#qrbox').css({'transform':'translate(-50%,-50%) scale(1)','opacity':'1'});
-    }, 1);
-  
-    
-    document.querySelector('#qr').innerHTML = '';
-var qrcode = new QRCode(document.querySelector('#qr') , {
-    text: 'https://erichsia7.github.io/colors/?favadd=1&favda=' + btoa(getCookie('colorfav2').substring(1,getCookie('colorfav2').length)) + '&r=' + genid('random'),
-    width: 512,
-    height: 512,
-    colorDark : "#000",
-    colorLight : "#fff",
-    correctLevel : QRCode.CorrectLevel.L
-});
-  });
-    $('#qrclbtn').click(function() {
-  $('#qrbg').fadeOut(333);
-       
-      $('#qrbox').css({'transform':'translate(-50%,-50%) scale(0.8)','opacity':'0'});
-    setTimeout(function(){ 
-    $('#qrbox').css({'display':'none'});
-    }, 510);
-    });
-       
-    
-	
-	
-	
-	
-       
-				//v2
-	/*
-	if(getCookie('colorfav2') === "") {
-  $('#eelo').css({'display':'block'});
- }
- */
-				function isRunningStandalone() {
-    return (window.matchMedia('(display-mode: standalone)').matches);
-}
-				
-function textcol(r, g, b) {
-  var textcolrgbfy = (r*0.213+g*0.718+b*0.072)
-  //var textcolrgbfy = (r + g + b) / 3;
-  if (textcolrgbfy > 255 / 2) {
-    return "#000000";
-  } else {
-    return "#ffffff";
-  }
-}
-
-//var colorfav2 = getCookie('colorfav2')
- var pt = 0 
-var dft = 0
-	var stopload = 0
-var allcolor = [] ;
-function preparejson(colorfav2) {
-  if(String(colorfav2).length > 7) {
-    var colorfavarr = colorfav2.substring(1, String(colorfav2).length).split('&')
-		colorfavarr.reverse()
-    for (var i = 0; i < colorfavarr.length; i++) {
-      if(String(colorfavarr[i]).indexOf('li]') > -1) {
-        //grd
-        var thsgrd = colorfavarr[i].split(']')
-        var txc = textcol((hexToRgb(thsgrd[2]).r+hexToRgb(thsgrd[3]).r)*.5,(hexToRgb(thsgrd[2]).g+hexToRgb(thsgrd[3]).g)*.5,(hexToRgb(thsgrd[2]).b+hexToRgb(thsgrd[3]).b)*.5)
-  
-  var content = {
-    type: "gradient",
-    group: false,
-    content: [parseInt(thsgrd[1]),thsgrd[2],thsgrd[3]],
-    shareurl: 'https://erichsia7.github.io/colors/?s=2&ga=' + btoa(thsgrd[2]) + '&gb=' + btoa(thsgrd[3]) + '&gdeg=' + thsgrd[1] + '&r=' + genid('random'),
-    id:'c_' + genid('random'),
-    textcolor:txc
-  };
-  allcolor.push(content)
-        //grdend
+    function darkmodehexcol() {
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return '#1a1a1a'
       }
       else {
-        if(String(colorfavarr[i]).indexOf('pa]') > -1) {
-        //path
-	var pathzz = colorfavarr[i].split(']')
-  var txc = textcol((hexToRgb(pathzz[1]).r+hexToRgb(pathzz[2]).r)*.5,(hexToRgb(pathzz[1]).g+hexToRgb(pathzz[2]).g)*.5,(hexToRgb(pathzz[1]).b+hexToRgb(pathzz[2]).b)*.5)
-  var path_datahtml = gtffim(pathzz[1],pathzz[2],window.innerWidth,window.innerHeight)
-  var content = {
-    type: "path",
-    group: false,
-    content: [pathzz[1],pathzz[2]],
-    path_data: path_datahtml,
-    shareurl:'https://erichsia7.github.io/colors/?s=3&la=' + btoa(pathzz[1]) + '&lb=' + btoa(pathzz[2]) + '&r=' + genid('random') ,
-    id:'c_' + genid('random'),
-    textcolor:txc
-  };
-			allcolor.push(content)
-		//pathend
+        return '#fff'
       }
-        else {
-          //color
-          
-           var txc = textcol(hexToRgb(colorfavarr[i]).r,hexToRgb(colorfavarr[i]).g,hexToRgb(colorfavarr[i]).b)
-  var content = {
-    type: "color",
-    group: false,
-    content: [colorfavarr[i]],
-    shareurl: 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(colorfavarr[i]) + '&r=' + genid('random'),
-    id:'c_' + genid('random'),
-    textcolor:txc
-  };
-  allcolor.push(content)
-          
-          //colorend
+    }
+
+    function gtffim(l, b, w, h) {
+      var ssscale = 1;
+      var ssssssw = w * ssscale;
+      var ssssssh = h * ssscale;
+      var sssizew = ssssssw * 2;
+      var sssizeh = ssssssh * 2;
+      var sssizex = -sssizew / 2;
+      var sssizey = -sssizeh / 2;
+      var sspath = ["M" + sssizex + " " + sssizey];
+      for (var i = 0; i < 256; i++) {
+        sspath.push(
+          "S" +
+          (sssizex + Math.random() * (sssizew - sssizex)).toFixed(3) +
+          " " +
+          (sssizey + Math.random() * (sssizeh - sssizey)).toFixed(3) +
+          " " +
+          (sssizex + Math.random() * (sssizew - sssizex)).toFixed(3) +
+          " " +
+          (sssizey + Math.random() * (sssizeh - sssizey)).toFixed(3)
+        );
+      }
+
+      var thssvghtmlpp = '<svg xmlns="http://www.w3.org/2000/svg" viewbox="0,0,' + ssssssw + "," + ssssssh + '" class="colorcontentpathsvg"><path d="' + sspath.join(" ") + '" id="ssp" fill="transparent" stroke="' + l + '" stroke-width="0.4"/></svg>';
+      return thssvghtmlpp;
+    }
+
+
+    //userid
+    function systeminfodata(uid) {
+      var nav = window.navigator;
+      gtag('event', 'user_system_appcodename', {
+        'event_category': nav.appCodeName,
+        'event_label': uid,
+        'transport_type': 'beacon',
+        'event_callback': function () {
+
         }
-				
-				
-      }
+      });
+
+      gtag('event', 'user_system_appname', {
+        'event_category': nav.appName,
+        'event_label': uid,
+        'transport_type': 'beacon',
+        'event_callback': function () {
+
+        }
+      });
+
+      gtag('event', 'user_system_appver', {
+        'event_category': nav.appVersion,
+        'event_label': uid,
+        'transport_type': 'beacon',
+        'event_callback': function () {
+
+        }
+      });
+
+      gtag('event', 'user_system_lang', {
+        'event_category': nav.language,
+        'event_label': uid,
+        'transport_type': 'beacon',
+        'event_callback': function () {
+
+        }
+      });
+
+      gtag('event', 'user_system_platform', {
+        'event_category': nav.platform,
+        'event_label': uid,
+        'transport_type': 'beacon',
+        'event_callback': function () {
+
+        }
+      });
+
+      gtag('event', 'user_system_product', {
+        'event_category': nav.product,
+        'event_label': uid,
+        'transport_type': 'beacon',
+        'event_callback': function () {
+
+        }
+      });
+
+      gtag('event', 'user_system_productsub', {
+        'event_category': nav.productSub,
+        'event_label': uid,
+        'transport_type': 'beacon',
+        'event_callback': function () {
+
+        }
+      });
+
+      gtag('event', 'user_system_useragent', {
+        'event_category': nav.userAgent,
+        'event_label': uid,
+        'transport_type': 'beacon',
+        'event_callback': function () {
+
+        }
+      });
+
+      gtag('event', 'user_system_vendor', {
+        'event_category': nav.vendor,
+        'event_label': uid,
+        'transport_type': 'beacon',
+        'event_callback': function () {
+
+        }
+      });
     }
-    //s
-  }
-  //end
-}
-function printcolor() {
-  var pt1 = (pt+10)
-  if(pt1 >= allcolor.length) {
-    pt1 = allcolor.length
-		stopload = true
-  }
-  for (var i = pt; i < pt1; i++) {
-    if(allcolor[i].type === 'gradient') {
-    $('.container').append('<div class="color" g="' + i + '" style="background:linear-gradient(' + allcolor[i].content[0] + 'deg ,' + allcolor[i].content[1] + ' ,' + allcolor[i].content[2] + ');" wi="' + allcolor[i].id + '"></div>')
-    }
-    if(allcolor[i].type === 'color') {
-    $('.container').append('<div class="color" g="' + i + '" style="background:' + allcolor[i].content[0] + ';" wi="' + allcolor[i].id + '"></div>')
-    }
-    if(allcolor[i].type === 'path') {
-    $('.container').append('<div class="color" g="' + i + '" style="background:' + allcolor[i].content[1] + ';" wi="' + allcolor[i].id + '">' + allcolor[i].path_data + '</div>')
-    }
-		
-		caches.open("colors_fav_preload").then(function (cache) {
-cache.addAll([allcolor[i].shareurl]);
-});
-    $('.color[wi="' + allcolor[i].id + '"]').click(function() {
-      $(this).css({'transform':'translateX(' + (-1*$(this).offset().left+$(document).scrollLeft()) + 'px) translateY(' + (-1*$(this).offset().top+$(document).scrollTop()) + 'px) scale(3)','transition':'0.3s','z-index':($('.container .color').length+1),'border':'0px solid rgba(0, 0, 0, 0)'}) 
-      $('.bottom').css({'z-index':($('.container .color').length+2)})
-			var thsindex = String($(this).attr('g'))
-			
-			
-			
-			setTimeout(function(){ 
-				location.href = allcolor[parseInt(thsindex)].shareurl
-			},300);
-    })
-    
-    pt +=1
-  }
-}
-function addloadevl() {
-  $(document).scroll(function() {
-  if(($('.container-load').offset().top-$(document).scrollTop()) < (window.innerHeight*1.5)) {
-	  
-    if(dft === 0) {
-      
-      if(!(stopload)) {
-      printcolor()
-      }
-      if(stopload) {
-        
-      }
-      dft = 1 ;
+
+    var user_id;
+    if (localStorage.getItem('user_id_r') === '1') {
+      user_id = localStorage.getItem('user_id');
+      gtag('event', 'user_start', {
+        'event_category': 'count',
+        'event_label': user_id,
+        'transport_type': 'beacon',
+        'event_callback': function () {
+
+          //systeminfodata(user_id)
+        }
+      });
     }
     else {
-      dft = 0
-    }
-  }
-});
+      var user_id_chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      user_id = "";
+      for (var useridi = 0; useridi < 64; useridi++) {
+        var user_id_randomNumber = Math.floor(Math.random() * user_id_chars.length);
+        user_id += user_id_chars.substring(user_id_randomNumber, user_id_randomNumber + 1);
+      }
+      localStorage.setItem('user_id_r', '1');
+      localStorage.setItem('user_id', user_id);
 
-}
-if(!(isRunningStandalone())) {
-  $('#iphonesafearea').html('')
-}
-$('#dd').html(':root{--dd-container-height:' + ($(window).height()-$('.bottom').height()) + 'px;--dd-container-width:' + $(window).width() + 'px;--dd-container-n-height:' + ((($(window).width()/3)*($(window).height()-$('.bottom').height()))/$(window).width()) + 'px;--dd-container-n-width:' + ($(window).width()/3) + 'px;}')
-   var colorfav2arr = []
-   var rr_lasttweektrend = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTsFdgG3Pj2WrwKd9xUzKE41XD47xy2LLekYDFD_K0B8exPBiE5QJAvHoh78dobt1TJaJQj-hLv4eeN/pub?gid=1926518771&single=true&output=csv&'  + genid('time') + '_' + genid('random') ; 
-   var rr_color = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSKrUKs8Cq2a3Pubg_-MXmWp77GqLE0ImjKHy8VNAaVpqFH4Z94BeCcH-IQRsVnLTzmwaPG_66e35mH/pub?gid=1124579858&single=true&output=csv&" + genid('time') + '_' + genid('random') ;
-   var rr_grd = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQT08yDnvggfN_j-MxzVHnHFZQF307TYb09YV5Iab1MuzG0TY4-LSkiqLHZizZJxegTmcEtonh9ZKdn/pub?gid=1078464581&single=true&output=csv&' + genid('time') + '_' + genid('random') ;
-  var rr_path = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR3dPhYdciMot7S7Na3CCZntr_YeuGxNrTq64vmt1oaY4FAZWubmxCgJ5ts_1QrgUGVoWe-UflqN70R/pub?gid=257842508&single=true&output=csv&' + genid('time') + '_' + genid('random') ;
-   if(localStorage.getItem('colors_trend') === null) {
-    localStorage.setItem('colors_trend','')
+      gtag('event', 'user_start', {
+        'event_category': 'count',
+        'event_label': user_id,
+        'transport_type': 'beacon',
+        'event_callback': function () {
+
+          systeminfodata(user_id)
+        }
+      });
+
+    }
+    //useridend
+    //darkmode
+    let darkmodematched = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var darkmodematchedstr = 'undefined';
+    if (darkmodematched) {
+      darkmodematchedstr = 'true';
+      //setthemecol('#1a1a1a',1)
+    }
+    else {
+      darkmodematchedstr = 'false';
+    }
+
+    gtag('event', 'dark_mode', {
+      'event_category': darkmodematchedstr,
+      'event_label': user_id,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    //darkmodeend
+
+
+
+
+    if (open === "col") {
+      //start();
+      history.pushState(null, null, 'https://erichsia7.github.io/colors/favorite/?r=' + genid('random'));
+      $('title').html('Colors');
+    }
+    else {
+      //start()
+    }
+
+    if (fado === "1") {
+      $('body').prompt({ 'message': '已匯入' + fadod.split(',')[0] + '個，重複' + fadod.split(',')[1] + '個，共' + fadod.split(',')[2] + '個', 'time': 5000, 'animate': 'slide' });
+      history.pushState(null, null, 'https://erichsia7.github.io/colors/favorite/?r=' + genid('random'));
+      $('title').html('Colors');
+    }
+
+
+    //setInterval(start,3000);  
+    $('.cl2').click(function () {
+      location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random');
+    });
+
+
+    $('.shfav').click(function () {
+      if (navigator.share) {
+        navigator.share({
+          title: document.title,
+          url: 'https://erichsia7.github.io/colors/?favadd=1&favda=' + btoa(getCookie('colorfav2').substring(1, getCookie('colorfav2').length)) + '&r=' + genid('random')
+        }).then(() => {
+
+        })
+          .catch(console.error);
+      } else {
+        shareDialog.classList.add('is-open');
+      }
+    });
+
+    $('.de3').click(function () {
+      $('#delbg').fadeIn(333);
+      $('#delbox').css({ 'display': 'block' });
+      setTimeout(function () {
+        $('#delbox').css({ 'transform': 'translate(-50%,-50%) scale(1)', 'opacity': '1' });
+      }, 1);
+    });
+
+
+    $('#delyes').click(function () {
+      location.href = 'https://erichsia7.github.io/colors/?del=1&r=' + genid('random');
+    });
+
+    $('#delno').click(function () {
+      $('#delbg').fadeOut(333);
+      $('#delbox').css({ 'transform': 'translate(-50%,-50%) scale(0.8)', 'opacity': '0' });
+      setTimeout(function () {
+        $('#delbox').css({ 'display': 'none' });
+      }, 510);
+    });
+
+    $('.qrt').click(function () {
+      $('#qrbg').fadeIn(333);
+      $('#qrbox').css({ 'display': 'block' });
+      setTimeout(function () {
+        $('#qrbox').css({ 'transform': 'translate(-50%,-50%) scale(1)', 'opacity': '1' });
+      }, 1);
+
+
+      document.querySelector('#qr').innerHTML = '';
+      var qrcode = new QRCode(document.querySelector('#qr'), {
+        text: 'https://erichsia7.github.io/colors/?favadd=1&favda=' + btoa(getCookie('colorfav2').substring(1, getCookie('colorfav2').length)) + '&r=' + genid('random'),
+        width: 512,
+        height: 512,
+        colorDark: "#000",
+        colorLight: "#fff",
+        correctLevel: QRCode.CorrectLevel.L
+      });
+    });
+    $('#qrclbtn').click(function () {
+      $('#qrbg').fadeOut(333);
+
+      $('#qrbox').css({ 'transform': 'translate(-50%,-50%) scale(0.8)', 'opacity': '0' });
+      setTimeout(function () {
+        $('#qrbox').css({ 'display': 'none' });
+      }, 510);
+    });
+
+
+
+
+
+
+
+    //v2
+    /*
+    if(getCookie('colorfav2') === "") {
+    $('#eelo').css({'display':'block'});
    }
-   if(localStorage.getItem('colors_trend_update') === null) {
-    localStorage.setItem('colors_trend_update','0')
-   }
-    if((new Date().getTime()-parseInt(String(localStorage.getItem('colors_trend_update')))) < 60*10*1000) {
+   */
+    function isRunningStandalone() {
+      return (window.matchMedia('(display-mode: standalone)').matches);
+    }
+
+    function textcol(r, g, b) {
+      var textcolrgbfy = (r * 0.213 + g * 0.718 + b * 0.072)
+      //var textcolrgbfy = (r + g + b) / 3;
+      if (textcolrgbfy > 255 / 2) {
+        return "#000000";
+      } else {
+        return "#ffffff";
+      }
+    }
+
+    //var colorfav2 = getCookie('colorfav2')
+    var pt = 0
+    var dft = 0
+    var stopload = 0
+    var allcolor = [];
+    function preparejson(colorfav2) {
+      if (String(colorfav2).length > 7) {
+        var colorfavarr = colorfav2.substring(1, String(colorfav2).length).split('&')
+        colorfavarr.reverse()
+        for (var i = 0; i < colorfavarr.length; i++) {
+          if (String(colorfavarr[i]).indexOf('li]') > -1) {
+            //grd
+            var thsgrd = colorfavarr[i].split(']')
+            var txc = textcol((hexToRgb(thsgrd[2]).r + hexToRgb(thsgrd[3]).r) * .5, (hexToRgb(thsgrd[2]).g + hexToRgb(thsgrd[3]).g) * .5, (hexToRgb(thsgrd[2]).b + hexToRgb(thsgrd[3]).b) * .5)
+
+            var content = {
+              type: "gradient",
+              group: false,
+              content: [parseInt(thsgrd[1]), thsgrd[2], thsgrd[3]],
+              shareurl: 'https://erichsia7.github.io/colors/?s=2&ga=' + btoa(thsgrd[2]) + '&gb=' + btoa(thsgrd[3]) + '&gdeg=' + thsgrd[1] + '&r=' + genid('random'),
+              id: 'c_' + genid('random'),
+              textcolor: txc
+            };
+            allcolor.push(content)
+            //grdend
+          }
+          else {
+            if (String(colorfavarr[i]).indexOf('pa]') > -1) {
+              //path
+              var pathzz = colorfavarr[i].split(']')
+              var txc = textcol((hexToRgb(pathzz[1]).r + hexToRgb(pathzz[2]).r) * .5, (hexToRgb(pathzz[1]).g + hexToRgb(pathzz[2]).g) * .5, (hexToRgb(pathzz[1]).b + hexToRgb(pathzz[2]).b) * .5)
+              var path_datahtml = gtffim(pathzz[1], pathzz[2], window.innerWidth, window.innerHeight)
+              var content = {
+                type: "path",
+                group: false,
+                content: [pathzz[1], pathzz[2]],
+                path_data: path_datahtml,
+                shareurl: 'https://erichsia7.github.io/colors/?s=3&la=' + btoa(pathzz[1]) + '&lb=' + btoa(pathzz[2]) + '&r=' + genid('random'),
+                id: 'c_' + genid('random'),
+                textcolor: txc
+              };
+              allcolor.push(content)
+              //pathend
+            }
+            else {
+              //color
+
+              var txc = textcol(hexToRgb(colorfavarr[i]).r, hexToRgb(colorfavarr[i]).g, hexToRgb(colorfavarr[i]).b)
+              var content = {
+                type: "color",
+                group: false,
+                content: [colorfavarr[i]],
+                shareurl: 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(colorfavarr[i]) + '&r=' + genid('random'),
+                id: 'c_' + genid('random'),
+                textcolor: txc
+              };
+              allcolor.push(content)
+
+              //colorend
+            }
+
+
+          }
+        }
+        //s
+      }
+      //end
+    }
+    function printcolor() {
+      var pt1 = (pt + 10)
+      if (pt1 >= allcolor.length) {
+        pt1 = allcolor.length
+        stopload = true
+      }
+      for (var i = pt; i < pt1; i++) {
+        if (allcolor[i].type === 'gradient') {
+          $('.container').append('<div class="color" g="' + i + '" style="background:linear-gradient(' + allcolor[i].content[0] + 'deg ,' + allcolor[i].content[1] + ' ,' + allcolor[i].content[2] + ');" wi="' + allcolor[i].id + '"></div>')
+        }
+        if (allcolor[i].type === 'color') {
+          $('.container').append('<div class="color" g="' + i + '" style="background:' + allcolor[i].content[0] + ';" wi="' + allcolor[i].id + '"></div>')
+        }
+        if (allcolor[i].type === 'path') {
+          $('.container').append('<div class="color" g="' + i + '" style="background:' + allcolor[i].content[1] + ';" wi="' + allcolor[i].id + '">' + allcolor[i].path_data + '</div>')
+        }
+
+        caches.open("colors_fav_preload").then(function (cache) {
+          cache.addAll([allcolor[i].shareurl]);
+        });
+        $('.color[wi="' + allcolor[i].id + '"]').click(function () {
+          $(this).css({ 'transform': 'translateX(' + (-1 * $(this).offset().left + $(document).scrollLeft()) + 'px) translateY(' + (-1 * $(this).offset().top + $(document).scrollTop()) + 'px) scale(3)', 'transition': '0.3s', 'z-index': ($('.container .color').length + 1), 'border': '0px solid rgba(0, 0, 0, 0)' })
+          $('.bottom').css({ 'z-index': ($('.container .color').length + 2) })
+          var thsindex = String($(this).attr('g'))
+
+
+
+          setTimeout(function () {
+            location.href = allcolor[parseInt(thsindex)].shareurl
+          }, 300);
+        })
+
+        pt += 1
+      }
+    }
+    function addloadevl() {
+      $(document).scroll(function () {
+        if (($('.container-load').offset().top - $(document).scrollTop()) < (window.innerHeight * 1.5)) {
+
+          if (dft === 0) {
+
+            if (!(stopload)) {
+              printcolor()
+            }
+            if (stopload) {
+
+            }
+            dft = 1;
+          }
+          else {
+            dft = 0
+          }
+        }
+      });
+
+    }
+    if (!(isRunningStandalone())) {
+      $('#iphonesafearea').html('')
+    }
+    $('#dd').html(':root{--dd-container-height:' + ($(window).height() - $('.bottom').height()) + 'px;--dd-container-width:' + $(window).width() + 'px;--dd-container-n-height:' + ((($(window).width() / 3) * ($(window).height() - $('.bottom').height())) / $(window).width()) + 'px;--dd-container-n-width:' + ($(window).width() / 3) + 'px;}')
+    var colorfav2arr = []
+    var rr_lasttweektrend = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTsFdgG3Pj2WrwKd9xUzKE41XD47xy2LLekYDFD_K0B8exPBiE5QJAvHoh78dobt1TJaJQj-hLv4eeN/pub?gid=1926518771&single=true&output=csv&' + genid('time') + '_' + genid('random');
+    var rr_color = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSKrUKs8Cq2a3Pubg_-MXmWp77GqLE0ImjKHy8VNAaVpqFH4Z94BeCcH-IQRsVnLTzmwaPG_66e35mH/pub?gid=1124579858&single=true&output=csv&" + genid('time') + '_' + genid('random');
+    var rr_grd = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQT08yDnvggfN_j-MxzVHnHFZQF307TYb09YV5Iab1MuzG0TY4-LSkiqLHZizZJxegTmcEtonh9ZKdn/pub?gid=1078464581&single=true&output=csv&' + genid('time') + '_' + genid('random');
+    var rr_path = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR3dPhYdciMot7S7Na3CCZntr_YeuGxNrTq64vmt1oaY4FAZWubmxCgJ5ts_1QrgUGVoWe-UflqN70R/pub?gid=257842508&single=true&output=csv&' + genid('time') + '_' + genid('random');
+    if (localStorage.getItem('colors_trend') === null) {
+      localStorage.setItem('colors_trend', '')
+    }
+    if (localStorage.getItem('colors_trend_update') === null) {
+      localStorage.setItem('colors_trend_update', '0')
+    }
+    if ((new Date().getTime() - parseInt(String(localStorage.getItem('colors_trend_update')))) < 60 * 10 * 1000) {
       colorfav2arr = String(localStorage.getItem('colors_trend'))
       preparejson(colorfav2arr)
       printcolor()
@@ -1132,99 +1232,108 @@ $('#dd').html(':root{--dd-container-height:' + ($(window).height()-$('.bottom').
         loadinghtml.push('<div class="color" loading="1"></div>')
       }
       $('.container').html(loadinghtml.join(''))
-   $.ajax({type:'get',url:rr_color,dataType:'text',success:function(e) {
-    //allstart
-    //color
-  var arr = e.split(/[\s\n]/).filter(function(n){ return n.length > 0}) ;
-for (var i = 0; i < arr.length; i++) {
-  colorfav2arr.push(arr[i])
-}
-  //colorend
-  //grd
+      $.ajax({
+        type: 'get', url: rr_color, dataType: 'text', success: function (e) {
+          //allstart
+          //color
+          var arr = e.split(/[\s\n]/).filter(function (n) { return n.length > 0 });
+          for (var i = 0; i < arr.length; i++) {
+            colorfav2arr.push(arr[i])
+          }
+          //colorend
+          //grd
 
-  $.ajax({type:'get',url:rr_grd,dataType:'text',success:function(e2) {
-    var arr2 = e2.split(/[\s\n]/).filter(function(n){ return n.length > 0}) ;
-    for (var p = 0; p < arr2.length; p++) {
-      var grdarr = arr2[p].replaceAll('deg','').replaceAll('linear-gradient(','').replaceAll(')','').replaceAll('$0%','').replaceAll('$100%','').split('@') ;
-      colorfav2arr.push('li]' + grdarr.join(']'))
-    }
-    //path
+          $.ajax({
+            type: 'get', url: rr_grd, dataType: 'text', success: function (e2) {
+              var arr2 = e2.split(/[\s\n]/).filter(function (n) { return n.length > 0 });
+              for (var p = 0; p < arr2.length; p++) {
+                var grdarr = arr2[p].replaceAll('deg', '').replaceAll('linear-gradient(', '').replaceAll(')', '').replaceAll('$0%', '').replaceAll('$100%', '').split('@');
+                colorfav2arr.push('li]' + grdarr.join(']'))
+              }
+              //path
 
-    $.ajax({type:'get',url:rr_path,dataType:'text',success:function(e3) {
-      var arr3 = e3.split(/[\s\n]/).filter(function(n){ return n.length > 0}) ;
-      for (var s = 0; s < arr3.length; s++) {
-        var patharr = arr3[s].replaceAll('[','#').replaceAll('@','@#').split('@') ;
-        colorfav2arr.push('pa]' + patharr.join(']'))
-      }
-      //trend
-      $.ajax({type:'get',url:rr_lasttweektrend,dataType:'text',success:function(e4) {
-        var arr4 = e4.replaceAll('"','').split(',') ;
-        for (var w = 0; w < arr4.length; w++) {
-          colorfav2arr.push(arr4[w])
+              $.ajax({
+                type: 'get', url: rr_path, dataType: 'text', success: function (e3) {
+                  var arr3 = e3.split(/[\s\n]/).filter(function (n) { return n.length > 0 });
+                  for (var s = 0; s < arr3.length; s++) {
+                    var patharr = arr3[s].replaceAll('[', '#').replaceAll('@', '@#').split('@');
+                    colorfav2arr.push('pa]' + patharr.join(']'))
+                  }
+                  //trend
+                  $.ajax({
+                    type: 'get', url: rr_lasttweektrend, dataType: 'text', success: function (e4) {
+                      var arr4 = e4.replaceAll('"', '').split(',');
+                      for (var w = 0; w < arr4.length; w++) {
+                        colorfav2arr.push(arr4[w])
+                      }
+                      //prepare
+                      $('.container').html('')
+
+                      preparejson('&' + colorfav2arr.join('&'))
+                      printcolor()
+                      localStorage.setItem('colors_trend', '&' + colorfav2arr.join('&'))
+                      localStorage.setItem('colors_trend_update', new Date().getTime())
+                      addloadevl()
+
+
+                      //prepareend
+                    }
+                  });
+                  //trendend
+                }
+              });
+
+              //pathend
+            }
+          });
+
+          //grdend
+          //allend
         }
-        //prepare
-        $('.container').html('')
-
-        preparejson('&' + colorfav2arr.join('&'))
-        printcolor()
-        localStorage.setItem('colors_trend','&' + colorfav2arr.join('&'))
-        localStorage.setItem('colors_trend_update',new Date().getTime())
-        addloadevl()
+      });
+      //else
+    }
+    //if
 
 
-        //prepareend
-      }});
-      //trendend
-    }});
 
-    //pathend
-  }});
 
-  //grdend
-  //allend
-   }});
-   //else
-  }
-	//if
-  
-				
-				
-				
-				
-				
-				
-$('.bottom-btn').click(function() {
-  var k = $(this).attr('u')
-	if(k === 'home') {
-		location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
-	}
-	if(k === 'favorite') {
-		location.href = 'https://erichsia7.github.io/colors/favorite/?r=' + genid('random')
-	}
-	if(k === 'option') {
-		
-	}
-	if(k === 'trend') {
-    location.href = 'https://erichsia7.github.io/colors/trend/?r=' + genid('random')
-	}
-	if(k === 'more') {
-		
-	}
-});
-$(document).ready(function() {
- //test 
-var googlefontloadtime = new Date().getTime() ;
-if(googlefontloadtime-parseInt(localStorage.getItem('googlefontNotoSansTCloaded')) < 2592000000) {
-  $('body').append('<style>' + localStorage.getItem('googlefontNotoSansTC') + '</style>');
-}
-else {
- $.ajax({type:'get',url:"https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap",dataType:'text',success:function(e) {
-  var googlefontloadtimedd = new Date().getTime() ;
-  localStorage.setItem('googlefontNotoSansTC', e); localStorage.setItem('googlefontNotoSansTCloaded', googlefontloadtimedd);
-   $('body').append('<style>' + e + '</style>');
-   }
-}); 
-}
-  });     
-    </script>
+
+
+
+    $('.bottom-btn').click(function () {
+      var k = $(this).attr('u')
+      if (k === 'home') {
+        location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
+      }
+      if (k === 'favorite') {
+        location.href = 'https://erichsia7.github.io/colors/favorite/?r=' + genid('random')
+      }
+      if (k === 'option') {
+
+      }
+      if (k === 'trend') {
+        location.href = 'https://erichsia7.github.io/colors/trend/?r=' + genid('random')
+      }
+      if (k === 'more') {
+
+      }
+    });
+    $(document).ready(function () {
+      //test 
+      var googlefontloadtime = new Date().getTime();
+      if (googlefontloadtime - parseInt(localStorage.getItem('googlefontNotoSansTCloaded')) < 2592000000) {
+        $('body').append('<style>' + localStorage.getItem('googlefontNotoSansTC') + '</style>');
+      }
+      else {
+        $.ajax({
+          type: 'get', url: "https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap", dataType: 'text', success: function (e) {
+            var googlefontloadtimedd = new Date().getTime();
+            localStorage.setItem('googlefontNotoSansTC', e); localStorage.setItem('googlefontNotoSansTCloaded', googlefontloadtimedd);
+            $('body').append('<style>' + e + '</style>');
+          }
+        });
+      }
+    });     
+  </script>
 </body>
