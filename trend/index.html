@@ -1075,12 +1075,32 @@ if(!(isRunningStandalone())) {
   $('#iphonesafearea').html('')
 }
 $('#dd').html(':root{--dd-container-height:' + ($(window).height()-$('.bottom').height()) + 'px;--dd-container-width:' + $(window).width() + 'px;--dd-container-n-height:' + ((($(window).width()/3)*($(window).height()-$('.bottom').height()))/$(window).width()) + 'px;--dd-container-n-width:' + ($(window).width()/3) + 'px;}')
-
+   var colorfav2arr = []
    var rr_lasttweektrend = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTsFdgG3Pj2WrwKd9xUzKE41XD47xy2LLekYDFD_K0B8exPBiE5QJAvHoh78dobt1TJaJQj-hLv4eeN/pub?gid=1926518771&single=true&output=csv&'  + genid('time') + '_' + genid('random') ; 
    var rr_color = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSKrUKs8Cq2a3Pubg_-MXmWp77GqLE0ImjKHy8VNAaVpqFH4Z94BeCcH-IQRsVnLTzmwaPG_66e35mH/pub?gid=1124579858&single=true&output=csv&" + genid('time') + '_' + genid('random') ;
    var rr_grd = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQT08yDnvggfN_j-MxzVHnHFZQF307TYb09YV5Iab1MuzG0TY4-LSkiqLHZizZJxegTmcEtonh9ZKdn/pub?gid=1078464581&single=true&output=csv&' + genid('time') + '_' + genid('random') ;
    var rr_path = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR3dPhYdciMot7S7Na3CCZntr_YeuGxNrTq64vmt1oaY4FAZWubmxCgJ5ts_1QrgUGVoWe-UflqN70R/pub?gid=257842508&single=true&output=csv&' + genid('time') + '_' + genid('random') ;
+   $.ajax({type:'get',url:rr_color,dataType:'text',success:function(e) {
+    //allstart
+    //color
+  var arr = e.split(/[\s\n]/).filter(function(n){ return n.length > 0}) ;
+for (var i = 0; i < arr.length; i++) {
+  colorfav2arr.push(arr[i])
+}
+  //colorend
+  //grd
 
+  $.ajax({type:'get',url:rr_grd,dataType:'text',success:function(e2) {
+    var arr2 = e2.split(/[\s\n]/).filter(function(n){ return n.length > 0}) ;
+    for (var p = 0; p < arr2.length; p++) {
+      var grdarr = arr2[p].replaceAll('deg','').replaceAll('linear-gradient(','').replaceAll(')','').replaceAll('$0%','').replaceAll('$100%','').split('@') ;
+      colorfav2arr.push('li]' + grdarr.join(']'))
+    }
+  }});
+
+  //grdend
+  //allend
+   }});
 
 preparejson()
 	
