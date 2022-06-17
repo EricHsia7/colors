@@ -1096,6 +1096,20 @@ for (var i = 0; i < arr.length; i++) {
       var grdarr = arr2[p].replaceAll('deg','').replaceAll('linear-gradient(','').replaceAll(')','').replaceAll('$0%','').replaceAll('$100%','').split('@') ;
       colorfav2arr.push('li]' + grdarr.join(']'))
     }
+    //path
+
+    $.ajax({type:'get',url:rr_path,dataType:'text',success:function(e3) {
+      var arr3 = e3.split(/[\s\n]/).filter(function(n){ return n.length > 0}) ;
+      for (var s = 0; s < arr3.length; s++) {
+        var patharr = arr3[s].replaceAll('[','#').replaceAll('@','@#').split('@') ;
+        colorfav2arr.push('pa]' + patharr.join(']'))
+      }
+      //trend
+
+      //trendend
+    }});
+
+    //pathend
   }});
 
   //grdend
