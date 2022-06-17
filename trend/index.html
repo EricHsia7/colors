@@ -1080,9 +1080,13 @@ $('#dd').html(':root{--dd-container-height:' + ($(window).height()-$('.bottom').
    var rr_color = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSKrUKs8Cq2a3Pubg_-MXmWp77GqLE0ImjKHy8VNAaVpqFH4Z94BeCcH-IQRsVnLTzmwaPG_66e35mH/pub?gid=1124579858&single=true&output=csv&" + genid('time') + '_' + genid('random') ;
    var rr_grd = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQT08yDnvggfN_j-MxzVHnHFZQF307TYb09YV5Iab1MuzG0TY4-LSkiqLHZizZJxegTmcEtonh9ZKdn/pub?gid=1078464581&single=true&output=csv&' + genid('time') + '_' + genid('random') ;
   var rr_path = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR3dPhYdciMot7S7Na3CCZntr_YeuGxNrTq64vmt1oaY4FAZWubmxCgJ5ts_1QrgUGVoWe-UflqN70R/pub?gid=257842508&single=true&output=csv&' + genid('time') + '_' + genid('random') ;
-   if(!(localStorage.getItem('colors_trend') === null)) {
-
-    if((new Date().getTime()-ParseInt(String(localStorage.getItem('colors_trend_update')))) < 60*10*1000) {
+   if(localStorage.getItem('colors_trend') === null) {
+    localStorage.setItem('colors_trend','')
+   }
+   if(localStorage.getItem('colors_trend_update') === null) {
+    localStorage.setItem('colors_trend_update','0')
+   }
+    if((new Date().getTime()-parseInt(String(localStorage.getItem('colors_trend_update')))) < 60*10*1000) {
       colorfav2arr = String(localStorage.getItem('colors_trend'))
       preparejson(colorfav2arr)
       printcolor()
@@ -1138,7 +1142,7 @@ for (var i = 0; i < arr.length; i++) {
    //else
   }
 	//if
-  }
+  
 				
 				
 				
