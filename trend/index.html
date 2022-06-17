@@ -95,7 +95,7 @@ height:55px;
 	overflow:hidden;
 	-webkit-user-select: none;
   box-sizing: border-box;
-  border:3px solid #fff;
+  border:1.5px solid #fff;
 }
 .colorcontentpathsvg {
 	position:absolute;
@@ -1059,7 +1059,7 @@ function printcolor() {
 cache.addAll([allcolor[i].shareurl]);
 });
     $('.color[wi="' + allcolor[i].id + '"]').click(function() {
-      $(this).css({'transform':'translateX(' + (-1*$(this).offset().left+$(document).scrollLeft()) + 'px) translateY(' + (-1*$(this).offset().top+$(document).scrollTop()) + 'px) scale(3)','transition':'0.3s','z-index':($('.container .color').length+1)}) 
+      $(this).css({'transform':'translateX(' + (-1*$(this).offset().left+$(document).scrollLeft()) + 'px) translateY(' + (-1*$(this).offset().top+$(document).scrollTop()) + 'px) scale(3)','transition':'0.3s','z-index':($('.container .color').length+1),'border':'0px solid rgba(0, 0, 0, 0)'}) 
       $('.bottom').css({'z-index':($('.container .color').length+2)})
 			var thsindex = String($(this).attr('g'))
 			
