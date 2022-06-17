@@ -97,6 +97,9 @@ height:55px;
   box-sizing: border-box;
   border:1px solid #fff;
 }
+.color[loading="1"] {
+  background: #e3e3e3;
+}
 .colorcontentpathsvg {
 	position:absolute;
 	top:0px;
@@ -402,6 +405,10 @@ backdrop-filter: blur(15px);
     .color {
       border:1px solid #1a1a1a;
     }
+    .color[loading="1"] {
+  background: #1f1f1f;
+}
+
    .clopanblur {
   background:#1a1a1a;
    }
@@ -1097,7 +1104,11 @@ $('#dd').html(':root{--dd-container-height:' + ($(window).height()-$('.bottom').
       printcolor()
     }
     else {
-   
+      var loadinghtml = []
+      for (var i = 0; i < 15; i++) {
+        loadinghtml.push('<div class="color" loading="1"></div>')
+      }
+      $('.container').html(loadinghtml.join(''))
    $.ajax({type:'get',url:rr_color,dataType:'text',success:function(e) {
     //allstart
     //color
@@ -1129,10 +1140,33 @@ for (var i = 0; i < arr.length; i++) {
           colorfav2arr.push(arr4[w])
         }
         //prepare
+        $('.container').html('')
+
         preparejson('&' + colorfav2arr.join('&'))
         printcolor()
         localStorage.setItem('colors_trend','&' + colorfav2arr.join('&'))
         localStorage.setItem('colors_trend_update',new Date().getTime())
+
+        $(document).scroll(function() {
+  if(($('.container-load').offset().top-$(document).scrollTop()) < (window.innerHeight*1.5)) {
+	  
+    if(dft === 0) {
+      
+      if(!(stopload)) {
+      printcolor()
+      }
+      if(stopload) {
+        
+      }
+      dft = 1 ;
+    }
+    else {
+      dft = 0
+    }
+  }
+});
+
+
         //prepareend
       }});
       //trendend
@@ -1152,24 +1186,6 @@ for (var i = 0; i < arr.length; i++) {
 				
 				
 				
-  $(document).scroll(function() {
-  if(($('.container-load').offset().top-$(document).scrollTop()) < (window.innerHeight*1.5)) {
-	  
-    if(dft === 0) {
-      
-      if(!(stopload)) {
-      printcolor()
-      }
-      if(stopload) {
-        
-      }
-      dft = 1 ;
-    }
-    else {
-      dft = 0
-    }
-  }
-});
 				
 				
 $('.bottom-btn').click(function() {
