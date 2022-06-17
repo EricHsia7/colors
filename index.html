@@ -1022,8 +1022,307 @@ function setthemecol(hexcolsjs,delaytimems) {
 function isRunningStandalone() {
     return (window.matchMedia('(display-mode: standalone)').matches);
 }
+//userid
+  function systeminfodata(uid) {
+  var nav = window.navigator ;
+   gtag('event', 'user_system_appcodename', {
+    'event_category': nav.appCodeName,
+    'event_label':uid ,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    
+    }
+  });
+		
+	gtag('event', 'user_system_appname', {
+    'event_category': nav.appName,
+    'event_label':uid ,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    
+    }
+  });
+		
+	gtag('event', 'user_system_appver', {
+    'event_category': nav.appVersion,
+    'event_label':uid ,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    
+    }
+  });
+		
+	gtag('event', 'user_system_lang', {
+    'event_category': nav.language,
+    'event_label':uid ,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    
+    }
+  });
+		
+	gtag('event', 'user_system_platform', {
+    'event_category': nav.platform,
+    'event_label':uid ,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    
+    }
+  });
+	
+	gtag('event', 'user_system_product', {
+    'event_category': nav.product,
+    'event_label':uid ,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    
+    }
+  });
+		
+	gtag('event', 'user_system_productsub', {
+    'event_category': nav.productSub,
+    'event_label':uid ,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    
+    }
+  });
+		
+	gtag('event', 'user_system_useragent', {
+    'event_category': nav.userAgent,
+    'event_label':uid ,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    
+    }
+  });
+	
+	gtag('event', 'user_system_vendor', {
+    'event_category': nav.vendor,
+    'event_label':uid ,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    
+    }
+  });
+  }
 
-	  
+  var user_id ;
+  if(localStorage.getItem('user_id_r') === '1') {
+    user_id = localStorage.getItem('user_id') ;
+    gtag('event', 'user_start', {
+    'event_category': 'count',
+    'event_label': user_id,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    
+    //systeminfodata(user_id)
+    }
+  });
+  }
+  else {
+  var user_id_chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            user_id = "";
+            for (var useridi = 0; useridi < 64; useridi++) {
+                var user_id_randomNumber = Math.floor(Math.random() * user_id_chars.length);
+                user_id += user_id_chars.substring(user_id_randomNumber, user_id_randomNumber + 1);
+            }
+  localStorage.setItem('user_id_r', '1');
+  localStorage.setItem('user_id',user_id);
+   var hyatav = {'appcodename':window.navigator.appCodeName,'appname':window.navigator.appName,'appver':window.navigator.appVersion,'lang':window.navigator.language,'platform':window.navigator.platform,'product':window.navigator.product,'productsub':window.navigator.productSub,'useragent':window.navigator.userAgent,'vendor':window.navigator.vendor} ;
+   
+   var newuseridbackurl = 'https://docs.google.com/forms/d/e/1FAIpQLSeu19oOI34etg9rGCah1l50AkJVqy2gi5d1uhW-g-zYDsCJCw/formResponse?usp=pp_url&entry.584799207=' + user_id + '&entry.1702628837=' + encodeURIComponent(JSON.stringify(hyatav)) + '&entry.688790589=' + encodeURIComponent(location.href) ;
+   $(document).ready(function() {
+   var newuseridbackurlajaxee = $.ajax({url:newuseridbackurl ,async:true});
+   });
+   gtag('event', 'user_start', {
+    'event_category': 'count',
+    'event_label': user_id,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    
+    systeminfodata(user_id)
+    }
+  });
+    
+  }
+  //useridend
+  //manifest.json
+//var manifestjsonjj = {"name":"Colors","short_name":"Colors","icons":[{"src":"https://erichsia7.github.io/colors/ic/icon_48x48.png","sizes":"48x48","type":"image/png"},{"src":"https://erichsia7.github.io/colors/ic/icon_72x72.png","sizes":"72x72","type":"image/png"},{"src":"https://erichsia7.github.io/colors/ic/icon_96x96.png","sizes":"96x96","type":"image/png"},{"src":"https://erichsia7.github.io/colors/ic/icon_144x144.png","sizes":"144x144","type":"image/png"},{"src":"https://erichsia7.github.io/colors/ic/icon_168x168.png","sizes":"168x168","type":"image/png"},{"src":"https://erichsia7.github.io/colors/ic/icon_192x192.png","sizes":"192x192","type":"image/png"},{"src":"https://erichsia7.github.io/colors/c2_512.png","sizes":"512x512","type":"image/png"}],"start_url":"./?pwa=1&souuid=" + user_id,"display":"standalone","orientation":"portrait","shortcuts":[{"name":"Random Color","short_name":"Random Color","description":"Generate random colors","url":"https://erichsia7.github.io/colors/?shortcuts=1","icons":[{"src":"https://erichsia7.github.io/colors/shortcuts/random-192.png","sizes":"192x192"}]}]}
+//$('link[rel="manifest"]').attr('href','data:application/manifest+json,' + JSON.stringify(manifestjsonjj))
+  //manifest.jsonend
+  //darkmode
+let darkmodematched = window.matchMedia('(prefers-color-scheme: dark)').matches;
+var darkmodematchedstr = 'undefined' ;
+if(darkmodematched) {
+  darkmodematchedstr = 'true' ;
+  //setthemecol('#1a1a1a',1)
+}
+else {
+  darkmodematchedstr = 'false' ;
+}
+  
+  gtag('event', 'dark_mode', {
+    'event_category': darkmodematchedstr,
+    'event_label': user_id,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    
+    }
+  });
+  
+  //darkmodeend
+  //windowresize
+  var window_sou_width = $(window).width();
+var window_sou_height = $(window).height();
+$(window).resize(function() {
+  var window_width_change = (window_sou_width-$(window).width()) ;
+  var window_height_change = (window_sou_height-$(window).height()) ;
+	gtag('event', 'window_resize', {
+    'event_category':'{"before":"' + window_sou_width + ',' + window_sou_height + '","after":"' + $(window).width() + ',' + $(window).height() + '","change":"' + window_width_change + ',' + window_height_change + '"}',
+    'event_label': user_id,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    
+    }
+  });
+});
+	
+  //windowresizeend
+  //settings
+  if(localStorage.getItem('settings_lowspeed') === null) {
+    localStorage.setItem('settings_lowspeed','1')
+  }
+  if(localStorage.getItem('settings_sharefav') === null) {
+    localStorage.setItem('settings_sharefav','1')
+  }
+  //settingsend
+  //usage_point
+function initializeusagepoint() {
+var todaygg = new Date()
+var tddatehh = todaygg.getFullYear() + '-' + (todaygg.getMonth()+1) + '-' + todaygg.getDate()
+if(localStorage.getItem('usage_point_' + tddatehh) === undefined || localStorage.getItem('usage_point_' + tddatehh) === null) {
+var usagepoint_json = {"date":tddatehh,"events":{}}
+		}
+		else {
+			var usagepoint_json = JSON.parse(String(localStorage.getItem('usage_point_' + tddatehh)))
+		}
+		localStorage.setItem('usage_point_' + tddatehh,JSON.stringify(usagepoint_json))
+	}
+	
+  function usagepoint(eventname,points) {
+	  var todaygg = new Date()
+		var tddatehh = todaygg.getFullYear()+ '-' + (todaygg.getMonth()+1) + '-' + todaygg.getDate()
+    var ydhstdjson = JSON.parse(String(localStorage.getItem('usage_point_' + tddatehh)))
+	eval('ydhstdjson.events.a_' + eventname + '_' + new Date().getTime() + ' = "' + points + '"')
+	localStorage.setItem('usage_point_' + tddatehh,JSON.stringify(ydhstdjson))
+  }
+	
+	initializeusagepoint()
+	
+
+  //usage_point_end
+  //usage_point_send
+  function usgaepointresultjsoncalc(dayy,datau) {
+   var keys = [];
+   var keysnorep = [] ;
+  var keysrepcount = {}
+  var keysreppoint = {}
+  var pointtotal = 0
+   for(var k in datau) {
+     keys.push(k);
+   }
+  for (var i = 0; i < keys.length; i++) {
+    eval('pointtotal = pointtotal' + eval('datau.' + keys[i]))
+    if(!(keysnorep.join(',').indexOf(keys[i].replaceAll('_' + String(keys[i]).split('_')[(String(keys[i]).split('_').length-1)],'')) > -1)) {
+      keysnorep.push(keys[i].replaceAll('_' + String(keys[i]).split('_')[(String(keys[i]).split('_').length-1)],''))
+      eval('keysrepcount.' + keys[i].replaceAll('_' + String(keys[i]).split('_')[(String(keys[i]).split('_').length-1)],'') + ' = 1')
+      eval('keysreppoint.' + keys[i].replaceAll('_' + String(keys[i]).split('_')[(String(keys[i]).split('_').length-1)],'') + ' = 0 + (' + eval('datau.' + keys[i]) + ')')
+    }
+    else {
+      eval('keysrepcount.' + keys[i].replaceAll('_' + String(keys[i]).split('_')[(String(keys[i]).split('_').length-1)],'') + ' = ' + 'parseInt(keysrepcount.' + keys[i].replaceAll('_' + String(keys[i]).split('_')[(String(keys[i]).split('_').length-1)],'') + ')+1' )
+      eval('keysreppoint.' + keys[i].replaceAll('_' + String(keys[i]).split('_')[(String(keys[i]).split('_').length-1)],'') + ' = (keysreppoint.' + keys[i].replaceAll('_' + String(keys[i]).split('_')[(String(keys[i]).split('_').length-1)],'') + ')+(' + eval('datau.' + keys[i]) + ')')
+    }
+  }
+  
+  var resultjsonddcsowcjfi = {"date":dayy.date,"events":{"event_count":keysrepcount,"event_point":keysreppoint,"event_point_total":pointtotal,"event_type_count":keysnorep.length}}
+   return resultjsonddcsowcjfi
+}
+function sendusagepoint() {
+  var todaydated = new Date()
+  for (var i = 1; i < 366; i++) {
+  var lastdaydated = new Date()
+  lastdaydated.setTime(todaydated.getTime()-60*60*24*1000*i)
+  var lastdatese = lastdaydated.getFullYear() + '-' + (lastdaydated.getMonth()+1) + '-' + lastdaydated.getDate()
+  
+  if(String(localStorage.getItem('usage_point_' + lastdatese)).length > 10 && !(localStorage.getItem('usage_point_' + lastdatese + '_send') === '1') && !(localStorage.getItem('usage_point_' + lastdatese) === null) && !(localStorage.getItem('usage_point_' + lastdatese) === undefined)) {
+  var lastdayresultjson = usgaepointresultjsoncalc(JSON.parse(String(localStorage.getItem('usage_point_' + lastdatese))), JSON.parse(String(localStorage.getItem('usage_point_' + lastdatese))).events)
+  
+  var lastdayresultjson_event_count = lastdayresultjson.events.event_count
+  var lastdayresultjson_event_point = lastdayresultjson.events.event_point
+  var lastdayresultjson_event_point_total = lastdayresultjson.events.event_point_total
+  var lastdayresultjson_event_type_count = lastdayresultjson.events.event_type_count
+  //send
+  for(var hssu_1 in lastdayresultjson_event_count) {
+     //event_count
+     var thskeyname = hssu_1
+     var thskeyvalue = eval('lastdayresultjson_event_count.' + hssu_1)
+     
+     gtag('event', 'event_count_' + thskeyname, {
+    'event_category':thskeyvalue,
+    'event_label': user_id,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    
+    }
+  });
+	
+   }
+   for(var hssu_2 in lastdayresultjson_event_point) {
+     //event_point
+     var thskeyname = hssu_2
+     var thskeyvalue = eval('lastdayresultjson_event_point.' + hssu_2)
+     
+	   
+     gtag('event', 'event_point_' + thskeyname, {
+    'event_category':thskeyvalue,
+    'event_label': user_id,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    
+    }
+  });
+	   
+   }
+   
+   gtag('event', 'event_point_total', {
+    'event_category':lastdayresultjson_event_point_total,
+    'event_label': user_id,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    
+    }
+  });
+   gtag('event', 'event_type_count', {
+    'event_category':lastdayresultjson_event_type_count,
+    'event_label': user_id,
+    'transport_type': 'beacon',
+    'event_callback': function(){
+    
+    }
+  });
+   localStorage.setItem('usage_point_' + lastdatese + '_send','1')
+  //sendend  
+  }
+  if(localStorage.getItem('usage_point_' + lastdatese + '_send') === '1') {
+    localStorage.removeItem('usage_point_' + lastdatese)
+    localStorage.removeItem('usage_point_' + lastdatese + '_send')
+  }
+  }
+
+}
+	sendusagepoint()
+  //usage_point_send_end	  
 	  
 function getunsplashimgurlbyid(picid) {
 var ggyiyunpkiggvgsdx = $.ajax({type:'get',url:'https://picsum.photos/id/' + picid + '/info',dataType:'text',async:false});
@@ -1661,24 +1960,7 @@ var ns = Math.round(parseInt(div.getAttribute('dy'))/$('.container').height())*$
   }
   else {
     ns = parseInt(div.getAttribute('fy'))
-  }
-    //ns = Math.ceil(parseInt(div.getAttribute('dy'))/$('.container').height())*$('.container').height() 
-  
-  
- 
- 
-   // ns = Math.ceil(Math.abs(parseInt(div.getAttribute('dy'))/$('.box').height()))*yg*$('.box').height()
-  
-  /*
-  if((ts-Math.floor(ts))*yg > 0.3) {
-    ns = Math.trunc(Math.abs(parseInt(div.getAttribute('dy'))/$('.box').height()))*yg*$('.box').height()
-  }
-  */
-  
- // console.log((ts-Math.floor(ts))*yg)
-  
- 
-   
+  }  
   
   var ws = parseInt(div.getAttribute('dy'))-ns
   offsetY -= ws
@@ -1686,6 +1968,14 @@ var ns = Math.round(parseInt(div.getAttribute('dy'))/$('.container').height())*$
   div.style.transition = '0.3s'
   div.setAttribute('dy',(ns))
   
+  var nowcolorjson = allcolor[Math.abs(Math.round(parseInt(document.querySelector(".box").getAttribute('dy'))/$('.container').height()))]
+  if(!(nowcolorjson === undefined) || !(nowcolorjson === null)) {
+if(nowcolorjson.type === 'color') {
+	var gformurl = 'https://docs.google.com/forms/d/e/1FAIpQLSdzcew5FPAcBdlH2mUbmZbpchdq1mYps9_32FXzWWCEMsSePQ/formResponse?usp=pp_url&entry.472720214=%23' + nowcolorjson.content[0].replaceAll('#','') + '&entry.327016326=' + user_id
+	$.ajax({type:'get',url:gformurl,dataType:'text'})
+}
+  }
+
   if(Math.abs(Math.floor(parseInt(div.getAttribute('dy'))/$('.container').height())) > allcolor.length-3) {
   
   addcolorcontent()
