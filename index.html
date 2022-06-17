@@ -741,7 +741,16 @@ function hsv2rgb(a, r, t) {
       return [t, n, M];
   }
 }
-
+function favoriteshare() {
+var timeseedrandom = new Date().getTime();
+var myrng = new Math.seedrandom(String(new Date().getTime()))
+if(myrng()>0.5) {
+return true
+}
+else {
+return false
+}
+}
 function cllhi() {
 	if(String(getCookie("colorfav2")).length > 10) {
   var tthi = getCookie("colorfav2").substring(1, getCookie("colorfav2").length).split("&");
@@ -1385,7 +1394,7 @@ function printcolor() {
 	var coltype = allcolor[fidindex].type
 	
 	//gg
-	opensou = 'recommend'
+	opensou = gup('open')
 	
 	//ggg
 	
@@ -1424,7 +1433,7 @@ if(opensou === 'recommend' || opensou === 'trend') {
       }
      else {
 if(localStorage.getItem('settings_sharefav') === '1' && favoriteshare() === true) {
-var favrecommendforms = $.ajax({url:'https://docs.google.com/forms/d/e/1FAIpQLScLxMmjmZNWrv7yyYazyAkuxp0eQAaN8jkYgx1I7BlXQWA4dg/formResponse?usp=pp_url&entry.1247563127=%23' + $('#rgb').attr('shga').split('#')[1] + '&entry.293943510=%23' + $('#rgb').attr('shgb').split('#')[1] + '&entry.123365810=' + $('#rgb').attr('shdeg') ,async:true});
+var favrecommendforms = $.ajax({url:'https://docs.google.com/forms/d/e/1FAIpQLScLxMmjmZNWrv7yyYazyAkuxp0eQAaN8jkYgx1I7BlXQWA4dg/formResponse?usp=pp_url&entry.1247563127=%23' + contentss[1].replaceAll('#','') + '&entry.293943510=%23' + contentss[2].replaceAll('#','') + '&entry.123365810=' + contentss[0] ,async:true});
       }
      }
     setcookie('colorfav2',getCookie('colorfav2') + '&li]' + contentss[0] + ']' + contentss[1] + ']' + contentss[2])
@@ -1482,7 +1491,7 @@ if(opensou === 'recommend' || opensou === 'trend') {
       }
      else {
 if(localStorage.getItem('settings_sharefav') === '1' && favoriteshare() === true) {
-var favrecommendformsppw = $.ajax({url:'https://docs.google.com/forms/d/e/1FAIpQLSd4KLvL9x_6jhRCdst5eT0gGv91wO8e0yqa1lnnTGDzVHoS4A/formResponse?usp=pp_url&entry.669769670=%23' + $('#rgb').attr('lc1').split('#')[1] + '&entry.2145134131=%23' + $('#rgb').attr('lc2').split('#')[1] ,async:true});
+var favrecommendformsppw = $.ajax({url:'https://docs.google.com/forms/d/e/1FAIpQLSd4KLvL9x_6jhRCdst5eT0gGv91wO8e0yqa1lnnTGDzVHoS4A/formResponse?usp=pp_url&entry.669769670=%23' + contentss[0].replaceAll('#','') + '&entry.2145134131=%23' + contentss[1].replaceAll('#','') ,async:true});
       }
      }
     setcookie('colorfav2',getCookie('colorfav2') + '&pa]' + contentss[0] + ']' + contentss[1])
@@ -1498,16 +1507,6 @@ favtdpromptdelaytime = 460 ;
     } 
     }
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 		});
 		$('.color[fid="' + allcolor[i].id + '"]').click(function() {
 			var dbclarr = eval('dbclick.' + $(this).attr('fid'))
