@@ -1209,7 +1209,11 @@
       }
     });
     $(window).resize(function () {
+      var beforewindowheight = parseInt(getComputedStyle(document.body).getPropertyValue('--dd-container-height'))
       setsize()
+      var afterwindowheight = parseInt(getComputedStyle(document.body).getPropertyValue('--dd-container-height'))
+var scrolltop = $(document).scrollTop()
+$(document).scrollTop(scrolltop+(afterwindowheight-beforewindowheight))
     })
 
 
