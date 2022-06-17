@@ -2049,6 +2049,15 @@
   $(document).ready(function () {
     initialize()
     printcolor()
+
+    if (allcolor[0].type === 'imagecolorgroup') {
+        setthemecol(allcolor[0].themecolor[0], 1)
+      }
+      else {
+        setthemecol(allcolor[0].themecolor, 1)
+      }
+
+
     $('.optionlist-mask').click(function (evt) {
       evt.stopPropagation();
       $('.optionlist').css({ 'transform': 'translateY(calc(var(--b-bottom-height) + (50px * var(--b-option-list))))' });
