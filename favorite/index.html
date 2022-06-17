@@ -86,7 +86,7 @@ height:55px;
 	-webkit-user-select: none;
 	}
 .color {
-  background:#ff0000;
+  background:#e3e3e3;
   height:var(--dd-container-n-height);
   width:var(--dd-container-n-width);
   transform:scale(1);
@@ -95,7 +95,7 @@ height:55px;
 	overflow:hidden;
 	-webkit-user-select: none;
   box-sizing: border-box;
-  border:1.5px solid #fff;
+  border:1px solid #fff;
 }
 .colorcontentpathsvg {
 	position:absolute;
@@ -399,6 +399,9 @@ backdrop-filter: blur(15px);
   display:none;
  }
   @media (prefers-color-scheme: dark) {
+    .color {
+      border: 1px solid #1a1a1a ;
+    }
    .clopanblur {
   background:#1a1a1a;
    }
