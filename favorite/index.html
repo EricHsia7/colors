@@ -1213,7 +1213,7 @@
       setsize()
       var afterwindowheight = parseInt(getComputedStyle(document.body).getPropertyValue('--dd-container-height'))
 var scrolltop = $(document).scrollTop()
-$(document).scrollTop(scrolltop+(afterwindowheight-beforewindowheight))
+$(document).scrollTop(scrolltop-(afterwindowheight-beforewindowheight))
     })
 
 
