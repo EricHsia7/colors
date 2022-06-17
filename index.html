@@ -40,7 +40,8 @@
 
   body {
     margin: 0px;
-    padding: 0px
+    padding: 0px;
+    background: #fff;
   }
 
   .bottom {
@@ -309,6 +310,10 @@
   @media (prefers-color-scheme: dark) {
     :root {
       --bottom-icon-color: #ffffff
+    }
+
+    body {
+      background: #1a1a1a;
     }
 
     .bottom,
@@ -2103,7 +2108,7 @@
     div.setAttribute('dy', (ns))
     var nowcolorjson = allcolor[Math.abs(Math.round(parseInt(document.querySelector(".box").getAttribute('dy')) / $('.container').height()))]
     if (!(nowcolorjson === undefined) && !(nowcolorjson === null)) {
-      history.pushState(null, null,nowcolorjson.shareurl);
+      history.pushState(null, null, nowcolorjson.shareurl);
 
       if (nowcolorjson.type === 'color') {
         if (eval('sentcolors.' + nowcolorjson.id) === undefined) {
