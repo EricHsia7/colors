@@ -1,15 +1,16 @@
 <meta charset="UTF-8">
 <title>Colors</title>
+
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-342D6M2MKX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-342D6M2MKX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-342D6M2MKX');
-</script>
+    gtag('config', 'G-342D6M2MKX');
+  </script>
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js?1"></script>
@@ -24,177 +25,204 @@
 <link rel="manifest" href="manifest.json?qpipoo">
 
 <style>
-      * {outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-user-select: none;}
+  * {
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-select: none;
+  }
 
 
- .title {
-  background:#fff;
-  position:fixed;
-  top:0px;
-  left:0px;
-  width:100%;
-  height:55px;
-  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.05);
-  -webkit-user-select: none;
-  display: flex;
-justify-content: center;
-align-items: center;
-  font-weight:700;
-  font-family: 'Noto Sans TC', sans-serif;
-}
-.backbtn {
-  background:url(https://erichsia7.github.io/colors/arrow-right.png);
-  background-size:20px;
-  background-position:center;
-  background-repeat:no-repeat;
-    width:55px;
-  height:55px;
-  position:fixed;
-  top:0px;
-  left:0px;
-  transform:rotate(180deg);
-  -webkit-appearance:none;
-outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);
-  -webkit-user-select: none;
-}
-.box {
-  position:fixed;
-  top:55px;
-  left:0px;
-  width:100%;
-  height:calc(100% - 55px);
-  overflow:hidden;
-}
-.settings {
-  height:55px;
-  width:100%;
-  position:relative;
-  display: flex;
-  align-items: center;
-  border-bottom:1px #e3e3e3 solid;
-  font-weight:500;
-  font-family: 'Noto Sans TC', sans-serif;
-}
-.name {
-  padding-left:10px;
-}
-.settingsinfo {
-  width:calc(100% - 20px);
-  position:relative;
-  padding:10px;
-  color:#888;
-  list-style:none;
-  font-weight:400;
-  font-family: 'Noto Sans TC', sans-serif;
-}
-.settingsswitch {
-  position:absolute;
-  right:40px;
-  top:12.5px;
-  
-}
-.settingsswitch input {
-  height:30px;
-  padding:0px;
-  margin:0px;
-  box-sizing: border-box;
-  border:none;
-  background:rgba(0, 0, 0,0);
-  transform:translateX(1px);
-}
-.settingsswitch input::before {
-  content:'';
-  background:#f5f5f5;
-  width:47px;
-  height:30px;
-  position:absolute;
-  top:0px;
-  left:-1px;
-  border-radius:99em;
-  transition:0.3s;
-}
-.settingsswitch input:checked::before {
-  background:#888;
-}
-.settingsswitch input::after {
-  content:'';
-  background:#fff;
-  width:27px;
-  height:27px;
-  position:absolute;
-  top:1.5px;
-  left:0.5px;
-  border-radius:99em;
-  transition:0.3s;
-}
-.settingsswitch input:checked::after {
-  content:'';
-  background:#fff;
-  width:27px;
-  height:27px;
-  position:absolute;
-  top:1.5px;
-  left:17.5px;
-}
-.ladbar {
-background:#000;
-position:fixed;
-top:0px;
-left:0px;
-width:0px;
-height:1.3px;
-transition:width 0.3s ,background 0s;
--webkit-user-select: none;
-}
-@media (prefers-color-scheme: dark) {
-  body,.title {
-    background:#1a1a1a;
-  }
-  .backbtn {
-    filter: invert(100%);
-  }
   .title {
-    color:#fff;
+    background: #fff;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 55px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.05);
+    -webkit-user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-family: 'Noto Sans TC', sans-serif;
   }
-  .ladbar {
-        background:#fff;
+
+  .backbtn {
+    background: url(https://erichsia7.github.io/colors/arrow-right.png);
+    background-size: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 55px;
+    height: 55px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    transform: rotate(180deg);
+    -webkit-appearance: none;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-select: none;
   }
+
+  .box {
+    position: fixed;
+    top: 55px;
+    left: 0px;
+    width: 100%;
+    height: calc(100% - 55px);
+    overflow: hidden;
+  }
+
   .settings {
-    border-bottom:1px #303030 solid;
-    color:#fff;
+    height: 55px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px #e3e3e3 solid;
+    font-weight: 500;
+    font-family: 'Noto Sans TC', sans-serif;
   }
-  
+
+  .name {
+    padding-left: 10px;
+  }
+
+  .settingsinfo {
+    width: calc(100% - 20px);
+    position: relative;
+    padding: 10px;
+    color: #888;
+    list-style: none;
+    font-weight: 400;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+
+  .settingsswitch {
+    position: absolute;
+    right: 40px;
+    top: 12.5px;
+
+  }
+
+  .settingsswitch input {
+    height: 30px;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    border: none;
+    background: rgba(0, 0, 0, 0);
+    transform: translateX(1px);
+  }
+
   .settingsswitch input::before {
-  content:'';
-  background:#141414;
-}
-.settingsswitch input:checked::before {
-  content:'';
-  background:#1f1f1f;
-}
-.settingsswitch input::after {
-  content:'';
-  background:#303030;
-}
-.settingsswitch input:checked::after {
-  content:'';
-  background:#303030;
-}
-}
+    content: '';
+    background: #f5f5f5;
+    width: 47px;
+    height: 30px;
+    position: absolute;
+    top: 0px;
+    left: -1px;
+    border-radius: 99em;
+    transition: 0.3s;
+  }
+
+  .settingsswitch input:checked::before {
+    background: #888;
+  }
+
+  .settingsswitch input::after {
+    content: '';
+    background: #fff;
+    width: 27px;
+    height: 27px;
+    position: absolute;
+    top: 1.5px;
+    left: 0.5px;
+    border-radius: 99em;
+    transition: 0.3s;
+  }
+
+  .settingsswitch input:checked::after {
+    content: '';
+    background: #fff;
+    width: 27px;
+    height: 27px;
+    position: absolute;
+    top: 1.5px;
+    left: 17.5px;
+  }
+
+  .ladbar {
+    background: #000;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 1.3px;
+    transition: width 0.3s, background 0s;
+    -webkit-user-select: none;
+  }
+
+  @media (prefers-color-scheme: dark) {
+
+    body,
+    .title {
+      background: #1a1a1a;
+    }
+
+    .backbtn {
+      filter: invert(100%);
+    }
+
+    .title {
+      color: #fff;
+    }
+
+    .ladbar {
+      background: #fff;
+    }
+
+    .settings {
+      border-bottom: 1px #303030 solid;
+      color: #fff;
+    }
+
+    .settingsswitch input::before {
+      content: '';
+      background: #141414;
+    }
+
+    .settingsswitch input:checked::before {
+      content: '';
+      background: #1f1f1f;
+    }
+
+    .settingsswitch input::after {
+      content: '';
+      background: #303030;
+    }
+
+    .settingsswitch input:checked::after {
+      content: '';
+      background: #303030;
+    }
+  }
 </style>
 
 <div class="box">
-  
+
   <div class="settings">
     <div class="name">低數據模式</div>
     <label for="lowspeed" class="settingsswitch"><input type="checkbox" id="lowspeed" name="lowspeed" checked></label>
   </div>
-  
+
   <div class="settings">
     <div class="name">分享喜好項目</div>
     <label for="sharefav" class="settingsswitch"><input type="checkbox" id="sharefav" name="sharefav" checked></label>
   </div>
-  
+
   <div class="settingsinfo">
     <li>開啟低數據模式可以節省網路流量及加快載入速度。</li>
     <li>分享喜好項目是匿名的，它會顯示在建議的顏色，關閉分享喜好項目後，將不會分享。</li>
@@ -208,150 +236,151 @@ transition:width 0.3s ,background 0s;
 
 <script>
 
-function setthemecol(hexcolsjs,delaytimems) {
-  setTimeout(function() {
-  $('meta[name="theme-color"]').attr('content',hexcolsjs);
-  },delaytimems);
-}
-function darkmodehexcol() {
-if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  return '#1a1a1a'
-}
-else {
-return '#fff'
-}
-}
- //setthemecol(darkmodehexcol(),1)
-  function genid(mode) {
-if(mode === "random"){
-var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
-            var genid = "";
-            for (var i = 0; i < 16; i++) {
-                var genrandomNumber = Math.floor(Math.random() * genidchars.length);
-                genid += genidchars.substring(genrandomNumber, genrandomNumber + 1);
-            }
-  return genid ;
-}
-          
- if(mode === "time"){
-   var gtoday=new Date();
-   var genid2 = (gtoday.getMonth()+1) + '_' + gtoday.getDate() + '_' + gtoday.getHours() + '_' + gtoday.getMinutes() + '_' + gtoday.getSeconds() + '-' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8)) + '' + (1+Math.floor(Math.random() * 8));
-   
-   return genid2
- }
-  
-  if(mode === "number"){
-   
-   var genid3 = '' ;
-for (var i = 0; i < 16; i++) {
-  genid3 += '' + (0+Math.floor(Math.random() * 9))
-}
-   return genid3
- }
-  
-  if(mode === "uuid"){
-var genidchars4 = "abcdef012345678";
-    var geniduu = [8,4,4,4,12];
-            var genid4 = "";
-            var genid5 = "";
-    for (var ia = 0; ia < geniduu.length; ia++) {
-      var genid4 = "";
-            for (var i = 0; i < geniduu[ia]; i++) {
-                var genrandomNumber4 = Math.floor(Math.random() * genidchars4.length);
-                genid4 += genidchars4.substring(genrandomNumber4, genrandomNumber4 + 1);
-            }
-genid5 += '-' + genid4 ;
-    }
-    return genid5.substring(1,genid5.length)
+  function setthemecol(hexcolsjs, delaytimems) {
+    setTimeout(function () {
+      $('meta[name="theme-color"]').attr('content', hexcolsjs);
+    }, delaytimems);
   }
+  function darkmodehexcol() {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return '#1a1a1a'
+    }
+    else {
+      return '#fff'
+    }
+  }
+  //setthemecol(darkmodehexcol(),1)
+  function genid(mode) {
+    if (mode === "random") {
+      var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
+      var genid = "";
+      for (var i = 0; i < 16; i++) {
+        var genrandomNumber = Math.floor(Math.random() * genidchars.length);
+        genid += genidchars.substring(genrandomNumber, genrandomNumber + 1);
+      }
+      return genid;
+    }
 
-}
+    if (mode === "time") {
+      var gtoday = new Date();
+      var genid2 = (gtoday.getMonth() + 1) + '_' + gtoday.getDate() + '_' + gtoday.getHours() + '_' + gtoday.getMinutes() + '_' + gtoday.getSeconds() + '-' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8)) + '' + (1 + Math.floor(Math.random() * 8));
+
+      return genid2
+    }
+
+    if (mode === "number") {
+
+      var genid3 = '';
+      for (var i = 0; i < 16; i++) {
+        genid3 += '' + (0 + Math.floor(Math.random() * 9))
+      }
+      return genid3
+    }
+
+    if (mode === "uuid") {
+      var genidchars4 = "abcdef012345678";
+      var geniduu = [8, 4, 4, 4, 12];
+      var genid4 = "";
+      var genid5 = "";
+      for (var ia = 0; ia < geniduu.length; ia++) {
+        var genid4 = "";
+        for (var i = 0; i < geniduu[ia]; i++) {
+          var genrandomNumber4 = Math.floor(Math.random() * genidchars4.length);
+          genid4 += genidchars4.substring(genrandomNumber4, genrandomNumber4 + 1);
+        }
+        genid5 += '-' + genid4;
+      }
+      return genid5.substring(1, genid5.length)
+    }
+
+  }
   //set
-if(localStorage.getItem('settings_lowspeed') === null || localStorage.getItem('settings_lowspeed') === '1') {
-  $('#lowspeed').prop('checked',true)
-}
-else {
-  $('#lowspeed').prop('checked',false)
-}
-
-if(localStorage.getItem('settings_sharefav') === null || localStorage.getItem('settings_sharefav') === '1') {
-  $('#sharefav').prop('checked',true)
-}
-else {
-  $('#sharefav').prop('checked',false)
-}
-//change
-$('.settingsswitch input').click(function() {
-  if($(this).prop('checked')) {
-    localStorage.setItem('settings_' + $(this).attr('name'),'1')
+  if (localStorage.getItem('settings_lowspeed') === null || localStorage.getItem('settings_lowspeed') === '1') {
+    $('#lowspeed').prop('checked', true)
   }
   else {
-    localStorage.setItem('settings_' + $(this).attr('name'),'0')
+    $('#lowspeed').prop('checked', false)
   }
-})
- $('.backbtn').click(function() {
-  location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
+
+  if (localStorage.getItem('settings_sharefav') === null || localStorage.getItem('settings_sharefav') === '1') {
+    $('#sharefav').prop('checked', true)
+  }
+  else {
+    $('#sharefav').prop('checked', false)
+  }
+  //change
+  $('.settingsswitch input').click(function () {
+    if ($(this).prop('checked')) {
+      localStorage.setItem('settings_' + $(this).attr('name'), '1')
+    }
+    else {
+      localStorage.setItem('settings_' + $(this).attr('name'), '0')
+    }
+  })
+  $('.backbtn').click(function () {
+    location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
   });
-  
-    
-  $(document).ready(function() {
+
+
+  $(document).ready(function () {
     //test 
-        var googlefontloadtime = new Date().getTime() ;
-        if(googlefontloadtime-parseInt(localStorage.getItem('googlefontNotoSansTCloaded')) < 2592000000) {
-  $('body').append('<style>' + localStorage.getItem('googlefontNotoSansTC') + '</style>');
-}
-else {
- $.ajax({type:'get',url:"https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap",dataType:'text',success:function(e) {
-  var googlefontloadtimedd = new Date().getTime() ;
-  localStorage.setItem('googlefontNotoSansTC', e); localStorage.setItem('googlefontNotoSansTCloaded', googlefontloadtimedd);
-   $('body').append('<style>' + e + '</style>');
-   }
-}); 
-}
+    var googlefontloadtime = new Date().getTime();
+    if (googlefontloadtime - parseInt(localStorage.getItem('googlefontNotoSansTCloaded')) < 2592000000) {
+      $('body').append('<style>' + localStorage.getItem('googlefontNotoSansTC') + '</style>');
+    }
+    else {
+      $.ajax({
+        type: 'get', url: "https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap", dataType: 'text', success: function (e) {
+          var googlefontloadtimedd = new Date().getTime();
+          localStorage.setItem('googlefontNotoSansTC', e); localStorage.setItem('googlefontNotoSansTCloaded', googlefontloadtimedd);
+          $('body').append('<style>' + e + '</style>');
+        }
+      });
+    }
   });
 </script>
 <script>
-// left: 37, up: 38, right: 39, down: 40,
-// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
-var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+  // left: 37, up: 38, right: 39, down: 40,
+  // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+  var keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
 
-function preventDefault(e) {
-  e.preventDefault();
-}
-
-function preventDefaultForScrollKeys(e) {
-  if (keys[e.keyCode]) {
-    preventDefault(e);
-    return false;
+  function preventDefault(e) {
+    e.preventDefault();
   }
-}
 
-// modern Chrome requires { passive: false } when adding event
-var supportsPassive = false;
-try {
-  window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
-    get: function () { supportsPassive = true; } 
-  }));
-} catch(e) {}
+  function preventDefaultForScrollKeys(e) {
+    if (keys[e.keyCode]) {
+      preventDefault(e);
+      return false;
+    }
+  }
 
-var wheelOpt = supportsPassive ? { passive: false } : false;
-var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+  // modern Chrome requires { passive: false } when adding event
+  var supportsPassive = false;
+  try {
+    window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+      get: function () { supportsPassive = true; }
+    }));
+  } catch (e) { }
 
-// call this to Disable
-function disableScroll() {
-  window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
-  window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
-  window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
-  window.addEventListener('keydown', preventDefaultForScrollKeys, false);
-}
+  var wheelOpt = supportsPassive ? { passive: false } : false;
+  var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
 
-// call this to Enable
-function enableScroll() {
-  window.removeEventListener('DOMMouseScroll', preventDefault, false);
-  window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
-  window.removeEventListener('touchmove', preventDefault, wheelOpt);
-  window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
-}
-  
+  // call this to Disable
+  function disableScroll() {
+    window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+    window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+    window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+    window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+  }
+
+  // call this to Enable
+  function enableScroll() {
+    window.removeEventListener('DOMMouseScroll', preventDefault, false);
+    window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
+    window.removeEventListener('touchmove', preventDefault, wheelOpt);
+    window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+  }
+
 //disableScroll();
 </script>
