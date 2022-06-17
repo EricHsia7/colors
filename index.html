@@ -743,8 +743,8 @@ function hsv2rgb(a, r, t) {
 }
 function favoriteshare() {
 var timeseedrandom = new Date().getTime();
-var myrng = new Math.seedrandom(String(new Date().getTime()))
-if(myrng()>0.5) {
+var rand = Math.random()
+if(rand>0.5) {
 return true
 }
 else {
