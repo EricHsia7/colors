@@ -2001,8 +2001,8 @@
         content: colorarr,
         image: {
           dataurl: 'https://i.picsum.photos/id/' + gup('picid') + '/256/256.jpg',
-          hdurl: gup('picurl'),
-          source: gup('picsou')
+          hdurl: atob(gup('picurl')),
+          source: atob(gup('picsou'))
         },
         shareurl: 'https://erichsia7.github.io/colors/?s=4&grouplist=' + gup('grouplist') + '&picid=' + gup('picid') + '&picurl=' + gup('picurl') + '&picsou=' + gup('picsou') + '&r=' + genid('random'),
         id: 'c_' + genid('random'),
