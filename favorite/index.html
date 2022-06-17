@@ -1109,19 +1109,19 @@ printcolor()
 });
 				
 				
-  $('.bottom-btn').click(function() {
+$('.bottom-btn').click(function() {
   var k = $(this).attr('u')
 	if(k === 'home') {
-		location.href = 'https://erichsia7.github.io/colors/'
+		location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
 	}
 	if(k === 'favorite') {
-		location.href = 'https://erichsia7.github.io/colors/favorite/'
+		location.href = 'https://erichsia7.github.io/colors/favorite/?r=' + genid('random')
 	}
 	if(k === 'option') {
 		
 	}
 	if(k === 'trend') {
-		
+    location.href = 'https://erichsia7.github.io/colors/trend/?r=' + genid('random')
 	}
 	if(k === 'more') {
 		
