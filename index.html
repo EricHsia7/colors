@@ -1969,7 +1969,7 @@ var ns = Math.round(parseInt(div.getAttribute('dy'))/$('.container').height())*$
   div.setAttribute('dy',(ns))
   
   var nowcolorjson = allcolor[Math.abs(Math.round(parseInt(document.querySelector(".box").getAttribute('dy'))/$('.container').height()))]
-  if(!(nowcolorjson === undefined) || !(nowcolorjson === null)) {
+  if(!(nowcolorjson === undefined) && !(nowcolorjson === null)) {
 if(nowcolorjson.type === 'color') {
   if(eval('sentcolors.' + nowcolorjson.id) === null) {
 	var gformurl = 'https://docs.google.com/forms/d/e/1FAIpQLSdzcew5FPAcBdlH2mUbmZbpchdq1mYps9_32FXzWWCEMsSePQ/formResponse?usp=pp_url&entry.472720214=%23' + nowcolorjson.content[0].replaceAll('#','') + '&entry.327016326=' + user_id
