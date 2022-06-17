@@ -1566,7 +1566,7 @@
 
     var txc = textcol((hexToRgb(pathzz[1]).r + hexToRgb(pathzz[2]).r) * .5, (hexToRgb(pathzz[1]).g + hexToRgb(pathzz[2]).g) * .5, (hexToRgb(pathzz[1]).b + hexToRgb(pathzz[2]).b) * .5)
 
-    var path_datahtml = gtffim(pathzz[1], pathzz[2], window.innerWidth, (window.innerHeight-$('.bottom').height()))
+    var path_datahtml = gtffim(pathzz[1], pathzz[2], window.innerWidth, (window.innerHeight - $('.bottom').height()))
 
     var content = {
       type: "path",
@@ -1963,7 +1963,7 @@
         shareurl: 'https://erichsia7.github.io/colors/?s=1&c=' + gup('c') + '&r=' + genid('random'),
         id: thsid,
         textcolor: textcol(hexToRgb(sharedolor).r, hexToRgb(sharedolor).g, hexToRgb(sharedolor).b),
-        themecolor:sharedolor
+        themecolor: sharedolor
       };
       allcolor.push(sharecontent)
       //gform
@@ -1990,7 +1990,7 @@
         shareurl: 'https://erichsia7.github.io/colors/?s=2&ga=' + gup('ga') + '&gb=' + gup('gb') + '&gdeg=' + gup('gdeg') + '&r=' + genid('random'),
         id: 'c_' + genid('random'),
         textcolor: textcol((hexToRgb(sharega).r + hexToRgb(sharegb).r) * .5, (hexToRgb(sharega).g + hexToRgb(sharegb).g) * .5, (hexToRgb(sharega).b + hexToRgb(sharegb).b) * .5),
-        themecolor:  rgbToHex(Math.floor((hexToRgb(sharega).r + hexToRgb(sharegb).r) * .5), Math.floor((hexToRgb(sharega).g + hexToRgb(sharegb).g) * .5), Math.floor((hexToRgb(sharega).b + hexToRgb(sharegb).b) * .5))
+        themecolor: rgbToHex(Math.floor((hexToRgb(sharega).r + hexToRgb(sharegb).r) * .5), Math.floor((hexToRgb(sharega).g + hexToRgb(sharegb).g) * .5), Math.floor((hexToRgb(sharega).b + hexToRgb(sharegb).b) * .5))
       };
       allcolor.push(sharecontent)
     }
@@ -1999,7 +1999,7 @@
       var patharr = [atob(gup('la')), atob(gup('lb'))]
       var txc = textcol((hexToRgb(patharr[0]).r + hexToRgb(patharr[1]).r) * .5, (hexToRgb(patharr[0]).g + hexToRgb(patharr[1]).g) * .5, (hexToRgb(patharr[0]).b + hexToRgb(patharr[1]).b) * .5)
 
-      var path_datahtml = gtffim(patharr[0], patharr[1], window.innerWidth, (window.innerHeight-$('.bottom').height()))
+      var path_datahtml = gtffim(patharr[0], patharr[1], window.innerWidth, (window.innerHeight - $('.bottom').height()))
 
       var content = {
         type: "path",
@@ -2009,7 +2009,7 @@
         shareurl: 'https://erichsia7.github.io/colors/?s=3&la=' + gup('la') + '&lb=' + gup('lb') + '&r=' + genid('random'),
         id: 'c_' + genid('random'),
         textcolor: txc,
-        themecolor:patharr[1]
+        themecolor: patharr[1]
       };
       allcolor.push(content)
 
@@ -2040,7 +2040,7 @@
         id: 'c_' + genid('random'),
         textcolor: coltxc,
         imgtextcolor: pictxc,
-        themecolor:thcol
+        themecolor: thcol
       };
       allcolor.push(content)
 
@@ -2060,11 +2060,11 @@
     printcolor()
 
     if (allcolor[0].type === 'imagecolorgroup') {
-        setthemecol(allcolor[0].themecolor[0], 1)
-      }
-      else {
-        setthemecol(allcolor[0].themecolor, 1)
-      }
+      setthemecol(allcolor[0].themecolor[0], 1)
+    }
+    else {
+      setthemecol(allcolor[0].themecolor, 1)
+    }
 
 
     $('.optionlist-mask').click(function (evt) {
@@ -2093,9 +2093,9 @@
 
       }
     });
-    $(window).resize(function() {
+    $(window).resize(function () {
       //setsize()
-      location.reload()
+      //location.reload()
     })
   });
   var lastcolor
