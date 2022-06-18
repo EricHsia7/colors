@@ -2225,8 +2225,11 @@
     textArea.select();
     document.execCommand("Copy");
     textArea.remove();
-    var copyevent = document.addEventListener('copy', copypromot(e))
-    document.removeEventListener('copy', copypromot(e))
+    var copyevent = document.addEventListener('copy', copypromot)
+    setTimeout(function() {
+      document.removeEventListener('copy', copypromot)
+
+    }, 100);
   }
 
   $(document).ready(function () {
