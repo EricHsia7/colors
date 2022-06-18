@@ -55,6 +55,7 @@
     background-size: var(--b-size);
     background-repeat: repeat;
     -webkit-user-select: none;
+    user-select: none;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 0px;
@@ -80,6 +81,7 @@
     height: var(--ft-window-height);
     overflow: hidden;
     -webkit-user-select: none;
+    user-select: none;
   }
 
   .box {
@@ -90,6 +92,7 @@
     height: 100%;
     will-change: transform;
     -webkit-user-select: none;
+    user-select: none;
   }
 
   .color {
@@ -99,6 +102,7 @@
     background: #888;
     overflow: hidden;
     -webkit-user-select: none;
+    user-select: none;
   }
 
   .colorbox {
@@ -108,6 +112,7 @@
     top: 0px;
     left: 0px;
     -webkit-user-select: none;
+    user-select: none;
   }
 
   .colorcontent {
@@ -117,12 +122,14 @@
     width: var(--ft-window-width);
     height: 100%;
     -webkit-user-select: none;
+    user-select: none;
   }
 
   .colorcontent-text {
     font-size: 25px;
     font-family: "Noto Sans TC", sans-serif;
     -webkit-user-select: none;
+    user-select: none;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -141,6 +148,7 @@
     height: 100%;
     background: rgba(0, 0, 0, 0);
     -webkit-user-select: none;
+    user-select: none;
   }
 
   .colorcontentpathsvg {
@@ -150,6 +158,7 @@
     width: 100%;
     height: 100%;
     -webkit-user-select: none;
+    user-select: none;
   }
 
   .colorcontent-image-blur-mask {
@@ -163,6 +172,7 @@
     backdrop-filter: blur(15px);
     display: none;
     -webkit-user-select: none;
+    user-select: none;
   }
 
   .rightbar {
@@ -172,6 +182,7 @@
     bottom: 10px;
     right: 10px;
     -webkit-user-select: none;
+    user-select: none;
   }
 
   .favorite {
@@ -195,6 +206,7 @@
     background-position: center;
     background-repeat: no-repeat;
     -webkit-user-select: none;
+    user-select: none;
   }
 
   .rightbar[txtcolor="#ffffff"] .favorite,
@@ -216,6 +228,7 @@
     background-repeat: no-repeat;
     display: none;
     -webkit-user-select: none;
+    user-select: none;
   }
 
   .arrow-left {
@@ -247,6 +260,7 @@
     opacity: 0;
     display: none;
     -webkit-user-select: none;
+    user-select: none;
   }
 
   .optionlist-mask,
@@ -260,6 +274,7 @@
     opacity: 0;
     display: none;
     -webkit-user-select: none;
+    user-select: none;
   }
 
   .optionlist li {
@@ -274,6 +289,7 @@
     font-size: 18px;
     border-bottom: 1px solid #f5f5f5;
     -webkit-user-select: none;
+    user-select: none;
   }
 
   .group-progress-bar {
@@ -283,6 +299,7 @@
     transform: translateX(-50%);
     padding-right: 3px;
     -webkit-user-select: none;
+    user-select: none;
   }
 
   .group-progress-bar[txtcolor="#ffffff"] {
@@ -302,6 +319,7 @@
     float: left;
     transition: 0.3s;
     -webkit-user-select: none;
+    user-select: none;
   }
 
   .group-progress-bar li[sl="1"] {
@@ -385,35 +403,37 @@
     .bottom {
       height: var(--fx-bth);
     }
+  }
 
-    @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: dark) {
+    .bottom {
+      height: var(--fx-bth);
+    }
+
+    @media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
       .bottom {
         height: var(--fx-bth);
       }
+    }
 
-      @media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
-        .bottom {
-          height: var(--fx-bth);
-        }
+    @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+      .bottom {
+        height: var(--fx-bth);
       }
+    }
 
-      @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
-        .bottom {
-          height: var(--fx-bth);
-        }
+    @media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
+      .bottom {
+        height: var(--fx-bth);
       }
+    }
 
-      @media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
-        .bottom {
-          height: var(--fx-bth);
-        }
+    @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
+      .bottom {
+        height: var(--fx-bth);
       }
-
-      @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
-        .bottom {
-          height: var(--fx-bth);
-        }
-      }
+    }
+  }
 </style>
 <style id="bottom-icon">
   :root {
@@ -2187,6 +2207,7 @@
       closeoptionlist(ev)
     })
     $('.optionlist li[h="llgrd"]').click(function (ev) {
+      closeoptionlist(ev)
       //llgrd
       var jsonhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))]
       if (jsonhh.type === 'imagecolorgroup') {
@@ -2205,7 +2226,6 @@
         location.href = lgdshareurl
       }, 300)
       //llgrd end
-      closeoptionlist(ev)
     })
     $('.optionlist li[h="mixgrd"]').click(function (ev) {
       //mixgrd
