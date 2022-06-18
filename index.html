@@ -2214,6 +2214,10 @@
     }, 310);
 
   }
+  function copypromot(ev) {
+    $('body').prompt({ 'message': 'Copied!' })
+  }
+
   function copytext(str) {
     var textArea = document.createElement("textarea");
     textArea.value = str;
@@ -2221,9 +2225,8 @@
     textArea.select();
     document.execCommand("Copy");
     textArea.remove();
-    var copyevent = document.addEventListener('copy',function(e) {
-      $('body').prompt({'message':'Copied!'})
-    })
+    var copyevent = document.addEventListener('copy', copypromot(e))
+    document.removeEventListener('copy', copypromot(e))
   }
 
   $(document).ready(function () {
