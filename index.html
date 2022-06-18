@@ -2403,6 +2403,29 @@
       var downloadurl = jsonhh.image.hdurl
       var downloadname = String(jsonhh.image.source).replaceAll('https://', '').replaceAll('.', '-').replaceAll('/', '_')
       $('body').prompt({ 'message': '圖片下載中⋯⋯' })
+
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          //this.response is what you're looking for
+          handler(this.response);
+          console.log(this.response, typeof this.response);
+          var url = window.URL || window.webkitURL;
+          var a = document.createElement('a');
+
+          var filename = downloadname + '.jpg';
+          a.href = url.createObjectURL(this.response);
+          a.download = filename;
+          a.click();
+          a.remove();
+
+        }
+      }
+
+      xhr.open('GET', downloadurl);
+      xhr.responseType = 'blob';
+      xhr.send();
+      /*
       $.ajax({
         type: 'GET', url: downloadurl, beforeSend: function (xhr) { xhr.overrideMimeType('text/plain; charset=x-user-defined'); }, async: true, success: function (result, textStatus, jqXHR) {
           var binary = "";
@@ -2421,7 +2444,7 @@
           a.remove();
         }
       });
-
+*/
 
     })
     $('.optionlist li[h="addallfav"]').click(function (ev) {
