@@ -576,6 +576,69 @@
 
 </body>
 <script>
+    (function ($) {
+      $.fn.prompt = function (options) {
+        var settings = $.extend(
+          {
+            message: "undefined",
+            time: 2000,
+            animate: "slide",
+          },
+          options
+        );
+
+        return this.each(function () {
+          $('.prompt,style[promptanimation="promptanimation"]').remove();
+          var promptchars = "0123456789abcdefghijklmnopqrstuvwxyz";
+          var promptid = "";
+          for (var i = 0; i < 10; i++) {
+            var randomNumber = Math.floor(Math.random() * promptchars.length);
+            promptid += promptchars.substring(randomNumber, randomNumber + 1);
+          }
+
+          if (settings.animate === "slide") {
+            $(this).append('<style qix="promptanimation' + promptid + '" promptanimation="promptanimation">.promptanimation' + promptid + '{animation-name:prompt' + promptid + ';animation-duration:' + (settings.time + 300 * 2) + 'ms;animation-fill-mode:forwards;animation-timing-function:ease-in-out}@keyframes prompt' + promptid + '{0%{opacity:0;transform:translateX(-50%) translateY(80px);}' + Math.floor((300) / (settings.time + 300 * 2) * 100) + '%{opacity:1;transform:translateX(-50%) translateY(-30px);}' + Math.floor((300 + settings.time) / (settings.time + 300 * 2) * 100) + '%{opacity:1;transform:translateX(-50%) translateY(-30px);}100%{opacity:0;transform:translateX(-50%) translateY(80px);}}</style><div class="prompt promptanimation' + promptid + '" id="' + promptid + '"><span class="promptcenter">' + settings.message + "</span></div>");
+
+
+            setTimeout(function () {
+              $("#" + promptid + ',style[qix="promptanimation' + promptid + '"]').remove();
+            }, settings.time + 400 * 2 + 50);
+          }
+
+          if (settings.animate === "fade") {
+            $(this).append('<div class="prompt" id="' + promptid + '" style="bottom:10px;"><span class="promptcenter">' + settings.message + "</span></div>");
+
+            setTimeout(function () {
+              $("#" + promptid).css({ opacity: "1", transition: "0.4s", bottom: "10px" });
+            }, 100);
+
+            setTimeout(function () {
+              $("#" + promptid).css({ opacity: "0", transition: "0.4s" });
+            }, settings.time + 100);
+
+            setTimeout(function () {
+              $("#" + promptid).remove();
+            }, settings.time + 400);
+          }
+
+          if (settings.animate === "show") {
+            $(this).append('<div class="prompt" id="' + promptid + '" style="bottom:10px;"><span class="promptcenter">' + settings.message + "</span></div>");
+            setTimeout(function () {
+              $("#" + promptid).css({ opacity: "1", transition: "0s", bottom: "10px" });
+            }, 100);
+            setTimeout(function () {
+              $("#" + promptid).css({ opacity: "0", transition: "0s" });
+            }, settings.time + 100);
+            setTimeout(function () {
+              $("#" + promptid).remove();
+            }, settings.time + 400);
+          }
+        });
+      };
+    })(jQuery);
+
+</script>
+<script>
   var getUrlString = location.href;
   var url = new URL(getUrlString);
   function gup(param) {
@@ -1501,68 +1564,7 @@
   }
   sendusagepoint()
     //usage_point_send_end	  
-/*
-    (function ($) {
-      $.fn.prompt = function (options) {
-        var settings = $.extend(
-          {
-            message: "undefined",
-            time: 2000,
-            animate: "slide",
-          },
-          options
-        );
 
-        return this.each(function () {
-          $('.prompt,style[promptanimation="promptanimation"]').remove();
-          var promptchars = "0123456789abcdefghijklmnopqrstuvwxyz";
-          var promptid = "";
-          for (var i = 0; i < 10; i++) {
-            var randomNumber = Math.floor(Math.random() * promptchars.length);
-            promptid += promptchars.substring(randomNumber, randomNumber + 1);
-          }
-
-          if (settings.animate === "slide") {
-            $(this).append('<style qix="promptanimation' + promptid + '" promptanimation="promptanimation">.promptanimation' + promptid + '{animation-name:prompt' + promptid + ';animation-duration:' + (settings.time + 300 * 2) + 'ms;animation-fill-mode:forwards;animation-timing-function:ease-in-out}@keyframes prompt' + promptid + '{0%{opacity:0;transform:translateX(-50%) translateY(80px);}' + Math.floor((300) / (settings.time + 300 * 2) * 100) + '%{opacity:1;transform:translateX(-50%) translateY(-30px);}' + Math.floor((300 + settings.time) / (settings.time + 300 * 2) * 100) + '%{opacity:1;transform:translateX(-50%) translateY(-30px);}100%{opacity:0;transform:translateX(-50%) translateY(80px);}}</style><div class="prompt promptanimation' + promptid + '" id="' + promptid + '"><span class="promptcenter">' + settings.message + "</span></div>");
-
-
-            setTimeout(function () {
-              $("#" + promptid + ',style[qix="promptanimation' + promptid + '"]').remove();
-            }, settings.time + 400 * 2 + 50);
-          }
-
-          if (settings.animate === "fade") {
-            $(this).append('<div class="prompt" id="' + promptid + '" style="bottom:10px;"><span class="promptcenter">' + settings.message + "</span></div>");
-
-            setTimeout(function () {
-              $("#" + promptid).css({ opacity: "1", transition: "0.4s", bottom: "10px" });
-            }, 100);
-
-            setTimeout(function () {
-              $("#" + promptid).css({ opacity: "0", transition: "0.4s" });
-            }, settings.time + 100);
-
-            setTimeout(function () {
-              $("#" + promptid).remove();
-            }, settings.time + 400);
-          }
-
-          if (settings.animate === "show") {
-            $(this).append('<div class="prompt" id="' + promptid + '" style="bottom:10px;"><span class="promptcenter">' + settings.message + "</span></div>");
-            setTimeout(function () {
-              $("#" + promptid).css({ opacity: "1", transition: "0s", bottom: "10px" });
-            }, 100);
-            setTimeout(function () {
-              $("#" + promptid).css({ opacity: "0", transition: "0s" });
-            }, settings.time + 100);
-            setTimeout(function () {
-              $("#" + promptid).remove();
-            }, settings.time + 400);
-          }
-        });
-      };
-    })(jQuery);
-*/
 
   function addcolorcontent() {
     var col = cllhi()
