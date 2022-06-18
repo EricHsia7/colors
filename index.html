@@ -2187,6 +2187,24 @@
       closeoptionlist(ev)
     })
     $('.optionlist li[h="llgrd"]').click(function (ev) {
+      //llgrd
+      var jsonhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))]
+      if (jsonhh.type === 'imagecolorgroup') {
+        var contenthh = jsonhh.content[(parseInt($('.color[fid="' + optionlistid() + '"]').attr('group-index')) - 1)]
+        if (contenthh === undefined) {
+          return ''
+        }
+      }
+      else {
+        var contenthh = jsonhh.content[0]
+
+      }
+      var lgd = getligrd(contenthh)
+      var lgdshareurl = 'https://erichsia7.github.io/colors/?s=2&ga=' + btoa(lgd[1]) + '&gb=' + btoa(lgd[2]) + '&gdeg=' + lgd[0] + '&r=' + genid('random')
+      setTimeout(function () {
+        location.href = lgdshareurl
+      }, 300)
+      //llgrd end
       closeoptionlist(ev)
     })
     $('.optionlist li[h="mixgrd"]').click(function (ev) {
@@ -2198,9 +2216,7 @@
       var mixcolorshareurl = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(mixcolor) + '&r=' + genid('random')
       setTimeout(function () {
         location.href = mixcolorshareurl
-
       }, 300)
-
       //mixgrd end
     })
     $('.optionlist li[h="llpath"]').click(function (ev) {
