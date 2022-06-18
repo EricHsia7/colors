@@ -2217,16 +2217,16 @@
 
   function copytext(str) {
     try {
-    var textArea = document.createElement("textarea");
-    textArea.value = str;
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand("Copy");
-    textArea.remove();
-    $('body').prompt({ 'message': 'Copied!' })
+      var textArea = document.createElement("textarea");
+      textArea.value = str;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand("Copy");
+      textArea.remove();
+      $('body').prompt({ 'message': 'Copied!' })
 
     }
-    catch(e) {
+    catch (e) {
       $('body').prompt({ 'message': 'Error!' })
 
     }
@@ -2357,6 +2357,21 @@
     })
     $('.optionlist li[h="copycolorcode"]').click(function (ev) {
       closeoptionlist(ev)
+      var jsonhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))]
+      var ctext = ''
+      if (jsonhh.type === 'color') {
+ctext = jsonhh.content[0]
+      }
+      if(jsonhh.type === 'imagecolorgroup') {
+        var ctext = jsonhh.content[(parseInt($('.color[fid="' + optionlistid() + '"]').attr('group-index')) - 1)]
+        if (ctext === undefined) {
+          return ''
+        }
+      }
+      if(jsonhh.type === 'gradient') {
+        var ctext = 'linear-gradient(' + jsonhh.content[0] + 'deg ,' + jsonhh.content[1] + ' ,' + jsonhh.content[2] + ')'
+      }
+      copytext(ctext)
     })
     $('.optionlist li[h="copyoptions"]').click(function (ev) {
       closeoptionlist(ev)
@@ -2366,21 +2381,13 @@
       var jsonhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))]
       var sourceurl = jsonhh.image.source
       copytext(sourceurl)
-      /*
-            content: pltcolorhex,
-                          image: {
-                            dataurl: b64url,
-                            hdurl: imginfojson.download_url,
-                            source: imginfojson.url
-      */
-
     })
     $('.optionlist li[h="dlsourceimage"]').click(function (ev) {
       closeoptionlist(ev)
       var jsonhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))]
       var downloadurl = jsonhh.image.hdurl
       var downloadname = String(jsonhh.image.source).replaceAll('https://', '').replaceAll('.', '-').replaceAll('/', '_')
-
+      $('body').prompt({ 'message': 'Image downloading...' })
       $.ajax({
         type: 'GET', url: downloadurl, beforeSend: function (xhr) { xhr.overrideMimeType('text/plain; charset=x-user-defined'); }, async: true, success: function (result, textStatus, jqXHR) {
           var binary = "";
@@ -2389,6 +2396,7 @@
           for (i = 0; i < responseTextLen; i++) {
             binary += String.fromCharCode(responseText.charCodeAt(i) & 255)
           }
+          $('body').prompt({ 'message': 'Image downloaded!' })
 
           var a = document.createElement('a');
           var filename = downloadname + '.jpg';
