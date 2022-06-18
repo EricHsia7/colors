@@ -2145,7 +2145,14 @@
     }, 310);
 
   }
-
+  function copytext(str) {
+    var textArea = document.createElement("textarea");
+    textArea.value = str;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("Copy");
+    textArea.remove();
+  }
 
   $(document).ready(function () {
     initialize()
@@ -2278,6 +2285,17 @@
     })
     $('.optionlist li[h="copysourceimageurl"]').click(function (ev) {
       closeoptionlist(ev)
+      var jsonhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))]
+      var sourceurl = jsonhh.image.source
+      copytext(sourceurl)
+      /*
+            content: pltcolorhex,
+                          image: {
+                            dataurl: b64url,
+                            hdurl: imginfojson.download_url,
+                            source: imginfojson.url
+      */
+
     })
     $('.optionlist li[h="dlsourceimage"]').click(function (ev) {
       closeoptionlist(ev)
