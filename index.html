@@ -29,7 +29,10 @@
 <link rel="manifest" href="https://erichsia7.github.io/colors/manifest.json?20220209_198de2381adfe">
 <style>
   :root {
-    --fx-bth: calc(55px + env(safe-area-inset-bottom)) --bottom-icon-color:#000000;
+    --fx-bth: calc(55px + env(safe-area-inset-bottom));
+    --bottom-icon-color: #000000;
+    --qrcode-color-fff: #fff;
+    --qrcode-color-1a1a1a: #1a1a1a
   }
 
   * {
@@ -388,7 +391,8 @@
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --bottom-icon-color: #ffffff
+      --bottom-icon-color: #ffffff --qrcode-color-fff:#1a1a1a;
+      --qrcode-color-1a1a1a: #fff
     }
 
     .prompt {
@@ -406,7 +410,8 @@
     }
 
     .bottom,
-    .optionlist {
+    .optionlist,
+    .qrcodebox {
       background: #1a1a1a;
     }
 
@@ -1916,7 +1921,7 @@
           $('.optionlist li[h="addallfav"]').css({ 'display': 'flex' });
           $('.optionlist li[h="shareacolor"]').css({ 'display': 'none' });
           if (!(fidgroupindex === 0)) {
-            listcc += 4
+            listcc += 5
             $('.optionlist li[h="llgrd"]').css({ 'display': 'flex' });
             $('.optionlist li[h="llpath"]').css({ 'display': 'flex' });
             $('.optionlist li[h="shareacolor"]').css({ 'display': 'flex' });
@@ -2289,8 +2294,8 @@
         text: shareurlhh,
         width: 512,
         height: 512,
-        colorDark: "#000",
-        colorLight: "#fff",
+        colorDark: getComputedStyle(document.body).getPropertyValue('--qrcode-color-1a1a1a'),
+        colorLight: getComputedStyle(document.body).getPropertyValue('--qrcode-color-fff'),
         correctLevel: QRCode.CorrectLevel.M
       });
       //qrcode end
