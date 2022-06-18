@@ -2403,31 +2403,6 @@
       var downloadurl = jsonhh.image.hdurl
       var downloadname = String(jsonhh.image.source).replaceAll('https://', '').replaceAll('.', '-').replaceAll('/', '_')
       $('body').prompt({ 'message': '圖片下載中⋯⋯' })
-      /*
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function () {
-              if (this.readyState == 4 && this.status == 200) {
-                //this.response is what you're looking for
-                handler(this.response);
-                console.log(this.response, typeof this.response);
-                var url = window.URL || window.webkitURL;
-                var a = document.createElement('a');
-      
-                var filename = downloadname + '.jpg';
-                a.href = url.createObjectURL(this.response);
-                a.download = filename;
-                a.click();
-                a.remove();
-      
-              }
-            }
-      
-      
-            xhr.open('GET', downloadurl);
-            xhr.responseType = 'blob';
-            xhr.send();
-            */
-
       $.ajax({
         type: 'GET', url: downloadurl, async: true, cache: false, xhrFields: { responseType: 'blob' }, success: function (data) {
           $('body').prompt({ 'message': '圖片下載完成。' })
@@ -2449,6 +2424,31 @@
     })
     $('.optionlist li[h="shareacolor"]').click(function (ev) {
       closeoptionlist(ev)
+      var jsonhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))]
+
+      if (jsonhh.type === 'imagecolorgroup') {
+        var ctext = jsonhh.content[(parseInt($('.color[fid="' + optionlistid() + '"]').attr('group-index')) - 1)]
+        if (ctext === undefined) {
+          return ''
+        }
+        var ctshareurl = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(ctext) + '&r=' + genid('random')
+        if (navigator.share) {
+          navigator.share({
+            title: 'Colors',
+            url: ctshareurl
+          }).then(() => {
+            //ok
+          })
+            .catch(console.error);
+        } else {
+          shareDialog.classList.add('is-open');
+        }
+
+      }
+      else {
+        return ''
+      }
+
     })
 
 
