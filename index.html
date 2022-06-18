@@ -2302,11 +2302,25 @@
       var jsonhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))]
       var downloadurl = jsonhh.image.hdurl
       var downloadname = String(jsonhh.image.source).replaceAll('https://', '').replaceAll('.', '-').replaceAll('/', '_')
-      var a = document.createElement('a');
-      var filename = downloadname + '.jpg';
-      a.href = downloadurl;
-      a.download = filename;
-      a.click();
+
+      $.ajax({
+        type: 'GET', url: downloadurl, beforeSend: function (xhr) { xhr.overrideMimeType('text/plain; charset=x-user-defined'); }, async: true, success: function (result, textStatus, jqXHR) {
+          var binary = "";
+          var responseText = jqXHR.responseText;
+          var responseTextLen = responseText.length;
+          for (i = 0; i < responseTextLen; i++) {
+            binary += String.fromCharCode(responseText.charCodeAt(i) & 255)
+          }
+
+          var a = document.createElement('a');
+          var filename = downloadname + '.jpg';
+          a.href = 'data:image/jpeg;base64,' + btoa(binary)
+          a.download = filename;
+          a.click();
+          a.remove();
+        }
+      });
+
 
     })
     $('.optionlist li[h="addallfav"]').click(function (ev) {
