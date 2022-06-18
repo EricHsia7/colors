@@ -2058,6 +2058,17 @@
   function optionlistid() {
     return String($('.optionlist').attr('f'))
   }
+  function closeoptionlist(evt) {
+    if (!(evt === undefined)) {
+      evt.stopPropagation();
+    }
+    $('.optionlist').css({ 'transform': 'translateY(calc(var(--b-bottom-height) + (50px * var(--b-option-list))))' });
+    $('.optionlist-mask').css({ 'opacity': '0' });
+    setTimeout(function () {
+      $('.optionlist,.optionlist-mask').css({ 'display': 'none', 'opacity': '0', 'transition': '0s' });
+    }, 310);
+
+  }
   $(document).ready(function () {
     initialize()
     printcolor()
@@ -2071,12 +2082,7 @@
 
 
     $('.optionlist-mask').click(function (evt) {
-      evt.stopPropagation();
-      $('.optionlist').css({ 'transform': 'translateY(calc(var(--b-bottom-height) + (50px * var(--b-option-list))))' });
-      $('.optionlist-mask').css({ 'opacity': '0' });
-      setTimeout(function () {
-        $('.optionlist,.optionlist-mask').css({ 'display': 'none', 'opacity': '0', 'transition': '0s' });
-      }, 310);
+      closeoptionlist(evt)
     });
     $('.bottom-btn').click(function () {
       var k = $(this).attr('u')
@@ -2097,41 +2103,41 @@
       }
     });
 
-    $('.optionlist li[h="qrcode"]').click(function () {
-
+    $('.optionlist li[h="qrcode"]').click(function (ev) {
+      closeoptionlist(ev)
     })
-    $('.optionlist li[h="picker"]').click(function () {
-
+    $('.optionlist li[h="picker"]').click(function (ev) {
+      closeoptionlist(ev)
     })
-    $('.optionlist li[h="toimg"]').click(function () {
-
+    $('.optionlist li[h="toimg"]').click(function (ev) {
+      closeoptionlist(ev)
     })
-    $('.optionlist li[h="llgrd"]').click(function () {
-
+    $('.optionlist li[h="llgrd"]').click(function (ev) {
+      closeoptionlist(ev)
     })
-    $('.optionlist li[h="mixgrd"]').click(function () {
-
+    $('.optionlist li[h="mixgrd"]').click(function (ev) {
+      closeoptionlist(ev)
     })
-    $('.optionlist li[h="llpath"]').click(function () {
-
+    $('.optionlist li[h="llpath"]').click(function (ev) {
+      closeoptionlist(ev)
     })
-    $('.optionlist li[h="copycolorcode"]').click(function () {
-
+    $('.optionlist li[h="copycolorcode"]').click(function (ev) {
+      closeoptionlist(ev)
     })
-    $('.optionlist li[h="copyoptions"]').click(function () {
-
+    $('.optionlist li[h="copyoptions"]').click(function (ev) {
+      closeoptionlist(ev)
     })
-    $('.optionlist li[h="copysourceimageurl"]').click(function () {
-
+    $('.optionlist li[h="copysourceimageurl"]').click(function (ev) {
+      closeoptionlist(ev)
     })
-    $('.optionlist li[h="dlsourceimage"]').click(function () {
-
+    $('.optionlist li[h="dlsourceimage"]').click(function (ev) {
+      closeoptionlist(ev)
     })
-    $('.optionlist li[h="addallfav"]').click(function () {
-
+    $('.optionlist li[h="addallfav"]').click(function (ev) {
+      closeoptionlist(ev)
     })
-    $('.optionlist li[h="shareacolor"]').click(function () {
-
+    $('.optionlist li[h="shareacolor"]').click(function (ev) {
+      closeoptionlist(ev)
     })
 
 
