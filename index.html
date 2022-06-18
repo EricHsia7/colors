@@ -2232,11 +2232,11 @@
       textArea.select();
       document.execCommand("Copy");
       textArea.remove();
-      $('body').prompt({ 'message': 'Copied!' })
+      $('body').prompt({ 'message': '已複製。' })
 
     }
     catch (e) {
-      $('body').prompt({ 'message': 'Error!' })
+      $('body').prompt({ 'message': '發生錯誤。' })
 
     }
   }
@@ -2396,7 +2396,7 @@
       var jsonhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))]
       var downloadurl = jsonhh.image.hdurl
       var downloadname = String(jsonhh.image.source).replaceAll('https://', '').replaceAll('.', '-').replaceAll('/', '_')
-      $('body').prompt({ 'message': 'Image downloading...' })
+      $('body').prompt({ 'message': '圖片下載中⋯⋯' })
       $.ajax({
         type: 'GET', url: downloadurl, beforeSend: function (xhr) { xhr.overrideMimeType('text/plain; charset=x-user-defined'); }, async: true, success: function (result, textStatus, jqXHR) {
           var binary = "";
@@ -2405,7 +2405,7 @@
           for (i = 0; i < responseTextLen; i++) {
             binary += String.fromCharCode(responseText.charCodeAt(i) & 255)
           }
-          $('body').prompt({ 'message': 'Image downloaded!' })
+          $('body').prompt({ 'message': '圖片下載完成。' })
 
           var a = document.createElement('a');
           var filename = downloadname + '.jpg';
