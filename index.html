@@ -2221,6 +2221,9 @@
     textArea.select();
     document.execCommand("Copy");
     textArea.remove();
+    var copyevent = document.addEventListener('copy',function(e) {
+      $('body').prompt({'message':'Copied!'})
+    })
   }
 
   $(document).ready(function () {
