@@ -307,6 +307,15 @@
     opacity: 1;
   }
 
+  .qrcodebox {
+    position: fixed;
+    bottom: 0px;
+    left:0px;
+    height:calc(55px + 300px);
+    width:100%;
+    background: #fff;
+  }
+
   @media (prefers-color-scheme: dark) {
     :root {
       --bottom-icon-color: #ffffff
@@ -488,6 +497,10 @@
     <li h="addallfav">將全部顏色新增至喜好項目</li>
     <li h="shareacolor">分享單個顏色</li>
   </div>
+  <div class="qrcodebox">
+    <div class="qrcodebx"></div>
+    </div>
+
 </body>
 <script>
   var getUrlString = location.href;
@@ -2104,6 +2117,27 @@
     });
 
     $('.optionlist li[h="qrcode"]').click(function (ev) {
+      //qrcode
+
+      $('.qrcodebox').css({'display': 'block', 'opacity': '1','transition': '0.3s' });
+        $('.optionlist-mask').css({ 'display': 'block', 'transition': '0.3s' });
+        setTimeout(function () {
+          $('.qrcodebox').css({ 'transform': 'translateY(0px)' });
+          $('.optionlist-mask').css({ 'opacity': '1' });
+        }, 1);
+
+
+var shareurlhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))].shareurl
+document.querySelector('.qrcodebx').innerHTML = '';
+var qrcode = new QRCode(document.querySelector('.qrcodebx') , {
+    text: shareurlhh,
+    width: 512,
+    height: 512,
+    colorDark : "#000",
+    colorLight : "#fff",
+    correctLevel : QRCode.CorrectLevel.M
+});
+      //qrcode end
       closeoptionlist(ev)
     })
     $('.optionlist li[h="picker"]').click(function (ev) {
