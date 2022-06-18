@@ -2299,6 +2299,15 @@
     })
     $('.optionlist li[h="dlsourceimage"]').click(function (ev) {
       closeoptionlist(ev)
+      var jsonhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))]
+      var downloadurl = jsonhh.image.hdurl
+      var downloadname = String(jsonhh.image.source).replaceAll('https://', '').replaceAll('.', '-').replaceAll('/', '_')
+      var a = document.createElement('a');
+      var filename = downloadname + '.jpg';
+      a.href = downloadurl;
+      a.download = filename;
+      a.click();
+
     })
     $('.optionlist li[h="addallfav"]').click(function (ev) {
       closeoptionlist(ev)
