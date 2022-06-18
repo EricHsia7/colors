@@ -1781,6 +1781,7 @@
         evt.stopPropagation();
         var fidtt = $(this).attr('btnid')
         var fidindex = parseInt($('.color[fid="' + fidtt + '"]').attr('i'))
+        var fidgroupindex = parseInt($('.color[fid="' + fidtt + '"]').attr('group-index'))
         var fytype = allcolor[fidindex].type
         var listcc = 0
         $('.optionlist').attr('f', fidtt)
@@ -1845,6 +1846,11 @@
           $('.optionlist li[h="dlsourceimage"]').css({ 'display': 'flex' });
           $('.optionlist li[h="addallfav"]').css({ 'display': 'flex' });
           $('.optionlist li[h="shareacolor"]').css({ 'display': 'flex' });
+          if(!(fidgroupindex === 0)) {
+            listcc = 8
+            $('.optionlist li[h="llgrd"]').css({ 'display': 'flex' });
+          }
+
         }
         $('.optionlist').css({ '--b-bottom-height': $('.bottom').height() + 'px', '--b-option-list': listcc, 'display': 'block', 'opacity': '1', 'transition': '0.3s' });
         $('.optionlist-mask').css({ 'display': 'block', 'transition': '0.3s' });
