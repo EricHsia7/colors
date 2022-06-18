@@ -249,7 +249,8 @@
     -webkit-user-select: none;
   }
 
-  .optionlist-mask,.qrcode-mask {
+  .optionlist-mask,
+  .qrcode-mask {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -320,18 +321,20 @@
     transform: translateY(calc(55px + 300px));
     overflow: hidden;
   }
+
   .qrcodebx {
     position: absolute;
-    top:0px;
-    left:0px;
-    width:100%;
-    height:100%;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   .qrcodebx img {
-    max-height:250px;
+    max-height: 250px;
     max-width: 250px;
   }
 
@@ -2107,7 +2110,7 @@
     if (!(evt === undefined)) {
       evt.stopPropagation();
     }
-    $('.qrcodebox').css({ 'transform': 'translateY(' + (55+300) + 'px)' });
+    $('.qrcodebox').css({ 'transform': 'translateY(' + (55 + 300) + 'px)' });
     $('.qrcode-mask').css({ 'opacity': '0' });
     setTimeout(function () {
       $('.qrcode,.qrcode-mask').css({ 'display': 'none', 'opacity': '0', 'transition': '0s' });
@@ -2131,7 +2134,7 @@
     $('.optionlist-mask').click(function (evt) {
       closeoptionlist(evt)
     });
-    $('.qrcode-mask').click(function(evt) {
+    $('.qrcode-mask').click(function (evt) {
       closeqrcodebox(evt)
     })
     $('.bottom-btn').click(function () {
@@ -2187,7 +2190,18 @@
       closeoptionlist(ev)
     })
     $('.optionlist li[h="mixgrd"]').click(function (ev) {
+      //mixgrd
       closeoptionlist(ev)
+
+      var contenthh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))].content
+      var mixcolor = rgbToHex(Math.floor((hexToRgb(contenthh[1]).r + hexToRgb(contenthh[2]).r) * .5), Math.floor((hexToRgb(contenthh[1]).g + hexToRgb(contenthh[2]).g) * .5), Math.floor((hexToRgb(contenthh[1]).b + hexToRgb(contenthh[2]).b) * .5))
+      var mixcolorshareurl = 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(mixcolor) + '&r=' + genid('random')
+      setTimeout(function () {
+        location.href = mixcolorshareurl
+
+      }, 300)
+
+      //mixgrd end
     })
     $('.optionlist li[h="llpath"]').click(function (ev) {
       closeoptionlist(ev)
