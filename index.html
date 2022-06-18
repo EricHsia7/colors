@@ -1909,17 +1909,18 @@
           $('.optionlist li[h="llgrd"]').css({ 'display': 'none' });
           $('.optionlist li[h="mixgrd"]').css({ 'display': 'none' });
           $('.optionlist li[h="llpath"]').css({ 'display': 'none' });
-          $('.optionlist li[h="copycolorcode"]').css({ 'display': 'flex' });
+          $('.optionlist li[h="copycolorcode"]').css({ 'display': 'none' });
           $('.optionlist li[h="copyoptions"]').css({ 'display': 'flex' });
           $('.optionlist li[h="copysourceimageurl"]').css({ 'display': 'flex' });
           $('.optionlist li[h="dlsourceimage"]').css({ 'display': 'flex' });
           $('.optionlist li[h="addallfav"]').css({ 'display': 'flex' });
           $('.optionlist li[h="shareacolor"]').css({ 'display': 'none' });
           if (!(fidgroupindex === 0)) {
-            listcc += 3
+            listcc += 4
             $('.optionlist li[h="llgrd"]').css({ 'display': 'flex' });
             $('.optionlist li[h="llpath"]').css({ 'display': 'flex' });
             $('.optionlist li[h="shareacolor"]').css({ 'display': 'flex' });
+            $('.optionlist li[h="copycolorcode"]').css({ 'display': 'flex' });
           }
 
         }
