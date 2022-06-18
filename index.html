@@ -2055,6 +2055,9 @@
     }
   }
 
+  function optionlistid() {
+    return String($('.optionlist').attr('f'))
+  }
   $(document).ready(function () {
     initialize()
     printcolor()
@@ -2093,10 +2096,49 @@
 
       }
     });
+
+    $('.optionlist li[h="qrcode"]').click(function () {
+
+    })
+    $('.optionlist li[h="picker"]').click(function () {
+
+    })
+    $('.optionlist li[h="toimg"]').click(function () {
+
+    })
+    $('.optionlist li[h="llgrd"]').click(function () {
+
+    })
+    $('.optionlist li[h="mixgrd"]').click(function () {
+
+    })
+    $('.optionlist li[h="llpath"]').click(function () {
+
+    })
+    $('.optionlist li[h="copycolorcode"]').click(function () {
+
+    })
+    $('.optionlist li[h="copyoptions"]').click(function () {
+
+    })
+    $('.optionlist li[h="copysourceimageurl"]').click(function () {
+
+    })
+    $('.optionlist li[h="dlsourceimage"]').click(function () {
+
+    })
+    $('.optionlist li[h="addallfav"]').click(function () {
+
+    })
+    $('.optionlist li[h="shareacolor"]').click(function () {
+
+    })
+
+
     $(window).resize(function () {
       //setsize()
       //location.reload()
-    })
+    });
   });
   var lastcolor
   var stopload = 0
