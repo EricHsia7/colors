@@ -1902,7 +1902,7 @@
           $('.optionlist li[h="shareacolor"]').css({ 'display': 'flex' });
         }
         if (fytype === 'imagecolorgroup') {
-          listcc = 6
+          listcc = 4
           $('.optionlist li[h="qrcode"]').css({ 'display': 'flex' });
           $('.optionlist li[h="picker"]').css({ 'display': 'none' });
           $('.optionlist li[h="toimg"]').css({ 'display': 'none' });
@@ -1910,7 +1910,7 @@
           $('.optionlist li[h="mixgrd"]').css({ 'display': 'none' });
           $('.optionlist li[h="llpath"]').css({ 'display': 'none' });
           $('.optionlist li[h="copycolorcode"]').css({ 'display': 'none' });
-          $('.optionlist li[h="copyoptions"]').css({ 'display': 'flex' });
+          $('.optionlist li[h="copyoptions"]').css({ 'display': 'none' });
           $('.optionlist li[h="copysourceimageurl"]').css({ 'display': 'flex' });
           $('.optionlist li[h="dlsourceimage"]').css({ 'display': 'flex' });
           $('.optionlist li[h="addallfav"]').css({ 'display': 'flex' });
@@ -1921,6 +1921,8 @@
             $('.optionlist li[h="llpath"]').css({ 'display': 'flex' });
             $('.optionlist li[h="shareacolor"]').css({ 'display': 'flex' });
             $('.optionlist li[h="copycolorcode"]').css({ 'display': 'flex' });
+            $('.optionlist li[h="copyoptions"]').css({ 'display': 'flex' });
+
           }
 
         }
@@ -2361,15 +2363,15 @@
       var jsonhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))]
       var ctext = ''
       if (jsonhh.type === 'color') {
-ctext = jsonhh.content[0]
+        ctext = jsonhh.content[0]
       }
-      if(jsonhh.type === 'imagecolorgroup') {
+      if (jsonhh.type === 'imagecolorgroup') {
         var ctext = jsonhh.content[(parseInt($('.color[fid="' + optionlistid() + '"]').attr('group-index')) - 1)]
         if (ctext === undefined) {
           return ''
         }
       }
-      if(jsonhh.type === 'gradient') {
+      if (jsonhh.type === 'gradient') {
         var ctext = 'linear-gradient(' + jsonhh.content[0] + 'deg ,' + jsonhh.content[1] + ' ,' + jsonhh.content[2] + ')'
       }
       copytext(ctext)
