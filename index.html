@@ -249,7 +249,7 @@
     -webkit-user-select: none;
   }
 
-  .optionlist-mask {
+  .optionlist-mask,.qrcode-mask {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -310,12 +310,13 @@
   .qrcodebox {
     position: fixed;
     bottom: 0px;
-    left:0px;
-    height:calc(55px + 300px);
-    width:100%;
+    left: 0px;
+    height: calc(55px + 300px);
+    width: 100%;
     background: #fff;
     opacity: 0;
     display: none;
+    border-radius: 15px 15px 0px 0px;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -499,9 +500,10 @@
     <li h="addallfav">將全部顏色新增至喜好項目</li>
     <li h="shareacolor">分享單個顏色</li>
   </div>
+  <div class="qrcode-mask"></div>
   <div class="qrcodebox">
     <div class="qrcodebx"></div>
-    </div>
+  </div>
 
 </body>
 <script>
@@ -2084,6 +2086,20 @@
     }, 310);
 
   }
+
+  function closeqrcodebox(evt) {
+    if (!(evt === undefined)) {
+      evt.stopPropagation();
+    }
+    $('.qrcodebox').css({ 'transform': 'translateY(' + (55+300) + 'px)' });
+    $('.qrcode-mask').css({ 'opacity': '0' });
+    setTimeout(function () {
+      $('.qrcode,.qrcode-mask').css({ 'display': 'none', 'opacity': '0', 'transition': '0s' });
+    }, 310);
+
+  }
+
+
   $(document).ready(function () {
     initialize()
     printcolor()
@@ -2099,6 +2115,9 @@
     $('.optionlist-mask').click(function (evt) {
       closeoptionlist(evt)
     });
+    $('.qrcode-mask').click(function(evt) {
+      closeqrcodebox(evt)
+    })
     $('.bottom-btn').click(function () {
       var k = $(this).attr('u')
       if (k === 'home') {
@@ -2121,24 +2140,24 @@
     $('.optionlist li[h="qrcode"]').click(function (ev) {
       //qrcode
 
-      $('.qrcodebox').css({'display': 'block', 'opacity': '1','transition': '0.3s' });
-        $('.optionlist-mask').css({ 'display': 'block', 'transition': '0.3s' });
-        setTimeout(function () {
-          $('.qrcodebox').css({ 'transform': 'translateY(0px)' });
-          $('.optionlist-mask').css({ 'opacity': '1' });
-        }, 1);
+      $('.qrcodebox').css({ 'display': 'block', 'opacity': '1', 'transition': '0.3s' });
+      $('.qrcode-mask').css({ 'display': 'block', 'transition': '0.3s' });
+      setTimeout(function () {
+        $('.qrcodebox').css({ 'transform': 'translateY(0px)' });
+        $('.qrcode-mask').css({ 'opacity': '1' });
+      }, 1);
 
 
-var shareurlhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))].shareurl
-document.querySelector('.qrcodebx').innerHTML = '';
-var qrcode = new QRCode(document.querySelector('.qrcodebx') , {
-    text: shareurlhh,
-    width: 512,
-    height: 512,
-    colorDark : "#000",
-    colorLight : "#fff",
-    correctLevel : QRCode.CorrectLevel.M
-});
+      var shareurlhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))].shareurl
+      document.querySelector('.qrcodebx').innerHTML = '';
+      var qrcode = new QRCode(document.querySelector('.qrcodebx'), {
+        text: shareurlhh,
+        width: 512,
+        height: 512,
+        colorDark: "#000",
+        colorLight: "#fff",
+        correctLevel: QRCode.CorrectLevel.M
+      });
       //qrcode end
       closeoptionlist(ev)
     })
