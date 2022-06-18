@@ -2214,22 +2214,22 @@
     }, 310);
 
   }
-  function copypromot(ev) {
-    $('body').prompt({ 'message': 'Copied!' })
-  }
 
   function copytext(str) {
+    try {
     var textArea = document.createElement("textarea");
     textArea.value = str;
     document.body.appendChild(textArea);
     textArea.select();
     document.execCommand("Copy");
     textArea.remove();
-    var copyevent = document.addEventListener('copy', copypromot)
-    setTimeout(function() {
-      document.removeEventListener('copy', copypromot)
+    $('body').prompt({ 'message': 'Copied!' })
 
-    }, 100);
+    }
+    catch(e) {
+      $('body').prompt({ 'message': 'Error!' })
+
+    }
   }
 
   $(document).ready(function () {
