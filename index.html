@@ -1267,9 +1267,9 @@
       ctx.fillRect(0, 0, width, height);
     }
 
-      var blob = canvas.toBlob('image/png')
+      var blob = canvas.toBlob()
       var uu = window.URL || window.webkitURL;
-      return String(uu.createObjectURL(blob))
+      return uu.createObjectURL(blob)
     //return blob obj
   }
 
