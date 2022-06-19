@@ -1520,7 +1520,7 @@
     canvas2.toBlob(function (blob) {
       var uu = window.URL || window.webkitURL;
       var a = document.createElement('a');
-      a.download = new Date().getTime() + '.png';
+      a.download = filename + '.png';
       a.href = uu.createObjectURL(blob);
       document.body.appendChild(a);
       a.click()
