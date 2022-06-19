@@ -2433,7 +2433,7 @@
           if (String(hexarr[g]).indexOf('#') > -1) {
             var rgbff = hexToRgb(hexarr[g])
             var hslff = rgbtohsl(rgbff.r, rgbff.g, rgbff.b)
-            ctarr.push(hslff.hslstr)
+            ctarr.push('hsl(' + hslff.h + ',' + hslff.s + ',' + + hslff.l + ')')
           }
         }
 
@@ -2443,7 +2443,8 @@
           if (String(hexarr[g]).indexOf('#') > -1) {
             var rgbff = hexToRgb(hexarr[g])
             var hsvff = rgbtohsv(rgbff.r, rgbff.g, rgbff.b)
-            ctarr.push(hsvff.hsvstr)
+            ctarr.push('hsv(' + hsvff.h + ',' + hsvff.s + ',' + + hsvff.v + ')')
+
           }
         }
 
@@ -2454,7 +2455,8 @@
           if (String(hexarr[g]).indexOf('#') > -1) {
             var rgbff = hexToRgb(hexarr[g])
             var cmykff = rgbtocmyk(rgbff.r, rgbff.g, rgbff.b)
-            ctarr.push(cmykff.cmykstr)
+            ctarr.push('cmyk(' + cmykff.c + ',' + cmykff.m + ',' + + cmykff.y + ',' + cmykff.k + ')')
+
           }
         }
 
