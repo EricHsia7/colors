@@ -1256,17 +1256,241 @@
 
     return thssvghtmlpp;
   }
+
+  var colorstops = [
+    { color: "rgba(130,0,159,1)", pos: 0 },
+    { color: "rgba(93,52,175,1)", pos: 50 },
+    { color: "rgba(0,206,171,1)", pos: 100 }
+  ],
+    gradientAngle = 90,
+    mode = 1;
+
+  // Gather Elements
+  canvas = document.getElementById("myCanvas")
+  ctx = canvas.getContext("2d")
+
+  //Draw Gradients
+  function drawGradients(deg) {
+    var points = mode === 1 ? linearGradient_a(canvas.width, canvas.height, deg) : linearGradient_b(canvas.width, canvas.height, deg);
+    var grd = ctx.createLinearGradient(
+      points.tx,
+      points.ty,
+      points.bx,
+      points.by
+    );
+
+    // Draw Box
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+    ctx.fillStyle = grd;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.stroke();
+  }
+
+  drawGradients(gradientAngle);
+
+  //Calculate Linear Gradient Angle and Cut Points
+  function linearGradient_a(w, h, deg) {
+    var caseAngle1 = Math.round((Math.atan(w / h) * 180) / Math.PI), //rundung
+      caseAngle2 = Math.round(180 - caseAngle1),
+      caseAngle3 = Math.round(180 + caseAngle1),
+      caseAngle4 = Math.round(360 - caseAngle1);
+
+    var bx = tx = wh = w / 2,
+      hh = h / 2,
+      ty = h,
+      by = 0,
+      angInRad = (deg * Math.PI) / 180,
+      count1;
+
+    if (deg == caseAngle1) { tx = 0; bx = w; } else
+      if (deg == caseAngle2) { tx = 0; ty = 0; bx = w; by = h; } else
+        if (deg == caseAngle3) { tx = w; ty = 0; bx = 0; by = h; } else
+          if (deg == caseAngle4) { tx = w; ty = h; bx = 0; by = 0; } else {
+            var mtan = Math.tan(angInRad);
+
+            if (0 < deg && deg < caseAngle1) {
+              count1 = (mtan * h) / 2;
+              tx = wh - count1;
+              bx = wh + count1;
+            }
+            else if (caseAngle1 < deg && deg < caseAngle2) {
+              count1 = wh / mtan;
+              tx = 0;
+              ty = hh + count1;
+              bx = w;
+              by = hh - count1;
+            } else if (caseAngle2 < deg && deg < caseAngle3) {
+              count1 = (mtan * h) / 2;
+              tx = wh + count1;
+              ty = 0;
+              bx = wh - count1;
+              by = h;
+            } else if (caseAngle3 < deg && deg < caseAngle4) {
+              count1 = wh / mtan;
+              tx = w;
+              ty = hh - count1;
+              bx = 0;
+              by = hh + count1;
+            } else if (caseAngle4 < deg && deg < 361) {
+              count1 = (mtan * h) / 2;
+              tx = wh - count1;
+              ty = h;
+              bx = wh + count1;
+              by = 0;
+            }
+          }
+    return { tx: tx, ty: ty, bx: bx, by: by };
+  }
+
+
+
+  function linearGradient_b(w, h, angle) {
+    angle = angle * Math.PI / 180 + Math.PI / 2;
+
+    var tx,
+      ty,
+      bx,
+      by,
+      len = Math.sqrt(w / 2 * w / 2 + h / 2 * h / 2),
+      l1 = {
+        x1: Math.cos(angle) * len + w / 2,
+        y1: Math.sin(angle) * len + h / 2,
+        x2: w / 2,
+        y2: h / 2
+      };
+
+    var lines = [
+      getPerpLine({ x: 0, y: 0 }, angle),
+      getPerpLine({ x: w, y: 0 }, angle),
+      getPerpLine({ x: w, y: h }, angle),
+      getPerpLine({ x: 0, y: h }, angle),
+    ];
+    var intersects = []
+    for (var i = 0; i < lines.length; i++) {
+
+      var line = lines[i];
+      var p = lineIntersect(line, l1);
+      intersects.push(p);
+    }
+
+    if (dist(w / 2, h / 2, intersects[0].x, intersects[0].y) > dist(w / 2, h / 2, intersects[1].x, intersects[1].y)) {
+      tx = intersects[0].x;
+      ty = intersects[0].y;
+    } else {
+      tx = intersects[1].x;
+      ty = intersects[1].y;
+    }
+
+    if (dist(w / 2, h / 2, intersects[2].x, intersects[2].y) > dist(w / 2, h / 2, intersects[3].x, intersects[3].y)) {
+      bx = intersects[2].x;
+      by = intersects[2].y;
+    } else {
+      bx = intersects[3].x;
+      by = intersects[3].y;
+    }
+
+    var eAngle = Math.round(Math.atan2((h / 2 - ty), (w / 2 - tx)) * 100) / 100;
+    var aAngle = Math.round(angle % (Math.PI * 2) * 100) / 100;
+
+    if (eAngle === aAngle) {
+      var x = tx, y = ty;
+      tx = bx, ty = by;
+      bx = x, by = y;
+    }
+
+    l1 = {
+      x1: tx, y1: ty, x2: w / 2, y2: h / 2
+    };
+    l2 = {
+      x1: w / 2, y1: h / 2, x2: bx, y2: by
+    };
+
+    return {
+      tx: Math.round(tx),
+      ty: Math.round(ty),
+      bx: Math.round(bx),
+      by: Math.round(by)
+    }
+  }
+
+
+  function degToRad(d) {
+    return d * Math.PI / 180;
+  }
+
+  function dist(x1, y1, x2, y2) {
+    var dx = x1 - x2;
+    var dy = y1 - y2;
+    return Math.sqrt(dx * dx + dy * dy);
+  }
+
+
+  function getPerpLine(p, ang) {
+    return {
+      x1: p.x,
+      y1: p.y,
+      x2: p.x + Math.cos(ang + Math.PI / 2) * 100,
+      y2: p.y + Math.sin(ang + Math.PI / 2) * 100,
+    }
+  }
+
+  function lineIntersect(l1, l2) {
+    var p0 = {
+      x: l1.x1,
+      y: l1.y1
+    }
+    var p1 = {
+      x: l1.x2,
+      y: l1.y2
+    }
+    var p2 = {
+      x: l2.x1,
+      y: l2.y1
+    }
+    var p3 = {
+      x: l2.x2,
+      y: l2.y2
+    }
+
+    var A1 = p1.y - p0.y,
+      B1 = p0.x - p1.x,
+      C1 = A1 * p0.x + B1 * p0.y,
+      A2 = p3.y - p2.y,
+      B2 = p2.x - p3.x,
+      C2 = A2 * p2.x + B2 * p2.y,
+      denominator = A1 * B2 - A2 * B1;
+
+    if (denominator === 0) {
+      return false;
+    }
+
+    return {
+      x: Math.round((B2 * C1 - B1 * C2) / denominator * 100) / 100,
+      y: Math.round((A1 * C2 - A2 * C1) / denominator * 100) / 100
+    }
+
+  }
+
   function toimage(type, content, width, height) {
     var canvas = document.querySelector('#toimagecanvas')
     canvas.width = width
     canvas.height = height
     var ctx = canvas.getContext('2d')
     ctx.clearRect(0, 0, width, height);
-    if (type = 'color') {
+    if (type === 'color') {
       ctx.fillStyle = content[0];
       ctx.fillRect(0, 0, width, height);
     }
+    if (type === 'gradient') {
+      colorstops = [
+        { color: content[1], pos: 0 },
+        { color: content[2], pos: 100 }
+      ]
+      mode = 1;
 
+      drawGradients(content[0])
+    }
     canvas.toBlob(function (blob) {
       var uu = window.URL || window.webkitURL;
       var a = document.createElement('a');
