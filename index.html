@@ -2589,6 +2589,8 @@
     })
     $('.optionlist li[h="toimg"]').click(function (ev) {
       closeoptionlist(ev)
+      var jsonhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))]
+      toimage(jsonhh.type,jsonhh.content,1024,1024)
     })
     $('.optionlist li[h="llgrd"]').click(function (ev) {
       closeoptionlist(ev)
