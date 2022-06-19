@@ -578,19 +578,27 @@
   </div>
   <div class="optionlist-mask"></div>
   <div class="optionlist">
-    <li h="qrcode">二維碼</li>
-    <li h="picker">顏色選擇器</li>
-    <li h="toimg">轉換圖片</li>
-    <li h="llgrd">似色漸層</li>
-    <li h="mixgrd">混合漸層</li>
-    <li h="llpath">似色路徑</li>
-    <li h="copycolorcode">複製顏色代碼</li>
-    <li h="copyoptions">複製選項</li>
-    <li h="copysourceimageurl">複製圖片連結</li>
-    <li h="dlsourceimage">下載圖片</li>
-    <li h="addallfav">將全部顏色新增至喜好項目</li>
-    <li h="shareacolor">分享單個顏色</li>
+    <li h="qrcode" f="1">二維碼</li>
+    <li h="picker" f="1">顏色選擇器</li>
+    <li h="toimg" f="1">轉換圖片</li>
+    <li h="llgrd" f="1">似色漸層</li>
+    <li h="mixgrd" f="1">混合漸層</li>
+    <li h="llpath" f="1">似色路徑</li>
+    <li h="copycolorcode" f="1">複製顏色代碼</li>
+    <li h="copyoptions" f="1">複製選項</li>
+    <li h="copysourceimageurl" f="1">複製圖片連結</li>
+    <li h="dlsourceimage" f="1">下載圖片</li>
+    <li h="addallfav" f="1">將全部顏色新增至喜好項目</li>
+    <li h="shareacolor" f="1">分享單個顏色</li>
+
+    <li h="copy-hex" f="2">複製HEX</li>
+    <li h="copy-rgb" f="2">複製RGB</li>
+    <li h="copy-hsl" f="2">複製HSL</li>
+    <li h="copy-hsv" f="2">複製HSV</li>
+    <li h="copy-cmyk" f="2">複製CMYK</li>
+
   </div>
+
   <div class="qrcode-mask"></div>
   <div class="qrcodebox">
     <div class="qrcodebx"></div>
@@ -1866,6 +1874,7 @@
         var fytype = allcolor[fidindex].type
         var listcc = 0
         $('.optionlist').attr('f', fidtt)
+        $('.optionlist li[f="2"]').css({'display':'none'})
         if (fytype === 'color') {
           listcc = 7
           $('.optionlist li[h="qrcode"]').css({ 'display': 'flex' });
