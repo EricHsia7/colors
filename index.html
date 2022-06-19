@@ -1473,7 +1473,7 @@
 
   }
 
-  function toimage(datajson, gindex,width, height) {
+  function toimage(datajson, gindex, width, height) {
     var type = datajson.type
     var content = datajson.content
     //var gindex = ;
@@ -1505,10 +1505,10 @@
 
     }
     if (type === 'imagecolorgroup') {
-      if(gindex === 0) {
+      if (gindex === 0) {
         return ''
       }
-      ctx2.fillStyle = content[(gindex-1)];
+      ctx2.fillStyle = content[(gindex - 1)];
       ctx2.fillRect(0, 0, width, height);
     }
 
@@ -2600,8 +2600,9 @@
     $('.optionlist li[h="toimg"]').click(function (ev) {
       closeoptionlist(ev)
 
-      var gindex = parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))
-      var jsonhh = allcolor[gindex]
+      var aindex = parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))
+      var gindex = parseInt($('.color[fid="' + optionlistid() + '"]').attr('group-index'))
+      var jsonhh = allcolor[aindex]
       toimage(jsonhh, gindex, 1024, 1024)
     })
     $('.optionlist li[h="llgrd"]').click(function (ev) {
