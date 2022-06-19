@@ -1476,6 +1476,7 @@
   function toimage(datajson, gindex, width, height) {
     var type = datajson.type
     var content = datajson.content
+    var filename = new Date().getTime()
     //var gindex = ;
     var canvas2 = document.querySelector('#toimagecanvas')
     canvas2.width = width
@@ -1485,6 +1486,7 @@
     if (type === 'color') {
       ctx2.fillStyle = content[0];
       ctx2.fillRect(0, 0, width, height);
+      filename = 'color_' + content[0]
     }
     if (type === 'gradient') {
       colorstops = [
@@ -1493,6 +1495,7 @@
       ]
       mode = 1;
       drawGradients(content[0], width, height)
+      filename = 'linear-gradient_' + content.join('_')
     }
     if (type === 'path') {
       var pathdata = gtffim(content[0], content[1], width, height, 1)
@@ -1502,7 +1505,7 @@
       ctx.lineWidth = 1;
       var p = new Path2D(pathdata)
       ctx.stroke(p);
-
+      filename = 'path_' + content.join('_')
     }
     if (type === 'imagecolorgroup') {
       if (gindex === 0) {
@@ -1510,8 +1513,10 @@
       }
       ctx2.fillStyle = content[(gindex - 1)];
       ctx2.fillRect(0, 0, width, height);
-    }
+      filename = 'color_' + content[(gindex - 1)]
 
+    }
+    filename += '_' + width + 'x' + height
     canvas2.toBlob(function (blob) {
       var uu = window.URL || window.webkitURL;
       var a = document.createElement('a');
