@@ -2408,11 +2408,13 @@
     })
     //copyoption
     $('.optionlist li[f="2"]').click(function (ev) {
-      ev.stopPropagation();
+      //ev.stopPropagation();
+      closeoptionlist(ev)
       var copyff = $(this).attr('h')
       var jsonhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))]
       var hexarr = jsonhh.content
       var ctarr = []
+      var ctextff = ''
       if (copyff === 'copy-hex') {
         for (var g = 0; g < hexarr.length; g++) {
           if (String(hexarr[g]).indexOf('#') > -1) {
@@ -2455,7 +2457,7 @@
           if (String(hexarr[g]).indexOf('#') > -1) {
             var rgbff = hexToRgb(hexarr[g])
             var cmykff = rgbtocmyk(rgbff.r, rgbff.g, rgbff.b)
-            ctarr.push('cmyk(' + Math.floor(cmykff.c) + ',' + Math.floor(cmykff.m) + ',' + Math.floor(cmykff.y) + ',' + cmykff.k + ')')
+            ctarr.push('cmyk(' + Math.floor(cmykff.c) + ',' + Math.floor(cmykff.m) + ',' + Math.floor(cmykff.y) + ',' + Math.floor(cmykff.k) + ')')
 
           }
         }
@@ -2464,7 +2466,20 @@
 
       }
 
-      console.log(ctarr)
+      if(jsonhh.type === 'color') {
+        ctextff = ctarr[0]
+      }
+      if(jsonhh.type === 'gradient') {
+        ctextff = 'linear-gradient(' + jsonhh.content[0] + 'deg ,' + ctarr[0] + ' ,' + ctarr[1] + ')'
+      }
+      if(jsonhh.type === 'imagecolorgroup') {
+        ctextff = ctarr[(parseInt($('.color[fid="' + optionlistid() + '"]').attr('group-index')) - 1)]
+if(ctextff === undefined) {
+  return ''
+}
+      }
+
+      copytext(ctextff)
 
     });
     //copyoption end
