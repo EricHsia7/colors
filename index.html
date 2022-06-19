@@ -1267,10 +1267,9 @@
       ctx.fillRect(0, 0, width, height);
     }
 
-    return canvas.toBlob(function (blob) {
+      var blob = canvas.toBlob('image/png')
       var uu = window.URL || window.webkitURL;
       return uu.createObjectURL(blob)
-    }, 'image/png');
     //return blob obj
   }
 
