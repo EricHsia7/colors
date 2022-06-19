@@ -1277,6 +1277,10 @@
       points.bx,
       points.by
     );
+    
+    for (var i in colorstops) {
+    grd.addColorStop(colorstops[i].pos / 100, colorstops[i].color);
+      }
 
     // Draw Box
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -1486,9 +1490,6 @@
         { color: content[2], pos: 100 }
       ]
       mode = 1;
-      for (var i in colorstops) {
-    grd.addColorStop(colorstops[i].pos / 100, colorstops[i].color);
-      }
       drawGradients(content[0],width,height)
     }
     canvas2.toBlob(function (blob) {
