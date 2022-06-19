@@ -583,19 +583,18 @@
   </div>
   <div class="optionlist-mask"></div>
   <div class="optionlist">
+    <li h="copycolorcode" f="1">複製顏色代碼</li>
+    <li h="copyoptions" f="1">複製選項</li>
     <li h="qrcode" f="1">二維碼</li>
     <li h="picker" f="1">顏色選擇器</li>
-    <li h="toimg" f="1">下載顏色圖片</li>
     <li h="llgrd" f="1">似色漸層</li>
     <li h="mixgrd" f="1">混合漸層</li>
     <li h="llpath" f="1">似色路徑</li>
-    <li h="copycolorcode" f="1">複製顏色代碼</li>
-    <li h="copyoptions" f="1">複製選項</li>
     <li h="copysourceimageurl" f="1">複製圖片連結</li>
     <li h="dlsourceimage" f="1">下載圖片</li>
+    <li h="toimg" f="1">下載顏色圖片</li>
     <li h="addallfav" f="1">將全部顏色新增至喜好項目</li>
     <li h="shareacolor" f="1">分享單個顏色</li>
-
     <li h="copy-hex" f="2">複製HEX</li>
     <li h="copy-rgb" f="2">複製RGB</li>
     <li h="copy-hsl" f="2">複製HSL</li>
@@ -1474,7 +1473,10 @@
 
   }
 
-  function toimage(type, content, width, height) {
+  function toimage(datajson, gindex,width, height) {
+    var type = datajson.type
+    var content = datajson.content
+    //var gindex = ;
     var canvas2 = document.querySelector('#toimagecanvas')
     canvas2.width = width
     canvas2.height = height
@@ -1502,6 +1504,14 @@
       ctx.stroke(p);
 
     }
+    if (type === 'imagecolorgroup') {
+      if(gindex === 0) {
+        return ''
+      }
+      ctx2.fillStyle = content[(gindex-1)];
+      ctx2.fillRect(0, 0, width, height);
+    }
+
     canvas2.toBlob(function (blob) {
       var uu = window.URL || window.webkitURL;
       var a = document.createElement('a');
@@ -2204,13 +2214,13 @@
           $('.optionlist li[h="addallfav"]').css({ 'display': 'flex' });
           $('.optionlist li[h="shareacolor"]').css({ 'display': 'none' });
           if (!(fidgroupindex === 0)) {
-            listcc += 5
+            listcc += 6
             $('.optionlist li[h="llgrd"]').css({ 'display': 'flex' });
             $('.optionlist li[h="llpath"]').css({ 'display': 'flex' });
             $('.optionlist li[h="shareacolor"]').css({ 'display': 'flex' });
             $('.optionlist li[h="copycolorcode"]').css({ 'display': 'flex' });
             $('.optionlist li[h="copyoptions"]').css({ 'display': 'flex' });
-
+            $('.optionlist li[h="toimg"]').css({ 'display': 'flex' });
           }
 
         }
@@ -2589,8 +2599,10 @@
     })
     $('.optionlist li[h="toimg"]').click(function (ev) {
       closeoptionlist(ev)
-      var jsonhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))]
-      toimage(jsonhh.type,jsonhh.content,1024,1024)
+
+      var gindex = parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))
+      var jsonhh = allcolor[gindex]
+      toimage(jsonhh, gindex, 1024, 1024)
     })
     $('.optionlist li[h="llgrd"]').click(function (ev) {
       closeoptionlist(ev)
