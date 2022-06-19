@@ -1267,14 +1267,16 @@
       ctx.fillRect(0, 0, width, height);
     }
 
-    var blob = canvas.toBlob()
-    var uu = window.URL || window.webkitURL;
-    var a = document.createElement('a');
-    a.download = new Date().getTime() + '.png';
-    a.href = uu.createObjectURL(blob);
-    document.body.appendChild(a);
-    a.click()
-    a.remove()
+    canvas.toBlob(function (blob) {
+      var uu = window.URL || window.webkitURL;
+      var a = document.createElement('a');
+      a.download = new Date().getTime() + '.png';
+      a.href = uu.createObjectURL(blob);
+      document.body.appendChild(a);
+      a.click()
+      a.remove()
+
+    })
     //return blob obj
   }
 
