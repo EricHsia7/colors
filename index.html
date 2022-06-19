@@ -1269,8 +1269,8 @@
   ctx = canvas.getContext("2d")
 
   //Draw Gradients
-  function drawGradients(deg) {
-    var points = mode === 1 ? linearGradient_a(canvas.width, canvas.height, deg) : linearGradient_b(canvas.width, canvas.height, deg);
+  function drawGradients(deg,w,h) {
+    var points = mode === 1 ? linearGradient_a(w, h, deg) : linearGradient_b(w, h, deg);
     var grd = ctx.createLinearGradient(
       points.tx,
       points.ty,
@@ -1487,7 +1487,7 @@
       ]
       mode = 1;
 
-      drawGradients(content[0])
+      drawGradients(content[0],width,height)
     }
     canvas2.toBlob(function (blob) {
       var uu = window.URL || window.webkitURL;
