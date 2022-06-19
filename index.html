@@ -1874,7 +1874,7 @@
         var fytype = allcolor[fidindex].type
         var listcc = 0
         $('.optionlist').attr('f', fidtt)
-        $('.optionlist li[f="2"]').css({'display':'none'})
+        $('.optionlist li[f="2"]').css({ 'display': 'none' })
         if (fytype === 'color') {
           listcc = 7
           $('.optionlist li[h="qrcode"]').css({ 'display': 'flex' });
@@ -2399,6 +2399,17 @@
     })
     $('.optionlist li[h="copyoptions"]').click(function (ev) {
       closeoptionlist(ev)
+      $('.optionlist li[f="1"]').css({ 'display': 'none' })
+      $('.optionlist li[f="2"]').css({ 'display': 'flex' })
+      setTimeout(function () {
+        var listcc = 5
+        $('.optionlist').css({ '--b-bottom-height': $('.bottom').height() + 'px', '--b-option-list': listcc, 'display': 'block', 'opacity': '1', 'transition': '0.3s' });
+        $('.optionlist-mask').css({ 'display': 'block', 'transition': '0.3s' });
+        setTimeout(function () {
+          $('.optionlist').css({ 'transform': 'translateY(0px)' });
+          $('.optionlist-mask').css({ 'opacity': '1' });
+        }, 1);
+      }, 302);
     })
     $('.optionlist li[h="copysourceimageurl"]').click(function (ev) {
       closeoptionlist(ev)
