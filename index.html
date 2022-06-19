@@ -2407,27 +2407,64 @@
 
     })
     //copyoption
-    $('.optionlist li[h="copy-hex"]').click(function (ev) {
+    $('.optionlist li[f="2"]').click(function (ev) {
       ev.stopPropagation();
+      var copyff = $(this).attr('h')
+      var jsonhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))]
+      var hexarr = jsonhh.content
+      var ctarr = []
+      if (copyff === 'copy-hex') {
+        for (var g = 0; g < hexarr.length; g++) {
+          if (String(hexarr[g]).indexOf('#') > -1) {
+            ctarr.push(hexarr[g])
+          }
+        }
+      }
+      if (copyff === 'copy-rgb') {
+        for (var g = 0; g < hexarr.length; g++) {
+          if (String(hexarr[g]).indexOf('#') > -1) {
+            var rgbff = hexToRgb(hexarr[g])
+            ctarr.push('rgb(' + rgbff.r + ',' + rgbff.g + ',' + rgbff.b + ')')
+          }
+        }
+      }
+      if (copyff === 'copy-hsl') {
+        for (var g = 0; g < hexarr.length; g++) {
+          if (String(hexarr[g]).indexOf('#') > -1) {
+            var rgbff = hexToRgb(hexarr[g])
+            var hslff = rgbtohsl(rgbff.r, rgbff.g, rgbff.b)
+            ctarr.push(hslff.hslstr)
+          }
+        }
+
+      }
+      if (copyff === 'copy-hsv') {
+        for (var g = 0; g < hexarr.length; g++) {
+          if (String(hexarr[g]).indexOf('#') > -1) {
+            var rgbff = hexToRgb(hexarr[g])
+            var hsvff = rgbtohsv(rgbff.r, rgbff.g, rgbff.b)
+            ctarr.push(hsvff.hsvstr)
+          }
+        }
+
+
+      }
+      if (copyff === 'copy-cmyk') {
+        for (var g = 0; g < hexarr.length; g++) {
+          if (String(hexarr[g]).indexOf('#') > -1) {
+            var rgbff = hexToRgb(hexarr[g])
+            var cmykff = rgbtocmyk(rgbff.r, rgbff.g, rgbff.b)
+            ctarr.push(cmykff.cmykstr)
+          }
+        }
+
+
+
+      }
+
+      console.log(ctarr)
 
     });
-    $('.optionlist li[h="copy-rgb"]').click(function (ev) {
-      ev.stopPropagation();
-
-    });
-    $('.optionlist li[h="copy-hsl"]').click(function (ev) {
-      ev.stopPropagation();
-
-    });
-    $('.optionlist li[h="copy-hsv"]').click(function (ev) {
-      ev.stopPropagation();
-
-    });
-    $('.optionlist li[h="copy-cmyk"]').click(function (ev) {
-      ev.stopPropagation();
-
-    });
-
     //copyoption end
     $('.optionlist li[h="copysourceimageurl"]').click(function (ev) {
       closeoptionlist(ev)
