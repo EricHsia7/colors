@@ -1256,13 +1256,21 @@
 
     return thssvghtmlpp;
   }
-  function toimage(type, content, width, height, filetype) {
+  function toimage(type, content, width, height) {
     var canvas = document.querySelector('#toimagecanvas')
     canvas.width = width
     canvas.height = height
     var ctx = canvas.getContext('2d')
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, width, height);
+    if (type = 'color') {
+      ctx.fillStyle = content[0];
+      ctx.fillRect(0, 0, width, height);
+    }
 
+    return canvas.toBlob(function (blob) {
+      var uu = window.URL || window.webkitURL;
+      return uu.createObjectURL(blob)
+    }, 'image/png');
     //return blob obj
   }
 
