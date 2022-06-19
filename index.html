@@ -1261,9 +1261,8 @@
     { color: "rgba(130,0,159,1)", pos: 0 },
     { color: "rgba(93,52,175,1)", pos: 50 },
     { color: "rgba(0,206,171,1)", pos: 100 }
-  ],
-    gradientAngle = 90,
-    mode = 1;
+  ]
+  var mode = 1;
 
   // Gather Elements
   canvas = document.getElementById("toimagecanvas")
@@ -1287,7 +1286,6 @@
     ctx.stroke();
   }
 
-  drawGradients(gradientAngle);
 
   //Calculate Linear Gradient Angle and Cut Points
   function linearGradient_a(w, h, deg) {
