@@ -580,7 +580,7 @@
   <div class="optionlist">
     <li h="qrcode" f="1">二維碼</li>
     <li h="picker" f="1">顏色選擇器</li>
-    <li h="toimg" f="1">轉換圖片</li>
+    <li h="toimg" f="1">下載顏色圖片</li>
     <li h="llgrd" f="1">似色漸層</li>
     <li h="mixgrd" f="1">混合漸層</li>
     <li h="llpath" f="1">似色路徑</li>
@@ -1221,7 +1221,7 @@
     return rsthex;
   }
 
-  function gtffim(l, b, w, h) {
+  function gtffim(l, b, w, h,expt) {
     var ssscale = 1;
     var ssssssw = w * ssscale;
     var ssssssh = h * ssscale;
@@ -1242,8 +1242,13 @@
         (sssizey + Math.random() * (sssizeh - sssizey)).toFixed(3)
       );
     }
-
+if(expt === '1') {
+  var thssvghtmlpp = sspath.join(' ')
+}
+else {
     var thssvghtmlpp = '<svg xmlns="http://www.w3.org/2000/svg" viewbox="0,0,' + ssssssw + "," + ssssssh + '" class="colorcontentpathsvg"><path d="' + sspath.join(" ") + '" id="ssp" fill="transparent" stroke="' + l + '" stroke-width="0.4"/></svg>';
+}
+
     return thssvghtmlpp;
   }
 
