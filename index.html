@@ -1247,7 +1247,7 @@
         (sssizey + Math.random() * (sssizeh - sssizey)).toFixed(3)
       );
     }
-    if (expt === '1') {
+    if (expt === 1) {
       var thssvghtmlpp = sspath.join(' ')
     }
     else {
@@ -1492,8 +1492,15 @@
       mode = 1;
       drawGradients(content[0], width, height)
     }
-    if(type === 'path') {
-var pathdata = gtffim(content[0],content[1],width,height,1)
+    if (type === 'path') {
+      var pathdata = gtffim(content[0], content[1], width, height, 1)
+      ctx2.fillStyle = content[1];
+      ctx2.fillRect(0, 0, width, height);
+      ctx.strokeStyle = content[0];
+      ctx.lineWidth = 1;
+      var p = new Path2D(pathdata)
+      ctx.stroke(p);
+
     }
     canvas2.toBlob(function (blob) {
       var uu = window.URL || window.webkitURL;
