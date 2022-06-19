@@ -1473,14 +1473,14 @@
   }
 
   function toimage(type, content, width, height) {
-    var canvas = document.querySelector('#toimagecanvas')
-    canvas.width = width
-    canvas.height = height
-    var ctx = canvas.getContext('2d')
-    ctx.clearRect(0, 0, width, height);
+    var canvas2 = document.querySelector('#toimagecanvas')
+    canvas2.width = width
+    canvas2.height = height
+    var ctx2 = canvas2.getContext('2d')
+    ctx2.clearRect(0, 0, width, height);
     if (type === 'color') {
-      ctx.fillStyle = content[0];
-      ctx.fillRect(0, 0, width, height);
+      ctx2.fillStyle = content[0];
+      ctx2.fillRect(0, 0, width, height);
     }
     if (type === 'gradient') {
       colorstops = [
@@ -1491,7 +1491,7 @@
 
       drawGradients(content[0])
     }
-    canvas.toBlob(function (blob) {
+    canvas2.toBlob(function (blob) {
       var uu = window.URL || window.webkitURL;
       var a = document.createElement('a');
       a.download = new Date().getTime() + '.png';
