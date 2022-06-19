@@ -1269,7 +1269,7 @@
 
       var blob = canvas.toBlob('image/png')
       var uu = window.URL || window.webkitURL;
-      return uu.createObjectURL(blob)
+      return String(uu.createObjectURL(blob))
     //return blob obj
   }
 
