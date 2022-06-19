@@ -1,15 +1,16 @@
 <meta charset="UTF-8">
 <title>Colors</title>
+
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-342D6M2MKX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-342D6M2MKX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-342D6M2MKX');
-</script>
+    gtag('config', 'G-342D6M2MKX');
+  </script>
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js?1"></script>
@@ -24,187 +25,231 @@
 <link rel="manifest" href="manifest.json?qpipoo">
 <style>
   :root {
-    --ripple-color:#000;
+    --ripple-color: #000;
   }
-.title {
-  background:#fff;
-  position:fixed;
-  top:0px;
-  left:0px;
-  width:100%;
-  height:55px;
-  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.05);
-  -webkit-user-select: none;
-  display: flex;
-justify-content: center;
-align-items: center;
-  font-weight:700;
-  font-family: 'Noto Sans TC', sans-serif;
-}
-.content {
-  position:fixed;
-  top:55px;
-  left:0px;
-  width:100%;
-  height:calc(100% - 55px);
-  overflow:scroll;
-  background:#fff;
-}
-input {
-  border:none;
-  background:#f5f5f5;
-  height:35px;
-  width:calc(50% - 30px);
-  border-radius:10px;
-  font-size:15px;
-  padding:0px;
-  padding-left:10px;
-  -webkit-appearance:none;
-outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);
-    font-weight:500;
-  font-family: 'Noto Sans TC', sans-serif;
-}
-input[g="height"] {
-  margin-left:10px;
-}
-.group[g="gsize"] {
-  width:100%;
-  position:relative;
-  height:50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.group[g="filesize"] {
-  width:100%;
-  position:relative;
-  height:50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-input[g="filesize"] {
-  width:calc(100% - 40px)
-}
-h4 {
-  margin:0px;
-  padding:0px;
-  padding-left:calc((100% - ((50% - 30px) * 2) - 30px) / 2);
-  margin-top:10px;
-  font-weight:700;
-  font-family: 'Noto Sans TC', sans-serif;
-  -webkit-user-select: none;
-}
-.preview {
-width:100%;
-height:300px;
-background:url(https://erichsia7.github.io/colors/image/block.png);
-background-repeat: repeat;
-background-size:10px;
-transition:.5s;
-position:relative;
--webkit-user-select: none;
-}
-.preview img {
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  max-width:100%;
-  max-height:100%;
-  width:auto;
-  height:auto;
-  transition:0.3s;
-  -webkit-user-select: none;
-}
-.group {
-  -webkit-user-select: none;	
-}
-.group[g="name"] {
-  width:100%;
-  position:relative;
-  height:50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-input[g="name"] {
-  width:calc(100% - 40px)
-}
-.btn {
-  width:calc(100% - 30px);
-  height:35px;
-  background:#f5f5f5;
-  border-radius:10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight:500;
-  font-family: 'Noto Sans TC', sans-serif;
-  -webkit-user-select: none;
-}
-.group[g="download"] {
-  width:100%;
-  position:relative;
-  height:50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#canvas {
-  display:none;
-}
-.texticon {
-  background:url(https://erichsia7.github.io/colors/arrow-right.png);
-  background-size:20px;
-  background-position:center;
-  background-repeat:no-repeat;
-    width:55px;
-  height:55px;
-  position:fixed;
-  top:0px;
-  left:0px;
-  transform:rotate(180deg);
-  -webkit-appearance:none;
-outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);
-  -webkit-user-select: none;
-}
-  .ladbar {
-background:#000;
-position:fixed;
-top:0px;
-left:0px;
-width:0px;
-height:1.3px;
-transition:width 0.3s ,background 0s;
--webkit-user-select: none;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --ripple-color:#fff;
+
+  .title {
+    background: #fff;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 55px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.05);
+    -webkit-user-select: none;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-family: 'Noto Sans TC', sans-serif;
   }
-  body,.title,.content {
-  background:#1a1a1a;
-    color:#fff;
+
+  .content {
+    position: fixed;
+    top: 55px;
+    left: 0px;
+    width: 100%;
+    height: calc(100% - 55px);
+    overflow: scroll;
+    background: #fff;
   }
+
+  input {
+    border: none;
+    background: #f5f5f5;
+    height: 35px;
+    width: calc(50% - 30px);
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 0px;
+    padding-left: 10px;
+    -webkit-appearance: none;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-weight: 500;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+
+  input[g="height"] {
+    margin-left: 10px;
+  }
+
+  .group[g="gsize"] {
+    width: 100%;
+    position: relative;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .group[g="filesize"] {
+    width: 100%;
+    position: relative;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  input[g="filesize"] {
+    width: calc(100% - 40px)
+  }
+
   h4 {
-    color:#fff;
+    margin: 0px;
+    padding: 0px;
+    padding-left: calc((100% - ((50% - 30px) * 2) - 30px) / 2);
+    margin-top: 10px;
+    font-weight: 700;
+    font-family: 'Noto Sans TC', sans-serif;
+    -webkit-user-select: none;
+    user-select: none;
   }
-  input,.btn {
-    background:#1f1f1f;
-    color:#fff;
-  }
+
   .preview {
-background:url(https://erichsia7.github.io/colors/image/block_dark.png);
-background-repeat: repeat;
-background-size:10px;
+    width: 100%;
+    height: 300px;
+    background: url(https://erichsia7.github.io/colors/image/block.png);
+    background-repeat: repeat;
+    background-size: 10px;
+    transition: .5s;
+    position: relative;
+    -webkit-user-select: none;
+    user-select: none;
+
   }
+
+  .preview img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    transition: 0.3s;
+    -webkit-user-select: none;
+    user-select: none;
+
+  }
+
+  .group {
+    -webkit-user-select: none;
+    user-select: none;
+
+  }
+
+  .group[g="name"] {
+    width: 100%;
+    position: relative;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  input[g="name"] {
+    width: calc(100% - 40px)
+  }
+
+  .btn {
+    width: calc(100% - 30px);
+    height: 35px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-family: 'Noto Sans TC', sans-serif;
+    -webkit-user-select: none;
+    user-select: none;
+
+  }
+
+  .group[g="download"] {
+    width: 100%;
+    position: relative;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #canvas {
+    display: none;
+  }
+
   .texticon {
-        filter: invert(100%);
-      }
-        .ladbar {
-        background:#fff;
-      }
+    background: url(https://erichsia7.github.io/colors/arrow-right.png);
+    background-size: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 55px;
+    height: 55px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    transform: rotate(180deg);
+    -webkit-appearance: none;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-select: none;
+    user-select: none;
+
+  }
+
+  .ladbar {
+    background: #000;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 1.3px;
+    transition: width 0.3s, background 0s;
+    -webkit-user-select: none;
+    user-select: none;
+
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ripple-color: #fff;
+    }
+
+    body,
+    .title,
+    .content {
+      background: #1a1a1a;
+      color: #fff;
+    }
+
+    h4 {
+      color: #fff;
+    }
+
+    input,
+    .btn {
+      background: #1f1f1f;
+      color: #fff;
+    }
+
+    .preview {
+      background: url(https://erichsia7.github.io/colors/image/block_dark.png);
+      background-repeat: repeat;
+      background-size: 10px;
+    }
+
+    .texticon {
+      filter: invert(100%);
+    }
+
+    .ladbar {
+      background: #fff;
+    }
   }
 </style>
 <div class="content">
@@ -213,16 +258,16 @@ background-size:10px;
   </div>
   <h4>尺寸</h4>
   <div class="group" g="gsize">
-  <input type="text" placeholder="寬度" g="width" value="512">
-  <input type="text" placeholder="高度" g="height" value="512">
+    <input type="text" placeholder="寬度" g="width" value="512">
+    <input type="text" placeholder="高度" g="height" value="512">
   </div>
   <h4>名稱</h4>
   <div class="group" g="name">
-  <input type="text" placeholder="名稱" g="name">
+    <input type="text" placeholder="名稱" g="name">
   </div>
   <h4>檔案大小</h4>
   <div class="group" g="filesize">
-  <input ttpe="text" g="filesize" readonly="readonly" placeholder="檔案大小(僅供參考)">
+    <input ttpe="text" g="filesize" readonly="readonly" placeholder="檔案大">
   </div>
   <div class="group" g="download">
     <div class="btn" g="downloadbtn" ripple-onclick="downloadimage()">下載</div>
@@ -236,257 +281,258 @@ background-size:10px;
 <div class="ladbar" style="display:none;"></div>
 <script src="https://erichsia7.github.io/ripple.js/ripple.min.js"></script>
 <script>
-/*
-lade = 0 ;
-function ladbaradd() {
-lade += 5+Math.floor(Math.random() * 2) ;
-$('.ladbar').css({'width':lade + '%'});
-if(lade > 80) {
-clearInterval(ladbar);
-}
-}
-ladbaradd();
-var ladbar = setInterval(ladbaradd,300);
-
-$(document).ready(function() {
-setTimeout(function() {
-clearInterval(ladbar);
-$('.ladbar').css({'width':'105%','transition':'0.7s'});
-},1000);
-
-setTimeout(function() {
-$('.ladbar').css({'opacity':'0'});
-},1500);
-
-setTimeout(function() {
-$('.ladbar').css({'display':'none'});
-},2300);
-});
-*/
+  /*
+  lade = 0 ;
+  function ladbaradd() {
+  lade += 5+Math.floor(Math.random() * 2) ;
+  $('.ladbar').css({'width':lade + '%'});
+  if(lade > 80) {
+  clearInterval(ladbar);
+  }
+  }
+  ladbaradd();
+  var ladbar = setInterval(ladbaradd,300);
+  
+  $(document).ready(function() {
+  setTimeout(function() {
+  clearInterval(ladbar);
+  $('.ladbar').css({'width':'105%','transition':'0.7s'});
+  },1000);
+  
+  setTimeout(function() {
+  $('.ladbar').css({'opacity':'0'});
+  },1500);
+  
+  setTimeout(function() {
+  $('.ladbar').css({'display':'none'});
+  },2300);
+  });
+  */
 </script>
 <script>
-var getUrlString = location.href;
-var url = new URL(getUrlString);
-var shcol = url.searchParams.get('s');
-var toimgbackid = url.searchParams.get('backid') ;
+  var getUrlString = location.href;
+  var url = new URL(getUrlString);
+  var shcol = url.searchParams.get('s');
+  var toimgbackid = url.searchParams.get('backid');
 
-function setthemecol(hexcolsjs,delaytimems) {
-  setTimeout(function() {
-  $('meta[name="theme-color"]').attr('content',hexcolsjs);
-  },delaytimems);
-}
-function darkmodehexcol() {
-if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  return '#1a1a1a'
-}
-else {
-return '#fff'
-}
-}
-
-	
-document.addEventListener("paste", function (e){
-  genimg();
-});
-document.addEventListener("cut", function (e){
-  genimg();
-});
-document.addEventListener("selectionchange", function (e){
-  genimg();
-});
-$('input[type="text"]').keyup(function() {
-  genimg();
-});
-var color = '#fff' ;
-if(shcol === '1') {
-  var color = atob(url.searchParams.get('c')) ;
-}
-var imagedataurl ;
-function genimg() {
-  $('#canvas').css({'width':$('input[g="width"]').val(),'height':$('input[g="height"]').val()}).attr('width',$('input[g="width"]').val()).attr('height',$('input[g="height"]').val());
-  var ctx = document.querySelector('#canvas').getContext('2d');
-  ctx.fillStyle = color ;
-  ctx.fillRect(0,0,parseInt($('input[g="width"]').val()),parseInt($('input[g="height"]').val()));
-  imagedataurl = document.querySelector('#canvas').toDataURL() ;
-  $('#result').attr('src',imagedataurl)
-  $('input[g="name"]').val(color.split('#')[1] + '_' + parseInt($('input[g="width"]').val()) + 'x' + parseInt($('input[g="height"]').val()));
-  var head = 'data:image/png;base64,';
-var imgFileSize = Math.round((imagedataurl.length - head.length)*3/4) ;
-  $('input[g="filesize"]').val((imgFileSize*0.001).toFixed(3) + 'KB');
-  
-}
-function downloadimage() {
-  var link = document.createElement("a");
-  document.body.appendChild(link);
-  link.download = $('input[g="name"]').val() + ".png";
-  link.href = imagedataurl;
-  link.target = '_blank';
-  link.click();
-  link.remove();
-}
-genimg();
-ripple('.btn','var(--ripple-color)','0.3',1200,'true');
-$('.texticon').click(function() {
-  if(sessionStorage.getItem(toimgbackid) === null) {
-   window.history.back();
+  function setthemecol(hexcolsjs, delaytimems) {
+    setTimeout(function () {
+      $('meta[name="theme-color"]').attr('content', hexcolsjs);
+    }, delaytimems);
   }
-else {
-  location.href = sessionStorage.getItem(toimgbackid) ;
-}
+  function darkmodehexcol() {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return '#1a1a1a'
+    }
+    else {
+      return '#fff'
+    }
+  }
+
+
+  document.addEventListener("paste", function (e) {
+    genimg();
   });
-    //userid
+  document.addEventListener("cut", function (e) {
+    genimg();
+  });
+  document.addEventListener("selectionchange", function (e) {
+    genimg();
+  });
+  $('input[type="text"]').keyup(function () {
+    genimg();
+  });
+  var color = '#fff';
+  if (shcol === '1') {
+    var color = atob(url.searchParams.get('c'));
+  }
+  var imagedataurl;
+  function genimg() {
+    $('#canvas').css({ 'width': $('input[g="width"]').val(), 'height': $('input[g="height"]').val() }).attr('width', $('input[g="width"]').val()).attr('height', $('input[g="height"]').val());
+    var ctx = document.querySelector('#canvas').getContext('2d');
+    ctx.fillStyle = color;
+    ctx.fillRect(0, 0, parseInt($('input[g="width"]').val()), parseInt($('input[g="height"]').val()));
+    imagedataurl = document.querySelector('#canvas').toDataURL();
+    $('#result').attr('src', imagedataurl)
+    $('input[g="name"]').val(color.split('#')[1] + '_' + parseInt($('input[g="width"]').val()) + 'x' + parseInt($('input[g="height"]').val()));
+    var head = 'data:image/png;base64,';
+    var imgFileSize = Math.round((imagedataurl.length - head.length) * 3 / 4);
+    $('input[g="filesize"]').val((imgFileSize * 0.001).toFixed(3) + 'KB');
+
+  }
+  function downloadimage() {
+    var link = document.createElement("a");
+    document.body.appendChild(link);
+    link.download = $('input[g="name"]').val() + ".png";
+    link.href = imagedataurl;
+    link.target = '_blank';
+    link.click();
+    link.remove();
+  }
+  genimg();
+  ripple('.btn', 'var(--ripple-color)', '0.3', 1200, 'true');
+  $('.texticon').click(function () {
+    if (sessionStorage.getItem(toimgbackid) === null) {
+      window.history.back();
+    }
+    else {
+      location.href = sessionStorage.getItem(toimgbackid);
+    }
+  });
+  //userid
   function systeminfodata(uid) {
-  var nav = window.navigator ;
-   gtag('event', 'user_system_appcodename', {
-    'event_category': nav.appCodeName,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_appname', {
-    'event_category': nav.appName,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_appver', {
-    'event_category': nav.appVersion,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_lang', {
-    'event_category': nav.language,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_platform', {
-    'event_category': nav.platform,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-	
-	gtag('event', 'user_system_product', {
-    'event_category': nav.product,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_productsub', {
-    'event_category': nav.productSub,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-		
-	gtag('event', 'user_system_useragent', {
-    'event_category': nav.userAgent,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
-	
-	gtag('event', 'user_system_vendor', {
-    'event_category': nav.vendor,
-    'event_label':uid ,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    }
-  });
+    var nav = window.navigator;
+    gtag('event', 'user_system_appcodename', {
+      'event_category': nav.appCodeName,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_appname', {
+      'event_category': nav.appName,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_appver', {
+      'event_category': nav.appVersion,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_lang', {
+      'event_category': nav.language,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_platform', {
+      'event_category': nav.platform,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_product', {
+      'event_category': nav.product,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_productsub', {
+      'event_category': nav.productSub,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_useragent', {
+      'event_category': nav.userAgent,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
+
+    gtag('event', 'user_system_vendor', {
+      'event_category': nav.vendor,
+      'event_label': uid,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+      }
+    });
   }
 
-  var user_id ;
-  if(localStorage.getItem('user_id_r') === '1') {
-    user_id = localStorage.getItem('user_id') ;
+  var user_id;
+  if (localStorage.getItem('user_id_r') === '1') {
+    user_id = localStorage.getItem('user_id');
     gtag('event', 'user_start', {
-    'event_category': 'count',
-    'event_label': user_id,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    
-    //systeminfodata(user_id)
-    }
-  });
+      'event_category': 'count',
+      'event_label': user_id,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+
+        //systeminfodata(user_id)
+      }
+    });
   }
   else {
-  var user_id_chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            user_id = "";
-            for (var useridi = 0; useridi < 64; useridi++) {
-                var user_id_randomNumber = Math.floor(Math.random() * user_id_chars.length);
-                user_id += user_id_chars.substring(user_id_randomNumber, user_id_randomNumber + 1);
-            }
-  localStorage.setItem('user_id_r', '1');
-  localStorage.setItem('user_id',user_id);
-   
-   gtag('event', 'user_start', {
-    'event_category': 'count',
-    'event_label': user_id,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-    systeminfodata(user_id)
+    var user_id_chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    user_id = "";
+    for (var useridi = 0; useridi < 64; useridi++) {
+      var user_id_randomNumber = Math.floor(Math.random() * user_id_chars.length);
+      user_id += user_id_chars.substring(user_id_randomNumber, user_id_randomNumber + 1);
     }
-  });
-    
+    localStorage.setItem('user_id_r', '1');
+    localStorage.setItem('user_id', user_id);
+
+    gtag('event', 'user_start', {
+      'event_category': 'count',
+      'event_label': user_id,
+      'transport_type': 'beacon',
+      'event_callback': function () {
+        systeminfodata(user_id)
+      }
+    });
+
   }
   //useridend
- //darkmode
-let darkmodematched = window.matchMedia('(prefers-color-scheme: dark)').matches;
-var darkmodematchedstr = 'undefined' ;
-if(darkmodematched) {
-  darkmodematchedstr = 'true' ;
-//setthemecol('#1a1a1a',1)
-}
-else {
-	darkmodematchedstr = 'false' ;
-}
-  
+  //darkmode
+  let darkmodematched = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  var darkmodematchedstr = 'undefined';
+  if (darkmodematched) {
+    darkmodematchedstr = 'true';
+    //setthemecol('#1a1a1a',1)
+  }
+  else {
+    darkmodematchedstr = 'false';
+  }
+
   gtag('event', 'dark_mode', {
     'event_category': darkmodematchedstr,
     'event_label': user_id,
     'transport_type': 'beacon',
-    'event_callback': function(){
+    'event_callback': function () {
     }
   });
-  
+
   //darkmodeend
-    $(document).ready(function() {
+  $(document).ready(function () {
     //test 
-        var googlefontloadtime = new Date().getTime() ;
-        if(googlefontloadtime-parseInt(localStorage.getItem('googlefontNotoSansTCloaded')) < 2592000000) {
-  $('body').append('<style>' + localStorage.getItem('googlefontNotoSansTC') + '</style>');
-  
-}
-else {
- $.ajax({type:'get',url:"https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap",dataType:'text',success:function(e) {
-  var googlefontloadtimedd = new Date().getTime() ;
-  localStorage.setItem('googlefontNotoSansTC', e); localStorage.setItem('googlefontNotoSansTCloaded', googlefontloadtimedd);
-   $('body').append('<style>' + e + '</style>');
-   }
-}); 
-}
+    var googlefontloadtime = new Date().getTime();
+    if (googlefontloadtime - parseInt(localStorage.getItem('googlefontNotoSansTCloaded')) < 2592000000) {
+      $('body').append('<style>' + localStorage.getItem('googlefontNotoSansTC') + '</style>');
+
+    }
+    else {
+      $.ajax({
+        type: 'get', url: "https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap", dataType: 'text', success: function (e) {
+          var googlefontloadtimedd = new Date().getTime();
+          localStorage.setItem('googlefontNotoSansTC', e); localStorage.setItem('googlefontNotoSansTCloaded', googlefontloadtimedd);
+          $('body').append('<style>' + e + '</style>');
+        }
+      });
+    }
   });
 </script>
