@@ -2399,20 +2399,36 @@
     })
     $('.optionlist li[h="copyoptions"]').click(function (ev) {
       //closeoptionlist(ev)
-      //setTimeout(function () {
+      ev.stopPropagation();
       $('.optionlist li[f="1"]').css({ 'display': 'none' })
       $('.optionlist li[f="2"]').css({ 'display': 'flex' })
       var listcc = 5
       $('.optionlist').css({ '--b-bottom-height': $('.bottom').height() + 'px', '--b-option-list': listcc, 'display': 'block', 'opacity': '1', 'transition': '0.3s' });
-      /*
-              $('.optionlist-mask').css({ 'display': 'block', 'transition': '0.3s' });
-              setTimeout(function () {
-                $('.optionlist').css({ 'transform': 'translateY(0px)' });
-                $('.optionlist-mask').css({ 'opacity': '1' });
-              }, 1);
-              */
-      //}, 302);
+
     })
+    //copyoption
+    $('.optionlist li[h="copy-hex"]').click(function (ev) {
+      ev.stopPropagation();
+
+    });
+    $('.optionlist li[h="copy-rgb"]').click(function (ev) {
+      ev.stopPropagation();
+
+    });
+    $('.optionlist li[h="copy-hsl"]').click(function (ev) {
+      ev.stopPropagation();
+
+    });
+    $('.optionlist li[h="copy-hsv"]').click(function (ev) {
+      ev.stopPropagation();
+
+    });
+    $('.optionlist li[h="copy-cmyk"]').click(function (ev) {
+      ev.stopPropagation();
+
+    });
+
+    //copyoption end
     $('.optionlist li[h="copysourceimageurl"]').click(function (ev) {
       closeoptionlist(ev)
       var jsonhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))]
