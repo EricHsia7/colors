@@ -395,6 +395,10 @@
     user-select: none;
   }
 
+  #toimagecanvas {
+    display: none;
+  }
+
   @media (prefers-color-scheme: dark) {
     :root {
       --bottom-icon-color: #ffffff;
@@ -501,6 +505,7 @@
 </style>
 
 <body>
+  <canvas id="toimagecanvas"></canvas>
   <div class="container">
     <div class="box" dy="0" fy="0"></div>
   </div>
@@ -1221,7 +1226,7 @@
     return rsthex;
   }
 
-  function gtffim(l, b, w, h,expt) {
+  function gtffim(l, b, w, h, expt) {
     var ssscale = 1;
     var ssssssw = w * ssscale;
     var ssssssh = h * ssscale;
@@ -1242,16 +1247,24 @@
         (sssizey + Math.random() * (sssizeh - sssizey)).toFixed(3)
       );
     }
-if(expt === '1') {
-  var thssvghtmlpp = sspath.join(' ')
-}
-else {
-    var thssvghtmlpp = '<svg xmlns="http://www.w3.org/2000/svg" viewbox="0,0,' + ssssssw + "," + ssssssh + '" class="colorcontentpathsvg"><path d="' + sspath.join(" ") + '" id="ssp" fill="transparent" stroke="' + l + '" stroke-width="0.4"/></svg>';
-}
+    if (expt === '1') {
+      var thssvghtmlpp = sspath.join(' ')
+    }
+    else {
+      var thssvghtmlpp = '<svg xmlns="http://www.w3.org/2000/svg" viewbox="0,0,' + ssssssw + "," + ssssssh + '" class="colorcontentpathsvg"><path d="' + sspath.join(" ") + '" id="ssp" fill="transparent" stroke="' + l + '" stroke-width="0.4"/></svg>';
+    }
 
     return thssvghtmlpp;
   }
+  function toimage(type, content, width, height, filetype) {
+    var canvas = document.querySelector('#toimagecanvas')
+    canvas.width = width
+    canvas.height = height
+    var ctx = canvas.getContext('2d')
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+    //return blob obj
+  }
 
   function textcol(r, g, b) {
     var textcolrgbfy = (r * 0.213 + g * 0.718 + b * 0.072)
@@ -2471,17 +2484,17 @@ else {
 
       }
 
-      if(jsonhh.type === 'color') {
+      if (jsonhh.type === 'color') {
         ctextff = ctarr[0]
       }
-      if(jsonhh.type === 'gradient') {
+      if (jsonhh.type === 'gradient') {
         ctextff = 'linear-gradient(' + jsonhh.content[0] + 'deg ,' + ctarr[0] + ' ,' + ctarr[1] + ')'
       }
-      if(jsonhh.type === 'imagecolorgroup') {
+      if (jsonhh.type === 'imagecolorgroup') {
         ctextff = ctarr[(parseInt($('.color[fid="' + optionlistid() + '"]').attr('group-index')) - 1)]
-if(ctextff === undefined) {
-  return ''
-}
+        if (ctextff === undefined) {
+          return ''
+        }
       }
 
       copytext(ctextff)
