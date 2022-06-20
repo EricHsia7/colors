@@ -2697,7 +2697,7 @@
       $('.qrcodebox').css({ 'display': 'block', 'opacity': '0', 'transition': '0.3s' });
       $('.qrcode-mask').css({ 'display': 'block', 'transition': '0.3s' });
       setTimeout(function () {
-        $('.qrcodebox').css({ 'transform': 'translateY(var(--ot-translateY-offset)) translateX(var(--ot-translateX-offset))' });
+        $('.qrcodebox').css({ 'transform': 'translateY(var(--ot-translateY-offset)) translateX(var(--ot-translateX-offset))','opacity':'1' });
         $('.qrcode-mask').css({ 'opacity': '1' });
       }, 1);
 
@@ -2724,7 +2724,7 @@
       $('.toimagebox').css({ 'display': 'block', 'opacity': '0', 'transition': '0.3s', 'height': 'calc(' + ($('.bottom').height() + 285) + 'px + var(--ot-bottom-height-offset))' });
       $('.toimage-mask').css({ 'display': 'block', 'transition': '0.3s' });
       setTimeout(function () {
-        $('.toimagebox').css({ 'transform': 'translateY(var(--ot-translateY-offset)) translteX(var(--ot-translateX-offset))' });
+        $('.toimagebox').css({ 'transform': 'translateY(var(--ot-translateY-offset)) translteX(var(--ot-translateX-offset))' ,'opacity':'1'});
         $('.toimage-mask').css({ 'opacity': '1' });
       }, 1);
       var cwidth = parseInt($('#toimageboxwidth').val()) || window.screen.width || window.innerWidth
