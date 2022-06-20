@@ -2327,7 +2327,7 @@
         $('.optionlist').css({ '--b-bottom-height': $('.bottom').height() + 'px', '--b-option-list': listcc, 'display': 'block', 'opacity': '1', 'transition': '0.3s' });
         $('.optionlist-mask').css({ 'display': 'block', 'transition': '0.3s' });
         setTimeout(function () {
-          $('.optionlist').css({ 'transform': 'translateY(0px)' });
+          $('.optionlist').css({ 'transform': 'translateY(var(--ot-translateY-offset)) translateX(var(--ot-translateX-offset))' });
           $('.optionlist-mask').css({ 'opacity': '1' });
         }, 1);
       });
@@ -2648,7 +2648,7 @@
     return window.matchMedia('(min-width: 650px)').matches
   }
   function setoptlistcss() {
-    $('#optlistcss').html(':root{--ot-bottom-height-offset:0px;--ot-translateY-offset:0%;--ot-translateX-offset:0%;--ot-bottom:0px;--ot-left:0px}@media screen and (min-width:650px){:root{--ot-bottom-height:' + ($('.bottom').height() * -1) + 'px;--ot-translateY-offset:(50%);--ot-translateX-offset:(-50%);--ot-bottom:50%;--ot-left:50%}}')
+    $('#optlistcss').html(':root{--ot-bottom-height-offset:0px;--ot-translateY-offset:0%;--ot-translateX-offset:0%;--ot-bottom:0px;--ot-left:0px}@media screen and (min-width:650px){:root{--ot-bottom-height:' + ($('.bottom').height() * -1) + 'px;--ot-translateY-offset:50%;--ot-translateX-offset:-50%;--ot-bottom:50%;--ot-left:50%}}')
   }
   $(document).ready(function () {
     initialize()
