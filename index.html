@@ -1562,7 +1562,11 @@
 
   }
 
-  function toimage(datajson, gindex, width, height) {
+  function toimage(datajson, gindex, width, height,scale) {
+    var rwidth = String(width)
+    var rheight = String(height)
+    width = width*scale
+    height = height*scale
     var type = datajson.type
     var content = datajson.content
     var filename = new Date().getTime()
@@ -1605,7 +1609,7 @@
       filename = 'color_' + content[(gindex - 1)]
 
     }
-    filename += '_' + width + 'x' + height
+    filename += '_' + rwidth + 'x' + rheight + '_' + scale + 'x'
     canvas2.toBlob(function (blob) {
       var uu = window.URL || window.webkitURL;
       var a = document.createElement('a');
@@ -2733,7 +2737,7 @@
       var cheight = parseInt($('#toimageboxheight').val()) || window.screen.height || window.innerHeight
       var cscale = parseInt($('#toimageboxscale').val()) || 1
 
-      toimage(jsonhh, gindex, (cwidth*cscale), (cheight*cscale))
+      toimage(jsonhh, gindex, cwidth, cheight,cscale)
     })
     $('.optionlist li[h="llgrd"]').click(function (ev) {
       closeoptionlist(ev)
