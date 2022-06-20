@@ -345,6 +345,12 @@
     overflow: hidden;
   }
 
+  .toimagebox {
+    height: calc(55px + 195px);
+    transform: translateY(55px + 195px);
+
+  }
+
   .qrcodebx {
     position: absolute;
     top: 0px;
@@ -366,7 +372,7 @@
     top: 0px;
     left: 10px;
     width: calc(100% - 20px);
-    height: 45px;
+    height: 50px;
     font-size: 18px;
     display: flex;
     align-items: center;
@@ -402,6 +408,10 @@
     border-radius: 15px;
     width: calc(100% - 20px);
     height: 45px;
+    font-size: 18px;
+    display: flex;
+    justify-content: cneter;
+    align-items: cneter;
   }
 
   .promptcenter {
@@ -2577,7 +2587,7 @@
     if (!(evt === undefined)) {
       evt.stopPropagation();
     }
-    $('.toimagebox').css({ 'transform': 'translateY(' + (55 + 300) + 'px)' });
+    $('.toimagebox').css({ 'transform': 'translateY(' + ($('.bottom').height() + 195) + 'px)', 'height': ($('.bottom').height() + 195) });
     $('.toimage-mask').css({ 'opacity': '0' });
     setTimeout(function () {
       $('.toimagebox,.toimage-mask').css({ 'display': 'none', 'opacity': '0', 'transition': '0s' });
@@ -2674,7 +2684,7 @@
     $('.optionlist li[h="toimg"]').click(function (ev) {
       closeoptionlist(ev)
 
-      $('.toimagebox').css({ 'display': 'block', 'opacity': '1', 'transition': '0.3s' });
+      $('.toimagebox').css({ 'display': 'block', 'opacity': '1', 'transition': '0.3s', 'height': ($('.bottom').height() + 195) });
       $('.toimage-mask').css({ 'display': 'block', 'transition': '0.3s' });
       setTimeout(function () {
         $('.toimagebox').css({ 'transform': 'translateY(0px)' });
