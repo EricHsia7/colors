@@ -2692,13 +2692,20 @@
         $('.toimagebox').css({ 'transform': 'translateY(0px)' });
         $('.toimage-mask').css({ 'opacity': '1' });
       }, 1);
+      var cwidth = parseInt($('#toimageboxwidth').val()) || window.screen.width || window.innerWidth
+      var cheight = parseInt($('#toimageboxheight').val()) || window.screen.height || window.innerHeight
+      $('#toimageboxwidth').val(cwidth)
+      $('#toimageboxheight').val(cheight)
 
     })
     $('.toimage-download').click(function (ev) {
       var aindex = parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))
       var gindex = parseInt($('.color[fid="' + optionlistid() + '"]').attr('group-index'))
       var jsonhh = allcolor[aindex]
-      toimage(jsonhh, gindex, 1024, 1024)
+      var cwidth = parseInt($('#toimageboxwidth').val()) || window.screen.width || window.innerWidth
+      var cheight = parseInt($('#toimageboxheight').val()) || window.screen.height || window.innerHeight
+
+      toimage(jsonhh, gindex, cwidth, cheight)
     })
     $('.optionlist li[h="llgrd"]').click(function (ev) {
       closeoptionlist(ev)
