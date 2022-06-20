@@ -379,7 +379,9 @@
     -webkit-user-select: none;
     user-select: none;
   }
-
+  .toimagebox .toimagebox-title[g="2"] {
+    top: calc(45px + 5px + 45px + 5px + 45px);
+  }
   .toimagebox input {
     position: absolute;
     border: 1px solid #e3e3e3;
@@ -401,11 +403,14 @@
   #toimageboxheight {
     top: calc(45px + 5px + 45px + 5px);
   }
+  #toimageboxscale {
+    top: calc(45px + 5px + 45px + 5px + 45px + 45px);
+  }
 
   .toimage-download {
     position: absolute;
     left: 10px;
-    top: calc(45px + 5px + 45px + 5px + 45px + 5px);
+    top: calc(45px + 5px + 45px + 5px + 45px + 45px + 45px + 5px);
     background: #e3e3e3;
     border-radius: 15px;
     width: calc(100% - 20px);
@@ -685,9 +690,11 @@
 
   <div class="toimage-mask"></div>
   <div class="toimagebox">
-    <div class="toimagebox-title">尺寸</div>
+    <div class="toimagebox-title" g="1">尺寸</div>
     <input type="text" placeholder="寬度" id="toimageboxwidth">
     <input type="text" placeholder="高度" id="toimageboxheight">
+    <div class="toimagebox-title" g="2">縮放</div>
+    <input type="text" placeholder="縮放" id="toimageboxscale">
     <div class="toimage-download">下載</div>
   </div>
 </body>
@@ -2606,7 +2613,7 @@
     if (!(evt === undefined)) {
       evt.stopPropagation();
     }
-    $('.toimagebox').css({ 'transform': 'translateY(' + ($('.bottom').height() + 195) + 'px)', 'height': ($('.bottom').height() + 195) });
+    $('.toimagebox').css({ 'transform': 'translateY(' + ($('.bottom').height() + 285) + 'px)', 'height': ($('.bottom').height() + 285) });
     $('.toimage-mask').css({ 'opacity': '0' });
     setTimeout(function () {
       $('.toimagebox,.toimage-mask').css({ 'display': 'none', 'opacity': '0', 'transition': '0s' });
@@ -2703,7 +2710,7 @@
     $('.optionlist li[h="toimg"]').click(function (ev) {
       closeoptionlist(ev)
 
-      $('.toimagebox').css({ 'display': 'block', 'opacity': '1', 'transition': '0.3s', 'height': ($('.bottom').height() + 195) });
+      $('.toimagebox').css({ 'display': 'block', 'opacity': '1', 'transition': '0.3s', 'height': ($('.bottom').height() + 285) });
       $('.toimage-mask').css({ 'display': 'block', 'transition': '0.3s' });
       setTimeout(function () {
         $('.toimagebox').css({ 'transform': 'translateY(0px)' });
@@ -2711,8 +2718,11 @@
       }, 1);
       var cwidth = parseInt($('#toimageboxwidth').val()) || window.screen.width || window.innerWidth
       var cheight = parseInt($('#toimageboxheight').val()) || window.screen.height || window.innerHeight
+      var cscale = parseInt($('#toimageboxscale').val()) || 1
+
       $('#toimageboxwidth').val(cwidth)
       $('#toimageboxheight').val(cheight)
+      $('#toimageboxscale').val(cscale)
 
     })
     $('.toimage-download').click(function (ev) {
@@ -2721,8 +2731,9 @@
       var jsonhh = allcolor[aindex]
       var cwidth = parseInt($('#toimageboxwidth').val()) || window.screen.width || window.innerWidth
       var cheight = parseInt($('#toimageboxheight').val()) || window.screen.height || window.innerHeight
+      var cscale = parseInt($('#toimageboxscale').val()) || 1
 
-      toimage(jsonhh, gindex, cwidth, cheight)
+      toimage(jsonhh, gindex, (cwidth*cscale), (cheight*cscale))
     })
     $('.optionlist li[h="llgrd"]').click(function (ev) {
       closeoptionlist(ev)
