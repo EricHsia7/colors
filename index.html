@@ -253,8 +253,8 @@
 
   .optionlist {
     position: fixed;
-    bottom: 0px;
-    left: 0px;
+    bottom: var(--ot-bottom);
+    left: var(--ot-left);
     width: 100%;
     height: calc(var(--b-bottom-height) + (50px * var(--b-option-list)));
     border-radius: 15px 15px 0px 0px;
@@ -333,8 +333,8 @@
   .qrcodebox,
   .toimagebox {
     position: fixed;
-    bottom: 0px;
-    left: 0px;
+    bottom: var(--ot-bottom);
+    left: var(--ot-left);
     height: calc(55px + 300px);
     width: 100%;
     background: #fff;
@@ -379,9 +379,11 @@
     -webkit-user-select: none;
     user-select: none;
   }
+
   .toimagebox .toimagebox-title[g="2"] {
     top: calc(45px + 5px + 45px + 5px + 45px);
   }
+
   .toimagebox input {
     position: absolute;
     border: 1px solid #e3e3e3;
@@ -403,6 +405,7 @@
   #toimageboxheight {
     top: calc(45px + 5px + 45px + 5px);
   }
+
   #toimageboxscale {
     top: calc(45px + 5px + 45px + 5px + 45px + 45px);
   }
@@ -463,12 +466,17 @@
   #toimagecanvas {
     display: none;
   }
-@media screen and (min-width: 650px) {
-.optionlist,.qrcodebox,.toimagebox {
-  width:clamp(350px,55%,450px);
-  border-radius: 15px;
-}
-}
+
+  @media screen and (min-width: 650px) {
+
+    .optionlist,
+    .qrcodebox,
+    .toimagebox {
+      width: clamp(350px, 55%, 450px);
+      border-radius: 15px;
+    }
+  }
+
   @media (prefers-color-scheme: dark) {
     :root {
       --bottom-icon-color: #ffffff;
@@ -545,7 +553,6 @@
       height: var(--fx-bth);
     }
   }
-
 </style>
 <style id="bottom-icon">
   :root {
@@ -558,6 +565,25 @@
   }
 </style>
 <style id="ft">
+</style>
+<style id="optlistcss">
+  :root {
+    --ot-bottom-height-offset: 0px;
+    --ot-translateY-offset: 0%;
+    --ot-translateX-offset: 0%;
+    --ot-bottom: 0px;
+    --ot-left: 0px;
+  }
+
+  @media screen and (min-width: 650px) {
+    :root {
+      --ot-bottom-height: -55px;
+      --ot-translateY-offset: -50%;
+      --ot-translateX-offset: 50%;
+      --ot-bottom: 50%;
+      --ot-left: 50%;
+    }
+  }
 </style>
 
 <body>
@@ -1538,11 +1564,11 @@
 
   }
 
-  function toimage(datajson, gindex, width, height,scale) {
+  function toimage(datajson, gindex, width, height, scale) {
     var rwidth = String(width)
     var rheight = String(height)
-    width = width*scale
-    height = height*scale
+    width = width * scale
+    height = height * scale
     var type = datajson.type
     var content = datajson.content
     var filename = new Date().getTime()
@@ -2618,7 +2644,12 @@
 
     }
   }
-
+  function wwmdquery() {
+    return window.matchMedia('(min-width: 650px)').matches
+  }
+  function setoptlistcss() {
+    $('#optlistcss').html(':root{--ot-bottom-height-offset:0px;--ot-translateY-offset:0%;--ot-translateX-offset:0%;--ot-bottom:0px;--ot-left:0px}@media screen and (min-width:650px){:root{--ot-bottom-height:' + ($('.bottom').height() * -1) + 'px;--ot-translateY-offset:-50%;--ot-translateX-offset:50%;--ot-bottom:50%;--ot-left:50%}}')
+  }
   $(document).ready(function () {
     initialize()
     printcolor()
@@ -2662,11 +2693,10 @@
 
     $('.optionlist li[h="qrcode"]').click(function (ev) {
       //qrcode
-
       $('.qrcodebox').css({ 'display': 'block', 'opacity': '1', 'transition': '0.3s' });
       $('.qrcode-mask').css({ 'display': 'block', 'transition': '0.3s' });
       setTimeout(function () {
-        $('.qrcodebox').css({ 'transform': 'translateY(0px)' });
+        $('.qrcodebox').css({ 'transform': 'translateY(clac(0px + var(--ot-translateY-offset))) translateX(var(--ot-translateX-offset))' });
         $('.qrcode-mask').css({ 'opacity': '1' });
       }, 1);
 
@@ -2690,10 +2720,10 @@
     $('.optionlist li[h="toimg"]').click(function (ev) {
       closeoptionlist(ev)
 
-      $('.toimagebox').css({ 'display': 'block', 'opacity': '1', 'transition': '0.3s', 'height': ($('.bottom').height() + 285) });
+      $('.toimagebox').css({ 'display': 'block', 'opacity': '1', 'transition': '0.3s', 'height': 'calc(' + ($('.bottom').height() + 285 + ccheight) + 'px + var(--ot-bottom-height-offset))' });
       $('.toimage-mask').css({ 'display': 'block', 'transition': '0.3s' });
       setTimeout(function () {
-        $('.toimagebox').css({ 'transform': 'translateY(0px)' });
+        $('.toimagebox').css({ 'transform': 'translateY(calc(0px + va(--ot-translateY-offset))) translteX(var(--ot-translateX-offset))' });
         $('.toimage-mask').css({ 'opacity': '1' });
       }, 1);
       var cwidth = parseInt($('#toimageboxwidth').val()) || window.screen.width || window.innerWidth
@@ -2713,7 +2743,7 @@
       var cheight = parseInt($('#toimageboxheight').val()) || window.screen.height || window.innerHeight
       var cscale = parseInt($('#toimageboxscale').val()) || 1
 
-      toimage(jsonhh, gindex, cwidth, cheight,cscale)
+      toimage(jsonhh, gindex, cwidth, cheight, cscale)
     })
     $('.optionlist li[h="llgrd"]').click(function (ev) {
       closeoptionlist(ev)
@@ -2792,10 +2822,11 @@
     $('.optionlist li[h="copyoptions"]').click(function (ev) {
       //closeoptionlist(ev)
       ev.stopPropagation();
+
       $('.optionlist li[f="1"]').css({ 'display': 'none' })
       $('.optionlist li[f="2"]').css({ 'display': 'flex' })
       var listcc = 5
-      $('.optionlist').css({ '--b-bottom-height': $('.bottom').height() + 'px', '--b-option-list': listcc, 'display': 'block', 'opacity': '1', 'transition': '0.3s' });
+      $('.optionlist').css({ 'transform': 'translateX(var(--ot-translateX-offset)) translateY(var(--ot-translateY-offset))', '--b-bottom-height': 'calc(' + ($('.bottom').height()) + 'px + var(--ot-bottom-height-offset))', '--b-option-list': listcc, 'display': 'block', 'opacity': '1', 'transition': '0.3s' });
 
     })
     //copyoption
