@@ -361,6 +361,34 @@
     max-width: 250px;
   }
 
+  .toimagebox .toimagebox-title {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: 45px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+  }
+
+  .toimagebox input {
+    position: absolute;
+    border: 1px solid #e3e3e3;
+    border-radius: 15px;
+    -webkit-appearance: none;
+    background: rgba(0, 0, 0, 0);
+    font-size: 18px;
+    width: calc(100% - 20px);
+    left: 10px;
+    box-sizing: border-box;
+    padding: 5px;
+  }
+
+  .toimagebox #toimageboxwidth {
+    top: calc(10px + 45px + 5px);
+  }
+
   .promptcenter {
     position: absolute;
     left: 15px;
@@ -613,9 +641,10 @@
   <div class="toimage-mask"></div>
   <div class="toimagebox">
     <div class="toimagebox-title">尺寸</div>
-    <input type="text" placeholder="寬度">
-    <input type="text" placeholder="高度">
-    <div class="toimagebox-download">下載</div>
+    <input type="text" placeholder="寬度" id="toimageboxwidth">
+    <input type="text" placeholder="高度" id="toimageboxheight>
+    <div class=" toimage-download">下載
+  </div>
   </div>
 </body>
 <script>
