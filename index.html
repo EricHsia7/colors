@@ -463,7 +463,12 @@
   #toimagecanvas {
     display: none;
   }
-
+@media screen and (min-width: 650px) {
+.optionlist,.qrcodebox,.toimagebox {
+  width:clamp(350px,55%,450px);
+  border-radius: 15px;
+}
+}
   @media (prefers-color-scheme: dark) {
     :root {
       --bottom-icon-color: #ffffff;
