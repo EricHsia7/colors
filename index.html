@@ -2694,7 +2694,7 @@
 
     $('.optionlist li[h="qrcode"]').click(function (ev) {
       //qrcode
-      $('.qrcodebox').css({ 'display': 'block', 'opacity': '1', 'transition': '0.3s' });
+      $('.qrcodebox').css({ 'display': 'block', 'opacity': '0', 'transition': '0.3s' });
       $('.qrcode-mask').css({ 'display': 'block', 'transition': '0.3s' });
       setTimeout(function () {
         $('.qrcodebox').css({ 'transform': 'translateY(clac(0px + var(--ot-translateY-offset))) translateX(var(--ot-translateX-offset))' });
@@ -2721,10 +2721,10 @@
     $('.optionlist li[h="toimg"]').click(function (ev) {
       closeoptionlist(ev)
 
-      $('.toimagebox').css({ 'display': 'block', 'opacity': '1', 'transition': '0.3s', 'height': 'calc(' + ($('.bottom').height() + 285 + ccheight) + 'px + var(--ot-bottom-height-offset))' });
+      $('.toimagebox').css({ 'display': 'block', 'opacity': '0', 'transition': '0.3s', 'height': 'calc(' + ($('.bottom').height() + 285) + 'px + var(--ot-bottom-height-offset))' });
       $('.toimage-mask').css({ 'display': 'block', 'transition': '0.3s' });
       setTimeout(function () {
-        $('.toimagebox').css({ 'transform': 'translateY(calc(0px + va(--ot-translateY-offset))) translteX(var(--ot-translateX-offset))' });
+        $('.toimagebox').css({ 'transform': 'translateY(var(--ot-translateY-offset)) translteX(var(--ot-translateX-offset))' });
         $('.toimage-mask').css({ 'opacity': '1' });
       }, 1);
       var cwidth = parseInt($('#toimageboxwidth').val()) || window.screen.width || window.innerWidth
