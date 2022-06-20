@@ -30,7 +30,8 @@
     --loading-grey: #ededed;
     --loading-ba: #fff;
     --loading-ffg: 255;
-    --fx-bth: calc(55px + env(safe-area-inset-bottom)) --bottom-icon-color:#000000;
+    --fx-bth: calc(55px + env(safe-area-inset-bottom));
+    --bottom-icon-color: #000000;
 
   }
 
@@ -50,10 +51,10 @@
     background-size: var(--b-size);
     background-repeat: repeat;
     -webkit-user-select: none;
+    user-select: none;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 0px;
-    -webkit-user-select: none;
   }
 
   .bottom-btn {
@@ -62,12 +63,14 @@
     justify-content: center;
     align-items: center;
     -webkit-user-select: none;
+    user-select: none;
   }
 
   .bottom-btn svg {
     width: 25px;
     height: 25px;
     -webkit-user-select: none;
+    user-select: none;
   }
 
   /*v2*/
@@ -85,6 +88,7 @@
     grid-template-rows: auto;
     margin-bottom: 100px;
     -webkit-user-select: none;
+    user-select: none;
   }
 
   .container-load {
@@ -93,6 +97,7 @@
     opacity: 0;
     background: rgba(0, 0, 0, 0);
     -webkit-user-select: none;
+    user-select: none;
   }
 
   .color {
@@ -104,6 +109,7 @@
     position: relative;
     overflow: hidden;
     -webkit-user-select: none;
+    user-select: none;
     box-sizing: border-box;
     border: 1px solid #fff;
   }
@@ -119,6 +125,7 @@
     width: 100%;
     height: 100%;
     -webkit-user-select: none;
+    user-select: none;
   }
 
 
@@ -190,6 +197,7 @@
     width: 45px;
     height: 45px;
     -webkit-user-select: none;
+    user-select: none;
   }
 
   #fmenu,
@@ -527,35 +535,7 @@
     .bottom {
       height: var(--fx-bth);
     }
-
-    @media (prefers-color-scheme: dark) {
-      .bottom {
-        height: var(--fx-bth);
-      }
-
-      @media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
-        .bottom {
-          height: var(--fx-bth);
-        }
-      }
-
-      @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
-        .bottom {
-          height: var(--fx-bth);
-        }
-      }
-
-      @media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
-        .bottom {
-          height: var(--fx-bth);
-        }
-      }
-
-      @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
-        .bottom {
-          height: var(--fx-bth);
-        }
-      }
+  }
 </style>
 <style id="bottom-icon">
   :root {
