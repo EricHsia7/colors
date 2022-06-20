@@ -363,7 +363,7 @@
 
   .toimagebox .toimagebox-title {
     position: absolute;
-    top: 10px;
+    top: 0px;
     left: 10px;
     width: calc(100% - 20px);
     height: 45px;
@@ -383,10 +383,25 @@
     left: 10px;
     box-sizing: border-box;
     padding: 5px;
+    height: 45px;
   }
 
   .toimagebox #toimageboxwidth {
-    top: calc(10px + 45px + 5px);
+    top: calc(45px + 5px);
+  }
+
+  .toimagebox #toimageboxheight {
+    top: calc(45px + 5px + 45px + 5px);
+  }
+
+  .toimagebox-download {
+    position: absolute;
+    left: 10px;
+    top: calc(45px + 5px + 45px + 5px + 45px + 5px);
+    background: #e3e3e3;
+    border-radius: 15px;
+    width: calc(100% - 20px);
+    height: 45px;
   }
 
   .promptcenter {
@@ -644,6 +659,7 @@
     <input type="text" placeholder="寬度" id="toimageboxwidth">
     <input type="text" placeholder="高度" id="toimageboxheight>
     <div class=" toimage-download">下載
+  </div>
   </div>
   </div>
 </body>
