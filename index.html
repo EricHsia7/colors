@@ -574,7 +574,7 @@
     --ot-translateX-offset: 0px;
     --ot-bottom: 0px;
     --ot-left: 0px;
-    --ot-d-translateY:0px
+    --ot-d-translateY: 0px
   }
 
   @media screen and (min-width: 650px) {
@@ -584,7 +584,7 @@
       --ot-translateX-offset: -50%;
       --ot-bottom: 50%;
       --ot-left: 50%;
-      --ot-d-translateY:50vh;
+      --ot-d-translateY: 50vh;
     }
   }
 </style>
@@ -1999,7 +1999,6 @@
     $('body').append('<img id="' + imgid + '" style="display:none;">')
     var rcimgwh = 256
     var rcimg = 'https://picsum.photos/' + rcimgwh + '?' + Math.random();
-
     $.ajax({
       type: 'GET', url: rcimg, beforeSend: function (xhr) { xhr.overrideMimeType('text/plain; charset=x-user-defined'); }, async: true, success: function (result, textStatus, jqXHR) {
         var binary = "";
@@ -2009,10 +2008,6 @@
           binary += String.fromCharCode(responseText.charCodeAt(i) & 255)
         }
         var b64url = 'data:image/jpeg;base64,' + btoa(binary)
-
-
-        //var bigsizerdimgurl = String('https://picsum.photos/id/' + jqXHR.getResponseHeader('picsum-id') + '/1024/1024')
-
         $.ajax({
           type: 'get', url: 'https://picsum.photos/id/' + jqXHR.getResponseHeader('picsum-id') + '/info', dataType: 'text', async: true, success: function (e) {
             var imginfojson = JSON.parse(e)
@@ -2022,12 +2017,9 @@
               setTimeout(function () {
                 const colorThief = new ColorThief();
                 const imgee = document.querySelector('#' + imgid);
-
                 if (imgee.complete) {
-
                   var imgcolorpalette = colorThief.getPalette(imgee);
                   var imgmaincolor = colorThief.getColor(imgee)
-
                   var pltcolorhex = []
                   var plttextcolor = []
                   for (var hq = 0; hq < imgcolorpalette.length; hq++) {
@@ -2037,7 +2029,6 @@
                   }
                   var imagetxc = textcol(imgmaincolor[0], imgmaincolor[1], imgmaincolor[2])
                   var imgcol = rgbToHex(imgmaincolor[0], imgmaincolor[1], imgmaincolor[2])
-
                   var thcol = []
                   thcol.push(imgcol)
                   for (var t = 0; t < pltcolorhex.length; t++) {
@@ -2063,20 +2054,10 @@
                 }
               }, 150);
             });
-
-
           }
         });
-
-
-
-
-
-
       }
     });
-
-
   }
   function addpathcontent() {
     var col = cllhi()
@@ -2086,13 +2067,9 @@
       var random_b = Math.floor(Math.random() * 255)
       col = rgbToHex(random_r, random_g, random_b)
     }
-
     var pathzz = getligrd(col)
-
     var txc = textcol((hexToRgb(pathzz[1]).r + hexToRgb(pathzz[2]).r) * .5, (hexToRgb(pathzz[1]).g + hexToRgb(pathzz[2]).g) * .5, (hexToRgb(pathzz[1]).b + hexToRgb(pathzz[2]).b) * .5)
-
     var path_datahtml = gtffim(pathzz[1], pathzz[2], window.innerWidth, (window.innerHeight - $('.bottom').height()))
-
     var content = {
       type: "path",
       group: false,
@@ -2105,19 +2082,46 @@
     };
     allcolor.push(content)
   }
-
-
-
-
-
-
-
   var gtg = 0;
   var dbclick = {}
   var sentcolors = {}
 
-  function printcolor() {
+  function addcolorcontentgroup() {
 
+    var random_r = Math.floor(Math.random() * 255)
+    var random_g = Math.floor(Math.random() * 255)
+    var random_b = Math.floor(Math.random() * 255)
+    var col = rgbToHex(random_r, random_g, random_b)
+
+    var e1 = getligrd(col)
+    var e2 = getligrd(e1[2])
+    var e3 = getligrd(e2[2])
+    var e4 = getligrd(e3[2])
+    var e5 = getligrd(e4[2])
+    var bb = [e1, e2, e3, e4, e5]
+    var groupcontent = []
+    var contenttextcol = []
+    for (var b = 0; b < bb.length; b++) {
+      groupcontent.push(bb[b][1])
+      groupcontent.push(bb[b][2])
+      var bb1 = hexToRgb(bb[b][1])
+      var bb2 = hexToRgb(bb[b][2])
+      contenttextcol.push(textcol(bb1.r, bb1, g, bb1.b))
+      contenttextcol.push(textcol(bb2.r, bb2, g, bb2.b))
+    }
+    var content = {
+      type: "colorgroup",
+      group: true,
+      content: groupcontent,
+      shareurl: 'https://erichsia7.github.io/colors/?s=5&grouplist=' + btoa(groupcontent.join(',')) + '&r=' + genid('random'),
+      id: 'c_' + genid('random'),
+      textcolor: contenttextcol,
+      themecolor: groupcontent
+    };
+    allcolor.push(content)
+  }
+
+  function printcolor() {
     for (var i = gtg; i < allcolor.length; i++) {
       var ths_ctx = allcolor[i].content
       var contents = []
@@ -2327,10 +2331,10 @@
           }
 
         }
-        $('.optionlist').css({ '--b-bottom-height':'calc(' +  $('.bottom').height() + 'px + var(--ot-bottom-height))', '--b-option-list': listcc, 'display': 'block', 'opacity': '0', 'transition': '0.3s' /*,'transform':'translateX(var(--ot-translateX-offset))'*/});
+        $('.optionlist').css({ '--b-bottom-height': 'calc(' + $('.bottom').height() + 'px + var(--ot-bottom-height))', '--b-option-list': listcc, 'display': 'block', 'opacity': '0', 'transition': '0.3s' /*,'transform':'translateX(var(--ot-translateX-offset))'*/ });
         $('.optionlist-mask').css({ 'display': 'block', 'transition': '0.3s' });
         setTimeout(function () {
-          $('.optionlist').css({ 'transform': 'translateY(var(--ot-translateY-offset)) translateX(var(--ot-translateX-offset))' ,'opacity':'1'});
+          $('.optionlist').css({ 'transform': 'translateY(var(--ot-translateY-offset)) translateX(var(--ot-translateX-offset))', 'opacity': '1' });
           $('.optionlist-mask').css({ 'opacity': '1' });
         }, 1);
       });
@@ -2599,7 +2603,7 @@
     if (!(evt === undefined)) {
       evt.stopPropagation();
     }
-    $('.optionlist').css({ 'transform': 'translateY(calc((50px * var(--b-option-list)) + var(--ot-d-translateY))) translateX(var(--ot-translateX-offset))','opacity':'0'});
+    $('.optionlist').css({ 'transform': 'translateY(calc((50px * var(--b-option-list)) + var(--ot-d-translateY))) translateX(var(--ot-translateX-offset))', 'opacity': '0' });
     $('.optionlist-mask').css({ 'opacity': '0' });
     setTimeout(function () {
       $('.optionlist,.optionlist-mask').css({ 'display': 'none', 'opacity': '0', 'transition': '0s' });
@@ -2611,7 +2615,7 @@
     if (!(evt === undefined)) {
       evt.stopPropagation();
     }
-    $('.qrcodebox').css({ 'transform': 'translateY(calc(' + (55 + 300) + 'px + var(--ot-d-translateY))) translateX(var(--ot-translateX-offset))' ,'opacity':'0'});
+    $('.qrcodebox').css({ 'transform': 'translateY(calc(' + (55 + 300) + 'px + var(--ot-d-translateY))) translateX(var(--ot-translateX-offset))', 'opacity': '0' });
     $('.qrcode-mask').css({ 'opacity': '0' });
     setTimeout(function () {
       $('.qrcodebox,.qrcode-mask').css({ 'display': 'none', 'opacity': '0', 'transition': '0s' });
@@ -2622,7 +2626,7 @@
     if (!(evt === undefined)) {
       evt.stopPropagation();
     }
-    $('.toimagebox').css({ 'transform': 'translateY(calc(' + ($('.bottom').height() + 285) + 'px + var(--ot-d-translateY))) translateX(var(--ot-translateX-offset))', 'height': 'calc(' + ($('.bottom').height() + 285) + 'px + var(--ot-bottom-height) + 10px)','opacity':'0'});
+    $('.toimagebox').css({ 'transform': 'translateY(calc(' + ($('.bottom').height() + 285) + 'px + var(--ot-d-translateY))) translateX(var(--ot-translateX-offset))', 'height': 'calc(' + ($('.bottom').height() + 285) + 'px + var(--ot-bottom-height) + 10px)', 'opacity': '0' });
     $('.toimage-mask').css({ 'opacity': '0' });
     setTimeout(function () {
       $('.toimagebox,.toimage-mask').css({ 'display': 'none', 'opacity': '0', 'transition': '0s' });
@@ -2697,10 +2701,10 @@
 
     $('.optionlist li[h="qrcode"]').click(function (ev) {
       //qrcode
-      $('.qrcodebox').css({ 'display': 'block', 'opacity': '0', 'transition': '0.3s' /*,'transform':'translateX(var(--ot-translateX-offset))'*/});
+      $('.qrcodebox').css({ 'display': 'block', 'opacity': '0', 'transition': '0.3s' /*,'transform':'translateX(var(--ot-translateX-offset))'*/ });
       $('.qrcode-mask').css({ 'display': 'block', 'transition': '0.3s' });
       setTimeout(function () {
-        $('.qrcodebox').css({ 'transform': 'translateY(var(--ot-translateY-offset)) translateX(var(--ot-translateX-offset))','opacity':'1' });
+        $('.qrcodebox').css({ 'transform': 'translateY(var(--ot-translateY-offset)) translateX(var(--ot-translateX-offset))', 'opacity': '1' });
         $('.qrcode-mask').css({ 'opacity': '1' });
       }, 1);
 
@@ -2727,7 +2731,7 @@
       $('.toimagebox').css({ 'display': 'block', 'opacity': '0', 'transition': '0.3s', 'height': 'calc(' + ($('.bottom').height() + 285) + 'px + var(--ot-bottom-height) + 10px)' });
       $('.toimage-mask').css({ 'display': 'block', 'transition': '0.3s' });
       setTimeout(function () {
-        $('.toimagebox').css({ 'transform': 'translateY(var(--ot-translateY-offset)) translateX(var(--ot-translateX-offset))' ,'opacity':'1'});
+        $('.toimagebox').css({ 'transform': 'translateY(var(--ot-translateY-offset)) translateX(var(--ot-translateX-offset))', 'opacity': '1' });
         $('.toimage-mask').css({ 'opacity': '1' });
       }, 1);
       var cwidth = parseInt($('#toimageboxwidth').val()) || window.screen.width || window.innerWidth
