@@ -2126,12 +2126,14 @@
       var ths_ctx = allcolor[i].content
       var contents = []
       var groupprogressbar = []
+      var groupprogressbar_c = 0
       var dftextcolor = '#000000'
       var favstr = ''
       var favcss = ''
       if (allcolor[i].group) {
         var contentindexoffset = 0
         if (allcolor[i].type === 'imagecolorgroup') {
+          groupprogressbar_c = 10
           favstr = 'false'
           contentindexoffset = 1
           var contentimageid = 'e_' + genid('uuid')
@@ -2139,10 +2141,14 @@
           groupprogressbar.push('<li sl="1"></li>')
         }
         if (allcolor[i].type === 'colorgroup') {
+          groupprogressbar_c = 9
           favstr = '&' + ths_ctx[0]
+          groupprogressbar.push('<li sl="1"></li>')
         }
         for (var d = 0; d < allcolor[i].content.length; d++) {
           contents.push('<div class="colorcontent" style="background:' + ths_ctx[d] + ';--dx-li-f:' + (d + contentindexoffset) + ';color:' + allcolor[i].textcolor[d] + '"><div class="colorcontent-text">' + ths_ctx[d] + '</div></div>')
+        }
+        for (var s = 0; s < groupprogressbar_c; s++) {
           groupprogressbar.push('<li></li>')
         }
         dftextcolor = allcolor[i].imgtextcolor
