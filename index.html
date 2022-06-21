@@ -2147,7 +2147,7 @@
           groupprogressbar.push('<li sl="1"></li>')
         }
         if (allcolor[i].type === 'colorgroup') {
-          groupprogressbar_c = allcolor[i].content.length-1
+          groupprogressbar_c = allcolor[i].content.length - 1
           favstr = '&' + ths_ctx[0]
           groupprogressbar.push('<li sl="1"></li>')
         }
@@ -3035,8 +3035,14 @@
       closeoptionlist(ev)
       var jsonhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))]
 
-      if (jsonhh.type === 'imagecolorgroup') {
-        var ctext = jsonhh.content[(parseInt($('.color[fid="' + optionlistid() + '"]').attr('group-index')) - 1)]
+      if (jsonhh.type === 'imagecolorgroup' || jsonhh.type === 'colorgroup') {
+        if (jsonhh.type === 'imagecolorgroup') {
+          var ctext = jsonhh.content[(parseInt($('.color[fid="' + optionlistid() + '"]').attr('group-index')) - 1)]
+        }
+        if (jsonhh.type === 'colorgroup') {
+          var ctext = jsonhh.content[(parseInt($('.color[fid="' + optionlistid() + '"]').attr('group-index')))]
+        }
+
         if (ctext === undefined) {
           return ''
         }
