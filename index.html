@@ -2106,8 +2106,8 @@
       groupcontent.push(bb[b][2])
       var bb1 = hexToRgb(bb[b][1])
       var bb2 = hexToRgb(bb[b][2])
-      contenttextcol.push(textcol(bb1.r, bb1, g, bb1.b))
-      contenttextcol.push(textcol(bb2.r, bb2, g, bb2.b))
+      contenttextcol.push(textcol(bb1.r, bb1.g, bb1.b))
+      contenttextcol.push(textcol(bb2.r, bb2.g, bb2.b))
     }
     var content = {
       type: "colorgroup",
