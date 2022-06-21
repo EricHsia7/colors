@@ -2890,6 +2890,12 @@
           return ''
         }
       }
+      if (jsonhh.type === 'colorgroup') {
+        var ctext = jsonhh.content[(parseInt($('.color[fid="' + optionlistid() + '"]').attr('group-index')))]
+        if (ctext === undefined) {
+          return ''
+        }
+      }
       if (jsonhh.type === 'gradient') {
         var ctext = 'linear-gradient(' + jsonhh.content[0] + 'deg ,' + jsonhh.content[1] + ' ,' + jsonhh.content[2] + ')'
       }
@@ -2973,6 +2979,12 @@
       }
       if (jsonhh.type === 'imagecolorgroup') {
         ctextff = ctarr[(parseInt($('.color[fid="' + optionlistid() + '"]').attr('group-index')) - 1)]
+        if (ctextff === undefined) {
+          return ''
+        }
+      }
+      if (jsonhh.type === 'colorgroup') {
+        ctextff = ctarr[(parseInt($('.color[fid="' + optionlistid() + '"]').attr('group-index')))]
         if (ctextff === undefined) {
           return ''
         }
