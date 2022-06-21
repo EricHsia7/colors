@@ -2721,7 +2721,7 @@
     $('.optionlist li[h="toimg"]').click(function (ev) {
       closeoptionlist(ev)
 
-      $('.toimagebox').css({ 'display': 'block', 'opacity': '0', 'transition': '0.3s', 'height': 'calc(' + ($('.bottom').height() + 285) + 'px + var(--ot-bottom-height-offset))' });
+      $('.toimagebox').css({ 'display': 'block', 'opacity': '0', 'transition': '0.3s', 'height': 'calc(' + ($('.bottom').height() + 285) + 'px + var(--ot-bottom-height))' });
       $('.toimage-mask').css({ 'display': 'block', 'transition': '0.3s' });
       setTimeout(function () {
         $('.toimagebox').css({ 'transform': 'translateY(var(--ot-translateY-offset)) translateX(var(--ot-translateX-offset))' ,'opacity':'1'});
@@ -2827,7 +2827,7 @@
       $('.optionlist li[f="1"]').css({ 'display': 'none' })
       $('.optionlist li[f="2"]').css({ 'display': 'flex' })
       var listcc = 5
-      $('.optionlist').css({ 'transform': 'translateX(var(--ot-translateX-offset)) translateY(var(--ot-translateY-offset))', '--b-bottom-height': 'calc(' + ($('.bottom').height()) + 'px + var(--ot-bottom-height-offset))', '--b-option-list': listcc, 'display': 'block', 'opacity': '1', 'transition': '0.3s' });
+      $('.optionlist').css({ 'transform': 'translateX(var(--ot-translateX-offset)) translateY(var(--ot-translateY-offset))', '--b-bottom-height': 'calc(' + ($('.bottom').height()) + 'px + var(--ot-bottom-height))', '--b-option-list': listcc, 'display': 'block', 'opacity': '1', 'transition': '0.3s' });
 
     })
     //copyoption
