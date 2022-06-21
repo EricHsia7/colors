@@ -2182,10 +2182,12 @@
           setthemecol(allcolor[allcolorindex].themecolor[gindex])
 
 
-
-          var nwcol = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))].textcolor[(gindex - 1)]
-          if (gindex === 0) {
-            nwcol = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))].imgtextcolor
+          var nwcol = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))].textcolor[(gindex)]
+          if (allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))].type === 'imagecolorgroup') {
+            nwcol = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))].textcolor[(gindex - 1)]
+            if (gindex === 0) {
+              nwcol = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))].imgtextcolor
+            }
           }
           $('.color[fid="' + $(this).attr('btnid') + '"] .rightbar,.color[fid="' + $(this).attr('btnid') + '"] .arrow,.color[fid="' + $(this).attr('btnid') + '"] .group-progress-bar').attr('txtcolor', nwcol)
 
@@ -2215,9 +2217,13 @@
 
 
 
-          var nwcol = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))].textcolor[(gindex - 1)]
-          if (gindex === 0) {
-            nwcol = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))].imgtextcolor
+          var nwcol = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))].textcolor[(gindex)]
+          if (allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))].type === 'imagecolorgroup') {
+            var nwcol = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))].textcolor[(gindex - 1)]
+
+            if (gindex === 0) {
+              nwcol = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))].imgtextcolor
+            }
           }
           $('.color[fid="' + $(this).attr('btnid') + '"] .rightbar,.color[fid="' + $(this).attr('btnid') + '"] .arrow,.color[fid="' + $(this).attr('btnid') + '"] .group-progress-bar').attr('txtcolor', nwcol)
 
