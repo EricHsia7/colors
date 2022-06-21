@@ -2224,11 +2224,12 @@
 
       $('.arrow-right[btnid="' + allcolor[i].id + '"]').click(function (evt) {
         evt.stopPropagation();
-        var gtype = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))].type
+        var gjson = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))]
+        var gtype = gjson.type
         var gindex = parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('group-index'))
-        var gindexmax = 9
+        var gindexmax = (gjson.content.length-1)
         if (gtype === 'imagecolorgroup') {
-          gindexmax = 10
+          gindexmax = (gjson.content.length)
         }
         if (gindex < gindexmax) {
           gindex += 1
