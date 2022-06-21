@@ -696,10 +696,10 @@
   <div class="toimage-mask"></div>
   <div class="toimagebox">
     <div class="toimagebox-title" g="1">尺寸</div>
-    <input type="text" placeholder="寬度" id="toimageboxwidth">
-    <input type="text" placeholder="高度" id="toimageboxheight">
+    <input type="text" placeholder="寬度" id="toimageboxwidth" inputmode="numeric">
+    <input type="text" placeholder="高度" id="toimageboxheight" inputmode="numeric">
     <div class="toimagebox-title" g="2">縮放</div>
-    <input type="text" placeholder="縮放" id="toimageboxscale">
+    <input type="text" placeholder="縮放" id="toimageboxscale" inputmode="decimal">
     <div class="toimage-download">下載</div>
   </div>
 </body>
@@ -2732,7 +2732,7 @@
       }, 1);
       var cwidth = parseInt($('#toimageboxwidth').val()) || window.screen.width || window.innerWidth
       var cheight = parseInt($('#toimageboxheight').val()) || window.screen.height || window.innerHeight
-      var cscale = parseInt($('#toimageboxscale').val()) || 1
+      var cscale = parseFloat($('#toimageboxscale').val()) || 1
 
       $('#toimageboxwidth').val(cwidth)
       $('#toimageboxheight').val(cheight)
@@ -2745,7 +2745,7 @@
       var jsonhh = allcolor[aindex]
       var cwidth = parseInt($('#toimageboxwidth').val()) || window.screen.width || window.innerWidth
       var cheight = parseInt($('#toimageboxheight').val()) || window.screen.height || window.innerHeight
-      var cscale = parseInt($('#toimageboxscale').val()) || 1
+      var cscale = parseFloat($('#toimageboxscale').val()) || 1
 
       toimage(jsonhh, gindex, cwidth, cheight, cscale)
     })
