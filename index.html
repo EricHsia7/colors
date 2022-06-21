@@ -2324,7 +2324,7 @@
           }
 
         }
-        $('.optionlist').css({ '--b-bottom-height': $('.bottom').height() + 'px', '--b-option-list': listcc, 'display': 'block', 'opacity': '0', 'transition': '0.3s' /*,'transform':'translateX(var(--ot-translateX-offset))'*/});
+        $('.optionlist').css({ '--b-bottom-height':'calc(' +  $('.bottom').height() + 'px + var(--ot-bottom-height))', '--b-option-list': listcc, 'display': 'block', 'opacity': '0', 'transition': '0.3s' /*,'transform':'translateX(var(--ot-translateX-offset))'*/});
         $('.optionlist-mask').css({ 'display': 'block', 'transition': '0.3s' });
         setTimeout(function () {
           $('.optionlist').css({ 'transform': 'translateY(var(--ot-translateY-offset)) translateX(var(--ot-translateX-offset))' ,'opacity':'1'});
@@ -2619,7 +2619,7 @@
     if (!(evt === undefined)) {
       evt.stopPropagation();
     }
-    $('.toimagebox').css({ 'transform': 'translateY(' + ($('.bottom').height() + 285) + 'px) translateX(var(--ot-translateX-offset))', 'height': ($('.bottom').height() + 285) ,'opacity':'0'});
+    $('.toimagebox').css({ 'transform': 'translateY(' + ($('.bottom').height() + 285) + 'px) translateX(var(--ot-translateX-offset))', 'height': 'calc(' + ($('.bottom').height() + 285) + 'px + var(--ot-bottom-height) + 10px)','opacity':'0'});
     $('.toimage-mask').css({ 'opacity': '0' });
     setTimeout(function () {
       $('.toimagebox,.toimage-mask').css({ 'display': 'none', 'opacity': '0', 'transition': '0s' });
@@ -2721,7 +2721,7 @@
     $('.optionlist li[h="toimg"]').click(function (ev) {
       closeoptionlist(ev)
 
-      $('.toimagebox').css({ 'display': 'block', 'opacity': '0', 'transition': '0.3s', 'height': 'calc(' + ($('.bottom').height() + 285) + 'px + var(--ot-bottom-height))' });
+      $('.toimagebox').css({ 'display': 'block', 'opacity': '0', 'transition': '0.3s', 'height': 'calc(' + ($('.bottom').height() + 285) + 'px + var(--ot-bottom-height) + 10px)' });
       $('.toimage-mask').css({ 'display': 'block', 'transition': '0.3s' });
       setTimeout(function () {
         $('.toimagebox').css({ 'transform': 'translateY(var(--ot-translateY-offset)) translateX(var(--ot-translateX-offset))' ,'opacity':'1'});
