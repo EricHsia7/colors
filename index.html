@@ -2636,6 +2636,25 @@
 
 
     }
+    if (gup('s') === '5') {
+      var colorarr = atob(gup('grouplist')).split(',')
+      var textcol = []
+      for (var j = 0; j < colorarr.length; j++) {
+        var jrgb = hexToRgb(colorarr[j])
+        var jtxc = textcol(jrgb.r, jrgb.g, jrgb.b)
+        textcol.push(jtxc)
+      }
+      var content = {
+        type: "colorgroup",
+        group: true,
+        content: colorarr,
+        shareurl: 'https://erichsia7.github.io/colors/?s=5&grouplist=' + gup('grouplist') + '&r=' + genid('random'),
+        id: 'c_' + genid('random'),
+        textcolor: textcol,
+        themecolor: colorarr
+      };
+      allcolor.push(content)
+    }
 
 
     for (var i = 0; i < 2; i++) {
