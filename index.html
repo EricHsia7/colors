@@ -2651,7 +2651,7 @@
     return window.matchMedia('(min-width: 650px)').matches
   }
   function setoptlistcss() {
-    $('#optlistcss').html(':root{--ot-bottom-height:0px;--ot-translateY-offset:0px;--ot-translateX-offset:0px;--ot-bottom:0px;--ot-left:0px}@media screen and (min-width:650px){:root{--ot-bottom-height:' + ($('.bottom').height() * -1) + 'px;--ot-translateY-offset:50%;--ot-translateX-offset:-50%;--ot-bottom:50%;--ot-left:50%}}')
+    $('#optlistcss').html(':root{--ot-bottom-height:0px;--ot-translateY-offset:0px;--ot-translateX-offset:0px;--ot-bottom:0px;--ot-left:0px;--ot-d-translateY:0px;}@media screen and (min-width:650px){:root{--ot-bottom-height:' + ($('.bottom').height() * -1) + 'px;--ot-translateY-offset:50%;--ot-translateX-offset:-50%;--ot-bottom:50%;--ot-left:50%;--ot-d-translateY:50vh}}')
   }
   $(document).ready(function () {
     initialize()
