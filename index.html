@@ -2138,6 +2138,9 @@
           contents.push('<div class="colorcontent" style="background:url(' + allcolor[i].image.dataurl + ');background-size:cover;background-position:center;background-repeat:no-repeat;--dx-li-f:' + 0 + ';"><div class="colorcontent-image-blur-mask"></div><div class="colorcontent-image" style="background:url(' + allcolor[i].image.hdurl + ');background-size: cover;background-position:center;background-repeat:no-repeat;" id="' + contentimageid + '" i="' + i + '"></div></div>')
           groupprogressbar.push('<li sl="1"></li>')
         }
+        if (allcolor[i].type === 'colorgroup') {
+          favstr = '&' + ths_ctx[0]
+        }
         for (var d = 0; d < allcolor[i].content.length; d++) {
           contents.push('<div class="colorcontent" style="background:' + ths_ctx[d] + ';--dx-li-f:' + (d + contentindexoffset) + ';color:' + allcolor[i].textcolor[d] + '"><div class="colorcontent-text">' + ths_ctx[d] + '</div></div>')
           groupprogressbar.push('<li></li>')
