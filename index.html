@@ -2139,7 +2139,7 @@
       if (allcolor[i].group) {
         var contentindexoffset = 0
         if (allcolor[i].type === 'imagecolorgroup') {
-          groupprogressbar_c = 10
+          groupprogressbar_c = allcolor[i].content.length
           favstr = 'false'
           contentindexoffset = 1
           var contentimageid = 'e_' + genid('uuid')
@@ -2147,7 +2147,7 @@
           groupprogressbar.push('<li sl="1"></li>')
         }
         if (allcolor[i].type === 'colorgroup') {
-          groupprogressbar_c = 9
+          groupprogressbar_c = allcolor[i].content.length-1
           favstr = '&' + ths_ctx[0]
           groupprogressbar.push('<li sl="1"></li>')
         }
