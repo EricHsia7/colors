@@ -2145,11 +2145,13 @@
           var contentimageid = 'e_' + genid('uuid')
           contents.push('<div class="colorcontent" style="background:url(' + allcolor[i].image.dataurl + ');background-size:cover;background-position:center;background-repeat:no-repeat;--dx-li-f:' + 0 + ';"><div class="colorcontent-image-blur-mask"></div><div class="colorcontent-image" style="background:url(' + allcolor[i].image.hdurl + ');background-size: cover;background-position:center;background-repeat:no-repeat;" id="' + contentimageid + '" i="' + i + '"></div></div>')
           groupprogressbar.push('<li sl="1"></li>')
+          dftextcolor = allcolor[i].imgtextcolor
         }
         if (allcolor[i].type === 'colorgroup') {
           groupprogressbar_c = allcolor[i].content.length - 1
           favstr = '&' + ths_ctx[0]
           groupprogressbar.push('<li sl="1"></li>')
+          dftextcolor = allcolor[i].textcolor[0]
         }
         for (var d = 0; d < allcolor[i].content.length; d++) {
           contents.push('<div class="colorcontent" style="background:' + ths_ctx[d] + ';--dx-li-f:' + (d + contentindexoffset) + ';color:' + allcolor[i].textcolor[d] + '"><div class="colorcontent-text">' + ths_ctx[d] + '</div></div>')
@@ -2157,7 +2159,6 @@
         for (var s = 0; s < groupprogressbar_c; s++) {
           groupprogressbar.push('<li></li>')
         }
-        dftextcolor = allcolor[i].imgtextcolor
       }
       else {
         if (allcolor[i].type === 'color') {
