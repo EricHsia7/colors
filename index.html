@@ -569,7 +569,7 @@
 </style>
 <style id="optlistcss">
   :root {
-    --ot-bottom-height-offset: 0px;
+    --ot-bottom-height: 0px;
     --ot-translateY-offset: 0px;
     --ot-translateX-offset: 0px;
     --ot-bottom: 0px;
@@ -2597,7 +2597,7 @@
     if (!(evt === undefined)) {
       evt.stopPropagation();
     }
-    $('.optionlist').css({ 'transform': 'translateY(calc(var(--b-bottom-height) + (50px * var(--b-option-list)))) translateX(var(--ot-translateX-offset))','opacity':'0'});
+    $('.optionlist').css({ 'transform': 'translateY(calc((50px * var(--b-option-list)))) translateX(var(--ot-translateX-offset))','opacity':'0'});
     $('.optionlist-mask').css({ 'opacity': '0' });
     setTimeout(function () {
       $('.optionlist,.optionlist-mask').css({ 'display': 'none', 'opacity': '0', 'transition': '0s' });
@@ -2649,7 +2649,7 @@
     return window.matchMedia('(min-width: 650px)').matches
   }
   function setoptlistcss() {
-    $('#optlistcss').html(':root{--ot-bottom-height-offset:0px;--ot-translateY-offset:0px;--ot-translateX-offset:0px;--ot-bottom:0px;--ot-left:0px}@media screen and (min-width:650px){:root{--ot-bottom-height:' + ($('.bottom').height() * -1) + 'px;--ot-translateY-offset:50%;--ot-translateX-offset:-50%;--ot-bottom:50%;--ot-left:50%}}')
+    $('#optlistcss').html(':root{--ot-bottom-height:0px;--ot-translateY-offset:0px;--ot-translateX-offset:0px;--ot-bottom:0px;--ot-left:0px}@media screen and (min-width:650px){:root{--ot-bottom-height:' + ($('.bottom').height() * -1) + 'px;--ot-translateY-offset:50%;--ot-translateX-offset:-50%;--ot-bottom:50%;--ot-left:50%}}')
   }
   $(document).ready(function () {
     initialize()
