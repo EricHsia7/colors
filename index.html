@@ -3061,6 +3061,7 @@
       if (jsonhh.type === 'imagecolorgroup' || jsonhh.type === 'colorgroup') {
       addtofavorite(jsonhh.content)
       }
+      $('.favorite[btnid="' + jsonhh.id + '"]').css({ 'background': 'url(https://erichsia7.github.io/colors/favorited.png)', 'background-size': '35px', 'background-position': 'center', 'background-repeat': 'no-repeat' });
     })
     $('.optionlist li[h="shareacolor"]').click(function (ev) {
       closeoptionlist(ev)
