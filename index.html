@@ -2170,6 +2170,7 @@
         evt.stopPropagation();
         var gtype = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))].type
         var gindex = parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('group-index'))
+        
         if (gindex > 0) {
           gindex -= 1
 
@@ -2209,8 +2210,11 @@
         evt.stopPropagation();
         var gtype = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))].type
         var gindex = parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('group-index'))
-
-        if (gindex < 10) {
+        var gindexmax = 9
+        if (gtype === 'imagecolorgroup') {
+          gindexmax = 10
+        }
+        if (gindex < gindexmax) {
           gindex += 1
           $('.color[fid="' + $(this).attr('btnid') + '"]').attr('group-index', gindex)
           $('.color[fid="' + $(this).attr('btnid') + '"] .group-progress-bar li').attr('sl', '0')
