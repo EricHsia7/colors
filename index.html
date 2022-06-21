@@ -1614,6 +1614,12 @@
       filename = 'color_' + content[(gindex - 1)]
 
     }
+    if (type === 'colorgroup') {
+      ctx2.fillStyle = content[(gindex)];
+      ctx2.fillRect(0, 0, width, height);
+      filename = 'color_' + content[(gindex)]
+    }
+
     filename += '_' + rwidth + 'x' + rheight + '_' + scale + 'x'
     canvas2.toBlob(function (blob) {
       var uu = window.URL || window.webkitURL;
