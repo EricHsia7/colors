@@ -2227,7 +2227,7 @@
         var gjson = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))]
         var gtype = gjson.type
         var gindex = parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('group-index'))
-        var gindexmax = (gjson.content.length-1)
+        var gindexmax = (gjson.content.length - 1)
         if (gtype === 'imagecolorgroup') {
           gindexmax = (gjson.content.length)
         }
@@ -2734,6 +2734,21 @@
   function setoptlistcss() {
     $('#optlistcss').html(':root{--ot-bottom-height:0px;--ot-translateY-offset:0px;--ot-translateX-offset:0px;--ot-bottom:0px;--ot-left:0px;--ot-d-translateY:0px;}@media screen and (min-width:650px){:root{--ot-bottom-height:' + ($('.bottom').height() * -1) + 'px;--ot-translateY-offset:50%;--ot-translateX-offset:-50%;--ot-bottom:50%;--ot-left:50%;--ot-d-translateY:50vh}}')
   }
+  function addtofavorite(content) {
+    var added = 0;
+    var addte = content.length;
+    var addno = 0;
+    for (var f = 0; f < content.length; f++) {
+      if (getCookie('colorfav2').indexOf('&' + content[f]) > -1) {
+        addno += 1;
+      }
+      else {
+        setcookie('colorfav2', getCookie('colorfav2') + '&' + content[f])
+        added += 1;
+      }
+    }
+    $('body').prompt({ 'message': '已新增' + added + '個顏色。' })
+  }
   $(document).ready(function () {
     initialize()
     setoptlistcss()
@@ -3042,6 +3057,10 @@
     })
     $('.optionlist li[h="addallfav"]').click(function (ev) {
       closeoptionlist(ev)
+      var jsonhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))]
+      if (jsonhh.type === 'imagecolorgroup' || jsonhh.type === 'colorgroup') {
+      addtofavorite(jsonhh.content)
+      }
     })
     $('.optionlist li[h="shareacolor"]').click(function (ev) {
       closeoptionlist(ev)
