@@ -2139,17 +2139,19 @@
       if (allcolor[i].group) {
         var contentindexoffset = 0
         if (allcolor[i].type === 'imagecolorgroup') {
-          groupprogressbar_c = 10
+          groupprogressbar_c = allcolor[i].content.length
           favstr = 'false'
           contentindexoffset = 1
           var contentimageid = 'e_' + genid('uuid')
           contents.push('<div class="colorcontent" style="background:url(' + allcolor[i].image.dataurl + ');background-size:cover;background-position:center;background-repeat:no-repeat;--dx-li-f:' + 0 + ';"><div class="colorcontent-image-blur-mask"></div><div class="colorcontent-image" style="background:url(' + allcolor[i].image.hdurl + ');background-size: cover;background-position:center;background-repeat:no-repeat;" id="' + contentimageid + '" i="' + i + '"></div></div>')
           groupprogressbar.push('<li sl="1"></li>')
+          dftextcolor = allcolor[i].imgtextcolor
         }
         if (allcolor[i].type === 'colorgroup') {
-          groupprogressbar_c = 9
+          groupprogressbar_c = allcolor[i].content.length - 1
           favstr = '&' + ths_ctx[0]
           groupprogressbar.push('<li sl="1"></li>')
+          dftextcolor = allcolor[i].textcolor[0]
         }
         for (var d = 0; d < allcolor[i].content.length; d++) {
           contents.push('<div class="colorcontent" style="background:' + ths_ctx[d] + ';--dx-li-f:' + (d + contentindexoffset) + ';color:' + allcolor[i].textcolor[d] + '"><div class="colorcontent-text">' + ths_ctx[d] + '</div></div>')
@@ -2157,7 +2159,6 @@
         for (var s = 0; s < groupprogressbar_c; s++) {
           groupprogressbar.push('<li></li>')
         }
-        dftextcolor = allcolor[i].imgtextcolor
       }
       else {
         if (allcolor[i].type === 'color') {
@@ -2223,11 +2224,12 @@
 
       $('.arrow-right[btnid="' + allcolor[i].id + '"]').click(function (evt) {
         evt.stopPropagation();
-        var gtype = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))].type
+        var gjson = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))]
+        var gtype = gjson.type
         var gindex = parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('group-index'))
-        var gindexmax = 9
+        var gindexmax = (gjson.content.length - 1)
         if (gtype === 'imagecolorgroup') {
-          gindexmax = 10
+          gindexmax = (gjson.content.length)
         }
         if (gindex < gindexmax) {
           gindex += 1
@@ -2365,12 +2367,12 @@
 
         }
         if (fytype === 'colorgroup') {
-          listcc = 10
+          listcc = 9
           $('.optionlist li[h="qrcode"]').css({ 'display': 'flex' });
           $('.optionlist li[h="picker"]').css({ 'display': 'flex' });
           $('.optionlist li[h="toimg"]').css({ 'display': 'flex' });
           $('.optionlist li[h="llgrd"]').css({ 'display': 'flex' });
-          $('.optionlist li[h="mixgrd"]').css({ 'display': 'flex' });
+          $('.optionlist li[h="mixgrd"]').css({ 'display': 'none' });
           $('.optionlist li[h="llpath"]').css({ 'display': 'flex' });
           $('.optionlist li[h="copycolorcode"]').css({ 'display': 'flex' });
           $('.optionlist li[h="copyoptions"]').css({ 'display': 'flex' });
@@ -2667,6 +2669,7 @@
       addcolorcontent()
       addgradientcontent()
       addpathcontent()
+      addcolorcontentgroup()
     }
   }
 
@@ -2730,6 +2733,21 @@
   }
   function setoptlistcss() {
     $('#optlistcss').html(':root{--ot-bottom-height:0px;--ot-translateY-offset:0px;--ot-translateX-offset:0px;--ot-bottom:0px;--ot-left:0px;--ot-d-translateY:0px;}@media screen and (min-width:650px){:root{--ot-bottom-height:' + ($('.bottom').height() * -1) + 'px;--ot-translateY-offset:50%;--ot-translateX-offset:-50%;--ot-bottom:50%;--ot-left:50%;--ot-d-translateY:50vh}}')
+  }
+  function addtofavorite(content) {
+    var added = 0;
+    var addte = content.length;
+    var addno = 0;
+    for (var f = 0; f < content.length; f++) {
+      if (getCookie('colorfav2').indexOf('&' + content[f]) > -1) {
+        addno += 1;
+      }
+      else {
+        setcookie('colorfav2', getCookie('colorfav2') + '&' + content[f])
+        added += 1;
+      }
+    }
+    $('body').prompt({ 'message': '已新增' + added + '個顏色，重複' + addno + '。' })
   }
   $(document).ready(function () {
     initialize()
@@ -2831,16 +2849,20 @@
       closeoptionlist(ev)
       //llgrd
       var jsonhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))]
+      var contenthh = jsonhh.content[0]
       if (jsonhh.type === 'imagecolorgroup') {
         var contenthh = jsonhh.content[(parseInt($('.color[fid="' + optionlistid() + '"]').attr('group-index')) - 1)]
         if (contenthh === undefined) {
           return ''
         }
       }
-      else {
-        var contenthh = jsonhh.content[0]
-
+      if (jsonhh.type === 'colorgroup') {
+        var contenthh = jsonhh.content[(parseInt($('.color[fid="' + optionlistid() + '"]').attr('group-index')))]
+        if (contenthh === undefined) {
+          return ''
+        }
       }
+
       var lgd = getligrd(contenthh)
       var lgdshareurl = 'https://erichsia7.github.io/colors/?s=2&ga=' + btoa(lgd[1]) + '&gb=' + btoa(lgd[2]) + '&gdeg=' + lgd[0] + '&r=' + genid('random')
       setTimeout(function () {
@@ -2864,15 +2886,20 @@
       closeoptionlist(ev)
       //llpath
       var jsonhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))]
+      var contenthh = jsonhh.content[0]
       if (jsonhh.type === 'imagecolorgroup') {
         var contenthh = jsonhh.content[(parseInt($('.color[fid="' + optionlistid() + '"]').attr('group-index')) - 1)]
         if (contenthh === undefined) {
           return ''
         }
       }
-      else {
-        var contenthh = jsonhh.content[0]
+      if (jsonhh.type === 'colorgroup') {
+        var contenthh = jsonhh.content[(parseInt($('.color[fid="' + optionlistid() + '"]').attr('group-index')))]
+        if (contenthh === undefined) {
+          return ''
+        }
       }
+
       var llpath = getligrd(contenthh)
       var llpathshareurl = 'https://erichsia7.github.io/colors/?s=3&la=' + btoa(llpath[1]) + '&lb=' + btoa(llpath[2]) + '&r=' + genid('random')
 
@@ -3030,13 +3057,24 @@
     })
     $('.optionlist li[h="addallfav"]').click(function (ev) {
       closeoptionlist(ev)
+      var jsonhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))]
+      if (jsonhh.type === 'imagecolorgroup' || jsonhh.type === 'colorgroup') {
+      addtofavorite(jsonhh.content)
+      }
+      $('.favorite[btnid="' + jsonhh.id + '"]').css({ 'background': 'url(https://erichsia7.github.io/colors/favorited.png)', 'background-size': '35px', 'background-position': 'center', 'background-repeat': 'no-repeat' });
     })
     $('.optionlist li[h="shareacolor"]').click(function (ev) {
       closeoptionlist(ev)
       var jsonhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))]
 
-      if (jsonhh.type === 'imagecolorgroup') {
-        var ctext = jsonhh.content[(parseInt($('.color[fid="' + optionlistid() + '"]').attr('group-index')) - 1)]
+      if (jsonhh.type === 'imagecolorgroup' || jsonhh.type === 'colorgroup') {
+        if (jsonhh.type === 'imagecolorgroup') {
+          var ctext = jsonhh.content[(parseInt($('.color[fid="' + optionlistid() + '"]').attr('group-index')) - 1)]
+        }
+        if (jsonhh.type === 'colorgroup') {
+          var ctext = jsonhh.content[(parseInt($('.color[fid="' + optionlistid() + '"]').attr('group-index')))]
+        }
+
         if (ctext === undefined) {
           return ''
         }
@@ -3120,7 +3158,7 @@
 
     if (!(nowcolorjson === undefined) && !(nowcolorjson === null)) {
       history.pushState(null, null, nowcolorjson.shareurl);
-      if (nowcolorjson.type === 'imagecolorgroup') {
+      if (nowcolorjson.type === 'imagecolorgroup' || nowcolorjson.type === 'colorgroup') {
         var nowgroupindex = parseInt($('.color[fid="' + nowcolorjson.id + '"]').attr('group-index'))
         setthemecol(nowcolorjson.themecolor[nowgroupindex], 1)
       }
@@ -3144,6 +3182,7 @@
       addcolorcontent()
       addgradientcontent()
       addpathcontent()
+      addcolorcontentgroup()
       imagect -= 1
       if (imagect < 0) {
         addimagecolorcontentgroup()
