@@ -259,7 +259,7 @@
     height: calc(var(--b-bottom-height) + (50px * var(--b-option-list)));
     border-radius: 15px 15px 0px 0px;
     background: #fff;
-    transform: translateY(calc(var(--b-bottom-height) + (50px * var(--b-option-list))));
+    transform: translateY(calc(var(--b-bottom-height) + (50px * var(--b-option-list)))) translateX(var(--ot-translateX-offset));
     opacity: 0;
     display: none;
     -webkit-user-select: none;
@@ -341,7 +341,7 @@
     opacity: 0;
     display: none;
     border-radius: 15px 15px 0px 0px;
-    transform: translateY(calc(55px + 300px));
+    transform: translateY(calc(55px + 300px)) translateX(var(--ot-translateX-offset));
     overflow: hidden;
   }
 
