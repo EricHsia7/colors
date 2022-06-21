@@ -574,6 +574,7 @@
     --ot-translateX-offset: 0px;
     --ot-bottom: 0px;
     --ot-left: 0px;
+    --ot-d-translateY:0px
   }
 
   @media screen and (min-width: 650px) {
@@ -583,6 +584,7 @@
       --ot-translateX-offset: -50%;
       --ot-bottom: 50%;
       --ot-left: 50%;
+      --ot-d-translateY:50vh;
     }
   }
 </style>
@@ -2597,7 +2599,7 @@
     if (!(evt === undefined)) {
       evt.stopPropagation();
     }
-    $('.optionlist').css({ 'transform': 'translateY(calc((50px * var(--b-option-list)))) translateX(var(--ot-translateX-offset))','opacity':'0'});
+    $('.optionlist').css({ 'transform': 'translateY(calc((50px * var(--b-option-list)) + var(--ot-d-translateY))) translateX(var(--ot-translateX-offset))','opacity':'0'});
     $('.optionlist-mask').css({ 'opacity': '0' });
     setTimeout(function () {
       $('.optionlist,.optionlist-mask').css({ 'display': 'none', 'opacity': '0', 'transition': '0s' });
@@ -2609,7 +2611,7 @@
     if (!(evt === undefined)) {
       evt.stopPropagation();
     }
-    $('.qrcodebox').css({ 'transform': 'translateY(' + (55 + 300) + 'px) translateX(var(--ot-translateX-offset))' ,'opacity':'0'});
+    $('.qrcodebox').css({ 'transform': 'translateY(calc(' + (55 + 300) + 'px + var(--ot-d-translateY))) translateX(var(--ot-translateX-offset))' ,'opacity':'0'});
     $('.qrcode-mask').css({ 'opacity': '0' });
     setTimeout(function () {
       $('.qrcodebox,.qrcode-mask').css({ 'display': 'none', 'opacity': '0', 'transition': '0s' });
@@ -2620,7 +2622,7 @@
     if (!(evt === undefined)) {
       evt.stopPropagation();
     }
-    $('.toimagebox').css({ 'transform': 'translateY(' + ($('.bottom').height() + 285) + 'px) translateX(var(--ot-translateX-offset))', 'height': 'calc(' + ($('.bottom').height() + 285) + 'px + var(--ot-bottom-height) + 10px)','opacity':'0'});
+    $('.toimagebox').css({ 'transform': 'translateY(calc(' + ($('.bottom').height() + 285) + 'px + var(--ot-d-translateY))) translateX(var(--ot-translateX-offset))', 'height': 'calc(' + ($('.bottom').height() + 285) + 'px + var(--ot-bottom-height) + 10px)','opacity':'0'});
     $('.toimage-mask').css({ 'opacity': '0' });
     setTimeout(function () {
       $('.toimagebox,.toimage-mask').css({ 'display': 'none', 'opacity': '0', 'transition': '0s' });
