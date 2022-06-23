@@ -1955,6 +1955,7 @@
 
 
   function addcolorcontent() {
+    usagepoint('add_color', 1)
     var col = cllhi()
     if (col === false) {
       var random_r = Math.floor(Math.random() * 255)
@@ -1975,6 +1976,7 @@
     allcolor.push(content)
   }
   function addgradientcontent() {
+    usagepoint('add_gradient', 1)
     var col = cllhi()
     if (col === false) {
       var random_r = Math.floor(Math.random() * 255)
@@ -2001,6 +2003,7 @@
     allcolor.push(content)
   }
   function addimagecolorcontentgroup() {
+    usagepoint('add_image_color_group', 1)
     var imgid = 'd-' + genid('uuid')
     $('body').append('<img id="' + imgid + '" style="display:none;">')
     var rcimgwh = 256
@@ -2066,6 +2069,7 @@
     });
   }
   function addpathcontent() {
+    usagepoint('add_path', 1)
     var col = cllhi()
     if (col === false) {
       var random_r = Math.floor(Math.random() * 255)
@@ -2093,6 +2097,7 @@
   var sentcolors = {}
 
   function addcolorcontentgroup() {
+    usagepoint('add_color_group', 1)
 
     var random_r = Math.floor(Math.random() * 255)
     var random_g = Math.floor(Math.random() * 255)
@@ -2128,6 +2133,8 @@
   }
 
   function printcolor() {
+    usagepoint('printcolor', gtg)
+
     for (var i = gtg; i < allcolor.length; i++) {
       var ths_ctx = allcolor[i].content
       var contents = []
@@ -2184,6 +2191,7 @@
 
       $('.arrow-left[btnid="' + allcolor[i].id + '"]').click(function (evt) {
         evt.stopPropagation();
+        usagepoint('group_arrow_left', 1)
         var gtype = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))].type
         var gindex = parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('group-index'))
 
@@ -2224,6 +2232,8 @@
 
       $('.arrow-right[btnid="' + allcolor[i].id + '"]').click(function (evt) {
         evt.stopPropagation();
+        usagepoint('group_arrow_right', 1)
+
         var gjson = allcolor[parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('i'))]
         var gtype = gjson.type
         var gindex = parseInt($('.color[fid="' + $(this).attr('btnid') + '"]').attr('group-index'))
@@ -2267,6 +2277,7 @@
       });
       $('.share[btnid="' + allcolor[i].id + '"]').click(function (evt) {
         evt.stopPropagation();
+        usagepoint('share', 1)
         var fidtt = $(this).attr('btnid')
         var fidindex = parseInt($('.color[fid="' + fidtt + '"]').attr('i'))
         var shareurltt = allcolor[fidindex].shareurl
@@ -2287,6 +2298,8 @@
 
       $('.options[btnid="' + allcolor[i].id + '"]').click(function (evt) {
         evt.stopPropagation();
+        usagepoint('open_option', 1)
+
         var fidtt = $(this).attr('btnid')
         var fidindex = parseInt($('.color[fid="' + fidtt + '"]').attr('i'))
         var fidgroupindex = parseInt($('.color[fid="' + fidtt + '"]').attr('group-index'))
@@ -2392,6 +2405,8 @@
 
       $('.favorite[btnid="' + allcolor[i].id + '"]').click(function (evt) {
         evt.stopPropagation();
+        usagepoint('favorite', 1)
+
         var fidtt = $(this).attr('btnid')
         var gindexff = parseInt($('.color[fid="' + fidtt + '"]').attr('group-index'))
         var fidindex = parseInt($('.color[fid="' + fidtt + '"]').attr('i'))
@@ -2713,6 +2728,7 @@
 
 
   function copytext(str) {
+    usagepoint('copy_text', 1)
     try {
       var textArea = document.createElement("textarea");
       textArea.value = str;
@@ -2721,7 +2737,6 @@
       document.execCommand("Copy");
       textArea.remove();
       $('body').prompt({ 'message': '已複製。' })
-
     }
     catch (e) {
       $('body').prompt({ 'message': '發生錯誤。' })
@@ -2748,6 +2763,9 @@
       }
     }
     $('body').prompt({ 'message': '已新增' + added + '個顏色，重複' + addno + '個。' })
+    if (added > 0) {
+      usagepoint('add_to_favorite', added)
+    }
   }
   $(document).ready(function () {
     initialize()
@@ -2793,6 +2811,8 @@
 
     $('.optionlist li[h="qrcode"]').click(function (ev) {
       //qrcode
+      usagepoint('qrcode', 1)
+
       $('.qrcodebox').css({ 'display': 'block', 'opacity': '0', 'transition': '0.3s' /*,'transform':'translateX(var(--ot-translateX-offset))'*/ });
       $('.qrcode-mask').css({ 'display': 'block', 'transition': '0.3s' });
       setTimeout(function () {
@@ -2819,6 +2839,7 @@
     })
     $('.optionlist li[h="toimg"]').click(function (ev) {
       closeoptionlist(ev)
+      usagepoint('toimage', 1)
 
       $('.toimagebox').css({ 'display': 'block', 'opacity': '0', 'transition': '0.3s', 'height': 'calc(' + ($('.bottom').height() + 285) + 'px + var(--ot-bottom-height) + 10px)' });
       $('.toimage-mask').css({ 'display': 'block', 'transition': '0.3s' });
@@ -2836,6 +2857,8 @@
 
     })
     $('.toimage-download').click(function (ev) {
+      usagepoint('toimage_download', 1)
+
       var aindex = parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))
       var gindex = parseInt($('.color[fid="' + optionlistid() + '"]').attr('group-index'))
       var jsonhh = allcolor[aindex]
@@ -2847,6 +2870,8 @@
     })
     $('.optionlist li[h="llgrd"]').click(function (ev) {
       closeoptionlist(ev)
+      usagepoint('ll_gradient', 1)
+
       //llgrd
       var jsonhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))]
       var contenthh = jsonhh.content[0]
@@ -2873,6 +2898,7 @@
     $('.optionlist li[h="mixgrd"]').click(function (ev) {
       //mixgrd
       closeoptionlist(ev)
+      usagepoint('mix_gradient', 1)
 
       var contenthh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))].content
       var mixcolor = rgbToHex(Math.floor((hexToRgb(contenthh[1]).r + hexToRgb(contenthh[2]).r) * .5), Math.floor((hexToRgb(contenthh[1]).g + hexToRgb(contenthh[2]).g) * .5), Math.floor((hexToRgb(contenthh[1]).b + hexToRgb(contenthh[2]).b) * .5))
@@ -2884,6 +2910,8 @@
     })
     $('.optionlist li[h="llpath"]').click(function (ev) {
       closeoptionlist(ev)
+      usagepoint('ll_path', 1)
+
       //llpath
       var jsonhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))]
       var contenthh = jsonhh.content[0]
@@ -3029,12 +3057,16 @@
     //copyoption end
     $('.optionlist li[h="copysourceimageurl"]').click(function (ev) {
       closeoptionlist(ev)
+      usagepoint('copy_source_image_url', 1)
+
       var jsonhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))]
       var sourceurl = jsonhh.image.source
       copytext(sourceurl)
     })
     $('.optionlist li[h="dlsourceimage"]').click(function (ev) {
       closeoptionlist(ev)
+      usagepoint('download_source_image', 1)
+
       var jsonhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))]
       var downloadurl = jsonhh.image.hdurl
       var downloadname = String(jsonhh.image.source).replaceAll('https://', '').replaceAll('.', '-').replaceAll('/', '_')
@@ -3059,12 +3091,13 @@
       closeoptionlist(ev)
       var jsonhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))]
       if (jsonhh.type === 'imagecolorgroup' || jsonhh.type === 'colorgroup') {
-      addtofavorite(jsonhh.content)
+        addtofavorite(jsonhh.content)
       }
       $('.favorite[btnid="' + jsonhh.id + '"]').css({ 'background': 'url(https://erichsia7.github.io/colors/favorited.png)', 'background-size': '35px', 'background-position': 'center', 'background-repeat': 'no-repeat' });
     })
     $('.optionlist li[h="shareacolor"]').click(function (ev) {
       closeoptionlist(ev)
+      usagepoint('share_a_color', 1)
       var jsonhh = allcolor[parseInt($('.color[fid="' + optionlistid() + '"]').attr('i'))]
 
       if (jsonhh.type === 'imagecolorgroup' || jsonhh.type === 'colorgroup') {
@@ -3135,11 +3168,14 @@
 
       if (parseInt(div.getAttribute('dy')) - parseInt(div.getAttribute('fy')) < 0) {
         //down
+        usagepoint('slide_down', 1)
         ns = Math.ceil(Math.abs(parseInt(div.getAttribute('dy')) / $('.container').height())) * -1 * $('.container').height()
 
       }
       else {
         //up
+        usagepoint('slide_up', 1)
+
         var ns = Math.ceil(parseInt(div.getAttribute('dy')) / $('.container').height()) * $('.container').height()
 
       }
