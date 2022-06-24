@@ -2103,7 +2103,7 @@
   var sentcolors = {}
 
   function addcolorcontentgroup() {
-    usagepoint('add_color_group', '+')
+    usagepoint('add_color_group', '+1')
 
     var random_r = Math.floor(Math.random() * 255)
     var random_g = Math.floor(Math.random() * 255)
@@ -2770,7 +2770,7 @@
     }
     $('body').prompt({ 'message': '已新增' + added + '個顏色，重複' + addno + '個。' })
     if (added > 0) {
-      usagepoint('add_to_favorite', added)
+      usagepoint('add_to_favorite', '+' + added)
     }
   }
   $(document).ready(function () {
