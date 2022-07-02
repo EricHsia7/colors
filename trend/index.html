@@ -136,6 +136,7 @@
     width: 0%;
     display: none;
     background: #000;
+    transition: 0.2s;
   }
 
   /*end*/
@@ -1206,7 +1207,7 @@
     var loading_max_progress = 12
     function addloading() {
       if (loading_progress < loading_max_progress) {
-        loading_progress += (Math.random() * 3).toFixed(2)
+        loading_progress += (Math.random() * 3).toFixed(0)
       }
       $('.loading-bar').css({ 'display':'block','width': loading_progress + '%' })
     }
@@ -1234,9 +1235,7 @@
         loadinghtml.push('<div class="color" loading="1"></div>')
       }
       $('.container').html(loadinghtml.join(''))
-      var loading_t = setInterval(() => {
-        addloading()
-      }, 150);
+      var loading_t = setInterval(addloading, 250);
       $.ajax({
         type: 'get', url: rr_color, dataType: 'text', success: function (e) {
           //allstart
