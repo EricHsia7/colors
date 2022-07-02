@@ -128,7 +128,15 @@
     user-select: none;
   }
 
-
+  .loading-bar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 3px;
+    width: 0%;
+    display: none;
+    background: #000;
+  }
 
   /*end*/
 
@@ -447,6 +455,10 @@
   }
 
   @media (prefers-color-scheme: dark) {
+    .loading-bar {
+      background: #fff;
+    }
+
     .color {
       border: 1px solid #1a1a1a;
     }
@@ -663,6 +675,7 @@
 
   <div class="clopanblur"></div>
 
+  <div class="loading-bar"></div>
   <script>
     var getUrlString = location.href;
     var url = new URL(getUrlString);
@@ -1189,6 +1202,15 @@
       $('#iphonesafearea').html('')
     }
     $('#dd').html(':root{--dd-container-height:' + (window.innerHeight - $('.bottom').height()) + 'px;--dd-container-width:' + window.innerWidth + 'px;--dd-container-n-height:' + (((window.innerWidth / 3) * (window.innerHeight - $('.bottom').height())) / window.innerWidth) + 'px;--dd-container-n-width:' + (window.innerWidth / 3) + 'px;}')
+    var loading_progress = 0
+    var loading_max_progress = 12
+    function addloading() {
+      if (loading_progress < loading_max_progress) {
+        loading_progress += (Math.random() * 3).toFixed(2)
+      }
+      $('.loafing-bar').css({ 'display':'block','width': loading_progress + '%' })
+    }
+
     var colorfav2arr = []
     var rr_lasttweektrend = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTsFdgG3Pj2WrwKd9xUzKE41XD47xy2LLekYDFD_K0B8exPBiE5QJAvHoh78dobt1TJaJQj-hLv4eeN/pub?gid=1926518771&single=true&output=csv&' + genid('time') + '_' + genid('random');
     var rr_color = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSKrUKs8Cq2a3Pubg_-MXmWp77GqLE0ImjKHy8VNAaVpqFH4Z94BeCcH-IQRsVnLTzmwaPG_66e35mH/pub?gid=1124579858&single=true&output=csv&" + genid('time') + '_' + genid('random');
@@ -1212,6 +1234,9 @@
         loadinghtml.push('<div class="color" loading="1"></div>')
       }
       $('.container').html(loadinghtml.join(''))
+      var loading_t = setInterval(() => {
+        addloading()
+      }, 150);
       $.ajax({
         type: 'get', url: rr_color, dataType: 'text', success: function (e) {
           //allstart
@@ -1220,6 +1245,7 @@
           for (var i = 0; i < arr.length; i++) {
             colorfav2arr.push(arr[i])
           }
+          loading_max_progress = 25
           //colorend
           //grd
 
@@ -1230,6 +1256,7 @@
                 var grdarr = arr2[p].replaceAll('deg', '').replaceAll('linear-gradient(', '').replaceAll(')', '').replaceAll('$0%', '').replaceAll('$100%', '').split('@');
                 colorfav2arr.push('li]' + grdarr.join(']'))
               }
+              loading_max_progress = 50
               //path
 
               $.ajax({
@@ -1239,6 +1266,7 @@
                     var patharr = arr3[s].replaceAll('[', '#').replaceAll('@', '@#').split('@');
                     colorfav2arr.push('pa]' + patharr.join(']'))
                   }
+                  loading_max_progress = 75
                   //trend
                   $.ajax({
                     type: 'get', url: rr_lasttweektrend, dataType: 'text', success: function (e4) {
@@ -1246,6 +1274,7 @@
                       for (var w = 0; w < arr4.length; w++) {
                         colorfav2arr.push(arr4[w])
                       }
+                      loading_max_progress = 100
                       //prepare
                       $('.container').html('')
 
@@ -1255,7 +1284,10 @@
                       localStorage.setItem('colors_trend_update', new Date().getTime())
                       addloadevl()
 
-
+                      clearInterval(loading_t)
+                      setTimeout(() => {
+                        $('.loading-bar').css({'opacity':'0'})
+                      }, 1500);
                       //prepareend
                     }
                   });
