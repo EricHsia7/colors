@@ -1207,9 +1207,9 @@
     var loading_max_progress = 12
     function addloading() {
       if (loading_progress < loading_max_progress) {
-        loading_progress += (Math.random() * 3).toFixed(0)
+        loading_progress += Math.random() * 3
       }
-      $('.loading-bar').css({ 'display':'block','width': loading_progress + '%' })
+      $('.loading-bar').css({ 'display':'block','width': Math.round(loading_progress) + '%' })
     }
 
     var colorfav2arr = []
