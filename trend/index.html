@@ -132,7 +132,7 @@
     position: fixed;
     top: 0px;
     left: 0px;
-    height: 3px;
+    height: 2px;
     width: 0%;
     display: none;
     background: #000;
@@ -1207,7 +1207,7 @@
     var loading_max_progress = 12
     function addloading() {
       if (loading_progress < loading_max_progress) {
-        loading_progress += Math.random() * 3
+        loading_progress += Math.random() * 8
       }
       $('.loading-bar').css({ 'display':'block','width': Math.round(loading_progress) + '%' })
     }
