@@ -1283,9 +1283,9 @@
                       localStorage.setItem('colors_trend_update', new Date().getTime())
                       addloadevl()
 
-                      clearInterval(loading_t)
                       setTimeout(() => {
                         $('.loading-bar').css({'opacity':'0'})
+                        clearInterval(loading_t)
                       }, 1500);
                       //prepareend
                     }
