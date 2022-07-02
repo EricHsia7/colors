@@ -136,7 +136,7 @@
     width: 0%;
     display: none;
     background: #000;
-    transition: 0.2s;
+    transition: 0.05s;
   }
 
   /*end*/
@@ -1235,7 +1235,7 @@
         loadinghtml.push('<div class="color" loading="1"></div>')
       }
       $('.container').html(loadinghtml.join(''))
-      var loading_t = setInterval(addloading, 250);
+      var loading_t = setInterval(addloading, 50);
       $.ajax({
         type: 'get', url: rr_color, dataType: 'text', success: function (e) {
           //allstart
