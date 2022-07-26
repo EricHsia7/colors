@@ -191,10 +191,9 @@
     $('#cardbox').append('<p style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--font-col);-webkit-user-select: none;">您的喜好項目裡沒有任何顏色，請先新增至少一個顏色到喜好項目。<a href="https://erichsia7.github.io/colors/" style="color:#147efb;-webkit-user-select: none;">回首頁</a></p>');
   }
   else {
-
     var favcolorss = getCookie('colorfav2').substring(1, getCookie('colorfav2').length).split('&');
     for (var ffpp = 0; ffpp < favcolorss.length; ffpp++) {
-      if ((favcolorss[ffpp].indexOf('li') > -1) && (favcolorss[ffpp].indexOf('pa') > -1)) {
+      if ((favcolorss[ffpp].indexOf('li]') > -1) && (favcolorss[ffpp].indexOf('pa]') > -1)) {
       }
       else {
         //tag 
@@ -211,7 +210,6 @@
         }
         var crdiduu = genid('random');
         $('#cardbox').prepend('<div class="card" style="background:' + favcolorss[ffpp] + ';color:' + tgzcolor + ';--seico-color:' + seicocor + '" type="col" id="' + crdiduu + '" rg="' + favcolorss[ffpp] + '" tag="' + tgrtag + '" arrtctcl="' + arrbtctoiconcolorclass + '" count="' + (favcolorss.length - ffpp - 1) + '"><div class="content"><h4>' + favcolorss[ffpp] + '</h4><div class="description"><a href="scriptable:///run/' + encodeURIComponent(scriptable_name) + '?seto=true&col=' + btoa(favcolorss[ffpp]) + '" class="coloropenbtnj" crdid="' + crdiduu + '">使用此顏色</a><div class="cardki2 btn cardggbt" crdid="' + crdiduu + '"></div></div></div></div>');
-
       }
     }
     $('#cardbox').prepend('<h1 style="text-align: center;color:var(--font-col);margin-top:30px">選擇顏色</h1>');
