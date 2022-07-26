@@ -193,7 +193,7 @@
   else {
     var favcolorss = getCookie('colorfav2').substring(1, getCookie('colorfav2').length).split('&');
     for (var ffpp = 0; ffpp < favcolorss.length; ffpp++) {
-      if ((favcolorss[ffpp].indexOf('li]') > -1) && (favcolorss[ffpp].indexOf('pa]') > -1)) {
+      if ((favcolorss[ffpp].indexOf('li]') > -1) || (favcolorss[ffpp].indexOf('pa]') > -1)) {
       }
       else {
         //tag 
