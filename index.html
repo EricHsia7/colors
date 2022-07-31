@@ -1904,7 +1904,7 @@
           var thskeyvalue = eval('lastdayresultjson_event_count.' + hssu_1)
 
           gtag('event', 'event_count_' + thskeyname, {
-            'event_category': thskeyvalue,
+            'count': thskeyvalue,
             'event_label': user_id,
             'transport_type': 'beacon',
             'event_callback': function () {
@@ -1920,7 +1920,7 @@
 
 
           gtag('event', 'event_point_' + thskeyname, {
-            'event_category': thskeyvalue,
+            'point': thskeyvalue,
             'event_label': user_id,
             'transport_type': 'beacon',
             'event_callback': function () {
@@ -1931,7 +1931,7 @@
         }
 
         gtag('event', 'event_point_total', {
-          'event_category': lastdayresultjson_event_point_total,
+          'point_total': lastdayresultjson_event_point_total,
           'event_label': user_id,
           'transport_type': 'beacon',
           'event_callback': function () {
@@ -1939,7 +1939,7 @@
           }
         });
         gtag('event', 'event_type_count', {
-          'event_category': lastdayresultjson_event_type_count,
+          'evt_type_count': lastdayresultjson_event_type_count,
           'event_label': user_id,
           'transport_type': 'beacon',
           'event_callback': function () {
