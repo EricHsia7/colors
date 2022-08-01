@@ -325,6 +325,10 @@
       background: #1a1a1a;
     }
 
+    .bottom {
+      background: #1a1a1a;
+    }
+
     .title {
       background: #1a1a1a;
       color: #fff;
@@ -419,9 +423,15 @@
     --bottom-icon-home: rgba(0, 0, 0, 0);
     --bottom-icon-favorite: rgba(0, 0, 0, 0);
     --bottom-icon-plus-a: var(--bottom-icon-color);
-    --bottom-icon-plus-b: rgba(0, 0, 0, 0);
+    --bottom-icon-plus-b: #fff;
     --bottom-icon-trend: rgba(0, 0, 0, 0);
     --bottom-icon-more: rgba(0, 0, 0, 0);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bottom-icon-plus-b: #1a1a1a
+    }
   }
 </style>
 
@@ -887,8 +897,23 @@
     $(".dropi").css({ opacity: "0" });
     $('.rst').css({ 'display': 'none' })
   })
-  $('.backbtn').click(function () {
-    location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
+  $('.bottom-btn').click(function () {
+    var k = $(this).attr('u')
+    if (k === 'home') {
+      location.href = 'https://erichsia7.github.io/colors/?r=' + genid('random')
+    }
+    if (k === 'favorite') {
+      location.href = 'https://erichsia7.github.io/colors/favorite/?r=' + genid('random')
+    }
+    if (k === 'option') {
+      location.href = 'https://erichsia7.github.io/colors/option/?r=' + genid('random')
+    }
+    if (k === 'trend') {
+      location.href = 'https://erichsia7.github.io/colors/trend/?r=' + genid('random')
+    }
+    if (k === 'more') {
+
+    }
   });
 
   $(document).ready(function () {
