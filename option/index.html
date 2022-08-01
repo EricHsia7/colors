@@ -1034,13 +1034,6 @@
     $('#qrbox').css({ 'display': 'none' });
    }, 510);
   });
-
-
-
-
-
-
-
   //v2
 
   if (getCookie('colorfav2') === "") {
@@ -1064,70 +1057,27 @@
   var pt = 0
   var dft = 0
   var stopload = 0
-  var allcolor = [];
-  function preparejson() {
-   if (String(colorfav2).length > 7) {
-    var colorfavarr = colorfav2.substring(1, String(colorfav2).length).split('&')
-    colorfavarr.reverse()
-    for (var i = 0; i < colorfavarr.length; i++) {
-     if (String(colorfavarr[i]).indexOf('li]') > -1) {
-      //grd
-      var thsgrd = colorfavarr[i].split(']')
-      var txc = textcol((hexToRgb(thsgrd[2]).r + hexToRgb(thsgrd[3]).r) * .5, (hexToRgb(thsgrd[2]).g + hexToRgb(thsgrd[3]).g) * .5, (hexToRgb(thsgrd[2]).b + hexToRgb(thsgrd[3]).b) * .5)
-
-      var content = {
-       type: "gradient",
-       group: false,
-       content: [parseInt(thsgrd[1]), thsgrd[2], thsgrd[3]],
-       shareurl: 'https://erichsia7.github.io/colors/?s=2&ga=' + btoa(thsgrd[2]) + '&gb=' + btoa(thsgrd[3]) + '&gdeg=' + thsgrd[1] + '&r=' + genid('random'),
-       id: 'c_' + genid('random'),
-       textcolor: txc
-      };
-      allcolor.push(content)
-      //grdend
-     }
-     else {
-      if (String(colorfavarr[i]).indexOf('pa]') > -1) {
-       //path
-       var pathzz = colorfavarr[i].split(']')
-       var txc = textcol((hexToRgb(pathzz[1]).r + hexToRgb(pathzz[2]).r) * .5, (hexToRgb(pathzz[1]).g + hexToRgb(pathzz[2]).g) * .5, (hexToRgb(pathzz[1]).b + hexToRgb(pathzz[2]).b) * .5)
-       var path_datahtml = gtffim(pathzz[1], pathzz[2], window.innerWidth, (window.innerHeight - $('.bottom').height()))
-       var content = {
-        type: "path",
-        group: false,
-        content: [pathzz[1], pathzz[2]],
-        path_data: path_datahtml,
-        shareurl: 'https://erichsia7.github.io/colors/?s=3&la=' + btoa(pathzz[1]) + '&lb=' + btoa(pathzz[2]) + '&r=' + genid('random'),
-        id: 'c_' + genid('random'),
-        textcolor: txc
-       };
-       allcolor.push(content)
-       //pathend
-      }
-      else {
-       //color
-
-       var txc = textcol(hexToRgb(colorfavarr[i]).r, hexToRgb(colorfavarr[i]).g, hexToRgb(colorfavarr[i]).b)
-       var content = {
-        type: "color",
-        group: false,
-        content: [colorfavarr[i]],
-        shareurl: 'https://erichsia7.github.io/colors/?s=1&c=' + btoa(colorfavarr[i]) + '&r=' + genid('random'),
-        id: 'c_' + genid('random'),
-        textcolor: txc
-       };
-       allcolor.push(content)
-
-       //colorend
-      }
-
-
-     }
-    }
-    //s
+  var allcolor = [
+   {
+    type: "option",
+    group: false,
+    content: ['var(--e-option-color)'],
+    shareurl: 'https://erichsia7.github.io/colors/photo/?r=' + genid('random'),
+    id: 'c_' + genid('random'),
+    textcolor: 'var(--e-option-text)',
+    text: 'Photo'
+   },
+   {
+    type: "option",
+    group: false,
+    content: ['var(--e-option-color)'],
+    shareurl: 'https://erichsia7.github.io/colors/picker/?r=' + genid('random'),
+    id: 'c_' + genid('random'),
+    textcolor: 'var(--e-option-text)',
+    text: 'Picker'
    }
-   //end
-  }
+  ]
+
   function setsize() {
    $('#dd').html(':root{--dd-container-height:' + (window.innerHeight - $('.bottom').height()) + 'px;--dd-container-width:' + window.innerWidth + 'px;--dd-container-n-height:' + (((window.innerWidth / 3) * (window.innerHeight - $('.bottom').height())) / window.innerWidth) + 'px;--dd-container-n-width:' + (window.innerWidth / 3) + 'px;}')
   }
@@ -1138,26 +1088,14 @@
     stopload = true
    }
    for (var i = pt; i < pt1; i++) {
-    if (allcolor[i].type === 'gradient') {
-     $('.container').append('<div class="color" g="' + i + '" style="background:linear-gradient(' + allcolor[i].content[0] + 'deg ,' + allcolor[i].content[1] + ' ,' + allcolor[i].content[2] + ');" wi="' + allcolor[i].id + '"></div>')
-    }
-    if (allcolor[i].type === 'color') {
-     $('.container').append('<div class="color" g="' + i + '" style="background:' + allcolor[i].content[0] + ';" wi="' + allcolor[i].id + '"></div>')
-    }
-    if (allcolor[i].type === 'path') {
-     $('.container').append('<div class="color" g="' + i + '" style="background:' + allcolor[i].content[1] + ';" wi="' + allcolor[i].id + '">' + allcolor[i].path_data + '</div>')
+    if (allcolor[i].type === 'option') {
+     $('.container').append('<div class="color" g="' + i + '" style="background:' + allcolor[i].content[0] + ';" wi="' + allcolor[i].id + '">' + allcolor[i].text + '</div>')
     }
 
-    caches.open("colors_fav_preload").then(function (cache) {
-     cache.addAll([allcolor[i].shareurl]);
-    });
     $('.color[wi="' + allcolor[i].id + '"]').click(function () {
      $(this).css({ 'transform': 'translateX(' + (-1 * $(this).offset().left + $(document).scrollLeft()) + 'px) translateY(' + (-1 * $(this).offset().top + $(document).scrollTop()) + 'px) scale(3)', 'transition': '0.3s', 'z-index': ($('.container .color').length + 1), 'border': '0px solid rgba(0, 0, 0, 0)' })
      $('.bottom').css({ 'z-index': ($('.container .color').length + 2) })
      var thsindex = String($(this).attr('g'))
-
-
-
      setTimeout(function () {
       location.href = allcolor[parseInt(thsindex)].shareurl
      }, 300);
@@ -1170,7 +1108,6 @@
    $('#iphonesafearea').html('')
   }
   setsize()
-  preparejson()
 
   setTimeout(function () {
    printcolor()
