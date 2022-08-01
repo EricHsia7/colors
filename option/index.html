@@ -539,11 +539,17 @@
 <style id="bottom-icon">
  :root {
   --bottom-icon-home: rgba(0, 0, 0, 0);
-  --bottom-icon-favorite: var(--bottom-icon-color);
-  --bottom-icon-plus-a: rgba(0, 0, 0, 0);
-  --bottom-icon-plus-b: var(--bottom-icon-color);
+  --bottom-icon-favorite: rgba(0, 0, 0, 0);
+  --bottom-icon-plus-a: var(--bottom-icon-color);
+  --bottom-icon-plus-b: #fff;
   --bottom-icon-trend: rgba(0, 0, 0, 0);
   --bottom-icon-more: rgba(0, 0, 0, 0);
+ }
+
+ @media (prefers-color-scheme: dark) {
+  :root {
+   --bottom-icon-plus-b: #1a1a1a
+  }
  }
 </style>
 
