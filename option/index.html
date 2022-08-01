@@ -31,7 +31,8 @@
   --loading-ffg: 255;
   --fx-bth: calc(55px + env(safe-area-inset-bottom));
   --bottom-icon-color: #000000;
-
+  --e-option-color: #f5f5f5;
+  --e-option-color-text: #333
  }
 
  * {
@@ -500,6 +501,8 @@
    --loading-grey: #1f1f1f;
    --loading-ffg: 50;
    --bottom-icon-color: #ffffff;
+   --e-option-color: #1f1f1f;
+   --e-option-color-text: #fff
   }
 
   .bottom {
@@ -1089,7 +1092,7 @@
    }
    for (var i = pt; i < pt1; i++) {
     if (allcolor[i].type === 'option') {
-     $('.container').append('<div class="color" g="' + i + '" style="background:' + allcolor[i].content[0] + ';" wi="' + allcolor[i].id + '">' + allcolor[i].text + '</div>')
+     $('.container').append('<div class="color" g="' + i + '" style="background:' + allcolor[i].content[0] + ';color:' + allcolor[i].textcolor + '" wi="' + allcolor[i].id + '">' + allcolor[i].text + '</div>')
     }
 
     $('.color[wi="' + allcolor[i].id + '"]').click(function () {
