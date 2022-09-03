@@ -769,34 +769,18 @@
 
         var imgcolorpalette = colorThief.getPalette(img);
         var paltarr = []
-
+        var imgcolorpalette_hex = []
         $('.lt').html('')
         for (var i = 0; i < imgcolorpalette.length; i++) {
-          var drft = genid('random');
-
-
-
-
-          $('.lt').append('<div class="lty"><div class="lt_c" style="--gt-b:' + rgbToHex(imgcolorpalette[i][0], imgcolorpalette[i][1], imgcolorpalette[i][2]) + '"></div><div class="lt_ti">' + rgbToHex(imgcolorpalette[i][0], imgcolorpalette[i][1], imgcolorpalette[i][2]) + '</div><div class="lt_vi" id="' + drft + '" hexbase64="' + btoa(rgbToHex(imgcolorpalette[i][0], imgcolorpalette[i][1], imgcolorpalette[i][2])) + '">查看顏色</div></div>')
-          $('.lt_vi#' + drft).click(function () {
-            window.open('https://erichsia7.github.io/colors/?s=1&c=' + $(this).attr('hexbase64') + '&open=photo&r=' + genid('random'))
-          });
-
-
+          var hex = rgbToHex(imgcolorpalette[i][0], imgcolorpalette[i][1], imgcolorpalette[i][2])
+          imgcolorpalette_hex.push(hex)
         }
-        //$('.lt').html(paltarr.join(''))
-        $('.lt').append('<div style="width:100%;height:100px"></div>')
         $('.hidbx').html('')
+        location.href = 'https://erichsia7.github.io/colors/?s=5&grouplist=' + btoa(imgcolorpalette_hex.join(',')) + '&r=' + genid('random')
       } else {
 
       }
-
-
-
     });
-
-
-
   }
 
   function handleFileSelect(evt) {
@@ -807,15 +791,10 @@
     reader.onload = (function (theFile) {
       return function (e) {
         var binaryData = e.target.result;
-        //Converting Binary Data to base 64
         var base64String = window.btoa(binaryData);
-        //showing file converted to base64
-        console.log('a')
-        console.log(f.type)
         fo("data:" + f.type + ";base64," + base64String);
       };
     })(f);
-    // Read in the image file as a data URL.
     reader.readAsBinaryString(f);
   }
 
@@ -833,8 +812,6 @@
             //Converting Binary Data to base 64
             var base64String = window.btoa(binaryData);
             //showing file converted to base64
-            console.log(file.type)
-            console.log('b')
             fo("data:" + file.type + ";base64," + base64String);
 
           };
@@ -854,8 +831,6 @@
           //Converting Binary Data to base 64
           var base64String = window.btoa(binaryData);
           //showing file converted to base64
-          console.log(ev.dataTransfer.files[0].type)
-          console.log('c')
           fo("data:" + ev.dataTransfer.files[0].type + ";base64," + base64String);
         };
       })(ev.dataTransfer.files[0]);
