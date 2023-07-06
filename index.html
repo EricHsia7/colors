@@ -2510,14 +2510,13 @@
 
       });
       $('.color[fid="' + allcolor[i].id + '"]').click(function () {
-        var dbclarr = eval('dbclick.' + $(this).attr('fid'))
-        if (dbclarr === null || dbclarr === undefined) {
-          eval('dbclick.' + $(this).attr('fid') + ' = [' + new Date().getTime() + ']')
+        var this_id = $(this).attr('fid')
+        if (!dbclick.hasOwnProperty($(this).attr('fid'))) {
+          dbclick[this_id] =  [new Date().getTime()]
         }
-        dbclarr.push(new Date().getTime())
-        eval('dbclick.' + $(this).attr('fid') + ' = dbclarr')
-        if (dbclarr.length >= 2) {
-          if ((dbclarr[dbclarr.length - 1] - dbclarr[(dbclarr.length - 2)]) > 10 && (dbclarr[dbclarr.length - 1] - dbclarr[(dbclarr.length - 2)]) < 550) {
+        dbclick[this_id].push(new Date().getTime())
+        if (dbclick[this_id].length >= 2) {
+          if ((dbclick[this_id][dbclick[this_id].length - 1] - dbclick[this_id][(dbclick[this_id].length - 2)]) > 10 && (dbclick[this_id][dbclick[this_id].length - 1] - dbclick[this_id][(dbclick[this_id].length - 2)]) < 550) {
             $('.favorite[btnid="' + $(this).attr('fid') + '"]').click()
           }
         }
