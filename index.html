@@ -2404,7 +2404,7 @@
                 var colforms_col = hexToRgb(colorstr)
                 colforms_col['t'] = textcol(colforms_col.r, colforms_col.g, colforms_col.b)
                 colforms_col['t'] = (colforms_col['t'] === '#000000') ? 0 : 1
-                var colrecommendforms = $.ajax({url: `https://docs.google.com/forms/d/e/1FAIpQLScegkAY9MNjcr8nUsiaPz1FI7-FhpZ1pkO-vwrqUflgEiyc6Q/viewform?usp=pp_url&entry.685447124=${colforms_col.r}}&entry.1305802136=${colforms_col.g}&entry.836753427=${colforms_col.b}&entry.1343187283=${colforms_col.t}`, async: true
+                var colrecommendforms = $.ajax({url: `https://docs.google.com/forms/d/e/1FAIpQLScegkAY9MNjcr8nUsiaPz1FI7-FhpZ1pkO-vwrqUflgEiyc6Q/formResponse?usp=pp_url&entry.685447124=${colforms_col.r}}&entry.1305802136=${colforms_col.g}&entry.836753427=${colforms_col.b}&entry.1343187283=${colforms_col.t}`, async: true
                 });
               }
             }
